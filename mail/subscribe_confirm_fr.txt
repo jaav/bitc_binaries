@@ -1,0 +1,28 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Bonjour &FIRSTNAME;, 
+
+Nous avons bien enregistré votre inscription sur notre site. 
+
+Vous pouvez contrôler ci-dessous vos données. Pour activer votre profil, 
+il suffit de cliquer sur le lien en dessous de la liste.
+
+Votre titre : &GREETING;
+Votre langue : &LANGUAGEID;
+Votre prénom : &FIRSTNAME;
+Votre nom : &LASTNAME;
+
+Le nom de votre profil : &PSEUDO;
+Votre date de naissance: &BIRTHDATE;
+Votre email :  &EMAIL;
+
+
+Cliquez ici pour activer votre profil
+http://bitcv2.wanabe.be:8080/bitc/front/user/confirmSubscribe.do
+
+
+Cordialement,
+L'équipe de Bruxelles-International
+--------------------------------------------------------------------------------

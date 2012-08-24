@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10 juin 2010 10:35:00 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.hdata.ILike" table="i_like">
+        <id name="id" type="int">
+            <column name="i_like_id" />
+            <generator class="identity" />
+        </id>
+        <property name="contentType" type="string">
+            <column name="content_type" length="50" not-null="true" />
+        </property>
+        <property name="contentId" type="int">
+            <column name="content_id" not-null="true" />
+        </property>
+        <property name="userId" type="int">
+            <column name="user_id" not-null="true" />
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" not-null="true" />
+        </property>
+        <property name="tag" type="string">
+            <column name="tag" length="50" />
+        </property>
+        <property name="group" type="string">
+            <column name="group_" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

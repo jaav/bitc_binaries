@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 juin 2010 15:04:15 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+	<filter-def name="cultureFilter">
+    	<filter-param name="culture" type="string"/>
+	</filter-def>
+</hibernate-mapping>

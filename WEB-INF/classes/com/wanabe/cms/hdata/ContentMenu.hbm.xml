@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-nov.-2008 17:07:36 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.cms.hdata.ContentMenu" table="content_menu">
+        <id name="contentMenuId" type="java.lang.Integer">
+            <column name="content_menu_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tree" class="com.wanabe.cms.hdata.ContentMenu" fetch="select">
+            <column name="tree_id" />
+        </many-to-one>
+        <many-to-one name="parent" class="com.wanabe.cms.hdata.ContentMenu" fetch="select" >
+            <column name="parent_id" />
+        </many-to-one>
+        <property name="title" type="string">
+            <column name="title" length="200" />
+        </property>
+        <property name="url" type="string">
+            <column name="url" length="300" />
+        </property>
+        <property name="image" type="string">
+            <column name="image" length="200" />
+        </property>
+        <property name="isNav" type="java.lang.Boolean">
+            <column name="is_nav" />
+        </property>
+        <property name="isExtenal" type="java.lang.Boolean">
+            <column name="is_extenal" />
+        </property>
+        <property name="withParam" type="java.lang.Boolean">
+            <column name="with_param" />
+        </property>
+        <property name="hasParam" type="java.lang.Boolean">
+            <column name="has_param" />
+        </property>
+        <property name="isDepartement" type="java.lang.Boolean">
+            <column name="is_departement" />
+        </property>
+        <property name="left" type="java.lang.Integer">
+            <column name="left_sibling" />
+        </property>
+        <property name="right" type="java.lang.Integer">
+            <column name="right_sibling" />
+        </property>
+        <property name="pos" type="java.lang.Integer">
+            <column name="pos" />
+        </property>
+        <property name="level" type="java.lang.Integer">
+            <column name="level" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="30" />
+        </property>
+        <property name="visible" type="java.lang.Boolean">
+            <column name="visible" />
+        </property>
+        <property name="fromDate" type="date">
+            <column name="from_date" length="10" />
+        </property>
+        <property name="toDate" type="date">
+            <column name="to_date" length="10" />
+        </property>
+        <property name="culture" type="string">
+            <column name="culture" length="7" />
+        </property>
+        <property name="author" type="string">
+            <column name="author" length="100" />
+        </property>
+        <property name="createdOn">
+            <column name="created_on" length="10" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="created_by" length="100" />
+        </property>
+        <property name="lastModifiedOn">
+            <column name="last_modified_on" length="10" />
+        </property>
+        <property name="lastModifiedBy" type="string">
+            <column name="last_modified_by" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

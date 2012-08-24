@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-avr.-2009 14:19:51 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.template.hdata.TemplateAlgorithmLink" table="template_algorithm_link">
+        <id name="templateAlgorithmLinkId" type="java.lang.Integer">
+            <column name="template_algorithm_link_id" />
+            <generator class="identity" />
+        </id>
+         <many-to-one name="template" class="com.wanabe.template.hdata.Template" fetch="select">
+            <column name="template_id" not-null="true" />
+        </many-to-one>
+         <many-to-one name="templateAlgorithm" class="com.wanabe.template.hdata.TemplateAlgorithm" fetch="select" >
+            <column name="template_algorithm_id" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

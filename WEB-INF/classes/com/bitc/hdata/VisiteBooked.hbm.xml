@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 8 juil. 2010 15:44:38 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.hdata.VisiteBooked" table="visite_booked">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="eventId" type="int">
+            <column name="event_id" not-null="true" />
+        </property>
+        <property name="titre" type="string">
+            <column name="titre" length="200" not-null="true" />
+        </property>
+        <property name="eventCulture" type="string">
+            <column name="event_culture" length="5" not-null="true" />
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="10" not-null="true" />
+        </property>
+        <property name="price" type="string">
+            <column name="price" length="20" />
+        </property>
+        <property name="reservationEmail" type="string">
+            <column name="reservation_email" length="100" not-null="true" />
+        </property>
+        <property name="association" type="string">
+            <column name="association" length="50" not-null="true" />
+        </property>
+        <property name="userId" type="java.lang.Integer">
+            <column name="user_id" />
+        </property>
+        <property name="userCulture" type="string">
+            <column name="user_culture" length="5" />
+        </property>
+        <property name="comment" type="string">
+            <column name="comment" length="1000" />
+        </property>
+        <property name="numParticipant" type="int">
+            <column name="num_participant" not-null="true" />
+        </property>
+        <property name="greeting" type="string">
+            <column name="greeting" length="5" not-null="true" />
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="50" not-null="true" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="50" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="80" not-null="true" />
+        </property>
+        <property name="street" type="string">
+            <column name="street" length="100" />
+        </property>
+        <property name="num" type="string">
+            <column name="num" length="10" />
+        </property>
+        <property name="box" type="string">
+            <column name="box" length="10" />
+        </property>
+        <property name="zipcode" type="java.lang.Integer">
+            <column name="zipcode" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50" />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="50" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="20" not-null="true" />
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

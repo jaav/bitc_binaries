@@ -1,0 +1,42 @@
+/*IMAGE VALID*/
+.validMsg {
+	display:none;
+}
+.selectValidState .validMsg  {
+	display:inline;
+	margin:10px 0 0 10px;
+}
+/*IMAGE ERROR*/
+.errorMsg {
+	display:none;
+}
+.selectRequiredState .errorMsg, .selectRequiredMsg .errorMsg, .selectInvalidFormatState .selectInvalidFormatMsg .errorMsg, .selectMinValueState .selectMinValueMsg .errorMsg, .selectMaxValueState .selectMaxValueMsg .errorMsg, .selectMinCharsState .selectMinCharsMsg .errorMsg, .selectMaxCharsState .selectMaxCharsMsg {
+	display:inline;
+	margin:10px 0 0 10px;
+}
+/*TEXTE ERROR*/
+.selectRequiredMsg, .selectInvalidMsg {
+	display: none;
+}
+.selectRequiredState .selectRequiredMsg, .selectInvalidState .selectInvalidMsg {
+	display:block;
+	line-height:10px;
+	color:#fa869b;
+	margin-left:165px;
+	font-size:10px;
+	margin-bottom:15px;
+	font-weight:normal;
+	width:230px;
+}
+.validSelect {
+	border:0;
+	width:15px;
+	height:16px;
+	margin-top:5px;
+	margin-left:7px;
+	display:none;
+}
+.textfieldValidState .validSelect, .textareaValidState .validSelect, .selectValidState .validSelect, .checkboxValidState .validSelect, .radioValidState .validSelect, .radioRequiredMsg .validSelect {
+	display:inline;
+	
+}

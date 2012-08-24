@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 20-f?vr.-2009 11:13:47 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.cms.hdata.ContentLink" table="content_link">
+        <id name="linkid" type="java.lang.Integer">
+            <column name="LINKID" />
+            <generator class="identity" />
+        </id>
+        <property name="url" type="string">
+            <column name="URL" length="250" not-null="true" />
+        </property>
+        <property name="linkType" type="string">
+            <column name="LINK_TYPE" length="50" />
+        </property>
+        <property name="description" type="string">
+            <column name="DESCRIPTION" length="250" />
+        </property>
+        <property name="createdon">
+            <column name="CREATEDON" length="10" />
+        </property>
+        <property name="countClicks" type="java.lang.Integer">
+            <column name="COUNT_CLICKS" />
+        </property>
+        <property name="countClicksUnique" type="java.lang.Integer">
+            <column name="COUNT_CLICKS_UNIQUE" />
+        </property>
+    </class>
+</hibernate-mapping>

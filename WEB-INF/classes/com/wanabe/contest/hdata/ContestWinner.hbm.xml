@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-f?vr.-2009 11:42:21 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.contest.hdata.ContestWinner" table="contest_winner">
+        <id name="contestWinnerId" type="java.lang.Integer">
+            <column name="contest_winner_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="qmGroup" class="com.wanabe.qm.hdata.QmGroup" fetch="select">
+            <column name="qm_group_id" />
+        </many-to-one>
+        <property name="userId" type="java.lang.Integer">
+            <column name="user_id" />
+        </property>
+        <property name="comment" type="string">
+            <column name="comment" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

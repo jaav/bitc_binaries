@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 5 ao?t 2010 16:09:51 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.eshop.hdata.EsOrderBrochureMeeting" table="es_order_brochure_meeting">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="esOrder" class="com.wanabe.eshop.hdata.EsOrder" fetch="select">
+            <column name="order_id" not-null="true" />
+        </many-to-one>
+        <property name="companyName" type="string">
+            <column name="company_name" length="100" not-null="true" />
+        </property>
+        <property name="howDoYouKnow" type="string">
+            <column name="how_do_you_know" length="100" not-null="true" />
+        </property>
+        <property name="whatTypeOrga" type="string">
+            <column name="what_type_orga" length="100" not-null="true" />
+        </property>
+        <property name="agencyType" type="string">
+            <column name="agency_type" length="200" not-null="true" />
+        </property>
+        <property name="howManyEvents" type="string">
+            <column name="how_many_events" length="10" not-null="true" />
+        </property>
+        <property name="averageEvents" type="string">
+            <column name="average_events" length="10" not-null="true" />
+        </property>
+        <property name="eventType" type="string">
+            <column name="event_type" length="200" not-null="true" />
+        </property>
+        <property name="eventRole" type="string">
+            <column name="event_role" length="50" not-null="true" />
+        </property>
+        <property name="alreadyOrganize" type="boolean">
+            <column name="already_organize" not-null="true" />
+        </property>
+        <property name="wichWhenAlreadyOrganize" type="string">
+            <column name="wich_when_already_organize" length="100" />
+        </property>
+        <property name="alreadyPlan" type="boolean">
+            <column name="already_plan" not-null="true" />
+        </property>
+        <property name="whenAlreadyPlan" type="string">
+            <column name="when_already_plan" length="100" />
+        </property>
+        <property name="forwardPro" type="boolean">
+            <column name="forward_pro" not-null="true" />
+        </property>
+        <property name="typeForwardPro" type="string">
+            <column name="type_forward_pro" length="200" />
+        </property>
+        <property name="comment" type="string">
+            <column name="comment" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

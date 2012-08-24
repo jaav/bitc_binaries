@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 sept. 2010 15:43:36 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.hdata.Reqservices" table="reqservices">
+        <id name="serviceid" type="java.lang.Integer">
+            <column name="serviceid" />
+            <generator class="identity" />
+        </id>
+        <property name="lg" type="string">
+            <column name="lg" length="2" not-null="true" />
+        </property>
+        <property name="label" type="string">
+            <column name="label" length="80" />
+        </property>
+        <property name="active" type="java.lang.Integer">
+            <column name="active" />
+        </property>
+        <property name="displayorder" type="java.lang.Integer">
+            <column name="displayorder" />
+        </property>
+        <set name="reqproposalReqserviceses" inverse="true"  table="reqproposal_reqservices" fetch="select">
+            <key>
+                <column name="serviceid" not-null="true" />
+            </key>
+            <one-to-many class="com.bitc.hdata.ReqproposalReqservices" />
+        </set>
+    </class>
+</hibernate-mapping>

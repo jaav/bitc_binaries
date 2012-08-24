@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-nov.-2008 16:02:58 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.cms.hdata.ContentPropertyValue" table="content_property_value">
+        <id name="valueId" type="java.lang.Integer">
+            <column name="value_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="contentProperty" class="com.wanabe.cms.hdata.ContentProperty" fetch="select">
+            <column name="property_id" />
+        </many-to-one>
+        <many-to-one name="tree" class="com.wanabe.cms.hdata.ContentPropertyValue" fetch="select">
+            <column name="tree_id" />
+        </many-to-one>
+        <many-to-one name="parent" class="com.wanabe.cms.hdata.ContentPropertyValue" fetch="select">
+            <column name="parent_id" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="200" />
+        </property>
+         <property name="logo" type="string">
+            <column name="logo" length="200" />
+        </property>
+        <property name="mainColor" type="string">
+            <column name="main_color" length="6" />
+        </property>
+        <property name="secondaryColor" type="string">
+            <column name="secondary_color" length="6" />
+        </property>
+        <property name="defaultTitle" type="string">
+            <column name="default_title" length="100" />
+        </property>
+        <property name="defaultDescription" type="string">
+            <column name="default_description" length="16777215" />
+        </property>
+        <property name="fromDate" type="date">
+            <column name="from_date" length="10" />
+        </property>
+        <property name="toDate" type="date">
+            <column name="to_date" length="10" />
+        </property>
+        <property name="createdOn" type="date">
+            <column name="created_on" length="10" />
+        </property>
+        <property name="modifiedOn" type="date">
+            <column name="modified_on" length="10" />
+        </property>
+        <property name="visible" type="int">
+            <column name="visible" not-null="true" />
+        </property>
+        <property name="left" type="java.lang.Integer">
+            <column name="left_sibling" />
+        </property>
+        <property name="right" type="java.lang.Integer">
+            <column name="right_sibling" />
+        </property>
+        <property name="pos" type="java.lang.Integer">
+            <column name="pos" />
+        </property>
+        <property name="level" type="java.lang.Integer">
+            <column name="level" />
+        </property>
+        <map name="contentPropertyValueClts" inverse="true" cascade="all" fetch="subselect" >
+            <key>
+                <column name="value_id" not-null="true">
+                    <comment></comment>
+                </column>
+            </key>
+            <map-key type="string">
+            	<column name="culture" not-null="true">
+            	</column>
+            </map-key> 
+            <one-to-many class="com.wanabe.cms.hdata.ContentPropertyValueClt" />
+        </map>
+    </class>
+</hibernate-mapping>

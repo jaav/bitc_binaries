@@ -1,0 +1,64 @@
+/*IMAGE VALID*/
+.book_stay .validMsg {
+	display:none;
+}
+.book_stay .selectValidState .validMsg  {
+	display:inline;
+	/*margin:10px 0 0 10px;*/
+	margin-left:5px;
+	position:relative;
+	top:5px;
+	border: 0 !important;
+}
+/*IMAGE ERROR*/
+.book_stay .errorMsg {
+	display:none;
+}
+.book_stay .selectRequiredState .errorMsg, .book_stay .selectRequiredMsg .errorMsg, .book_stay .selectInvalidFormatState .selectInvalidFormatMsg .errorMsg, .book_stay .selectMinValueState .selectMinValueMsg .errorMsg, .book_stay .selectMaxValueState .selectMaxValueMsg .errorMsg, .book_stay .selectMinCharsState .selectMinCharsMsg .errorMsg, .book_stay .selectMaxCharsState .selectMaxCharsMsg {
+	display:inline;
+	/*margin:10px 0 0 10px;*/
+	margin-left:5px;
+	position:relative;
+	top:5px;
+	border: 0 !important;
+}
+/*TEXTE ERROR*/
+.book_stay .selectRequiredMsg, .book_stay .selectInvalidMsg {
+	display: none;
+}
+/*.book_stay .selectRequiredState .selectRequiredMsg, .book_stay .selectInvalidState .selectInvalidMsg {
+	display:block;
+	line-height:10px;
+	color:#fa869b;
+	margin-left:145px;
+	font-size:10px;
+	margin-bottom:15px;
+	font-weight:normal;
+	width:230px;
+}*/
+/*.book_stay .validSelect {
+	border:0;
+	width:15px;
+	height:16px;
+	margin-top:5px;
+	margin-left:7px;
+	display:none;
+}*/
+.book_stay .textfieldValidState .validSelect, .book_stay .textareaValidState .validSelect, .book_stay .selectValidState .validSelect, .book_stay .checkboxValidState .validSelect, .book_stay .radioValidState .validSelect, .book_stay .radioRequiredMsg .validSelect {
+	display:inline;
+	
+}
+
+
+.book_stay .selectRequiredState .errorMsg, .book_stay .selectRequiredMsg .errorMsg, .book_stay .selectInvalidFormatState .selectInvalidFormatMsg .errorMsg, .book_stay .selectMinValueState .selectMinValueMsg .errorMsg, .book_stay .selectMaxValueState .selectMaxValueMsg .errorMsg, .book_stay .selectMinCharsState .selectMinCharsMsg .errorMsg, .book_stay .selectMaxCharsState .selectMaxCharsMsg {
+	display:inline;
+}
+/*.book_stay .selectRequiredState .selectRequiredMsg, .book_stay .selectInvalidState .selectInvalidMsg {
+	display:block;
+	line-height:10px;
+	color:#fa869b;
+	margin-left:10px;
+	font-size:10px;
+	margin-bottom:10px;
+	font-weight:normal;
+}*/

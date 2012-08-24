@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wanabe.meta.hdata.Meta" table="meta" >
+        <id name="metaId" type="java.lang.Integer">
+            <column name="meta_id" />
+            <generator class="identity" />
+        </id>
+        <property name="uri" type="string">
+            <column name="URI" length="200" />
+        </property>
+        <property name="metaTitle" type="string">
+            <column name="meta_title" length="100" />
+        </property>
+        <property name="metaDescription" type="string">
+            <column name="meta_description" length="200" />
+        </property>
+        <property name="metaKeyword" type="string">
+            <column name="meta_keyword" length="200" />
+        </property>
+        <property name="culture" type="string">
+            <column name="culture" length="5" />
+        </property>
+    </class>
+</hibernate-mapping>

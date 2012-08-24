@@ -1,0 +1,31 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Un utilisateur du site a commandé la brochure suivante: 
+&BRONAME;
+
+Nom de la brochure : &BRONAME;
+Prix de la brochure : &PRICE;
+Nombre de brochure : &BRONUM;
+
+
+Voici les coordonnées de l'utilisateur:
+---------------------------------------
+
+Société : &COMPANY;
+Civilité : &GREETING;
+Prénom : &FIRSTNAME;
+Nom : &LASTNAME;
+Fonction: &FONCTION;
+Adresse : &ADDRESS;
+Ville : &CITY;
+Etat : &PROV;
+Code postal : &ZIP;
+Pays : &COUNTRY;
+Email : &EMAIL;
+Tél : &PHONE;
+Fax : &FAX;
+Website : &WEBSITE;
+Langue : &LANGUAGE;
+

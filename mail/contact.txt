@@ -1,0 +1,24 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Un utilisateur du site a demandÈ d'Íêtre contactÈ.
+Een gebruiker van de website heeft gevraagd om gecontacteerd te worden.
+
+Voici les coordonnÈes et la question de l'utilisateur :
+Hierbij de gegevens en de vraag van de gebruiker:
+
+Langue / Taal: &LANGUAGE;
+CivilitÈ / Statuur: &GREETING;
+PrÈnom / Voornaam: &FIRSTNAME;
+Nom / Naam: &LASTNAME;
+
+Adresse / Adres: &ADDRESS;
+Ville / Stad: &CITY;
+Code postal / Postcode: &ZIP;
+
+Email: &EMAIL;
+TÈlÈphone / Telefoon: &LANGUAGE;
+
+Message / Bericht: &MESSAGE;
+--------------------------------------------------------------------------------

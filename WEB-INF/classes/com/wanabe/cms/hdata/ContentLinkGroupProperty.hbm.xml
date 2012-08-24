@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-nov.-2008 16:02:58 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.cms.hdata.ContentLinkGroupProperty" table="content_link_group_property">
+        <id name="linkid" type="java.lang.Integer">
+            <column name="linkid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="contentGroup" class="com.wanabe.cms.hdata.ContentGroup" fetch="select">
+            <column name="GROUPID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="contentProperty" class="com.wanabe.cms.hdata.ContentProperty" fetch="select">
+            <column name="PROPERTYID" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

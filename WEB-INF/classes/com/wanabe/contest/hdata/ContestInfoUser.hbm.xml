@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-f?vr.-2009 11:42:21 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.contest.hdata.ContestInfoUser" table="contest_info_user">
+        <id name="contestInfoUserId" type="java.lang.Integer">
+            <column name="contest_info_user_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="qmGroup" class="com.wanabe.qm.hdata.QmGroup" fetch="select">
+            <column name="qm_group_id" />
+        </many-to-one>
+        <many-to-one name="qmQuestionnaire" class="com.wanabe.qm.hdata.QmQuestionnaire" fetch="select">
+            <column name="qm_questionnaire_id" />
+        </many-to-one>
+        <property name="userId" type="int">
+            <column name="user_id" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="80" not-null="true" />
+        </property>
+        <property name="languageid" type="string">
+            <column name="languageid" length="2" not-null="true" />
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="50" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="50" />
+        </property>
+        <property name="genre" type="string">
+            <column name="genre" length="20" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="20" />
+        </property>
+        <property name="gsm" type="string">
+            <column name="gsm" length="20" />
+        </property>
+        <property name="street" type="string">
+            <column name="street" length="100" />
+        </property>
+        <property name="num" type="string">
+            <column name="num" length="10" />
+        </property>
+        <property name="box" type="string">
+            <column name="box" length="10" />
+        </property>
+        <property name="zipcode" type="java.lang.Integer">
+            <column name="zipcode" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50" />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

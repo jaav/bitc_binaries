@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-f?vr.-2009 11:42:21 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.qm.hdata.QmGroup" table="qm_group">
+        <id name="qmGroupId" type="int">
+            <column name="qm_group_id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="50" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="50" />
+        </property>
+        <property name="campaignId" type="java.lang.Integer">
+            <column name="campaign_id" />
+        </property>
+        <property name="fromDate">
+            <column name="from_date" length="10" />
+        </property>
+        <property name="toDate">
+            <column name="to_date" length="10" />
+        </property>
+        <property name="visible" type="java.lang.Integer">
+            <column name="visible" />
+        </property>
+        <property name="createdOn">
+            <column name="created_on" length="10" />
+        </property>
+        <property name="modifiedOn">
+            <column name="modified_on" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

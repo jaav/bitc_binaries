@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-juin-2010 17:54:52 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.bitc.hdata.NltUserType" table="nlt_user_type">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="user" class="com.bitc.hdata.User" fetch="select" >
+            <column name="user_id" not-null="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="nltType" class="com.bitc.hdata.NltType" fetch="select" >
+            <column name="nlt_id" not-null="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="value" type="int">
+            <column name="value" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="optinOn" type="timestamp">
+            <column name="optin_on" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="optoutOn" type="timestamp">
+            <column name="optout_on" length="19">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

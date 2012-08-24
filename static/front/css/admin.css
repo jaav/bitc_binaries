@@ -1,0 +1,115 @@
+
+
+
+
+
+/*LAYOUT EXPERIENCE*/
+.second_highlight_experience_group { margin:0 auto; width:590px;}
+
+.second_highlight_experience {margin:0 0 22px 0; padding:10px 0 0 0; width:288px;}
+	.second_highlight_experience h2 { font-size:24px; text-transform:uppercase;}
+	.second_highlight_experience img { margin:0 0 20px 0;}
+	.second_highlight_experience p { margin:0 0 15px 0;}
+	.second_highlight_experience .btn { position:relative; height:40px;}
+		.second_highlight_experience .btn .more_info {position:absolute; top:0; left:0;}
+		.second_highlight_experience .btn .map {position:absolute; top:0; left:114px;}
+			.second_highlight_experience .btn .map span { float:left; padding:3px 3px 0 0;}
+			.second_highlight_experience .btn .map img {float:left; padding:2px 0 0 0;}
+		.second_highlight_experience .btn .share {position:absolute; top:0; left:179px;}
+		.second_highlight_experience .btn .ilike {position:absolute; top:0; left:220px;}
+		.second_highlight_experience .btn .add {position:absolute; top:0; left:262px;}	
+
+.first_highlight_home_experience { position:relative; margin:0 0 22px 14px; padding:10px 0 0 0; width:590px; height:280px;}
+	.first_highlight_home_experience img { float:left;}
+	.first_highlight_home_experience p { float:right; margin:0 0 15px 0; width:195px; }
+	.first_highlight_home_experience .btn { float:right; margin:0 0 10px 0; width:195px; height:30px; border-bottom:1px solid #dfdfdf;}
+			.first_highlight_home_experience .btn .more_info { float:left;}
+			.first_highlight_home_experience .btn .map { float:right; width:55px; }
+				.first_highlight_home_experience .btn .map span { float:left; }
+				.first_highlight_home_experience .btn .map img { float:right;}	
+			.first_highlight_home_experience .feature { float:right; width:195px; height:35px;}
+				.first_highlight_home_experience .feature .share {float:left;}	
+				.first_highlight_home_experience .feature .ilike {float:left; margin:0 0 10px 13px;}	
+				.first_highlight_home_experience .feature .add {float:right}	
+				
+#ticker { position:relative; margin:0 0 22px 0; padding:8px 20px 0 20px; border-top: 1px solid #dadada; border-bottom: 1px solid #dadada; background:url(../img/ml/bg_ticker.jpg) repeat-x bottom #FFF;}
+	#ticker div.ticker { float:left; margin:0 0 0 10px; width:500px; color:#000;}
+	#ticker div.ticker img { float:left; margin:0 10px 0 0;}
+	#ticker div.ticker p { float:left; margin:10px 0 0 0; color:#6b6967;}
+
+
+	
+/*LAYOUT ESHOP*/	
+
+
+#book_stay { position:relative; margin:5px 0 22px 0; padding:5px 7px 5px 7px; border-top: 1px solid #dfdfdf; border-bottom: 1px solid #dfdfdf; background:#f2eee9; width:274px; }
+	#book_stay .ui-datepicker-trigger { margin:5px 0 0 5px;}
+	#book_stay select { float:left; margin:5px 0 0 10px;  height:18px; background:#f9f9f9; border:1px solid #d0d0d0; font-size:11px}
+	#book_stay .clr { margin:0 0 0 0;}
+	#book_stay label { display:inline; float:left; width:120px; text-align:left; margin:5px 10px 0 10px}
+	#book_stay select.select_days { width:60px;}
+	#book_stay select.select_month { width:110px;}
+	#book_stay select.select_room_type { width:180px; }
+	#book_stay input.btn_search  { background:none; border:none; color:#FFFFFF; font-size:11px; background:url(../img/ml/btn_box_stay.png) no-repeat; width:87px; height:24px; padding:0 0 3px 0; cursor:pointer; float:right; margin-right:85px; margin-top:5px} 
+
+table.basket td {padding:0 0 17px 0; vertical-align:top; text-align:left;}
+	table.basket td.space {width:10px;}
+	table.basket td.article { width:230px;}
+	table.basket td.date {width:130px;}
+	table.basket td.price {width:130px;}
+	table.basket td.quantity {width:70px;}
+	table.basket td.dustbin { width:30px}
+	table.basket td input {padding:0 0 0 2px; color:#958e88; background:#f9f9f9; border:1px solid #d0d0d0;}
+		table.basket td input.datepicker { margin:0 5px 0 0; width:100px;}
+	table.basket td select {padding:0 0 0 2px; width:105px; color:#958e88; background:#f9f9f9; border:1px solid #d0d0d0;}
+
+table.resume td {padding:0 0 17px 0; vertical-align:top; text-align:left;}
+	table.resume td.space {width:10px;}
+	table.resume td.article { width:210px;}
+	table.resume td.date {width:110px;}
+	table.resume td.price {width:130px;}
+	table.resume td.quantity {width:70px;}
+	table.resume td.total { width:70px}
+	table.resume td.label { width:200px;}
+	table.resume td.label_reply { width:410px}
+
+.box_total {margin:22px 0 22px 0; padding:17px 35px 17px 35px; border-top: 1px solid #dfdfdf; border-bottom: 1px solid #dfdfdf; background:#f2eee9;}
+	.box_total .group { float:left; width:380px;}
+		.box_total .group span { display:block; font-size:18px; text-transform:uppercase;}
+
+.popin_eshop { width:640px; padding:10px}
+	.popin_eshop .box {margin:22px 0 22px 0; padding:17px ; border-top: 1px solid #dfdfdf; border-bottom: 1px solid #dfdfdf; background:#f2eee9;}
+		.popin_eshop .box .txt_popin { float:left; margin:0 0 0 20px; iowidth:250px;}
+		.popin_eshop .box h2 {font-size:20px}
+		.popin_eshop .box .img {width:300px; height:98px}
+
+
+
+
+		
+.grey_btn{ width:150px; height:24px; background:url(../img/ml/bg_btn_form.png) top left no-repeat; border:0; cursor:pointer; color:#4c5458; font-size:12px; padding:7px 0 0 10px;}
+.grey_btn a{text-decoration:none;}
+.grey_btn:hover{ width:150px; height:24px; background:url(../img/ml/bg_btn_form_hover.png) top left no-repeat; border:0; cursor:pointer; color:#4c5458; font-size:12px; padding:7px 0 0 10px;}
+
+/* ------------------------------------------  10. CONTENT SUB ----------------------------------------------- */
+
+
+/*COMPONENT*/
+
+
+#promo { position:relative; margin:0 0 22px 0; padding:17px 35px 17px 35px; border-top: 1px solid #dfdfdf; border-bottom: 1px solid #dfdfdf; background:#f2eee9;}
+	#promo h2 { margin:0; color:#000;}
+	#promo h3 { color:#000;}
+	#promo img { float:left; }
+	#promo p { float:left; margin:0 0 0 10px; width:130px; color:#000;} 
+	#promo .prev_1 {position:absolute; top:120px; left:12px; width:20px}
+	#promo .next_1 {position:absolute; top:120px; left:260px; width:20px}
+	
+#arsene50 {margin:0 0 22px 0; padding:17px 20px 17px 20px; border-top: 1px solid #dfdfdf; border-bottom: 1px solid #dfdfdf; background:#f2eee9;}
+	#arsene50 h2 { margin:0; color:#000;}
+	#arsene50 h3 { margin:0; color:#000;}
+	#arsene50 div.feedArsene50Be { width:250px; color:#000; padding:17px 0 0 0; border-bottom:1px dashed #d52d00;} 
+	#arsene50 div.feedArsene50Be img { margin:0 0 3px 0; width:76px;}
+	#arsene50 div.feedArsene50Be a, #arsene50 div.feedArsene50Be a:link, #arsene50 div.feedArsene50Be a:active, #arsene50 div.feedArsene50Be a:visited { color:#000;}
+	#arsene50 div.feedArsene50Be a:hover {color:#d52d00;}
+	#arsene50 .txt_red { color:#d52d00;}

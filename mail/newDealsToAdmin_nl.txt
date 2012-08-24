@@ -1,0 +1,16 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Cher Administrateur,
+
+  Een nieuwe aanvraag voor een special deal werd net gepost op de website van Visitbrussels.
+
+  We nodigen u uit deze te controleren op:
+
+  http://localhost:8080/bitc/admin/contentDeals/list.do
+
+   Met vriendelijke groeten, 
+   Het Visitbrussels MICE Team.
+
+--------------------------------------------------------------------------------

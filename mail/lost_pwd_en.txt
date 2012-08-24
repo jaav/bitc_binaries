@@ -1,0 +1,25 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Dear &FIRSTNAME;,
+
+You requested a new password for the site of Brussels International.
+
+Please find hereby the modified data. 
+You must click in the link underneath 
+in order to confirm this modification. 
+
+ 	
+Your e-mail: &EMAIL;
+
+Your new password: &NEW_PASSWORD;
+
+
+Click here to activate your new password	
+http://bitcv2.wanabe.be:8080/bitc/front/user/confirmNewPassword.do
+
+
+Kind regards,
+The team of Brussels International
+--------------------------------------------------------------------------------

@@ -1,0 +1,43 @@
+/* CSS Document */
+.jcarousel-skin-tango ul{margin:0; padding:0}
+.jcarousel-skin-tango .jcarousel-container {
+    /*border: 1px solid #346F97;
+	background:red;*/
+	
+	margin:0;
+	padding:0;
+	color:#000
+}
+
+.jcarousel-skin-tango .jcarousel-container-horizontal {
+    width: 235px;
+    padding: 0;
+	overflow:hidden;
+	margin:0;
+	height: 100px;
+}
+
+.jcarousel-skin-tango .jcarousel-clip-horizontal {
+    width:  245px;
+    height: 100px;
+	overflow:hidden;	/*background:black*/
+	margin:0
+}
+
+
+.jcarousel-skin-tango .jcarousel-item {
+    width: 70px;
+
+	text-align:center;
+	font-size:10px;
+	color:#B0ADAA;
+
+	margin:0
+}
+
+.jcarousel-skin-tango .jcarousel-item-horizontal {
+    margin-right: 10px;
+}
+
+.jcarousel-skin-tango .jcarousel-item a {text-decoration:none; text-transform:lowercase}
+

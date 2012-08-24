@@ -1,0 +1,50 @@
+
+/* ======= GLOBAL STYLES FOR PRINT MEDIA  ======= */
+
+#body{ font: normal 10pt "trebuchet ms", verdana, arial, helvetica, sans-serif; background:white; color:black; line-height:1em; }
+
+/* ======= NOT DISPLAY ELEMENT ======= */
+
+#header, ul#navigation, #searchBox, #actions, #help, #legend, #navigation li a, ul#navigation li ul li, #chartForm{ display:none; visibility:hidden;}
+ul{list-style-type:none; list-style:none;}
+li{list-style-type:none; list-style:none;}
+li a{ display:none}
+/* ======= MAIN CONTENT FOR PRINT ======= */
+
+#mainContent { width:auto; border:0; margin:0 5%; padding:0; float: none !important;}
+#mainContent #printBox{ border:1px solid #000; font-size:13pt; margin-bottom:30px; text-indent:10px;}
+#mainContent #printBox a { display:none;}
+
+#mainContent #mask{}
+#mask{}
+
+#stats table{ width:100%; font-size:8pt; border:0; page-break-inside: avoid; margin:0 auto; border:1px solid #000;}
+#stats tr{height:20px; padding:5px;}
+#stats td{}
+	#stats td.level1{ text-indent:20px;}
+	#stats td.level2{ text-indent:40px;}
+	#stats td.level3{ text-indent:60px;}
+		
+#stats .header{height:30px; font-size:10pt; page-break-before:auto;}
+	#stats tr.header { border-bottom:1px solid #666;}
+		#stats .header td{font-weight:bold; vertical-align:middle;}
+		
+#stats .preheader{height:30px; font-size:11pt;}
+	#stats tr.preheader { border-bottom:1px solid #666;}
+		#stats .preheader td{background-color:#e9ebe6; font-weight:bold; text-align:left; vertical-align:middle; border-bottom:1px solid #666;}
+		#stats .preheader span.left{ display:block; float:left;}
+		#stats .preheader span.right{ display:block; float:right;}	
+			
+#stats .pageBreak {page-break-before:always;}
+
+.chart{ text-align:center; page-break-before:auto;}
+.chart img { width:570px;}	
+
+
+/* ======= FOOTER ======= */
+
+	#footer{ float:none; margin-top:40px; border-top:1px solid #000; page-break-inside:avoid; page-break-before:auto; width:99%;}
+		#footer #logoWanabe a{ margin-top:10px; position:relative; float:right; border:0; display:block; width:40px; height:38px;}
+	
+	img{ border:0}
+	

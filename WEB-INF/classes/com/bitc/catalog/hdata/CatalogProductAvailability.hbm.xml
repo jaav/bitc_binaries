@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 juin 2010 18:19:33 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.catalog.hdata.CatalogProductAvailability" table="catalog_product_availability" >
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="catalogProduct" class="com.bitc.catalog.hdata.CatalogProduct" fetch="select">
+            <column name="product_id" not-null="true" />
+        </many-to-one>
+        <property name="typeOfDate" type="int">
+            <column name="type_of_date" not-null="true" />
+        </property>
+        <property name="fromDate" type="date">
+            <column name="from_date" length="10" not-null="true" />
+        </property>
+        <property name="toDate" type="date">
+            <column name="to_date" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

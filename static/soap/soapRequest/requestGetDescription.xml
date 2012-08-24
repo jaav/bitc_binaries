@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<soapenv:Envelope  
+  xmlns:q0="http://data.services.com"  
+  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"  
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"  
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">  
+ <soapenv:Header> </soapenv:Header>  
+  <soapenv:Body>
+	<q0:getDescription>
+	  <q0:businessid>%ID%</q0:businessid>
+	  <q0:descriptionTypes>OWNER</q0:descriptionTypes>
+	  <q0:lg>%LG%</q0:lg>
+	  <q0:token>%TOKEN%</q0:token>
+	</q0:getDescription>
+  </soapenv:Body>  
+</soapenv:Envelope>

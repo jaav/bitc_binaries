@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13 juil. 2010 11:25:47 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.hdata.ContentArticleCorrespondancePourTous" table="content_article_correspondances_id" >
+        <id name="Id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+     <property name="sourceId" type="java.lang.Integer">
+            <column name="source_id" />
+        </property>
+          <property name="idContent" type="java.lang.Integer">
+            <column name="content_id" />
+          </property>
+        <property name="contentName" type="string">
+            <column name="content_name" length="1000"  />
+        </property>
+         <property name="contentType" type="string">
+            <column name="content_type" length="250"  />
+        </property>
+           <property name="createdBy" type="string">
+            <column name="created_by" length="250"  />
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19"  />
+        </property>
+         <property name="lastModifiedBy" type="string">
+            <column name="last_modified_by" length="250"  />
+        </property>
+        <property name="lastModifiedOn" type="timestamp">
+            <column name="last_modified_on" length="19"  />
+        </property>
+          <property name="urlBruxellespourtous" type="string">
+            <column name="url_bruxellespourtous" length="300"  />
+        </property>
+ 
+ 
+    </class>
+</hibernate-mapping>

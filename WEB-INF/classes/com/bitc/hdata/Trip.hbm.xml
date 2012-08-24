@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11 juin 2010 15:27:40 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.hdata.Trip" table="trip">
+        <id name="tripId" type="java.lang.Integer">
+            <column name="trip_id" />
+            <generator class="identity" />
+        </id>
+        <property name="contentType" type="string">
+            <column name="content_type" length="50" not-null="true" />
+        </property>
+        <property name="contentId" type="int">
+            <column name="content_id" not-null="true" />
+        </property>
+        <property name="userId" type="int">
+            <column name="user_id" not-null="true" />
+        </property>
+        <property name="createdOn" type="date">
+            <column name="created_on" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

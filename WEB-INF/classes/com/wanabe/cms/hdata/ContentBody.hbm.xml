@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-nov.-2008 17:07:36 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.cms.hdata.ContentBody" table="content_body">
+        <id name="contentBodyId" type="java.lang.Integer">
+            <column name="content_body_id" />
+            <generator class="identity" />
+        </id>
+        <property name="group" type="string">
+            <column name="_group" length="50" />
+        </property>
+        <many-to-one name="contentMenu" class="com.wanabe.cms.hdata.ContentMenu" fetch="select">
+            <column name="CONTENT_MENU_ID" />
+        </many-to-one>
+        <property name="body" type="string">
+            <column name="body" length="18000" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="20" />
+        </property>
+        <property name="visible" type="java.lang.Byte">
+            <column name="visible" />
+        </property>
+        <property name="fromDate" type="date">
+            <column name="from_date" length="10" />
+        </property>
+        <property name="toDate" type="date">
+            <column name="to_date" length="10" />
+        </property>
+        <property name="culture" type="string">
+            <column name="culture" length="7" />
+        </property>
+        <property name="author" type="string">
+            <column name="author" length="100" />
+        </property>
+        <property name="createdOn">
+            <column name="created_on" length="10" not-null="true" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="created_by" length="100" />
+        </property>
+        <property name="lastModifiedOn">
+            <column name="last_modified_on" length="10" />
+        </property>
+        <property name="lastModifiedBy" type="string">
+            <column name="last_modified_by" length="100" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="200" />
+        </property>
+         <property name="position" type="java.lang.Integer">
+            <column name="position" length="2" />
+        </property>
+         <many-to-one name="publishContent" class="com.wanabe.cms.hdata.ContentBody" fetch="select">
+            <column name="published_id" />
+        </many-to-one>
+         <property name="numOfVersion" type="java.lang.Integer">
+            <column name="num_of_version" />
+        </property>
+         <property name="versionId" type="java.lang.Integer">
+            <column name="version_id" />
+        </property>
+        <property name="openCount" type="java.lang.Integer">
+            <column name="open_count" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+/* classes for tooltips */
+.nav, .nav * {
+	margin:0;
+	padding:0;
+}
+#tagcloud{margin:0 0 22px 0; padding:5px 8px 5px 8px; border-top: 1px solid #dfdfdf; border-bottom: 1px solid #dfdfdf; background:#f2eee9;}
+	/*#tagcloud h2 { margin:0; color:#000; background:url(../img/ml/tagcloud_heart.jpg) no-repeat 175px 3px; font-size:26px;}*/
+	#tagcloud img { margin-bottom:5px; border: 0 }
+	#tagcloud .nav {padding:0px; text-align:justify;}
+		#tagcloud .nav ul {list-style:none;}
+			#tagcloud .nav li {display:inline; list-style:none;}
+		#tagcloud .nav a {text-decoration:none; font-family:Georgia, "Times New Roman", Times, serif;}
+		#tagcloud .nav a:hover {color:#6d6864;}
+		#tagcloud .nav a.size1 {font-size:22px;}
+		#tagcloud .nav a.size2 {font-size:18px;}
+		#tagcloud .nav a.size3 {font-size:16px;}
+		#tagcloud .nav a.size4 {font-size:13px;}
+		#tagcloud .nav a.size5 {font-size:11px;}

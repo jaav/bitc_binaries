@@ -1,0 +1,25 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Bonjour &FIRSTNAME;,
+
+Vous avez demandé un nouveau mot de passe pour le site
+de Bruxelles International.
+
+Vous pouvez le retrouver ci-dessous. Merci de cliquer sur le lien
+pour activer ce nouveau mot de passe. 
+
+ 	
+Votre email : &EMAIL;
+
+Votre mot de passe : &NEW_PASSWORD;
+
+
+Cliquez ici pour activer votre nouveau mot de passe	
+http://bitcv2.wanabe.be:8080/bitc/front/user/confirmNewPassword.do
+
+
+Cordialement,
+L'équipe de Bruxelles-International
+--------------------------------------------------------------------------------

@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-mai-2010 17:37:40 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.bitc.cms.hdata.ContentArticle" table="content_article">
+        <comment></comment> 
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="300">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="abstract_" type="string">
+            <column name="abstract" length="2000">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="info" type="string">
+            <column name="info" length="16777215">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="smallImage" type="string">
+            <column name="small_image" length="300">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="bigImage" type="string">
+            <column name="big_image" length="300">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="url" type="string">
+            <column name="url" length="300">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="urlLabel" type="string">
+            <column name="url_label" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="visible" type="java.lang.Byte">
+            <column name="visible">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="fromDate" type="timestamp">
+            <column name="from_date" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="toDate" type="timestamp">
+            <column name="to_date" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="culture" type="string">
+            <column name="culture" length="7">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="author" type="string">
+            <column name="author" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string">
+            <column name="created_by" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedOn" type="timestamp">
+            <column name="last_modified_on" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedBy" type="string">
+            <column name="last_modified_by" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="position" type="java.lang.Integer">
+            <column name="position">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="200">
+                <comment></comment>
+            </column>
+        </property>
+       <many-to-one name="publishContent" class="com.bitc.cms.hdata.ContentArticle" fetch="select">
+            <column name="published_id" />
+        </many-to-one>
+        <property name="numOfVersion" type="java.lang.Integer">
+            <column name="num_of_version">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="versionId" type="java.lang.Integer">
+            <column name="version_id">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="openCount" type="java.lang.Integer">
+            <column name="open_count">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="commentCount" type="java.lang.Integer">
+            <column name="comment_count">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="group" type="string">
+            <column name="_group" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="source" type="string">
+            <column name="source" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="sourceId" type="java.lang.Integer">
+            <column name="source_id">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="body" type="string">
+            <column name="body" length="16777215">
+                <comment></comment>
+            </column>
+        </property>  
+        
+       <map name="contentArticleClts" inverse="true" cascade="all" >
+            <key>
+                <column name="content_id" not-null="true">
+                    <comment></comment>
+                </column>
+            </key>
+            <map-key type="string">
+            	<column name="culture" not-null="true">
+            	</column>
+            </map-key> 
+            <one-to-many class="com.bitc.cms.hdata.ContentArticleClt" />
+        </map>
+    </class>
+</hibernate-mapping>

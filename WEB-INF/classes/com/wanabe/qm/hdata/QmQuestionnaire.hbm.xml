@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-f?vr.-2009 11:42:21 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.qm.hdata.QmQuestionnaire" table="qm_questionnaire">
+        <id name="qmQuestionnaireId" type="int">
+            <column name="qm_questionnaire_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="qmGroup" class="com.wanabe.qm.hdata.QmGroup" fetch="select">
+            <column name="qm_group_id" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="50" />
+        </property>
+        <property name="culture" type="string">
+            <column name="culture" length="7" />
+        </property>
+        <property name="createdOn">
+            <column name="created_on" length="10" />
+        </property>
+        <property name="modifiedOn">
+            <column name="modified_on" length="10" />
+        </property>
+        <set name="contestInfoUsers" inverse="true">
+            <key>
+                <column name="qm_questionnaire_id" />
+            </key>
+            <one-to-many class="com.wanabe.contest.hdata.ContestInfoUser" />
+        </set>
+        <set name="qmNodes" inverse="true">
+            <key>
+                <column name="qm_questionnaire_id" />
+            </key>
+            <one-to-many class="com.wanabe.qm.hdata.QmNode" />
+        </set>
+        <set name="qmParticipations" inverse="true">
+            <key>
+                <column name="qm_questionnaire_id" />
+            </key>
+            <one-to-many class="com.wanabe.qm.hdata.QmParticipation" />
+        </set>
+    </class>
+</hibernate-mapping>

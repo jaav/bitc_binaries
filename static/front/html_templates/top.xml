@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<top>
+	<culture>BE_fr</culture>
+	<images>
+	
+		<image>../img/ml/top/top01.jpg</image>
+		<image>../img/ml/top/top02.jpg</image>
+	</images> 	
+	<menu>
+		<name><![CDATA[Visitor]]></name>
+		<url>/bitc/visitor.do</url>
+		<items>
+			<item selected="1">
+				<name><![CDATA[Home]]></name>
+				<url>/bitc/visitor.do</url>
+				<sub_menu>
+					<item selected="0">
+						<name><![CDATA[sub Button 1]]></name>
+						<url>/bitc/visitor.do</url>
+						<sub_menu>
+							<item selected="0">
+								<name><![CDATA[subsubButton 1]]></name>
+								<url>/bitc/visitor.do</url>
+							</item>
+							<item selected="1">
+								<name><![CDATA[subsubButton 2]]></name>
+								<url>/bitc/visitor.do</url>
+							</item>
+							<item selected="0">
+								<name><![CDATA[subsubButton 3]]></name>
+								<url>/bitc/visitor.do</url>
+							</item>
+						</sub_menu>	
+					</item>
+					<item selected="1">
+						<name><![CDATA[subButton 2]]></name>
+						<url>/bitc/visitor.do</url>
+						<sub_menu></sub_menu>
+					</item>
+					<item selected="0">
+						<name><![CDATA[subButton 3]]></name>
+						<url>/bitc/visitor.do</url>
+						<sub_menu></sub_menu>
+					</item>
+				</sub_menu>				
+			</item>  
+			<item selected="0">
+				<name><![CDATA[Meetings]]></name>
+				<url>/bitc/meeting.do</url>
+				<sub_menu>
+					<item selected="0">
+						<name><![CDATA[subButton 1]]></name>
+						<url>/bitc/visitor.do</url>
+					</item>
+					<item selected="1">
+						<name><![CDATA[subButton 2]]></name>
+						<url>/bitc/visitor.do</url>
+					</item>
+				</sub_menu>
+			</item>
+			<item selected="0">
+				<name><![CDATA[Home]]></name>
+				<url>/bitc/meeting.do</url>
+				<sub_menu>
+					<item selected="0">
+						<name><![CDATA[subButton 1]]></name>
+						<url>/bitc/visitor.do</url>
+					</item>
+					<item selected="1">
+						<name><![CDATA[subButton 2]]></name>
+						<url>/bitc/visitor.do</url>
+					</item>
+					<item selected="0">
+						<name><![CDATA[subButton 3]]></name>
+						<url>/bitc/visitor.do</url>
+					</item>
+				</sub_menu>
+			</item>
+		</items>
+	</menu>
+	<googleMap api_key="ABQIAAAAdTDEwtrkhNJ_uuztc0htNRTAS7LtrfQQ1JZ5efTq7Njl6vzxYhTvLwaYxE_e-bDwT3CgBtP4x005rg">
+		<item lat="4.356251" long="50.853682"><![CDATA[<p><strong>Musée  Magritte</strong></p><p>Rue du Test 3<br/>1000 Bruxelles</p>]]></item>
+		<item lat="4.356251" long="50.854682"><![CDATA[hop hop]]></item>
+	</googleMap>
+</top>

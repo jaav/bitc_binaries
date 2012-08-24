@@ -1,0 +1,1189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="KEYWORDS" content="" />
+<meta name="DESCRIPTION" content="" />
+<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery-tools.min.js"></script>
+<script type="text/javascript" src="../js/jquery-functions.js"></script>
+<script type="text/javascript" src="../js/jquery.smartTab.js"></script>
+<script type="text/javascript" src="../js/jquery.carousel.js"></script>
+<script type="text/javascript" src="../js/jquery.ui.core.js"></script>
+<script type="text/javascript" src="../js/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../js/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="../js/jquery.ui.datepicker-fr.js"></script>
+<script type="text/javascript" src="../js/jquery.dynacloud-5.js"></script>
+<script type="text/javascript" src="../js/jquery.flash.js"></script>
+<script type="text/javascript" src="../js/SpryValidationSelect.js"></script>
+<script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+jQuery(document).ready(function() {
+
+	openMainNav("0-1-4");
+	$("#main_nav_bg").mouseleave(function(e) {	
+		openMainNav("0-1-4");
+	})
+	
+	var enableDate=[[20,6,0]];
+	var diableDayOfWeek=[0,1];	
+	var disabledDate=[[25,12,2010],[15,6,0],[22,6,2010],[23,6,0]];
+	
+	/*DATEPICKER*/	
+	$(function() {		
+
+		$("#datePickerBegin").datepicker({
+			showOn: 'button',
+			buttonImage: '../img/ml/calendar.gif',
+			buttonImageOnly: true,		
+			minDate: 0, 
+			maxDate: '+1Y',
+			onSelect: function(dateText, inst) { 			 	
+				var day=dateText.substr(0,2);
+				var month=dateText.substr(3,2);
+				var year=dateText.substr(6,4);
+				var monthYear=year+"-"+month;
+				//alert(day +" "+monthYear)
+				$("#f_day_begin option").each(function(){
+							$(this).removeAttr("selected");						   
+							if(parseInt($(this).val())==parseInt(day)){
+								$(this).attr("selected","selected");	
+							}
+				})
+				
+				$("#f_month_begin option").each(function(){
+							$(this).removeAttr("selected");						   
+							if($(this).val()==monthYear){
+								$(this).attr("selected","selected");	
+							}
+				})
+				sprytextfield1.validate()
+				
+			}
+		})
+		$("#datePickerEnd").datepicker({
+			showOn: 'button',
+			buttonImage: '../img/ml/calendar.gif',
+			buttonImageOnly: true,		
+			minDate: 0, 
+			maxDate: '+1Y',
+			onSelect: function(dateText, inst) { 			 	
+				var day=dateText.substr(0,2);
+				var month=dateText.substr(3,2);
+				var year=dateText.substr(6,4);
+				var monthYear=year+"-"+month;
+				//alert(day +" "+monthYear)
+				$("#f_day_end option").each(function(){
+							$(this).removeAttr("selected");						   
+							if(parseInt($(this).val())==parseInt(day)){
+								$(this).attr("selected","selected");	
+							}
+				})
+				
+				$("#f_month_end option").each(function(){
+							$(this).removeAttr("selected");						   
+							if($(this).val()==monthYear){
+								$(this).attr("selected","selected");	
+							}
+				})
+				sprytextfield2.validate()
+				
+			}
+		})
+		$("#datePicker01").datepicker({
+			showOn: 'button',
+			buttonImage: '../img/ml/calendar.gif',
+			buttonImageOnly: true,		
+			minDate: 0, 
+			maxDate: '+1Y',
+			onSelect: function(dateText, inst) { 			 	
+				var day=dateText.substr(0,2);
+				var month=dateText.substr(3,2);
+				var year=dateText.substr(6,4);
+				var monthYear=year+"-"+month;
+				//alert(day +" "+monthYear)
+				sprytextfield01.validate()
+				
+			}
+		})
+		$("#datePicker02").datepicker({
+			showOn: 'button',
+			buttonImage: '../img/ml/calendar.gif',
+			buttonImageOnly: true,		
+			minDate: 0, 
+			maxDate: '+1Y',
+			onSelect: function(dateText, inst) { 			 	
+				var day=dateText.substr(0,2);
+				var month=dateText.substr(3,2);
+				var year=dateText.substr(6,4);
+				var monthYear=year+"-"+month;
+				//alert(day +" "+monthYear)
+				sprytextfield02.validate()
+				
+			}
+		})
+		$("#datepicker").datepicker({
+			showOn: 'button',
+			buttonImage: '../img/ml/calendar.gif',
+			buttonImageOnly: true,
+			beforeShowDay: isCheckable,
+			 onSelect: function(dateText, inst) { 
+			 }		  
+		});
+		
+	});
+		/*		COLLAPSE TOP */
+
+	
+/*Date Picker Available Days*/
+function isCheckable(day){
+		/*
+			Force Enable Day
+		*/
+		for(var k=0;k<enableDate.length;k++){
+			if(enableDate[k][2]==0 && day.getDate() ==enableDate[k][0] && day.getMonth() ==(enableDate[k][1]-1) ){
+				return [1,""];	
+			}else	if(day.getDate() ==enableDate[k][0] && day.getMonth() ==(enableDate[k][1]-1)  &&  day.getFullYear() == enableDate[k][2]){
+				
+				 return [1,""];	
+			}	
+		}
+		/*
+			Disable date & day
+		*/
+		
+		/*Day of week*/
+		for(var j=0;j<diableDayOfWeek.length;j++){
+				if(day.getDay()==diableDayOfWeek[j]){
+					return [0,""];	
+				}
+		}
+		for(var i=0;i<disabledDate.length;i++){
+			/*Bloc from weeks day*/
+			 if(disabledDate[i][2]==0 && day.getDate() ==disabledDate[i][0] && day.getMonth() ==(disabledDate[i][1]-1) ){
+				return [0,""];	
+			}else	if(day.getDate() ==disabledDate[i][0] && day.getMonth() ==(disabledDate[i][1]-1)  &&  day.getFullYear() == disabledDate[i][2]){
+				
+				 return [0,""];	
+			}	
+		}
+		return [1,""];			
+	}
+	
+	//JCAROUSEL - EXPERIENCE
+		
+		// Jcarousel 
+		function mycarousel_initCallback(carousel) {
+			jQuery('.jcarousel-control a').bind('click', function() {
+				carousel.scroll(jQuery.jcarousel.intval(jQuery(this).text()));
+				return false;
+			});
+		
+		
+			jQuery('#mycarousel-next').bind('click', function() {
+				carousel.next();
+				return false;
+			});
+		
+			jQuery('#mycarousel-prev').bind('click', function() {
+				carousel.prev();
+				return false;
+			});
+		};
+		
+		jQuery("#mycarousel").jcarousel({							
+			scroll: 1,
+			initCallback: mycarousel_initCallback,
+			wrap:"circular"
+		});
+		
+		// Jcarousel2 
+		function mycarousel_initCallback1(carousel1) {
+			jQuery('.jcarousel-control a').bind('click', function() {
+				carousel1.scroll(jQuery.jcarousel.intval(jQuery(this).text()));
+				return false;
+			});
+		
+		
+			jQuery('#mycarousel-next1').bind('click', function() {
+				carousel1.next();
+				return false;
+			});
+		
+			jQuery('#mycarousel-prev1').bind('click', function() {
+				carousel1.prev();
+				return false;
+			});
+			// Smart Tab   
+			$('#experience').smartTab({autoProgress: false,stopOnFocus:true,transitionEffect:'fade', progressInterval: 5000});
+		};
+
+		jQuery("#mycarousel1").jcarousel({
+			scroll: 1,
+			initCallback: mycarousel_initCallback1,
+			wrap:"circular"
+		});
+		scrollBy(($('#content').width()-$('body').width())/2,0);
+});
+window.onload=function(){
+	scrollBy(($('#content').width()-$('body').width())/2,0);	
+}
+</script>
+<link rel="stylesheet" type="text/css" href="../css/screen.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/print.css" media="print"/>
+<link rel="stylesheet" type="text/css" href="../css/jcarousel.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/scrollable.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/smart_tab.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/jquery.ui.datepicker.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/jquery.ui.theme.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/SpryValidationSelect_search.css" media="screen, projection"/>
+
+
+<title>BITC</title>
+</head>
+<body>
+<!--header:start-->
+<div id="top">
+  <div id="top_bg"></div>
+  <div id="top_content"> <a href="#" class="btn_map_view">Map view</a> <a href="#" class="collapse btn_collapse_up">Collapse</a>
+    <form id="f_search" action="#" method="get">
+      <input id="f_search_textfield" name="f_search_query" type="text" />
+      <input id="f_search_submit" name="f_search_submit" value="Search" type="submit" alt="Rechercher" />
+    </form>
+    <div class="clear"></div>
+    <div id="box_btn_lg"> <a href="#">NL</a> <a href="#">FR</a> </div>
+  </div>
+</div>
+<div id="collapse">
+  <div id="expand_content" style="z-index:0; position:relative">
+    <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1200" height="390">
+      <param name="movie" value="../swf/top.swf" />
+    <param name="quality" value="high" />
+    <param name="wmode" value="opaque" />
+    <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+    <param name="expressinstall" value="../swf/expressInstall.swf" />
+    <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="../swf/top.swf" width="1200" height="390">
+      <!--<![endif]-->
+      <param name="quality" value="high" />
+      <param name="wmode" value="opaque" />
+      <param name="swfversion" value="6.0.65.0" />
+      
+        <param name="flashvars" value="top_layer_path=../img/ml/top/top_layer_header.png" />
+      <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+      <param name="expressinstall" value="../swf/expressInstall.swf" />
+      <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
+      <!--[if !IE]>-->
+      <object type="application/x-shockwave-flash" data="../swf/top.swf" width="1200" height="390">
+        <!--<![endif]-->
+        <param name="quality" value="high" />
+        <param name="wmode" value="opaque" />
+        <param name="swfversion" value="6.0.65.0" />
+        <param name="expressinstall" value="../swf/expressInstall.swf" />
+        <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
+        <div>
+          <h4>Content on this page requires a newer version of Adobe Flash Player.</h4>
+          <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" width="112" height="33" /></a></p>
+        </div>
+        <!--[if !IE]>-->
+      </object>
+      <!--<![endif]-->
+    </object>
+    <!--<div id="myContent" style="z-index:1; position:relative;">
+		<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+	</div>-->
+  <div id="on_flash" style="z-index:5; position:absolute; width:320px; top:45px; right:120px; overflow:hidden;">
+    	<div style="margin-left:20px;position:relative;">
+    	<img src="../img/ml/top/collapse.png"  style="position:absolute; left:-20px; "/>
+    	
+    	<img src="../img/en/banner_trip_planner.jpg" />
+        
+         <!-- component book_stay:start -->
+        <div id="book_stay"> <img src="../img/en/title_book_stay.jpg"   alt="Book your stay" />
+          <form>
+            <fieldset>
+              <span id="tfv_room_type">
+              <label for="f_page">Type de chambre :</label>
+              <br clear="all" />
+              <select name="f_page" id="f_page" class="select_room_type">
+                <option value="">Choisissez</option>
+                <option value="1" >Type de chambre</option>
+                <option value="2" >Type de chambre</option>
+                <option value="3" >Type de chambre</option>
+              </select>
+              <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+              <div class="clr"></div>
+              <!--<div class="selectRequiredMsg">Veuillez faire un choix</div>-->
+              </span>
+              <div class="clr"></div>
+              <label for="f_page">Date d'arrivée :</label>
+              <br clear="all" />
+              <select name="f_day_begin" id="f_day_begin" class="select_days">
+                <option value="">Jours</option>
+                <option value="1" >01</option>
+                <option value="2" >02</option>
+                <option value="4" >03</option>
+                <option value="5" >04</option>
+                <option value="6" >05</option>
+                <option value="7" >06</option>
+                <option value="8" >07</option>
+                <option value="9" >08</option>
+                <option value="10" >09</option>
+                <option value="11" >11</option>
+                <option value="12" >12</option>
+                <option value="13" >13</option>
+                <option value="14" >14</option>
+                <option value="15" >15</option>
+                <option value="16" >16</option>
+                <option value="17" >17</option>
+                <option value="18" >18</option>
+                <option value="19" >19</option>
+                <option value="20" >20</option>
+                <option value="21" >21</option>
+                <option value="22" >22</option>
+                <option value="23" >23</option>
+                <option value="24" >24</option>
+                <option value="25" >25</option>
+                <option value="26" >26</option>
+                <option value="27" >27</option>
+                <option value="28" >28</option>
+                <option value="29" >29</option>
+                <option value="30" >30</option>
+                <option value="31" >31</option>
+              </select>
+              <span id="tfv_date_begin">
+              <select name="f_month_begin" id="f_month_begin" class="select_month">
+                <option value="">Mois</option>
+                <option value="2010-06" >Juin 2010</option>
+                <option value="2010-07" >Juiller 2010</option>
+                <option value="2010-08" >Août 2010</option>
+                <option value="2010-09" >Septembre 2010</option>
+                <option value="2010-10" >Octobre 2010</option>
+                <option value="2010-11" >Novembre 2010</option>
+                <option value="2010-12" >Décembre 2010</option>
+              </select>
+              <input type="hidden" id="datePickerBegin"  name="test"/>
+              <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+              <div class="clr"></div>
+              <!--<div class="selectRequiredMsg">Veuillez faire un choix</div>-->
+              </span>
+              <div class="clr"></div>
+              <label for="f_page">Date de départ :</label>
+              <br clear="all" />
+              <select name="f_day_end" id="f_day_end" class="select_days">
+                <option value="">Jours</option>
+                <option value="1" >01</option>
+                <option value="2" >02</option>
+                <option value="4" >03</option>
+                <option value="5" >04</option>
+                <option value="6" >05</option>
+                <option value="7" >06</option>
+                <option value="8" >07</option>
+                <option value="9" >08</option>
+                <option value="10" >09</option>
+                <option value="11" >11</option>
+                <option value="12" >12</option>
+                <option value="13" >13</option>
+                <option value="14" >14</option>
+                <option value="15" >15</option>
+                <option value="16" >16</option>
+                <option value="17" >17</option>
+                <option value="18" >18</option>
+                <option value="19" >19</option>
+                <option value="20" >20</option>
+                <option value="21" >21</option>
+                <option value="22" >22</option>
+                <option value="23" >23</option>
+                <option value="24" >24</option>
+                <option value="25" >25</option>
+                <option value="26" >26</option>
+                <option value="27" >27</option>
+                <option value="28" >28</option>
+                <option value="29" >29</option>
+                <option value="30" >30</option>
+                <option value="31" >31</option>
+              </select>
+              <span id="tfv_date_end">
+              <select name="f_month_end" id="f_month_end" class="select_month">
+                <option value="">Mois</option>
+                <option value="2010-06" >Juin 2010</option>
+                <option value="2010-07" >Juillet 2010</option>
+                <option value="2010-08" >Août 2010</option>
+                <option value="2010-09" >Septembre 2010</option>
+                <option value="2010-10" >Octobre 2010</option>
+                <option value="2010-11" >Novembre 2010</option>
+                <option value="2010-12" >Décembre 2010</option>
+              </select>
+              <input type="hidden" id="datePickerEnd" name="test"/>
+              <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+              <div class="clr"></div>
+              <!--<div class="selectRequiredMsg">Veuillez faire un choix</div>-->
+              </span>
+              <div class="clr"></div>
+              <input type="submit" value="Recherche" class="btn_search"/>
+              <div class="clr"></div>
+            </fieldset>
+          </form>
+        </div>
+        <!-- component book_stay:end -->
+        </div>
+    </div>
+  </div>
+  <div id="collapse_content"></div>
+</div>
+<!--header:end-->
+<!--mainnav:start-->
+<div id="main_nav_bg">
+  <div id="main_nav_level2" style="display:block"></div>
+  <div id="main_nav_level3" style="display:block"></div>
+  <div id="main_nav_content">
+    <ul id="main_nav">
+      <!--MENU1:start-->
+      <li><a href="#" title="Visitors">Visitors <img src="../img/ml/visu_home_main_nav.jpg" alt="Home" class="home"/></a>
+        <ul class="level2 alignLeft" style="display:block">
+          <li><a href="#" title="Guides and maps"><span class="arrow_down">Guides and maps</span></a>
+            <ul class="level3 alignLeft" style="display:block">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Attractions ans museums"><span class="arrow_down">Attractions ans museums</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Accommodation"><span class="arrow_down">Accommodation</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Eating and drinking"><span class="arrow_down">Eating and drinking</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Nightlife"><span class="arrow_down">Nightlife</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Information"><span class="arrow_down">Information</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <!--MENU1:end-->
+      <!--MENU2:start-->
+      <li><a href="#" title="Meetings">Meetings <img src="../img/ml/visu_home_main_nav.jpg" alt="Home" class="home"/></a>
+        <ul class="level2 alignLeft">
+          <li><a href="#" title="Guides and maps"><span class="arrow_down">Guides and maps</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Attractions ans museums"><span class="arrow_down">Attractions ans museums</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Accommodation"><span class="arrow_down">Accommodation</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Eating and drinking"><span class="arrow_down">Eating and drinking</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Nightlife"><span class="arrow_down">Nightlife</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Information"><span class="arrow_down">Information</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <!--MENU2:end-->
+      <!--MENU3:start-->
+      <li><a href="#" title="Travel Trade">Travel Trade <img src="../img/ml/visu_home_main_nav.jpg" alt="Home" class="home"/></a>
+        <ul class="level2 alignLeft">
+          <li><a href="#" title="Guides and maps"><span class="arrow_down">Guides and maps</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Attractions ans museums"><span class="arrow_down">Attractions ans museums</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Accommodation"><span class="arrow_down">Accommodation</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Eating and drinking"><span class="arrow_down">Eating and drinking</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Nightlife"><span class="arrow_down">Nightlife</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Information"><span class="arrow_down">Information</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <!--MENU3:end-->
+      <!--MENU4:start-->
+      <li><a href="#" title="Media Press">Media Press <img src="../img/ml/visu_home_main_nav.jpg" alt="Home" class="home"/></a>
+        <ul class="level2 alignLeft">
+          <li><a href="#" title="Guides and maps"><span class="arrow_down">Guides and maps</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Attractions ans museums"><span class="arrow_down">Attractions ans museums</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Accommodation"><span class="arrow_down">Accommodation</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Eating and drinking"><span class="arrow_down">Eating and drinking</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Nightlife"><span class="arrow_down">Nightlife</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+          <li><a href="#" title="Information"><span class="arrow_down">Information</span></a>
+            <ul class="level3 alignLeft">
+              <li><a href="#" title="Brochures">Brochures</a></li>
+              <li><a href="#" title="Promenades">Promenades</a></li>
+              <li><a href="#" title="Thématiques">Thématiques</a></li>
+              <li><a href="#" title="Plans par quartier">Plans par quartier</a></li>
+              <li><a href="#" title="Info tourisme">Info tourisme</a></li>
+              <li><a href="#" title="Audioguides">Audioguides</a></li>
+              <li><a href="#" title="Tours">Tours</a></li>
+              <li><a href="#" title="Visites guidées">Visites guidées</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <!--MENU4:end-->
+    <div id="box_login_facebook_connect">
+      <div id="login"><a href="#">Register</a> / <a href="#">Login</a></div>
+      <div id="or"> or</div>
+      <a href="#" id="facebook_connect"><img src="../img/ml/logo_facebook_connect.jpg" alt="facebook Connect"/></a></div>
+  </div>
+</div>
+<!--mainnav:end-->
+<!--content:start-->
+<div id="content" class="dynacloud"> <img src="../img/ml/visu_top_print_css.jpg" class="top_print"/>
+  <!--breadcrump:start-->
+  <ul id="breadcrump">
+    <li><a href="#">Home</a></li>
+    <li>-</li>
+    <li><a href="#">Level 1</a></li>
+    <li>-</li>
+    <li><a href="#">Level 2</a></li>
+  </ul>
+  <!--breadcrump:end-->
+  <div class="clear"></div>
+  <!--contentMain:start-->
+  <div id="content_main">
+    <!--firsthightlight:start-->
+    <div class="first_highlight_home">
+      <div class="scrollable" id="chained">
+        <div class="items">
+          <!-- Slide 1 -->
+          <div>
+            <div class="first_highlight_home_slide line_blue">
+              <h2>Frida Kahlo</h2>
+              <img src="../img/ml/visu_frida_kahlo_home.jpg" alt="Frida Kahlo"/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper congue odio id egestas. Nulla facilisi. Vestibulum at diam dui. Proin placerat lacus ac felis tristique pretium interdum nisi pulvinar. Non scelerisque ipsum gravida.</p>
+              <div class="btn">
+                <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+                <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a></div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div>
+            <div class="first_highlight_home_slide line_pink">
+              <h2>Frida Kahlo</h2>
+              <img src="../img/ml/visu_frida_kahlo_home.jpg" alt="Frida Kahlo"/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper congue odio id egestas. Nulla facilisi. Vestibulum at diam dui. Proin placerat lacus ac felis tristique pretium interdum nisi pulvinar. Non scelerisque ipsum gravida.</p>
+              <div class="btn">
+                <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+                <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a> </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div>
+            <div class="first_highlight_home_slide line_green">
+              <h2>Frida Kahlo</h2>
+              <img src="../img/ml/visu_frida_kahlo_home.jpg" alt="Frida Kahlo"/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper congue odio id egestas. Nulla facilisi. Vestibulum at diam dui. Proin placerat lacus ac felis tristique pretium interdum nisi pulvinar. Non scelerisque ipsum gravida.</p>
+              <div class="btn">
+                <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+                <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a></div>
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div>
+            <div class="first_highlight_home_slide line_beige">
+              <h2>Frida Kahlo</h2>
+              <img src="../img/ml/visu_frida_kahlo_home.jpg" alt="Frida Kahlo"/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper congue odio id egestas. Nulla facilisi. Vestibulum at diam dui. Proin placerat lacus ac felis tristique pretium interdum nisi pulvinar. Non scelerisque ipsum gravida.</p>
+              <div class="btn">
+                <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+                <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a></div>
+            </div>
+          </div>
+          <!-- Slide 5 -->
+          <div>
+            <div class="first_highlight_home_slide line_pink">
+              <h2>Frida Kahlo</h2>
+              <img src="../img/ml/visu_frida_kahlo_home.jpg" alt="Frida Kahlo"/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper congue odio id egestas. Nulla facilisi. Vestibulum at diam dui. Proin placerat lacus ac felis tristique pretium interdum nisi pulvinar. Non scelerisque ipsum gravida.</p>
+              <div class="btn">
+                <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+                <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navi"><a href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a></div>
+    </div>
+    <!--firsthightlight:end-->
+    <!--ticker:start-->
+    <div id="ticker">
+      <div> <a class="prev_1 browse left"><strong>&lt;</strong></a>
+        <div class="scrollable" id="chained2" >
+          <div class="items">
+            <!-- Slide 1 -->
+            <div>
+             <div class="ticker"><img src="../img/ml/picto_news.jpg" alt=""/><p>Bruxelles Les Bains.    <strong>02/07/2010 - 22/08/2010</strong></p> 
+             <div class="clr"></div></div>
+            </div>
+            <!-- Slide 2 -->
+            <div>
+            <div class="ticker"><img src="../img/ml/picto_news.jpg" alt=""/><p>Bruxelles Les Bains.    <strong>02/07/2010 - 22/08/2010</strong></p> 
+            <div class="clr"></div></div>
+            </div>
+            <!-- Slide 3 -->
+            <div>
+             <div class="ticker"><img src="../img/ml/picto_news.jpg" alt=""/><p>Bruxelles Les Bains.    <strong>02/07/2010 - 22/08/2010</strong></p> 
+             <div class="clr"></div></div>
+            </div>
+          </div>
+        </div>
+        <a class="next_1 browse right"><strong>&gt;</strong></a> </div>
+    </div>
+    <span class="second_highlight_home float_right line_green"><img src="../img/ml/visu_brussels_card_home.jpg" alt="#"/></span>
+    <!--ticker:end-->
+    <!--secondethightlight:start-->
+    <div class="second_highlight_home float_left line_blue">
+      <h3>Brussels card</h3>
+      <img src="../img/ml/visu_brussels_card_home.jpg" alt="#"/>
+      <p>La Brussels Card 24/ 48/ 72h, vous offre l’accès gratuit à plus de 30 musées, au réseau de transport en communs et des ristournes dans des boutiques. </p>
+      <div class="btn">
+        <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+        <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a> <a href="#" class="share"><img src="../img/ml/btn_share.gif" alt="Share"/></a> <a href="#" class="ilike"><img src="../img/ml/btn_ilike.gif" alt="I like"/></a> <a href="#" class="add"><img src="../img/ml/btn_add.gif" alt="Add"/></a> </div>
+    </div>
+    <div class="second_highlight_home float_right line_green">
+      <h3>Brussels card</h3>
+      <p>La Brussels Card 24/ 48/ 72h, vous offre l’accès gratuit à plus de 30 musées, au réseau de transport en communs et des ristournes dans des boutiques. </p>
+      <div class="btn">
+        <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+        <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a> <a href="#" class="share"><img src="../img/ml/btn_share.gif" alt="Share"/></a> <a href="#" class="ilike"><img src="../img/ml/btn_ilike.gif" alt="I like"/></a> <a href="#" class="add"><img src="../img/ml/btn_add.gif" alt="Add"/></a> </div>
+    </div>
+    <div class="clr"></div>
+    <div class="second_highlight_home float_left line_beige">
+      <h3>Brussels card</h3>
+      <img src="../img/ml/visu_brussels_card_home.jpg" alt="#"/>
+      <p>La Brussels Card 24/ 48/ 72h, vous offre l’accès gratuit à plus de 30 musées, au réseau de transport en communs et des ristournes dans des boutiques. </p>
+      <div class="btn">
+        <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+        <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a> <a href="#" class="share"><img src="../img/ml/btn_share.gif" alt="Share"/></a> <a href="#" class="ilike"><img src="../img/ml/btn_ilike.gif" alt="I like"/></a> <a href="#" class="add"><img src="../img/ml/btn_add.gif" alt="Add"/></a> </div>
+    </div>
+    <div class="second_highlight_home float_right line_pink">
+      <h3>Brussels card</h3>
+      <img src="../img/ml/visu_brussels_card_home.jpg" alt="#"/>
+      <p>La Brussels Card 24/ 48/ 72h, vous offre l’accès gratuit à plus de 30 musées, au réseau de transport en communs et des ristournes dans des boutiques. </p>
+      <div class="btn">
+        <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+        <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a> <a href="#" class="share"><img src="../img/ml/btn_share.gif" alt="Share"/></a> <a href="#" class="ilike"><img src="../img/ml/btn_ilike.gif" alt="I like"/></a> <a href="#" class="add"><img src="../img/ml/btn_add.gif" alt="Add"/></a> </div>
+    </div>
+    <div class="clr"></div>
+    <!--secondethightlight:end-->
+    <!--thirdHighlightHome:start-->
+    <ul class="third_highlight_home">
+      <li> <img src="../img/ml/visu_tour_france_home.jpg" alt=""/>
+        <div class="txt">
+          <h5>fsdlfkmsldfksld f</h5>
+          <p>dfgfdgdfgfdgdfgdfg dfgd fg df g dfg d fg d fg fg lksdfj sdkfj lkfj lkjfd lskjf lskjdf lskdjf lksdjflksjd flkjd...</p>
+        </div>
+        <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+        <div class="clr"></div>
+      </li>
+      <li> <img src="../img/ml/visu_tour_france_home.jpg" alt="" />
+        <div class="txt">
+          <h5>fsdlfkmsldfksld f</h5>
+          <p>dfgfdgdfgfdgdfgdfg dfgd fg df g dfg d fg d fg fg lksdfj sdkfj lkfj lkjfd lskjf lskjdf lskdjf lksdjflksjd flkjd...</p>
+        </div>
+        <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+        <div class="clr"></div>
+      </li>
+      <li> <img src="../img/ml/visu_tour_france_home.jpg" alt="" />
+        <div class="txt">
+          <h5>fsdlfkmsldfksld f</h5>
+          <p>dfgfdgdfgfdgdfgdfg dfgd fg df g dfg d fg d fg fg lksdfj sdkfj lkfj lkjfd lskjf lskjdf lskdjf lksdjflksjd flkjd...</p>
+        </div>
+        <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+        <div class="clr"></div>
+      </li>
+      <li> <img src="../img/ml/visu_tour_france_home.jpg" alt="" />
+        <div class="txt">
+          <h5>fsdlfkmsldfksld f</h5>
+          <p>dfgfdgdfgfdgdfgdfg dfgd fg df g dfg d fg d fg fg lksdfj sdkfj lkfj lkjfd lskjf lskjdf lskdjf lksdjflksjd flkjd...</p>
+        </div>
+        <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+        <div class="clr"></div>
+      </li>
+    </ul>
+    <!--thirdHighlightHome:end-->
+  </div>
+  <!--contentMain:end-->
+  <!--contentSub:start-->
+  <div id="content_sub">
+    <!-- component experience:start -->
+    <div id="experience" class="stContainer">
+      <ul id="tabs">
+        <li> <a href="#tabs-1" id="tab1">
+          <h2>You are</h2>
+          </a> </li>
+        <li> <a href="#tabs-2" id="tab2">
+          <h2>You want</h2>
+          </a> </li>
+      </ul>
+      <div id="tabs-1"> <a href="javascript:void(0)" id="mycarousel-prev"><img src="../img/ml/arrow_left_promo.jpg" alt="#"/></a>
+        <ul id="mycarousel" class="first-and-second-carousel jcarousel-skin-tango">
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_couple.png" alt="" /><br />
+            Couple</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_family.png" alt="" /><br />
+            Family</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_gay.png" alt="" /><br />
+            Gay&amp;Lesbian</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_couple.png" alt="" /><br />
+            Couple</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_family.png" alt="" /><br />
+            Family</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_gay.png" alt="" /><br />
+            Gay&amp;Lesbian</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_couple.png" alt="" /><br />
+            Couple</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_family.png" alt="" /><br />
+            Family</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_gay.png" alt="" /><br />
+            Gay&amp;Lesbian</a></li>
+        </ul>
+        <a href="javascript:void(0)" id="mycarousel-next"><img src="../img/ml/arrow_right_promo.jpg" alt="#"/></a> </div>
+      <div id="tabs-2" style="display:block"> <a href="javascript:void(0)" id="mycarousel-prev1"><img src="../img/ml/arrow_left_promo.jpg" alt="#"/></a>
+        <ul id="mycarousel1" class="first-and-second-carousel jcarousel-skin-tango">
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_gastronomy.png" alt="" /><br />
+            Gastronomy</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_green.png" alt="" /><br />
+            Green</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_lifestyle.png" alt="" /><br />
+            Lifestyle</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_gastronomy.png" alt="" /><br />
+            Gastronomy</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_green.png" alt="" /><br />
+            Green</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_lifestyle.png" alt="" /><br />
+            Lifestyle</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_gastronomy.png" alt="" /><br />
+            Gastronomy</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_green.png" alt="" /><br />
+            Green</a></li>
+          <li><a href="http://www.bitc.be"><img width="65" height="65" src="../img/ml/picto_lifestyle.png" alt="" /><br />
+            Lifestyle</a></li>
+        </ul>
+        <a href="javascript:void(0)" id="mycarousel-next1"><img src="../img/ml/arrow_right_promo.jpg" alt="#"/></a> </div>
+    </div>
+    <!-- component experience:end -->
+    <!-- component tagcloud:start -->
+    <div id="tagcloud">
+      <h2>Most Liked</h2>
+      <div id="dynacloud"></div>
+    </div>
+    <!-- component tagcloud:end -->
+    <!-- component follow us:start -->
+    <div id="follow_us">
+      <h2>Follow us</h2>
+      <a href="#"><img src="../img/ml/logo_facebook.jpg" alt="facebook"/></a> <a href="#"><img src="../img/ml/logo_rss.jpg" alt="RSS"/></a> <a href="#"><img src="../img/ml/logo_tweeter.jpg" alt="Tweeter"/></a> <a href="#"><img src="../img/ml/logo_youtube.jpg" alt="You tube"/></a> <a href="#"><img src="../img/ml/logo_flickr.jpg" alt="Flickr"/></a> </div>
+    <!-- component follow us:end -->
+    <!-- banner brussels toolbox:start -->
+    <a href="#"><img src="../img/en/banner_brussels_toolbox.jpg" alt="Trip Planner" class="banner"/></a>
+    <!-- banner brussels toolbox:end -->
+    <!-- banner congress:start -->
+    <a href="#"><img src="../img/fr/banner_congress.jpg" alt="Inscrivez votre congrés" class="banner"/></a>
+    <!-- banner congress:end -->
+    <!-- banner trip planner:start -->
+    <a href="#"><img src="../img/en/banner_trip_planner.jpg" alt="Brussels Toolbox" class="banner"/></a>
+    <!-- banner trip planner:end -->
+    <!-- banner RFP:start -->
+    <a href="#"><img src="../img/en/banner_rfp.jpg" alt="Meeting planner" class="banner"/></a>
+    <!-- banner RFP:end -->
+    <!-- component promo:start -->
+    <div id="promo">
+      <h2>Promo</h2>
+      <div> <a class="prev_1 browse left"><img src="../img/ml/arrow_left_promo.jpg" alt="#"/></a>
+        <div class="scrollable" id="scrollable" >
+          <div class="items">
+            <!-- Slide 1 -->
+            <div>
+              <h3>Hotel Coste *</h3>
+              <img src="../img/ml/visu_promo.jpg" alt="#"/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at tincidunt massa. Etiam sed nulla mi, vel mollis.</p>
+            </div>
+            <!-- Slide 2 -->
+            <div>
+              <h3>Hotel Coste **</h3>
+              <img src="../img/ml/visu_promo.jpg" alt="#"/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at tincidunt massa. Etiam sed nulla mi, vel mollis.</p>
+            </div>
+            <!-- Slide 3 -->
+            <div>
+              <h3>Hotel Coste ***</h3>
+              <img src="../img/ml/visu_promo.jpg" alt="#"/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at tincidunt massa. Etiam sed nulla mi, vel mollis.</p>
+            </div>
+          </div>
+        </div>
+        <a class="next_1 browse right"><img src="../img/ml/arrow_right_promo.jpg" alt="#"/></a> </div>
+    </div>
+    <!-- component promo:end -->
+    <!-- component arsene50:start -->
+    <div id="arsene50">
+      <h2 class="float_left">Last Minute</h2>
+      <img src="../img/ml/logo_arsene50.jpg" alt="" class="float_left"/>
+      <div class="clr"></div>
+      <h3 class="txt_red">avec Arsène 50</h3>
+      <script  type="text/javascript" src="http://fondation.dev.studiorvb.com/fr/feed/arsene.js"></script>
+    </div>
+    <!-- component arsene50:end -->
+    <!-- component fans_facebook:start -->
+    <fb:fan class="FB_fan FB_ElementReady" profile_id="114885670293" connections="10">
+      <iframe id="fans_facebook" name="fbfanIFrame_0" allowtransparency="true" src="http://www.connect.facebook.com/widgets/fan.php?api_key=d33e7cb1d71ae20b65027ccaffe891ce&amp;channel_url=http%3A%2F%2Fwww.brusselsinternational.be%2Fwabxlint%2Ffr%2Fvisiteur%2Fbruxelles-tourisme-visite.act%3Ffbc_channel%3D1&amp;id=114885670293&amp;name=&amp;width=358&amp;connections=10&amp;stream=&amp;logobar=&amp;css=" class="FB_SERVER_IFRAME" scrolling="no" frameborder="0"></iframe>
+    </fb:fan>
+    <!-- component fans_facebook:end -->
+    <!-- component meteo:start -->
+    <div id="meteo"> <ilayer>
+      <iframe src="http://www.meteobelgium.be/service/fr/code/index.php?code=1000&type=ville&choix=1"
+    allowtransparency="true" align="center" frameborder="0"
+    scrolling="no" > </iframe>
+      </ilayer> </div>
+    <!-- component meteo:end -->
+  </div>
+  <!--contentSub:end-->
+  <div class="clr"></div>
+</div>
+<!--content:end-->
+<!--navSub:start-->
+<div id="nav_sub">
+  <div id="nav_sub_content">
+    <h2>EXPLORE</h2>
+    <ul>
+      <li>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+      </li>
+      <div class="clr"></div>
+      <li>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+      </li>
+      <div class="clr"></div>
+    </ul>
+  </div>
+</div>
+<!--navSub:end-->
+<!--footer:start-->
+<div id="footer">
+  <div id="footer_content">
+    <div id="logo_brussels_city"><img src="../img/ml/logo_brussels_city.png" alt="Ville de Bruxelles"/></div>
+    <div id="logo_brussels_iris"><img src="../img/ml/logo_brussels_iris.png" alt="Région Bruxelles Capitale"/></div>
+    <div id="logo_cocof"><img src="../img/ml/logo_cocof.png" alt="COCOF"/></div>
+    <div id="logo_vlaams_community"><img src="../img/ml/logo_vlaams_community.png" alt=""/></div>
+    <div id="logo_bitc"><img src="../img/ml/logo_bitc.jpg" alt="BITC"/></div>
+    <hr/>
+    <div id="site_info">© 2010 - BITC - All rights reserved - Powered by <a href="#">Wanabe</a></div>
+    <ul id="footer_nav_sub">
+      <li><a href="#">About us</a></li>
+      <li>|</li>
+      <li><a href="#">Contact us</a></li>
+      <li>|</li>
+      <li><a href="#">Jobs</a></li>
+    </ul>
+  </div>
+</div>
+<!--footer:end-->
+<script type="text/javascript">
+<!--
+swfobject.registerObject("FlashID");
+
+//-->
+</script>
+<script type="text/javascript">
+var sprytextfield1 = new Spry.Widget.ValidationSelect("tfv_date_begin", {validateOn:["blur, change"]});
+var sprytextfield2 = new Spry.Widget.ValidationSelect("tfv_date_end", {validateOn:["blur, change"]});
+var sprytextfield3 = new Spry.Widget.ValidationSelect("tfv_room_type", {validateOn:["blur, change"]});
+</script>
+</body>
+</html>

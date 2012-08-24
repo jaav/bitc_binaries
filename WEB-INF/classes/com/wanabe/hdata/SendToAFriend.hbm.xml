@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 04-mars-2009 11:11:21 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.hdata.SendToAFriend" table="send_to_a_friend">
+        <id name="sendToAFriendId" type="java.lang.Integer">
+            <column name="send_to_a_friend_id" />
+            <generator class="identity" />
+        </id>
+         <property name="fromUserId" type="java.lang.Integer">
+        	<column name="from_user_id" />
+        </property>
+        <property name="fromLastname" type="string">
+            <column name="from_lastname" length="50" />
+        </property>
+        <property name="fromFirstname" type="string">
+            <column name="from_firstname" length="50" />
+        </property>
+        <property name="fromEmail" type="string">
+            <column name="from_email" length="80" />
+        </property>
+        <property name="toLastname" type="string">
+            <column name="to_lastname" length="50" />
+        </property>
+        <property name="toFirstname" type="string">
+            <column name="to_firstname" length="50" />
+        </property>
+        <property name="toEmail" type="string">
+            <column name="to_email" length="80" />
+        </property>
+        <property name="toLanguageid" type="string">
+            <column name="to_languageid" length="2" />
+        </property>
+        <property name="message" type="string">
+            <column name="message" length="500" />
+        </property>
+        <property name="url" type="string">
+            <column name="url" length="250" />
+        </property>
+        <property name="fromInCopy" type="java.lang.Integer">
+            <column name="from_in_copy" />
+        </property>
+        <property name="createdOn" type="date">
+            <column name="created_on" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

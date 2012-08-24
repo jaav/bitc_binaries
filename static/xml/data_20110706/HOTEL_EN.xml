@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+	<group>HOTEL</group>
+	<language>EN</language>
+	<exported_date>20110706</exported_date>
+	<num_items>1</num_items>
+	<items>
+		<item id="1999">
+			<title><![CDATA[Hotel Cascade Midi]]></title>
+			<small_image>http://aff.bstatic.com/images/hotel/square60/378/3781556.gif</small_image>
+			<body><![CDATA[<div>Cascade Midi offers sound-proofed rooms with modern décor and flat-screen satellite TV, opposite Brussels-Midi Railway Station. It features car hire, a bar and breakfast room overlooking the garden terrace. Each of the air-conditioned rooms at Hotel Cascade Midi feature a small seating area with a table, a work desk and a minibar. The rooms benefit from oriental-inspired décor with shades of bamboo and black. Hotel Cascade is a 15-minute walk from the Manneken Pis Statue and Grand Place is 20 minutes' walk away. The Avenue Louise shopping district is only 3 metro stops from Zuidstation Metro which is 170 metres away from the hotel.</div>]]></body>
+			<address><![CDATA[Avenue Fonsny, 5-7/Avenue Fonsny, 5-7]]></address>
+			<city><![CDATA[Bruxelles/Brussels]]></city>
+			<zipcode>1060</zipcode>
+			<phone></phone>
+			<fax></fax>
+			<email></email>
+			<website>http://www.booking.com/hotel/be/cascade-midi.html</website>
+			<latitude>50.836951</latitude>
+			<longitude>4.339883</longitude>
+			<position>0</position>
+			<ranking>4</ranking>
+			<source_id>288205</source_id>
+			<price>65</price>
+		</item>
+		
+	</items>
+</content>

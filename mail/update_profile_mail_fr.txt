@@ -1,0 +1,23 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Bonjour &FIRSTNAME;,
+
+Vous avez demandé de changer votre adresse e-mail sur le site
+de Bruxelles International.
+
+Vous pouvez contrôler votre nouvelle adresse e-mail.
+Merci de cliquer sur le lien pour confirmer ce changement. 
+
+ 	
+Votre nouvelle adresse e-mail : &NEW_EMAIL;
+
+
+Cliquez ici pour confirmer le changement
+http://bitcv2.wanabe.be:8080/bitc/front/user/confirmNewEmail.do
+
+
+Cordialement,
+L'équipe de Bruxelles-International
+--------------------------------------------------------------------------------

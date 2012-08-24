@@ -1,0 +1,20 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Cher partenaire,
+
+ Une Nouvelle reponse a voutre deal a ete accepte .
+
+  Les defferentes Informations de reponse sont:    
+                  Organisme :  &ORGANISME; 
+                  Nom :       &FIRSTNAME;  
+                  Prénom :    &LASNAME;   
+                  Téléphone :&PHONE;   
+                  E-mail : &EMAIL; 
+                  Nombre de participants :&NBREPARTS; 
+                  Logement : &LOGEMENT;   
+                  Message : &MESSAGE;
+
+Meilleures salutations,
+La Visitbrussels MICE Team.

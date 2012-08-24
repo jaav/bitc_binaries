@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-mars-2009 23:50:02 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.wanabe.template.hdata.TemplateZone" table="template_zone" >
+        <comment></comment>
+        <id name="templateZoneId" type="int">
+            <column name="template_zone_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="templatePage" class="com.wanabe.template.hdata.TemplatePage" fetch="select">
+            <column name="template_page_id" />
+        </many-to-one>
+        <property name="position" type="java.lang.Integer">
+            <column name="position">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="algorithm" type="string">
+            <column name="algorithm" length="50" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="paramValues" type="string">
+            <column name="param_values" length="100">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

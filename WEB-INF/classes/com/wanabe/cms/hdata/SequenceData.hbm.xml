@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-f?vr.-2009 16:07:30 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.cms.hdata.SequenceData" table="sequence_data">
+        <id name="sequenceName" type="string">
+            <column name="sequence_name" length="100" />
+            <generator class="assigned" />
+        </id>
+        <property name="sequenceIncrement" type="int">
+            <column name="sequence_increment" not-null="true" />
+        </property>
+        <property name="sequenceMinValue" type="int">
+            <column name="sequence_min_value" not-null="true" />
+        </property>
+        <property name="sequenceMaxValue" type="long">
+            <column name="sequence_max_value" not-null="true" />
+        </property>
+        <property name="sequenceCurValue" type="java.lang.Long">
+            <column name="sequence_cur_value" />
+        </property>
+        <property name="sequenceCycle" type="boolean">
+            <column name="sequence_cycle" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

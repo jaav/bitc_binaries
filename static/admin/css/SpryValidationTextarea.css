@@ -1,0 +1,67 @@
+/* SpryFormValidation.css - Revision: Spry Preview Release 1.4 */
+
+/*TEXTE ERROR*/
+.textareaRequiredMsg, .textareaRequiredMsg3, .textareaInvalidFormatMsg, .textareaMinCharsMsg, .textareaMaxCharsMsg, .textareaRequiredMsgSeminar {
+	display:none;
+}
+
+#error img {padding-left:10px;}
+
+#valid img {padding-left:10px;}
+
+#sprytextarea1{margin-left:70px;}
+#sprytextarea2{margin-left:10px;}
+.textareaRequiredState .textareaRequiredMsg, .textareaInvalidFormatState .textareaInvalidFormatMsg, .textareaMinValueState .textareaMinValueMsg, .textareaMaxValueState .textareaMaxValueMsg, .textareaMinCharsState .textareaMinCharsMsg, .textareaMaxCharsState .textareaMaxCharsMsg {
+	display:block;
+	padding-left:32%;
+	color:#d40072;
+	font-size:12px;
+	font-weight:normal;
+}
+.textareaRequiredMsg2 {
+	display:block;
+	margin-left:260px;
+	margin-bottom:25px;
+	line-height:12px;
+	color:#d40072;
+	font-size:10px;
+	font-weight:normal;
+	width:230px;
+}
+.textareaRequiredMsg3 {
+	display:block;
+	margin-left:200px;
+	margin-bottom:25px;
+	line-height:12px;
+	color:#d40072;
+	font-size:10px;
+	font-weight:normal;
+	width:230px;
+}
+.countsprytextarea{	
+	display:block;
+	margin-bottom:25px;
+	line-height:12px;
+	color:#d40072;
+	font-size:10px;
+	font-weight:normal;
+	width:230px;
+}
+.textareaRequiredState .textareaRequiredMsgSeminar {
+	display:block;
+	line-height:12px;
+	color:#d40072;
+	font-size:12px;
+	font-weight:normal;
+}
+/*TO BE CONTINUED FOR SPRY IN TABBEDPANELS*/
+.textareaRequiredState .textareaRequiredMsg.genericErrorMsg, .textareaInvalidFormatState .textareaInvalidFormatMsg.genericErrorMsg, .textareaMinValueState .textareaMinValueMsg.genericErrorMsg, .textareaMaxValueState .textareaMaxValueMsg.genericErrorMsg, .textareaMinCharsState .textareaMinCharsMsg.genericErrorMsg, .textareaMaxCharsState .textareaMaxCharsMsg.genericErrorMsg {
+	display:block;
+	line-height:12px;
+	color:#d40072;
+	font-size:12px;
+	font-weight:normal;
+	position:absolute;
+	top:0;
+	right:30px;
+}

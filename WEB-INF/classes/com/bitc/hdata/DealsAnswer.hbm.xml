@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13 juil. 2010 11:25:47 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.hdata.DealsAnswer" table="deals_answer" >
+        <id name="Id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="contentDeals" class="com.bitc.cms.hdata.ContentDeals" fetch="select" >
+            <column name="deals_id" not-null="true" />
+        </many-to-one>
+        <property name="organisme" type="string">
+            <column name="organisme" length="100" not-null="true" />
+        </property>
+          <property name="lastname" type="string">
+            <column name="lastname" length="100" not-null="true"/>
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="100" not-null="true"/>
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" not-null="true"/>
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="20" not-null="true"/>
+        </property>
+        <property name="info" type="string">
+            <column name="info" length="1000" />
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" not-null="true"/>
+        </property>
+     
+     <property name="stay" type="boolean">
+            <column name="stay"   />
+        </property>
+         <property name="optin" type="boolean">
+            <column name="optin"   />
+        </property>
+        <property name="numParticipant" type="java.lang.Integer">
+            <column name="numParticipant" not-null="true"/>
+        </property>
+         <property name="status" type="string">
+            <column name="status" not-null="true"/>
+        </property>
+ 
+    </class>
+</hibernate-mapping>

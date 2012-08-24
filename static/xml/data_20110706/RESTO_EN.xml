@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+	<group>RESTO</group>
+	<language>EN</language>
+	<exported_date>20110706</exported_date>
+	<num_items>1</num_items>
+	<items>
+		<item id="89">
+			<title><![CDATA[LE FLORENCE]]></title>
+			<small_image>http://www.resto.be/ware/images/visus/photos/464.jpg</small_image>
+			<body><![CDATA[]]></body>
+			<address><![CDATA[4,Rue H.Deleers]]></address>
+			<city><![CDATA[BRUXELLES ( ANDERLECHT )/BRUSSEL ( ANDERLECHT )]]></city>
+			<zipcode>1070</zipcode>
+			<phone>02.520.35.03</phone>
+			<fax>02.520.08.04</fax>
+			<email></email>
+			<website>http://www.leflorence.be</website>
+			<latitude>50.825371</latitude>
+			<longitude>4.299051</longitude>
+			<position>0</position>
+			<ranking>2</ranking>
+			<cuisines>
+				<cuisine><![CDATA[Française]]></cuisine>
+				<cuisine><![CDATA[Du Terroir]]></cuisine>
+			</cuisines>
+			<price><![CDATA[± 40 EUR]]></price>
+		</item>
+	</items>
+</content>

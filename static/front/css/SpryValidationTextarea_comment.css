@@ -1,0 +1,49 @@
+/*Validation Textarea styling classes*/
+/*IMAGE VALID*/
+.validMsg {
+	display:none;
+}
+.textareaValidState .validMsg {
+	display:inline;
+	margin:10px 0 0 10px;
+}
+/*IMAGE ERROR*/
+.errorMsg {
+	display:none;
+}
+
+.textareaRequiredState .errorMsg, .textareaRequiredMsg .errorMsg, .textareadInvalidFormatState .errorMsg, .textareaInvalidFormatMsg .errorMsg, .textareaMinValueState .textareaMinValueMsg .errorMsg, .textareaMaxValueState .textareaMaxValueMsg .errorMsg, .textareaMinCharsState .errorMsg, .textareaMinCharsMsg .errorMsg, .textareaMaxCharsState .errorMsg, .textareaMaxCharsMsg .errorMsg {
+	display:inline;
+	margin:10px 0 0 10px;
+
+}
+.textareaRequiredState .textareaRequiredMsg,
+.textareaMinCharsState .textareaMinCharsMsg,
+.textareaMaxCharsState .textareaMaxCharsMsg{
+	display:inline;
+	margin:10px 0 0 10px;
+}
+/*TEXTE ERROR*/
+.textareaRequiredMsg, .textareaRequiredMsg2, .textareaRequiredMsg3, .textareaInvalidFormatMsg, .textareaMinCharsMsg, .textareaMaxCharsMsg {
+	display:none;
+}
+.textareaRequiredState .textareaRequiredMsg,
+.textareaInvalidFormatState .textareaInvalidFormatMsg,
+.textareaMinValueState .textareaMinValueMsg,
+.textareaMaxValueState .textareaMaxValueMsg,
+.textareaMinCharsState .textareaMinCharsMsg,
+.textareaMaxCharsState .textareaMaxCharsMsg {
+	display:block;
+	margin-left:10px;
+	margin-bottom:25px;
+	line-height:12px;
+	color:#fa869b;
+	font-size:10px;
+	font-weight:normal;
+}
+
+.textareaValidState textarea, textarea.textareaValidState {}
+textarea.textareaRequiredState, .textareaRequiredState textarea, textarea.textareaMinCharsState, .textareaMinCharsState textarea, textarea.textareaMaxCharsState, .textareaMaxCharsState textarea {}
+.textareaFocusState textarea, textarea.textareaFocusState {}
+.textareaFlashState textarea, textarea.textareaFlashState{}
+textarea.textareaHintState, .textareaHintState textarea{}

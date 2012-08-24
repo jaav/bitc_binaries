@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+	<group>CULTURE</group>
+	<language>EN</language>
+	<exported_date>20110706</exported_date>
+	<num_items>1</num_items>
+	<items>
+		<item id="23314">
+			<title><![CDATA[Ommegang 2012]]></title>
+			<small_image>http://visitbrussels.be/bitc/static/front/img/db/ContentEvent_4074/img_3554.jpg</small_image>
+			<body><![CDATA[<div>Once more, Ommegang opens its doors to give you breathtaking folklore, magic and animations. More than 1400 performers will help you relive a history (1549, the procession of Charles Quint) under the vigilant eye of the director Giles Daoust who will oversee sound and light for the sixth year in a row.</div>]]></body>
+			<address><![CDATA[Grand-Place/Grote Markt]]></address>
+			<city><![CDATA[Bruxelles/Brussel]]></city>
+			<zipcode>1000</zipcode>
+			<phone>02-512.19.61</phone>
+			<fax></fax>
+			<email>ommegang-brussels@skynet.be</email>
+			<website>http://www.ommegang.be</website>
+			<latitude>50.846975</latitude>
+			<longitude>4.351816</longitude>
+			<position>0</position>
+			<period_from_date>20120703</period_from_date>
+			<period_to_date>20120705</period_to_date>
+		</item>	
+	</items>
+</content>

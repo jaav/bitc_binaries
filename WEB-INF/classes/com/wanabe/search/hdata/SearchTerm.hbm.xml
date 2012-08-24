@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-avr.-2009 15:44:30 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.wanabe.search.hdata.SearchTerm" table="search_term">
+        <comment></comment>
+        <id name="searchTermId" type="java.lang.Integer">
+            <column name="search_term_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="master" class="com.wanabe.search.hdata.SearchTerm" fetch="select">
+            <column name="master_id">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="type" type="string">
+            <column name="type" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="terms" type="string">
+            <column name="terms" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="occurence" type="java.lang.Integer">
+            <column name="occurence">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lastModifiedOn" type="timestamp">
+            <column name="last_modified_on" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="culture" type="string">
+            <column name="culture" length="7">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="slaves" inverse="true">
+            <key>
+                <column name="master_id">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.wanabe.search.hdata.SearchTerm" />
+        </set>
+    </class>
+</hibernate-mapping>

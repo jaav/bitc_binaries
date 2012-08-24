@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-nov.-2009 10:52:38 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.wanabe.eshop.hdata.EsOrder" table="es_order">
+        <comment></comment>
+        <id name="orderId" type="int">
+            <column name="order_id" />
+            <generator class="identity" />
+        </id>
+        <property name="orderCid" type="string">
+            <column name="order_cid" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="orderStatus" type="string">
+            <column name="order_status" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceUserId" type="java.lang.Integer">
+            <column name="invoice_user_id">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceLastname" type="string">
+            <column name="invoice_lastname" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceFirstname" type="string">
+            <column name="invoice_firstname" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceStreet" type="string">
+            <column name="invoice_street" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceNum" type="string">
+            <column name="invoice_num" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceBox" type="string">
+            <column name="invoice_box" length="40">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceZipcode" type="string">
+            <column name="invoice_zipcode" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceCity" type="string">
+            <column name="invoice_city" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceCountry" type="string">
+            <column name="invoice_country" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceCulture" type="string">
+            <column name="invoice_culture" length="5">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceEmail" type="string">
+            <column name="invoice_email" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceGender" type="string">
+            <column name="invoice_gender" length="1">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceBirthdate" type="date">
+            <column name="invoice_birthdate" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceGreeting" type="string">
+            <column name="invoice_greeting" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoicePhone" type="string">
+            <column name="invoice_phone" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceFax" type="string">
+            <column name="invoice_fax" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceMobile" type="string">
+            <column name="invoice_mobile" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="invoiceCompanyName" type="string">
+            <column name="invoice_company_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryUserId" type="java.lang.Integer">
+            <column name="delivery_user_id">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryLastname" type="string">
+            <column name="delivery_lastname" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryFirstname" type="string">
+            <column name="delivery_firstname" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryStreet" type="string">
+            <column name="delivery_street" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryNum" type="string">
+            <column name="delivery_num" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryBox" type="string">
+            <column name="delivery_box" length="40">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryZipcode" type="string">
+            <column name="delivery_zipcode" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryCity" type="string">
+            <column name="delivery_city" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryCountry" type="string">
+            <column name="delivery_country" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryCulture" type="string">
+            <column name="delivery_culture" length="5">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryEmail" type="string">
+            <column name="delivery_email" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryGender" type="string">
+            <column name="delivery_gender" length="1">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryBirthdate" type="date">
+            <column name="delivery_birthdate" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryGreeting" type="string">
+            <column name="delivery_greeting" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryPhone" type="string">
+            <column name="delivery_phone" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryFax" type="string">
+            <column name="delivery_fax" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryMobile" type="string">
+            <column name="delivery_mobile" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryCompanyName" type="string">
+            <column name="delivery_company_name" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="deliveryComment" type="string">
+            <column name="delivery_comment" length="60">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="tvaNumber" type="string">
+            <column name="tva_number" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="wishedDeliveryDate" type="date">
+            <column name="wished_delivery_date" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="realDeliveryDate" type="date">
+            <column name="real_delivery_date" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="orderComment" type="string">
+            <column name="order_comment" length="60">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="shippingCost" type="java.lang.Double">
+            <column name="shipping_cost" precision="13" scale="4">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="totalBeforeDiscount" type="java.lang.Double">
+            <column name="total_before_discount" precision="13" scale="4">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="discountValue" type="java.lang.Double">
+            <column name="discount_value" precision="13" scale="4">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="total" type="java.lang.Double">
+            <column name="total" precision="13" scale="4">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ogonePayid" type="string">
+            <column name="ogone_payid" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ogoneAcceptanceFlag" type="string">
+            <column name="ogone_acceptance_flag" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ogoneStatus" type="string">
+            <column name="ogone_status" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ogoneNcerror" type="string">
+            <column name="ogone_ncerror" length="10">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ogonePmFlag" type="string">
+            <column name="ogone_pm_flag" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ogoneBrandName" type="string">
+            <column name="ogone_brand_name" length="30">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ogoneCvcCheck" type="string">
+            <column name="ogone_cvc_check" length="2">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ogoneAvvCheck" type="string">
+            <column name="ogone_avv_check" length="2">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="ogoneIp" type="string">
+            <column name="ogone_ip" length="15">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="generalConditionFlag" type="java.lang.Integer">
+            <column name="general_condition_flag">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="orderIdAfterPayment" type="java.lang.Integer">
+            <column name="order_id_after_payment">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedOn" type="timestamp">
+            <column name="modified_on" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="statusPayingDate" type="timestamp">
+            <column name="status_paying_date" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="statusCheckDate" type="timestamp">
+            <column name="status_check_date" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="statusDubiousDate" type="timestamp">
+            <column name="status_dubious_date" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="statusTimeoutDate" type="timestamp">
+            <column name="status_timeout_date" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="statusCanceledDate" type="timestamp">
+            <column name="status_canceled_date" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="statusRefusedDate" type="timestamp">
+            <column name="status_refused_date" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="statusPaidDate" type="timestamp">
+            <column name="status_paid_date" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="statusSendDate" type="timestamp">
+            <column name="status_send_date" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="esOrderLines" inverse="true" cascade="all">
+            <key>
+                <column name="order_id" not-null="true">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.wanabe.eshop.hdata.EsOrderLine" />
+        </set>
+    </class>
+</hibernate-mapping>

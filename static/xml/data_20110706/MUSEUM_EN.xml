@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+	<group>MUSEUM</group>
+	<language>NL</language>
+	<exported_date>20110706</exported_date>
+	<num_items>2</num_items>
+	<items>
+		<item id="2009">
+			<title><![CDATA[BOZAR]]></title>
+			<small_image>http://visitbrussels.be/bitc/static/front/img/db/img_317.jpg</small_image>
+			<body><![CDATA[<p>Erected in 1928 by the architect and master of Art Nouveau, Victor Horta, it is a centre of cultural and artistic life. A full renovation of the interior restored the original appearance of the building, as originally designed by the master, Horta. Visits are organised ("From Horta to Horta") to allow people to rediscover parts of the building previously off limits to the general public</p>
+<div>&#160;</div>]]></body>
+			<address><![CDATA[Rue Ravenstein 23/Ravensteinstraat 23]]></address>
+			<city><![CDATA[Bruxelles/Brussel]]></city>
+			<zipcode>1000</zipcode>
+			<phone>+32 2 507 84 30</phone>
+			<fax>+32 2 507 85 15</fax>
+			<email>info@bozar.be</email>
+			<website>http://www.bozar.be</website>
+			<latitude>50.844325</latitude>
+			<longitude>4.359151</longitude>
+			<position>110</position>
+		</item>
+		<item id="4580">
+			<title><![CDATA[Scientastic]]></title>
+			<small_image>http://visitbrussels.be/bitc/static/front/img/db/musee_scientastic_Brussels.jpg</small_image>
+			<body><![CDATA[<div>Sit cross-legged, fakir-style, take a mirror flight,&#160;<span class="Apple-style-span" style="font-family: Verdana, Geneva, sans-serif; color: rgb(149,142,136); font-size: 11px">make your voice sound like a duck and explore 100&#160;other simple and amusing interactive discoveries involving physical, illusions and the world of the five senses.</span></div>
+<div>&#160;</div>]]></body>
+			<address><![CDATA[Boulevard Anspach/Anspachlaan]]></address>
+			<city><![CDATA[Bruxelles/Brussel]]></city>
+			<zipcode>1000</zipcode>
+			<phone>+32 2 732 13 36</phone>
+			<fax></fax>
+			<email>info@scientastic.be</email>
+			<website>http://www.scientastic.be</website>
+			<latitude>50.848101</latitude>
+			<longitude>4.349397</longitude>
+			<position>0</position>
+		</item>
+	</items>
+</content>

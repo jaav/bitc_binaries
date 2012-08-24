@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+p{ display:block; margin-bottom:15px; font-size:12px; line-height:16px; font-family:Georgia, "Times New Roman", Times, serif;}
+
+h2.summary_title span{ font-size:32px; font-style:italic; color:#0098C6;}
+
+
+h2 {margin:0 0 17px 0; font-size:30px; font-family:Georgia, "Times New Roman", Times, serif; text-transform:uppercase; color:#6b6967;}
+h3 {margin:0 0 15px 0; font-size:18px; font-family:Georgia, "Times New Roman", Times, serif;}
+h4 {margin:0 0 12px 0; font-size:14px; font-family:Georgia, "Times New Roman", Times, serif; font-weight:bolder;}
+h5 {font-size:12px; font-weight:bolder;}
+h6 {font-size:11px; font-weight:bolder;}
+
+p{margin:0 0 17px 0; font-family:Verdana, Geneva, sans-serif; font-size:11px; color:#958e88;}
+
+.promo { color:#ff4d96;}
+.txt_orange {color:#fe9601;}
+.remark { font-size:10px; font-style:italic;}
+
+ul{ display:block; margin:0 0 15px 20px; font-size:12px; line-height:16px;}
+ul li{ display:block; margin-bottom:10px; padding-left:15px; background:url(../../../img/ml/arrow_light_blue.gif) left 5px no-repeat;}
+ol{display:block; margin:0 0 15px 20px; font-size:12px; line-height:16px;}
+ol li{ margin-left:20px; margin-bottom:10px; padding-left:5px; list-style-type:decimal;}
+ol ul li{ display:block; margin-bottom:10px; padding-left:15px; background:url(../../../img/ml/arrow_light_blue.gif) left 5px no-repeat;}
+table { margin:0 0 20px 0;width:100%; font-size:12px;}
+tr td { width:33%; padding:10px; border:1px solid #e2e2e2;}
+
+
+a {text-decoration: none; cursor: pointer; color:#958e88;}
+a:link,
+a:active,
+a:visited {color:#958e88; text-decoration:underline;}
+a:hover { text-decoration:none; outline:none;}

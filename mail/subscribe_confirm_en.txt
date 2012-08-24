@@ -1,0 +1,30 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Dear &FIRSTNAME;, 
+
+Your inscription was well registered on our website. 
+
+Hereunder you can check your data.
+Please click on the link underneath in order to activate 
+your profile.
+
+
+Your title: &GREETING;
+Your language: &LANGUAGEID;
+Your firstname: &FIRSTNAME;
+Your lastname: &LASTNAME;
+
+Your username: &PSEUDO;
+Your birthday: &BIRTHDATE;
+Your e-mail:  &EMAIL;
+
+
+Click here to confirm your inscription
+http://bitcv2.wanabe.be:8080/bitc/front/user/confirmSubscribe.do
+
+
+Kind regards,
+The team of Brussels International
+--------------------------------------------------------------------------------

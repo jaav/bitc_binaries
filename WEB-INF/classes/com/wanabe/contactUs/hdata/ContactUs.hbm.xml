@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 05-mars-2009 10:11:17 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.contactUs.hdata.ContactUs" table="contact_us" >
+        <id name="contactUsId" type="java.lang.Integer">
+            <column name="contact_us_id" />
+            <generator class="identity" />
+        </id>
+        <property name="gender" type="string">
+            <column name="gender" length="10" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="50" />
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="50" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="80" />
+        </property>
+        <property name="typeQuestion" type="string">
+            <column name="type_question" length="100" />
+        </property>
+        <property name="message" type="string">
+            <column name="message" length="1000" />
+        </property>
+        <property name="sendCopy" type="java.lang.Integer">
+            <column name="send_copy" />
+        </property>
+        <property name="closed" type="java.lang.Integer">
+            <column name="closed" />
+        </property>
+        <property name="createdOn">
+            <column name="created_on" length="10" />
+        </property>
+        <property name="languageid" type="string">
+            <column name="languageid" length="2" />
+        </property>
+    </class>
+</hibernate-mapping>

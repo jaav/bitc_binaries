@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema/" 
+xmlns:q0="http://data.services.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SOAP-ENV:Body>
+	<q0:getDetail>
+	<q0:bid>%ID%</q0:bid>
+	<q0:lg>%LG%</q0:lg>
+	<q0:token>%TOKEN%</q0:token>
+	</q0:getDetail>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29 mars 2011 10:57:28 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.hdata.CalendarPartner" table="calendar_partner">
+        <id name="partnerId" type="java.lang.Integer">
+            <column name="partner_id" />
+            <generator class="identity" />
+        </id>
+        <property name="cryptedId" type="string">
+            <column name="crypted_id" length="50" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="50" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="500" />
+        </property>
+        <property name="contactEmail" type="string">
+            <column name="contact_email" length="80" />
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" not-null="true" />
+        </property>
+        <property name="modifiedOn" type="timestamp">
+            <column name="modified_on" length="19" />
+        </property>
+        <property name="valid" type="boolean">
+            <column name="valid" not-null="true" />
+        </property>
+        <set name="calendarLists" inverse="true"  table="calendar_list" fetch="select">
+            <key>
+                <column name="partner_id" not-null="true" />
+            </key>
+            <one-to-many class="com.bitc.hdata.CalendarList" />
+        </set>
+        <set name="calendarWidgets" inverse="true"  table="calendar_widget" fetch="select">
+            <key>
+                <column name="partner_id" not-null="true" />
+            </key>
+            <one-to-many class="com.bitc.hdata.CalendarWidget" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,73 @@
+ContentType	Price	Name	Id	Source	Group	Status	Position	CreatedOn	LastModifiedOn	Author	FromDate	ToDate	Visible	CreatedBy	LastModifiedBy	VersionId	OpenCount	SourceId	CommentCount	PublishContentId	#GROUP	#MINI_SITE	#OG_TOUR_CATEGORY	#Conditions_Ventes	#SITE	#EXPERIENCE	#TAGS	#CONFIRMATION_TYPE	#MODULE	#FLICKR	#ACTION	#PROFILES	#QUARTIERS	BE_en#Title	BE_en#Abstract_	BE_en#Body	BE_en#Info	BE_en#SmallImage	BE_en#BigImage	BE_en#Url	BE_en#UrlLabel	BE_en#SourceTitle	BE_en#SourceAbstract	BE_en#SourceBody	BE_fr#Title	BE_fr#Abstract_	BE_fr#Body	BE_fr#Info	BE_fr#SmallImage	BE_fr#BigImage	BE_fr#Url	BE_fr#UrlLabel	BE_fr#SourceTitle	BE_fr#SourceAbstract	BE_fr#SourceBody	BE_nl#Title	BE_nl#Abstract_	BE_nl#Body	BE_nl#Info	BE_nl#SmallImage	BE_nl#BigImage	BE_nl#Url	BE_nl#UrlLabel	BE_nl#SourceTitle	BE_nl#SourceAbstract	BE_nl#SourceBody	
+ContentArticle	-	Nouveau logo et charte visitbrussels	4301	-	Conditions_Ventes	1	0	2011-12-05 12:52:40.0	2011-12-05 14:33:07.0	-	2011-03-24 00:00:00.0	-	1	aam	aam	-	-	-	-	4301	-	-	-	-	-	-	-	-	-	-	-	-	-	Terms and Conditions for the “Special Deals”	-	<div>1.	The “Specials Deals” are intended for clients organising Meetings & Conventions and only relate to Meetings & Conventions packages.
+</div><div></div><div>
+2.	Only venues, hotels or events within the Brussels-Capital Region will be eligible for the “SpecialDeals”. </div><div></div><div> 
+3.	The cost of an advertisement is € 150 per month, including all taxes (VAT = 21%).
+</div><div></div><div>
+4.	The order of publication is at random and is different for each online view.
+VISITBRUSSELS is not responsible for the order of publication.
+</div><div></div><div>
+5.	The advertisement will be published for one calendar month after approval by VISITBRUSSELS.
+</div><div></div><div>
+6.	Payment will be made online immediately (Ogone).
+</div><div></div><div>
+7.	Each venue or event is only entitled to one advertisement per calendar month.
+</div><div></div><div>
+8.	The advertiser is solely responsible for the content of its advertisement (not VISITBRUSSELS).
+</div><div></div><div>
+9.	The text will be entered by the advertiser in the appropriate form (in three languages - French , Dutch, English - 1000 characters maximum).
+</div><div></div><div>
+10.	Requests for advertisements will be approved by VISITBRUSSELS within 5 working days of the original entry.
+</div><div></div><div>
+11.	Financial transactions resulting from the “Special Deals” will take place between the advertiser and the potential client (not VISITBRUSSELS).
+</div><div></div><div>
+12.	VISITBRUSSELS is not responsible for the execution of the “Special Deals”.
+</div><div></div><div>
+13.	In order to improve and perpetuate the “Special Deals” service, please inform us about the return obtained from your advertisement by sending an email to
+</div><div></div><div> j.descurieux@visitbrussels.be.
+</div><div></div>
+	-	-	/bitc/static/front/img/db/ContentArticle_4148/img_3931.jpg	-	-	-	-	-	Conditions de Vente des  « Special Deals »	-	<div>1.	 Les « Specials Deals » sont destinés aux  clients organisant des Meetings & Conventions et
+concernent uniquement des packages orientés Meetings & Conventions.</div> <div></div>
+<div>  2.	Seuls les lieux, ou les événements, situés sur le territoire de la Région de Bruxelles-Capitale pourront faire l’objet de  « Special Deals ».</div>
+<div></div><div>3.	Le coût  d’une annonce est de 150 € TTC par mois (TVA = 21 %).
+<div></div></div><div>4.	L’ordre d’apparition est aléatoire et est modifié lors de chaque consultation en ligne. 
+VISITBRUSSELS n’a aucune responsabilité dans l’ordre d’apparition.
+<div></div></div><div>5.	L’annonce sera publiée durant un mois calendrier après validation par VISITBRUSSELS.
+<div></div></div><div>6.	Moyennant un paiement immédiat en ligne (Ogone).
+<div></div></div><div>7.	Chaque lieu, ou  événement, n’a droit qu’à une annonce par mois calendrier.
+<div></div></div><div>8.	Seul  l’annonçeur est responsable du contenu  de son offre  (en aucun cas VISITBRUSSELS).
+<div></div></div><div>9.	Les textes  seront directement encodés par  l’annonceur  dans le formulaire approprié  (en trois langues - FR, NL, UK -  1000 caractères maximum).
+<div></div></div><div>10.	Les demandes d’annonces seront validées par VISITBRUSSELS  endéans les 5 jours ouvrables de leur encodage.
+<div></div></div><div>11.	Les transactions financières résultant des « Special Deals » se feront directement entre l’annonceur et le client potentiel (en aucun cas via VISITBRUSSELS).
+<div></div></div><div>12.	VISITBRUSSELS n’est pas responsable de l’exécution des « Special Deals ».
+<div></div></div><div>13.	Afin d’améliorer le service des « Special Deals » et d’assurer leur pérennité,  nous vous remercions de nous informer du retour obtenu par votre annonce via un mail à </div><div></div><div> j.descurieux@visitbrussels.be.
+</div><div></div>
+	-	-	/bitc/static/front/img/db/ContentArticle_4148/img_3931.jpg	-	-	-	-	-	Verkoopvoorwaarden "Special Deals"	-	<div>1.	De "Special Deals" zijn bestemd voor klanten die Meetings & Conventions organiseren en
+hebben alleen betrekking op de pakketten die bestemd zijn voor Meetings & Conventions. 
+</div> <div></div>
+<div> 2.	Enkel de locaties of evenementen die gelegen zijn op het grondgebied van het Brussels Hoofdstedelijk Gewest kunnen in aanmerking komen voor de "Special Deals".</div> <div></div>
+<div>
+3.	De kost van een advertentie bedraagt 150 €  per maand,  incl. BTW (BTW = 21%).
+</div> <div></div>
+<div>4.	De volgorde van verschijnen is willekeurig en wordt gewijzigd bij elke raadpleging online. 
+VISITBRUSSELS draagt geen verantwoordelijkheid voor de volgorde van verschijnen. 
+</div> <div></div>
+<div>5.	De advertentie wordt gedurende een kalendermaand gepubliceerd na validatie door VISITBRUSSELS.
+</div> <div></div>
+<div>6.	Door middel van een onmiddellijke betaling online (Ogone).
+</div> <div></div>
+<div>7.	Elke locatie of elk evenement heeft slechts recht op één advertentie per kalendermaand.
+</div> <div></div>
+<div>8.	Alleen de adverteerder is verantwoordelijk voor de inhoud van zijn aanbieding (in geen geval VISITBRUSSELS).
+</div> <div></div>
+<div>9.	De teksten  zullen rechtstreeks  in het geschikte formulier worden ingevoerd door de adverteerder (in drie talen - FR, NL, UK - 1000 karakters maximum).
+</div> <div></div>
+<div>10.	De aanvragen voor advertenties zullen binnen de 5 werkdagen na het invoeren ervan worden goedgekeurd door VISITBRUSSELS.
+</div> <div></div>
+<div>11.	De financiële transacties die het gevolg zijn van "Special Deals" zullen rechtstreeks tussen de adverteerder en de potentiële klant worden afgehandeld (nooit via VISITBRUSSELS).
+</div> <div></div>
+<div>12.	VISITBRUSSELS is niet verantwoordelijk voor de uitvoering van de "Special Deals". 
+</div> <div></div>
+<div>13.	Teneinde de dienst van de "Special Deals" te verbeteren en het voortbestaan ervan te verzekeren, verzoeken wij u om ons te informeren over de verkregen feedback door middel van een e-mail naar </div> <div></div>
+<div>j.descurieux@visitbrussels.be.</div>
+	-	-	/bitc/static/front/img/db/ContentArticle_4148/img_3931.jpg	-	-	-	-	-	

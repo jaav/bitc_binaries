@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-nov.-2009 14:30:46 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.wanabe.catalog.hdata.CatalogProduct" table="catalog_product" >
+        <comment></comment>
+        <id name="catalogProductId" type="int">
+            <column name="catalog_product_id" />
+            <generator class="identity" />
+        </id>
+        <property name="reference" type="string">
+            <column name="reference" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="500">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="validFromdate" type="timestamp">
+            <column name="valid_fromdate" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="validTodate" type="timestamp">
+            <column name="valid_todate" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="isValid" type="java.lang.Integer">
+            <column name="is_valid">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="stockLevel" type="big_decimal">
+            <column name="stock_level" precision="13" scale="4">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lockLevel" type="big_decimal">
+            <column name="lock_level" precision="13" scale="4">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdBy" type="string">
+            <column name="created_by" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedOn" type="timestamp">
+            <column name="modified_on" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedBy" type="string">
+            <column name="modified_by" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="taxe" type="big_decimal">
+            <column name="taxe" precision="5">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="weight" type="big_decimal">
+            <column name="weight" precision="7" scale="3">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="height" type="big_decimal">
+            <column name="height" precision="6" scale="3">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="width" type="big_decimal">
+            <column name="width" precision="6" scale="3">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="depth" type="big_decimal">
+            <column name="depth" precision="6" scale="3">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="page" type="java.lang.Integer">
+            <column name="page">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="brand" type="string">
+            <column name="brand" length="200">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="position" type="java.lang.Integer">
+            <column name="position">
+                <comment></comment>
+            </column>
+        </property>
+        <set name="catalogPrices" inverse="true">
+            <key>
+                <column name="catalog_product_id" not-null="true">
+                    <comment></comment>
+                </column>
+            </key>
+            <one-to-many class="com.wanabe.catalog.hdata.CatalogPrice" />
+        </set>
+    </class>
+</hibernate-mapping>

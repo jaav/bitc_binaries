@@ -1,0 +1,58 @@
+/* SpryFormValidation.css - Revision: Spry Preview Release 1.4 */
+
+/*IMAGE VALID*/
+.validMsg {
+	display:none;
+}
+.textfieldValidState .validMsg {
+	display:inline;
+	margin:10px 0 0 10px;
+}
+.form_login .textfieldValidState .validMsg {
+	position:absolute;
+	top:5px;
+	left:230px;
+}
+/*IMAGE ERROR*/
+.errorMsg {
+	display:none;
+}
+.textfieldRequiredState .errorMsg, .textfieldRequiredMsg .errorMsg, .textfieldInvalidFormatState .errorMsg, .textfieldInvalidFormatMsg .errorMsg, .textfieldMinValueState .textfieldMinValueMsg .errorMsg, .textfieldMaxValueState .textfieldMaxValueMsg .errorMsg, .textfieldMinCharsState .errorMsg, .textfieldMinCharsMsg .errorMsg, .textfieldMaxCharsState .errorMsg, .textfieldMaxCharsMsg .errorMsg {
+	display:inline;
+	margin:10px 0 0 10px;
+
+}
+.form_login .textfieldRequiredState .errorMsg, .form_login .textfieldRequiredMsg .errorMsg, .form_login .textfieldInvalidFormatState .errorMsg, .form_login .textfieldInvalidFormatMsg .errorMsg{
+	position:absolute;
+	top:5px;
+	left:230px;
+}
+/*TEXTE ERROR*/
+.textfieldRequiredMsg, .textfieldRequiredMsg2, .textfieldRequiredMsg3, .textfieldInvalidFormatMsg, .textfieldMinCharsMsg, .textfieldMaxCharsMsg {
+	display:none;
+}
+.textfieldRequiredState .textfieldRequiredMsg,
+.textfieldInvalidFormatState .textfieldInvalidFormatMsg,
+.textfieldMinValueState .textfieldMinValueMsg,
+.textfieldMaxValueState .textfieldMaxValueMsg,
+.textfieldMinCharsState .textfieldMinCharsMsg,
+.textfieldMaxCharsState .textfieldMaxCharsMsg {
+	display:block;
+	margin-left:165px;
+	margin-bottom:25px;
+	line-height:12px;
+	color:#fa869b;
+	font-size:10px;
+	font-weight:normal;
+
+}
+.form_login .textfieldRequiredState .textfieldRequiredMsg,
+.form_login .textfieldInvalidFormatState .textfieldInvalidFormatMsg{
+	display:block;
+	margin-left:0px;
+	margin-bottom:25px;
+	line-height:12px;
+	color:#fa869b;
+	font-size:10px;
+	font-weight:normal;	
+}

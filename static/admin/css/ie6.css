@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+
+
+/*===LOGIN===*/
+form{ padding:30px 0;}
+#loginForm fieldset{ width:250px;}
+#loginForm label{ display:block; width:150px;}
+#loginForm input#f_login, #loginForm input#f_password{ width:250px; height:17px}
+.errorText{background:url(../img/stop.gif) left top no-repeat;}
+
+
+/*===NAVIGATION===*/
+#subMenusContainer a{width:200px; background-color:#565950; border: 1px solid #73766d; border-bottom:0;}
+/* Submenu Outer Wrapper - each submenu is inside a div with this class - javascript users only */
+.smOW{ 	display:none; position: absolute; overflow:hidden; padding:0; margin:0;}
+
+
+/*===TOOLS BTNS===*/
+#actions a,
+#actions a:link,
+#actions a:active,
+#actions a:visited{float:left; position:relative; margin:0; margin-left:5px; display:inline; padding:5px 10px 0 30px; border-right:0px solid #1a6470; text-decoration:none}
+
+#search_btn{ display:none;}
+
+#mainContent table tr td{border:1px solid #e1e1e1}

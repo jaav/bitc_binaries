@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* jfe@wanabe.eu - Janvier 2011 */
+/* **************************** */
+
+#top { position:absolute; width:100%; z-index:99996; background:url(../img/ml/bg_top_content.png) repeat-x;}
+#top_content{background:url(../img/ml/bg_top_content.png) repeat-x;}		
+	#top_content form { position:absolute; top:6px; left:820px;}
+		#top_content form input{ border: 1px solid #fff;}
+		#top_content form #f_search_submit{ background:url(../img/ml/input_search.gif) no-repeat center center; position:relative; top:3px\9; width:16px; height:16px; padding:0px; border:0; cursor: pointer;}
+
+#box_login { position:relative; margin-bottom:0px; z-index:100}
+	#box_login #login { float:left; margin:1px 10px 0 0; background:#f1ebe3 url(../img/ml/bg_btn_login.png); width: 171px; height: 25px; line-height: 25px;}
+		#box_login #login a { color: #fff; font-weight: bold; text-shadow: 1px 1px 1px #948d78; text-decoration: none;}
+		#box_login #login a.subscribe {display:block; width:94px; text-align:center; float: left; margin-right: 3px;}
+		#box_login #login a.login { display:block; width:72px; text-align:center; float: left;}
+		#box_login #login a.logout { display:block; width:72px; text-align:center; float: left;}
+	#box_login #facebook_connect { float:left;}
+
+/* TOP NAVIGATION */ 
+ul#top_nav{margin: 0; padding: 0; position: relative; top:4px; left:130px; width:680px; list-style: none; font-size: 12px; z-index:1000;}
+	ul#top_nav > li{margin: 0; padding: 0; float: left; /*position: relative;*/}
+	ul#top_nav > li.sep{background:transparent url(../img/ml/top_nav_separator.png) no-repeat left 0px; padding-left: 6px;}
+		ul#top_nav > li .align_right{right: -260px}
+		ul#top_nav > li a {position:relative; background:transparent url(../img/ml/top_nav_bullet.png) no-repeat left center; padding-left:20px; margin-right: 1px; display:block; outline: none;}
+		ul#top_nav > li.home a {float: left; top:-3px; width:64px; background:transparent url(../img/ml/bg_btn_home.png) no-repeat left center; padding-left:35px; font-family:Georgia, "Times New Roman", Times, serif; font-size: 18px; }
+		ul#top_nav > li.home a:hover {background:transparent url(../img/ml/bg_btn_home_over.png) no-repeat left center;width:64px;}
+		
+		ul#top_nav > li .level2{position: absolute; top: 31px; z-index: 99999; background:#313131; padding: 15px; font-family:Arial, Helvetica, sans-serif; font-size:13px; -moz-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; -moz-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; /*display: none*/}
+			ul#top_nav li .level2 ul{ border-right:1px solid #474747; list-style: none; margin: 0 5px 0 5px; padding: 0 5px 0 5px; width: 155px; float: left;}
+				ul#top_nav li .level2 ul li {color: #fff; width: 100%; /*--Override parent list item--*/}
+					ul#top_nav li .level2 ul li h3 {padding: 0; margin: 0 0 15px 0; font-size: 18px; font-weight: normal;}
+					ul#top_nav li .level2 ul li a{background: none; width: 150px; padding: 2px; margin: 3px 1px; }
+					ul#top_nav li .level2 ul li a:hover, ul#top_nav li .level2 ul li a.active{ padding:2px; -webkit-border-radius: 5px; -khtml-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;}		
+						
+					/* TOP MENU COLORS THEME*/ 
+					/*meeting*/
+					ul#top_nav li.meeting .level2 ul li a:hover, ul#top_nav li.meeting .level2 ul li a.active{background-color:#75ac1e;}
+					ul#top_nav li.meeting.clicked > a{color:#7eb822;}
+					ul#top_nav li.meeting .level2 ul li h3{color:#7eb822;}
+					/*trade*/
+					ul#top_nav li.trade .level2 ul li a:hover{background-color:#536a93;}
+					ul#top_nav li.trade.clicked > a{color:#536a93;}
+					ul#top_nav li.trade .level2 ul li h3{color:#536a93;}
+					/*press*/
+					ul#top_nav li.press .level2 ul li a:hover{background-color:#5baeef;}
+					ul#top_nav li.press.clicked > a{color:#5baeef;}
+					ul#top_nav li.press .level2 ul li h3{color:#5baeef;}
+					/*film commission*/
+					ul#top_nav li.film .level2 ul li a:hover{background-color:#e595ce;}
+					ul#top_nav li.film.clicked > a{color:#e595ce;}
+					ul#top_nav li.film .level2 ul li h3{color:#e595ce;}
+					/*us commission*/
+					ul#top_nav li.us .level2 ul li a:hover{background-color:#c4b784;}
+					ul#top_nav li.us.clicked > a{color:#c4b784;}
+					ul#top_nav li.us .level2 ul li h3{color:#c4b784;}
+					
+		
+/* SUB NAVIGATION */
+#sub_nav_bg{ position:absolute; background:#000; height: 35px; min-width: 100%;}
+#sub_nav_content{width: 1200px; margin: 0 auto;}
+
+ul#sub_nav{ margin:0; padding: 0; position: relative; left:130px; width:930px; list-style: none;}
+	ul#sub_nav > li{ height:35px; margin: 0; float: left;}
+	ul#sub_nav > li.sep{background:transparent url(../img/ml/top_nav_separator.png) no-repeat left 5px;}
+		ul#sub_nav > li .align_right{position: relative; right: -10px;}
+		ul#sub_nav > li a {position:relative; display:block; padding: 0 15px; font-family:Georgia, "Times New Roman", Times, serif; font-size: 14px; line-height: 30px; color: #fff; text-decoration:none; outline: none;}
+		
+		ul#sub_nav > li.clicked {height: 35px; padding-right: 1px;}
+			ul#sub_nav > li.clicked .level2{top: 35px;} 	
+			ul#sub_nav > li.clicked > a{font-size: 16px; line-height: 33px}
+				ul#sub_nav > li.clicked > a span.arrow_down{position:relative; z-index:999999; padding-bottom:17px; padding-bottom:18px\9;}		
+				
+		ul#sub_nav > li .level2{position: absolute; top: 35px; z-index: 99999; background:#313131; padding:15px 5px 10px 5px; -moz-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; -moz-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; /*display: none*/}
+			ul#sub_nav li .level2 ul{ border-right:1px solid #474747; list-style: none; margin: 0 5px 0 5px; padding: 0 5px 0 5px; width: 155px; float: left;}
+				ul#sub_nav li .level2 ul li {color: #fff; width: 100%; /*--Override parent list item--*/}
+					ul#sub_nav li .level2 ul li h3 {padding: 0; margin: 0 0 15px 0; font-size: 18px; font-weight: normal;}
+					ul#sub_nav li .level2 ul li a{background: none; width: 150px; padding: 2px; margin: 3px 1px; font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:normal;}
+					ul#sub_nav li .level2 ul li a:hover{ padding:2px; -webkit-border-radius: 5px; -khtml-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;}
+
+					/* TOP MENU COLORS THEME*/ 
+					/*A faire A voir 'rose'*/
+					ul#sub_nav li.todotosee.clicked{ background:#e595ce;}
+					ul#sub_nav li.todotosee.clicked a span.arrow_down{background:url(../img/ml/arrow_down-pink.png) center bottom no-repeat;}
+					ul#sub_nav li.todotosee .level2 ul li h3{color:#e595ce;}
+					ul#sub_nav li.todotosee .level2 ul li a:hover{background-color:#e595ce;}
+					/*Où dormir 'bleu'*/
+					ul#sub_nav li.sleep.clicked{ background:#86a8e5;}
+					ul#sub_nav li.sleep.clicked a span.arrow_down{background:url(../img/ml/arrow_down-blue.png) center bottom no-repeat;}
+					ul#sub_nav li.sleep .level2 ul li h3{color:#86a8e5;}
+					ul#sub_nav li.sleep .level2 ul li a:hover{background-color:#86a8e5;}
+					/*Où manger 'vert'*/
+					ul#sub_nav li.eat.clicked{ background:#7eb822;}
+					ul#sub_nav li.eat.clicked a span.arrow_down{background:url(../img/ml/arrow_down-green.png) center bottom no-repeat;}
+					ul#sub_nav li.eat .level2 ul li h3{color:#7eb822;}
+					ul#sub_nav li.eat .level2 ul li a:hover{background-color:#7eb822;}
+					/*Où sortir 'bleu ciel'*/
+					ul#sub_nav li.out.clicked{ background:#5baeef;}
+					ul#sub_nav li.out.clicked a span.arrow_down{background:url(../img/ml/arrow_down-blue-sky.png) center bottom no-repeat;}
+					ul#sub_nav li.out .level2 ul li h3{color:#5baeef;}
+					ul#sub_nav li.out .level2 ul li a:hover{background-color:#5baeef;}
+					/*Bx pratique 'bleu foncé'*/
+					ul#sub_nav li.handi.clicked{ background:#536a93;}
+					ul#sub_nav li.handi.clicked a span.arrow_down{background:url(../img/ml/arrow_down-dark-blue.png) center bottom no-repeat;}
+					ul#sub_nav li.handi .level2 ul li h3{color:#536a93;}
+					ul#sub_nav li.handi .level2 ul li a:hover{background-color:#536a93;}
+					/*YouAre YouWant 'beige'*/
+					ul#sub_nav li.youareyouwant.clicked{ background:#c4b784;}
+					ul#sub_nav li.youareyouwant.clicked a span.arrow_down{background:url(../img/ml/arrow_down-beige.png) center bottom no-repeat;}
+					ul#sub_nav li.youareyouwant .level2 ul li h3{color:#c4b784;}
+					ul#sub_nav li.youareyouwant .level2 ul li a:hover{background-color:#c4b784;}	
+					
+/*HACKS IE7*/
+*+html #sub_nav_bg{ z-index: 999; position: relative;}
+*+html ul#sub_nav > li .level2{position: absolute; top: 35px; z-index: 9;}
+*+html ul#sub_nav li .level2 ul li a{margin: 2px 1px;}
+
+.radius{-webkit-border-radius: 5px; -khtml-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;}
+.bottom_radius{-moz-border-radius-bottomright: 5px;	-khtml-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; -moz-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px;}

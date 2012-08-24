@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 juin 2010 15:04:15 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.cms.hdata.ContentEvent" table="content_event" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="300" />
+        </property>
+        <property name="abstract_" type="string">
+            <column name="abstract" length="2000" />
+        </property>
+        <property name="info" type="string">
+            <column name="info" length="16777215" />
+        </property>
+        <property name="smallImage" type="string">
+            <column name="small_image" length="300" />
+        </property>
+        <property name="bigImage" type="string">
+            <column name="big_image" length="300" />
+        </property>
+        <property name="url" type="string">
+            <column name="url" length="300" />
+        </property>
+        <property name="urlLabel" type="string">
+            <column name="url_label" length="200" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="20" />
+        </property>
+        <property name="visible" type="java.lang.Byte">
+            <column name="visible" />
+        </property>
+        <property name="fromDate" type="timestamp">
+            <column name="from_date" length="19" />
+        </property>
+        <property name="toDate" type="timestamp">
+            <column name="to_date" length="19" />
+        </property>
+        <property name="culture" type="string">
+            <column name="culture" length="7" />
+        </property>
+        <property name="author" type="string">
+            <column name="author" length="100" />
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" not-null="true" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="created_by" length="100" />
+        </property>
+        <property name="lastModifiedOn" type="timestamp">
+            <column name="last_modified_on" length="19" />
+        </property>
+        <property name="lastModifiedBy" type="string">
+            <column name="last_modified_by" length="100" />
+        </property>
+        <property name="position" type="java.lang.Integer">
+            <column name="position" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="200" />
+        </property>
+        <many-to-one name="publishContent" class="com.bitc.cms.hdata.ContentEvent" fetch="select">
+            <column name="published_id" />
+        </many-to-one>
+        <property name="numOfVersion" type="java.lang.Integer">
+            <column name="num_of_version" />
+        </property>
+        <property name="versionId" type="java.lang.Integer">
+            <column name="version_id" />
+        </property>
+        <property name="openCount" type="java.lang.Integer">
+            <column name="open_count" />
+        </property>
+        <property name="commentCount" type="java.lang.Integer">
+            <column name="comment_count" />
+        </property>
+        <property name="group" type="string">
+            <column name="_group" length="50" />
+        </property>
+        <property name="source" type="string">
+            <column name="source" length="50" />
+        </property>
+        <property name="sourceId" type="java.lang.Integer">
+            <column name="source_id" />
+        </property>
+        <property name="body" type="string">
+            <column name="body" length="16777215" />
+        </property>
+        <property name="adresseFr" type="string">
+            <column name="adresse_fr" length="200" />
+        </property>
+        <property name="adresseNl" type="string">
+            <column name="adresse_nl" length="200" />
+        </property>
+        <property name="placeNameFr" type="string">
+            <column name="place_nameFr" length="200" />
+        </property>
+        <property name="placeNameNl" type="string">
+            <column name="place_nameNl" length="200" />
+        </property>
+        <property name="zipcode" type="java.lang.Integer">
+            <column name="zipcode" />
+        </property>
+        <property name="cityFr" type="string">
+            <column name="city_fr" length="100" />
+        </property>
+        <property name="cityNl" type="string">
+            <column name="city_nl" length="100" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="40" />
+        </property>
+        <property name="mobile" type="string">
+            <column name="mobile" length="20" />
+        </property>
+        <property name="fax" type="string">
+            <column name="fax" length="20" />
+        </property>
+        <property name="website" type="string">
+            <column name="website" length="150" />
+        </property>
+         <property name="latitude" type="java.lang.Double">
+            <column name="latitude" precision="10" scale="6">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="longitude" type="java.lang.Double">
+            <column name="longitude" precision="10" scale="6">
+                <comment></comment>
+            </column>
+        </property>
+             <property name="svLatitude" type="java.lang.Double">
+            <column name="sv_latitude" precision="18" scale="14" />
+        </property>
+        <property name="svLongitude" type="java.lang.Double">
+            <column name="sv_longitude" precision="18" scale="14" />
+        </property>
+         <property name="svHeading" type="java.lang.Double">
+            <column name="sv_heading" precision="18" scale="14" />
+        </property>
+         <property name="svPitch" type="java.lang.Double">
+            <column name="sv_pitch" precision="18" scale="14" />
+        </property>
+          <property name="svZoom" type="java.lang.Double">
+            <column name="sv_zoom" precision="18" scale="14" />
+        </property>
+        <property name="periodFromDate" type="timestamp">
+            <column name="period_from_date" length="19" not-null="true" />
+        </property>
+        <property name="periodToDate" type="timestamp">
+            <column name="period_to_date" length="19" not-null="true" />
+        </property>
+        <property name="price" type="string">
+            <column name="price" length="200" />
+        </property>
+        <property name="descriptionPrice" type="string">
+            <column name="description_price" length="300" />
+        </property>
+        <property name="numParticipation" type="java.lang.Integer">
+            <column name="num_participation" />
+        </property>
+        <property name="highlight" type="boolean">
+            <column name="highlight" not-null="true" />
+        </property>
+        <map name="contentEventClts" inverse="true" cascade="all" >
+            <key>
+                <column name="content_id" not-null="true" />
+            </key>
+            <map-key type="string">
+            	<column name="culture" not-null="true">
+            	</column>
+            </map-key> 
+            <one-to-many class="com.bitc.cms.hdata.ContentEventClt" />
+        </map>
+    </class>
+</hibernate-mapping>

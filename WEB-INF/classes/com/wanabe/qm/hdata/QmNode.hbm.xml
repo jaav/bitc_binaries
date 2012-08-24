@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-mars-2009 11:04:46 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.qm.hdata.QmNode" table="qm_node">
+        <id name="qmNodeId" type="java.lang.Integer">
+            <column name="qm_node_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tree" class="com.wanabe.qm.hdata.QmNode" fetch="select">
+            <column name="tree_id" />
+        </many-to-one>
+        <many-to-one name="parent" class="com.wanabe.qm.hdata.QmNode" fetch="select">
+            <column name="parent_id" />
+        </many-to-one>
+        <property name="nodeId" type="string">
+            <column name="node_id" length="50" />
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="100" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="100" />
+        </property>
+        <property name="answerType" type="string">
+            <column name="answer_type" length="20" />
+        </property>
+        <property name="correctValue" type="string">
+            <column name="correct_value" length="100" />
+        </property>
+        <property name="isCorrect" type="java.lang.Boolean">
+            <column name="is_correct" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="200" />
+        </property>
+        <many-to-one name="qmQuestionnaire" class="com.wanabe.qm.hdata.QmQuestionnaire" fetch="select">
+            <column name="qm_questionnaire_id" />
+        </many-to-one>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" />
+        </property>
+        <property name="modifiedOn" type="timestamp">
+            <column name="modified_on" length="19" />
+        </property>
+        <property name="left" type="java.lang.Integer">
+            <column name="left_sibling" />
+        </property>
+        <property name="right" type="java.lang.Integer">
+            <column name="right_sibling" />
+        </property>
+        <property name="pos" type="java.lang.Integer">
+            <column name="pos" />
+        </property>
+        <property name="level" type="java.lang.Integer">
+            <column name="level" />
+        </property>
+    </class>
+</hibernate-mapping>

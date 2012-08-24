@@ -1,0 +1,17 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Bonjour &FIRSTNAME;,
+
+Nous vous confirmons votre commande de &EURO; €
+sur le site de Bruxelles-International.
+Le code de votre commande est &CODE;.
+
+Vous pouvez visualiser et imprimer vos vouchers en cliquant ici.
+http://bitcv2.wanabe.be:8080/bitc/front/eshop/displayVouchers.do
+
+
+Cordialement,
+L'équipe de Bruxelles-International
+--------------------------------------------------------------------------------

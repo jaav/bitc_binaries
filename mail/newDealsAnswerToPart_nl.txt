@@ -1,0 +1,20 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+                  Geachte partner,
+                  Een nieuw antwoord op uw deal werd aanvaard.  
+                  De verschillende gegevens van de reactie zijn:    
+                  Lichaam :  &ORGANISME; 
+                  Naam :       &FIRSTNAME; 
+                  Voornaam :    &LASNAME;  
+                  Telefoon :&PHONE; 
+                  E-mail : &EMAIL; 
+                  Aantal deelnemers :&NBREPARTS; 
+                  Behuizing : &LOGEMENT;   
+                  Bericht : &MESSAGE; 
+                  
+				  Met vriendelijke groeten,  
+                  Het Visitbrussels MICE Team.
+
+--------------------------------------------------------------------------------

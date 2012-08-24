@@ -1,0 +1,17 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Bonjour &FIRSTNAME;,
+
+Nous avons le plaisir de vous annoncer que votre demande
+d’accès à notre photothèque a été approuvée.
+
+Vous pouvez accéder à notre photothèque à l’aide du lien ci-dessous.
+
+Cliquez ici pour accéder à la photothèque de Bruxelles International.
+http://bitcv2.wanabe.be:8080/bitc/front/phototeque/display.do
+
+Cordialement,
+L'équipe de Bruxelles-International
+--------------------------------------------------------------------------------

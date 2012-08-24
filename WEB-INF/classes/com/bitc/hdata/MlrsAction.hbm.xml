@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22-avr.-2011 10:56:29 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.bitc.hdata.MlrsAction" table="mlrs_action">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="site" type="string">
+            <column name="site" length="50" />
+        </property>
+        <property name="module" type="string">
+            <column name="module" length="50" />
+        </property>
+        <property name="action" type="string">
+            <column name="action" length="50" />
+        </property>
+        <set name="mlrsParamses" table="mlrs_params" inverse="true"  fetch="select">
+            <key>
+                <column name="action_id" not-null="true" />
+            </key>
+            <one-to-many class="com.bitc.hdata.MlrsParams" />
+        </set>
+    </class>
+</hibernate-mapping>

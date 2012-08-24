@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 31 ao?t 2010 14:47:20 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.hdata.Reqforproposal" table="reqforproposal">
+        <id name="reqid" type="java.lang.Integer">
+            <column name="reqid" />
+            <generator class="identity" />
+        </id>
+        <property name="createdOn">
+            <column name="created_on" length="10" not-null="true" />
+        </property>
+        <property name="modifiedOn">
+            <column name="modified_on" length="10" />
+        </property>
+        <property name="type" type="string">
+            <column name="type" length="10" />
+        </property>
+        <property name="origin" type="string">
+            <column name="origin" length="10" />
+        </property>
+        <property name="greetings" type="string">
+            <column name="greetings" length="10" />
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="50" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="50" />
+        </property>
+        <property name="company" type="string">
+            <column name="company" length="80" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="80" />
+        </property>
+        <property name="zip" type="string">
+            <column name="zip" length="10" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="50" />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="64" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="20" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="80" />
+        </property>
+        <property name="url" type="string">
+            <column name="url" length="200" />
+        </property>
+        <property name="lg" type="string">
+            <column name="lg" length="2" />
+        </property>
+        <property name="meetingName" type="string">
+            <column name="meeting_name" length="80" />
+        </property>
+        <property name="meetingType" type="string">
+            <column name="meeting_type" length="50" />
+        </property>
+        <property name="industry" type="string">
+            <column name="industry" length="80" />
+        </property>
+        <property name="prefArrivaldate" type="string">
+            <column name="pref_arrivaldate" length="50" />
+        </property>
+        <property name="prefDepartdate" type="string">
+            <column name="pref_departdate" length="50" />
+        </property>
+        <property name="altArrivaldate" type="string">
+            <column name="alt_arrivaldate" length="50" />
+        </property>
+        <property name="altDepartdate" type="string">
+            <column name="alt_departdate" length="50" />
+        </property>
+        <property name="largestAttendance" type="java.lang.Integer">
+            <column name="largest_attendance" />
+        </property>
+        <property name="venueType" type="string">
+            <column name="venue_type" length="25" />
+        </property>
+        <property name="venueTypeother" type="string">
+            <column name="venue_typeother" length="80" />
+        </property>
+        <property name="venueLocation" type="string">
+            <column name="venue_location" length="30" />
+        </property>
+        <property name="numRooms" type="java.lang.Integer">
+            <column name="num_rooms" />
+        </property>
+        <property name="exhibSpace" type="java.lang.Integer">
+            <column name="exhib_space" />
+        </property>
+        <property name="exhibSpaceUnit" type="string">
+            <column name="exhib_space_unit" length="10" />
+        </property>
+        <property name="numBreakrooms" type="java.lang.Integer">
+            <column name="num_breakrooms" />
+        </property>
+        <property name="catering" type="boolean">
+            <column name="catering" />
+        </property>
+        <property name="translation" type="boolean">
+            <column name="translation" />
+        </property>
+        <property name="hotelNumrooms" type="java.lang.Integer">
+            <column name="hotel_numrooms" />
+        </property>
+        <property name="hotelLocation" type="string">
+            <column name="hotel_location" length="20" />
+        </property>
+        <property name="hotelStars" type="string">
+            <column name="hotel_stars" length="10" />
+        </property>
+        <property name="hotelWithMeetingrooms" type="java.lang.Integer">
+            <column name="hotel_with_meetingrooms" />
+        </property>
+        <property name="dinerLargestAtt" type="java.lang.Integer">
+            <column name="diner_largest_att" />
+        </property>
+        <property name="dinerDate" type="string">
+            <column name="diner_date" length="50" />
+        </property>
+        <property name="cocktail" type="java.lang.Integer">
+            <column name="cocktail" />
+        </property>
+        <property name="infos" type="string">
+            <column name="infos" length="4000" />
+        </property>
+        <property name="numAccPersons" type="java.lang.Integer">
+            <column name="num_acc_persons" />
+        </property>
+        <property name="dinner" type="java.lang.Integer">
+            <column name="dinner" />
+        </property>
+        <property name="transport" type="java.lang.Integer">
+            <column name="transport" />
+        </property>
+        <property name="wanthelpfrom" type="string">
+            <column name="wanthelpfrom" length="50" />
+        </property>
+        <property name="specialvenue" type="java.lang.Integer">
+            <column name="specialvenue" />
+        </property>
+        <property name="citytour" type="java.lang.Integer">
+            <column name="citytour" />
+        </property>
+        <property name="dayexcursion" type="java.lang.Integer">
+            <column name="dayexcursion" />
+        </property>
+        <property name="venueConfig" type="string">
+            <column name="venue_config" length="10" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="organisationType" type="string">
+            <column name="organisation_type" length="150" />
+        </property>
+         <property name="userId" type="java.lang.Integer">
+            <column name="user_id" length="10" not-null="true" />
+        </property>
+        <property name="flexDate" type="boolean">
+            <column name="flex_date" />
+        </property>
+        <property name="socialProgram" type="boolean">
+            <column name="social_program" />
+        </property>
+        <property name="overnightStay" type="boolean">
+            <column name="overnight_stay" />
+        </property>
+        <property name="largestRoom" type="string">
+            <column name="largest_room" length="50" />
+        </property>
+        <property name="budget" type="string">
+            <column name="budget" length="50" />
+        </property>
+        <property name="position" type="string">
+            <column name="position" length="100" />
+        </property>
+        <set name="reqsenttos" inverse="true"  table="reqsentto" fetch="select">
+            <key>
+                <column name="reqid" not-null="true" />
+            </key>
+            <one-to-many class="com.bitc.hdata.Reqsentto" />
+        </set>
+    </class>
+</hibernate-mapping>

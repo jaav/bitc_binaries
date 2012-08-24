@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+a {text-decoration: none; cursor: pointer;}
+a:link,
+a:active,
+a:visited {color:#958e88; text-decoration:underline;}
+a:hover { text-decoration:none; outline:none;}
+
+strong { font-weight:bolder;}
+
+p{padding-bottom:15px; line-height:16px; color:#0000FF;}
+
+
+ul li{ list-style:none; background:url(../img/ml/bullet_bluearrow.gif) no-repeat 0px 7px; padding:2px 0 0 10px; margin-left:20px;}
+ul li a{ color:#0098C6; text-decoration:none;}
+ul li a:hover{ text-decoration:underline;}
+
+ol li a,
+ol li a:link,
+ol li a:active,
+ol li a:visited{ font-weight:bold; color:#FFF;}
+ol li a:hover{ text-decoration:underline;}
+
+h1 {margin:0 0 17px 0; font-size:30px; font-family:Georgia, "Times New Roman", Times, serif; text-transform:uppercase; color:#2e2e2e;}
+h2 {margin:0 0 17px 0; font-size:30px; font-family:Georgia, "Times New Roman", Times, serif; text-transform:uppercase; color:#6b6967;}
+h3 {margin:0 0 15px 0; font-size:18px; font-family:Georgia, "Times New Roman", Times, serif;}
+h4 {margin:0 0 12px 0; font-size:14px; font-family:Georgia, "Times New Roman", Times, serif; font-weight:bolder;}
+h5 {font-size:12px; font-weight:bolder;}
+h6 {font-size:11px; font-weight:bolder;}

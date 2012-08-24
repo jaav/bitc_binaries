@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd" 
+		version="2.0">
+	<tlib-version>1.2</tlib-version>
+	
+	<uri>StringToolsTags</uri>
+	
+	<function>
+		<name>replace</name>
+		<function-class>
+			   com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+			   String replace(java.lang.String, java.lang.String, java.lang.String)
+		</function-signature>
+	</function>
+	<function>
+		<name>padL</name>
+		<function-class>
+			   com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+			   String padL(java.lang.String, int, char)
+		</function-signature>
+	</function>
+	<function>
+		<name>padR</name>
+		<function-class>
+			  com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+			  String padR(java.lang.String, int, char)
+		</function-signature>
+	</function>
+	<function>
+		<name>truncR</name>
+		<function-class>
+			  com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+			   String truncR(java.lang.String, int)
+		</function-signature>
+	</function>
+	<function>
+		<name>chop</name>
+		<function-class>
+			  com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+			  String chop(java.lang.String)
+		</function-signature>
+	</function>
+	<function>
+		<name>chop2</name>
+		<function-class>
+			  com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+			  String chop(java.lang.String, int)
+		</function-signature>
+	</function>
+	<function>
+		<name>nullFree</name>
+		<function-class>
+			  com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+			  String nullFree(java.lang.String)
+		</function-signature>
+	</function>
+	<function>
+		<name>nullFree2</name>
+		<function-class>
+			  com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+			  String nullFree(java.lang.String, java.lang.String)
+		</function-signature>
+	</function>
+	<function>
+		<name>getNumOccurString </name>
+		<function-class>
+			  com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+			  int getNumOccurString(java.lang.String , java.lang.String)
+		</function-signature>
+	</function>
+	<function>
+		<name>upFirstChar</name>
+		<function-class>
+		      com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+			  String upFirstChar(java.lang.String)
+		</function-signature>
+	</function>
+	<function>
+		<name>splitStr</name>
+		<function-class>
+			   com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		       String[] splitStr( java.lang.String)
+		</function-signature>
+	</function>
+	<function>
+		<name>splitStrNoEmptyField</name>
+		<function-class>
+			   com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+			   String[] splitStrNoEmptyField( java.lang.String, java.lang.String)
+		</function-signature>
+	</function>
+	<function>
+		<name>splitStrByCharDelim</name>
+		<function-class>
+			   com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		       String[] splitStr(java.lang.String, char)
+		</function-signature>
+	</function>
+	<function>
+		<name>splitStrByStringDelim</name>
+		<function-class>
+			   com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		       String[] splitStr( java.lang.String, java.lang.String)
+		</function-signature>
+	</function>
+	   <function>
+		<name>flattenStrArray</name>
+		<function-class>
+			   com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		       String flattenStrArray(java.lang.String[], char)
+		</function-signature>
+	</function>   
+	<function>
+		<name>sortStringsTab</name>
+		<function-class>
+			  com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		       String[] sortStrings(java.lang.String[])
+		</function-signature>
+	</function>
+	<function>
+		<name>sortStringsList</name>
+		<function-class>
+			  com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		      List sortStrings(java.util.List)
+		</function-signature>
+	</function>
+	<function>
+		<name>sortStringsIgnoreCase</name>
+		<function-class>
+			   com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		        List sortStringsIgnoreCase(java.util.List)
+		</function-signature>
+	</function>
+	<function>
+		<name>indexOfString</name>
+		<function-class>
+			   com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		        int indexOfString(java.lang.String[], java.lang.String)
+		</function-signature>
+	</function>
+	<function>
+		<name>indexOfStringIgnoreCase</name>
+		<function-class>
+			   com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		       int indexOfStringIgnoreCase(java.lang.String[],java.lang.String)
+		</function-signature>
+	</function>
+	<function>
+		<name>equalsStrings</name>
+		<function-class>
+			  com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		      boolean equalsStrings(java.lang.String[|, java.lang.String[])
+		</function-signature>
+	</function>
+	<function>
+		<name>formatText</name>
+		<function-class>
+			com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+	           String formatText(java.lang.String, int)
+		</function-signature>
+	</function>
+	<function>
+		<name>formatTextMultiLine</name>
+		<function-class>
+			  com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		       String formatTextMultiLine(java.lang.String, int)
+		</function-signature>
+	</function>
+	<function>
+		<name>toInt</name>
+		<function-class>
+			  com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		       int toInt(java.lang.String, int) {
+		</function-signature>
+	</function>
+	<function>
+		<name>toDouble2</name>
+		<function-class>
+			   com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		        double toDouble(java.lang.String, double) 
+		</function-signature>
+	</function>	
+	 <function>
+		<name> toDouble3</name>
+		<function-class>
+			  com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		       double toDouble(java.lang.String, double, boolean)
+		</function-signature>
+	</function>	
+	<function>
+		<name>formatDouble</name>
+		<function-class>
+			   com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		       String formatDouble(double, int) 
+		</function-signature>
+	</function>	
+	<function>
+		<name>match</name>
+		<function-class>
+			    com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		        boolean match( java.lang.String, java.lang.String ) 
+		</function-signature>
+	</function>
+	<function>
+		<name>multi</name>
+		<function-class>
+			    com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		        String multi(java.lang.String, int) 
+		</function-signature>
+	</function>
+	<function>
+		<name>maxStr</name>
+		<function-class>
+			   com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		       String maxStr(java.lang.String, int)
+		</function-signature>
+	</function>
+	<function>
+		<name>reverse</name>
+		<function-class>
+			    com.activeidea.utils.StringTools
+		</function-class>
+		<function-signature>
+		        String reverse(java.lang.String)
+		</function-signature>
+	</function>
+	
+	</taglib>

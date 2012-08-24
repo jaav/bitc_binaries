@@ -1,0 +1,76 @@
+@charset "iso-8859-1";
+/* CSS Document */
+
+.stContainer {
+    position:relative;
+    margin: 0;
+    padding: 0; 
+    font-family:Georgia, "Times New Roman", Times, serif;
+    color: #B0ADAA;
+    background-color: #F2EEE9;
+	border-bottom: 1px solid #DFDFDF;
+    width: 288px;
+    height:180px;
+	font-size:11px
+}
+.stContainer div {
+    position: relative;    
+    margin: 0 8px 0px 8px;
+	padding:5px;
+    background-color: #FFFFFF;
+    text-align:center;
+    /*overflow:show;   */ 
+}
+.stContainer ul#tabs {
+    display:block;
+    list-style: none;    
+    position: relative;    
+    padding: 0px ;    
+    margin: 0;     
+    width:288px;
+    height:53px; 
+    clear: both;
+    border-top: 1px solid #DFDFDF;    
+	background: #F2EEE9;
+}
+.stContainer ul#tabs  li{ 
+    position: relative; 
+    margin: 0;
+    padding: 0;      
+    float: left;
+}
+.stContainer ul#tabs  li a { 
+  display:block;
+  margin:0;
+  padding-top:3px;
+  padding-bottom:3px;
+  text-decoration: none;
+  height:39px;
+  width:144px;
+  color:#C1BDB9;
+  outline-style:none;
+}
+
+.stContainer ul#tabs  li a span { 
+  display:block;
+  font-size:20px; 
+  font-family:Georgia, "Times New Roman", Times, serif;
+  text-transform:uppercase;
+  font-weight:normal;
+  margin:9px 0 0 20px;
+}
+
+.stContainer ul#tabs  li a.sel { 
+  height:39px;
+  color:#393837;  
+  background: #F2EEE9;
+  cursor:text;   
+}
+.stContainer ul#tabs  li a#tab1 {background:url(../img/ml/smartTab1.jpg) top right;}
+.stContainer ul#tabs  li a#tab2 {background:url(../img/ml/smartTab2.jpg) top left;}
+.stContainer ul#tabs  li a#tab1.sel, .stContainer ul#tabs  li a#tab2.sel {background: #F2EEE9;}
+.stContainer ul#tabs  li a.dis {
+  color:#CCCCCC;  
+  cursor:text;   
+}
+.stContainer ul#tabs  li a .jcarousel-skin-tango a {}

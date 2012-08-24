@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        <property name="hibernate.connection.pool_size">1</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.username">bitc</property>
+        <property name="hibernate.connection.password">bitc123</property>
+        <property name="hibernate.connection.url">jdbc:mysql://172.30.0.246:3306/bitc</property> 
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property-->
+        <mapping resource="com/wanabe/core/mls/hdata/Mlss.hbm.xml" />
+        <mapping resource="com/wanabe/core/security/AcxProfileauthorization.hbm.xml" />
+        <mapping resource="com/wanabe/core/security/AcxUriauthorization.hbm.xml" />
+        <mapping resource="com/wanabe/core/security/AcxUserprofile.hbm.xml" />
+        <mapping resource="com/wanabe/core/security/AcxAdminusers.hbm.xml" />
+        <mapping resource="com/wanabe/core/security/AcxLog.hbm.xml" />
+        <mapping resource="com/wanabe/core/security/AcxProfile.hbm.xml" />
+        <mapping resource="com/wanabe/core/security/AcxRessource.hbm.xml" />
+        <mapping resource="com/wanabe/core/security/AcxRight.hbm.xml" />    
+        <mapping resource="com/wanabe/core/mlrs/MlrsUrl.hbm.xml" />
+        <mapping resource="com/wanabe/core/mail/Mail.hbm.xml" />
+        <mapping resource="com/wanabe/core/mail/MailUser.hbm.xml" /> 
+        <mapping resource="com/wanabe/cms/hdata/ContentMenu.hbm.xml" />
+        <mapping resource="com/wanabe/cms/hdata/ContentImage.hbm.xml" />
+        <mapping resource="com/wanabe/cms/hdata/ContentLink.hbm.xml" />
+        <mapping resource="com/wanabe/cms/hdata/ContentBody.hbm.xml" />
+        <mapping resource="com/wanabe/cms/hdata/ContentPropertyValue.hbm.xml" />
+        <mapping resource="com/wanabe/cms/hdata/ContentProperty.hbm.xml" />
+        <mapping resource="com/wanabe/cms/hdata/ContentLinkPropertyvalueContent.hbm.xml" />
+        <mapping resource="com/wanabe/cms/hdata/ContentLinkGroupContent.hbm.xml" />
+        <mapping resource="com/wanabe/cms/hdata/ContentLinkGroupProperty.hbm.xml" />
+        <mapping resource="com/wanabe/cms/hdata/ContentGroupType.hbm.xml" />
+        <mapping resource="com/wanabe/cms/hdata/ContentGroup.hbm.xml" />    
+      	<mapping resource="com/wanabe/cms/hdata/SequenceData.hbm.xml" />   
+      	
+      	<mapping resource="com/wanabe/contest/hdata/ContestWinner.hbm.xml" />   
+      	<mapping resource="com/wanabe/contest/hdata/ContestInfoUser.hbm.xml" />  
+      	<mapping resource="com/wanabe/hdata/Campaign.hbm.xml" />    
+      	<mapping resource="com/wanabe/qm/hdata/QmGroup.hbm.xml" />
+      	<mapping resource="com/wanabe/qm/hdata/QmNode.hbm.xml" />
+      	<mapping resource="com/wanabe/qm/hdata/QmParticipation.hbm.xml" />
+      	<mapping resource="com/wanabe/qm/hdata/QmQuestionnaire.hbm.xml" />  
+       	<mapping resource="com/wanabe/template/hdata/TemplatePage.hbm.xml" />
+        <mapping resource="com/wanabe/template/hdata/TemplateZone.hbm.xml" />  
+ 		<mapping resource="com/wanabe/template/hdata/TemplateAlgorithm.hbm.xml" />  
+ 		<mapping resource="com/wanabe/template/hdata/Template.hbm.xml" />  
+ 		<mapping resource="com/wanabe/template/hdata/TemplateAlgorithmLink.hbm.xml" /> 
+ 		<mapping resource="com/wanabe/search/hdata/SearchTerm.hbm.xml" />   
+ 		<mapping resource="com/wanabe/meta/hdata/Meta.hbm.xml" />    	 
+ 		<mapping resource="com/wanabe/eshop/hdata/EsOrder.hbm.xml" />    
+ 		<mapping resource="com/wanabe/eshop/hdata/EsOrderLine.hbm.xml" />        
+ 		<mapping resource="com/wanabe/hdata/SendToAFriend.hbm.xml" />	   	 	   	      	 		
+
+        <mapping resource="com/bitc/cms/hdata/ContentArticleClt.hbm.xml" />
+        <mapping resource="com/bitc/cms/hdata/ContentArticle.hbm.xml" />               
+        <mapping resource="com/bitc/cms/hdata/ContentEvent.hbm.xml" />             
+        <mapping resource="com/bitc/cms/hdata/ContentEventClt.hbm.xml" />              
+        <mapping resource="com/bitc/cms/hdata/ContentPlace.hbm.xml" />              
+        <mapping resource="com/bitc/cms/hdata/ContentPlaceClt.hbm.xml" />            
+        <mapping resource="com/bitc/cms/hdata/ContentRestaurant.hbm.xml" />             
+        <mapping resource="com/bitc/cms/hdata/ContentRestaurantClt.hbm.xml" />  
+        <mapping resource="com/bitc/cms/hdata/ContentStay.hbm.xml" />               
+        <mapping resource="com/bitc/cms/hdata/ContentStayClt.hbm.xml" />
+        <mapping resource="com/bitc/cms/hdata/ContentVenue.hbm.xml" />             
+        <mapping resource="com/bitc/cms/hdata/ContentVenueClt.hbm.xml" />
+        <mapping resource="com/bitc/cms/hdata/ContentRoom.hbm.xml" />  
+   	 	<mapping resource="com/bitc/cms/hdata/ContentComment.hbm.xml" />  
+
+        <mapping resource="com/bitc/hdata/ILike.hbm.xml" />        
+		<mapping resource="com/bitc/hdata/Trip.hbm.xml" />
+        <mapping resource="com/bitc/hdata/User.hbm.xml" />              
+        <mapping resource="com/bitc/hdata/AccessSection.hbm.xml" />
+        <mapping resource="com/bitc/hdata/AccessUserSection.hbm.xml" />
+        <mapping resource="com/bitc/catalog/hdata/CatalogPrice.hbm.xml" />
+        <mapping resource="com/bitc/catalog/hdata/CatalogPriceClt.hbm.xml" />
+        <mapping resource="com/bitc/catalog/hdata/CatalogProduct.hbm.xml" />
+        <mapping resource="com/bitc/catalog/hdata/CatalogProductAvailability.hbm.xml" />
+        <mapping resource="com/bitc/catalog/hdata/CatalogProductClt.hbm.xml" />
+        <mapping resource="com/bitc/catalog/hdata/CatalogPromo.hbm.xml" />
+        
+        <mapping resource="com/bitc/hdata/NltType.hbm.xml" />               
+        <mapping resource="com/bitc/hdata/NltUserType.hbm.xml" />
+        <mapping resource="com/bitc/cms/hdata/NltContent.hbm.xml" />
+     
+        <mapping resource="com/wanabe/cms/hdata/ContentPropertyValueClt.hbm.xml" /> 
+        <mapping resource="com/bitc/hdata/ContentExternalImage.hbm.xml" />              
+        <mapping resource="com/bitc/hdata/VisiteBooked.hbm.xml" />
+		<mapping resource="com/bitc/hdata/ContactUs.hbm.xml" />
+        <mapping resource="com/bitc/hdata/ContactUsTypeQuestion.hbm.xml" />                
+      	
+      	<mapping resource="com/bitc/eshop/hdata/EsOrderBrochureMeeting.hbm.xml" /> 
+        <mapping resource="com/bitc/hdata/MeetingPlanner.hbm.xml" />
+
+        <mapping resource="com/bitc/hdata/Reqforproposal.hbm.xml" />
+        <mapping resource="com/bitc/hdata/Reqsentto.hbm.xml" /> 
+        <mapping resource="com/bitc/hdata/ProPlanner.hbm.xml" />   
+        <mapping resource="com/bitc/hdata/ReqproposalReqservices.hbm.xml" />  
+        <mapping resource="com/bitc/hdata/Reqservices.hbm.xml" />
+        <mapping resource="com/bitc/hdata/Reqseenby.hbm.xml" />
+        <mapping resource="com/bitc/hdata/MeetingPlannerSent.hbm.xml" />
+        <mapping resource="com/bitc/hdata/ProPlannerSent.hbm.xml" />
+        <mapping resource="com/bitc/cms/hdata/Filter.hbm.xml" />
+        <mapping resource="com/bitc/hdata/CalendarList.hbm.xml" />               
+        <mapping resource="com/bitc/hdata/CalendarPartner.hbm.xml" />               
+        <mapping resource="com/bitc/hdata/CalendarWidget.hbm.xml" />               
+        <mapping resource="com/bitc/hdata/MlrsAction.hbm.xml" />               
+        <mapping resource="com/bitc/hdata/MlrsParams.hbm.xml" /> 
+       
+        <mapping resource="com/bitc/cms/hdata/ContentDeals.hbm.xml" />   
+        <mapping resource="com/bitc/cms/hdata/ContentDealsClt.hbm.xml" />    
+        <mapping resource="com/bitc/hdata/DealsAnswer.hbm.xml" />                
+        <mapping resource="com/bitc/hdata/DealsOrder.hbm.xml" /> 
+        <mapping resource="com/bitc/cms/hdata/Congressiste.hbm.xml" /> 
+         <mapping resource="com/bitc/cms/ShortVenue.hbm.xml" /> 
+         <mapping resource="com/bitc/hdata/ContentArticleCorrespondancePourTous.hbm.xml" />   
+        </session-factory>
+
+
+</hibernate-configuration>

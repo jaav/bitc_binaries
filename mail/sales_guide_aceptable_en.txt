@@ -1,0 +1,19 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Dear &FIRSTNAME;,
+
+Your request for access to the Sales Guide 
+of Brussels International is accepted.
+
+By clicking on the link underneath, you can access directly 
+the Sales Guide.
+
+Click here to have direct access to the Sales Guide
+http://bitcv2.wanabe.be:8080/bitc/front/salesguide/display.do
+
+
+Kind regards,
+The team of Brussels International
+--------------------------------------------------------------------------------

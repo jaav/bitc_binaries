@@ -1,0 +1,18 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Dear &FIRSTNAME;,
+
+Your request for access to the photo library 
+of Brussels International is accepted.
+
+By clicking on the link underneath, you can access 
+directly the photo library.
+
+Click here to have direct access to the photo library
+http://bitcv2.wanabe.be:8080/bitc/front/phototeque/display.do
+
+Kind regards,
+The team of Brussels International
+--------------------------------------------------------------------------------

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:q0="http://data.services.com"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SOAP-ENV:Body>
+<q0:searchBusiness>
+  <q0:maxresults>1000</q0:maxresults> 
+  <q0:businesstype>1</q0:businesstype> 
+  <q0:name></q0:name> 
+  <q0:zip>%ZIP%</q0:zip> 
+  <q0:city /> 
+  <q0:region>0</q0:region> 
+  <q0:picture>true</q0:picture> 
+  <q0:price>0</q0:price> 
+  <q0:cuisine>0</q0:cuisine> 
+  <q0:accomodation /> 
+  <q0:atmosphere /> 
+  <q0:occasion>0</q0:occasion> 
+  <q0:association>0</q0:association> 
+  <q0:date /> 
+  <q0:time_hh /> 
+  <q0:time_mm /> 
+  <q0:km /> 
+  <q0:kmzip>0</q0:kmzip> 
+  <q0:capacity>0</q0:capacity> 
+  <q0:capacity2>0</q0:capacity2> 
+  <q0:lg>%LG%</q0:lg> 
+  <q0:token>%TOKEN%</q0:token> 
+  </q0:searchBusiness>
+  </SOAP-ENV:Body>
+  </SOAP-ENV:Envelope>

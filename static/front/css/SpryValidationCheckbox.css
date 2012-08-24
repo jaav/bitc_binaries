@@ -1,0 +1,26 @@
+/*Validation Checkbox styling classes*/
+.validMsg {
+	display:none;
+}
+.checkboxValidState .validMsg {
+	display:inline;
+	margin:10px 0 0 10px;
+}
+/*IMAGE ERROR*/
+.errorMsg {
+	display:none;
+}
+.checkboxRequiredMsg {
+	display: none;
+}
+.checkboxRequiredState .errorMsg, .checkboxRequiredMsg .errorMsg, .checkboxInvalidFormatState .checkboxInvalidFormatMsg .errorMsg, .passwordMinValueState .checkboxMinValueMsg .errorMsg, .checkboxMaxValueState .checkboxMaxValueMsg .errorMsg, .checkboxMinCharsState .checkboxMinCharsMsg .errorMsg, .checkboxMaxCharsState .checkboxMaxCharsMsg {
+	display:inline;
+	margin:10px 0 0 10px;
+}
+.checkboxRequiredState .checkboxRequiredMsg {
+	display:inline;
+	line-height:25px;
+	color:#fa869b;
+	margin-left:260px;
+	font-weight:normal;
+}

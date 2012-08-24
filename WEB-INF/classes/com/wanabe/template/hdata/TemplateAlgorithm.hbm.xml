@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-avr.-2009 14:49:58 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.template.hdata.TemplateAlgorithm" table="template_algorithm">
+        <id name="algorithmId" type="java.lang.Integer">
+            <column name="algorithm_id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="100" />
+        </property>
+        <property name="params" type="string">
+            <column name="params" length="100" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

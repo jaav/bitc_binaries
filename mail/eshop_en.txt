@@ -1,0 +1,17 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Dear &FIRSTNAME;,
+
+We confirm you order of &EURO; €
+on the site of Brussels-International.
+Your reservation code  &CODE;.
+
+Click here to check and print your vouchers.
+http://bitcv2.wanabe.be:8080/bitc/front/eshop/displayVouchers.do
+
+
+Kind regards,
+The team of Brussels International
+--------------------------------------------------------------------------------

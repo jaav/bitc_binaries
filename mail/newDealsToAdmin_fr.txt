@@ -1,0 +1,16 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Cher administrateur,
+
+Une nouvelle demande pour afficher un deal vient d’être envoyée vers le site Visitbrussels.
+
+Nous vous invitons à la vérifier sur:
+
+http://localhost:8080/bitc/admin/contentDeals/list.do
+
+Meilleures salutations,
+La Visitbrussels MICE Team.
+
+--------------------------------------------------------------------------------

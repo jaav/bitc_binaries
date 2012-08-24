@@ -1,0 +1,24 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Geachte &FIRSTNAME;,
+
+U heeft gevraagd uw e-mailadres op de site van Brussel 
+Internationaal te wijzigen.
+
+Gelieve hieronder uw nieuw e-mailadres te controleren.
+U moet op de onderstaande link klikken om deze aanpassing 
+te bevestigen.
+
+ 	
+Uw nieuw e-mailadres: &NEW_EMAIL;
+
+
+Klik hier om uw nieuwe e-mailadres te bevestigen
+http://bitcv2.wanabe.be:8080/bitc/front/user/confirmNewEmail.do
+
+
+Hoogachtend,
+Het Team van Brussel Internationaal
+--------------------------------------------------------------------------------

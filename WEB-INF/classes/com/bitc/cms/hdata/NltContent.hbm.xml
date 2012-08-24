@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 juin 2010 12:48:41 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.cms.hdata.NltContent" table="nlt_content">
+        <id name="nltContentId" type="java.lang.Integer">
+            <column name="nlt_content_id" />
+            <generator class="identity" />
+        </id>
+        <property name="contentType" type="string">
+            <column name="content_type" length="20" not-null="true" />
+        </property>
+        <property name="contentId" type="int">
+            <column name="content_id" not-null="true" />
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19"  />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="created_by" length="50"  />
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="100"  />
+        </property>
+        <property name="listHtml" type="string">
+            <column name="list_html" length="100"  />
+        </property>
+        <property name="detailHtml" type="string">
+            <column name="detail_html" length="16777215"  />
+        </property>
+        <property name="listText" type="string">
+            <column name="list_text" length="1000"  />
+        </property>
+        <property name="detailText" type="string">
+            <column name="detail_text" length="16777215"  />
+        </property>
+        <property name="culture" type="string">
+            <column name="culture" length="5"  />
+        </property>
+        <property name="image" type="string">
+            <column name="image" length="100"  />
+        </property>
+        <property name="url" type="string">
+            <column name="url" length="100"  />
+        </property>
+        <property name="smallVersion" type="boolean">
+            <column name="small_version"  />
+        </property>
+    </class>
+</hibernate-mapping>

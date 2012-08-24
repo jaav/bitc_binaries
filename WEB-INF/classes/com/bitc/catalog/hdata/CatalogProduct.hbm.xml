@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 juin 2010 18:19:33 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.catalog.hdata.CatalogProduct" table="catalog_product">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="partner" class="com.bitc.cms.hdata.ContentPlace" fetch="select">
+            <column name="partner_id" />
+        </many-to-one>
+        <many-to-one name="category" class="com.bitc.cms.hdata.ContentArticle" fetch="select">
+            <column name="category_id" />
+        </many-to-one>
+        <many-to-one name="promoType" class="com.bitc.catalog.hdata.CatalogPromo" fetch="select">
+            <column name="promo_type" />
+        </many-to-one>
+        <property name="title" type="string">
+            <column name="title" length="200" />
+        </property>
+        <property name="abstract_" type="string">
+            <column name="abstract" length="2000" />
+        </property>
+        <property name="info" type="string">
+            <column name="info" length="16777215" />
+        </property>
+        <property name="smallImage" type="string">
+            <column name="small_image" length="300" />
+        </property>
+        <property name="bigImage" type="string">
+            <column name="big_image" length="300" />
+        </property>
+        <property name="url" type="string">
+            <column name="url" length="300" />
+        </property>
+        <property name="urlLabel" type="string">
+            <column name="url_label" length="200" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="20" />
+        </property>
+        <property name="visible" type="java.lang.Byte">
+            <column name="visible" />
+        </property>
+        <property name="fromDate" type="timestamp">
+            <column name="from_date" length="19" />
+        </property>
+        <property name="toDate" type="timestamp">
+            <column name="to_date" length="19" />
+        </property>
+        <property name="culture" type="string">
+            <column name="culture" length="7" />
+        </property>
+        <property name="author" type="string">
+            <column name="author" length="100" />
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" not-null="true" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="created_by" length="100" />
+        </property>
+        <property name="lastModifiedOn" type="timestamp">
+            <column name="last_modified_on" length="19" />
+        </property>
+        <property name="lastModifiedBy" type="string">
+            <column name="last_modified_by" length="100" />
+        </property>
+        <property name="position" type="java.lang.Integer">
+            <column name="position" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="100" />
+        </property>
+        <many-to-one name="publishContent" class="com.bitc.catalog.hdata.CatalogProduct" fetch="select">
+            <column name="published_id" />
+        </many-to-one>
+        <property name="numOfVersion" type="java.lang.Integer">
+            <column name="num_of_version" />
+        </property>
+        <property name="versionId" type="java.lang.Integer">
+            <column name="version_id" />
+        </property>
+        <property name="openCount" type="java.lang.Integer">
+            <column name="open_count" />
+        </property>
+        <property name="commentCount" type="java.lang.Integer">
+            <column name="comment_count" />
+        </property>
+        <property name="group" type="string">
+            <column name="_group" length="50" />
+        </property>
+        <property name="source" type="string">
+            <column name="source" length="50" />
+        </property>
+        <property name="sourceId" type="java.lang.Integer">
+            <column name="source_id" />
+        </property>
+        <property name="body" type="string">
+            <column name="body" length="16777215" />
+        </property>
+        <property name="stockLevel" type="big_decimal">
+            <column name="stock_level" precision="13" scale="4" />
+        </property>
+        <property name="lockLevel" type="big_decimal">
+            <column name="lock_level" precision="13" scale="4" />
+        </property>
+        <property name="daysBeforePrestation" type="java.lang.Integer">
+            <column name="days_before_prestation" />
+        </property>
+        <property name="taxe" type="big_decimal">
+            <column name="taxe" precision="5" />
+        </property>
+        <property name="weight" type="big_decimal">
+            <column name="weight" precision="7" scale="3" />
+        </property>
+        <property name="height" type="big_decimal">
+            <column name="height" precision="6" scale="3" />
+        </property>
+        <property name="width" type="big_decimal">
+            <column name="width" precision="6" scale="3" />
+        </property>
+        <property name="depth" type="big_decimal">
+            <column name="depth" precision="6" scale="3" />
+        </property>
+        <property name="closedMonday" type="boolean">
+            <column name="closed_monday" not-null="true" />
+        </property>
+        <property name="closedTuesday" type="boolean">
+            <column name="closed_tuesday" not-null="true" />
+        </property>
+        <property name="closedWednesday" type="boolean">
+            <column name="closed_wednesday" not-null="true" />
+        </property>
+        <property name="closedThursday" type="boolean">
+            <column name="closed_thursday" not-null="true" />
+        </property>
+        <property name="closedFriday" type="boolean">
+            <column name="closed_friday" not-null="true" />
+        </property>
+        <property name="closedSaturday" type="boolean">
+            <column name="closed_saturday" not-null="true" />
+        </property>
+        <property name="closedSunday" type="boolean">
+            <column name="closed_sunday" not-null="true" />
+        </property>
+        <property name="salesConditionDefault" type="string">
+            <column name="sales_condition_default" length="1000"/>
+        </property>
+        <property name="unitDefault" type="string">
+            <column name="unit_default" length="100" />
+        </property>
+        <set name="catalogProductAvailabilities" inverse="true" lazy="true" table="catalog_product_availability" fetch="select">
+            <key>
+                <column name="product_id" not-null="true" />
+            </key>
+            <one-to-many class="com.bitc.catalog.hdata.CatalogProductAvailability" />
+        </set>
+        <map name="catalogProductClts" inverse="true" cascade="all" lazy="false">
+            <key>
+                <column name="content_id" not-null="true" />
+            </key>
+            <map-key type="string">
+            	<column name="culture" not-null="true">
+            	</column>
+            </map-key> 
+            <one-to-many class="com.bitc.catalog.hdata.CatalogProductClt" />
+        </map>
+        <set name="catalogPrices" inverse="true" table="catalog_price" fetch="select" cascade="all" lazy="false">
+            <key>
+                <column name="product_id" not-null="true" />
+            </key>
+            <one-to-many class="com.bitc.catalog.hdata.CatalogPrice" />
+        </set>
+    </class>
+</hibernate-mapping>

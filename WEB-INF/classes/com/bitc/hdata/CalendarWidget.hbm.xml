@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29 mars 2011 10:57:28 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.hdata.CalendarWidget" table="calendar_widget">
+        <id name="widgetId" type="java.lang.Integer">
+            <column name="widget_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="calendarPartner" class="com.bitc.hdata.CalendarPartner" fetch="select" >
+            <column name="partner_id" not-null="true" />
+        </many-to-one>
+        <property name="url" type="string">
+            <column name="url" length="200" not-null="true" />
+        </property>
+        <property name="height" type="int">
+            <column name="height" not-null="true" />
+        </property>
+        <property name="width" type="int">
+            <column name="width" not-null="true" />
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" not-null="true" />
+        </property>
+        <property name="modifiedOn" type="timestamp">
+            <column name="modified_on" length="19" />
+        </property>
+         <property name="valid" type="boolean">
+            <column name="valid" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

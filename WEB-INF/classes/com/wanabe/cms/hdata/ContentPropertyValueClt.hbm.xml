@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 juin 2010 16:59:13 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.cms.hdata.ContentPropertyValueClt" table="content_property_value_clt">
+        <id name="cltId" type="int">
+            <column name="clt_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="contentPropertyValue" class="com.wanabe.cms.hdata.ContentPropertyValue" fetch="select">
+            <column name="value_id" not-null="true" />
+        </many-to-one>
+        <property name="culture" type="string">
+            <column name="culture" length="5" not-null="true" />
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="100" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="1000" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-mars-2009 23:50:02 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.wanabe.template.hdata.TemplatePage" table="template_page">
+        <comment></comment>
+        <id name="templatePageId" type="int">
+            <column name="template_page_id" />
+            <generator class="identity" />
+        </id>
+        <property name="template" type="string">
+            <column name="template" length="50" not-null="true">
+                <comment>home,home_rubrique</comment>
+            </column>
+        </property>
+        <property name="paramValues" type="string">
+            <column name="param_values" length="100">
+                <comment></comment>
+            </column>
+        </property>
+       
+    </class>
+</hibernate-mapping>

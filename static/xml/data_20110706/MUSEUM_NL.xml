@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+	<group>MUSEUM</group>
+	<language>NL</language>
+	<exported_date>20110706</exported_date>
+	<num_items>2</num_items>
+	<items>
+		<item id="2009">
+			<title><![CDATA[BOZAR]]></title>
+			<small_image>http://visitbrussels.be/bitc/static/front/img/db/img_317.jpg</small_image>
+			<body><![CDATA[<p>Gebouwd in 1928 door de meester-architect van de art nouveau, Victor Horta. Het gebouw is een centrum van het culturele en artistieke leven. Door het volledig gerenoveerd interieur heeft het zijn originele aanblik teruggevonden zoals het door Horta oorspronkelijk was ontworpen. Er worden geleide bezoeken georganiseerd ("Van Horta tot Horta") waarbij delen van het paleis worden bezocht die tot nu toe niet toegankelijk waren voor het grote publiek.</p>]]></body>
+			<address><![CDATA[Ravensteinstraat 23]]></address>
+			<city><![CDATA[Brussel]]></city>
+			<zipcode>1000</zipcode>
+			<phone>+32 2 507 84 30</phone>
+			<fax>+32 2 507 85 15</fax>
+			<email>info@bozar.be</email>
+			<website>http://www.bozar.be</website>
+			<latitude>50.844325</latitude>
+			<longitude>4.359151</longitude>
+			<position>110</position>
+		</item>
+		<item id="4580">
+			<title><![CDATA[Scientastic]]></title>
+			<small_image>http://visitbrussels.be/bitc/static/front/img/db/musee_scientastic_Brussels.jpg</small_image>
+			<body><![CDATA[<div>Ga zitten als een fakir, vlieg op een spiegel, verander uw stem in die van een eend... Meer dan 50 eenvoudige experimenten vormen een interactieve ontdekkingsreis door de wereld van de fysica, de illusie en de zintuigen.</div>]]></body>
+			<address><![CDATA[Anspachlaan]]></address>
+			<city><![CDATA[Brussel]]></city>
+			<zipcode>1000</zipcode>
+			<phone>+32 2 732 13 36</phone>
+			<fax></fax>
+			<email>info@scientastic.be</email>
+			<website>http://www.scientastic.be</website>
+			<latitude>50.848101</latitude>
+			<longitude>4.349397</longitude>
+			<position>0</position>
+		</item>
+	</items>
+</content>

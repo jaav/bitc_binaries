@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carteBITC>
+<lieu fr="Root"  nl="" en="" id="208"/>
+<!-- 1er niveau de la carte -->
+<center_mc fr="Centre" nl="Centrum   " en=""	id="209" />
+<BigSouth_mc fr="Grand Sud"	  nl="Zuid(Grand)" en="South(Grand)" id="200" />
+<!-- // -->
+<Dansaert_mc fr="Dansaert" nl="Dansaert" en="Dansaert" id="184" />
+<RogierBota_mc fr="RogierBota"  nl="RogierKruid" en="RogierBota"	id="185" />
+<GrandPlace_mc fr="GrandPlace"  nl="Grotemarkt" en="GrandPlace"	id="186" />
+<ArtsRoyal_mc fr="ArtsRoyal"  nl="KunstKoning" en="ArtRoyal"	id="187" />
+<midi_mc fr="Midi"  nl="Zuid" en="South" id="188" />
+<SablonMarolles_mc fr="SablonMarolles"  nl="ZavelMarollen" en="SablonMarolles" id="189" />
+<europe_mc fr="Europe"  nl="Europa" en="Europe"	id="190" />
+<south_mc fr="Sud"	  nl="Zuid" en="South" id="210" />
+<LouiseCharleroi_mc fr="LouiseCharleroi"  nl="LouisaCharleroi" en="LouiseCharleroi"	id="191" />
+<BailliChatelain_mc fr="BailliChatelain"  nl="BaljuwKastelijn" en=""	id="192" />
+<BrugmannBascule_mc fr="BrugmannBascule" nl="BrugmannBascule" en="" id="193" />
+<NamurFlagey_mc fr="NamurFlagey"	  nl="NamenFlagey" en="NamurFlagey" id="194" />
+<Bois_mc fr="Bois"  nl="Bos" en="Woods" id="195" />
+<heysel_mc fr="Heyzel"  nl="Heizel" en="Heyzel" id="196" />
+<nord_mc fr="Nord"  nl="Noord" en="North" id="197" />
+<nordWest_mc fr="NordOuest"  nl="NoordWest" en="NorthWest" id="198" />
+<nordEast_mc fr="NordEst"  nl="NoordOost" en="NorthEast" id="199" />
+<southWest_mc fr="SudOuest"  nl="ZuidWest" en="SouthWest" id="201" />
+<southEast_mc fr="SudEst"  nl="ZuidOost" en="SouthEast" id="202"/>
+<lieu fr="Outside"  id="203"  nl="Outside" en="Outside"/>
+<texteBtn fr="chercher" nl="zoek" en="find"/>
+</carteBITC>

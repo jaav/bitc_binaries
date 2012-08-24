@@ -1,0 +1,50 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+Dear Partner,
+
+A new Request For Proposal has just been posted on the Brussels 
+International website.You will find the details of the RFP hereafter. 
+                  
+Should you be interested, please make contact directly with 
+the client, with copy to us.We thank you for your prompt reply.
+                   
+Client details: 
+
+
+First Name: &FIRSTNAME; 
+Last Name: &LASTNAME; 
+Language: &LG; 
+Company/Organisation: &COMPANY; 
+Organisation type: &ORGANISATION_TYPE; 
+Address: &ADDRESS; 
+City: &CITY; 
+Province/State: &STATE; 
+Postal/Zip Code: &ZIP; 
+Country: &COUNTRY; 
+Telephone: &PHONE; 
+Email: &EMAIL; 
+Url: &URL; 
+Infos: &INFOS;  
+
+
+Request details: 
+
+
+Arrival date:&PREF_ARRIVALDATE; 
+Departure date: &PREF_DEPARTDATE; 
+Number of bedrooms Required: &HOTEL_NUMROOMS;  
+
+
+May we kindly ask you to reply only to those requests that you can
+accommodateand only with the requested information. Using the contact for
+promotional purposeswill upset the client and throw a bad light on Brussels
+as a destination.  
+		
+Thank you for your support.
+				
+                  
+                  
+Best regards, 
+The Brussels International MICE Team
+--------------------------------------------------------------------------------

@@ -1,0 +1,30 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Geachte &FIRSTNAME;, 
+
+Wij hebben uw ischrijving op onze site goed ontvangen.  
+
+U kan hieronder uw gegevens nakijken.
+Gelieve op de onderstaande link te klikken om uw profiel 
+te activeren. 
+
+
+Uw titel: &GREETING;
+Uw taal: &LANGUAGEID;
+Uw voornaam: &FIRSTNAME;
+Uw naam: &LASTNAME;
+
+Uw profielnaam: &PSEUDO;
+Uw verjaardagsdatum: &BIRTHDATE;
+Uw e-mail:  &EMAIL;
+
+
+Klik hier om uw inschrijving te bevestigen
+http://bitcv2.wanabe.be:8080/bitc/front/user/confirmSubscribe.do
+
+
+Hoogachtend,
+Het Team van Brussel Internationaal
+--------------------------------------------------------------------------------

@@ -1,0 +1,18 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Geachte &FIRSTNAME;,
+
+Dit is de bevestiging van uw bestelling van &EURO; €
+op de site Brussel Internationaal.
+De code van uw bestelling is &CODE;.
+
+Door op de volgende link te klikken kan u uw vouchers consulteren 
+en afdrukken.
+http://bitcv2.wanabe.be:8080/bitc/front/eshop/displayVouchers.do
+
+
+Hoogachtend,
+Het Team van Brussel Internationaal
+--------------------------------------------------------------------------------

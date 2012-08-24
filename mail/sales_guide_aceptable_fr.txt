@@ -1,0 +1,18 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Bonjour &FIRSTNAME;,
+
+Nous avons le plaisir de vous annoncer que votre demande
+d’accès à notre salesguide a été approuvée.
+
+Vous pouvez accéder à notre Sales Guide à l’aide du lien ci-dessous.
+
+Cliquez ici pour accéder au Sales Guide de Bruxelles International.
+http://bitcv2.wanabe.be:8080/bitc/front/salesguide/display.do
+
+
+Cordialement,
+L'équipe de Bruxelles-International
+--------------------------------------------------------------------------------

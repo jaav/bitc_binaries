@@ -1,0 +1,52 @@
+/* SpryFormValidation.css - Revision: Spry Preview Release 1.4 */
+
+/*IMAGE VALID*/
+.validMsg {
+	display:none;
+}
+.textfieldValidState .validMsg {
+	display:inline;
+	margin:5px 0 0 10px;
+	width:16px;
+	height:24px;
+}
+/*IMAGE ERROR*/
+.errorMsg {
+	display:none;
+}
+.textfieldRequiredState .errorMsg, .textfieldRequiredMsg .errorMsg, .textfieldInvalidFormatState .errorMsg, .textfieldInvalidFormatMsg .errorMsg, .textfieldMinValueState .textfieldMinValueMsg .errorMsg, .textfieldMaxValueState .textfieldMaxValueMsg .errorMsg, .textfieldMinCharsState .errorMsg, .textfieldMinCharsMsg .errorMsg, .textfieldMaxCharsState .errorMsg, .textfieldMaxCharsMsg .errorMsg {
+	display:inline;
+	margin:5px 0 0 10px;
+	width:29px;
+	height:23px;
+}
+/*TEXTE ERROR*/
+.textfieldRequiredMsg, .textfieldRequiredMsg2, .textfieldRequiredMsg3, .textfieldInvalidFormatMsg, .textfieldMinCharsMsg, .textfieldMaxCharsMsg {
+	display:none;
+}
+.textfieldRequiredState .textfieldRequiredMsg,
+.textfieldInvalidFormatState .textfieldInvalidFormatMsg,
+.textfieldMinValueState .textfieldMinValueMsg,
+.textfieldMaxValueState .textfieldMaxValueMsg,
+.textfieldMinCharsState .textfieldMinCharsMsg,
+.textfieldMaxCharsState .textfieldMaxCharsMsg {
+	display:block;
+	/*margin-left:260px;
+	margin-bottom:25px;*/
+	line-height:12px;
+	color:#d40072;
+	font-size:12px;
+	font-weight:normal;
+	/*width:230px;*/
+	padding-left:32%;
+}
+.textfieldRequiredState .textfieldRequiredMsg2 {
+	display:block;
+	margin-left:200px;
+	margin-bottom:25px;
+	line-height:12px;
+	color:#d40072;
+	font-size:10px;
+	font-weight:normal;
+	width:230px;
+}

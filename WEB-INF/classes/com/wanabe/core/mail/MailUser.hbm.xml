@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 01-juil.-2010 15:05:05 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.wanabe.core.mail.MailUser" table="mail_user">
+        <comment></comment>
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="userId" type="java.lang.Integer">
+            <column name="user_id">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="mailId" type="int">
+            <column name="mail_id" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="fromEmail" type="string">
+            <column name="from_email" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="fromName" type="string">
+            <column name="from_name" length="100">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="toName" type="string">
+            <column name="to_name" length="300">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="toEmail" type="string">
+            <column name="to_email" length="300">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="subject" type="string">
+            <column name="subject" length="250">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="txt" type="string">
+            <column name="txt" length="1000">
+                <comment></comment>
+            </column>
+        </property>
+         <property name="mailName" type="string">
+            <column name="mail_name" length="100">
+                <comment></comment>
+            </column>
+        </property>
+           <property name="sent" type="boolean">
+            <column name="sent" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

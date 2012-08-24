@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="KEYWORDS" content="" />
+<meta name="DESCRIPTION" content="" />
+<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery-tools.min.js"></script>
+<script type="text/javascript" src="../js/jquery-functions.js"></script>
+<script type="text/javascript" src="../js/SpryValidationTextField.js"></script>
+<script type="text/javascript" src="../js/SpryValidationRadio.js"></script>
+<script type="text/javascript" src="../js/SpryValidationPassword.js"></script>
+<script type="text/javascript" src="../js/SpryValidationConfirm.js"></script>
+<script type="text/javascript" src="../js/SpryValidationTextarea.js"></script>
+<script type="text/javascript" src="../js/SpryValidationSelect.js"></script>
+<script type="text/javascript" src="../js/SpryValidationCheckbox.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/screen.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/scrollable.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/SpryValidationTextField.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/SpryValidationRadio.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/SpryValidationPassword.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/SpryValidationConfirm.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/SpryValidationTextarea.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/SpryValidationSelect.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/SpryValidationCheckbox.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/print.css" media="print"/>
+<title>BITC</title>
+</head>
+<body>
+<!--header:start-->
+<div id="top">
+  <div id="top_bg"></div>
+  <div id="top_content"> <a href="#" class="btn_map_view">Map view</a> <a href="#" class="collapse btn_collapse_up">Collapse</a>
+    <form id="f_search" action="#" method="get">
+      <input id="f_search_textfield" name="f_search_query" type="text" />
+      <input id="f_search_submit" name="f_search_submit" value="Search" type="submit" alt="Rechercher" />
+    </form>
+    <div class="clr"></div>
+    <div id="box_btn_lg"> <a href="#">NL</a> <a href="#">FR</a> </div>
+  </div>
+</div>
+<div id="collapse">
+  <div id="expand_content"></div>
+  <div id="collapse_content"></div>
+</div>
+<!--header:end-->
+<!--mainnav:start-->
+<div id="main_nav_bg">
+  <div id="main_nav_level2"></div>
+  <div id="main_nav_content">
+    <ul id="main_nav">
+      <li> <a href="#" title="Visitors">Visitors</a>
+        <ul class="level2 alignLeft">
+          <li class="home"> <a href="#" ><img src="../img/ml/visu_home_main_nav.jpg" alt="Home"/></a></li>
+          <li><a href="#" title="Guides and maps">Guides and maps</a></li>
+          <li><a href="#" title="Attractions ans museums">Attractions ans museums</a></li>
+          <li><a href="#" title="Accommodation">Accommodation</a></li>
+          <li><a href="#" title="Eating and drinking">Eating and drinking</a></li>
+          <li><a href="#" title="Nightlife">Nightlife</a></li>
+          <li><a href="#" title="Information">Information</a></li>
+        </ul>
+      </li>
+      <li> <a href="#" title="Meetings">Meetings</a>
+        <ul class="level2 alignLeft">
+          <li class="home"> <a href="#" ><img src="../img/ml/visu_home_main_nav.jpg" alt="Home"/></a></li>
+          <li><a href="#" title="Guides and maps">Guides and maps</a></li>
+          <li><a href="#" title="Attractions ans museums">Attractions ans museums</a></li>
+          <li><a href="#" title="Accommodation">Accommodation</a></li>
+          <li><a href="#" title="Eating and drinking">Eating and drinking</a></li>
+          <li><a href="#" title="Nightlife">Nightlife</a></li>
+          <li><a href="#" title="Information">Information</a></li>
+        </ul>
+      </li>
+      <li> <a href="#" title="Travel Trade">Travel Trade</a>
+        <ul class="level2 alignLeft">
+          <li class="home"> <a href="#" ><img src="../img/ml/visu_home_main_nav.jpg" alt="Home"/></a></li>
+          <li><a href="#" title="Guides and maps">Guides and maps</a></li>
+          <li><a href="#" title="Attractions ans museums">Attractions ans museums</a></li>
+          <li><a href="#" title="Accommodation">Accommodation</a></li>
+          <li><a href="#" title="Eating and drinking">Eating and drinking</a></li>
+          <li><a href="#" title="Nightlife">Nightlife</a></li>
+          <li><a href="#" title="Information">Information</a></li>
+        </ul>
+      </li>
+      <li> <a href="#" title="Media Press">Media Press</a>
+        <ul class="level2 alignLeft">
+          <li class="home"> <a href="#" ><img src="../img/ml/visu_home_main_nav.jpg" alt="Home"/></a></li>
+          <li><a href="#" title="Guides and maps">Guides and maps</a></li>
+          <li><a href="#" title="Attractions ans museums">Attractions ans museums</a></li>
+          <li><a href="#" title="Accommodation">Accommodation</a></li>
+          <li><a href="#" title="Eating and drinking">Eating and drinking</a></li>
+          <li><a href="#" title="Nightlife">Nightlife</a></li>
+          <li><a href="#" title="Information">Information</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div id="box_login_facebook_connect">
+      <div id="login"><a href="#">Register</a> / <a href="#">Login</a></div>
+      <div id="or"> or</div>
+      <a href="#" id="facebook_connect"><img src="../img/ml/logo_facebook_connect.jpg" alt="facebook Connect"/></a></div>
+  </div>
+</div>
+<!--mainnav:end-->
+<!--content:start-->
+<div id="content"> <img src="../img/ml/visu_top_print_css.jpg" class="top_print"/>
+  <!--breadcrump:start-->
+  <ul id="breadcrump">
+    <li><a href="#">Home</a></li>
+    <li>-</li>
+    <li><a href="#">Level 1</a></li>
+    <li>-</li>
+    <li><a href="#">Level 2</a></li>
+  </ul>
+  <!--breadcrump:end-->
+  <!--btnback:start-->
+  <div id="btn_back"><a href="#">Back</a></div>
+  <!--btnback:end-->
+  <div class="clr"></div>
+  <!--contentMain:start-->
+  <div id="content_main">
+    <h1 class="line_grey">Contact us</h1>
+    <h3>Pour des informations générales concernant Bruxelles, contactez-nous</h3>
+    <p>Bruxelles International - Bureau d'informations touristiques <br />
+      2-4 rue Royale <br />
+      B-1000 Bruxelles<br />
+      tel : +32 (0)2 513 89 40 <br />
+      Fax : +32 (0)2 513 83 20</p>
+    <form class="form">
+      <fieldset>
+        <p class="error">! Message erreur serveur !</p>
+        <span id="radio_greeting">
+        <label for="f_greeting" class="label_radio">Titre* :</label>
+        <div class="box_input_radio">
+          <input name="f_greeting" type="radio" value="Mr" class="radio" />
+          <span class="radioTxt">Mr</span>
+          <div class="clr"></div>
+          <input name="f_greeting" type="radio" value="Mme" class="radio" />
+          <span class="radioTxt">Mme</span>
+          <div class="clr"></div>
+          <input name="f_greeting" type="radio" value="Mlle" class="radio" />
+          <span class="radioTxt">Mlle</span> </div>
+        <img src="../img/ml/ok.png" class="validMsg"/> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="radioRequiredMsg clr">Veuillez faire un choix</div>
+        </span>
+        <div class="clr"></div>
+        <span id="radio_gender">
+        <label for="f_gender" class="label_radio">Genre* :</label>
+        <div class="box_input_radio">
+          <input name="f_gender" type="radio" value="M" class="radio" />
+          <span class="radioTxt">Homme</span>
+          <div class="clr"></div>
+          <input name="f_gender" type="radio" value="W" class="radio" />
+          <span class="radioTxt">Femme</span> </div>
+        <img src="../img/ml/ok.png" class="validMsg"/> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="radioRequiredMsg clr">Veuillez faire un choix</div>
+        </span>
+        <div class="clr"></div>
+        <span id="radio_culture">
+        <label for="f_greeting" class="label_radio">Langue* :</label>
+        <div class="box_input_radio">
+          <input name="f_greeting" type="radio" value="Fr" class="radio" />
+          <span class="radioTxt">Fr</span>
+          <div class="clr"></div>
+          <input name="f_greeting" type="radio" value="Nl" class="radio" />
+          <span class="radioTxt">Nl</span>
+          <div class="clr"></div>
+          <input name="f_greeting" type="radio" value="En" class="radio" />
+          <span class="radioTxt">En</span> </div>
+        <img src="../img/ml/ok.png" class="validMsg"/> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="radioRequiredMsg clr">Veuillez faire un choix</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_lastname">
+        <label for="f_lastname">Nom* :</label>
+        <input name="f_lastname" type="text" maxlength="50" value=""/>
+        <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_firstname">
+        <label for="f_firstname">Prénom* :</label>
+        <input name="f_firstname" type="text" maxlength="50" value=""/>
+        <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_pseudo">
+        <label for="f_pseudo">Pseudo utilisé pour les commentaires* :</label>
+        <input name="f_pseudo" type="text" maxlength="50" value=""/>
+        <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_email">
+        <label  for="f_email">E-mail* :</label>
+        <input name="f_email" type="text" maxlength="80" value=""/>
+        <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        <div class="textfieldInvalidFormatMsg clr">Le format de votre adresse n'est pas valide !</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_birthdate">
+        <label  for="f_birthdate">Date de naissance* :</label>
+        <input name="f_birthdate" type="text"  value=""/>
+        <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        <div class="textfieldInvalidFormatMsg clr">Veuillez entrer une date au format JJ/MM/AAAA</div>
+        </span>
+        <div class="clr"></div>
+        <div class="clr"></div>
+        <span id="tfv_password">
+        <label  for="f_password">Mot de passe* :</label>
+        <input name="f_password" type="password" maxlength="50" value=""/>
+        <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" /> <span class="passwordRequiredMsg clr">Ce champ est obligatoire</span> </span>
+        <div class="clr"></div>
+        <span id="tfv_password2">
+        <label  for="f_password2">Confirmer mot de passe* :</label>
+        <input name="f_password2" type="password" maxlength="50" value=""/>
+        <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" /> <span class="confirmRequiredMsg clr">Ce champ est obligatoire</span> <span class="confirmInvalidMsg clr">Ce champ ne correspond pas au Mot de passe</span> </span>
+        <div class="clr"></div>
+        <span id="tfv_street">
+        <label  for="f_street">Rue* :</label>
+        <input name="f_street" type="text" maxlength="100" value=""/>
+        <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_num">
+        <label  for="f_num">N° :</label>
+        <input name="f_num" type="text" maxlength="10" value=""/>
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_box">
+        <label  for="f_box">Boîte :</label>
+        <input name="f_box" type="text" maxlength="10" value="" />
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_zipcode">
+        <label  for="f_zipcode">Code Postal* :</label>
+        <input name="f_zipcode" type="text" maxlength="4" value=""/>
+        <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        <div class="textfieldInvalidFormatMsg clr">Veuillez encoder 4 chiffres</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_city">
+        <label for="f_city">Ville* :</label>
+        <input name="f_city" type="text" maxlength="50" value=""/>
+        <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_country">
+        <label for="f_country">Pays* :</label>
+        <input name="f_country" type="text" maxlength="50" value=""/>
+        <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_comment">
+        <label for="f_comment">Remarque :</label>
+        <textarea name="f_comment" type="text" maxlength="1000" value=""/>
+        </textarea>
+        <div class="textareaRequiredMsg clr">Ce champ est obligatoire</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_num_participant">
+        <label  for="f_num_participant">Nombre de participants* :</label>
+        <input name="f_num_participant" type="text" maxlength="3" value=""/>
+        <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_phone">
+        <label for="f_phone">Téléphone :</label>
+        <input name="f_phone" type="text" maxlength="20" value=""/>
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_gsm">
+        <label for="f_gsm">Mobile :</label>
+        <input name="f_gsm" type="text" maxlength="20" value=""/>
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_fax">
+        <label for="f_fax">Fax :</label>
+        <input name="f_fax" type="text" maxlength="20" value=""/>
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_website">
+        <label  for="f_website">URL site :</label>
+        <input name="f_website" type="text" maxlength="100" value=""/>
+        <div class="textfieldInvalidFormatMsg clr">L'adresse e-mail n'est pas valide</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_message">
+        <label for="f_message">Message : </label>
+        <textarea name="f_message" id="f_message" maxlength="1000"></textarea>
+        <span id="Counttextarea_counter" class="counter">&nbsp;</span> <span class="textareaRequiredMsg clr">Ce champ est obligatoire</span> </span>
+        <div class="clr"></div>
+        <div class="clr"></div>
+        <span id="tfv_company_name">
+        <label for="f_company_name">Nom de la société* :</label>
+        <input name="f_company_name" type="text" maxlength="100" value=""/>
+        <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="textfieldRequiredMsg clr">Ce champ est obligatoire</div>
+        </span>
+        <div class="clr"></div>
+        <span id="tfv_company_type">
+        <label for="f_company_type" class="label_radio">Type de société* :</label>
+        <select name="f_company_type" id="f_startDate">
+          <option value="">Choisissez</option>
+          <option value="Press" >Press</option>
+          <option value="Tour" >Tour</option>
+          <option value="Mice" >Mice</option>
+          <option value="Travel" >Travel</option>
+          <option value="Public" >Public</option>
+          <option value="Other" >Other</option>
+        </select>
+        <img src="../img/ml/ok.png" class="validMsg" /> <img src="../img/ml/erreur.png" class="errorMsg" />
+        <div class="selectRequiredMsg clr">Veuillez faire un choix</div>
+        </span>
+        <div class="clr"></div>
+        <div class="box_input_checkbox">
+          <input type="checkbox" name="f_allowEmail" id="f_allowEmail" value="1" class="checkbox" />
+          <span class="checkboxTxt">Oui, le BITC peut me contacter.</span>
+          <div class="clr"></div>
+          <input type="checkbox" name="f_allowForumEmail" id="f_allowForumEmail"  value="1" class="checkbox" />
+          <span class="checkboxTxt">Je veux être tenu au courant lorsque quelqu'un réagit à une de mes questions sur le forum.</span>
+          <div class="clr"></div>
+          <input type="checkbox" name="f_allowPartner" id="f_allowPartner"  value="1" class="checkbox" />
+          <span class="checkboxTxt">Je souhaite être tenu informé des nouvelles du BITC aussi bien par courrier que par e-mail</span>
+          <div class="clr"></div>
+        </div>
+        
+        
+        
+        <div id="box_capcha"> <img src="http://vivelechocolatcotedor.promovillage.wanabe.be/wapv/tools/captcha/displayCaptcha.do?cpt_backgroundColor=%23f9f9f9&cpt_circleColor=%23f9f9f9&cpt_textColor=%23000000&cpt_borderColor=%23d0d0d0" class="captcha"/>
+          <div class="captcha_reset"><a href="#">Reset Capcha</a></div>
+          <div class="clr"></div>
+        </div>
+        <div class="clr"></div>
+        <input type="submit" value="Envoyer" id="form_send" />
+        <div class="clr"></div>
+        <p>* Champs obligatoires à compléter</p>
+        <p class="remark">« All data of a personal nature passed on to Brussels International is recorded in the files of Brussels International - or those of third parties (professionals) acting on its behalf - for the purposes of managing marketing communication mailings. Further information may be obtained from the 'Commission pour la protection de la vie privée' (Commission for the Protection of Privacy) (Rue de la Régence 63, 1000 Brussels). Every individual has the right to access his/her personal data. Brussels International, 2-4 rue Royale, 1000 Brussels, owns and manages the file. »</p>
+      </fieldset>
+    </form>
+  </div>
+  <!--contentMain:end-->
+  <!--contentSub:start-->
+  <div id="content_sub">
+    <!-- component promo:start -->
+    <div id="promo">
+      <h2>Promo</h2>
+      <div> <a class="prev_1 browse left"><img src="../img/ml/arrow_left_promo.jpg" alt="#"/></a>
+        <div class="scrollable" id="scrollable" >
+          <div class="items">
+            <!-- Slide 1 -->
+            <div>
+              <h3>Hotel Coste *</h3>
+              <img src="../img/ml/visu_promo.jpg" alt="#"/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at tincidunt massa. Etiam sed nulla mi, vel mollis.</p>
+            </div>
+            <!-- Slide 2 -->
+            <div>
+              <h3>Hotel Coste **</h3>
+              <img src="../img/ml/visu_promo.jpg" alt="#"/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at tincidunt massa. Etiam sed nulla mi, vel mollis.</p>
+            </div>
+            <!-- Slide 3 -->
+            <div>
+              <h3>Hotel Coste ***</h3>
+              <img src="../img/ml/visu_promo.jpg" alt="#"/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at tincidunt massa. Etiam sed nulla mi, vel mollis.</p>
+            </div>
+          </div>
+        </div>
+        <a class="next_1 browse right"><img src="../img/ml/arrow_right_promo.jpg" alt="#"/></a> </div>
+    </div>
+    <!-- component promo:end -->
+  </div>
+  <!--contentSub:end-->
+  <div class="clr"></div>
+</div>
+<!--content:end-->
+<!--navSub:start-->
+<div id="nav_sub">
+  <div id="nav_sub_content">
+    <h2>EXPLORE</h2>
+    <ul>
+      <li>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+      </li>
+      <div class="clr"></div>
+      <li>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+      </li>
+      <div class="clr"></div>
+    </ul>
+  </div>
+</div>
+<!--navSub:end-->
+<!--footer:start-->
+<div id="footer">
+  <div id="footer_content">
+    <div id="logo_brussels_city"><img src="../img/ml/logo_brussels_city.png" alt="Ville de Bruxelles"/></div>
+    <div id="logo_brussels_iris"><img src="../img/ml/logo_brussels_iris.png" alt="Région Bruxelles Capitale"/></div>
+    <div id="logo_cocof"><img src="../img/ml/logo_cocof.png" alt="COCOF"/></div>
+    <div id="logo_vlaams_community"><img src="../img/ml/logo_vlaams_community.png" alt=""/></div>
+    <div id="logo_bitc"><img src="../img/ml/logo_bitc.jpg" alt="BITC"/></div>
+    <hr/>
+    <div id="site_info">© 2010 - BITC - All rights reserved - Powered by <a href="#">Wanabe</a></div>
+    <ul id="footer_nav_sub">
+      <li><a href="#">About us</a></li>
+      <li>|</li>
+      <li><a href="#">Contact us</a></li>
+      <li>|</li>
+      <li><a href="#">Jobs</a></li>
+    </ul>
+  </div>
+</div>
+<!--footer:end-->
+<script type="text/javascript">
+var sprytextfield = new Spry.Widget.ValidationRadio("radio_greeting", {validateOn:["blur", "change"]});
+var sprytextfield = new Spry.Widget.ValidationRadio("radio_gender", {validateOn:["blur", "change"]});
+var sprytextfield = new Spry.Widget.ValidationRadio("radio_culture", {validateOn:["blur", "change"]});
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_lastname", "none", {validateOn:["blur"]});
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_firstname", "none", {validateOn:["blur"]});
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_pseudo", "none", {validateOn:["blur"]});
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_email", "email", {validateOn:["blur"]});
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_birthdate", "date", {format:"dd/mm/yyyy", pattern:"00/00/0000", validateOn:["blur"], useCharacterMasking:true, isRequired:true});
+var sprytextfield = new Spry.Widget.ValidationPassword("tfv_password", {validateOn:["blur"]});
+var sprytextfield = new Spry.Widget.ValidationConfirm("tfv_password2", "tfv_password", {validateOn: ['blur']});	
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_street", "none", {validateOn:["blur"]});	
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_num", "none", {validateOn:["blur"], isRequired:false});	
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_box", "none", {validateOn:["blur"], isRequired:false});
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_zipcode", "zip_code", {useCharacterMasking:true, format:"zip_custom", pattern:"0000",minChars:4, maxChars:4, validateOn:["blur"]});
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_city", "none", {validateOn:["blur"]})
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_country", "none", {validateOn:["blur"]})
+var sprytextfield = new Spry.Widget.ValidationTextarea("tfv_comment", {validateOn:["blur"], isRequired:false});
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_num_participant", "integer", {useCharacterMasking:true, validateOn:["blur"] });
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_phone", "integer", {useCharacterMasking:true, validateOn:["blur"], isRequired:false});
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_gsm", "integer", {useCharacterMasking:true, validateOn:["blur"], isRequired:false});
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_fax", "integer", {useCharacterMasking:true, validateOn:["blur"], isRequired:false});
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_website", "url", {validateOn:["blur"],hint:"http://", isRequired:false});
+var textarea_counter_up = new Spry.Widget.ValidationTextarea("tfv_message", {maxChars:1000, counterType:"chars_remaining", counterId:"Counttextarea_counter", validateOn:["blur"], isRequired:false});
+var sprytextfield = new Spry.Widget.ValidationTextField("tfv_company_name", "none", {validateOn:["blur"]});
+var sprytextfield = new Spry.Widget.ValidationSelect("tfv_company_type", {validateOn:["blur, change"]});
+</script>
+</body>
+</html>

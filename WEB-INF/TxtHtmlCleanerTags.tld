@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd" 
+		version="2.0">
+	<tlib-version>1.2</tlib-version>
+	
+	<uri>TxtHtmlCleanerTags</uri>
+	
+		
+	<function>
+	    <name>encodeToHTMLEntity</name>
+		<function-class>
+			   com.activeidea.utils.TxtHtmlCleaner
+		</function-class>
+		<function-signature>
+		      String encodeToHTMLEntity(java.lang.String)
+		</function-signature>
+	</function>
+	
+	 <function>
+	   <name>encodeToNumericEntity</name>
+		<function-class>
+			  com.activeidea.utils.TxtHtmlCleaner
+		</function-class>
+		<function-signature>
+		      String encodeToNumericEntity(java.lang.String)
+		</function-signature>
+	</function>
+	
+	<function>
+	    <name>getEntity</name>
+		<function-class>
+			  com.activeidea.utils.TxtHtmlCleaner 
+		</function-class>
+		<function-signature>
+		      String getEntity(char)
+		</function-signature>
+	</function>
+	
+	
+	<function>
+	   <name>getNumericEntity</name>
+		<function-class>
+			  com.activeidea.utils.TxtHtmlCleaner 
+		</function-class>
+		<function-signature>
+		       String getNumericEntity(char)
+		</function-signature>
+	</function>
+
+	<function>
+	   <name>flashXMLCleaner</name>
+		<function-class>
+		       com.activeidea.utils.TxtHtmlCleaner
+		</function-class>
+		<function-signature>
+               String flashXMLCleaner(java.lang.String) 
+		</function-signature>
+	</function>
+	
+	<function>
+	   <name>XMLtoFlash</name>
+		<function-class>
+		       com.activeidea.utils.TxtHtmlCleaner
+		</function-class>
+		<function-signature>
+               String XMLtoFlash(java.lang.String)
+		</function-signature>
+	</function>
+	<function>
+	   <name>html2txt</name>
+		<function-class>
+		       com.activeidea.utils.TxtHtmlCleaner
+		</function-class>
+		<function-signature>
+               String html2txt(java.lang.String) 
+		</function-signature>
+	</function>
+	 <function>
+	   <name>replaceAccentChar</name>
+		<function-class>
+		       com.activeidea.utils.TxtHtmlCleaner
+		</function-class>
+		<function-signature>
+               String luceneCleaner(java.lang.String )    
+		</function-signature>
+	</function>
+	 
+	 <function>
+	   <name>html2content</name>
+		<function-class>
+		       com.activeidea.utils.TxtHtmlCleaner
+		</function-class>
+		<function-signature>
+                String html2content(java.lang.String)   
+		</function-signature>
+	</function>
+	 
+	</taglib>

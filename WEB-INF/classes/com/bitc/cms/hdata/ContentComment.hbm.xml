@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 juil. 2010 10:33:20 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.cms.hdata.ContentComment" table="content_comment">
+        <id name="commentId" type="java.lang.Integer">
+            <column name="comment_id" />
+            <generator class="identity" />
+        </id>
+        <property name="message" type="string">
+            <column name="message" length="1000" not-null="true" />
+        </property>
+        <property name="contentType" type="string">
+            <column name="content_type" length="50" not-null="true" />
+        </property>
+        <property name="contentId" type="int">
+            <column name="content_id" not-null="true" />
+        </property>
+        <property name="userId" type="int">
+            <column name="user_id" not-null="true" />
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="4" not-null="true" />
+        </property>
+        <property name="statusOn" type="date">
+            <column name="status_on" length="19" not-null="true" />
+        </property>
+        <property name="culture" type="string">
+            <column name="culture" length="7">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

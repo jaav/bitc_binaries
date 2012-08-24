@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="KEYWORDS" content="" />
+<meta name="DESCRIPTION" content="" />
+<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery-tools.min.js"></script>
+<script type="text/javascript" src="../js/jquery-functions.js"></script>
+<script type="text/javascript" src="../js/jquery.ui.core.js"></script>
+<script type="text/javascript" src="../js/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="../js/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="../js/jquery.ui.datepicker-fr.js"></script>
+<script type="text/javascript" src="../js/SpryValidationSelect.js"></script>
+<script type="text/javascript">
+/*
+Array Disabled/enabled Date
+diableDayOfWeek:[day];/!\ 0 is Sunday.
+		
+disabledDate/enableDate:[dateDay,Month,Year] 		
+If Year == 0 all day/month will be disabled every Year
+*/
+	var enableDate=[[20,6,0]];
+	var diableDayOfWeek=[0,1];	
+	var disabledDate=[[25,12,2010],[15,6,0],[22,6,2010],[23,6,0]];
+	/*DATEPICKER*/	
+	$(function() {			   
+		$("#datePickerBegin").datepicker({
+			showOn: 'button',
+			buttonImage: '../img/ml/calendar.gif',
+			buttonImageOnly: true,		
+			minDate: 0, 
+			maxDate: '+1Y',
+			onSelect: function(dateText, inst) { 			 	
+				var day=dateText.substr(0,2);
+				var month=dateText.substr(3,2);
+				var year=dateText.substr(6,4);
+				var monthYear=year+"-"+month;
+				//alert(day +" "+monthYear)
+				$("#f_day_begin option").each(function(){
+							$(this).removeAttr("selected");						   
+							if(parseInt($(this).val())==parseInt(day)){
+								$(this).attr("selected","selected");	
+							}
+				})
+				
+				$("#f_month_begin option").each(function(){
+							$(this).removeAttr("selected");						   
+							if($(this).val()==monthYear){
+								$(this).attr("selected","selected");	
+							}
+				})
+				sprytextfield1.validate()
+				
+			}
+		})
+		$("#datePickerEnd").datepicker({
+			showOn: 'button',
+			buttonImage: '../img/ml/calendar.gif',
+			buttonImageOnly: true,		
+			minDate: 0, 
+			maxDate: '+1Y',
+			onSelect: function(dateText, inst) { 			 	
+				var day=dateText.substr(0,2);
+				var month=dateText.substr(3,2);
+				var year=dateText.substr(6,4);
+				var monthYear=year+"-"+month;
+				//alert(day +" "+monthYear)
+				$("#f_day_end option").each(function(){
+							$(this).removeAttr("selected");						   
+							if(parseInt($(this).val())==parseInt(day)){
+								$(this).attr("selected","selected");	
+							}
+				})
+				
+				$("#f_month_end option").each(function(){
+							$(this).removeAttr("selected");						   
+							if($(this).val()==monthYear){
+								$(this).attr("selected","selected");	
+							}
+				})
+				sprytextfield2.validate()
+				
+			}
+		})
+		$("#datepicker").datepicker({
+			showOn: 'button',
+			buttonImage: '../img/ml/calendar.gif',
+			buttonImageOnly: true,
+			beforeShowDay: isCheckable,
+			 onSelect: function(dateText, inst) { 
+			 }		  
+		});
+	});
+	
+/*Date Picker Available Days*/
+function isCheckable(day){
+		/*
+			Force Enable Day
+		*/
+		for(var k=0;k<enableDate.length;k++){
+			if(enableDate[k][2]==0 && day.getDate() ==enableDate[k][0] && day.getMonth() ==(enableDate[k][1]-1) ){
+				return [1,""];	
+			}else	if(day.getDate() ==enableDate[k][0] && day.getMonth() ==(enableDate[k][1]-1)  &&  day.getFullYear() == enableDate[k][2]){
+				
+				 return [1,""];	
+			}	
+		}
+		/*
+			Disable date & day
+		*/
+		
+		/*Day of week*/
+		for(var j=0;j<diableDayOfWeek.length;j++){
+				if(day.getDay()==diableDayOfWeek[j]){
+					return [0,""];	
+				}
+		}
+		for(var i=0;i<disabledDate.length;i++){
+			/*Bloc from weeks day*/
+			 if(disabledDate[i][2]==0 && day.getDate() ==disabledDate[i][0] && day.getMonth() ==(disabledDate[i][1]-1) ){
+				return [0,""];	
+			}else	if(day.getDate() ==disabledDate[i][0] && day.getMonth() ==(disabledDate[i][1]-1)  &&  day.getFullYear() == disabledDate[i][2]){
+				
+				 return [0,""];	
+			}	
+		}
+		return [1,""];			
+	}
+</script>
+<link rel="stylesheet" type="text/css" href="../css/screen.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/print.css" media="print"/>
+<link rel="stylesheet" type="text/css" href="../css/scrollable.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/jquery.ui.datepicker.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/jquery.ui.theme.css" media="screen, projection"/>
+<link rel="stylesheet" type="text/css" href="../css/SpryValidationSelect_search.css" media="screen, projection"/>
+<title>BITC</title>
+</head>
+<body>
+<!--header:start-->
+<div id="top">
+  <div id="top_bg"></div>
+  <div id="top_content"> <a href="#" class="btn_map_view">Map view</a> <a href="#" class="collapse btn_collapse_up">Collapse</a>
+    <form id="f_search" action="#" method="get">
+      <input id="f_search_textfield" name="f_search_query" type="text" />
+      <input id="f_search_submit" name="f_search_submit" value="Search" type="submit" alt="Rechercher" />
+    </form>
+    <div class="clear"></div>
+    <div id="box_btn_lg"> <a href="#">NL</a> <a href="#">FR</a> </div>
+  </div>
+</div>
+<div id="collapse">
+  <div id="expand_content"></div>
+  <div id="collapse_content"></div>
+</div>
+<!--header:end-->
+<!--mainnav:start-->
+<div id="main_nav_bg">
+  <div id="main_nav_level2"></div>
+  <div id="main_nav_content">
+    <ul id="main_nav">
+      <li> <a href="#" title="Visitors">Visitors</a>
+        <ul class="level2 alignLeft">
+          <li class="home"> <a href="#" ><img src="../img/ml/visu_home_main_nav.jpg" alt="Home"/></a></li>
+          <li><a href="#" title="Guides and maps">Guides and maps</a></li>
+          <li><a href="#" title="Attractions ans museums">Attractions ans museums</a></li>
+          <li><a href="#" title="Accommodation">Accommodation</a></li>
+          <li><a href="#" title="Eating and drinking">Eating and drinking</a></li>
+          <li><a href="#" title="Nightlife">Nightlife</a></li>
+          <li><a href="#" title="Information">Information</a></li>
+        </ul>
+      </li>
+      <li> <a href="#" title="Meetings">Meetings</a>
+        <ul class="level2 alignLeft">
+          <li class="home"> <a href="#" ><img src="../img/ml/visu_home_main_nav.jpg" alt="Home"/></a></li>
+          <li><a href="#" title="Guides and maps">Guides and maps</a></li>
+          <li><a href="#" title="Attractions ans museums">Attractions ans museums</a></li>
+          <li><a href="#" title="Accommodation">Accommodation</a></li>
+          <li><a href="#" title="Eating and drinking">Eating and drinking</a></li>
+          <li><a href="#" title="Nightlife">Nightlife</a></li>
+          <li><a href="#" title="Information">Information</a></li>
+        </ul>
+      </li>
+      <li> <a href="#" title="Travel Trade">Travel Trade</a>
+        <ul class="level2 alignLeft">
+          <li class="home"> <a href="#" ><img src="../img/ml/visu_home_main_nav.jpg" alt="Home"/></a></li>
+          <li><a href="#" title="Guides and maps">Guides and maps</a></li>
+          <li><a href="#" title="Attractions ans museums">Attractions ans museums</a></li>
+          <li><a href="#" title="Accommodation">Accommodation</a></li>
+          <li><a href="#" title="Eating and drinking">Eating and drinking</a></li>
+          <li><a href="#" title="Nightlife">Nightlife</a></li>
+          <li><a href="#" title="Information">Information</a></li>
+        </ul>
+      </li>
+      <li> <a href="#" title="Media Press">Media Press</a>
+        <ul class="level2 alignLeft">
+          <li class="home"> <a href="#" ><img src="../img/ml/visu_home_main_nav.jpg" alt="Home"/></a></li>
+          <li><a href="#" title="Guides and maps">Guides and maps</a></li>
+          <li><a href="#" title="Attractions ans museums">Attractions ans museums</a></li>
+          <li><a href="#" title="Accommodation">Accommodation</a></li>
+          <li><a href="#" title="Eating and drinking">Eating and drinking</a></li>
+          <li><a href="#" title="Nightlife">Nightlife</a></li>
+          <li><a href="#" title="Information">Information</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div id="box_login_facebook_connect">
+      <div id="login"><a href="#">Register</a> / <a href="#">Login</a></div>
+      <div id="or"> or</div>
+      <a href="#" id="facebook_connect"><img src="../img/ml/logo_facebook_connect.jpg" alt="facebook Connect"/></a></div>
+  </div>
+</div>
+<!--mainnav:end-->
+<!--content:start-->
+<div id="content">
+<img src="../img/ml/visu_top_print_css.jpg" class="top_print"/>
+  <!--breadcrump:start-->
+  <ul id="breadcrump">
+    <li><a href="#">Home</a></li>
+    <li>-</li>
+    <li><a href="#">Level 1</a></li>
+    <li>-</li>
+    <li><a href="#">Level 2</a></li>
+  </ul>
+  <!--breadcrump:end-->
+  <!--btnback:start-->
+  <div id="btn_back"><a href="#">Back</a></div>
+  <!--btnback:end-->
+  <div class="clear"></div>
+  <!--contentMain:start-->
+  <div id="content_main"> <img src="../img/en/title_trip_planner.jpg" alt="" class="m17"/>
+    <div class="box_grey">
+      <form>
+        <fieldset>
+          <div class="float_left">
+            <label for="f_page"><strong>Start :</strong></label>
+            <select name="f_day_begin" id="f_day_begin" class="select_days">
+              <option value="">Jours</option>
+              <option value="1" >01</option>
+              <option value="2" >02</option>
+              <option value="4" >03</option>
+              <option value="5" >04</option>
+              <option value="6" >05</option>
+              <option value="7" >06</option>
+              <option value="8" >07</option>
+              <option value="9" >08</option>
+              <option value="10" >09</option>
+              <option value="11" >11</option>
+              <option value="12" >12</option>
+              <option value="13" >13</option>
+              <option value="14" >14</option>
+              <option value="15" >15</option>
+              <option value="16" >16</option>
+              <option value="17" >17</option>
+              <option value="18" >18</option>
+              <option value="19" >19</option>
+              <option value="20" >20</option>
+              <option value="21" >21</option>
+              <option value="22" >22</option>
+              <option value="23" >23</option>
+              <option value="24" >24</option>
+              <option value="25" >25</option>
+              <option value="26" >26</option>
+              <option value="27" >27</option>
+              <option value="28" >28</option>
+              <option value="29" >29</option>
+              <option value="30" >30</option>
+              <option value="31" >31</option>
+            </select>
+            <select name="f_month_begin" id="f_month_begin" class="select_month">
+              <option value="">Mois</option>
+              <option value="2010-06" >Juin 2010</option>
+              <option value="2010-07" >Juiller 2010</option>
+              <option value="2010-08" >Août 2010</option>
+              <option value="2010-09" >Septembre 2010</option>
+              <option value="2010-10" >Octobre 2010</option>
+              <option value="2010-11" >Novembre 2010</option>
+              <option value="2010-12" >Décembre 2010</option>
+            </select>
+            <input type="hidden" id="datePickerBegin"  name="test"/>
+          </div>
+          <div class="float_right">
+            <label for="f_page"><strong>End :</strong></label>
+            <select name="f_day_end" id="f_day_end" class="select_days">
+              <option value="">Jours</option>
+              <option value="1" >01</option>
+              <option value="2" >02</option>
+              <option value="4" >03</option>
+              <option value="5" >04</option>
+              <option value="6" >05</option>
+              <option value="7" >06</option>
+              <option value="8" >07</option>
+              <option value="9" >08</option>
+              <option value="10" >09</option>
+              <option value="11" >11</option>
+              <option value="12" >12</option>
+              <option value="13" >13</option>
+              <option value="14" >14</option>
+              <option value="15" >15</option>
+              <option value="16" >16</option>
+              <option value="17" >17</option>
+              <option value="18" >18</option>
+              <option value="19" >19</option>
+              <option value="20" >20</option>
+              <option value="21" >21</option>
+              <option value="22" >22</option>
+              <option value="23" >23</option>
+              <option value="24" >24</option>
+              <option value="25" >25</option>
+              <option value="26" >26</option>
+              <option value="27" >27</option>
+              <option value="28" >28</option>
+              <option value="29" >29</option>
+              <option value="30" >30</option>
+              <option value="31" >31</option>
+            </select>
+            <select name="f_month_end" id="f_month_end" class="select_month">
+              <option value="">Mois</option>
+              <option value="2010-06" >Juin 2010</option>
+              <option value="2010-07" >Juiller 2010</option>
+              <option value="2010-08" >Août 2010</option>
+              <option value="2010-09" >Septembre 2010</option>
+              <option value="2010-10" >Octobre 2010</option>
+              <option value="2010-11" >Novembre 2010</option>
+              <option value="2010-12" >Décembre 2010</option>
+            </select>
+            <input type="hidden" id="datePickerEnd" name="test"/>
+          </div>
+          <div class="clr"></div>
+        </fieldset>
+      </form>
+    </div>
+    <!--tab:start-->
+    <div class="TabbedPanelsContentGroup">
+      <ul class="TabbedPanels">
+        <li class="TabbedPanelsTabSelected"><a>Sleeping</a></li>
+        <li class="TabbedPanelsTab"><a href="#">Events</a></li>
+        <li class="TabbedPanelsTab"><a href="#">Attractions ans museums</a></li>
+        <li class="TabbedPanelsTab"><a href="#">Entertainment</a></li>
+        <li class="TabbedPanelsTab"><a href="#">Eating</a></li>
+        <li class="TabbedPanelsTab"><a href="#">Walks</a></li>
+      </ul>
+      <div class="box_my_favorite">
+        <h2>My favorites</h2>
+        <div class="favorite_item"> <a href="#" class="btn_delete"></a>
+          <p><strong>Hotel Metropole</strong> Place de Brouckere 31</p>
+          <a href="#" class="btn_add_to_my_trip"><img src="../img/en/btn_add_my_trip.jpg" alt="Add my trip" /></a>
+          <div class="clr"></div>
+        </div>
+        <div class="favorite_item"> <a href="#" class="btn_delete"></a>
+          <p><strong>Hotel Metropole</strong> Place de Brouckere 31 mslkdf dflk sdmlfk msldkf lkd fmklsdmlfkdslfk </p>
+          <a href="#" class="btn_add_to_my_trip"><img src="../img/en/btn_add_my_trip.jpg" alt="Add my trip" /></a>
+          <div class="clr"></div>
+        </div>
+      </div>
+      <div class="tab_paging">
+        <div class="nav_number"> <a href="#" class="arrow_left"><img src="../img/ml/btn_arrow_left_opacity.png" alt="#"/></a>
+          <div style="float:left">Page <span class="first_number">1</span> of 2</div>
+          <a href="#" class="arrow_right"><img src="../img/ml/btn_arrow_right.png" alt="#"/></a> </div>
+        <div class="select">
+          <form>
+            <fieldset>
+              <label for="f_page">Sort by :</label>
+              <select name="f_page" id="f_page">
+                <option value="1">stars [5..1]</option>
+                <option value="2" >Tarif</option>
+                <option value="3" >Comment</option>
+                <option value="4" >6 mois</option>
+              </select>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <ul class="tab_list_complete">
+        <li> <img src="../img/ml/visu_hotel_tab_list_complete.jpg" alt=""/>
+          <div class="txt">
+            <h3 class="no_margin">Atrium (L')Radisson BLU Hotel</h3>
+            <div class="float_left"><strong>Category</strong></div>
+            <div class="float_left">: </div>
+            <img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/><img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/><img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/>
+            <div class="clr"></div>
+            <p><strong>Starting at</strong> : 35€/night <br />
+              rue Fossé-aux-Loups 47 <br />
+              Wolvengracht - 1000 Bruxelles <br />
+              <strong>Tel: (0)2 227 31 70 </strong><br />
+              <a href="#" target="_blank">www.radissonblu.com</a></p>
+          </div>
+          <div class="btn">
+            <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+            <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a> <a href="#" class="share"><img src="../img/ml/btn_share.gif" alt="Share"/></a> <a href="#" class="ilike"><img src="../img/ml/btn_ilike.gif" alt="I like"/></a> <a href="#" class="add"><img src="../img/ml/btn_add.gif" alt="Add"/></a> </div>
+          <div class="clr"></div>
+        </li>
+        <li> <img src="../img/ml/visu_hotel_tab_list_complete.jpg" alt=""/>
+          <div class="txt">
+            <h3 class="no_margin">Atrium (L')Radisson BLU Hotel</h3>
+            <div class="float_left"><strong>Category</strong></div>
+            <div class="float_left">: </div>
+            <img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/><img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/><img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/>
+            <div class="clr"></div>
+            <p><strong>Starting at</strong> : 35€/night <br />
+              rue Fossé-aux-Loups 47 <br />
+              Wolvengracht - 1000 Bruxelles <br />
+              <strong>Tel: (0)2 227 31 70 </strong><br />
+              <a href="#" target="_blank">www.radissonblu.com</a></p>
+          </div>
+          <div class="btn">
+            <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+            <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a> <a href="#" class="share"><img src="../img/ml/btn_share.gif" alt="Share"/></a> <a href="#" class="ilike"><img src="../img/ml/btn_ilike.gif" alt="I like"/></a> <a href="#" class="add"><img src="../img/ml/btn_add.gif" alt="Add"/></a> </div>
+          <div class="clr"></div>
+        </li>
+        <li> <img src="../img/ml/visu_hotel_tab_list_complete.jpg" alt=""/>
+          <div class="txt">
+            <h3 class="no_margin">Atrium (L')Radisson BLU Hotel</h3>
+            <div class="float_left"><strong>Category</strong></div>
+            <div class="float_left">: </div>
+            <img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/><img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/><img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/>
+            <div class="clr"></div>
+            <p><strong>Starting at</strong> : 35€/night <br />
+              rue Fossé-aux-Loups 47 <br />
+              Wolvengracht - 1000 Bruxelles <br />
+              <strong>Tel: (0)2 227 31 70 </strong><br />
+              <a href="#" target="_blank">www.radissonblu.com</a></p>
+          </div>
+          <div class="btn">
+            <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+            <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a> <a href="#" class="share"><img src="../img/ml/btn_share.gif" alt="Share"/></a> <a href="#" class="ilike"><img src="../img/ml/btn_ilike.gif" alt="I like"/></a> <a href="#" class="add"><img src="../img/ml/btn_add.gif" alt="Add"/></a> </div>
+          <div class="clr"></div>
+        </li>
+        <li> <img src="../img/ml/visu_hotel_tab_list_complete.jpg" alt=""/>
+          <div class="txt">
+            <h3 class="no_margin">Atrium (L')Radisson BLU Hotel</h3>
+            <div class="float_left"><strong>Category</strong></div>
+            <div class="float_left">: </div>
+            <img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/><img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/><img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/>
+            <div class="clr"></div>
+            <p><strong>Starting at</strong> : 35€/night <br />
+              rue Fossé-aux-Loups 47 <br />
+              Wolvengracht - 1000 Bruxelles <br />
+              <strong>Tel: (0)2 227 31 70 </strong><br />
+              <a href="#" target="_blank">www.radissonblu.com</a></p>
+          </div>
+          <div class="btn">
+            <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+            <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a> <a href="#" class="share"><img src="../img/ml/btn_share.gif" alt="Share"/></a> <a href="#" class="ilike"><img src="../img/ml/btn_ilike.gif" alt="I like"/></a> <a href="#" class="add"><img src="../img/ml/btn_add.gif" alt="Add"/></a> </div>
+          <div class="clr"></div>
+        </li>
+        <li> <img src="../img/ml/visu_hotel_tab_list_complete.jpg" alt=""/>
+          <div class="txt">
+            <h3 class="no_margin">Atrium (L')Radisson BLU Hotel</h3>
+            <div class="float_left"><strong>Category</strong></div>
+            <div class="float_left">: </div>
+            <img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/><img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/><img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/>
+            <div class="clr"></div>
+            <p><strong>Starting at</strong> : 35€/night <br />
+              rue Fossé-aux-Loups 47 <br />
+              Wolvengracht - 1000 Bruxelles <br />
+              <strong>Tel: (0)2 227 31 70 </strong><br />
+              <a href="#" target="_blank">www.radissonblu.com</a></p>
+          </div>
+          <div class="btn">
+            <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+            <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a> <a href="#" class="share"><img src="../img/ml/btn_share.gif" alt="Share"/></a> <a href="#" class="ilike"><img src="../img/ml/btn_ilike.gif" alt="I like"/></a> <a href="#" class="add"><img src="../img/ml/btn_add.gif" alt="Add"/></a> </div>
+          <div class="clr"></div>
+        </li>
+        <li> <img src="../img/ml/visu_hotel_tab_list_complete.jpg" alt=""/>
+          <div class="txt">
+            <h3 class="no_margin">Atrium (L')Radisson BLU Hotel</h3>
+            <div class="float_left"><strong>Category</strong></div>
+            <div class="float_left">: </div>
+            <img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/><img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/><img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/>
+            <div class="clr"></div>
+            <p><strong>Starting at</strong> : 35€/night <br />
+              rue Fossé-aux-Loups 47 <br />
+              Wolvengracht - 1000 Bruxelles <br />
+              <strong>Tel: (0)2 227 31 70 </strong><br />
+              <a href="#" target="_blank">www.radissonblu.com</a></p>
+          </div>
+          <div class="btn">
+            <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+            <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a> <a href="#" class="share"><img src="../img/ml/btn_share.gif" alt="Share"/></a> <a href="#" class="ilike"><img src="../img/ml/btn_ilike.gif" alt="I like"/></a> <a href="#" class="add"><img src="../img/ml/btn_add.gif" alt="Add"/></a> </div>
+          <div class="clr"></div>
+        </li>
+        <li> <img src="../img/ml/visu_hotel_tab_list_complete.jpg" alt=""/>
+          <div class="txt">
+            <h3 class="no_margin">Atrium (L')Radisson BLU Hotel</h3>
+            <div class="float_left"><strong>Category</strong></div>
+            <div class="float_left">: </div>
+            <img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/><img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/><img src="../img/ml/visu_stars.jpg" alt="" class="float_left"/>
+            <div class="clr"></div>
+            <p><strong>Starting at</strong> : 35€/night <br />
+              rue Fossé-aux-Loups 47 <br />
+              Wolvengracht - 1000 Bruxelles <br />
+              <strong>Tel: (0)2 227 31 70 </strong><br />
+              <a href="#" target="_blank">www.radissonblu.com</a></p>
+          </div>
+          <div class="btn">
+            <div class="more_info"><a href="#" class="btn_more_info">More info</a></div>
+            <a href="#" class="map"><span>Map :</span><img src="../img/ml/btn_map_b.jpg" alt="Map B"/></a> <a href="#" class="share"><img src="../img/ml/btn_share.gif" alt="Share"/></a> <a href="#" class="ilike"><img src="../img/ml/btn_ilike.gif" alt="I like"/></a> <a href="#" class="add"><img src="../img/ml/btn_add.gif" alt="Add"/></a> </div>
+          <div class="clr"></div>
+        </li>
+      </ul>
+      </ul>
+      <div class="tab_paging">
+        <div class="nav_number"> <a href="#" class="arrow_left"><img src="../img/ml/btn_arrow_left_opacity.png" alt="#"/></a>
+          <div style="float:left">Page <span class="first_number">1</span> of 2</div>
+          <a href="#" class="arrow_right"><img src="../img/ml/btn_arrow_right.png" alt="#"/></a> </div>
+      </div>
+    </div>
+    <!--tab:end-->
+  </div>
+  <!--contentMain:end-->
+  <!--contentSub:start-->
+  <div id="content_sub">
+    <div id="nav_trip_planner"> <img src="../img/en/title_nav_trip_planner.jpg" alt="My trip"/>
+      <div id="rubrique"> <a href="#" class="beige">Guides and maps</a> <a href="#" class="pink">Attractions and museums</a> <a href="#" class="blue">Accomodation</a> <a href="#" class="green">Eating and drinking</a>
+        <!--group item:start-->
+        <div class="group_item bg_green">
+          <div class="item"> <a href="#" class="btn_delete"></a>
+            <p><strong>Hotel Metropole</strong></p>
+            <a href="#" class="magnifying_glass"><img src="../img/ml/visu_magnifying_glass.png" alt="#"/></a>
+            <div class="clr"></div>
+          </div>
+          <div class="item"> <a href="#" class="btn_delete"></a>
+            <p><strong>Hotel Metropole</strong></p>
+            <a href="#" class="magnifying_glass"><img src="../img/ml/visu_magnifying_glass.png" alt="#"/></a>
+            <div class="clr"></div>
+          </div>
+        </div>
+        <!--group item:end-->
+        <a href="#" class="blue_sky">Nightlife</a> <a href="#" class="dark_blue">Information</a>
+        <!--group item:start-->
+        <div class="group_item bg_dark_blue">
+          <div class="item"> <a href="#" class="btn_delete"></a>
+            <p><strong>Hotel Metropole</strong></p>
+            <a href="#" class="magnifying_glass"><img src="../img/ml/visu_magnifying_glass.png" alt="#"/></a>
+            <div class="clr"></div>
+          </div>
+          <div class="item"> <a href="#" class="btn_delete"></a>
+            <p><strong>Hotel Metropole</strong></p>
+            <a href="#" class="magnifying_glass"><img src="../img/ml/visu_magnifying_glass.png" alt="#"/></a>
+            <div class="clr"></div>
+          </div>
+        </div>
+        <!--group item:end-->
+      </div>
+      <a href="#" class="btn">Print your trip</a> <a href="#" class="btn">Share you trip</a> </div>
+  </div>
+  <!--contentSub:end-->
+  <div class="clr"></div>
+</div>
+<!--content:end-->
+<!--navSub:start-->
+<div id="nav_sub">
+  <div id="nav_sub_content">
+    <h2>EXPLORE</h2>
+    <ul>
+      <li>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+      </li>
+      <div class="clr"></div>
+      <li>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+        <ul>
+          <h5>Guides and maps</h5>
+          <li><a href="#">Duis at eros quis mi eleifend molestie.</a></li>
+          <li><a href="#">aecenas porttitor congue lacus.</a></li>
+          <li><a href="#">Donec vitae lacus a mi consectetur.</a></li>
+          <li><a href="#">Sed pulvinar ultrices massa.</a></li>
+          <li><a href="#">n dictum congue arcu.</a></li>
+        </ul>
+      </li>
+      <div class="clr"></div>
+    </ul>
+  </div>
+</div>
+<!--navSub:end-->
+<!--footer:start-->
+<div id="footer">
+  <div id="footer_content">
+    <div id="logo_brussels_city"><img src="../img/ml/logo_brussels_city.png" alt="Ville de Bruxelles"/></div>
+    <div id="logo_brussels_iris"><img src="../img/ml/logo_brussels_iris.png" alt="Région Bruxelles Capitale"/></div>
+    <div id="logo_cocof"><img src="../img/ml/logo_cocof.png" alt="COCOF"/></div>
+    <div id="logo_vlaams_community"><img src="../img/ml/logo_vlaams_community.png" alt=""/></div>
+    <div id="logo_bitc"><img src="../img/ml/logo_bitc.jpg" alt="BITC"/></div>
+    <hr/>
+    <div id="site_info">© 2010 - BITC - All rights reserved - Powered by <a href="#">Wanabe</a></div>
+    <ul id="footer_nav_sub">
+      <li><a href="#">About us</a></li>
+      <li>|</li>
+      <li><a href="#">Contact us</a></li>
+      <li>|</li>
+      <li><a href="#">Jobs</a></li>
+    </ul>
+  </div>
+</div>
+<!--footer:end-->
+</body>
+</html>

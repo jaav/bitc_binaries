@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 juin 2010 18:19:33 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.catalog.hdata.CatalogPrice" table="catalog_price" >
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="catalogProduct" class="com.bitc.catalog.hdata.CatalogProduct" lazy="false" fetch="select">
+            <column name="product_id" not-null="true" />
+        </many-to-one>
+        <property name="fromDate" type="timestamp">
+            <column name="from_date" length="19" />
+        </property>
+        <property name="toDate" type="timestamp">
+            <column name="to_date" length="19"  />
+        </property>
+        <property name="titleDefault" type="string">
+            <column name="title_default" length="200"/>
+        </property>
+        <property name="descriptionDefault" type="string">
+            <column name="description_default" length="1000"  />
+        </property>
+         <property name="value" type="java.lang.Double">
+            <column name="value" precision="6" scale="2">
+                <comment></comment>
+            </column>
+        </property>
+        <map name="catalogPriceClts" lazy="false" inverse="true" cascade="all">
+            <key>
+                <column name="price_id" not-null="true" />
+            </key>
+            <map-key type="string">
+            	<column name="culture" not-null="true">
+            	</column>
+            </map-key> 
+            <one-to-many class="com.bitc.catalog.hdata.CatalogPriceClt" />
+        </map>
+    </class>
+</hibernate-mapping>

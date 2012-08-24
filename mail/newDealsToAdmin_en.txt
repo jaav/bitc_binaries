@@ -1,0 +1,17 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Dear Administrator,
+
+A new Request For posting a deal has just been posted on the Visitbrussels website.
+
+We invite you to check it on:
+
+http://localhost:8080/bitc/admin/contentDeals/list.do
+
+Best regards,
+The Visitbrussels MICE Team.
+
+
+--------------------------------------------------------------------------------

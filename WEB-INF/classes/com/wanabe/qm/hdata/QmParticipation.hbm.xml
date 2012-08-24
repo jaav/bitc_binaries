@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-f?vr.-2009 11:42:21 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.qm.hdata.QmParticipation" table="qm_participation">
+        <id name="qmParticipationId" type="java.lang.Integer">
+            <column name="qm_participation_id" />
+            <generator class="identity" />
+        </id>
+        <property name="userId" type="java.lang.Integer">
+            <column name="user_id" />
+        </property>
+        <many-to-one name="qmQuestionnaire" class="com.wanabe.qm.hdata.QmQuestionnaire" fetch="select">
+            <column name="qm_questionnaire_id" />
+        </many-to-one>
+        <property name="answer" type="string">
+            <column name="answer" length="100" />
+        </property>
+        <property name="question" type="string">
+            <column name="question" length="100" />
+        </property>
+        <property name="createdOn">
+            <column name="created_on" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

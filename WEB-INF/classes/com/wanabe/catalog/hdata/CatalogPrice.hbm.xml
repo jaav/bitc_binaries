@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-nov.-2009 14:30:46 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.wanabe.catalog.hdata.CatalogPrice" table="catalog_price" >
+        <comment></comment>
+        <id name="catalogPriceId" type="int">
+            <column name="catalog_price_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="catalogPriceType" class="com.wanabe.catalog.hdata.CatalogPriceType" fetch="select">
+            <column name="catalog_price_type_id" not-null="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="catalogProduct" class="com.wanabe.catalog.hdata.CatalogProduct" fetch="select">
+            <column name="catalog_product_id" not-null="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="fromDate" type="timestamp">
+            <column name="from_date" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="toDate" type="timestamp">
+            <column name="to_date" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="value" type="big_decimal">
+            <column name="value" precision="13" scale="4">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

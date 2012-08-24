@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 26 ao?t 2010 11:08:39 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.cms.hdata.ContentVenueClt" table="content_venue_clt">
+        <id name="cltId" type="int">
+            <column name="clt_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="contentVenue" class="com.bitc.cms.hdata.ContentVenue" fetch="select">
+            <column name="content_id" not-null="true" />
+        </many-to-one>
+        <property name="title" type="string">
+            <column name="title" length="300" />
+        </property>
+        <property name="abstract_" type="string">
+            <column name="abstract" length="2000" />
+        </property>
+        <property name="body" type="string">
+            <column name="body" length="16777215" />
+        </property>
+        <property name="info" type="string">
+            <column name="info" length="16777215" />
+        </property>
+        <property name="smallImage" type="string">
+            <column name="small_image" length="300" />
+        </property>
+        <property name="bigImage" type="string">
+            <column name="big_image" length="300" />
+        </property>
+        <property name="url" type="string">
+            <column name="url" length="300" />
+        </property>
+        <property name="urlLabel" type="string">
+            <column name="url_label" length="200" />
+        </property>
+        <property name="culture" type="string">
+            <column name="culture" length="7" />
+        </property>
+        <property name="openCount" type="java.lang.Integer">
+            <column name="open_count" />
+        </property>
+        <property name="commentCount" type="java.lang.Integer">
+            <column name="comment_count" />
+        </property>
+        <property name="sourceTitle" type="string">
+            <column name="source_title" length="300" />
+        </property>
+        <property name="sourceAbstract" type="string">
+            <column name="source_abstract" length="2000" />
+        </property>
+        <property name="sourceBody" type="string">
+            <column name="source_body" length="16777215" />
+        </property>
+        <property name="sourceInfo" type="string">
+            <column name="source_info" length="1000" />
+        </property>
+        <property name="sourceId" type="java.lang.Integer">
+            <column name="source_id" />
+        </property>
+    </class>
+</hibernate-mapping>

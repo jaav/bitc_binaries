@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated 11 juin 2010 16:32:07 by Hibernate Tools 3.2.4.GA -->
+
+<hibernate-mapping>
+    <class name="com.bitc.hdata.User" table="user">
+        <id name="userId" type="java.lang.Integer">
+            <column name="user_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="cryptedid" type="string">
+            <column name="cryptedid" length="20" unique="true" />
+        </property>
+        <property name="fbUid" type="java.lang.Long">
+            <column name="fb_uid" />
+        </property>
+        <property name="fbAuthToken" type="string">
+            <column name="fb_auth_token" length="200" />
+        </property>
+        <property name="login" type="string">
+            <column name="login" length="80" not-null="true" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="50"  />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="80" not-null="true" unique="true" />
+        </property>
+        <property name="languageid" type="string">
+            <column name="languageid" length="2" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="20" not-null="true" />
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="50" not-null="true" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="50" not-null="true" />
+        </property>
+        <property name="birthdate" type="date">
+            <column name="birthdate" length="10"/>
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="20" />
+        </property>
+        <property name="gsm" type="string">
+            <column name="gsm" length="20" />
+        </property>
+        <property name="street" type="string">
+            <column name="street" length="100"/>
+        </property>
+        <property name="num" type="string">
+            <column name="num" length="10" />
+        </property>
+        <property name="box" type="string">
+            <column name="box" length="10" />
+        </property>
+        <property name="zipcode" type="string">
+            <column name="zipcode" length="20"/>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50"  />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="50" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" />
+        </property>
+        <property name="lastModifiedOn" type="timestamp">
+            <column name="last_modified_on" length="19" />
+        </property>
+        <property name="allowEmailOn" type="timestamp">
+            <column name="allow_email_on" length="19" />
+        </property>
+        <property name="notAllowEmailOn" type="timestamp">
+            <column name="not_allow_email_on" length="19" />
+        </property>
+        <property name="lastLogginOn" type="timestamp">
+            <column name="last_loggin_on" length="19" />
+        </property>
+        <property name="optin" type="java.lang.Boolean">
+            <column name="optin" />
+        </property>
+        <property name="origin" type="string">
+            <column name="origin" length="20" />
+        </property>
+        <property name="currentPoints" type="java.lang.Integer">
+            <column name="current_points" />
+        </property>
+        <property name="culture" type="string">
+            <column name="culture" length="5" not-null="true" />
+        </property>
+        <property name="greeting" type="string">
+            <column name="greeting" length="5" not-null="true" />
+        </property>
+        <property name="pseudo" type="string">
+            <column name="pseudo" length="50" not-null="true" />
+        </property>
+        <property name="validedOn" >
+            <column name="valided_on" />
+        </property>
+        <property name="valid" type="int">
+            <column name="valid" not-null="true" />
+        </property>
+        <property name="testProfile" type="string">
+            <column name="test_profile" length="20" />
+        </property>
+        <property name="lastVisitedOn" >
+            <column name="last_visited_on" />
+        </property>
+        <property name="originCreation" type="string">
+            <column name="origin_creation" length="20" />
+        </property>
+        <property name="originModification" type="string">
+            <column name="origin_modification" length="20" />
+        </property>
+        <property name="fax" type="string">
+            <column name="fax" length="20" />
+        </property>
+        <property name="website" type="string">
+            <column name="website" length="100" />
+        </property>
+        <property name="companyName" type="string">
+            <column name="company_name" length="100" />
+        </property>
+        <property name="companyType" type="string">
+            <column name="company_type" length="20" />
+        </property>
+        <property name="newEmail" type="string">
+            <column name="new_email" length="80" />
+        </property>
+        <set name="accessUserSections" inverse="true" table="access_user_section" fetch="select">
+            <key>
+                <column name="user_id" not-null="true" />
+            </key>
+            <one-to-many class="com.bitc.hdata.AccessUserSection" />
+        </set>
+        <set name="nltUserTypes" inverse="true" table="nlt_user_type" fetch="select">
+            <key>
+                <column name="user_id" not-null="true" />
+            </key>
+            <one-to-many class="com.bitc.hdata.NltUserType" />
+        </set>
+    </class>
+</hibernate-mapping>

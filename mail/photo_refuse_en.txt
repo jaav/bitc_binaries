@@ -1,0 +1,17 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Dear &FIRSTNAME;,
+
+Your request for access to the photo library of Brussels 
+International hasn’t been accepted.
+
+Hereunder you can find the comments of our administrator:
+
+&ADMIN_COMMENT; 
+
+
+Kind regards,
+The team of Brussels International
+--------------------------------------------------------------------------------

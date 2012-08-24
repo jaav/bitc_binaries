@@ -1,0 +1,17 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Bonjour &FIRSTNAME;,
+
+Votre demande d’accès au Sales Guide de Bruxelles International
+n’a pas été retenue.
+
+Ci-dessous vous trouvez le commentaire de notre responsable :
+
+&ADMIN_COMMENT; 
+
+
+Cordialement,
+L'équipe de Bruxelles-International
+--------------------------------------------------------------------------------

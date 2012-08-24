@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-nov.-2009 10:52:38 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.wanabe.eshop.hdata.EsOrderLine" table="es_order_line">
+        <comment></comment>
+        <id name="orderLineId" type="int">
+            <column name="order_line_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="esOrder" class="com.wanabe.eshop.hdata.EsOrder" fetch="select">
+            <column name="order_id" not-null="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+        <property name="reference" type="string">
+            <column name="reference" length="20" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="productId" type="java.lang.Integer">
+            <column name="product_id">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="unitPrice" type="java.lang.Double">
+            <column name="unit_price" precision="13" scale="4" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="quantity" type="java.lang.Double">
+            <column name="quantity" precision="12" scale="3" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="unit" type="string">
+            <column name="unit" length="50">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="taxe" type="java.lang.Double">
+            <column name="taxe" precision="3">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="selectedDate" type="date">
+            <column name="selected_date" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" not-null="true">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="modifiedOn" type="timestamp">
+            <column name="modified_on" length="19">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="productLocked" type="java.lang.Double">
+            <column name="product_locked" precision="12" scale="3">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="orderLineIndex" type="java.lang.Integer">
+            <column name="order_line_index">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="s3Link" type="string">
+            <column name="s3_link" length="500">
+                <comment></comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

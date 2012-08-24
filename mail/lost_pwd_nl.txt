@@ -1,0 +1,26 @@
+BRUSSELS 
+OFFICIAL WEBSITE FOR TOURISME & CONGRESS
+--------------------------------------------------------------------------------
+
+Geachte &FIRSTNAME;,
+
+U heeft een nieuw paswoord voor de site van Brussel Internationaal 
+aangevraagd. 
+
+Hieronder vindt u uw aangepaste gegevens. 
+Gelieve op onderstaande link te klikken 
+om deze aanpassing te bevestigen. 
+
+ 	
+Uw e-mailadres: &EMAIL;
+
+Uw nieuw paswoord: &NEW_PASSWORD;
+
+
+Klik hier om uw nieuw paswoord te bevestigen
+http://bitcv2.wanabe.be:8080/bitc/front/user/confirmNewPassword.do
+
+
+Hoogachtend,
+Het Team van Brussel Internationaal
+--------------------------------------------------------------------------------

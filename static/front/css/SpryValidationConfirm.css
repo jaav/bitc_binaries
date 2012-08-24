@@ -1,0 +1,35 @@
+/*Confirm widget styling classes*/
+
+/*IMAGE VALID*/
+.validMsg {
+	display:none;
+}
+.passwordValidState .validMsg, .confirmValidState .validMsg {
+	display:inline;
+	margin:10px 0 0 10px;
+}
+/*IMAGE ERROR*/
+.errorMsg {
+	display:none;
+}
+.confirmRequiredState .errorMsg, .confirmRequiredMsg .errorMsg, .confirmInvalidFormatState .errorMsg, .confirmInvalidFormatMsg .errorMsg, .confirmMinValueState .errorMsg, .confirmMinValueMsg .errorMsg, .confirmMaxValueState .errorMsg, .confirmMaxValueMsg .errorMsg, .confirmMinCharsState .errorMsg, .confirmMinCharsMsg .errorMsg, .confirmMaxCharsState .errorMsg, .confirmMaxCharsMsg .errorMsg, .confirmInvalidState .errorMsg, .confirmInvalidMsg .errorMsg {
+	display:inline;
+	margin:10px 0 0 10px;
+}
+/*TEXTE ERROR*/
+.confirmRequiredMsg,
+.confirmInvalidMsg,
+.confirmValidMsg{
+	display: none;
+}
+.confirmRequiredState .confirmRequiredMsg,
+.confirmInvalidState .confirmInvalidMsg{
+	display:block;
+	line-height:10px;
+	color:#fa869b;
+	margin-left:260px;
+	font-size:10px;
+	margin-bottom:15px;
+	font-weight:normal;
+	width:230px;
+}

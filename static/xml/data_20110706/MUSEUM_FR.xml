@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+	<group>MUSEUM</group>
+	<language>FR</language>
+	<exported_date>20110706</exported_date>
+	<num_items>2</num_items>
+	<items>
+		<item id="2009">
+			<title><![CDATA[BOZAR]]></title>
+			<small_image>http://visitbrussels.be/bitc/static/front/img/db/img_317.jpg</small_image>
+			<body><![CDATA[<p>Edifié en 1928 par l'architecte maître de l'Art Nouveau, Victor Horta, il est un haut lieu de la vie culturelle et artistique. Une rénovation complète de l'intérieur a permis à l'édifice de retrouver son aspect original, tel qu'il avait été conçu par le maître Horta. Des visites sont organisées ("De Horta à Horta") et permettent de redécouvrir des parties du palais jusqu'alors interdites au grand public.<br />
+&#160;&#160;</p>]]></body>
+			<address><![CDATA[Rue Ravenstein 23]]></address>
+			<city><![CDATA[Bruxelles]]></city>
+			<zipcode>1000</zipcode>
+			<phone>+32 2 507 84 30</phone>
+			<fax>+32 2 507 85 15</fax>
+			<email>info@bozar.be</email>
+			<website>http://www.bozar.be</website>
+			<latitude>50.844325</latitude>
+			<longitude>4.359151</longitude>
+			<position>110</position>
+		</item>
+		<item id="4580">
+			<title><![CDATA[Scientastic]]></title>
+			<small_image>http://visitbrussels.be/bitc/static/front/img/db/musee_scientastic_Brussels.jpg</small_image>
+			<body><![CDATA[<div>Asseyez-vous en fakir, volez sur un miroir, changez votre voix en canard et explorez 50 autres expériences simples et amusantes de découvertes interactives sur la physique, les illusions et le monde des 5 sens.</div>]]></body>
+			<address><![CDATA[Boulevard Anspach]]></address>
+			<city><![CDATA[Bruxelles]]></city>
+			<zipcode>1000</zipcode>
+			<phone>+32 2 732 13 36</phone>
+			<fax></fax>
+			<email>info@scientastic.be</email>
+			<website>http://www.scientastic.be</website>
+			<latitude>50.848101</latitude>
+			<longitude>4.349397</longitude>
+			<position>0</position>
+		</item>
+	</items>
+</content>

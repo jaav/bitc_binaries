@@ -1,0 +1,29 @@
+/* SpryValidationRadio.css - version 0.1 - Spry Pre-Release 1.5 */
+
+/*IMAGE VALID*/
+.validMsg {
+	display:none;
+}
+.radioValidState .validMsg {
+	display:inline;
+	margin:10px 0 0 10px;
+}
+/*IMAGE ERROR*/
+.errorMsg {
+	display:none;
+}
+.radioRequiredState .errorMsg, .radioRequiredMsg .errorMsg, .radioInvalidFormatState .radioInvalidFormatMsg .errorMsg, .passwordMinValueState .radioMinValueMsg .errorMsg, .radioMaxValueState .radioMaxValueMsg .errorMsg, .radioMinCharsState .radioMinCharsMsg .errorMsg, .radioMaxCharsState .radioMaxCharsMsg {
+	display:inline;
+	margin:10px 0 0 10px;
+}
+/*TEXTE ERROR*/
+.radioRequiredMsg {
+	display: none;
+}
+.radioRequiredState .radioRequiredMsg {
+	display:inline;
+	line-height:25px;
+	color:#fa869b;
+	margin-left:165px;
+	font-weight:normal;
+}

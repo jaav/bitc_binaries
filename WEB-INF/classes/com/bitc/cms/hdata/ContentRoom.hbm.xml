@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13 oct. 2010 14:26:03 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.cms.hdata.ContentRoom" table="content_room">
+        <id name="roomId" type="int">
+            <column name="room_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="contentVenue" class="com.bitc.cms.hdata.ContentVenue" fetch="select">
+            <column name="venue_id" />
+        </many-to-one>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" not-null="true" />
+        </property>
+        <property name="createdBy" type="string">
+            <column name="created_by" length="100" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="200" />
+        </property>
+        <property name="surface" type="java.lang.Double">
+            <column name="surface" precision="22" scale="0" />
+        </property>
+        <property name="length" type="java.lang.Double">
+            <column name="length" precision="22" scale="0" />
+        </property>
+        <property name="width" type="java.lang.Double">
+            <column name="width" precision="22" scale="0" />
+        </property>
+        <property name="height" type="java.lang.Double">
+            <column name="height" precision="22" scale="0" />
+        </property>
+        <property name="doorWidth" type="java.lang.Double">
+            <column name="door_width" precision="22" scale="0" />
+        </property>
+        <property name="doorHeight" type="java.lang.Double">
+            <column name="door_height" precision="22" scale="0" />
+        </property>
+        <property name="modular" type="string">
+            <column name="modular" length="300" />
+        </property>
+        <property name="theater" type="java.lang.Double">
+            <column name="theater" precision="22" scale="0" />
+        </property>
+        <property name="school" type="java.lang.Double">
+            <column name="school" precision="22" scale="0" />
+        </property>
+        <property name="cocktail" type="java.lang.Double">
+            <column name="cocktail" precision="22" scale="0" />
+        </property>
+        <property name="banque" type="java.lang.Double">
+            <column name="banque" precision="22" scale="0" />
+        </property>
+        <property name="auditorium" type="java.lang.Double">
+            <column name="auditorium" precision="22" scale="0" />
+        </property>
+        <property name="fairsExposition" type="string">
+            <column name="fairs_exposition" length="300" />
+        </property>
+        <property name="airco" type="string">
+            <column name="airco" length="300" />
+        </property>
+        <property name="interprateCabines" type="string">
+            <column name="interprate_cabines" length="300" />
+        </property>
+        <property name="audioVideo" type="string">
+            <column name="audio_video" length="300" />
+        </property>
+        <property name="handicap" type="string">
+            <column name="handicap" length="300" />
+        </property>
+        <property name="dayLight" type="string">
+            <column name="day_light" length="300" />
+        </property>
+        <property name="kitchen" type="string">
+            <column name="kitchen" length="300" />
+        </property>
+        <property name="internet" type="string">
+            <column name="internet" length="300" />
+        </property>
+        <property name="publicParkingProxi" type="string">
+            <column name="public_parking_proxi" length="300" />
+        </property>
+        <property name="parkPlacePrivate" type="string">
+            <column name="park_place_private" length="300" />
+        </property>
+        <property name="style" type="string">
+            <column name="style" length="300" />
+        </property>
+    </class>
+</hibernate-mapping>

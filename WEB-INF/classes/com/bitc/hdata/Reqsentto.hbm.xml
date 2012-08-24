@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 31 ao?t 2010 14:47:20 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.hdata.Reqsentto" table="reqsentto">
+        <id name="reqsenttoId" type="java.lang.Integer">
+            <column name="reqsentto_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="reqforproposal" class="com.bitc.hdata.Reqforproposal" fetch="select">
+            <column name="reqid" not-null="true" />
+        </many-to-one>
+        <property name="senttotype" type="string">
+            <column name="senttotype" length="50" not-null="true" />
+        </property>
+        <property name="senttoid" type="int">
+            <column name="senttoid" not-null="true" />
+        </property>
+        <property name="sentto" type="string">
+            <column name="sentto" length="200" />
+        </property>
+        <property name="senton">
+            <column name="senton" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

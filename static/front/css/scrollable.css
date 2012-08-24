@@ -1,0 +1,116 @@
+/*root element for the scrollable. when scrolling occurs this element stays still.*/
+#top_slideshow {
+	/* required settings */
+	display: none;
+	position:relative;
+	overflow:hidden;
+	width: 1200px;
+	height:355px;
+}
+#top_slideshow .items {
+	/* this cannot be too large */
+	width:20000em;
+	position:absolute;
+	clear:both;
+}
+#top_slideshow .items div {
+	float:left;
+	width:1200px !important;
+}
+.scrollable {
+	/* required settings */
+	position:relative;
+	overflow:hidden;
+	width: 620px;
+	height:300px;
+}
+/*
+	root element for scrollable items. Must be absolutely positioned
+	and it should have a extremely large width to accomodate scrollable items.
+	it's enough that you set the width and height for the root element and
+	not for this element.
+*/
+.scrollable .items {
+	/* this cannot be too large */
+	width:20000em;
+	position:absolute;
+	clear:both;
+}
+.items div {
+	float:left;
+	width:620px;
+}
+/* position and dimensions of the navigator */
+.navi {
+	position:absolute;
+	bottom:12px;
+	right:0;
+	width:200px;
+	height:20px;
+}
+/* items inside navigator */
+.navi a {
+	width:27px;
+	height:20px;
+	float:left;
+	margin:0 0 0 8px;
+	padding:5px 0 0 0; 
+	display:block;
+	color:#958e88;	
+	border:1px solid #dadada;
+	background: url(../img/ml/bg_btn_highlight_home_scrollable.jpg) repeat-x top left;
+	text-align:center;
+	text-decoration:none;
+}
+/* mouseover state */
+.navi a:hover {
+	color:#958e88;
+	border:1px solid #e39500;
+}
+/* active state (current page state) */
+.navi a.active {
+	color:#FFF;
+	border:1px solid #e39600;
+	background:#ffad27;
+}
+
+
+/*
+	PROMO
+*/
+#promo .scrollable {
+	position:relative;
+	overflow:hidden;
+	width: 100%;
+	height:120px;
+}
+#promo .scrollable .items {
+	width:20000em;
+	position:absolute;
+}
+
+#promo .items div {
+	float:left;
+}
+
+/*
+	PROMO
+*/
+#ticker .scrollable {
+	position:relative;
+	overflow:hidden;
+	width: 570px;
+	height:40px;
+}
+#ticker .scrollable .items {
+	width:20000em;
+	position:absolute;
+}
+
+#ticker .items div {
+	float:left;
+}
+
+
+
+

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13 juil. 2010 11:25:47 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.cms.hdata.Congressiste" table="congressiste" >
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+         
+        <property name="name" type="string">
+            <column name="name"   not-null="true" />
+        </property>
+        <property name="logo" type="string">
+            <column name="logo"     />
+        </property>
+       <property name="title" type="string">
+            <column name="title"   not-null="true" />
+        </property>
+         <property name="colorTitle" type="string">
+            <column name="color_title"     />
+        </property>
+          <property name="visible" type="java.lang.Byte">
+            <column name="visible"/>
+        </property>
+         
+         
+          <property name="urlLink" type="string">
+            <column name="url_link"   not-null="true" />
+        </property>
+              
+              <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

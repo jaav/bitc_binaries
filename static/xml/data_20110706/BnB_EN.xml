@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+	<group>BnB</group>
+	<language>EN</language>
+	<exported_date>20110706</exported_date>
+	<num_items>1</num_items>
+	<items>
+		<item id="622">
+			<title><![CDATA[B&B A la villa des Roses Voltaire]]></title>
+			<small_image>http://visitbrussels.be/bitc/static/front/img/db/bed_and_breakfast_villa_des_roses_voltaire_brussels.jpg</small_image>
+			<body><![CDATA[<div>If you dream about calm and independence, this guest room will suit you perfectly. The landlords make a fully furnished studio duplex 65 m2 available for you. You are welcomed in French, Dutch and English for those who love green areas, the Josaphat Park is only a few steps away. Easy access from the motorway and the Zaventem airport.Twin room (3rd floor / stairs)- private bathroom and toilets- extra sofa bed- stays from 1 to 30 nights - no smoking - no pets.Situation : avenue Voltaire 1030 Bruxelles (Schaerbeek).Access : Trams : 7 - 56 (gare du Nord) 92 Bus : 59-69</div>]]></body>
+			<address><![CDATA[Av Voltaire]]></address>
+			<city><![CDATA[Bruxelles/Brussel]]></city>
+			<zipcode>1030</zipcode>
+			<phone></phone>
+			<fax></fax>
+			<email></email>
+			<website>http://www.bnb-brussels.be/en/etablissements/b-b-a-la-villa-des-roses-voltaire.html</website>
+			<latitude>50.86953</latitude>
+			<longitude>4.37826</longitude>
+			<price>67.9800</price>
+		</item>
+	</items>
+</content>

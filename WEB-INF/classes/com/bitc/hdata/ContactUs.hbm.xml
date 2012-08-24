@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 13 juil. 2010 11:25:47 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.hdata.ContactUs" table="contact_us" >
+        <id name="contactUsId" type="java.lang.Integer">
+            <column name="contact_us_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="contactUsTypeQuestion" class="com.bitc.hdata.ContactUsTypeQuestion" fetch="select" >
+            <column name="type_question" not-null="true" />
+        </many-to-one>
+        <property name="greeting" type="string">
+            <column name="greeting" length="5" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="10" />
+        </property>
+        <property name="culture" type="string">
+            <column name="culture" length="5" not-null="true" />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname" length="50" />
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname" length="50" />
+        </property>
+        <property name="street" type="string">
+            <column name="street" length="100" />
+        </property>
+        <property name="num" type="string">
+            <column name="num" length="10" />
+        </property>
+        <property name="box" type="string">
+            <column name="box" length="10" />
+        </property>
+        <property name="zipcode" type="string">
+            <column name="zipcode" length="20"/>
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="50" />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="50" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="80" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="20" />
+        </property>
+        <property name="message" type="string">
+            <column name="message" length="1000" />
+        </property>
+        <property name="sendCopy" type="java.lang.Integer">
+            <column name="send_copy" />
+        </property>
+        <property name="createdOn" type="timestamp">
+            <column name="created_on" length="19" />
+        </property>
+        <property name="modifiedOn" type="timestamp">
+            <column name="modified_on" length="19" />
+        </property>
+        <property name="closed" type="java.lang.Integer">
+            <column name="closed" />
+        </property>
+        <property name="closedOn" type="timestamp">
+            <column name="closed_on" length="19" />
+        </property>
+        <property name="comment" type="string">
+            <column name="comment" length="1000" />
+        </property>
+        <property name="languageid" type="string">
+            <column name="languageid" length="2" />
+        </property>
+    </class>
+</hibernate-mapping>
