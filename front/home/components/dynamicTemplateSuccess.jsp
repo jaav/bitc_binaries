@@ -55,7 +55,7 @@ function meetingPlannerLightBox(data) {
 
 
 
-<div id="content_main">***************
+<div id="content_main">
 	<div class="first_highlight_home">
 	
 		<div class="scrollable" id="chained">
