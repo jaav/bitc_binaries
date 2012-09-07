@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 11 juin 2010 15:27:40 by Hibernate Tools 3.2.4.GA -->
 <hibernate-mapping>
-    <class name="com.bitc.hdata.Trip" table="trip">
+    <class name="com.bitc.hdata.Trip" table="trip" >
         <id name="tripId" type="java.lang.Integer">
             <column name="trip_id" />
             <generator class="identity" />

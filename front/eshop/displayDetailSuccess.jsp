@@ -124,9 +124,14 @@ function addToNltContent(group,contentId){
 	         <div id="pratical_information">
 		        <h4><wa:mls>Prix</wa:mls></h4>
 		        <c:forEach var="item" items="${listPrices}" varStatus="loop">
-		        <p>${item.mainTitle} <br />
-	          	<strong>${item.value} &euro;</strong></p>
+		        <p>${item.mainTitle} - <strong>${item.value}&euro;</strong></p>
 		        </c:forEach>
+	        	<c:if test="${not empty bean.catalogPromos}">
+	        		<h4><wa:mls>Discount</wa:mls></h4>
+			        <c:forEach var="item" items="${bean.catalogPromos}" varStatus="loop">
+				        <p>${item.catalogPromoType.catalogPromoTypeClts[culture.culture].title} - <strong>${item.promoValue}&euro;</strong></p>
+			        </c:forEach>
+	        	</c:if>
 		        <hr class="dashed"/>
 	        	<a href="javascript:addToBasket(${bean.id});" class="btn_add_basket"><wa:mls>Ajouter</wa:mls><br />
 	        	<wa:mls>au panier</wa:mls></a>

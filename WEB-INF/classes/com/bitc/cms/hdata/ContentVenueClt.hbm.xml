@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 26 ao?t 2010 11:08:39 by Hibernate Tools 3.2.4.GA -->
 <hibernate-mapping>
-    <class name="com.bitc.cms.hdata.ContentVenueClt" table="content_venue_clt">
+    <class name="com.bitc.cms.hdata.ContentVenueClt" table="content_venue_clt" >
         <id name="cltId" type="int">
             <column name="clt_id" />
             <generator class="identity" />

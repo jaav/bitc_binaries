@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 22-avr.-2011 10:56:29 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="com.bitc.hdata.MlrsAction" table="mlrs_action">
+    <class name="com.bitc.hdata.MlrsAction" table="mlrs_action" >
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="identity" />

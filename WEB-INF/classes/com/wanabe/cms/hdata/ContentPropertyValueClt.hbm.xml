@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 18 juin 2010 16:59:13 by Hibernate Tools 3.2.4.GA -->
 <hibernate-mapping>
-    <class name="com.wanabe.cms.hdata.ContentPropertyValueClt" table="content_property_value_clt">
+    <class name="com.wanabe.cms.hdata.ContentPropertyValueClt" table="content_property_value_clt" >
         <id name="cltId" type="int">
             <column name="clt_id" />
             <generator class="identity" />

@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 29 mars 2011 10:57:28 by Hibernate Tools 3.2.4.GA -->
 <hibernate-mapping>
-    <class name="com.bitc.hdata.CalendarWidget" table="calendar_widget">
+    <class name="com.bitc.hdata.CalendarWidget" table="calendar_widget" >
         <id name="widgetId" type="java.lang.Integer">
             <column name="widget_id" />
             <generator class="identity" />

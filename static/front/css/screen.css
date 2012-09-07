@@ -405,8 +405,9 @@ ul.third_highlight_home {padding:0 10px 10px 10px; border:1px solid #dddddd;}
 	#logo_share {float:left; margin:0 !important;}
 		.btn_museumtalks{ margin:0 0 0 20px !important; }
 	
-	#pratical_information, #pratical_information_large {margin:0 0 10px 20px; position:relative; padding:10px; width:172px; border:1px solid #dadada; text-align: left !important;}
-		#pratical_information p, #pratical_information_large p{text-align: left !important;}
+	#pratical_information, #pratical_information_large {margin:0 0 10px 20px; position:relative; padding:10px; width:172px; border:1px solid #dadada; text-align: left !important;background-color:#FDFDFD;}
+		#pratical_information p, #pratical_information_large p{text-align: left !important; margin-bottom:8px;margin-left:10px;}
+    #pratical_information h4, #pratical_information_large h4{margin-bottom:6px;}
 	#pratical_information_large	{width:380px; margin:10px 0; float: right;}
 	
 	#main_information { float:left; width: 620px; text-align: justify;}

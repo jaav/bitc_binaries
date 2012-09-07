@@ -2,23 +2,52 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 17 juin 2010 13:26:52 by Hibernate Tools 3.2.4.GA -->
+<!--
+DROP TABLE IF EXISTS catalog_promo;
+
+CREATE TABLE catalog_promo`
+  (
+     id int PRIMARY KEY NOT NULL,//ALTER TABLE catalog_promo MODIFY id INT NOT NULL AUTO_INCREMENT;
+     product_id int NOT NULL,
+     promo_value DOUBLE,
+     promo_type_id int NOT NULL,
+     code varchar(100)
+  )
+  ;
+  ALTER TABLE catalog_promo
+  ADD CONSTRAINT catalog_promo_ibfk_9002
+  FOREIGN KEY (promo_type_id)
+  REFERENCES catalog_promo_type(id)
+  ;
+  ALTER TABLE catalog_promo
+  ADD CONSTRAINT catalog_promo_ibfk_9003
+  FOREIGN KEY (product_id)
+  REFERENCES catalog_product(id)
+  ;
+  CREATE UNIQUE INDEX PRIMARY ON catalog_promo(id);
+  CREATE INDEX promo_type_id ON catalog_promo(promo_type_id);
+  CREATE INDEX product_id ON catalog_promo(product_id);
+
+-->
 <hibernate-mapping>
     <class name="com.bitc.catalog.hdata.CatalogPromo" table="catalog_promo" >
         <id name="id" type="int">
             <column name="id" />
             <generator class="identity" />
         </id>
-        <property name="name" type="string">
-            <column name="name" length="100" not-null="true" />
+        <many-to-one name="catalogProduct" class="com.bitc.catalog.hdata.CatalogProduct" fetch="select" lazy="false">
+            <column name="product_id" />
+        </many-to-one>
+        <many-to-one name="catalogPromoType" class="com.bitc.catalog.hdata.CatalogPromoType" fetch="select" lazy="false">
+            <column name="promo_type_id" />
+        </many-to-one>
+        <property name="promoValue" type="java.lang.Double">
+          <column name="promo_value" precision="6" scale="2">
+            <comment></comment>
+          </column>
         </property>
-        <property name="description" type="string">
-            <column name="description" length="500" />
+        <property name="promoCode" type="string">
+            <column name="promo_code" length="100" not-null="true" />
         </property>
-        <set name="catalogProducts" inverse="true" lazy="true" table="catalog_product" fetch="select">
-            <key>
-                <column name="promo_type" />
-            </key>
-            <one-to-many class="com.bitc.catalog.hdata.CatalogProduct" />
-        </set>
     </class>
 </hibernate-mapping>

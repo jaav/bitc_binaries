@@ -34,14 +34,7 @@
 
   <div class="clr"></div></div>
 <a href="javascript:parent.$.nyroModalRemove()" class="btn_previous_eshop_big float_left" id="closeBut2"><wa:mls>Continuer</wa:mls><br /><wa:mls>mes achats</wa:mls></a> 
-<c:choose>
-	<c:when test="${typeBasket == 'BROCHURE'}">
-	<a href="${context}/${site}/brochure/displayBasket.do" target="_parent" class="btn_add_basket float_right"><wa:mls>Voir</wa:mls><br /><wa:mls>le panier</wa:mls></a>
-	</c:when>
-	<c:otherwise>
-	<a href="${context}/${site}/eshop/displayBasket.do" target="_parent" class="btn_add_basket float_right"><wa:mls>Voir</wa:mls><br /><wa:mls>le panier</wa:mls></a>
-	</c:otherwise>
-</c:choose>
+<a href="${context}/${site}/eshop/displayBasket.do" target="_parent" class="btn_add_basket float_right"><wa:mls>Voir</wa:mls><br /><wa:mls>le panier</wa:mls></a>
 </div>
 </body>
 </html>

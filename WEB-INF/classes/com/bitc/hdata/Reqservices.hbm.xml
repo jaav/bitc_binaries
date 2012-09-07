@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 15 sept. 2010 15:43:36 by Hibernate Tools 3.2.4.GA -->
 <hibernate-mapping>
-    <class name="com.bitc.hdata.Reqservices" table="reqservices">
+    <class name="com.bitc.hdata.Reqservices" table="reqservices" >
         <id name="serviceid" type="java.lang.Integer">
             <column name="serviceid" />
             <generator class="identity" />

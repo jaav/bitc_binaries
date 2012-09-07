@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 16 juin 2010 18:19:33 by Hibernate Tools 3.2.4.GA -->
 <hibernate-mapping>
-    <class name="com.bitc.catalog.hdata.CatalogProduct" table="catalog_product">
+    <class name="com.bitc.catalog.hdata.CatalogProduct" table="catalog_product" >
         <id name="id" type="int">
             <column name="id" />
             <generator class="identity" />
@@ -14,9 +14,10 @@
         <many-to-one name="category" class="com.bitc.cms.hdata.ContentArticle" fetch="select">
             <column name="category_id" />
         </many-to-one>
-        <many-to-one name="promoType" class="com.bitc.catalog.hdata.CatalogPromo" fetch="select">
+        <!-- ALTER TABLE catalog_product DROP promo_type -->
+        <!-- many-to-one name="promoType" class="com.bitc.catalog.hdata.CatalogPromo" fetch="select">
             <column name="promo_type" />
-        </many-to-one>
+        </many-to-one-->
         <property name="title" type="string">
             <column name="title" length="200" />
         </property>
@@ -152,6 +153,11 @@
         <property name="unitDefault" type="string">
             <column name="unit_default" length="100" />
         </property>
+        <!-- ALTER TABLE catalog_product DROP FOREIGN KEY catalog_product_ibfk_1; -->
+        <!-- ALTER TABLE catalog_product DROP promo_code; -->
+        <!--property name="promoCode" type="string">
+            <column name="promo_code" length="60" />
+        </property-->
         <set name="catalogProductAvailabilities" inverse="true" lazy="true" table="catalog_product_availability" fetch="select">
             <key>
                 <column name="product_id" not-null="true" />
@@ -173,6 +179,12 @@
                 <column name="product_id" not-null="true" />
             </key>
             <one-to-many class="com.bitc.catalog.hdata.CatalogPrice" />
+        </set>
+        <set name="catalogPromos" inverse="true" table="catalog_promo" fetch="select" cascade="all" lazy="false">
+            <key>
+                <column name="product_id" not-null="true" />
+            </key>
+            <one-to-many class="com.bitc.catalog.hdata.CatalogPromo" />
         </set>
     </class>
 </hibernate-mapping>
