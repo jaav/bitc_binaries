@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 juin 2010 18:19:33 by Hibernate Tools 3.2.4.GA -->
+<!--
+  CREATE TABLE catalog_promo_type_clt`
+    (
+       clt_id int PRIMARY KEY NOT NULL,//ALTER TABLE catalog_promo_type_clt MODIFY clt_id INT NOT NULL AUTO_INCREMENT;
+       promo_type_id int NOT NULL,
+       title varchar(200),
+       description text,
+       culture varchar(5)
+    )
+    ;
+    ALTER TABLE catalog_promo_type_clt
+    ADD CONSTRAINT catalog_promo_type_clt_ibfk_9001
+    FOREIGN KEY (promo_type_id)
+    REFERENCES catalog_promo_type(id)
+    ;
+    CREATE UNIQUE INDEX PRIMARY ON catalog_promo_type_clt(clt_id);
+    CREATE INDEX promo_type_id ON catalog_promo_type_clt(promo_type_id);
+-->
+<hibernate-mapping>
+    <class name="com.bitc.catalog.hdata.CatalogPromoTypeClt" table="catalog_promo_type_clt" >
+        <id name="cltId" type="int">
+            <column name="clt_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="catalogPromoType" class="com.bitc.catalog.hdata.CatalogPromoType" fetch="select">
+            <column name="promo_type_id" not-null="true" />
+        </many-to-one>
+        <property name="title" type="string">
+            <column name="title" length="200"  />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="1000" />
+        </property>
+        <property name="culture" type="string">
+            <column name="culture" length="5" />
+        </property>
+       
+    </class>
+</hibernate-mapping>
