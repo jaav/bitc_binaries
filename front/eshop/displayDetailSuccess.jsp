@@ -126,9 +126,9 @@ function addToNltContent(group,contentId){
 		        <c:forEach var="item" items="${listPrices}" varStatus="loop">
 		        <p>${item.mainTitle} - <strong>${item.value}&euro;</strong></p>
 		        </c:forEach>
-	        	<c:if test="${not empty bean.catalogPromos}">
+	        	<c:if test="${not empty bean.defaultCatalogPromos}">
 	        		<h4><wa:mls>Discount</wa:mls></h4>
-			        <c:forEach var="item" items="${bean.catalogPromos}" varStatus="loop">
+			        <c:forEach var="item" items="${bean.defaultCatalogPromos}" varStatus="loop">
 				        <p>${item.catalogPromoType.catalogPromoTypeClts[culture.culture].title} - <strong>${item.promoValue}&euro;</strong></p>
 			        </c:forEach>
 	        	</c:if>

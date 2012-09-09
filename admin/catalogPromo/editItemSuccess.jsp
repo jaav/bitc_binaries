@@ -73,7 +73,6 @@
 					<div id="tf_code">
 						<label for="f_code"><wa:mls>Promo Code</wa:mls></label>
 						<input type="text" id="f_code" name="f_code" value="${bean.promoCode}" />
-						<span class="textfieldRequiredMsg clr"><wa:mls>Promo code is empty</wa:mls></span>
 					</div>
 					
 				</fieldset>
@@ -102,6 +101,5 @@
 	idName = '${bean.id}';
 </script>
 <script type="text/javascript">
-	var sprytextfield = new Spry.Widget.ValidationTextField("tf_code", "none", {validateOn:["blur"]});
 	var TP1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
 </script>
