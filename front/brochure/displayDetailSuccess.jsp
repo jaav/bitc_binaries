@@ -121,6 +121,12 @@ function addToNltContent(group,contentId){
                         <p>${item.mainTitle} <br />
                         <strong>${item.value} &euro;</strong></p>
                         </c:forEach>
+                        <c:if test="${not empty bean.defaultCatalogPromos}">
+	        				<h4><wa:mls>Discount</wa:mls></h4>
+			        		<c:forEach var="item" items="${bean.defaultCatalogPromos}" varStatus="loop">
+				        		<p>${item.catalogPromoType.catalogPromoTypeClts[culture.culture].title} - <strong>${item.promoValue}&euro;</strong></p>
+			        		</c:forEach>
+	        			</c:if>
                         <hr class="dashed"/>
                             <a href="javascript:addToBasketVoucher(${bean.id});" class="btn_add_basket"><wa:mls>Ajouter</wa:mls><br />
                             <wa:mls>au panier</wa:mls></a>

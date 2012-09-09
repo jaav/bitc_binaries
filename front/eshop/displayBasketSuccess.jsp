@@ -310,15 +310,18 @@ $(document).ready(function(){
 							<td class="space">&nbsp;</td>
 
 
-							<td class="promos"><c:if test="${not empty item.catalogPromos}">
+							<td class="promos"><c:if test="${not empty item.defaultCatalogPromos}">
 									<a href="#discountinfo_${item.id}" class="modalopener"><wa:mls>Yes</wa:mls></a>
+								</c:if>
+								<c:if test="${empty item.defaultCatalogPromos}">
+									<wa:mls>No</wa:mls>
 								</c:if></td>
 							<td class="space">&nbsp;</td>
 
 							<div style="display: none; width: 600px;" id="discountinfo_${item.id}">
 								<!-- sizeof list prices ${fn:length(item.catalogPrices)} -->
 								<ul>
-									<c:forEach var="promo" items="${item.catalogPromos}" varStatus="loopPrices">
+									<c:forEach var="promo" items="${item.defaultCatalogPromos}" varStatus="loopPrices">
 										<li class="catalogPromo"><span style="font-weight: bold;"><wa:mls>Promotion</wa:mls> "${promo.catalogPromoType.titleDefault}":</span>
 											${promo.catalogPromoType.catalogPromoTypeClts[culture.culture].description}<br />
 											<ul style="margin-left: 20px; margin-bottom: 12px;">
@@ -377,6 +380,10 @@ $(document).ready(function(){
 								</h4></td>
 							<td>&nbsp;</td>
 							<td><h4 class="no_margin">
+									<wa:mls>Remise</wa:mls>
+								</h4></td>
+							<td>&nbsp;</td>
+							<td><h4 class="no_margin">
 									<wa:mls>Coupon Code</wa:mls>
 								</h4></td>
 							<td>&nbsp;</td>
@@ -414,6 +421,26 @@ $(document).ready(function(){
 												</div>
 										</span></td>
 										<td class="space">&nbsp;</td>
+										<td class="promos"><c:if test="${not empty item.defaultCatalogPromos}">
+											<a href="#discountinfo_${item.id}" class="modalopener"><wa:mls>Yes</wa:mls></a>
+										</c:if>
+										<c:if test="${empty item.defaultCatalogPromos}">
+											<wa:mls>No</wa:mls>
+										</c:if></td>
+										<td class="space">&nbsp;</td>
+		
+										<div style="display: none; width: 600px;" id="discountinfo_${item.id}">
+											<!-- sizeof list prices ${fn:length(item.catalogPrices)} -->
+											<ul>
+												<c:forEach var="promo" items="${item.defaultCatalogPromos}" varStatus="loopPrices">
+													<li class="catalogPromo"><span style="font-weight: bold;"><wa:mls>Promotion</wa:mls> "${promo.catalogPromoType.titleDefault}":</span>
+														${promo.catalogPromoType.catalogPromoTypeClts[culture.culture].description}<br />
+														<ul style="margin-left: 20px; margin-bottom: 12px;">
+															<li><wa:mls>Discount</wa:mls>: <strong>${promo.promoValue} &euro;</strong></li>
+														</ul></li>
+												</c:forEach>
+											</ul>
+										</div>
 										<td class="promoCode"><input type="text" name="promoCode_product_${item.id}" size="12" class="float_right" value="${item.givenPromo.promoCode}" /></td>
 										<td class="space">&nbsp;</td>
 										<!-- sizeof list prices ${fn:length(item.catalogPrices)} -->
