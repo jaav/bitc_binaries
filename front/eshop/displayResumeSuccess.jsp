@@ -90,6 +90,10 @@
     <hr class="dashed" />
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="resume">
       <tr>
+      	<td><h4 class="no_margin">
+					<wa:mls>Articles dans votre panier</wa:mls>
+				</h4></td>
+			<td>&nbsp;</td>
         <td ><h4 class="no_margin"><wa:mls>Langue</wa:mls></h4></td>
         <td>&nbsp;</td>
         <td ><h4 class="no_margin"><wa:mls>Prix</wa:mls></h4></td>

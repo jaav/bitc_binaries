@@ -3,18 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <link rel="stylesheet" type="text/css" href="${staticSite}/css/SpryValidationTextField_shop.css" media="screen, projection" />
-<script type="text/javascript">
-	function submitForm() {
-		var promoCode = document.getElementById("f_code").value;
-		if( promoCode.length < 0 ) {
-			alert("Promo code is empty");
-		}
-		else {
-			document.getElementById("detailForm").submit();
-		}	
-	}
-</script>
-
 <div id="mainContent">
 	<div id="toolBox">
 		<div class="content" id="actions">
@@ -80,10 +68,14 @@
 					<div class="bgWhite">
 						<label for="f_promoValue"><wa:mls>Discount</wa:mls></label> <input type="text" id="f_promoValue" name="f_promoValue" value="${bean.promoValue}" />
 					</div>
-
-					<div class="bgGrey">
-						<label for="f_code"><wa:mls>Promo Code</wa:mls></label> <input type="text" id="f_code" name="f_code" value="${bean.promoCode}" />
+					
+										
+					<div id="tf_code">
+						<label for="f_code"><wa:mls>Promo Code</wa:mls></label>
+						<input type="text" id="f_code" name="f_code" value="${bean.promoCode}" />
+						<span class="textfieldRequiredMsg clr"><wa:mls>Promo code is empty</wa:mls></span>
 					</div>
+					
 				</fieldset>
 				<div class="clr"></div>
 				<div id="ajaxProperties"></div>
@@ -95,7 +87,7 @@
 				</div>
 				<div id="containerButton">
 					<input type="button" name="cancel" id="cancel" class="cancel" value="<wa:mls>Cancel</wa:mls>" /> 
-					<input type="button" onclick="submitForm();" class="submit" value="<wa:mls>Enregistrer</wa:mls>" />
+					<input type="submit" name="submit" class="submit" value="<wa:mls>Enregistrer</wa:mls>"/>
 				</div>
 			</form>
 		</div>
@@ -110,5 +102,6 @@
 	idName = '${bean.id}';
 </script>
 <script type="text/javascript">
+	var sprytextfield = new Spry.Widget.ValidationTextField("tf_code", "none", {validateOn:["blur"]});
 	var TP1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
 </script>
