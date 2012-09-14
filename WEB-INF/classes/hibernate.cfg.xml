@@ -13,6 +13,7 @@
         <property name="hibernate.connection.password">bitc123</property>
         <property name="hibernate.connection.url">jdbc:mysql://172.30.0.246:3306/bitc</property> 
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property-->
+        <!--property name="hibernate.show_sql">true</property-->
         <mapping resource="com/wanabe/core/mls/hdata/Mlss.hbm.xml" />
         <mapping resource="com/wanabe/core/security/AcxProfileauthorization.hbm.xml" />
         <mapping resource="com/wanabe/core/security/AcxUriauthorization.hbm.xml" />
@@ -82,6 +83,8 @@
         <mapping resource="com/bitc/catalog/hdata/CatalogProductAvailability.hbm.xml" />
         <mapping resource="com/bitc/catalog/hdata/CatalogProductClt.hbm.xml" />
         <mapping resource="com/bitc/catalog/hdata/CatalogPromo.hbm.xml" />
+        <mapping resource="com/bitc/catalog/hdata/CatalogPromoType.hbm.xml" />
+        <mapping resource="com/bitc/catalog/hdata/CatalogPromoTypeClt.hbm.xml" />
         
         <mapping resource="com/bitc/hdata/NltType.hbm.xml" />               
         <mapping resource="com/bitc/hdata/NltUserType.hbm.xml" />

@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 11 juin 2010 16:32:07 by Hibernate Tools 3.2.4.GA -->
 <hibernate-mapping>
-    <class name="com.bitc.hdata.AccessUserSection" table="access_user_section">
+    <class name="com.bitc.hdata.AccessUserSection" table="access_user_section" >
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="identity" />

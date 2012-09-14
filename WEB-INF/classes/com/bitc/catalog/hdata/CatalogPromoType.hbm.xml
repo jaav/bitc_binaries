@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 juin 2010 18:19:33 by Hibernate Tools 3.2.4.GA -->
+<!--
+  CREATE TABLE catalog_promo_type`
+    (
+       id int PRIMARY KEY NOT NULL,//ALTER TABLE catalog_promo_type MODIFY id INT NOT NULL AUTO_INCREMENT;
+       title_default varchar(200)
+    )
+    ;
+    CREATE UNIQUE INDEX PRIMARY ON catalog_promo_type(id);
+-->
+<hibernate-mapping>
+    <class name="com.bitc.catalog.hdata.CatalogPromoType" table="catalog_promo_type" >
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="titleDefault" type="string">
+            <column name="title_default" length="200"/>
+        </property>
+        <set name="catalogPromos" inverse="true" lazy="true" table="catalog_promo" fetch="select">
+            <key>
+                <column name="promo_type_id" not-null="true" />
+            </key>
+            <one-to-many class="com.bitc.catalog.hdata.CatalogPromo" />
+        </set>
+        <map name="catalogPromoTypeClts" lazy="false" inverse="true" cascade="all">
+            <key>
+                <column name="promo_type_id" not-null="true" />
+            </key>
+            <map-key type="string">
+            	<column name="culture" not-null="true">
+            	</column>
+            </map-key> 
+            <one-to-many class="com.bitc.catalog.hdata.CatalogPromoTypeClt" />
+        </map>
+    </class>
+</hibernate-mapping>

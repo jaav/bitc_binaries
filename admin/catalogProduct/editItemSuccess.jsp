@@ -140,6 +140,8 @@ isELIgnored ="false"
 								var v_partner = new Spry.Widget.ValidationTextarea("v_partner", {isRequired:true,maxChars:10,validateOn:["blur","change"]});
 							</script> 
 						</div> -->
+						<div>TODEL - promotype removed from here</div>
+						<%--
 						<div class="bgWhite" id="v_promoType">
 						<label for="f_promoType"><wa:mls>promoType</wa:mls></label>
 							<wa:include URI="${site}/dropdown/dropList">
@@ -156,6 +158,7 @@ isELIgnored ="false"
 								var v_promoType = new Spry.Widget.ValidationSelect("v_promoType", {isRequired:false,validateOn:["blur","change"]});
 							</script>
 						</div>
+						--%>
 						<div class="bgWhite" id="v_daysBeforePrestation">
 							<label for="f_daysBeforePrestation"><wa:mls>daysBeforePrestation</wa:mls></label>
 							<textarea name="f_daysBeforePrestation" class="textfield" >${bean.daysBeforePrestation}</textarea>

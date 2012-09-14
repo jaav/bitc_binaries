@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 25 juin 2010 12:48:41 by Hibernate Tools 3.2.4.GA -->
 <hibernate-mapping>
-    <class name="com.bitc.cms.hdata.NltContent" table="nlt_content">
+    <class name="com.bitc.cms.hdata.NltContent" table="nlt_content" >
         <id name="nltContentId" type="java.lang.Integer">
             <column name="nlt_content_id" />
             <generator class="identity" />

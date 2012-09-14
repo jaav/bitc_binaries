@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 29 mars 2011 10:57:28 by Hibernate Tools 3.2.4.GA -->
 <hibernate-mapping>
-    <class name="com.bitc.hdata.CalendarPartner" table="calendar_partner">
+    <class name="com.bitc.hdata.CalendarPartner" table="calendar_partner" >
         <id name="partnerId" type="java.lang.Integer">
             <column name="partner_id" />
             <generator class="identity" />

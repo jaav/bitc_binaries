@@ -68,7 +68,7 @@ isELIgnored ="false"
 					<label for="s_total"><wa:mls>total</wa:mls></label>
 					<input name="s_total" type="text" <c:choose><c:when test="${waParam.s_total!=null}">value="${waParam.s_total}"</c:when><c:otherwise>value=""</c:otherwise></c:choose>/>
 				</div>
-				<div>
+				<%-- <div>
 					<label for="s_type"><wa:mls>type</wa:mls></label>
 					<select name="s_type">
 						<option value=""></option>
@@ -76,7 +76,7 @@ isELIgnored ="false"
 						<option value="BROCHURE" <c:if test="${waParam.s_type == 'BROCHURE'}">selected="selected"</c:if> >BROCHURE</option>
 							
 					</select>
-				</div>
+				</div> --%>
 				<div>
 					<label for="s_invoiceLastname"><wa:mls>invoiceLastname</wa:mls></label>
 					<input name="s_invoiceLastname" type="text" <c:choose><c:when test="${waParam.s_invoiceLastname!=null}">value="${waParam.s_invoiceLastname}"</c:when><c:otherwise>value=""</c:otherwise></c:choose>/>
@@ -137,7 +137,7 @@ isELIgnored ="false"
 						<wa:param name="orderBy" value="total" />
 					</wa:link>			
 				</td>
-				<td class="center type">
+				<%-- <td class="center type">
 					<wa:link URI="${URI}" allParams="true">
 						<wa:mls>type</wa:mls>
 						<wa:exceptParam name="page"/>
@@ -147,7 +147,7 @@ isELIgnored ="false"
 						<wa:exceptParam name="orderBy"/>
 						<wa:param name="orderBy" value="createdOn" />
 					</wa:link>			
-				</td>
+				</td> --%>
 				<td class="center invoiceLastname">
 					<wa:link URI="${URI}" allParams="true">
 						<wa:mls>invoiceLastname</wa:mls>
@@ -222,7 +222,7 @@ isELIgnored ="false"
 					<td class="center checkbox"><input type="checkbox" value="${item.orderId}"></td>
 					<td class="center orderId"><a href="${context}/${site}/esOrder/editItem/id/${item.orderId}.do" title="<wa:mls>Edit order</wa:mls>">${item.orderId}</a></td>	
 					<td class="center total">${item.total}&nbsp;</td>
-					<td class="center type">${item.type}&nbsp;</td>
+					<%-- <td class="center type">${item.type}&nbsp;</td> --%>
 					<td class="center invoiceLastname">${item.invoiceLastname}&nbsp;</td>
 					<td class="center invoiceFirstname">${item.invoiceFirstname}&nbsp;</td>
 					<td class="center invoiceEmail">${item.invoiceEmail}&nbsp;</td>

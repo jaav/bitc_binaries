@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 13 oct. 2010 14:26:03 by Hibernate Tools 3.2.4.GA -->
 <hibernate-mapping>
-    <class name="com.bitc.cms.hdata.ContentRoom" table="content_room">
+    <class name="com.bitc.cms.hdata.ContentRoom" table="content_room" >
         <id name="roomId" type="int">
             <column name="room_id" />
             <generator class="identity" />

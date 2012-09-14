@@ -199,10 +199,6 @@ isELIgnored ="false"
 			</fieldset>--%>
 			<fieldset>
 				<legend><wa:mls>Order informations</wa:mls></legend>
-				<div class="bgWhite">
-					<label for="f_type"><wa:mls>type</wa:mls> </label>
-					<textarea name="f_type" class="textfield" disabled>${bean.type}</textarea>
-				</div>	
 				<div class="bgGrey">
 					<label for="f_deliveryComment"><wa:mls>deliveryComment</wa:mls> </label>
 					<textarea name="f_deliveryComment" class="textfield">${bean.deliveryComment}</textarea>

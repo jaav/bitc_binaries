@@ -74,5 +74,8 @@
                 <comment></comment>
             </column>
         </property>
+        <property name="orderType" type="string">
+            <column name="order_type" length="20"/>
+        </property>
     </class>
 </hibernate-mapping>

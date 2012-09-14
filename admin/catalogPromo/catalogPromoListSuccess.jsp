@@ -16,6 +16,8 @@ isELIgnored ="false"
 		<a href="javascript:void(0);" id="duplicate_btn"><wa:mls>duplicate</wa:mls></a>
 		<a href="javascript:void(0);" id="delete_btn"><wa:mls>delete</wa:mls></a>
 		<a href="javascript:void(0);" id="edit_btn"><wa:mls>edit</wa:mls></a>
+		<a href="javascript:void(0);" id="export_btn"><wa:mls>export</wa:mls></a>
+		<a href="javascript:void(0);" id="import_btn"><wa:mls>import</wa:mls></a>
 		<c:if test="${legend != null}">
 			<a href="javascript:void(0);" id="legend_btn" class="allways"><wa:mls>legend</wa:mls></a>
 		</c:if>
@@ -41,12 +43,32 @@ isELIgnored ="false"
 					<input name="s_id" type="text" <c:choose><c:when test="${waParam.s_id!=null}">value="${waParam.s_id}"</c:when><c:otherwise>value=""</c:otherwise></c:choose>/>
 				</div>
 				<div>
-					<label for="s_name"><wa:mls>name</wa:mls></label>
-					<input name="s_name" type="text" <c:choose><c:when test="${waParam.s_name!=null}">value="${waParam.s_name}"</c:when><c:otherwise>value=""</c:otherwise></c:choose>/>
-				</div>
+					<label for="s_catalogProduct_id"><wa:mls>ProductPrice</wa:mls></label>
+					<wa:include URI="${site}/dropdown/dropList">
+							<wa:param name="class" value="com.bitc.catalog.hdata.CatalogPrice" />
+							<wa:param name="manager" value="com.bitc.catalog.hdata.manager.CatalogPriceManager" />
+							<wa:param name="identity" value="id" />
+							<wa:param name="display" value="nameForAdmin" />
+							<wa:param name="choiceMsg" value="Choose the ProductPrice" />
+							<wa:param name="name" value="s_catalogPrice_id" />
+							<wa:param name="selectedValues" value="${waParam.s_catalogPrice_id}" />
+					</wa:include>
+				</div>	
 				<div>
-					<label for="s_description"><wa:mls>description</wa:mls></label>
-					<input description="s_description" type="text" <c:choose><c:when test="${waParam.s_description!=null}">value="${waParam.s_description}"</c:when><c:otherwise>value=""</c:otherwise></c:choose>/>
+					<label for="s_catalogPromoType_id"><wa:mls>Promotion Type</wa:mls></label>
+					<wa:include URI="${site}/dropdown/dropList">
+							<wa:param name="class" value="com.bitc.catalog.hdata.CatalogPromoType" />
+							<wa:param name="manager" value="com.bitc.catalog.hdata.manager.CatalogPromoTypeManager" />
+							<wa:param name="identity" value="id" />
+							<wa:param name="display" value="titleDefault" />
+							<wa:param name="choiceMsg" value="Choose the Promo Type" />
+							<wa:param name="name" value="s_catalogPromoType_id" />
+							<wa:param name="selectedValues" value="${waParam.s_catalogPromoType_id}" />
+					</wa:include>
+				</div>	
+				<div>
+					<label for="s_code"><wa:mls>Code</wa:mls></label>
+					<input name="s_code" type="text" <c:choose><c:when test="${waParam.s_code!=null}">value="${waParam.s_code}"</c:when><c:otherwise>value=""</c:otherwise></c:choose>/>
 				</div>
 				
 				<input type="button" name="s_reset" id="reset_btn" value="<wa:mls>Reset</wa:mls>"  class="reset"></input>
@@ -57,12 +79,12 @@ isELIgnored ="false"
 <!--searchBox:end-->
 </div>
 <!--floatLeft:end-->
-<h2><wa:mls>Catalog Promo</wa:mls></h2>
+<h2><wa:mls>Catalog Promotions</wa:mls></h2>
 <div id="list">
 	<div id="mask">
 		<table cellspacing=0 cellpadding=0>
 			<tr class="header">
-				
+
 				<td class="center checkbox">
 					<input type="checkbox" id="checkboxAll"/>
 				</td>
@@ -77,26 +99,37 @@ isELIgnored ="false"
 							<wa:param name="orderBy" value="id" />
 						</wa:link>			
 					</td>
-					<td class="center name">
+					<td class="center price">
 						<wa:link URI="${URI}" allParams="true">
-							<wa:mls>name</wa:mls>
+							<wa:mls>Price</wa:mls>
 							<wa:exceptParam name="page"/>
 							<wa:param name="page" value="1" />
 							<wa:exceptParam name="orderDir"/>
 							<wa:param name="orderDir" value="${orderDir}" />
 							<wa:exceptParam name="orderBy"/>
-							<wa:param name="orderBy" value="name" />
+							<wa:param name="orderBy" value="price" />
 						</wa:link>			
 					</td>
-					<td class="center description">
+					<td class="center promoValue">
 						<wa:link URI="${URI}" allParams="true">
-							<wa:mls>description</wa:mls>
+							<wa:mls>Discount</wa:mls>
 							<wa:exceptParam name="page"/>
 							<wa:param name="page" value="1" />
 							<wa:exceptParam name="orderDir"/>
 							<wa:param name="orderDir" value="${orderDir}" />
 							<wa:exceptParam name="orderBy"/>
-							<wa:param name="orderBy" value="description" />
+							<wa:param name="orderBy" value="promoValue" />
+						</wa:link>			
+					</td>
+					<td class="center titleDefault">
+						<wa:link URI="${URI}" allParams="true">
+							<wa:mls>Promo Code</wa:mls>
+							<wa:exceptParam name="page"/>
+							<wa:param name="page" value="1" />
+							<wa:exceptParam name="orderDir"/>
+							<wa:param name="orderDir" value="${orderDir}" />
+							<wa:exceptParam name="orderBy"/>
+							<wa:param name="orderBy" value="promoCode" />
 						</wa:link>			
 					</td>
 			</tr>
@@ -104,9 +137,10 @@ isELIgnored ="false"
 				<tr class="line${((loop.count+1)%2)+1}">
 						
 					<td class="center checkbox"><input type="checkbox" value="${item.id}"></td>
-					<td class="center id"><a href="${context}/${site}/catalogPrice/editItem/id/${item.id}.do" title="<wa:mls>Edit id</wa:mls>">${item.id}</a></td>
-					<td class="center name">${item.name}&nbsp;</td>
-					<td class="center description">${item.description}&nbsp;</td>
+					<td class="center id"><a href="${context}/${site}/catalogPromo/editItem/id/${item.id}.do" title="<wa:mls>Edit id</wa:mls>">${item.id}</a></td>
+					<td class="center price"><a href="${context}/${site}/catalogPrice/editItem/id/${item.catalogPrice.id}.do" title="<wa:mls>Edit id</wa:mls>">${item.catalogPrice.nameForAdmin}</a></td>
+					<td class="center value">${item.promoValue}&nbsp;</td>
+					<td class="center titleDefault">${item.promoCode}&nbsp;</td>
 				</tr>
 			</c:forEach>
 		</table>
@@ -133,12 +167,16 @@ isELIgnored ="false"
 			<label><wa:mls>id</wa:mls></label>
 		</div>
 		<div>
-			<input name="name" id="c_name" type="checkbox" value="1" checked="checked"/>
-			<label><wa:mls>name</wa:mls></label>
+			<input name="product" id="c_product" type="checkbox" value="1" checked="checked"/>
+			<label><wa:mls>product</wa:mls></label>
+		</div>
+			<div>
+			<input name="promoValue" id="c_promoValue" type="checkbox" value="1" checked="checked"/>
+			<label><wa:mls>promoValue</wa:mls></label>
 		</div>
 		<div>
-			<input name="description" id="c_description" type="checkbox" value="1" checked="checked"/>
-			<label><wa:mls>description</wa:mls></label>
+			<input name="promoCode" id="c_promoCode" type="checkbox" value="1" checked="checked"/>
+			<label><wa:mls>promoCode</wa:mls></label>
 		</div>
 		
 </div>
@@ -160,5 +198,5 @@ function publishInLine(id){
 		window.location=path+'/publishItems/items/'+id+'.do';
 	}
 }
-
+numOfElement='${listSize}';
 </script>

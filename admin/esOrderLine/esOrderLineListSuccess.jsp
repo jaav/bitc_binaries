@@ -108,7 +108,18 @@ isELIgnored ="false"
 						<wa:exceptParam name="orderDir"/>
 						<wa:param name="orderDir" value="${orderDir}" />
 						<wa:exceptParam name="orderBy"/>
-						<wa:param name="orderBy" value="orderId" />
+						<wa:param name="orderBy" value="esOrder.orderId" />
+					</wa:link>			
+				</td>
+				<td class="center orderId">
+					<wa:link URI="${URI}" allParams="true">
+						<wa:mls>type</wa:mls>
+						<wa:exceptParam name="page"/>
+						<wa:param name="page" value="1" />
+						<wa:exceptParam name="orderDir"/>
+						<wa:param name="orderDir" value="${orderDir}" />
+						<wa:exceptParam name="orderBy"/>
+						<wa:param name="orderBy" value="orderType" />
 					</wa:link>			
 				</td>
 				<td class="center reference">
@@ -172,6 +183,7 @@ isELIgnored ="false"
 					<td class="center checkbox"><input type="checkbox" value="${item.orderLineId}"></td>
 					<td class="center orderLineId"><a href="${context}/${site}/esOrderLine/editItem/id/${item.orderLineId}.do" title="<wa:mls>Edit orderLine</wa:mls>">${item.orderLineId}</a></td>	
 					<td class="center orderId"><a href="${context}/admin/esOrder/esOrderList.do?s_orderId=${item.esOrder.orderId}&s_submit=Search">${item.esOrder.orderId}</a></td>
+					<td class="center reference">${item.orderType}&nbsp;</td>
 					<td class="center reference">${item.reference}&nbsp;</td>
 					<td class="center productId">
 						<wa:include URI="${site}/catalogProduct/lookup">

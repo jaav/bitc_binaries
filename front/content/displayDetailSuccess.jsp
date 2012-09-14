@@ -273,7 +273,7 @@ function addToNltContent(group,contentId){
        </div>
        </div>
     <div class="clr"></div>
-   <c:set var="fb_url" value="${config['URL_ENCODED']}%2F${context}%2F${site}%2F${module}%2F${action}%2Fgroup%2F${bean.group}%2Fid%2F${bean.id}.do"/>
+   <c:set var="fb_url" value="${config['URL']}${context}/${site}/${module}/${action}/group/${bean.group}/id/${bean.id}.do"/>
    <iframe src="http://www.facebook.com/plugins/like.php?href=${fb_url}&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true" class="facebook_like"></iframe>
 
     <!--boxotherinformation:start-->
