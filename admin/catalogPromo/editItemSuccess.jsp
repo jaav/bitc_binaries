@@ -35,17 +35,17 @@
 					</c:if>
 
 					<div class="bgWhite">
-						<label for="f_catalogProduct_id"><wa:mls>catalog Product</wa:mls></label>
+						<label for="f_catalogPrice_id"><wa:mls>catalog Price</wa:mls></label>
 
 						<wa:include URI="${site}/dropdown/dropList">
-							<wa:param name="class" value="com.bitc.catalog.hdata.CatalogProduct" />
-							<wa:param name="manager" value="com.bitc.catalog.hdata.manager.CatalogProductManager" />
-							<wa:param name="method" value="listAllValid" />
+							<wa:param name="class" value="com.bitc.catalog.hdata.CatalogPrice" />
+							<wa:param name="manager" value="com.bitc.catalog.hdata.manager.CatalogPriceManager" />
+							<wa:param name="method" value="listAll" />
 							<wa:param name="identity" value="id" />
-							<wa:param name="display" value="name" />
-							<wa:param name="choiceMsg" value="Choose the Product" />
-							<wa:param name="name" value="f_catalogProduct_id" />
-							<wa:param name="selectedValues" value="${bean.catalogProduct.id}" />
+							<wa:param name="display" value="nameForAdmin" />
+							<wa:param name="choiceMsg" value="Choose the product's Price" />
+							<wa:param name="name" value="f_catalogPrice_id" />
+							<wa:param name="selectedValues" value="${bean.catalogPrice.id}" />
 						</wa:include>
 					</div>
 

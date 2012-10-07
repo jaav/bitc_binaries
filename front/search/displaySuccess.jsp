@@ -71,19 +71,25 @@ function tripPlannerLightBox(data) {
 			      <!-- SEARCH RESULTS LIST : start -->
 					<c:forEach items="${result}" var="item" varStatus="loop">
 					<li>
-					<c:choose>
-					
-          	<c:when test="${not empty item.imageUrl}">	
-        	<a href="<wa:url URI='${item.encodedUrl}'/>" >
-        		<img src="${item.imageUrl}" alt="${item.title}" width="165"/>
-        	</a>
-          	</c:when>
-          	<c:otherwise>
-          	<a href="<wa:url URI='${item.encodedUrl}'/>" >
-        		<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.title}" width="165"/>
-        	</a>
-          	</c:otherwise>
-          </c:choose>
+			<c:if test="${item.contentType ne 'ContentPress'}">		
+				<c:choose>
+		          	<c:when test="${not empty item.imageUrl}">	
+			        	<a href="<wa:url URI='${item.encodedUrl}'/>" >
+			        		<img src="${item.imageUrl}" alt="${item.title}" width="165"/>
+			        	</a>
+		          	</c:when>
+		          	<c:otherwise>
+			          	<a href="<wa:url URI='${item.encodedUrl}'/>" >
+			        		<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.title}" width="165"/>
+			        	</a>
+		          	</c:otherwise>
+	          	</c:choose>
+          	</c:if>
+          	<c:if test="${item.contentType eq 'ContentPress'}">
+          		<a href="${item.pressDoc}">
+          			<img src="${context}/static/${site}/img/ml/press_default_image.jpg" width="50" height="47"/>
+          		</a>
+          	</c:if>
 		<div class="txt">
 	          <h3 class="no_margin">
 				<a href="<wa:url URI='${item.encodedUrl}'/>">${item.title}</a>

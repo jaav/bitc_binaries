@@ -14,6 +14,17 @@ CREATE TABLE catalog_promo`
      code varchar(100)
   )
   ;
+  ALTER TABLE catalog_promo DROP FOREIGN KEY catalog_promo_ibfk_9003;
+  DROP INDEX product_id ON catalog_promo;
+  ALTER TABLE catalog_promo DROP COLUMN product_id;
+  ALTER TABLE catalog_promo ADD COLUMN price_id int UNSIGNED NOT NULL AFTER id;
+  ALTER TABLE catalog_promo
+    ADD CONSTRAINT catalog_promo_ibfk_9004
+    FOREIGN KEY (price_id)
+    REFERENCES catalog_price(id)
+    ;
+  CREATE INDEX price_id ON catalog_promo(price_id);
+
   ALTER TABLE catalog_promo
   ADD CONSTRAINT catalog_promo_ibfk_9002
   FOREIGN KEY (promo_type_id)
@@ -35,8 +46,8 @@ CREATE TABLE catalog_promo`
             <column name="id" />
             <generator class="identity" />
         </id>
-        <many-to-one name="catalogProduct" class="com.bitc.catalog.hdata.CatalogProduct" fetch="select" lazy="false">
-            <column name="product_id" />
+        <many-to-one name="catalogPrice" class="com.bitc.catalog.hdata.CatalogPrice" fetch="select" lazy="false">
+            <column name="price_id" />
         </many-to-one>
         <many-to-one name="catalogPromoType" class="com.bitc.catalog.hdata.CatalogPromoType" fetch="select" lazy="false">
             <column name="promo_type_id" />

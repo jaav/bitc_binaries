@@ -180,11 +180,5 @@
             </key>
             <one-to-many class="com.bitc.catalog.hdata.CatalogPrice" />
         </set>
-        <set name="catalogPromos" inverse="true" table="catalog_promo" fetch="select" cascade="all" lazy="false">
-            <key>
-                <column name="product_id" not-null="true" />
-            </key>
-            <one-to-many class="com.bitc.catalog.hdata.CatalogPromo" />
-        </set>
     </class>
 </hibernate-mapping>

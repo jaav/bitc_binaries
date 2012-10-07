@@ -43,15 +43,15 @@ isELIgnored ="false"
 					<input name="s_id" type="text" <c:choose><c:when test="${waParam.s_id!=null}">value="${waParam.s_id}"</c:when><c:otherwise>value=""</c:otherwise></c:choose>/>
 				</div>
 				<div>
-					<label for="s_catalogProduct_id"><wa:mls>Product</wa:mls></label>
+					<label for="s_catalogProduct_id"><wa:mls>ProductPrice</wa:mls></label>
 					<wa:include URI="${site}/dropdown/dropList">
-							<wa:param name="class" value="com.bitc.catalog.hdata.CatalogProduct" />
-							<wa:param name="manager" value="com.bitc.catalog.hdata.manager.CatalogProductManager" />
+							<wa:param name="class" value="com.bitc.catalog.hdata.CatalogPrice" />
+							<wa:param name="manager" value="com.bitc.catalog.hdata.manager.CatalogPriceManager" />
 							<wa:param name="identity" value="id" />
-							<wa:param name="display" value="name" />
-							<wa:param name="choiceMsg" value="Choose the Product" />
-							<wa:param name="name" value="s_catalogProduct_id" />
-							<wa:param name="selectedValues" value="${waParam.s_catalogProduct_id}" />
+							<wa:param name="display" value="nameForAdmin" />
+							<wa:param name="choiceMsg" value="Choose the ProductPrice" />
+							<wa:param name="name" value="s_catalogPrice_id" />
+							<wa:param name="selectedValues" value="${waParam.s_catalogPrice_id}" />
 					</wa:include>
 				</div>	
 				<div>
@@ -99,15 +99,15 @@ isELIgnored ="false"
 							<wa:param name="orderBy" value="id" />
 						</wa:link>			
 					</td>
-					<td class="center product">
+					<td class="center price">
 						<wa:link URI="${URI}" allParams="true">
-							<wa:mls>Product</wa:mls>
+							<wa:mls>Price</wa:mls>
 							<wa:exceptParam name="page"/>
 							<wa:param name="page" value="1" />
 							<wa:exceptParam name="orderDir"/>
 							<wa:param name="orderDir" value="${orderDir}" />
 							<wa:exceptParam name="orderBy"/>
-							<wa:param name="orderBy" value="product" />
+							<wa:param name="orderBy" value="price" />
 						</wa:link>			
 					</td>
 					<td class="center promoValue">
@@ -138,7 +138,7 @@ isELIgnored ="false"
 						
 					<td class="center checkbox"><input type="checkbox" value="${item.id}"></td>
 					<td class="center id"><a href="${context}/${site}/catalogPromo/editItem/id/${item.id}.do" title="<wa:mls>Edit id</wa:mls>">${item.id}</a></td>
-					<td class="center product"><a href="${context}/${site}/catalogProduct/editItem/id/${item.catalogProduct.id}.do" title="<wa:mls>Edit id</wa:mls>">${item.catalogProduct.name}</a></td>
+					<td class="center price"><a href="${context}/${site}/catalogPrice/editItem/id/${item.catalogPrice.id}.do" title="<wa:mls>Edit id</wa:mls>">${item.catalogPrice.nameForAdmin}</a></td>
 					<td class="center value">${item.promoValue}&nbsp;</td>
 					<td class="center titleDefault">${item.promoCode}&nbsp;</td>
 				</tr>
