@@ -337,8 +337,8 @@
                   </c:when>
                 </c:choose>
                 </td>
+                <td class="space">&nbsp;</td>
             </c:if>
-            <td class="space">&nbsp;</td>
 
             <div style="display: none; width: 600px;" id="promocodeinfo_${price.id}">
                 <!-- sizeof list prices ${fn:length(item.catalogPrices)} -->
@@ -428,6 +428,7 @@
             </c:if>
 
 
+            <c:if test="${promoCounter > 0}">
                 <td class="promos">
                     <c:if test="${not empty price.defaultCatalogPromos}">
                         <a href="#discountinfo_${price.id}" class="modalopener"><wa:mls>Yes</wa:mls></a>
@@ -437,6 +438,7 @@
                     </c:if>
                 </td>
                 <td class="space">&nbsp;</td>
+            </c:if>
 
                 <div style="display: none; width: 600px;" id="discountinfo_${price.id}">
                     <!-- sizeof list prices ${fn:length(item.catalogPrices)} -->
