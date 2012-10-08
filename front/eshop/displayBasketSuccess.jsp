@@ -160,8 +160,8 @@
     <td><h4 class="no_margin">
         <wa:mls>Remise</wa:mls>
     </h4></td>
-    </c:if>
     <td>&nbsp;</td>
+    </c:if>
     <td><h4 class="no_margin">
         <wa:mls>Coupon Code</wa:mls>
     </h4></td>
