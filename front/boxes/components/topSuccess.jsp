@@ -83,8 +83,14 @@ isELIgnored ="false"
        
 	 	<div id="top_slideshow">
 	 		<div id="top_btns">
-	 	     <a href="http://itunes.apple.com/be/app/visit-brussels/id479495930?l=fr&mt=8" class="btn_mobile" target="_blank">
-			 <img src="/bitc/static/front/img/${culture.language}/btn_top_iphone.png" /></a>
+	 	     <%--a href="http://itunes.apple.com/be/app/visit-brussels/id479495930?l=fr&mt=8" class="btn_mobile" target="_blank">
+			 <img src="/bitc/static/front/img/${culture.language}/btn_top_iphone.png" /></a--%>
+             <span class="btn_mobile">
+                 <img src="/bitc/static/front/img/button_app_left.png" /></span>
+             <a href="https://play.google.com/store/apps/details?id=be.visitbrussels.VisitBrussels" class="btn_android" target="_blank">
+                 <img src="/bitc/static/front/img/button_app_top_google_play.png" /></a>
+             <a href="http://itunes.apple.com/be/app/visit-brussels/id479495930?l=fr&mt=8" class="btn_ios" target="_blank">
+                 <img src="/bitc/static/front/img/button_app_bottom_appstore.png" /></a>
 			 <a href="javascript:void(0);" class="btn_video"><img src="/bitc/static/front/img/${culture.language}/btn_top_video.png" /></a>
 			 <a href="/bitc/front/streetView/displayTop.do" class="btn_sv"><img src="/bitc/static/front/img/${culture.language}/btn_top_sv.png" /></a>
 			 

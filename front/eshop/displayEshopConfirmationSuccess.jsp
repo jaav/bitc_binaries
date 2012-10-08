@@ -26,42 +26,52 @@ isELIgnored ="false"
     <br clear="all" />
     <div class="clr"></div>
     <hr class="dashed" />
+      <h3><wa:mls>dear</wa:mls> ${order.invoiceFirstname},<br/> <wa:mls>thanks_for_buying</wa:mls></h3>
+      <h4><wa:mls>info_on_brochres_and_plans_delivery</wa:mls></h4>
+      <p>
+        ${order.invoiceFirstname} ${order.invoiceLastname}<br />
+        ${order.invoiceStreet} ${order.invoiceNum}<c:if test="${order.invoiceBox!=''}">/${order.invoiceBox}</c:if><br />
+        ${order.invoiceZipcode} ${order.invoiceCity}
+      </p>
      <p><wa:mls>Ceci est le code de votre commande, conservez-le pour retrouver votre commande plus tard (après paiement)</wa:mls>: <strong class="txt_orange">${order.orderCid}</strong></p>
     <hr class="m17"/>
     <h3><wa:mls>Vos achats</wa:mls></h3>
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="resume">
       <tr>
-        <td><h4 class="no_margin"><wa:mls>Articles dans votre panier</wa:mls></h4></td>
-        <td >&nbsp;</td>
-        <td ><h4 class="no_margin"><wa:mls>Date prévue</wa:mls></h4></td>
+        <td width="30%"><h4 class="no_margin"><wa:mls>Articles dans votre panier</wa:mls></h4></td>
+      <td >&nbsp;</td>
+      <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td ><h4 class="no_margin"><wa:mls>extra_info</wa:mls></h4></td>
         <td>&nbsp;</td>
-        <td ><h4 class="no_margin"><wa:mls>Prix</wa:mls></h4></td>
+        <td width="20%"><h4 class="no_margin"><wa:mls>Prix</wa:mls></h4></td>
         <td>&nbsp;</td>
-        <td ><h4 class="no_margin"><wa:mls>Quantité</wa:mls></h4></td>
+        <td width="5%"><h4 class="no_margin"><wa:mls>Quantité</wa:mls></h4></td>
         <td >&nbsp;</td>
         <td ><h4 class="no_margin"><wa:mls>Total</wa:mls></h4></td>
       </tr>
       <c:forEach var="item" items="${listLine}" varStatus="loop">
 	      <c:if test="${loop.count>1}">
-	      <hr / class="m17">
-	      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="basket">
+	      <tr><td colspan="9"><hr class="m17"></td></tr>
 	      </c:if>
 	      <tr>
 	        <td  class="article">
-	        	${item.catalogPrice.catalogProduct.mainTitle}<br />
-	        	<c:choose>
-	        		<c:when test="${item.catalogPrice.catalogProduct.group eq 'ES_BALLADE'}">
-	        			<a href="${context}/${site}/other/displayMp3Download/cid/${order.orderCid}/pcid/${item.catalogPrice.cid}.do" target="_blank" class="btn_print"><wa:mls>TELECHARGER</wa:mls></a>
-	        		</c:when>
-	        		<c:otherwise>
-	        			<a href="${context}/${site}/other/displayVoucherDownload/cid/${order.orderCid}/pcid/${item.catalogPrice.cid}.do" target="_blank" class="btn_print"><wa:mls>IMPRIMER</wa:mls></a>
-	        		</c:otherwise>
-	        	</c:choose>
+	        	${item.catalogPrice.catalogProduct.mainTitle}
 	        </td>
-	        <td class="space">&nbsp;</td>
-	        <td class="date"><fmt:formatDate value="${item.selectedDate}" pattern="dd/MM/yyyy" /></td>
-	        
-	        <td  class="space">&nbsp;</td>
+              <td  class="space">&nbsp;</td>
+            <td>
+                <c:choose>
+                    <c:when test="${item.catalogPrice.catalogProduct.group eq 'ES_BALLADE'}">
+                        <a href="${context}/${site}/other/displayMp3Download/cid/${order.orderCid}/pcid/${item.catalogPrice.cid}.do" target="_blank" class="btn_print"><wa:mls>TELECHARGER</wa:mls></a>
+                    </c:when>
+                    <c:when test="${item.catalogPrice.catalogProduct.group eq 'ES_VOUCHER'}">
+                        <a href="${context}/${site}/other/displayVoucherDownload/cid/${order.orderCid}/pcid/${item.catalogPrice.cid}.do" target="_blank" class="btn_print"><wa:mls>IMPRIMER</wa:mls></a>
+                    </c:when>
+                </c:choose></td>
+            </td>
+              <td class="space">&nbsp;</td>
+     	        <td class="date"><fmt:formatDate value="${item.selectedDate}" pattern="dd/MM/yyyy" /></td>
+              <td class="space">&nbsp;</td>
 	        
 	        <td class="price">${item.catalogPrice.mainTitle}<br />
 		        		<strong>${item.catalogPrice.value} &euro;</strong>  
@@ -71,8 +81,7 @@ isELIgnored ="false"
 	        <td class="space">&nbsp;</td>
 	        <td class="total">${item.quantity * item.unitPrice} &euro;</td>
         </tr>
-		    
-        <c:if test="${loop.count < fn:length(listLine)}">
+        <c:if test="${loop.count == fn:length(listLine)}">
         </table>
         </c:if>
       </c:forEach>
@@ -94,26 +103,6 @@ isELIgnored ="false"
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="resume">
     <tr>
       <td class="label_reply"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="resume">
-        <tr>
-          <td class="label"><wa:mls>Nom :</wa:mls></td>
-          <td>&nbsp;</td>
-          <td class="label_reply"><strong>${order.invoiceLastname}</strong></td>
-        </tr>
-        <tr>
-          <td><wa:mls>Prénom :</wa:mls></td>
-          <td>&nbsp;</td>
-          <td><strong>${order.invoiceFirstname}</strong></td>
-        </tr>
-        <tr>
-          <td><wa:mls>Date de naissance :</wa:mls></td>
-          <td>&nbsp;</td>
-          <td><strong><fmt:formatDate value="${order.invoiceBirthdate}" pattern="dd/MM/yyyy" /></strong></td>
-        </tr>
-        <tr>
-          <td><wa:mls>Pays :</wa:mls></td>
-          <td>&nbsp;</td>
-          <td><strong>${order.invoiceCountry}</strong></td>
-        </tr>
         <tr>
           <td><wa:mls>Email :</wa:mls></td>
           <td>&nbsp;</td>

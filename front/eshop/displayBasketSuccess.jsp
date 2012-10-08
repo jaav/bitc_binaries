@@ -156,9 +156,11 @@
         <wa:mls>Extra info</wa:mls>
     </h4></td>
     <td>&nbsp;</td>
+    <c:if test="${promoCounter > 0}">
     <td><h4 class="no_margin">
         <wa:mls>Remise</wa:mls>
     </h4></td>
+    </c:if>
     <td>&nbsp;</td>
     <td><h4 class="no_margin">
         <wa:mls>Coupon Code</wa:mls>
@@ -324,15 +326,32 @@
                 <td>&nbsp;</td>
             </c:if>
 
-
-            <td class="promos">
-                <c:if test="${not empty price.defaultCatalogPromos}">
-                    <a href="#discountinfo_${price.id}" class="modalopener"><wa:mls>Yes</wa:mls></a>
-                </c:if>
-                <c:if test="${empty price.defaultCatalogPromos}">
-                    <wa:mls>&nbsp;</wa:mls>
-                </c:if></td>
+            <c:if test="${promoCounter > 0}">
+                <td class="promos">
+                <c:choose>
+                  <c:when test="${not empty price.givenPromo}">
+                      <a href="#promocodeinfo_${price.id}" class="modalopener"><wa:mls>Yes</wa:mls></a>
+                  </c:when>
+                  <c:when test="${not empty price.defaultCatalogPromos}">
+                      <a href="#discountinfo_${price.id}" class="modalopener"><wa:mls>Yes</wa:mls></a>
+                  </c:when>
+                </c:choose>
+                </td>
+            </c:if>
             <td class="space">&nbsp;</td>
+
+            <div style="display: none; width: 600px;" id="promocodeinfo_${price.id}">
+                <!-- sizeof list prices ${fn:length(item.catalogPrices)} -->
+                <ul>
+                    <li class="catalogPromo"><span
+                            style="font-weight: bold;"><wa:mls>Promotion</wa:mls> "${price.givenPromo.catalogPromoType.titleDefault}":</span>
+                            ${price.givenPromo.catalogPromoType.catalogPromoTypeClts[culture.culture].description}<br/>
+                        <ul style="margin-left: 20px; margin-bottom: 12px;">
+                            <li><wa:mls>Discount</wa:mls>: <strong>${price.givenPromo.promoValue} &euro;</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
 
             <div style="display: none; width: 600px;" id="discountinfo_${price.id}">
                 <!-- sizeof list prices ${fn:length(item.catalogPrices)} -->
@@ -377,123 +396,89 @@
     </c:forEach>
 
 </c:forEach>
-<!--/table-->
-<!-- Segment for Brochure products -->
 <c:if test="${not empty listBrochProduct}">
-    <!--br clear="all" />
-    <div class="clr"></div>
-    <hr class="dashed" />
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="basket">
+<c:forEach var="item" items="${listBrochProduct}" varStatus="loop">
     <tr>
-    <td><h4 class="no_margin">
-    <wa:mls>Articles dans votre panier</wa:mls>
-    </h4></td>
-    <td>&nbsp;</td>
-    <td><h4 class="no_margin">
-    <wa:mls>Langue</wa:mls>
-    </h4></td>
-    <td>&nbsp;</td>
-    <td><h4 class="no_margin">
-    <wa:mls>Remise</wa:mls>
-    </h4></td>
-    <td>&nbsp;</td>
-    <td><h4 class="no_margin">
-    <wa:mls>Coupon Code</wa:mls>
-    </h4></td>
-    <td>&nbsp;</td>
-    <td><h4 class="no_margin">
-    <wa:mls>Prix</wa:mls>
-    </h4></td>
-    <td>&nbsp;</td>
-    <td><h4 class="no_margin">
-    <wa:mls>Quantité</wa:mls>
-    </h4></td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    </tr-->
+    <td class="article">${item.mainTitle}</td>
+    <td class="space">&nbsp;</td>
 
-    <c:forEach var="item" items="${listBrochProduct}" varStatus="loop">
-        <tr>
-        <td class="article">${item.mainTitle}</td>
-        <td class="space">&nbsp;</td>
-
-        <td class="date"><span id="spry_language_product_${loop.count}"> <select id="language_product_${item.id}"
-                                                                                 name="language_product_${item.id}">
-            <option>
-                <wa:mls>Choisissez</wa:mls>
-            </option>
-            <c:forEach var="language" items="${item.listLinkPropertyValueLanguage}">
-                <option value="${language.valueName}" <c:if
-                        test="${item.language == language.valueName}"> selected="selected" </c:if>>${language.valueName}</option>
-            </c:forEach>
-        </select>
-												<div class="clr"></div>
-												<div class="selectRequiredMsg clr"
-                                                     style="margin-left: 0; width: auto; color: #fa869b;">
-                                                    <wa:mls>Veuillez faire un choix</wa:mls>
-                                                </div>
-										</span></td>
-        <td class="space">&nbsp;</td>
-        <c:forEach var="price" items="${item.catalogPrices}" varStatus="loopPrices">
-            <c:if test="${price.isActive}">
-                <c:if test="${loopPrices.count != 1}">
-                    <tr>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </c:if>
-
-
-                    <td class="promos">
-                        <c:if test="${not empty price.defaultCatalogPromos}">
-                            <a href="#discountinfo_${price.id}" class="modalopener"><wa:mls>Yes</wa:mls></a>
-                        </c:if>
-                        <c:if test="${empty price.defaultCatalogPromos}">
-                            <wa:mls>&nbsp;</wa:mls>
-                        </c:if>
-                    </td>
-                    <td class="space">&nbsp;</td>
-
-                    <div style="display: none; width: 600px;" id="discountinfo_${price.id}">
-                        <!-- sizeof list prices ${fn:length(item.catalogPrices)} -->
-                        <ul>
-                            <c:forEach var="promo" items="${price.defaultCatalogPromos}" varStatus="loopPrices">
-                                <li class="catalogPromo"><span
-                                        style="font-weight: bold;"><wa:mls>Promotion</wa:mls> "${promo.catalogPromoType.titleDefault}":</span>
-                                        ${promo.catalogPromoType.catalogPromoTypeClts[culture.culture].description}<br/>
-                                    <ul style="margin-left: 20px; margin-bottom: 12px;">
-                                        <li><wa:mls>Discount</wa:mls>: <strong>${promo.promoValue} &euro;</strong></li>
-                                    </ul>
-                                </li>
-                            </c:forEach>
-                        </ul>
-                    </div>
-
-
-                    <td class="promoCode"><input type="text" name="promoCode_price_${price.id}" size="12"
-                                                 class="float_right" value="${price.givenPromo.promoCode}"/></td>
-                    <td class="space">&nbsp;</td>
-                    <td class="price">${price.mainTitle}<br/> <strong>${price.value} &euro;</strong></td>
-                    <td class="space">&nbsp;</td>
-                    <td class="quantity">
-                        <div class="float_left">
-                            <a href="javascript:void(0)" class="operator_add" alt="+"><img
-                                    src="${static}/front/img/ml/addition.jpg" alt="+"/></a><br/> <a
-                                href="javascript:void(0)" class="operator_minus"
-                                alt="-"><img src="${static}/front/img/ml/minus.gif" alt="-"/></a>
-                        </div>
-                        <input name="quantity_product_${item.id}_price_${price.id}" type="text"
-                               id="quantity_product_${item.id}_price_${price.id}" value="${price.quantity}" size="4"
-                               class="float_right"/></td>
-                    <td class="space">&nbsp;</td>
-                    <td class="dustbin"><a href="${context}/${site}/${module}/deleteProduct/productId/${item.id}.do"><img
-                            src="${static}/front/img/ml/visu_dustbin.jpg" alt="delete"/></a></td>
-                </tr>
-            </c:if>
+    <td class="date"><span id="spry_language_product_${loop.count}"> <select id="language_product_${item.id}"
+                                                                             name="language_product_${item.id}">
+        <option>
+            <wa:mls>Choisissez</wa:mls>
+        </option>
+        <c:forEach var="language" items="${item.listLinkPropertyValueLanguage}">
+            <option value="${language.valueName}" <c:if
+                    test="${item.language == language.valueName}"> selected="selected" </c:if>>${language.valueName}</option>
         </c:forEach>
-        <%--c:if test="${loop.count < fn:length(listBrochProduct)}">
-            </table>
-        </c:if--%>
+    </select>
+                                            <div class="clr"></div>
+                                            <div class="selectRequiredMsg clr"
+                                                 style="margin-left: 0; width: auto; color: #fa869b;">
+                                                <wa:mls>Veuillez faire un choix</wa:mls>
+                                            </div>
+                                    </span></td>
+    <td class="space">&nbsp;</td>
+    <c:forEach var="price" items="${item.catalogPrices}" varStatus="loopPrices">
+        <c:if test="${price.isActive}">
+            <c:if test="${loopPrices.count != 1}">
+                <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </c:if>
+
+
+                <td class="promos">
+                    <c:if test="${not empty price.defaultCatalogPromos}">
+                        <a href="#discountinfo_${price.id}" class="modalopener"><wa:mls>Yes</wa:mls></a>
+                    </c:if>
+                    <c:if test="${empty price.defaultCatalogPromos}">
+                        <wa:mls>&nbsp;</wa:mls>
+                    </c:if>
+                </td>
+                <td class="space">&nbsp;</td>
+
+                <div style="display: none; width: 600px;" id="discountinfo_${price.id}">
+                    <!-- sizeof list prices ${fn:length(item.catalogPrices)} -->
+                    <ul>
+                        <c:forEach var="promo" items="${price.defaultCatalogPromos}" varStatus="loopPrices">
+                            <li class="catalogPromo"><span
+                                    style="font-weight: bold;"><wa:mls>Promotion</wa:mls> "${promo.catalogPromoType.titleDefault}":</span>
+                                    ${promo.catalogPromoType.catalogPromoTypeClts[culture.culture].description}<br/>
+                                <ul style="margin-left: 20px; margin-bottom: 12px;">
+                                    <li><wa:mls>Discount</wa:mls>: <strong>${promo.promoValue} &euro;</strong></li>
+                                </ul>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </div>
+
+
+                <td class="promoCode"><input type="text" name="promoCode_price_${price.id}" size="12"
+                                             class="float_right" value="${price.givenPromo.promoCode}"/></td>
+                <td class="space">&nbsp;</td>
+                <td class="price">${price.mainTitle}<br/> <strong>${price.value} &euro;</strong></td>
+                <td class="space">&nbsp;</td>
+                <td class="quantity">
+                    <div class="float_left">
+                        <a href="javascript:void(0)" class="operator_add" alt="+"><img
+                                src="${static}/front/img/ml/addition.jpg" alt="+"/></a><br/> <a
+                            href="javascript:void(0)" class="operator_minus"
+                            alt="-"><img src="${static}/front/img/ml/minus.gif" alt="-"/></a>
+                    </div>
+                    <input name="quantity_product_${item.id}_price_${price.id}" type="text"
+                           id="quantity_product_${item.id}_price_${price.id}" value="${price.quantity}" size="4"
+                           class="float_right"/></td>
+                <td class="space">&nbsp;</td>
+                <td class="dustbin"><a href="${context}/${site}/${module}/deleteProduct/productId/${item.id}.do"><img
+                        src="${static}/front/img/ml/visu_dustbin.jpg" alt="delete"/></a></td>
+            </tr>
+        </c:if>
     </c:forEach>
+    <%--c:if test="${loop.count < fn:length(listBrochProduct)}">
+        </table>
+    </c:if--%>
+</c:forEach>
 </c:if>
 </table>
 </form>
