@@ -27,12 +27,7 @@ isELIgnored ="false"
     <div class="clr"></div>
     <hr class="dashed" />
       <h3><wa:mls>dear</wa:mls> ${order.invoiceFirstname},<br/> <wa:mls>thanks_for_buying</wa:mls></h3>
-      <h4><wa:mls>info_on_brochres_and_plans_delivery</wa:mls></h4>
-      <p>
-        ${order.invoiceFirstname} ${order.invoiceLastname}<br />
-        ${order.invoiceStreet} ${order.invoiceNum}<c:if test="${order.invoiceBox!=''}">/${order.invoiceBox}</c:if><br />
-        ${order.invoiceZipcode} ${order.invoiceCity}
-      </p>
+      <p><wa:mls>info_on_brochres_and_plans_delivery</wa:mls></p>
      <p><wa:mls>Ceci est le code de votre commande, conservez-le pour retrouver votre commande plus tard (après paiement)</wa:mls>: <strong class="txt_orange">${order.orderCid}</strong></p>
     <hr class="m17"/>
     <h3><wa:mls>Vos achats</wa:mls></h3>
@@ -102,13 +97,12 @@ isELIgnored ="false"
     <h3><wa:mls>Vos Coordonnées</wa:mls></h3>
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="resume">
     <tr>
-      <td class="label_reply"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="resume">
-        <tr>
-          <td><wa:mls>Email :</wa:mls></td>
-          <td>&nbsp;</td>
-          <td><strong>${order.invoiceEmail}</strong></td>
-        </tr>
-      </table></td>
+      <td class="label_reply">
+          ${order.invoiceFirstname} ${order.invoiceLastname}<br />
+          ${order.invoiceStreet} ${order.invoiceNum}<c:if test="${order.invoiceBox!=''}">/${order.invoiceBox}</c:if><br />
+          ${order.invoiceZipcode} ${order.invoiceCity}
+          ${order.invoiceEmail}
+      </td>
     </tr>
     </table>
     <hr class="m17"/>

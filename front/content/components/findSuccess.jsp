@@ -27,34 +27,48 @@ isELIgnored ="false"
            	<div class="clr"></div>
            	
            	<div style="display:none" id="advanced_search">
-           	
-             <div id="ListExperience" class="align_left">
-				<label for="s_ContentPropertyValueManager_valueId_Experience"><wa:mls>Experience</wa:mls></label>
-				<wa:include URI="${site}/dropdown/dropList">
-					<wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
-					<wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
-					<wa:param name="method" value="listExperience" />
-					<wa:param name="identity" value="valueId" />
-					<wa:param name="display" value="mainTitle" />
-					<wa:param name="name" value="s_ContentPropertyValueManager_valueId_Experience" />
-					<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Experience}" />
-				</wa:include>
-			</div>
+           	<c:if test="${group ne 'PRESS_RELEASE'}">	
+	             <div id="ListExperience" class="align_left">
+					<label for="s_ContentPropertyValueManager_valueId_Experience"><wa:mls>Experience</wa:mls></label>
+					<wa:include URI="${site}/dropdown/dropList">
+						<wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+						<wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+						<wa:param name="method" value="listExperience" />
+						<wa:param name="identity" value="valueId" />
+						<wa:param name="display" value="mainTitle" />
+						<wa:param name="name" value="s_ContentPropertyValueManager_valueId_Experience" />
+						<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Experience}" />
+					</wa:include>
+				</div>
+				
+				<div id="ListProfiles" class="align_right">
+					<label for="s_ContentPropertyValueManager_valueId_Profil"><wa:mls>Profiles</wa:mls></label>
+					<wa:include URI="${site}/dropdown/dropList">
+						<wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+						<wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+						<wa:param name="method" value="listProfiles" />
+						<wa:param name="identity" value="valueId" />
+						<wa:param name="display" value="mainTitle" />
+						<wa:param name="name" value="s_ContentPropertyValueManager_valueId_Profil" />
+						<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Profil}" />
+					</wa:include>
+				</div>
+			</c:if>
 			
-			<div id="ListProfiles" class="align_right">
-				<label for="s_ContentPropertyValueManager_valueId_Profil"><wa:mls>Profiles</wa:mls></label>
-				<wa:include URI="${site}/dropdown/dropList">
-					<wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
-					<wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
-					<wa:param name="method" value="listProfiles" />
-					<wa:param name="identity" value="valueId" />
-					<wa:param name="display" value="mainTitle" />
-					<wa:param name="name" value="s_ContentPropertyValueManager_valueId_Profil" />
-					<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Profil}" />
-				</wa:include>
-			</div>
-
-			
+			<c:if test="${group eq 'PRESS_RELEASE'}">
+				<div id="ListThemes" class="align_left">
+					<label for="s_ContentPropertyValueManager_valueId_Theme"><wa:mls>Choose your theme</wa:mls></label>
+					<wa:include URI="${site}/dropdown/dropList">
+						<wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+						<wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+						<wa:param name="method" value="listThemes" />
+						<wa:param name="identity" value="valueId" />
+						<wa:param name="display" value="mainTitle" />
+						<wa:param name="name" value="s_ContentPropertyValueManager_valueId_Theme" />
+						<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Theme}" />
+					</wa:include>
+				</div>
+			</c:if>
 			<div id="ListQuartiers">
 				<label for="s_ContentPropertyValueManager_valueId_Quartier"><wa:mls>Quartiers</wa:mls></label>
 				<wa:include URI="${site}/dropdown/dropList">
@@ -87,6 +101,7 @@ isELIgnored ="false"
 			</c:if>
 			</div>
 			</c:if>
+			<div class="clr"></div>
 			<input type="submit" value="<wa:mls>Recherche</wa:mls>" class="btn_form2" />
 			<div class="clr"></div>
 			 

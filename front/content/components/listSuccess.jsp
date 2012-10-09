@@ -53,22 +53,28 @@ function meetingPlannerLightBox(data) {
       <ul class="tab_list_complete">
       <c:set var="indexLetter" value="0" />
       <c:forEach var="item" items="${list}" varStatus="loop">
-      	
         <li>
-        <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" > 
-          <c:choose>
-          	<c:when test="${not empty item.mainSmallImage}">	
-        		<img src="${item.mainSmallImage}" alt="${item.formatMainTitle}" width="165"/>
-          	</c:when>
-          	<c:otherwise>
-        		<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.formatMainTitle}" width="165"/>
-          	</c:otherwise>
-          </c:choose>
-          </a>
+        	<c:if test="${contentType ne 'ContentPress'}">
+	        	<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" > 
+		          	<c:choose>
+			          	<c:when test="${not empty item.mainSmallImage}">	
+			        		<img src="${item.mainSmallImage}" alt="${item.formatMainTitle}" width="165"/>
+			          	</c:when>
+			          	<c:otherwise>
+			        		<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.formatMainTitle}" width="165"/>
+			          	</c:otherwise>
+		          	</c:choose>
+	          	</a>
+          	</c:if>
+          	<c:if test="${contentType eq 'ContentPress'}">
+          		<a href="${item.pressDoc}">
+          			<img src="${context}/static/${site}/img/ml/press_default_image.jpg" width="50" height="47"/>
+          		</a>
+          	</c:if>
           <div class="txt" id="txt_${item.id}">
             <h3 class="no_margin"><a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" title="${item.formatMainTitle}">${item.mainTitle}</a></h3>
             <c:choose>
-            	<c:when test="${contentType ne 'ContentArticle' && empty item.mainAbstract_}">
+            	<c:when test="${contentType ne 'ContentArticle' && contentType ne 'ContentPress' && empty item.mainAbstract_}">
             		<c:if test="${not empty item.address}">
 	        			<p> ${item.address} </p>
 	      				<p>
@@ -100,12 +106,31 @@ function meetingPlannerLightBox(data) {
 	        </c:if>
 	       </p>
             	</c:when>
-            	<c:otherwise><div class="cutMainAbstract">${item.mainAbstract_}</div></c:otherwise>
+            	<c:otherwise>
+            			
+	            		<div class="cutMainAbstract">${item.mainAbstract_}
+	            		</div>
+            	</c:otherwise>
             </c:choose>
+            <c:if test="${item.group eq 'PRESS_RELEASE'}">
+            	<c:if test="${not empty item.pressDocTitle}">
+	       					<strong><wa:mls>Press Title :</wa:mls></strong> ${item.pressDocTitle}<br />
+	       				</c:if>
+            			<c:if test="${not empty item.pressDocDate}">
+	       					<strong><wa:mls>Press Date :</wa:mls></strong> ${item.pressDocDate}<br />
+	       				</c:if>
+	       				<a href="${item.pressDoc}">
+	       					${item.pressDoc}
+	       				</a>
+            </c:if>
+            
+          </div>
+          <div>
+          	<h
           </div>
           <div class="btn">
           		<div class="more_info"><a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" class="btn_more_info" title="${item.formatMainTitle}"><wa:mls>More info</wa:mls></a></div>
-						<c:if test="${contentType ne 'ContentArticle' and not empty item.latitude and item.latitude != 0.0 and not empty item.longitude and item.longitude != 0.0}">
+						<c:if test="${contentType ne 'ContentArticle' and contentType ne 'ContentPress' and not empty item.latitude and item.latitude != 0.0 and not empty item.longitude and item.longitude != 0.0}">
 				 <a href="javascript:callLetter('${wa:numberToChar(indexLetter)}', 'map')" class="map"><span><wa:mls>Map :</wa:mls></span><img src="${staticSite}/img/ml/btn_map_${wa:numberToChar(indexLetter)}.jpg" alt="Map ${wa:numberToChar(indexLetter)}"/></a>
 				<br />
 				<a href="javascript:callLetter('${wa:numberToChar(indexLetter)}', 'sv')" class="sv"><span><wa:mls>Street view :</wa:mls></span><img src="${staticSite}/img/ml/btn_streetview.jpg" alt="Street view"/></a>

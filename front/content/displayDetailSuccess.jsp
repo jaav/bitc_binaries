@@ -79,6 +79,7 @@ function addToNltContent(group,contentId){
 </c:if>
 
 <div class="clear"></div>
+
 <div id="content_main"   class="vevent">
 		<c:if test="${not empty adminUser}">
 			 <a href="javascript:addToNltContent('${bean.group}','${bean.id}');"><wa:mls>Ajouter à la table nlt content</wa:mls></a>
@@ -86,7 +87,6 @@ function addToNltContent(group,contentId){
 	    </c:if>
 		<h1 class="no_margin line_grey">${bean.mainTitle}
 		</h1> <!-- ${color} -->
-			
 		<c:if test="${not empty bean.periodFromDate}">
 			<h3>
 				<c:choose>
@@ -187,7 +187,6 @@ function addToNltContent(group,contentId){
 				    	<p><strong><wa:mls>Venue :</wa:mls></strong> ${bean.attachedVenue}</p>
 				    </c:when>
 			    </c:choose>
-          		
 	        </c:if>
 	       	<c:if test="${bean.group == 'BnB' && not empty bean.price}">
 	            <p><strong><wa:mls>Starting at</wa:mls></strong> : ${wabd:format(wast:toDouble2(bean.price,0.0),0)} &euro;<wa:mls>/night</wa:mls> <br /></p>

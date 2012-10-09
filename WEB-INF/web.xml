@@ -17,7 +17,7 @@
 	<context-param>
 	  <param-name>configdir</param-name> 
 	 <!--<param-value>c:/htdocs/configs/Bitc_V2/</param-value>--> 
-	  <param-value>/vol/configs/Bitc/</param-value> 
+	  <param-value>/vol/configs/Bitc/</param-value>
 	</context-param>
   	<context-param>
 		<param-name>configdir_alt</param-name>

@@ -63,14 +63,16 @@ var m3_r = 0;
 			<jsp:include page="/${template}" /> 
 		<!--contentMain:end--> 
 		<!--contentSub:start-->
-			<div id="content_sub"> 
-				<div id="right_content">
-					<wa:include URI="${site}/boxes/boxLogin"/>	 				
-					<wa:include URI="${site}/boxes/rightColumn" >
-						<wa:param name="section" value="${section}" />
-					</wa:include>
-				</div>
-			</div> 
+			<c:if test="${contentType ne 'ContentPress'}">
+				<div id="content_sub"> 
+					<div id="right_content">
+						<wa:include URI="${site}/boxes/boxLogin"/>	 				
+						<wa:include URI="${site}/boxes/rightColumn" >
+							<wa:param name="section" value="${section}" />
+						</wa:include>
+					</div>
+				</div> 
+			</c:if>			
 		<!--contentSub:end--> 
 	
 	<div class="clr"></div> 

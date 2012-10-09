@@ -21,5 +21,3 @@ isELIgnored ="false"
 			<wa:include URI="front/content/list" />
 			
       </div>
-
- 
