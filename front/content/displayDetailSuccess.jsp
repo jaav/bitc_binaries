@@ -138,7 +138,7 @@ function addToNltContent(group,contentId){
 		<a href="http://www.addthis.com/bookmark.php?v=250&amp;username=wanabe" class="addthis_button share"  addthis:url="${config['URL']}<wa:url URI="${site}/content/displayDetail/group/${bean.group}/id/${bean.id}"/>" addthis:title="${bean.mainTitle}" addthis:description="${fn:replace(wa:html2txt(bean.mainAbstract_),varTmp,'&quot;')}"><img src="${staticSite}/img/ml/btn_share_big.gif" id="logo_share" alt="<wa:mls>Share</wa:mls>"/></a>
     </div>
     <!--featurepraticalinformation:end-->
-	<c:if test="${contentGroupType ne 'ContentArticle' && contentGroupType ne 'ContentProduct'}">
+	<c:if test="${contentGroupType ne 'ContentArticle' && contentGroupType ne 'ContentProduct' && contentGroupType ne 'ContentPress'}">
          <div id="pratical_information" class="location vcard">
 	        <h4><wa:mls>Practical informations</wa:mls></h4>
 	         <c:if test="${contentGroupType eq 'ContentEvent'}">

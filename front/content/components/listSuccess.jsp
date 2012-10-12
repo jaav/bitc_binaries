@@ -114,19 +114,18 @@ function meetingPlannerLightBox(data) {
             </c:choose>
             <c:if test="${item.group eq 'PRESS_RELEASE'}">
             	<c:if test="${not empty item.pressDocTitle}">
-	       					<strong><wa:mls>Press Title :</wa:mls></strong> ${item.pressDocTitle}<br />
-	       				</c:if>
-            			<c:if test="${not empty item.pressDocDate}">
-	       					<strong><wa:mls>Press Date :</wa:mls></strong> ${item.pressDocDate}<br />
-	       				</c:if>
-	       				<a href="${item.pressDoc}">
-	       					${item.pressDoc}
-	       				</a>
+	       			<strong><wa:mls>Press Title :</wa:mls></strong> ${item.pressDocTitle}<br />
+	       		</c:if>
+            	<c:if test="${not empty item.pressDocDate}">
+	       			<strong><wa:mls>Press Date :</wa:mls></strong><fmt:formatDate value="${item.pressDocDate}" pattern="dd MMM yyyy"/> <br />
+	       		</c:if>
+	       		<a href="${item.pressDoc}">
+	       			${item.pressDoc}
+	       		</a>
             </c:if>
             
           </div>
           <div>
-          	<h
           </div>
           <div class="btn">
           		<div class="more_info"><a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" class="btn_more_info" title="${item.formatMainTitle}"><wa:mls>More info</wa:mls></a></div>
