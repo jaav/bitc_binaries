@@ -47,6 +47,7 @@ isELIgnored ="false"
 					<select name="s_type">
 						<option value="" <c:if test="${waParam.s_type eq '' || waParam.s_type == null}">selected="selected"</c:if>><wa:mls>Select the type</wa:mls></option>
 						<option value="db" <c:if test="${waParam.s_type eq 'db'}">selected="selected"</c:if>><wa:mls>DB</wa:mls></option>
+                        <option value="pdf" <c:if test="${waParam.s_type eq 'pdf'}">selected="selected"</c:if>>PDF</option>
 						<!-- <option value="gamme" <c:if test="${waParam.s_type eq 'gamme'}">selected="selected"</c:if>><wa:mls>Gamme</wa:mls></option>
 						<option value="product" <c:if test="${waParam.s_type eq 'product'}">selected="selected"</c:if>><wa:mls>Product</wa:mls></option>
 						<option value="content" <c:if test="${waParam.s_type eq 'content'}">selected="selected"</c:if>><wa:mls>Content</wa:mls></option> -->
