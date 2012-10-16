@@ -100,7 +100,7 @@ isELIgnored ="false"
       <td class="label_reply">
           ${order.invoiceFirstname} ${order.invoiceLastname}<br />
           ${order.invoiceStreet} ${order.invoiceNum}<c:if test="${order.invoiceBox!=''}">/${order.invoiceBox}</c:if><br />
-          ${order.invoiceZipcode} ${order.invoiceCity}
+          ${order.invoiceZipcode} ${order.invoiceCity}<br />
           ${order.invoiceEmail}
       </td>
     </tr>
