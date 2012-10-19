@@ -24,7 +24,7 @@ isELIgnored ="false"
 <div id="list">
 
 	<div id="mask">
-		<form action="${context}/${site}/${module}/saveItem.do" method="post" id="detailForm" name="detailForm" enctype="multipart/form-data">
+		<form action="${context}/${site}/${module}/saveItem.do" method="post" id="detailForm" name="detailForm" >
 			<fieldset>
 				<legend>&nbsp;</legend>
 				<c:if test="${bean!=null && bean.id>0 && duplicate eq null}">
@@ -46,7 +46,14 @@ isELIgnored ="false"
 							var v_name = new Spry.Widget.ValidationTextarea("v_name", {minChars:1, maxChars:100,validateOn:["blur","change"]});
 						</script> 
 					</div>
-					<div class="bgWhite" id="v_group">
+                    <div class="bgWhite" id="v_pressDocDate">
+                        <label for="f_pressDocDate"><wa:mls>pressDocDate</wa:mls></label>
+                        <input type="text" class="w8em format-d-m-y divider-slash  no-transparency" id="f_pressDocDate" name="f_pressDocDate" value="<c:choose><c:when test="${bean.pressDocDate == null }"><fmt:formatDate pattern="dd/MM/yyyy" value="${dateSys}"/></c:when><c:when test="${bean.pressDocDate != null }"><fmt:formatDate pattern="dd/MM/yyyy" value="${bean.pressDocDate}"/></c:when></c:choose>" maxlength="10" />
+                        <script type="text/javascript">
+                            var v_pressDocDate = new Spry.Widget.ValidationTextarea("v_pressDocDate", {isRequired:true,maxChars:200,validateOn:["blur","change"]});
+                        </script>
+                    </div>
+					<div class="bgGrey" id="v_group">
 						<label for="f_group"><wa:mls>group</wa:mls></label>
 						<c:if test="${bean.group==null || bean.group ==''}">
 							<wa:include URI="${site}/dropdown/dropList">
@@ -70,7 +77,7 @@ isELIgnored ="false"
 						</c:if>
 					</div>
 					
-					<div class="bgGrey" id="v_author">
+					<div class="bgWhite" id="v_author">
 						<label for="f_author"><wa:mls>author</wa:mls></label>
 						<textarea name="f_author" class="textfield" >${bean.author}</textarea>
 						<script type="text/javascript">
@@ -78,11 +85,11 @@ isELIgnored ="false"
 						</script> 
 					</div>
 					<c:if test="${bean!=null && bean.source!=null}">
-					<div class="bgWhite">
+					<div class="bgGrey">
 						<label for="f_source"><wa:mls>Source</wa:mls></label>
 						<span>${bean.source}</span>
 					</div>
-					<div class="bgGrey">
+					<div class="bgWhite">
 						<label for="f_sourceId"><wa:mls>SourceId</wa:mls></label>
 						<span>${bean.sourceId}</span> 
 					</div>
@@ -234,13 +241,13 @@ isELIgnored ="false"
 							var v_${clt}_pressDocTitle = new Spry.Widget.ValidationTextarea("v_${clt}_pressDocTitle", {isRequired:false,maxChars:200,validateOn:["blur","change"]});
 						</script>
 					</div--%>
-					<div class="bgWhite" id="v_${clt}_pressDocDate">
+					<%--<div class="bgWhite" id="v_${clt}_pressDocDate">
 						<label for="f_${clt}_pressDocDate"><wa:mls>pressDocDate</wa:mls></label>
 						<input type="text" class="w8em format-d-m-y divider-slash  no-transparency" id="f_${clt}_pressDocDate" name="f_${clt}_pressDocDate" value="<c:choose><c:when test="${bean.contentPressClts[clt].pressDocDate == null }"><fmt:formatDate pattern="dd/MM/yyyy" value="${dateSys}"/></c:when><c:when test="${bean.contentPressClts[clt].pressDocDate != null }"><fmt:formatDate pattern="dd/MM/yyyy" value="${bean.contentPressClts[clt].pressDocDate}"/></c:when></c:choose>" maxlength="10" />
 						<script type="text/javascript">
 							var v_${clt}_pressDocDate =PRESS RELEASES new Spry.Widget.ValidationTextarea("v_${clt}_pressDocDate", {isRequired:false,maxChars:200,validateOn:["blur","change"]});
 						</script>
-					</div>
+					</div>--%>
 					<c:if test="${bean!=null && bean.id>0 && duplicate eq null}">		
 					<div class="bgGrey">
 						<label for="f_${clt}_openCount"><wa:mls>openCount</wa:mls></label>

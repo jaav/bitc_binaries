@@ -54,11 +54,11 @@
     <comment/>
    </column>
   </property>
-  <property generated="never" lazy="false" name="pressDocDate" type="timestamp">
+  <!--<property generated="never" lazy="false" name="pressDocDate" type="timestamp">
    <column length="19" name="press_doc_date">
     <comment/>
    </column>
-  </property>
+  </property>-->
   <property generated="never" lazy="false" name="url" type="string">
    <column length="300" name="url">
     <comment/>
