@@ -74,6 +74,14 @@ isELIgnored ="false"
 					<p><wa:mls>from</wa:mls> <input type="text" class="w8em format-d-m-y divider-dash highlight-days-12 no-transparency date" id="s_createdOnStart" name="s_createdOnStart" value="${waParam.s_createdOnStart}" maxlength="10" /></p>
 					<p><wa:mls>to</wa:mls> <input type="text" class="w8em format-d-m-y divider-dash highlight-days-12 no-transparency date" id="s_createdOnEnd" name="s_createdOnEnd" value="${waParam.s_createdOnEnd}" maxlength="10" /></p>
 				</div>
+<<<<<<< HEAD
+=======
+                <div>
+                    <label for="s_pressDocDate"><wa:mls>press date</wa:mls></label>
+                    <p><wa:mls>from</wa:mls> <input type="text" class="w8em format-d-m-y divider-dash highlight-days-12 no-transparency date" id="s_pressDocDateStart" name="s_pressDocDateStart" value="${waParam.s_pressDocDateStart}" maxlength="10" /></p>
+                    <p><wa:mls>to</wa:mls> <input type="text" class="w8em format-d-m-y divider-dash highlight-days-12 no-transparency date" id="s_pressDocDateEnd" name="s_pressDocDateEnd" value="${waParam.s_pressDocDateEnd}" maxlength="10" /></p>
+                </div>
+>>>>>>> b598cef06297b4ca87b088885cb31b2742248ffd
 				<div>
 					<label for="s_fromDate"><wa:mls>fromDate</wa:mls></label>
 					<p><wa:mls>from</wa:mls> <input type="text" class="w8em format-d-m-y divider-dash highlight-days-12 no-transparency date" id="s_fromDateStart" name="s_fromDateStart" value="${waParam.s_fromDateStart}" maxlength="10" /></p>
@@ -245,6 +253,20 @@ isELIgnored ="false"
 							<wa:param name="orderBy" value="createdOn" />
 						</wa:link>			
 					</td>
+<<<<<<< HEAD
+=======
+                <td class="center pressDocDate">
+           						<wa:link URI="${URI}" allParams="true">
+           							<wa:mls>pressDocDate</wa:mls>
+           							<wa:exceptParam name="page"/>
+           							<wa:param name="page" value="1" />
+           							<wa:exceptParam name="orderDir"/>
+           							<wa:param name="orderDir" value="${orderDir}" />
+           							<wa:exceptParam name="orderBy"/>
+           							<wa:param name="orderBy" value="pressDocDate" />
+           						</wa:link>
+           					</td>
+>>>>>>> b598cef06297b4ca87b088885cb31b2742248ffd
 					<td class="center fromDate">
 						<wa:link URI="${URI}" allParams="true">
 							<wa:mls>fromDate</wa:mls>
@@ -341,6 +363,10 @@ isELIgnored ="false"
 					<td class="left title">${item.title}&nbsp;</td>
 					<td class="center position">${item.position}&nbsp;</td>
 					<td class="center createdOn"><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${item.createdOn}"/>&nbsp;</td>
+<<<<<<< HEAD
+=======
+                    <td class="center pressDocDate"><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${item.pressDocDate}"/>&nbsp;</td>
+>>>>>>> b598cef06297b4ca87b088885cb31b2742248ffd
 					<td class="center fromDate"><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${item.fromDate}"/>&nbsp;</td>
 					<td class="center toDate"><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${item.toDate}"/>&nbsp;</td>
 					<td class="center visible">

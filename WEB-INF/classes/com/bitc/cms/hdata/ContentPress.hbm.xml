@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+<<<<<<< HEAD
                                    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 18-mai-2010 17:37:40 by Hibernate Tools 3.2.0.b9 -->
 <hibernate-mapping>
@@ -159,4 +160,170 @@
    <one-to-many class="com.bitc.cms.hdata.ContentPressClt"/>
   </map>
  </class>
+=======
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-mai-2010 17:37:40 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.bitc.cms.hdata.ContentPress" table="content_press">
+        <comment/>
+        <id name="id" type="int">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="title" type="string">
+            <column length="300" name="title">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="abstract_" type="string">
+            <column length="2000" name="abstract">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="info" type="string">
+            <column length="16777215" name="info">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="smallImage" type="string">
+            <column length="300" name="small_image">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="bigImage" type="string">
+            <column length="300" name="big_image">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="url" type="string">
+            <column length="300" name="url">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="urlLabel" type="string">
+            <column length="200" name="url_label">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="status" type="string">
+            <column length="20" name="status">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="visible" type="java.lang.Byte">
+            <column name="visible">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="fromDate" type="timestamp">
+            <column length="19" name="from_date">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="toDate" type="timestamp">
+            <column length="19" name="to_date">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="culture" type="string">
+            <column length="7" name="culture">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="author" type="string">
+            <column length="100" name="author">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="createdOn" type="timestamp">
+            <column length="19" name="created_on" not-null="true">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="pressDocDate" type="timestamp">
+            <column length="19" name="press_doc_date">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="createdBy" type="string">
+            <column length="100" name="created_by">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="lastModifiedOn" type="timestamp">
+            <column length="19" name="last_modified_on">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="lastModifiedBy" type="string">
+            <column length="100" name="last_modified_by">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="position" type="java.lang.Integer">
+            <column name="position">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="name" type="string">
+            <column length="200" name="name">
+                <comment/>
+            </column>
+        </property>
+        <many-to-one class="com.bitc.cms.hdata.ContentPress" fetch="select" name="publishContent">
+            <column name="published_id"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="numOfVersion" type="java.lang.Integer">
+            <column name="num_of_version">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="versionId" type="java.lang.Integer">
+            <column name="version_id">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="openCount" type="java.lang.Integer">
+            <column name="open_count">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="commentCount" type="java.lang.Integer">
+            <column name="comment_count">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="group" type="string">
+            <column length="50" name="_group">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="source" type="string">
+            <column length="50" name="source">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="sourceId" type="java.lang.Integer">
+            <column name="source_id">
+                <comment/>
+            </column>
+        </property>
+        <property generated="never" lazy="false" name="body" type="string">
+            <column length="16777215" name="body">
+                <comment/>
+            </column>
+        </property>
+        <map cascade="all" inverse="true" name="contentPressClts" sort="unsorted">
+            <key>
+                <column name="content_id" not-null="true">
+                    <comment/>
+                </column>
+            </key>
+            <map-key type="string">
+                <column name="culture" not-null="true"/>
+            </map-key>
+            <one-to-many class="com.bitc.cms.hdata.ContentPressClt"/>
+        </map>
+    </class>
+>>>>>>> b598cef06297b4ca87b088885cb31b2742248ffd
 </hibernate-mapping>

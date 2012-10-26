@@ -13,10 +13,17 @@ isELIgnored ="false"
   <div class="clear"></div>
 	  <div id="content_main">
 			<wa:include URI="front/content/introList" />
+<<<<<<< HEAD
 			<c:if test="${group ne 'WALK' && group ne 'PRESS_REPORT'}">
 				<wa:include URI="front/content/find">
 					<wa:param name="group" value="${group}"/>
 				</wa:include>
+=======
+			<c:if test="${group ne 'WALK'}">
+                    <wa:include URI="front/content/find">
+                        <wa:param name="group" value="${group}"/>
+                    </wa:include>
+>>>>>>> b598cef06297b4ca87b088885cb31b2742248ffd
 			</c:if>
 			<wa:include URI="front/content/list" />
       </div>

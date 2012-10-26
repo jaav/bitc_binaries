@@ -2,15 +2,25 @@
 <application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://www.zeroturnaround.com/alderaan/rebel-2_0.xsd">
 
 	<classpath>
+<<<<<<< HEAD
 		<!-- <dir name="/Users/jefw/Documents/virtualsushi/customers/bitc/bitc_on_git/bitc/build/classes"> -->
 		<dir name="/home/tho/Documents/SourceCode/bitc/build/classes">
+=======
+		<dir name="/Users/jefw/Documents/virtualsushi/customers/bitc/bitc_on_git/bitc/build/classes">
+		<!--dir name="/home/tho/Documents/SourceCode/bitc/build/classes"-->
+>>>>>>> b598cef06297b4ca87b088885cb31b2742248ffd
 		</dir>
 	</classpath>
 
 	<web>
 		<link target="/">
+<<<<<<< HEAD
 			<!-- <dir name="/Users/jefw/Documents/virtualsushi/customers/bitc/bitc_on_git/bitc/WebContent"> -->
 			<dir name="/home/tho/Documents/SourceCode/bitc/WebContent">
+=======
+			<dir name="/Users/jefw/Documents/virtualsushi/customers/bitc/bitc_on_git/bitc/WebContent">
+			<!--dir name="/home/tho/Documents/SourceCode/bitc/WebContent"-->
+>>>>>>> b598cef06297b4ca87b088885cb31b2742248ffd
 			</dir>
 		</link>
 	</web>
