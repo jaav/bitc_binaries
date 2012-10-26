@@ -61,7 +61,7 @@
 						<td class="space">&nbsp;</td>
 						<!-- sizeof list prices ${fn:length(item.catalogPrices)} -->
 						<c:forEach var="price" items="${item.catalogPrices}" varStatus="loopPrices">
-							<c:if test="${price.isActive}">
+							<c:if test="${(price.isActive) && (price.quantity>0)}">
 								<c:if test="${loopPrices.count != 1}">
 									<tr>
 										<td>&nbsp;</td>
@@ -116,7 +116,7 @@
 	        <td  class="space">&nbsp;</td>
 	        <!-- sizeof list prices ${fn:length(item.catalogPrices)} -->
 	        <c:forEach var="price" items="${item.catalogPrices}" varStatus="loopPrices">
-	        	<c:if test="${price.isActive}">
+	        	<c:if test="${(price.isActive) && (price.quantity>0)}">
 			        <c:if test="${loopPrices.count != 1}">
 				        <tr>
 					        <td>&nbsp;</td>
@@ -157,7 +157,12 @@
 	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="resume">
 		<tr>
 			<td class="label_reply"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="resume">
-					<tr>
+                <tr>
+                          <td class="label"><wa:mls>Company Name :</wa:mls></td>
+                          <td>&nbsp;</td>
+                          <td class="label_reply"><strong>${wa:nullFree2(order.invoiceCompanyName,'-')}</strong></td>
+                        </tr>	
+                <tr>
 						<td class="label"><wa:mls>Nom :</wa:mls></td>
 						<td>&nbsp;</td>
 						<td class="label_reply"><strong>${order.invoiceLastname}</strong></td>
@@ -181,7 +186,32 @@
 						<td><wa:mls>Email :</wa:mls></td>
 						<td>&nbsp;</td>
 						<td><strong>${order.invoiceEmail}</strong></td>
-					</tr>
+					</tr> 
+                <tr>
+                  <td><wa:mls>Street :</wa:mls></td>
+                  <td>&nbsp;</td>
+                  <td><strong>${wa:nullFree2(order.invoiceStreet,'-')}</strong></td>
+                </tr>
+                <tr>
+                  <td><wa:mls>Num :</wa:mls></td>
+                  <td>&nbsp;</td>
+                  <td><strong>${wa:nullFree2(order.invoiceNum,'-')}</strong></td>
+                </tr>
+                <tr>
+                  <td><wa:mls>Box :</wa:mls></td>
+                  <td>&nbsp;</td>
+                  <td><strong>${wa:nullFree2(order.invoiceBox,'-')}</strong></td>
+                </tr>
+                <tr>
+                  <td><wa:mls>Zipcode :</wa:mls></td>
+                  <td>&nbsp;</td>
+                  <td><strong>${wa:nullFree2(order.invoiceZipcode,'-')}</strong></td>
+                </tr>
+                <tr>
+                  <td><wa:mls>City :</wa:mls></td>
+                  <td>&nbsp;</td>
+                  <td><strong>${wa:nullFree2(order.invoiceCity,'-')}</strong></td>
+                </tr>
 				</table></td>
 		</tr>
 	</table>

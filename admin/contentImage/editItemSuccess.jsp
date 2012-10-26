@@ -44,6 +44,7 @@ isELIgnored ="false"
 						<label for="f_type"><wa:mls>type</wa:mls></label>
 						<select name="f_type">
 							<option value="db" <c:if test="${bean.type eq 'db'}">selected="selected"</c:if>><wa:mls>DB</wa:mls></option>
+                            <option value="pdf" <c:if test="${bean.type eq 'pdf'}">selected="selected"</c:if>>PDF</option>
 							<!-- <option value="gamme" <c:if test="${bean.type eq 'gamme'}">selected="selected"</c:if>><wa:mls>Gamme</wa:mls></option>
 							<option value="product" <c:if test="${bean.type eq 'product'}">selected="selected"</c:if>><wa:mls>Product</wa:mls></option>
 							<option value="content" <c:if test="${bean.type eq 'content'}">selected="selected"</c:if>><wa:mls>Content</wa:mls></option> -->

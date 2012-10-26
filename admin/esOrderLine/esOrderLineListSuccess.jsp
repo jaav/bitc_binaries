@@ -72,6 +72,10 @@ isELIgnored ="false"
 					<p><wa:mls>from</wa:mls> <input type="text" class="w8em format-d-m-y divider-dash highlight-days-12 no-transparency date" id="s_createdOnStart" name="s_createdOnStart" value="${waParam.s_createdOnStart}" maxlength="10" /></p>
 					<p><wa:mls>to</wa:mls> <input type="text" class="w8em format-d-m-y divider-dash highlight-days-12 no-transparency date" id="s_createdOnEnd" name="s_createdOnEnd" value="${waParam.s_createdOnEnd}" maxlength="10" /></p>
 				</div>
+                <div>
+                    <label for="s_unit"><wa:mls>unit</wa:mls></label>
+                    <input name="s_unit" type="text" <c:choose><c:when test="${waParam.s_unit!=null}">value="${waParam.s_unit}"</c:when><c:otherwise>value=""</c:otherwise></c:choose>/>
+                </div>
 				
 				<input type="button" name="s_reset" id="reset_btn" value="<wa:mls>Reset</wa:mls>"  class="reset"></input>
 				<input type="submit" name="s_submit" class="submit" value="<wa:mls>Search</wa:mls>"></input>
@@ -177,6 +181,17 @@ isELIgnored ="false"
 						<wa:param name="orderBy" value="createdOn" />
 					</wa:link>			
 				</td>
+                <td class="center quantity">
+                    <wa:link URI="${URI}" allParams="true">
+                        <wa:mls>unit</wa:mls>
+                        <wa:exceptParam name="page"/>
+                        <wa:param name="page" value="1" />
+                        <wa:exceptParam name="orderDir"/>
+                        <wa:param name="orderDir" value="${orderDir}" />
+                        <wa:exceptParam name="orderBy"/>
+                        <wa:param name="orderBy" value="unit" />
+                    </wa:link>
+                    </td>
 			</tr>
 			<c:forEach var="item" items="${list}" varStatus="loop">
 				<tr class="line${((loop.count+1)%2)+1}">
@@ -193,6 +208,7 @@ isELIgnored ="false"
 					<td class="center unitPrice">${item.unitPrice}&nbsp;</td>
 					<td class="center quantity">${item.quantity}&nbsp;</td>
 					<td class="center createdOn"><fmt:formatDate pattern="dd/MM/yyyy hh:mm" value="${item.createdOn}"/>&nbsp;</td>
+                    <td class="center unit">${item.unit}&nbsp;</td>
 				</tr>
 			</c:forEach>
 		</table>

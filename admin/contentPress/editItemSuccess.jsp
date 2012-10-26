@@ -1,4 +1,4 @@
-<%@ page 
+<%@ page
 language="java"
 contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"
@@ -201,27 +201,40 @@ isELIgnored ="false"
 							var v_${clt}_urlLabel = new Spry.Widget.ValidationTextarea("v_${clt}_urlLabel", {isRequired:false,maxChars:200,validateOn:["blur","change"]});
 						</script>
 					</div>
-					<div class="bgGrey" id="v_${clt}_pressDoc">
+					<%--div class="bgGrey" id="v_${clt}_pressDoc">
 						<label for="f_${clt}_pressDoc" style="float:left;" ><wa:mls>pressDoc</wa:mls></label>
 						<input name="${clt}_pressDoc" type="file"/>
 						<div class="clr"></div>
 						<script type="text/javascript">
 							var v_${clt}_pressDoc = new Spry.Widget.ValidationTextarea("v_${clt}_pressDoc", {isRequired:false,maxChars:300,validateOn:["blur","change"]});
 						</script>
-					</div>
-					<div class="bgGrey" id="v_${clt}_pressDocUrl">
+					</div--%>
+					<%--div class="bgGrey" id="v_${clt}_pressDocUrl">
 						<label for="f_${clt}_pressDocUrl" style="float:left;" ><wa:mls>pressDocUrl</wa:mls></label>
 						<span>${bean.contentPressClts[clt].pressDoc}</span> 
 						<div class="clr"></div>
-					</div>
-					<div class="bgWhite" id="v_${clt}_pressDocTitle">
+					</div--%>
+                    
+                    <div class="bgGrey" id="v_${clt}_pressDoc">
+                        <label for="f_${clt}_pressDoc" style="float:left;" ><wa:mls>pressDoc</wa:mls></label>
+                        <textarea name="f_${clt}_pressDoc" id="f_${clt}_pressDoc" class="textfield pressDocForAll" style="float:left; margin-left:3px">${bean.contentPressClts[clt].pressDoc}</textarea>
+                        <a href="${context}/${site}/contentImage/contentImageList.do?openerField=f_${clt}_pressDoc" target="image" class="image_btn" title="<wa:mls>Upload an image</wa:mls>">&nbsp;</a>
+                        <a href="#null"  class="image_btn_apply" onclick="applyValueForAll('pressDocForAll','f_${clt}_pressDoc')" title="<wa:mls>Appliquer pour toutes les langues</wa:mls>">&nbsp;</a>
+                        <div class="clr"></div>	
+                        <script type="text/javascript">
+                            var v_${clt}_pressDoc = new Spry.Widget.ValidationTextarea("v_${clt}_pressDoc", {isRequired:false,maxChars:300,validateOn:["blur","change"]});
+                        </script>
+                        
+                    </div>
+                            
+					<%--div class="bgWhite" id="v_${clt}_pressDocTitle">
 						<label for="f_${clt}_pressDocTitle"><wa:mls>pressDocTitle</wa:mls></label>
 						<textarea name="f_${clt}_pressDocTitle" class="textfield" >${bean.contentPressClts[clt].pressDocTitle}</textarea>
 						<script type="text/javascript">
 							var v_${clt}_pressDocTitle = new Spry.Widget.ValidationTextarea("v_${clt}_pressDocTitle", {isRequired:false,maxChars:200,validateOn:["blur","change"]});
 						</script>
-					</div>
-					<div class="bgGrey" id="v_${clt}_pressDocDate">
+					</div--%>
+					<div class="bgWhite" id="v_${clt}_pressDocDate">
 						<label for="f_${clt}_pressDocDate"><wa:mls>pressDocDate</wa:mls></label>
 						<input type="text" class="w8em format-d-m-y divider-slash  no-transparency" id="f_${clt}_pressDocDate" name="f_${clt}_pressDocDate" value="<c:choose><c:when test="${bean.contentPressClts[clt].pressDocDate == null }"><fmt:formatDate pattern="dd/MM/yyyy" value="${dateSys}"/></c:when><c:when test="${bean.contentPressClts[clt].pressDocDate != null }"><fmt:formatDate pattern="dd/MM/yyyy" value="${bean.contentPressClts[clt].pressDocDate}"/></c:when></c:choose>" maxlength="10" />
 						<script type="text/javascript">
@@ -229,11 +242,11 @@ isELIgnored ="false"
 						</script>
 					</div>
 					<c:if test="${bean!=null && bean.id>0 && duplicate eq null}">		
-					<div class="bgWhite">
+					<div class="bgGrey">
 						<label for="f_${clt}_openCount"><wa:mls>openCount</wa:mls></label>
 						<span><c:if test="${bean.contentPressClts[clt].openCount==null}">0</c:if>${bean.contentPressClts[clt].openCount}</span>
 					</div>
-					<div class="bgGrey">
+					<div class="bgWhite">
 						<label for="f_${clt}_commentCount"><wa:mls>commentCount</wa:mls></label>
 						<span><c:if test="${bean.contentPressClts[clt].commentCount==null}">0</c:if>${bean.contentPressClts[clt].commentCount}</span>
 					</div>
