@@ -185,6 +185,18 @@ function addToNltContent(group,contentId){
 	       		 <c:if test="${not empty bean.nbrChambres}">
 	       		 	<p><strong><wa:mls>NBR Chambres :</wa:mls></strong><span class="tel"> ${bean.nbrChambres}</span></p>
 	       		 </c:if>
+	       		 <c:if test="${not empty bean.closing}">
+	       		 	<p><strong><wa:mls>Closing :</wa:mls></strong><span class="tel"> ${bean.closing}</span></p>
+	       		 </c:if>
+	       		 <c:if test="${not empty bean.closingHotel}">
+	       		 	<p><strong><wa:mls>Closing Hotel :</wa:mls></strong><span class="tel"> ${bean.closingHotel}</span></p>
+	       		 </c:if>
+	       		 <c:if test="${not empty bean.cook}">
+	       		 	<p><strong><wa:mls>Cook :</wa:mls></strong><span class="tel"> ${bean.cook}</span></p>
+	       		 </c:if>
+	       		 <c:if test="${not empty bean.exploitant}">
+	       		 	<p><strong><wa:mls>Exploitant :</wa:mls></strong><span class="tel"> ${bean.exploitant}</span></p>
+	       		 </c:if>
 	       	</c:if>
 	       	<c:if test="${not empty bean.phone}">
 	       		 <p><strong><wa:mls>Tel :</wa:mls></strong><span class="tel"> ${bean.phone}</span></p>

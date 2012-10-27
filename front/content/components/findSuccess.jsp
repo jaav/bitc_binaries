@@ -21,11 +21,7 @@ isELIgnored ="false"
 		    <input type ="hidden" name ="group" value="${group}">
 		          	<input type="hidden" name="contentType" value="${contentType}" />
 		    
-<<<<<<< HEAD
             <c:if test="${group ne 'LATEST_NEWS' && group ne 'TESTIMONIAL' && group ne 'DEALS'}">	
-=======
-            <c:if test="${group ne 'LATEST_NEWS' && group ne 'TESTIMONIAL' && group ne 'DEALS' && group ne 'PRESS_RELEASE'}}">
->>>>>>> b598cef06297b4ca87b088885cb31b2742248ffd
             <a onClick="changeDisplay()" class="advanced_search"><wa:mls>Advanced search</wa:mls></a>
             
            	<div class="clr"></div>

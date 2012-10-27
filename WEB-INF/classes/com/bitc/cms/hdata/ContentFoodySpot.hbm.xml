@@ -223,7 +223,7 @@
 		<property name="nbrSuites" type="string">
 			<column name="nbr_suites" />
 		</property>
-		<property name="nbrChambres" type="int">
+		<property name="nbrChambres" type="java.lang.Integer">
 			<column name="nbr_chambres" />
 		</property>
 		<property name="nice" type="java.lang.Integer">

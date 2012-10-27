@@ -54,19 +54,11 @@
     <comment/>
    </column>
   </property>
-<<<<<<< HEAD
   <property generated="never" lazy="false" name="pressDocDate" type="timestamp">
    <column length="19" name="press_doc_date">
     <comment/>
    </column>
   </property>
-=======
-  <!--<property generated="never" lazy="false" name="pressDocDate" type="timestamp">
-   <column length="19" name="press_doc_date">
-    <comment/>
-   </column>
-  </property>-->
->>>>>>> b598cef06297b4ca87b088885cb31b2742248ffd
   <property generated="never" lazy="false" name="url" type="string">
    <column length="300" name="url">
     <comment/>
