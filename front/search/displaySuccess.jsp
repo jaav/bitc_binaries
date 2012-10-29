@@ -131,7 +131,7 @@
                                     <h3 class="no_margin">
                                         ${item.pressTitle}
                                     </h3>
-                                    <c:if test="${not empty item.pressDocDate}">
+                                    <c:if test="${not empty item.pressDate}">
                                         <strong><wa:mls>Press Date :</wa:mls></strong><fmt:formatDate
                                             value="${item.pressDate}" pattern="dd MMM yyyy"/> <br/>
                                     </c:if>
