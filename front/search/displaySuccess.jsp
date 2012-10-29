@@ -116,8 +116,8 @@
                             <c:if test="${item.contentType eq 'ContentPress'}">
 
                                 <c:choose>
-                                    <c:when test="${not empty item.mainSmallImage}">
-                                        <img src="${item.mainSmallImage}" alt="${item.formatMainTitle}" width="165"/>
+                                    <c:when test="${not empty item.smallImage}">
+                                        <img src="${item.smallImage}" alt="${item.formatMainTitle}" width="165"/>
                                     </c:when>
                                     <c:otherwise>
                                         <img src="${context}/static/${site}/img/ml/press_small.jpeg"
