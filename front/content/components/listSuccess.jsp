@@ -145,8 +145,6 @@
                         </c:if>
 
                     </div>
-                    <div>
-                    </div>
                     <div class="btn">
                         <c:if test="${contentType ne 'ContentPress' or not empty item.body}">
                             <div class="more_info">
