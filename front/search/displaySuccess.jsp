@@ -117,11 +117,11 @@
 
                                 <c:choose>
                                     <c:when test="${not empty item.smallImage}">
-                                        <img src="${item.smallImage}" alt="${item.formatMainTitle}" width="165"/>
+                                        <img src="${item.smallImage}" alt="${item.pressTitle}" width="165"/>
                                     </c:when>
                                     <c:otherwise>
                                         <img src="${context}/static/${site}/img/ml/press_small.jpeg"
-                                             alt="${item.formatMainTitle}" width="165"/>
+                                             alt="${item.pressTitle}" width="165"/>
                                     </c:otherwise>
                                 </c:choose>
                                 <%--a href="${item.pressDoc}">
@@ -131,11 +131,11 @@
                                     <h3 class="no_margin">
                                         <c:choose>
                                             <c:when test="${contentType eq 'ContentPress' and empty item.body}">
-                                                ${item.mainTitle}
+                                                ${item.pressTitle}
                                             </c:when>
                                             <c:otherwise>
                                                 <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>"
-                                                   title="${item.formatMainTitle}">${item.mainTitle}</a>
+                                                   title="${item.pressTitle}">${item.pressTitle}</a>
                                             </c:otherwise>
                                         </c:choose>
                                     </h3>
