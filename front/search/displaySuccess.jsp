@@ -129,7 +129,7 @@
                                   </a--%>
                                 <div class="txt" id="txt_${item.id}">
                                     <h3 class="no_margin">
-                                        ${item.pressTitle}
+                                        ${item.title}
                                     </h3>
                                     <c:if test="${not empty item.pressDate}">
                                         <strong><wa:mls>Press Date :</wa:mls></strong><fmt:formatDate
