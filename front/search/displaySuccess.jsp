@@ -144,11 +144,10 @@
 
                                 </div>
                             </c:if>
-                            ***${item.encodedUrl}<br />***${item.group}<br />***${item.body}<br />***${item.contentType}
                             <div class="btn">
                                 <c:if test="${item.contentType ne 'ContentPress' or not empty item.body}">
                                     <div class="more_info">
-                                        <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>"
+                                        <a href="<wa:url URI="${item.encodedUrl}"/>"
                                            class="btn_more_info" title="${item.title}"><wa:mls>More info</wa:mls></a>
                                     </div>
                                 </c:if>
