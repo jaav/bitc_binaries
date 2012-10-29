@@ -133,7 +133,7 @@
                                     </h3>
                                     <c:if test="${not empty item.pressDocDate}">
                                         <strong><wa:mls>Press Date :</wa:mls></strong><fmt:formatDate
-                                            value="${item.pressDocDate}" pattern="dd MMM yyyy"/> <br/>
+                                            value="${item.pressDate}" pattern="dd MMM yyyy"/> <br/>
                                     </c:if>
                                     <c:if test="${not empty item.pressDoc}">
                                         <strong><wa:mls>Press Release :</wa:mls></strong>
@@ -148,7 +148,7 @@
                                 <c:if test="${contentType ne 'ContentPress' or not empty item.body}">
                                     <div class="more_info">
                                         <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>"
-                                           class="btn_more_info" title="${item.formatMainTitle}"><wa:mls>More info</wa:mls></a>
+                                           class="btn_more_info" title="${item.title}"><wa:mls>More info</wa:mls></a>
                                     </div>
                                 </c:if>
                                 <%--div class="more_info">
