@@ -71,8 +71,6 @@
         <mapping resource="com/bitc/cms/hdata/ContentVenueClt.hbm.xml" />
         <mapping resource="com/bitc/cms/hdata/ContentPress.hbm.xml" />             
         <mapping resource="com/bitc/cms/hdata/ContentPressClt.hbm.xml" />
-        <mapping resource="com/bitc/cms/hdata/ContentFoodySpot.hbm.xml" />
-        <mapping resource="com/bitc/cms/hdata/ContentFoodySpotClt.hbm.xml" />
         <mapping resource="com/bitc/cms/hdata/ContentRoom.hbm.xml" />  
    	 	<mapping resource="com/bitc/cms/hdata/ContentComment.hbm.xml" />  
 

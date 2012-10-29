@@ -49,7 +49,6 @@ function meetingPlannerLightBox(data) {
         <li class="<c:if test="${panelGroup == 'RESTO'}">TabbedPanelsTabSelected</c:if><c:if test="${panelGroup != 'RESTO'}">TabbedPanelsTab</c:if>"><div><a href="<wa:url URI="${site}/content/displayResto/group/RESTO"/>"><wa:mls>Resto</wa:mls></a></div></li>
         <li class="<c:if test="${panelGroup == 'BREAKFAST'}">TabbedPanelsTabSelected</c:if><c:if test="${panelGroup != 'BREAKFAST'}">TabbedPanelsTab</c:if>"><div><a href="<wa:url URI="${site}/content/displayResto/group/BREAKFAST"/>"><wa:mls>Breakfast</wa:mls></a></div></li>
         <li class="<c:if test="${panelGroup == 'RESTO_NIGHT'}">TabbedPanelsTabSelected</c:if><c:if test="${panelGroup != 'RESTO_NIGHT'}">TabbedPanelsTab</c:if>"><div><a href="<wa:url URI="${site}/content/displayResto/group/RESTO_NIGHT"/>"><wa:mls>RESTO_NIGHT</wa:mls></a></div></li>
-        <li class="<c:if test="${panelGroup == 'FOODY'}">TabbedPanelsTabSelected</c:if><c:if test="${panelGroup != 'FOODY'}">TabbedPanelsTab</c:if>"><div><a href="<wa:url URI="${site}/content/displayResto/group/FOODY"/>"><wa:mls>Best kitchens</wa:mls></a></div></li>
       </ul>
             <div class="Tabbe_Content_Group">
       
@@ -117,21 +116,20 @@ function meetingPlannerLightBox(data) {
           		<span><a href="${item.URLWebsite}" target="_blank">${item.URLWebsite}</a></span> <br />
 	        </c:if>
 	        </p>
-	        <c:if test="${not empty item.ranking and item.ranking > 0}">
+	         <c:if test="${not empty item.ranking and item.ranking > 0}">
 	            <div class="float_left"><strong><wa:mls>Category :</wa:mls></strong></div>
 		            <c:forEach var="rankingLoopCount" begin="1" end="${item.ranking}">
 						<img src="${staticSite}/img/ml/visu_iris.jpg" alt="" class="float_left"/> 
 					</c:forEach>
 					<br />
-			</c:if>
+				</c:if>
 				<div class="clr"></div>
 			
-			
-			<c:if test="${panelGroup != 'FOODY' and not empty item.listCuisine}">
+			<c:if test="${not empty item.listCuisine}">
 				<strong><wa:mls>List Cuisines :</wa:mls></strong>
           		<span >${item.listCuisine}</span> <br />
           	</c:if>
-          	<c:if test="${panelGroup != 'FOODY' and not empty item.price}">
+          	<c:if test="${not empty item.price}">
        			<strong><wa:mls>Price :</wa:mls></strong> ${item.price}<br />
        		</c:if>
 	      
