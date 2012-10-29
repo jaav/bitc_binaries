@@ -129,15 +129,7 @@
                                   </a--%>
                                 <div class="txt" id="txt_${item.id}">
                                     <h3 class="no_margin">
-                                        <c:choose>
-                                            <c:when test="${contentType eq 'ContentPress' and empty item.body}">
-                                                ${item.pressTitle}
-                                            </c:when>
-                                            <c:otherwise>
-                                                <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>"
-                                                   title="${item.pressTitle}">${item.pressTitle}</a>
-                                            </c:otherwise>
-                                        </c:choose>
+                                        ${item.pressTitle}
                                     </h3>
                                     <c:if test="${not empty item.pressDocDate}">
                                         <strong><wa:mls>Press Date :</wa:mls></strong><fmt:formatDate
