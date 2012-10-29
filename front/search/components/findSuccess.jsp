@@ -38,7 +38,7 @@ isELIgnored ="false"
             <input type="submit" value="<wa:mls>Recherche</wa:mls>" class="btn_form"/> 
             
             <div class="arrow"></div>
-            <c:if test="${group ne 'LATEST_NEWS' && group ne 'TESTIMONIAL' && group ne 'DEALS' && group ne 'PRESS_RELEASE'}">
+            <c:if test="${group ne 'LATEST_NEWS' && group ne 'TESTIMONIAL' && group ne 'DEALS'}">	
             <a onClick="changeDisplay()" class="<c:if test="${ind == '0'}">advanced_search </c:if> <c:if test="${ind == '1'}">advanced_search_active </c:if>" id="advanced_search_id"><wa:mls>Advanced search</wa:mls></a>
             
            <div class="clr"></div>

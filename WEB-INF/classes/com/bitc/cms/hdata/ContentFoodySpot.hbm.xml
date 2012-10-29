@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 9 juin 2010 15:04:15 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+	<class name="com.bitc.cms.hdata.ContentFoodySpot" table="content_foody_spot">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property generated="never" lazy="false" name="title" type="string">
+			<column length="300" name="title" />
+		</property>
+		<property generated="never" lazy="false" name="abstract_"
+			type="string">
+			<column length="2000" name="abstract" />
+		</property>
+		<property generated="never" lazy="false" name="info" type="string">
+			<column length="16777215" name="info" />
+		</property>
+		<property generated="never" lazy="false" name="smallImage"
+			type="string">
+			<column length="300" name="small_image" />
+		</property>
+		<property generated="never" lazy="false" name="bigImage"
+			type="string">
+			<column length="300" name="big_image" />
+		</property>
+		<property generated="never" lazy="false" name="url" type="string">
+			<column length="300" name="url" />
+		</property>
+		<property generated="never" lazy="false" name="urlLabel"
+			type="string">
+			<column length="200" name="url_label" />
+		</property>
+		<property generated="never" lazy="false" name="status" type="string">
+			<column length="20" name="status" />
+		</property>
+		<property generated="never" lazy="false" name="visible"
+			type="java.lang.Byte">
+			<column name="visible" />
+		</property>
+		<property generated="never" lazy="false" name="fromDate"
+			type="timestamp">
+			<column length="19" name="from_date" />
+		</property>
+		<property generated="never" lazy="false" name="toDate" type="timestamp">
+			<column length="19" name="to_date" />
+		</property>
+		<property generated="never" lazy="false" name="culture" type="string">
+			<column length="7" name="culture" />
+		</property>
+		<property generated="never" lazy="false" name="author" type="string">
+			<column length="100" name="author" />
+		</property>
+		<property generated="never" lazy="false" name="createdOn"
+			type="timestamp">
+			<column length="19" name="created_on" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="createdBy"
+			type="string">
+			<column length="100" name="created_by" />
+		</property>
+		<property generated="never" lazy="false" name="lastModifiedOn"
+			type="timestamp">
+			<column length="19" name="last_modified_on" />
+		</property>
+		<property generated="never" lazy="false" name="lastModifiedBy"
+			type="string">
+			<column length="100" name="last_modified_by" />
+		</property>
+		<property generated="never" lazy="false" name="position"
+			type="java.lang.Integer">
+			<column name="position" />
+		</property>
+		<property generated="never" lazy="false" name="name" type="string">
+			<column length="200" name="name" />
+		</property>
+		<many-to-one class="com.bitc.cms.hdata.ContentFoodySpot"
+			fetch="select" name="publishContent">
+			<column name="published_id" />
+		</many-to-one>
+		<property generated="never" lazy="false" name="numOfVersion"
+			type="java.lang.Integer">
+			<column name="num_of_version" />
+		</property>
+		<property generated="never" lazy="false" name="versionId"
+			type="java.lang.Integer">
+			<column name="version_id" />
+		</property>
+		<property generated="never" lazy="false" name="openCount"
+			type="java.lang.Integer">
+			<column name="open_count" />
+		</property>
+		<property generated="never" lazy="false" name="commentCount"
+			type="java.lang.Integer">
+			<column name="comment_count" />
+		</property>
+		<property generated="never" lazy="false" name="group" type="string">
+			<column length="50" name="_group" />
+		</property>
+		<property generated="never" lazy="false" name="source" type="string">
+			<column length="50" name="source" />
+		</property>
+		<property generated="never" lazy="false" name="sourceId"
+			type="java.lang.Integer">
+			<column name="source_id" />
+		</property>
+		<property generated="never" lazy="false" name="body" type="string">
+			<column length="16777215" name="body" />
+		</property>
+		<property generated="never" lazy="false" name="email" type="string">
+			<column length="100" name="email" />
+		</property>
+		<property generated="never" lazy="false" name="phone" type="string">
+			<column length="40" name="phone" />
+		</property>
+		<property generated="never" lazy="false" name="fax" type="string">
+			<column length="20" name="fax" />
+		</property>
+		<property generated="never" lazy="false" name="latitude"
+			type="java.lang.Double">
+			<column name="lat" precision="10" scale="6">
+				<comment />
+			</column>
+		</property>
+		<property generated="never" lazy="false" name="longitude"
+			type="java.lang.Double">
+			<column name="loc_long" precision="10" scale="6">
+				<comment />
+			</column>
+		</property>
+		<property name="ranking" type="java.lang.Integer">
+			<column name="ranking" />
+		</property>
+		<property name="adresseFr" type="string">
+			<column name="address_fr" length="150" />
+		</property>
+		<property name="adresseNl" type="string">
+			<column name="address_nl" length="150" />
+		</property>
+		<property name="faxHotel" type="string">
+			<column name="fax_hotel" length="150" />
+		</property>
+		<property name="emailHotel" type="string">
+			<column name="email_hotel" length="150" />
+		</property>
+		<property name="urlHotel" type="string">
+			<column name="url_hotel" length="150" />
+		</property>
+		<property name="climatisationHotel" type="java.lang.Integer">
+			<column name="climatisation_hotel"/>
+		</property>
+		<property name="accessibleHotel" type="java.lang.Integer">
+			<column name="accessible_hotel"/>
+		</property>
+		<property name="kitchen" type="java.lang.Integer">
+			<column name="cours_de_cuisine"/>
+		</property>
+		<property name="welcome" type="java.lang.Integer">
+			<column name="accueil" />
+		</property>
+		<property name="index" type="string">
+			<column name="gas_index" />
+		</property>
+		<property name="zipcode" type="java.lang.Integer">
+			<column name="cp" />
+		</property>
+		<property name="garden" type="java.lang.Integer">
+			<column name="jardin" />
+		</property>
+		<property name="parking" type="java.lang.Integer">
+			<column name="parking" />
+		</property>
+		<property name="air_conditioning" type="java.lang.Integer">
+			<column name="climatisation" />
+		</property>
+		<property name="terrace" type="java.lang.Integer">
+			<column name="terrasse" />
+		</property>
+		<property name="valet" type="java.lang.Integer">
+			<column name="voiturier" />
+		</property>
+		<property name="housing" type="java.lang.Integer">
+			<column name="logement" />
+		</property>
+		<property name="accessible" type="java.lang.Integer">
+			<column name="_accessible" />
+		</property>
+		<property name="smokehouse" type="java.lang.Integer">
+			<column name="fumoir" />
+		</property>
+		<property name="dog_allowed" type="java.lang.Integer">
+			<column name="chien_admis" />
+		</property>
+		<property name="caterer" type="java.lang.Integer">
+			<column name="traiteur" />
+		</property>
+		<property name="seminar" type="java.lang.Integer">
+			<column name="seminaire" />
+		</property>
+		<property name="spaSauna" type="java.lang.Integer">
+			<column name="spa_sauna" />
+		</property>
+		<property name="pool" type="java.lang.Integer">
+			<column name="piscine" />
+		</property>
+		<property name="golf" type="java.lang.Integer">
+			<column name="golf" />
+		</property>
+		<property name="price_menu" type="string">
+			<column name="prix_menu" />
+		</property>
+		<property name="price_card" type="string">
+			<column name="prix_carte" />
+		</property>
+		<property name="price_single_room" type="string">
+			<column name="prix_chambre_single" />
+		</property>
+		<property name="price_double_room" type="string">
+			<column name="prix_chambre_double" />
+		</property>
+		<property name="nbrSuites" type="string">
+			<column name="nbr_suites" />
+		</property>
+		<property name="nbrChambres" type="java.lang.Integer">
+			<column name="nbr_chambres" />
+		</property>
+		<property name="nice" type="java.lang.Integer">
+			<column name="sympa" />
+		</property>
+		<property name="decor" type="int">
+			<column name="decor" />
+		</property>
+		<property name="money" type="int">
+			<column name="qualite_prix" />
+		</property>
+		<property name="pleasure" type="int">
+			<column name="plaisir" />
+		</property>
+		<property name="gastro" type="int">
+			<column name="gastro" />
+		</property>
+		<property name="guide" type="java.lang.Integer">
+			<column name="guide" />
+		</property>
+		<property name="jre" type="java.lang.Integer">
+			<column name="jre" />
+		</property>
+		<property name="gault" type="int">
+			<column name="gault" />
+		</property>
+		<property name="mich" type="int">
+			<column name="mich" />
+		</property>		
+		<property name="delta" type="int">
+			<column name="delta" />
+		</property>		
+		<map cascade="all" inverse="true" name="contentFoodySpotClts"
+			sort="unsorted">
+			<key>
+				<column name="content_id" not-null="true" />
+			</key>
+			<map-key type="string">
+				<column name="culture" not-null="true" />
+			</map-key>
+			<one-to-many class="com.bitc.cms.hdata.ContentFoodySpotClt" />
+		</map>
+	</class>
+</hibernate-mapping>
