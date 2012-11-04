@@ -42,14 +42,24 @@ function meetingPlannerLightBox(data) {
 
 </script>
 <!--tab:start-->
-
+b${showFoodyTab}a		
    <div class="TabbedPanelsContentGroup">
-   
     <ul class="TabbedPanels">
-        <li class="<c:if test="${panelGroup == 'RESTO'}">TabbedPanelsTabSelected</c:if><c:if test="${panelGroup != 'RESTO'}">TabbedPanelsTab</c:if>"><div><a href="<wa:url URI="${site}/content/displayResto/group/RESTO"/>"><wa:mls>Resto</wa:mls></a></div></li>
-        <li class="<c:if test="${panelGroup == 'BREAKFAST'}">TabbedPanelsTabSelected</c:if><c:if test="${panelGroup != 'BREAKFAST'}">TabbedPanelsTab</c:if>"><div><a href="<wa:url URI="${site}/content/displayResto/group/BREAKFAST"/>"><wa:mls>Breakfast</wa:mls></a></div></li>
-        <li class="<c:if test="${panelGroup == 'RESTO_NIGHT'}">TabbedPanelsTabSelected</c:if><c:if test="${panelGroup != 'RESTO_NIGHT'}">TabbedPanelsTab</c:if>"><div><a href="<wa:url URI="${site}/content/displayResto/group/RESTO_NIGHT"/>"><wa:mls>RESTO_NIGHT</wa:mls></a></div></li>
-        <li class="<c:if test="${panelGroup == 'FOODY'}">TabbedPanelsTabSelected</c:if><c:if test="${panelGroup != 'FOODY'}">TabbedPanelsTab</c:if>"><div><a href="<wa:url URI="${site}/content/displayResto/group/FOODY"/>"><wa:mls>Best kitchens</wa:mls></a></div></li>
+        <li class="<c:if test="${panelGroup == 'RESTO'}">TabbedPanelsTabSelected</c:if><c:if test="${panelGroup != 'RESTO'}">TabbedPanelsTab</c:if>"><div><a href="<wa:url URI="${site}/content/displayResto/group/RESTO"/>" onclick="changeTab(this)"><wa:mls>Resto</wa:mls></a></div></li>
+        <li class="<c:if test="${panelGroup == 'BREAKFAST'}">TabbedPanelsTabSelected</c:if><c:if test="${panelGroup != 'BREAKFAST'}">TabbedPanelsTab</c:if>"><div><a href="<wa:url URI="${site}/content/displayResto/group/BREAKFAST"/>" onclick="changeTab(this)"><wa:mls>Breakfast</wa:mls></a></div></li>
+        <li class="<c:if test="${panelGroup == 'RESTO_NIGHT'}">TabbedPanelsTabSelected</c:if><c:if test="${panelGroup != 'RESTO_NIGHT'}">TabbedPanelsTab</c:if>"><div><a href="<wa:url URI="${site}/content/displayResto/group/RESTO_NIGHT"/>" onclick="changeTab(this)"><wa:mls>RESTO_NIGHT</wa:mls></a></div></li>
+        <li name="foodyTabPanel" style="<c:if test="${showFoodyTab == 'N'}">display: none</c:if>" class="<c:if test="${panelGroup == 'FOODY'}">TabbedPanelsTabSelected</c:if><c:if test="${panelGroup != 'FOODY'}">TabbedPanelsTab</c:if>"><div>
+        <a href="<wa:url URI="${site}/content/displayResto/group/FOODY"/>" onclick="changeTab(this)">
+        	<c:if test="${culture == 'BE_en'}">
+        		<wa:mls>Best kitchens</wa:mls>
+        	</c:if>
+        	<c:if test="${culture == 'BE_fr'}">
+        		<wa:mls>Meilleures tables</wa:mls>
+        	</c:if>
+        	<c:if test="${culture == 'BE_nl'}">
+        		<wa:mls>Heerlijk tafelen</wa:mls>
+        	</c:if>
+        </a></div></li>
       </ul>
             <div class="Tabbe_Content_Group">
       
@@ -198,5 +208,25 @@ function sortBy(uri,group)
 	else 
 		document.forms[0].action=uri+"?"+"orderBy="+orderBy+"&asc="+asc;
 	window.location.href= document.forms[0].action;
+}
+
+function changeTab(el) {
+	var selectedIndex = document.getElementsByName('s_ContentPropertyValueManager_valueId_Profil')[0].selectedIndex;
+	var selectedValue = document.getElementsByName('s_ContentPropertyValueManager_valueId_Profil')[0].options[selectedIndex].innerHTML.trim();
+	if(selectedValue.toUpperCase() === 'Gastronomy'.toUpperCase()) {
+		el.href = el.href + "?showFoodyTab=Y";
+	} 
+}
+
+window.onload = function()
+{
+	if("${showFoodyTab}" === "Y") {
+		var profilesEl = document.getElementsByName('s_ContentPropertyValueManager_valueId_Profil')[0];
+		for (var i=1;i<profilesEl.options.length;i++) {
+			if(profilesEl.options[i].title.toUpperCase() === 'Gastronomy'.toUpperCase()) {
+				profilesEl.value = profilesEl.options[i].value;		
+			}
+		}
+	}	
 }
 </script>

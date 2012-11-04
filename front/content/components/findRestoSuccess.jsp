@@ -47,6 +47,7 @@ isELIgnored ="false"
 						<wa:param name="display" value="mainTitle" />
 						<wa:param name="name" value="s_ContentPropertyValueManager_valueId_Profil" />
 						<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Profil}" />
+						<wa:param name="onChangeEvent" value="onShowFoodyTab()" />
 					</wa:include>
 				</div>
 				
@@ -99,5 +100,15 @@ function changeDisplay(){
 		$(".btn_form").hide(200, function(){$(".btn_form2").show(200)})
     }
 	$("a.advanced_search").toggleClass("advanced_search_active");
+}
+
+function onShowFoodyTab(){
+	var selectedIndex = document.getElementsByName('s_ContentPropertyValueManager_valueId_Profil')[0].selectedIndex;
+	var selectedValue = document.getElementsByName('s_ContentPropertyValueManager_valueId_Profil')[0].options[selectedIndex].innerHTML.trim();
+	if(selectedValue.toUpperCase() === 'Gastronomy'.toUpperCase()) {
+		document.getElementsByName("foodyTabPanel")[0].style.cssText = "";	
+	} else {
+		document.getElementsByName("foodyTabPanel")[0].style.cssText = "display: none";	
+	}
 }
 </script> 
