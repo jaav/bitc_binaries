@@ -41,6 +41,7 @@ function tripPlannerLightBox(data) {
 <c:set var="left" value="left"></c:set>
 <c:set var="right" value="right"></c:set>
 <div id="list"></div>
+	
     <div class="TabbedPanelsContentGroup">
       <ul class="TabbedPanels">
        	<c:if test="${module ne 'displayByMap' and module ne 'listByMap' and  empty origin_map}">
@@ -53,7 +54,22 @@ function tripPlannerLightBox(data) {
         <c:if test="${nightLifeFound eq true}"><li class="<c:if test="${tabbedPanelsTab eq 'nightLife'}">TabbedPanelsTabSelected</c:if><c:if test="${tabbedPanelsTab ne 'nightLife'}">TabbedPanelsTab</c:if>"><a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/></wa:url>?contentType=ContentPlace&panel=nightLife&page=1#list"/><div><wa:mls>Night Life</wa:mls></div></a></li></c:if>
         <c:if test="${attractionmuseumFound eq true}"><li class="<c:if test="${tabbedPanelsTab eq 'attractionmuseum'}">TabbedPanelsTabSelected</c:if><c:if test="${tabbedPanelsTab ne 'attractionmuseum'}">TabbedPanelsTab</c:if>"><a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/></wa:url>?contentType=ContentPlace&panel=attractionmuseum&page=1#list"/><div><wa:mls>Attractions <br />and museums</wa:mls></div></a></li></c:if>
         <c:if test="${contemparchFound eq true}"><li class="<c:if test="${tabbedPanelsTab eq 'contemparch'}">TabbedPanelsTabSelected</c:if><c:if test="${tabbedPanelsTab ne 'contemparch'}">TabbedPanelsTab</c:if>"><a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/></wa:url>?contentType=ContentPlace&panel=contemparch&page=1#list"/><div><wa:mls>Monuments</wa:mls></div></a></li></c:if>
-        <c:if test="${eatingFound eq true}"><li class="<c:if test="${tabbedPanelsTab eq 'eating'}">TabbedPanelsTabSelected</c:if><c:if test="${tabbedPanelsTab ne 'eating'}">TabbedPanelsTab</c:if>"><a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/></wa:url>?contentType=ContentRestaurant&panel=eating&page=1#list"/><div><wa:mls>Eating</wa:mls></div></a></li></c:if>
+        <c:if test="${contentPropertyValue.name != 'gastronomy'}">
+        	<c:if test="${eatingFound eq true}"><li class="<c:if test="${tabbedPanelsTab eq 'eating'}">TabbedPanelsTabSelected</c:if><c:if test="${tabbedPanelsTab ne 'eating'}">TabbedPanelsTab</c:if>"><a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/></wa:url>?contentType=ContentRestaurant&panel=eating&page=1#list"/><div><wa:mls>Eating</wa:mls></div></a></li></c:if>
+        </c:if>
+        <c:if test="${contentPropertyValue.name == 'gastronomy'}">
+        	<c:if test="${eatingFound eq true}"><li class="<c:if test="${tabbedPanelsTab eq 'eating'}">TabbedPanelsTabSelected</c:if><c:if test="${tabbedPanelsTab ne 'eating'}">TabbedPanelsTab</c:if>"><a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/></wa:url>?contentType=ContentFoodySpot&panel=eating&page=1#list"/><div>
+        		<c:if test="${culture == 'BE_en'}">
+	        		<wa:mls>Best kitchens</wa:mls>
+	        	</c:if>
+	        	<c:if test="${culture == 'BE_fr'}">
+	        		<wa:mls>Meilleures tables</wa:mls>
+	        	</c:if>
+	        	<c:if test="${culture == 'BE_nl'}">
+	        		<wa:mls>Heerlijk tafelen</wa:mls>
+	        	</c:if>
+        	</div></a></li></c:if>
+        </c:if>
         <c:if test="${walkFound eq true}"><li class="<c:if test="${tabbedPanelsTab eq 'walk'}">TabbedPanelsTabSelected</c:if><c:if test="${tabbedPanelsTab ne 'walk'}">TabbedPanelsTab</c:if>"><a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/></wa:url>?contentType=ContentArticle&panel=walk&page=1#list"/><div><wa:mls>Walks</wa:mls></div></a></li></c:if>
         <c:if test="${shoppingFound eq true}"><li class="<c:if test="${tabbedPanelsTab eq 'shopping'}">TabbedPanelsTabSelected</c:if><c:if test="${tabbedPanelsTab ne 'shopping'}">TabbedPanelsTab</c:if>"><a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/></wa:url>?contentType=ContentPlace&panel=shopping&page=1#list"/><div><wa:mls>Shopping</wa:mls></div></a></li></c:if>
      </ul>
@@ -85,6 +101,11 @@ function tripPlannerLightBox(data) {
 				        				<span class="cutH2SmallTitle">${item.mainTitle}</span> 
 				        			</a>
 				    			</c:when>
+                               <c:when test="${item.group == 'FOODY'}">
+                                    <a href="/bitc/front/content/displayDetail/group/${item.group}/id/${item.id}.do" >
+                                        <span class="cutH2SmallTitle">${item.index}</span>
+                                    </a>
+                                </c:when>
       			    			<c:otherwise>
 	      			    			<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" >
 		        		  				<span class="cutH2SmallTitle">${item.mainTitle}</span>
@@ -169,8 +190,11 @@ function tripPlannerLightBox(data) {
 							        </c:if>
 							        <c:if test="${empty item.email && not empty item.URLWebsite &&  item.group ne 'HOTEL'}">
 						          		<strong><wa:mls>Website :</wa:mls></strong>
-						          		<span><a href="${item.URLWebsite}" target="_blank">${item.URLWebsite}</a></span>
+						          		<span><a href="${item.URLWebsite}" target="_blank">${item.URLWebsite}</a></span> <br />
 							        </c:if>
+                                     <c:if test="${item.group == 'FOODY' && item.gastro>0}">
+                                         <strong><wa:mls>Score :</wa:mls></strong> ${item.gastro} / 20<br />
+                                     </c:if>
 							       </p>
 						            	</c:when>
 						            	<c:otherwise><span class="cutMainAbstract">${item.mainAbstract_}</span></c:otherwise>

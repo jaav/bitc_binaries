@@ -85,8 +85,17 @@ function addToNltContent(group,contentId){
 			 <a href="javascript:addToNltContent('${bean.group}','${bean.id}');"><wa:mls>Ajouter à la table nlt content</wa:mls></a>
 			 <a href="${context}/admin/${contentTypeAdmin}/list.do?s_publishContent_id=${bean.id}&s_submit=Search" target="admin"><wa:mls>Edit</wa:mls></a>
 	    </c:if>
-		<h1 class="no_margin line_grey">${bean.mainTitle}
-		</h1> <!-- ${color} -->
+        <c:choose>
+        <c:when test="${bean.group=='FOODY'}">
+            <h1 class="no_margin line_grey">${bean.index}
+            		</h1> <!-- ${color} -->
+        </c:when>
+        <c:otherwise>
+            <h1 class="no_margin line_grey">${bean.mainTitle}
+            		</h1> <!-- ${color} -->
+        </c:otherwise>
+        </c:choose>
+
 		<c:if test="${not empty bean.periodFromDate}">
 			<h3>
 				<c:choose>
@@ -160,6 +169,12 @@ function addToNltContent(group,contentId){
 	      			 </c:if>
 	      		</p>
 	        </c:if>
+	        <c:if test="${group == 'FOODY'}">
+                <c:if test="${not empty bean.closing}">
+                    <p><span class="tel"> ${bean.closing}</span></p>
+                 </c:if>
+
+	       	</c:if>
 	       	<c:if test="${not empty bean.phone}">
 	       		 <p><strong><wa:mls>Tel :</wa:mls></strong><span class="tel"> ${bean.phone}</span></p>
 	       	</c:if>
@@ -268,6 +283,116 @@ function addToNltContent(group,contentId){
   
 	
      <div class="description">
+         <c:if test="${bean.group == 'FOODY'}">
+             <c:set var="gastrobean" value="0" scope="page" />
+             <c:set var="othersbean" value="0" scope="page" />
+             <c:set var="infobean" value="0" scope="page" />
+             <table width="400px" cellspacing="20px" style="margin-bottom:20px">
+                 <tr>
+                     <td>
+                         <div id="infoBlock" style="display:none;">
+                             <strong><wa:mls>Infos</wa:mls></strong><br /><br />
+                                <c:if test="${not empty bean.price_menu}">
+                                    <c:set var="infobean" value="${infobean + 1}" scope="page"/>
+                                    <strong><wa:mls>Price Menu :</wa:mls></strong><span class="tel"> ${bean.price_menu}</span><br />
+                                 </c:if>
+                                 <c:if test="${not empty bean.price_card}">
+                                     <c:set var="infobean" value="${infobean + 1}" scope="page"/>
+                                    <strong><wa:mls>Price Card :</wa:mls></strong><span class="tel"> ${bean.price_card}</span><br />
+                                 </c:if>
+                                 <c:if test="${not empty bean.price_single_room}">
+                                     <c:set var="infobean" value="${infobean + 1}" scope="page"/>
+                                    <strong><wa:mls>Price Single Room :</wa:mls></strong><span class="tel"> ${bean.price_single_room}</span><br />
+                                 </c:if>
+                                 <c:if test="${not empty bean.price_double_room}">
+                                     <c:set var="infobean" value="${infobean + 1}" scope="page"/>
+                                    <strong><wa:mls>Price Double Room :</wa:mls></strong><span class="tel"> ${bean.price_double_room}</span><br />
+                                 </c:if>
+                                 <c:if test="${not empty bean.nbrSuites}">
+                                     <c:set var="infobean" value="${infobean + 1}" scope="page"/>
+                                    <strong><wa:mls>NBR Suites :</wa:mls></strong><span class="tel"> ${bean.nbrSuites}</span><br />
+                                 </c:if>
+                                 <c:if test="${not empty bean.nbrChambres}">
+                                     <c:set var="infobean" value="${infobean + 1}" scope="page"/>
+                                    <strong><wa:mls>NBR Chambres :</wa:mls></strong><span class="tel"> ${bean.nbrChambres}</span><br />
+                                 </c:if>
+                                 <c:if test="${not empty bean.nbrChambres}">
+                                     <c:set var="infobean" value="${infobean + 1}" scope="page"/>
+                                    <strong><wa:mls>NBR Chambres :</wa:mls></strong><span class="tel"> ${bean.nbrChambres}</span><br />
+                                 </c:if>
+                                 <c:if test="${not empty bean.closingHotel}">
+                                     <c:set var="infobean" value="${infobean + 1}" scope="page"/>
+                                    <strong><wa:mls>Closing Hotel :</wa:mls></strong><span class="tel"> ${bean.closingHotel}</span><br />
+                                 </c:if>
+                                 <c:if test="${not empty bean.cook}">
+                                     <c:set var="infobean" value="${infobean + 1}" scope="page"/>
+                                    <strong><wa:mls>Cook :</wa:mls></strong><span class="tel"> ${bean.cook}</span><br />
+                                 </c:if>
+                                 <c:if test="${not empty bean.exploitant}">
+                                     <c:set var="infobean" value="${infobean + 1}" scope="page"/>
+                                    <strong><wa:mls>Exploitant :</wa:mls></strong><span class="tel"> ${bean.exploitant}</span><br />
+                                 </c:if>
+                                 <c:if test="${infobean > 0}">
+                                     <script>
+                                         $('#infoBlock').show();
+                                     </script>
+                                 </c:if>
+                         </div>
+                     </td>
+                     <td width="10px">&nbsp;</td>
+                     <td>
+                         <div id="gastroBlock" style="display: none;">
+                             <strong><wa:mls>Scores Gastromania</wa:mls></strong><br /><br />
+                             <c:if test="${not empty bean.gastro && bean.gastro>0}">
+                                <c:set var="gastrobean" value="${gastrobean + 1}" scope="page"/>
+                                <strong><wa:mls>Cuisine :</wa:mls></strong><span class="tel"> ${bean.gastro} / 20</span><br />
+                             </c:if>
+                             <c:if test="${not empty bean.welcome && bean.welcome>0}">
+                                 <c:set var="gastrobean" value="${gastrobean + 1}" scope="page"/>
+                                <strong><wa:mls>Acceuil :</wa:mls></strong><span class="tel"> ${bean.welcome} / 20</span><br />
+                             </c:if>
+                             <c:if test="${not empty bean.decor && bean.decor>0}">
+                                 <c:set var="gastrobean" value="${gastrobean + 1}" scope="page"/>
+                                <strong><wa:mls>Décor :</wa:mls></strong><span class="tel"> ${bean.decor} / 20</span><br />
+                             </c:if>
+                             <c:if test="${not empty bean.money && bean.money>0}">
+                                 <c:set var="gastrobean" value="${gastrobean + 1}" scope="page"/>
+                                <strong><wa:mls>Qualité-prix :</wa:mls></strong><span class="tel"> ${bean.money} / 20</span><br />
+                             </c:if>
+                             <c:if test="${not empty bean.pleasure && bean.pleasure>0}">
+                                 <c:set var="gastrobean" value="${gastrobean + 1}" scope="page"/>
+                                <strong><wa:mls>Ensemble :</wa:mls></strong><span class="tel"> ${bean.pleasure} / 20</span><br />
+                             </c:if>
+                             <c:if test="${gastrobean > 0}">
+                                 <script>
+                                     $('#gastroBlock').show();
+                                 </script>
+                             </c:if>
+                         </div>
+                         <div id="othersBlock" style="display: none;margin-top:20px;">
+                             <strong><wa:mls>Scores from resto guides</wa:mls></strong><br /><br />
+                             <c:if test="${not empty bean.gault && bean.gault>0}">
+                                 <c:set var="othersbean" value="${othersbean + 1}" scope="page"/>
+                                <strong><wa:mls>GaultMillau :</wa:mls></strong><span class="tel"> ${bean.gault} / 20</span><br />
+                             </c:if>
+                             <c:if test="${not empty bean.mich && bean.mich>0}">
+                                 <c:set var="othersbean" value="${othersbean + 1}" scope="page"/>
+                                <strong><wa:mls>Michelin :</wa:mls></strong><span class="tel"> ${bean.mich} / 20</span><br />
+                             </c:if>
+                             <c:if test="${not empty bean.delta && bean.delta>0}">
+                                 <c:set var="othersbean" value="${othersbean + 1}" scope="page"/>
+                                <strong><wa:mls>Delta :</wa:mls></strong><span class="tel"> ${bean.delta} / 20</span><br />
+                             </c:if>
+                             <c:if test="${othersbean > 0}">
+                                 <script>
+                                     $('#othersBlock').show();
+                                 </script>
+                             </c:if>
+                         </div>
+                     </td>
+                 </tr>
+             </table>
+         </c:if>
     	${bean.mainBody}
        </div>
        </div>
