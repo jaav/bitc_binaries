@@ -170,49 +170,10 @@ function addToNltContent(group,contentId){
 	      		</p>
 	        </c:if>
 	        <c:if test="${group == 'FOODY'}">
-<<<<<<< HEAD
                 <c:if test="${not empty bean.closing}">
                     <p><span class="tel"> ${bean.closing}</span></p>
                  </c:if>
 
-=======
-	        	<c:if test="${not empty bean.index}">
-	       		 	<p><strong><wa:mls>Index :</wa:mls></strong><span class="tel"> ${bean.index}</span></p>
-	       		 </c:if>
-	       		 <c:if test="${not empty bean.price_menu}">
-	       		 	<p><strong><wa:mls>Price Menu :</wa:mls></strong><span class="tel"> ${bean.price_menu}</span></p>
-	       		 </c:if>
-	       		 <c:if test="${not empty bean.price_card}">
-	       		 	<p><strong><wa:mls>Price Card :</wa:mls></strong><span class="tel"> ${bean.price_card}</span></p>
-	       		 </c:if>
-	       		 <c:if test="${not empty bean.price_single_room}">
-	       		 	<p><strong><wa:mls>Price Single Room :</wa:mls></strong><span class="tel"> ${bean.price_single_room}</span></p>
-	       		 </c:if>
-	       		 <c:if test="${not empty bean.price_double_room}">
-	       		 	<p><strong><wa:mls>Price Double Room :</wa:mls></strong><span class="tel"> ${bean.price_double_room}</span></p>
-	       		 </c:if>
-	       		 <c:if test="${not empty bean.nbrSuites}">
-	       		 	<p><strong><wa:mls>NBR Suites :</wa:mls></strong><span class="tel"> ${bean.nbrSuites}</span></p>
-	       		 </c:if>
-	       		 <c:if test="${not empty bean.nbrChambres}">
-	       		 	<p><strong><wa:mls>NBR Chambres :</wa:mls></strong><span class="tel"> ${bean.nbrChambres}</span></p>
-	       		 </c:if>
-	       		 <c:if test="${not empty bean.nbrChambres}">
-	       		 	<p><strong><wa:mls>NBR Chambres :</wa:mls></strong><span class="tel"> ${bean.nbrChambres}</span></p>
-	       		 </c:if>
-	       		 <c:if test="${not empty bean.closing}">
-	       		 	<p><strong><wa:mls>Closing :</wa:mls></strong><span class="tel"> ${bean.closing}</span></p>
-	       		 </c:if>
-	       		 <c:if test="${not empty bean.closingHotel}">
-	       		 	<p><strong><wa:mls>Closing Hotel :</wa:mls></strong><span class="tel"> ${bean.closingHotel}</span></p>
-	       		 </c:if>
-	       		 <c:if test="${not empty bean.cook}">
-	       		 	<p><strong><wa:mls>Cook :</wa:mls></strong><span class="tel"> ${bean.cook}</span></p>
-	       		 </c:if>
-	       		 <c:if test="${not empty bean.exploitant}">
-	       		 	<p><strong><wa:mls>Exploitant :</wa:mls></strong><span class="tel"> ${bean.exploitant}</span></p>
-	       		 </c:if>
->>>>>>> 1a6f579ac72f7188a59ec3aa587f3921a1d4fe30
 	       	</c:if>
 	       	<c:if test="${not empty bean.phone}">
 	       		 <p><strong><wa:mls>Tel :</wa:mls></strong><span class="tel"> ${bean.phone}</span></p>
