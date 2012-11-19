@@ -1,0 +1,77 @@
+##################
+### Main appender
+##################
+
+# Specific to the project
+log4j.appender.main.File=/Users/jefw/Documents/virtualsushi/customers/bitc/bitc_on_git/bitc/log/application.log
+#log4j.appender.main.File=c:/htdocs/logs/bitc.log
+#log4j.appender.main.File=/mnt/htdocs/logs/bitc_application.log
+
+log4j.appender.main=org.apache.log4j.RollingFileAppender
+log4j.appender.main.MaxFileSize=1MB
+log4j.appender.main.MaxBackupIndex=0
+# log4j.appender.main=org.apache.log4j.FileAppender
+log4j.appender.main.layout=org.apache.log4j.PatternLayout
+log4j.appender.main.layout.ConversionPattern=%d %-5p %c - %m%n
+
+#log4j.rootLogger=ERROR, main
+#log4j.rootLogger=WARN, main
+#log4j.rootLogger=INFO, main
+log4j.rootLogger=DEBUG, main
+log4j.logger.httpclient.wire.header=ERROR
+log4j.logger.org.apache.commons.httpclient=ERROR
+
+
+#######################
+### Hibernate appender
+#######################
+
+# Specific to the project
+log4j.appender.hibernate.File=/Users/jefw/Documents/virtualsushi/customers/bitc/bitc_on_git/bitc/log/hibernate.log
+#log4j.appender.hibernate.File=c:/htdocs/logs/bitc_hibernate.log
+#log4j.appender.hibernate.File=/mnt/htdocs/logs/bitc_hibernate.log
+
+log4j.appender.hibernate=org.apache.log4j.RollingFileAppender
+log4j.appender.hibernate.MaxFileSize=3MB
+log4j.appender.hibernate.MaxBackupIndex=0
+# log4j.appender.hibernate=org.apache.log4j.FileAppender
+log4j.appender.hibernate.layout=org.apache.log4j.PatternLayout
+log4j.appender.hibernate.layout.ConversionPattern=%d{ABSOLUTE} %5p %c{1}:%L - %m%n
+
+#log4j.logger.org.hibernate=WARN, hibernate
+#log4j.logger.org.hibernate=INFO, hibernate
+log4j.logger.org.hibernate=DEBUG, hibernate
+
+### Allow to do not append hibernate log in main appender
+log4j.additivity.org.hibernate=false
+
+### log HQL query parser activity
+#log4j.logger.org.hibernate.hql.ast.AST=debug
+
+### log just the SQL
+#log4j.logger.org.hibernate.SQL=debug
+
+### log JDBC bind parameters ###
+#log4j.logger.org.hibernate.type=ALL
+log4j.logger.org.hibernate.type=debug
+
+### log schema export/update ###
+log4j.logger.org.hibernate.tool.hbm2ddl=debug
+
+### log HQL parse trees
+#log4j.logger.org.hibernate.hql=debug
+
+### log cache activity ###
+#log4j.logger.org.hibernate.cache=debug
+
+### log transaction activity
+#log4j.logger.org.hibernate.transaction=debug
+
+### log JDBC resource acquisition
+#log4j.logger.org.hibernate.jdbc=debug
+
+### enable the following line if you want to track down connection ###
+### leakages when using DriverManagerConnectionProvider ###
+#log4j.logger.org.hibernate.connection.DriverManagerConnectionProvider=trace
+
+
