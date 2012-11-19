@@ -22,6 +22,11 @@ isELIgnored ="false"
 		${contentPropertyValue.mainTitle}
 	</h1>
  <p>${contentPropertyValue.mainDescription}</p>
+ 	<c:if test="${group == 'FOODY'}">
+	 	<wa:include URI="front/content/findBestKitchen" >
+			<wa:param name="group" value="${group}"/>
+		</wa:include>
+	</c:if>
 	<wa:include URI="front/propertyValue/list">
 		<wa:param name="name" value="${contentPropertyValue.name}"/>
 	</wa:include>
