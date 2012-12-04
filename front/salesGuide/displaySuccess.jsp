@@ -13,5 +13,8 @@ isELIgnored ="false"
  <div class="clear"></div>
     <div id="content_main">
     <wa:include URI="front/content/introList" />
-	 <wa:include URI="front/salesGuide/listSalesGuide" />
+    <wa:include URI="front/content/findSales" >
+        <wa:param name="group" value="${group}"/>
+    </wa:include>
+	<wa:include URI="front/salesGuide/listSalesGuide" />
   </div>

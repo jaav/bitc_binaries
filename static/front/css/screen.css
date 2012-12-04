@@ -159,6 +159,9 @@ h6 {font-size:11px; font-weight:bolder;}
 .sport { height:60px; background:url(../img/ml/bg_h1_sport.jpg) no-repeat top left;}
 .bande-dessinee { height:60px; background:url(../img/ml/bg_h1_bande-dessinee.jpg) no-repeat top left;}
 .art-nouveau { height:60px; background:url(../img/ml/bg_h1_art-nouveau.jpg) no-repeat top left;}
+.contemporary { height:60px; background:url(../img/ml/banner_contemporary.jpg) no-repeat top left;}
+.jazz { height:60px; background:url(../img/ml/banner_jazz.jpg) no-repeat top left;}
+
 
 .float_left {float:left;}
 .float_right {float:right;}
@@ -242,8 +245,10 @@ p.no_results{padding-left:15px; font-family:Georgia, "Times New Roman", Times, s
 		#top_content form #f_search_submit{ background:#000 url(../img/ml/input_search.gif) no-repeat right 4px; padding:2px 22px 2px 5px; /padding:1px 20px 1px 0px; color:#fff; border:0; cursor: pointer;}
 
 		#top_content #top_bg_adn{background:url(../img/ml/top/adn_header.png) top center no-repeat; width:1200px; height:48px; position:absolute; top: 35px; z-index: 10}
-		#top_content #top_bg_topname{background:url(../img/ml/top/bg.png) top center no-repeat;  height:44px; position:absolute; top: 48px; margin-left:270px; text-transform:uppercase; font-size:36px; font-weight:bold; color:#577086; font-family: "News Gothic Std",
-             sans-serif; z-index: 10}
+    /** NEXT 3 LINES COULD BE MODIFIED WRONGLY (SEE HISTORY) **/
+		#top_content #top_bg_topname{ background:url(../img/ml/top/bg.png) top center no-repeat; height:44px; position:absolute; top: 48px; margin-left:270px; text-transform:uppercase; font-size:36px;color:#577086; font-family: "NewsGothLtBTLightVB",
+             sans-serif; z-index: 10;line-height : 44px;}
+             #top_content #top_bg_topname span.congresstitle{ font-family: "NewsGothDmBTDemiVB"; }
              /*toplogo*/
              #top_content #top_bg_toplogo{ position:absolute; top: 48px;  width:240px; height: 318px;z-index: 10}
              #top_bg_toplogo a {position:relative; padding:0;}
@@ -370,7 +375,7 @@ p.no_results{padding-left:15px; font-family:Georgia, "Times New Roman", Times, s
 			.first_highlight_home_slide .btn .map { float:right; width:55px;}
 				.first_highlight_home_slide .btn .map span { float:left;}
 				.first_highlight_home_slide .btn .map img { float:right;}
-			.first_highlight_home_slide .btn .sv { float:right; margin-top:5px; text-decoration: none;}
+			.first_highlight_home_slide .btn .sv { float:right; margin-top:5px; text-decoration: none; display : block; width : 100px;}
 				.first_highlight_home_slide .btn .sv span { float:left;}
 				.first_highlight_home_slide .btn .sv img { float:right;}
 				
@@ -378,13 +383,22 @@ p.no_results{padding-left:15px; font-family:Georgia, "Times New Roman", Times, s
 *+html .second_highlight_home { padding:10px 0 20px 0;}
 
 	.second_highlight_home h3 { font-size:20px; text-transform:uppercase;}
+	/* Ajouté par Fred 26/06/2012 pour corriger défaut d'affichage du titre sur la homepage */
+		.second_highlight_home.float_left h3{color : #fff; height:25px;}
+	/* ------------------ */
 	.second_highlight_home img { margin:0 0 10px 0;}
 	.second_highlight_home p { margin:0 0 10px 0;}
 	.second_highlight_home .btn { position:absolute; bottom:0; height:20px;}
 		.second_highlight_home .btn .more_info {position:absolute; top:0; left:0;}
-		.second_highlight_home .btn .map {position:absolute; top:0; left:118px;}
+		/* .second_highlight_home .btn .map {position:absolute; top:0; left:118px;}*/
 			.second_highlight_home .btn .map span { float:left; padding:3px 3px 0 0;}
-			.second_highlight_home .btn .map img {float:left; padding:2px 0 0 0;}
+			.second_highlight_home .btn .map img {float:left; padding:2px 0 0 0;} 
+		/* Ajouté par Fred 28/06/2012 pour corriger problème d'affichage des icones google sur les events de la homepage */	
+		.second_highlight_home .btn .map {position:absolute; top:0; left:118px; display : block;width : 60px;}
+		.second_highlight_home .btn .sv {position:absolute; top:20px; left:78px; display : block;width : 100px; text-decoration :none;}
+			.second_highlight_home .btn .sv span { float:left; padding:3px 3px 0 0;}
+			.second_highlight_home .btn .sv img {float:left; padding:2px 0 0 0;}
+			
 		.second_highlight_home .btn .share {position:absolute; top:0; left:187px;}
 		.second_highlight_home .btn .ilike {position:absolute; top:0; left:228px;}
 		.second_highlight_home .btn .add {position:absolute; top:0; left:270px;}
@@ -415,6 +429,9 @@ ul.third_highlight_home {padding:0 10px 10px 10px; border:1px solid #dddddd;}
 	#main_information { float:left; width: 620px; text-align: justify;}
 	#main_information img{max-width: 620px; margin-right: 5px;}
 	#main_information p, #main_information div, #main_information p div{ text-align: justify;}
+	/** REMOVE NEXT 2 LINES ??? **/
+  #main_information ul{ list-style-type: disc;padding-left:10px; margin-top : 5px; }
+	#main_information li{ list-style-type: disc; margin : 0 0 5px 10px; padding : 0; }
 
 	/*#main_information div{ margin: 0; padding: 0}*/
 	

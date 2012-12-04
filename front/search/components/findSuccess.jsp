@@ -88,7 +88,7 @@ isELIgnored ="false"
            	<div class="clr"></div>
            	
            	<div style="<c:if test="${ind == '0'}">display:none</c:if> <c:if test="${ind == '1'}">display:block</c:if>" id="advanced_search">
-           	<c:if test="${group ne 'PRESS_RELEASE'}">
+           	<c:if test="${group ne 'PRESS_RELEASE' and group ne 'SALES_GUIDE'}">
 	            <div id="ListExperience" class="align_left">
 					<label for="s_ContentPropertyValueManager_valueId_Experience"><wa:mls>Experience</wa:mls></label>
 					<wa:include URI="${site}/dropdown/dropList">
@@ -130,18 +130,20 @@ isELIgnored ="false"
 					</wa:include>
 				</div>
 			</c:if>
-			<div id="ListQuartiers" >
-				<label for="s_ContentPropertyValueManager_valueId_Quartier"><wa:mls>Quartiers</wa:mls></label>
-				<wa:include URI="${site}/dropdown/dropList">
-					<wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
-					<wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
-					<wa:param name="method" value="listQuartiers" />
-					<wa:param name="identity" value="valueId" />
-					<wa:param name="display" value="mainTitle" />
-					<wa:param name="name" value="s_ContentPropertyValueManager_valueId_Quartier" />
-					<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Quartier}" />
-				</wa:include>
-			</div>
+            <c:if test="${group ne 'SALES_GUIDE'}">
+                <div id="ListQuartiers" >
+                    <label for="s_ContentPropertyValueManager_valueId_Quartier"><wa:mls>Quartiers</wa:mls></label>
+                    <wa:include URI="${site}/dropdown/dropList">
+                        <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+                        <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+                        <wa:param name="method" value="listQuartiers" />
+                        <wa:param name="identity" value="valueId" />
+                        <wa:param name="display" value="mainTitle" />
+                        <wa:param name="name" value="s_ContentPropertyValueManager_valueId_Quartier" />
+                        <wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Quartier}" />
+                    </wa:include>
+                </div>
+            </c:if>
 
 			<c:if test="${group eq 'RESTO_1' or group eq 'RESTO_NIGHT' or group eq 'BREAKFAST'}">
 			<div class="clr"></div>
@@ -174,6 +176,22 @@ isELIgnored ="false"
 				</wa:include>
 			</div>
 			</c:if>
+
+           <c:if test="${group eq 'SALES_GUIDE'}">
+                    <div class="clr"></div>
+                    <div id="ListSalesGuideCategory" >
+                        <label for="s_ContentPropertyValueManager_valueId_Sales_guide"><wa:mls>Categories</wa:mls></label>
+                        <wa:include URI="${site}/dropdown/dropList">
+                            <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+                            <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+                            <wa:param name="method" value="listSales" />
+                            <wa:param name="identity" value="valueId" />
+                            <wa:param name="display" value="mainTitle" />
+                            <wa:param name="name" value="s_ContentPropertyValueManager_valueId_Sales_guide" />
+                            <wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Sales_guide}" />
+                        </wa:include>
+                    </div>
+                    </c:if>
 			</div>
 			<div class="clr"></div>
 			</c:if>
