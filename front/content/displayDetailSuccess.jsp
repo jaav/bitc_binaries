@@ -239,7 +239,7 @@
             <c:set var="gastrobean" value="0" scope="page"/>
             <c:set var="othersbean" value="0" scope="page"/>
             <c:set var="infobean" value="0" scope="page"/>
-            <table width="400px" cellspacing="20px" style="margin-bottom:20px">
+            <table width="100%" cellspacing="20px" style="margin-bottom:20px">
                 <tr>
                     <td>
                         <div id="infoBlock" style="display:none;">
@@ -300,7 +300,7 @@
                             </c:if>
                         </div>
                     </td>
-                    <td width="10px">&nbsp;</td>
+                    <td width="80px">&nbsp;</td>
                     <td>
                         <div id="gastroBlock" style="display: none;">
                             <strong><wa:mls>Scores Gastromania</wa:mls></strong><br/><br/>
