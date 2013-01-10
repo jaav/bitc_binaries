@@ -560,6 +560,12 @@
         <img src="${image.sourceUrl}" alt="${wa:nullFree2(image.sourceDescription,bean.mainTitle)}"/>
     </c:forEach>
 </c:if>
+<c:if test="${boxOffice ne null && boxOffice eq true}">
+ <div style="position: relative;float: left;">
+ 	<a class="btn_buy_ticket" href="javascript:forwardToBoxofficeFrame('${bean.officeBookingURL}')">
+       </a>
+ </div>
+</c:if>
 <!--boxotherinformation:end-->
 <!--tab:start-->
 <c:choose>
@@ -590,5 +596,18 @@
 
 </div>
 </div>
-</c:when>
-</c:choose>
+	</c:when>
+		</c:choose>
+<script language='javascript'>
+function forwardToBoxofficeFrame(officeURL) {
+ $.nyroModalManual({
+	 zIndex: 1001,
+     minWidth:690,
+     minHeight:510,
+     forceType: 'iframe',
+     closeSelector: '.nyroModalClose',
+     url: officeURL,
+     closeButton: '<a href="#" class="nyroModalClose" id="closeBut"><img src="${static}/front/img/ml/close.png" alt="close" /></a>'
+  	});
+}
+</script>

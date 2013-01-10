@@ -49,6 +49,7 @@
         <wa:param name="criteriaDate" value="${criteriaDate}"/>
         <wa:param name="s_periodFromDate" value="${s_periodFromDate}"/>
         <wa:param name="s_periodToDate" value="${s_periodToDate}"/>
+        <wa:param name="boxOfficeEvent" value="${boxOfficeEvent}"/>
     </wa:include>
     <div class="TabbedPanelsContentGroup">
         <ul class="TabbedPanels">

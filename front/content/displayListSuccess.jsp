@@ -18,5 +18,7 @@ isELIgnored ="false"
                         <wa:param name="group" value="${group}"/>
                     </wa:include>
 			</c:if>
-			<wa:include URI="front/content/list" />
+			<wa:include URI="front/content/list">
+				<wa:param name="pageSize" value="${5}"/>
+			</wa:include>
       </div>

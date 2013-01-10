@@ -29,7 +29,6 @@ isELIgnored ="false"
 
             <input type ="hidden" name ="contentType" value="${contentType}">
             <input type ="hidden" name ="group" value="${group}">
-
            
            	<div class="clr"></div>
            	

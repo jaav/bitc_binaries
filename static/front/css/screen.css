@@ -593,7 +593,13 @@ a.btn_add_basket:link,
 a.btn_add_basket:active,
 a.btn_add_basket:visited { padding:6px 0 0 10px; font-size:12px; line-height:17px; font-family:'UtopiaStd-Regular', Georgia; text-shadow: 2px 2px 2px #ffffff; text-transform:uppercase; text-align:left; text-decoration:none; color:#4c5458; background:url(../img/ml/bg_btn_next_eshop.jpg);}
 a.btn_add_basket:hover { background:url(../img/ml/bg_btn_next_eshop_hover.jpg);}
-	
+
+a.btn_buy_ticket { display:block; margin:0 auto; width:200px; height:66px; outline: none; background:url(../img/ml/bg_btn_buy_ticket2.jpg);}
+a.btn_buy_ticket:link,
+a.btn_buy_ticket:active,
+a.btn_buy_ticket:visited {font-size:12px; line-height:17px; font-family:'UtopiaStd-Regular', Georgia; text-shadow: 2px 2px 2px #ffffff; text-transform:uppercase; text-align:left; text-decoration:none; color:#4c5458; background:url(../img/ml/bg_btn_buy_ticket2.jpg);}
+a.btn_buy_ticket:hover { background:url(../img/ml/bg_btn_buy_ticket2.jpg);}
+
 a.btn_update { float:right; display:block; margin:0 0 0 22px; width:145px; height:21px; outline: none;}	
 a.btn_update:link,
 a.btn_update:active,
@@ -926,7 +932,7 @@ ul.tab_list_complete {padding:10px;}
 	.form_search form.search input.btn_form:hover, .form_search form.search input.btn_form2:hover {background:transparent url(../img/ml/bg_btn_form_search_small_over.png) top left no-repeat; }	
 	.form_search form.search input.btn_form:focus, .form_search form.search input.btn_form2:focus {background:transparent url(../img/ml/bg_btn_form_search_small_focus.png) top left no-repeat;}
 .form_search form.search input.btn_form2 { display: none; float:right; margin:0 0 5px 0; width:94px; height:23px; color:#4c5458; text-align:left; background:transparent url(../img/ml/bg_btn_form_search_small.png) top left no-repeat; border:0 none; padding-left:10px; cursor:pointer; font-size: 11px; position: relative; top: -1px;}
-
+.btn_form{margin:0 5px; width:94px; height:23px; color:#4c5458; text-align:left; background:transparent url(../img/ml/bg_btn_form_search_small.png) top left no-repeat; border:0 none; padding-left:10px; cursor:pointer; float:left; font-size: 11px; position: relative; top: -1px;}
 		.form_search form.search a, .form_search form.search a:link, .form_search form.search a:active, .form_search form.search a:visited { text-decoration:none; float: right;}
 		.form_search form.search a:hover { text-decoration:none;}
 		.form_search form.search a.advanced_search {display:block; height:23px; line-height:23px; background:transparent url(../img/ml/bg_advanced_search.png) center right no-repeat; padding-right: 30px;}	

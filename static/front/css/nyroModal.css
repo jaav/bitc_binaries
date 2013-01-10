@@ -23,6 +23,7 @@ div#nyroModalLoading.error {
 div#nyroModalWrapper {
 	background: #fff;
 	border: 0px solid #777;
+  padding: 20px;
 }
 a#closeBut {
 	position: absolute;

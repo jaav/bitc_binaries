@@ -3,15 +3,12 @@
 
 	<classpath>
 		<!-- <dir name="/Users/jefw/Documents/virtualsushi/customers/bitc/bitc_on_git/bitc/build/classes"> -->
-		<dir name="/home/tho/Documents/SourceCode/bitc/build/classes">
-		</dir>
+		<dir name="/Users/jefw/Documents/virtualsushi/customers/bitc/bitc_on_git/bitc/build/classes"></dir>
 	</classpath>
 
 	<web>
 		<link target="/">
-			<!-- <dir name="/Users/jefw/Documents/virtualsushi/customers/bitc/bitc_on_git/bitc/WebContent"> -->
-			<dir name="/home/tho/Documents/SourceCode/bitc/WebContent">
-			</dir>
+			 <dir name="/Users/jefw/Documents/virtualsushi/customers/bitc/bitc_on_git/bitc/WebContent"></dir>
 		</link>
 	</web>
 

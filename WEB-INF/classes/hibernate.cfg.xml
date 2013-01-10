@@ -60,7 +60,9 @@
         <mapping resource="com/bitc/cms/hdata/ContentArticleClt.hbm.xml" />
         <mapping resource="com/bitc/cms/hdata/ContentArticle.hbm.xml" />               
         <mapping resource="com/bitc/cms/hdata/ContentEvent.hbm.xml" />             
-        <mapping resource="com/bitc/cms/hdata/ContentEventClt.hbm.xml" />              
+        <mapping resource="com/bitc/cms/hdata/ContentEventClt.hbm.xml" />
+        <mapping resource="com/bitc/cms/hdata/ContentGuidedTour.hbm.xml" />             
+        <mapping resource="com/bitc/cms/hdata/ContentGuidedTourClt.hbm.xml" />              
         <mapping resource="com/bitc/cms/hdata/ContentPlace.hbm.xml" />              
         <mapping resource="com/bitc/cms/hdata/ContentPlaceClt.hbm.xml" />            
         <mapping resource="com/bitc/cms/hdata/ContentRestaurant.hbm.xml" />             
@@ -117,7 +119,8 @@
         <mapping resource="com/bitc/hdata/CalendarWidget.hbm.xml" />               
         <mapping resource="com/bitc/hdata/MlrsAction.hbm.xml" />               
         <mapping resource="com/bitc/hdata/MlrsParams.hbm.xml" /> 
-       
+       	<mapping resource="com/bitc/cms/hdata/ContentBoxoffice.hbm.xml" />
+       	<mapping resource="com/bitc/cms/hdata/ContentBoxofficeDate.hbm.xml" />
         <mapping resource="com/bitc/cms/hdata/ContentDeals.hbm.xml" />   
         <mapping resource="com/bitc/cms/hdata/ContentDealsClt.hbm.xml" />    
         <mapping resource="com/bitc/hdata/DealsAnswer.hbm.xml" />                
