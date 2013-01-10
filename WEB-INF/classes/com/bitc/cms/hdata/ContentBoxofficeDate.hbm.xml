@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-mai-2010 17:37:40 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.bitc.cms.hdata.ContentBoxofficeDate" table="content_boxoffice_date">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<many-to-one name="contentBoxoffice" class="com.bitc.cms.hdata.ContentBoxoffice" fetch="select">
+            <column name="content_id" not-null="true">
+                <comment></comment>
+            </column>
+        </many-to-one>
+		<property name="date" type="timestamp">
+			<column name="date" length="19" not-null="true">
+				<comment></comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

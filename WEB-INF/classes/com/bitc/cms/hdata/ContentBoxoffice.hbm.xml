@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-mai-2010 17:37:40 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+	<class name="com.bitc.cms.hdata.ContentBoxoffice" table="content_boxoffice">
+		<comment></comment>
+		<id name="id" type="int">
+			<column name="id" />
+			<generator class="identity" />
+		</id>
+		<property generated="never" lazy="false" name="agenda_id"
+			type="int">
+			<column name="agenda_id">
+				<comment />
+			</column>
+		</property>
+		<property generated="never" lazy="false" name="name_en" type="string">
+			<column name="name_en">
+				<comment />
+			</column>
+		</property>
+		<property generated="never" lazy="false" name="name_fr" type="string">
+			<column name="name_fr">
+				<comment />
+			</column>
+		</property>
+		<property generated="never" lazy="false" name="name_nl" type="string">
+			<column name="name_nl">
+				<comment />
+			</column>
+		</property>
+		<property generated="never" lazy="false" name="booking_url_en"
+			type="string">
+			<column name="booking_url_en">
+				<comment />
+			</column>
+		</property>
+		<property generated="never" lazy="false" name="booking_url_fr"
+			type="string">
+			<column name="booking_url_fr">
+				<comment />
+			</column>
+		</property>
+		<property generated="never" lazy="false" name="booking_url_nl"
+			type="string">
+			<column name="booking_url_nl">
+				<comment />
+			</column>
+		</property>
+		<property name="createdOn" type="timestamp">
+			<column name="created_on" length="19" not-null="true">
+				<comment></comment>
+			</column>
+		</property>
+		<property name="status" type="string">
+            <column name="status" length="20">
+                <comment></comment>
+            </column>
+        </property>
+		<property name="visible" type="java.lang.Byte">
+            <column name="visible">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="fromDate" type="timestamp">
+            <column name="from_date" length="19" />
+        </property>
+        <property name="toDate" type="timestamp">
+            <column name="to_date" length="19" />
+        </property>
+        <property name="periodFromDate" type="timestamp">
+            <column name="period_from_date" length="19" not-null="true" />
+        </property>
+        <property name="periodToDate" type="timestamp">
+            <column name="period_to_date" length="19" not-null="true" />
+        </property>
+	</class>
+</hibernate-mapping>
