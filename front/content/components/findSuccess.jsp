@@ -19,7 +19,7 @@ isELIgnored ="false"
 		        <div class="arrow"></div>
 		        
 		    <input type ="hidden" name ="group" value="${group}">
-		          	<input type="hidden" name="contentType" value="${contentType}" />
+		    <input type="hidden" name="contentType" value="${contentType}" />
 		    
             <c:if test="${group ne 'LATEST_NEWS' && group ne 'TESTIMONIAL' && group ne 'DEALS' && group ne 'PRESS_RELEASE'}">
             <a onClick="changeDisplay()" class="advanced_search"><wa:mls>Advanced search</wa:mls></a>
@@ -72,6 +72,7 @@ isELIgnored ="false"
            	
            	<div style="display:none" id="advanced_search">
            	<c:if test="${group ne 'PRESS_RELEASE'}">	
+           		<c:if test="${fn:toLowerCase(group) ne 'guided_tour'}">
 	             <div id="ListExperience" class="align_left">
 					<label for="s_ContentPropertyValueManager_valueId_Experience"><wa:mls>Experience</wa:mls></label>
 					<wa:include URI="${site}/dropdown/dropList">
@@ -84,7 +85,6 @@ isELIgnored ="false"
 						<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Experience}" />
 					</wa:include>
 				</div>
-				
 				<div id="ListProfiles" class="align_right">
 					<label for="s_ContentPropertyValueManager_valueId_Profil"><wa:mls>Profiles</wa:mls></label>
 					<wa:include URI="${site}/dropdown/dropList">
@@ -97,6 +97,7 @@ isELIgnored ="false"
 						<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Profil}" />
 					</wa:include>
 				</div>
+				</c:if>
 			</c:if>
 			
 			<c:if test="${group eq 'PRESS_RELEASE'}">
@@ -127,15 +128,15 @@ isELIgnored ="false"
 			</div>
 			<c:if test="${fn:toLowerCase(group) eq 'guided_tour'}">
 				<div id="ListCategory" class="align_right">
-					<label for="s_ContentPropertyValueManager_valueId_ProfileExprienceCategory"><wa:mls>Category</wa:mls></label>
+					<label for="s_ContentPropertyValueManager_valueId_Category"><wa:mls>Category</wa:mls></label>
 					<wa:include URI="${site}/dropdown/dropList">
 						<wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
 						<wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
-						<wa:param name="method" value="listProfilesExpriencesCategories" />
+						<wa:param name="method" value="listCategory" />
 						<wa:param name="identity" value="valueId" />
 						<wa:param name="display" value="mainTitle" />
-						<wa:param name="name" value="s_ContentPropertyValueManager_valueId_ProfileExprienceCategory" />
-						<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_ProfileExprienceCategory}" />
+						<wa:param name="name" value="s_ContentPropertyValueManager_valueId_Category" />
+						<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Category}" />
 					</wa:include>
 				</div>
 				<div class="clr"></div>

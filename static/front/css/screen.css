@@ -237,7 +237,7 @@ p.no_results{padding-left:15px; font-family:Georgia, "Times New Roman", Times, s
 			#top_content a.btn_map_view { top:6px; left:130px;}
 			#top_content a.btn_collapse_up { top:6px; left:260px; background:#000 url(../img/ml/arrow_collapse_up.gif) no-repeat 91% 5px; padding-right:25px; width:55px; outline:none}
 			#top_content a.btn_collapse_down { top:6px; left:260px; background:#000 url(../img/ml/arrow_collapse_down.gif) no-repeat 91% 8px; padding-right:25px; width:55px; outline:none}
-			#top_content #box_btn_lg { position:absolute; top:6px; left:1000px; padding:5px 0 0 0;}
+			#top_content #box_btn_lg { position:absolute; top:6px; left:1050px; padding:5px 0 0 0;}
 				#top_content #box_btn_lg a { position:relative; margin: 0 5px 0 0;}
 		
 		#top_content form { position:absolute; top:6px; left:690px;}

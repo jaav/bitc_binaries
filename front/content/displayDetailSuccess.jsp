@@ -99,7 +99,7 @@
     </c:otherwise>
 </c:choose>
 
-<c:if test="${not empty bean.periodFromDate}">
+<c:if test="${not empty bean.periodFromDate and (bean.group ne 'GUIDED_TOUR' || bean.fixedDate)}">
     <h3>
         <c:choose>
             <c:when test="${bean.periodFromHour eq '00'}">

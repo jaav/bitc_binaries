@@ -91,6 +91,7 @@ isELIgnored ="false"
            	
            	<div style="<c:if test="${ind == '0'}">display:none</c:if> <c:if test="${ind == '1'}">display:block</c:if>" id="advanced_search">
            	<c:if test="${group ne 'PRESS_RELEASE' and group ne 'SALES_GUIDE'}">
+           		<c:if test="${fn:toLowerCase(group) ne 'guided_tour'}">
 	            <div id="ListExperience" class="align_left">
 					<label for="s_ContentPropertyValueManager_valueId_Experience"><wa:mls>Experience</wa:mls></label>
 					<wa:include URI="${site}/dropdown/dropList">
@@ -117,6 +118,7 @@ isELIgnored ="false"
 					</wa:include>
 				</div>
 				<div class="clr"></div>
+				</c:if>
 			</c:if>
 			<c:if test="${group eq 'PRESS_RELEASE'}">
 				<div id="ListThemes" class="align_left">
@@ -133,6 +135,7 @@ isELIgnored ="false"
 				</div>
 			</c:if>
             <c:if test="${group ne 'SALES_GUIDE'}">
+            	<c:if test="${fn:toLowerCase(group) ne 'guided_tour'}">
                 <div id="ListQuartiers" class="align_right">
                     <label for="s_ContentPropertyValueManager_valueId_Quartier"><wa:mls>Quartiers</wa:mls></label>
                     <wa:include URI="${site}/dropdown/dropList">
@@ -145,6 +148,7 @@ isELIgnored ="false"
                         <wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Quartier}" />
                     </wa:include>
                 </div>
+                </c:if>
             </c:if>
 			<c:if test="${fn:toLowerCase(group) eq 'guided_tour'}">
 				<div id="ListCategory" class="align_right">

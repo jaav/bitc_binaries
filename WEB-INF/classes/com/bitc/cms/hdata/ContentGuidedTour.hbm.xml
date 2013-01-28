@@ -174,9 +174,6 @@
         <property name="fixedDate" type="boolean">
             <column name="fixed_date" not-null="true" />
         </property>
-        <property name="guide_language" type="string">
-            <column name="guide_language"/>
-        </property>
         <map name="contentGuidedTourClts" inverse="true" cascade="all" >
             <key>
                 <column name="content_id" not-null="true" />
