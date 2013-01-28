@@ -75,7 +75,7 @@
                            value="${s_periodToDate}" onkeyup="allowSearchEitherDateOrLanguage()"/>
                 </c:if>
 
-                <div style="display:none" id="advanced_search">
+                <div style="display:none; margin-top:10px;" id="advanced_search">
                     <c:if test="${group ne 'PRESS_RELEASE'}">
                         <c:if test="${fn:toLowerCase(group) ne 'guided_tour'}">
                             <div id="ListExperience" class="align_left">
