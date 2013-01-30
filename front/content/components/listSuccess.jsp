@@ -223,6 +223,13 @@
 	<div class="TabbedPanelsContentGroup">
 		<h2>Visits on fixed schedules</h2>
 		<div class="Tabbe_Content_Group">
+			<c:if test="${showAllFixDateGuide}">
+			<div class="tab_paging">
+				<wa:include URI="${site}/content/navNumber">
+					<wa:param name="navId" value="1" />
+				</wa:include>
+			</div>
+			</c:if>
 			<ul class="tab_list_complete">
 				<c:set var="indexLetter" value="0" />
 				<c:if test="${empty fixedScheduleGuidedTours}">
@@ -385,6 +392,13 @@
 		<div class="TabbedPanelsContentGroup">
 			<h2>Visits on request</h2>
 			<div class="Tabbe_Content_Group">
+				<c:if test="${showAllOnRequestGuide}">
+				<div class="tab_paging">
+					<wa:include URI="${site}/content/navNumber">
+						<wa:param name="navId" value="1" />
+					</wa:include>
+				</div>
+				</c:if>
 				<ul class="tab_list_complete">
 					<c:set var="indexLetter" value="0" />
 					<c:if test="${empty onRequestGuidedTours}">
