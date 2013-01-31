@@ -221,7 +221,7 @@
 <c:if test="${contentType eq 'ContentGuidedTour'}">
 	<c:if test="${empty showAllOnRequestGuide or showAllOnRequestGuide == false}">
 	<div class="TabbedPanelsContentGroup">
-		<h2>Visits on fixed schedules</h2>
+		<h2><wa:mls>Visits on fixed schedules</wa:mls></h2>
 		<div class="Tabbe_Content_Group">
 			<c:if test="${showAllFixDateGuide}">
 			<div class="tab_paging">
@@ -234,7 +234,7 @@
 				<c:set var="indexLetter" value="0" />
 				<c:if test="${empty fixedScheduleGuidedTours}">
 						<h3>
-							No record found
+							<wa:mls>No record found</wa:mls>
 						</h3>
 				</c:if>
 				<c:forEach var="item" items="${fixedScheduleGuidedTours}"
@@ -390,7 +390,7 @@
 	</c:if>
 	<c:if test="${empty showAllFixDateGuide or showAllFixDateGuide == false}">
 		<div class="TabbedPanelsContentGroup">
-			<h2>Visits on request</h2>
+			<h2><wa:mls>Visits on request</wa:mls></h2>
 			<div class="Tabbe_Content_Group">
 				<c:if test="${showAllOnRequestGuide}">
 				<div class="tab_paging">
@@ -403,7 +403,7 @@
 					<c:set var="indexLetter" value="0" />
 					<c:if test="${empty onRequestGuidedTours}">
 						<h3>
-							No record founds
+							<wa:mls>No record founds</wa:mls>
 						</h3>
 					</c:if>
 					<c:forEach var="item" items="${onRequestGuidedTours}"

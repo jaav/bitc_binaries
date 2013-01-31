@@ -26,5 +26,8 @@
         <property name="contentType" type="string">
             <column name="content_type" length="50" />
         </property>
+        <many-to-one name="contentPropertyValue" class="com.wanabe.cms.hdata.ContentPropertyValue" fetch="select">
+        	<column name="valueId" ></column>
+        </many-to-one>
     </class>
 </hibernate-mapping>

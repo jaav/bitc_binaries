@@ -193,7 +193,7 @@
                     <!-- SEARCH RESULTS LIST : end -->
                     <c:if test="${group eq 'GUIDED_TOUR'}">
                     	<c:if test="${not empty fixedDateTours}">
-                    	<h2>Visits on fixed schedules</h2>
+                    	<h2><wa:mls>Visits on fixed schedules</wa:mls></h2>
                     	<c:forEach items="${fixedDateTours}" var="item" varStatus="loop">
                         <li>
                             <c:if test="${item.contentType ne 'ContentPress'}">
@@ -313,7 +313,7 @@
                     </c:forEach>
                     </c:if>
                     	<c:if test="${not empty onrequestTours}">
-                    	<h2>Visits on request</h2>
+                    	<h2><wa:mls>Visits on request</wa:mls></h2>
                     	<c:forEach items="${onrequestTours}" var="item" varStatus="loop">
                         <li>
                             <c:if test="${item.contentType ne 'ContentPress'}">

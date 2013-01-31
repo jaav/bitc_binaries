@@ -195,7 +195,6 @@
             <p><strong><wa:mls>Website :</wa:mls></strong> <br/>
                 <a href="${bean.URLWebsite}" target="_blank"><span class="cutEmail">${bean.URLWebsite}</span></a></p>
         </c:if>
-
         <c:if test="${contentType ne 'ContentArticle'  && contentGroupType ne 'ContentProduct' and not empty bean.latitude and bean.latitude != 0.0 and not empty bean.longitude and bean.longitude != 0.0}">
             <p><a href="javascript:callLetter('a', 'map')"
                   class="btn_map_view"><span><wa:mls>View on the map</wa:mls></span></a></p>
@@ -371,7 +370,6 @@
     <img src="${bean.mainBigImage}" alt="${bean.mainTitle}" height="200" align="left" class="m22" class="photo">
 </c:if>
 
-
 <div class="clr"></div>
 
 <div id="main_information">
@@ -432,6 +430,10 @@
                     <a href="${bean.URLWebsite}" target="_blank"><span class="cutEmail">${bean.URLWebsite}</span></a>
                 </p>
             </c:if>
+            <c:if test="${bean.group eq 'GUIDED_TOUR'}">
+							<p><strong><wa:mls>Guided Languages :</wa:mls></strong> <br/>
+				      ${bean.guidedLanguagesName}
+						</c:if>
             <c:if test="${bean.group eq 'MICE'}">
                 <c:choose>
                     <c:when test="${bean.attachedContentVenue != null}">

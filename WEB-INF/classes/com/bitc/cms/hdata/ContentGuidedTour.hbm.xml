@@ -184,5 +184,11 @@
             </map-key> 
             <one-to-many class="com.bitc.cms.hdata.ContentGuidedTourClt" />
         </map>
+        <set name="eventLanguageLinkPropertyValues" inverse="true" cascade="all" order-by="value_name">
+        	<key>
+                <column name="contentid" not-null="true" />
+            </key>
+            <one-to-many class="com.wanabe.cms.hdata.ContentLinkPropertyvalueContent" />
+        </set>
     </class>
 </hibernate-mapping>
