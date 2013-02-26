@@ -72,6 +72,7 @@ function tripPlannerLightBox(data) {
         </c:if>
         <c:if test="${walkFound eq true}"><li class="<c:if test="${tabbedPanelsTab eq 'walk'}">TabbedPanelsTabSelected</c:if><c:if test="${tabbedPanelsTab ne 'walk'}">TabbedPanelsTab</c:if>"><a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/></wa:url>?contentType=ContentArticle&panel=walk&page=1#list"/><div><wa:mls>Walks</wa:mls></div></a></li></c:if>
         <c:if test="${shoppingFound eq true}"><li class="<c:if test="${tabbedPanelsTab eq 'shopping'}">TabbedPanelsTabSelected</c:if><c:if test="${tabbedPanelsTab ne 'shopping'}">TabbedPanelsTab</c:if>"><a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/></wa:url>?contentType=ContentPlace&panel=shopping&page=1#list"/><div><wa:mls>Shopping</wa:mls></div></a></li></c:if>
+        <c:if test="${packageFound eq true}">  <li class="<c:if test="${tabbedPanelsTab eq 'Package'}">TabbedPanelsTabSelected</c:if><c:if test="${tabbedPanelsTab ne 'Package'}">TabbedPanelsTab</c:if>"><a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/></wa:url>?contentType=ContentPlace&panel=Package&page=1#list"/><div><wa:mls>Package</wa:mls></div></a></li></c:if>
      </ul>
      <div class="Tabbe_Content_Group">
         
