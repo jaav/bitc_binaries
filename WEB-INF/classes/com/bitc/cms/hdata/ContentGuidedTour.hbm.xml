@@ -150,14 +150,14 @@
          <property name="svPitch" type="java.lang.Double">
             <column name="sv_pitch" precision="18" scale="14" />
         </property>
-          <property name="svZoom" type="java.lang.Double">
+         <property name="svZoom" type="java.lang.Double">
             <column name="sv_zoom" precision="18" scale="14" />
         </property>
         <property name="periodFromDate" type="timestamp">
-            <column name="period_from_date" length="19" not-null="true" />
+            <column name="period_from_date" length="19"/>
         </property>
         <property name="periodToDate" type="timestamp">
-            <column name="period_to_date" length="19" not-null="true" />
+            <column name="period_to_date" length="19"/>
         </property>
         <property name="price" type="string">
             <column name="price" length="200" />

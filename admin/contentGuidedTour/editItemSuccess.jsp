@@ -190,7 +190,7 @@ isELIgnored ="false"
 						<div class="textfieldInvalidFormatMsg"><img src="${context}/static/admin/img/erreur.gif"/><wa:mls>Valeur invalide  : dd/MM/yyyy</wa:mls></div>
 	            		
 	            		<script type="text/javascript">
-							var v_periodFromDate = new Spry.Widget.ValidationTextField("v_periodFromDate","date", {format:"dd/mm/yyyy",isRequired:true,validateOn:["blur","change"]});
+							var v_periodFromDate = new Spry.Widget.ValidationTextField("v_periodFromDate","date", {format:"dd/mm/yyyy",isRequired:false,validateOn:["blur","change"]});
 						</script>
 					</div>
 					<div class="bgGrey" id="v_periodToDate">	
@@ -199,7 +199,7 @@ isELIgnored ="false"
 						<div class="textfieldRequiredMsg"><img src="${context}/static/admin/img/erreur.gif"/><wa:mls>Ce champ est obligatoire</wa:mls></div>
 						<div class="textfieldInvalidFormatMsg"><img src="${context}/static/admin/img/erreur.gif"/><wa:mls>Valeur invalide  : dd/MM/yyyy</wa:mls></div>
 						<script type="text/javascript">
-							var v_periodToDate = new Spry.Widget.ValidationTextField("v_periodToDate","date", {format:"dd/mm/yyyy",isRequired:true,validateOn:["blur","change"]});
+							var v_periodToDate = new Spry.Widget.ValidationTextField("v_periodToDate","date", {format:"dd/mm/yyyy",isRequired:false,validateOn:["blur","change"]});
 						</script>
 					</div>
 					<div class="bgWhite" id="v_numParticipation">
