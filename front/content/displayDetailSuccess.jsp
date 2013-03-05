@@ -539,6 +539,14 @@
 <div class="clr"></div>
 
 
+	<c:if test="${boxOffice ne null && boxOffice eq true}">
+	 <div style="position: relative;float: left;">
+	  <a class="btn_buy_ticket" href="javascript:forwardToBoxofficeFrame('${bean.officeBookingURL}')">
+	       </a>
+	 </div>
+	</c:if>
+
+
 </c:otherwise>
 
 </c:choose>
@@ -561,12 +569,6 @@
     <c:forEach items="${images}" var="image">
         <img src="${image.sourceUrl}" alt="${wa:nullFree2(image.sourceDescription,bean.mainTitle)}"/>
     </c:forEach>
-</c:if>
-<c:if test="${boxOffice ne null && boxOffice eq true}">
- <div style="position: relative;float: left;">
- 	<a class="btn_buy_ticket" href="javascript:forwardToBoxofficeFrame('${bean.officeBookingURL}')">
-       </a>
- </div>
 </c:if>
 <!--boxotherinformation:end-->
 <!--tab:start-->

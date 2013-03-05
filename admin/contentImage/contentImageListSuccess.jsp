@@ -7,6 +7,7 @@ isELIgnored ="false"
 <%@ taglib prefix="wa" uri="WanabeTags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <div id="mainContent">
 <div id="toolBox">
 	<div class="content" id="actions">
@@ -139,7 +140,16 @@ isELIgnored ="false"
 				<tr class="line${((loop.count+1)%2)+1}">
 					<td class="center checkbox"><input type="checkbox" value="${item.contentImageId}"></td>
 					<td class="center contentImageId"><a href="${context}/${site}/contentImage/editItem/id/${item.contentImageId}.do" title="<wa:mls>Edit id</wa:mls>">${item.contentImageId}</a></td>
-					<td class="center image"><a href="${item.url}" target="image"><img src="${item.url}" <c:if test="${item.width > 200}"> width="200"</c:if> /></a></td>
+
+					<td class="center image">
+						<c:choose>
+							<c:when test="${fn:endsWith(item.url, '.pdf')}">
+								PDF
+							</c:when>
+							<c:otherwise>
+								<a href="${item.url}" target="image"><img src="${item.url}" <c:if test="${item.width > 200}"> width="200"</c:if> /></a></td>
+							</c:otherwise>
+						</c:choose>
 					<td class="left name">${item.name}&nbsp;</td>
 					<td class="center createdOn"><fmt:formatDate pattern="dd/MM/yyyy hh:mm" value="${item.createdOn}"/>&nbsp;</td>
 					<td class="left url">
