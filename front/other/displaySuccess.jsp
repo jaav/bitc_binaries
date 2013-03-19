@@ -231,7 +231,7 @@ isELIgnored ="false"
           <td width="600" height="1" style="background-color:#cdcdcd;"></td>
         </tr>
         <tr>
-          <td width="600" height="30" align="center" style="background-color:#323232; font-family:Verdana, Geneva, sans-serif; font-size:11px; color:#958E88; line-height:16px;">© ${currentYear} - VISITBRUSSELS - All rights reserved - Powered by <a href="http://www.wanabe.eu">Wanabe</a></td>
+          <td width="600" height="30" align="center" style="background-color:#323232; font-family:Verdana, Geneva, sans-serif; font-size:11px; color:#958E88; line-height:16px;">© ${currentYear} - VISITBRUSSELS - All rights reserved - <a href="/bitc/front/content/displayDetail/group/CONTENT/id/14372.do">Privacy Policy</a></td>
         </tr>
       </table>
     </td>

@@ -192,6 +192,17 @@ isELIgnored ="false"
                         <wa:param name="orderBy" value="unit" />
                     </wa:link>
                     </td>
+				<td class="center actions">
+        <wa:link URI="${URI}" allParams="true">
+            <wa:mls>Actions</wa:mls>
+            <wa:exceptParam name="page"/>
+            <wa:param name="page" value="1" />
+            <wa:exceptParam name="orderDir"/>
+            <wa:param name="orderDir" value="${orderDir}" />
+            <wa:exceptParam name="orderBy"/>
+            <wa:param name="orderBy" value="unit" />
+        </wa:link>
+        </td>
 			</tr>
 			<c:forEach var="item" items="${list}" varStatus="loop">
 				<tr class="line${((loop.count+1)%2)+1}">
@@ -209,6 +220,7 @@ isELIgnored ="false"
 					<td class="center quantity">${item.quantity}&nbsp;</td>
 					<td class="center createdOn"><fmt:formatDate pattern="dd/MM/yyyy hh:mm" value="${item.createdOn}"/>&nbsp;</td>
                     <td class="center unit">${item.unit}&nbsp;</td>
+					<td class="center action"><a href="${context}/${site}/esOrderLine/showVoucher/id/${item.orderLineId}.do" target="_blank">Show voucher</a></td>
 				</tr>
 			</c:forEach>
 		</table>

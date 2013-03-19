@@ -6,7 +6,7 @@
 	<context-param>
 		<param-name>configfile</param-name> 
 	 	<!--<param-value>c:/htdocs/configs/Bitc_V2/application.cfg</param-value>  -->
-		 <param-value>/home/tho/Documents/SourceCode/bitc_config/application.cfg</param-value>
+		 <param-value>/home/tho/sourcecode/bitc_config/application.cfg</param-value>
 
 	</context-param>
 	<context-param>
@@ -17,7 +17,7 @@
 	<context-param>
 	  <param-name>configdir</param-name> 
 	 <!--<param-value>c:/htdocs/configs/Bitc_V2/</param-value>-->
-      <param-value>/home/tho/Documents/SourceCode/bitc_config/</param-value>
+      <param-value>/home/tho/sourcecode/bitc_config/</param-value>
 	</context-param>
   	<context-param>
 		<param-name>configdir_alt</param-name>

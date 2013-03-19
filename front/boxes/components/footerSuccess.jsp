@@ -16,7 +16,7 @@ isELIgnored ="false"
     <div id="logo_vlaams_community"><img src="${staticSite}/img/ml/logo_vlaams_community.png" alt="<wa:mls>Vlaams community</wa:mls>"/></div>
     <div id="logo_bitc"></div>
     <hr/>
-    <div id="site_info">© ${currentYear} - VISITBRUSSELS - All rights reserved - Powered by <a href="http://www.wanabe.eu">Wanabe</a></div>
+    <div id="site_info">© ${currentYear} - VISITBRUSSELS - All rights reserved - <a href="/bitc/front/content/displayDetail/group/CONTENT/id/14372.do">Privacy Policy</a></div>
     <ul id="footer_nav_sub">
     	<c:forEach items="${footerNav.children}" var="item" varStatus="loop">
     	<c:if test ="${item.userObject.visible}" >

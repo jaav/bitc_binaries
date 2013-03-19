@@ -10,7 +10,7 @@ isELIgnored ="false"
 <div class="nav_number">
 	    <form name="idform${waCompParam.navId}"> 
 		    <c:if test="${ (page - 1) ne 0 }">
-		        <a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="s_periodToDate"/><wa:exceptParam name="s_periodFromDate"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/></wa:url>?page=${page - 1}<c:if test="${not empty waParam.contentType}">&contentType=${waParam.contentType}&panel=${waParam.panel}</c:if><c:if test="${not empty waParam.orderBy}">&orderBy=${waParam.orderBy}&asc=${waParam.asc}</c:if><c:if test="${not empty waParam.s_periodFromDate}">&s_periodFromDate=${s_periodFromDate }</c:if><c:if test="${not empty waParam.s_periodToDate}">&s_periodToDate=${s_periodToDate}</c:if>" class="arrow_left">
+		        <a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="s_periodToDate"/><wa:exceptParam name="s_periodFromDate"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/><wa:param name="idCongressiste" value="${idCongressiste}"/></wa:url>?page=${page - 1}<c:if test="${not empty waParam.contentType}">&contentType=${waParam.contentType}&panel=${waParam.panel}</c:if><c:if test="${not empty waParam.orderBy}">&orderBy=${waParam.orderBy}&asc=${waParam.asc}</c:if><c:if test="${not empty waParam.s_periodFromDate}">&s_periodFromDate=${s_periodFromDate }</c:if><c:if test="${not empty waParam.s_periodToDate}">&s_periodToDate=${s_periodToDate}</c:if>" class="arrow_left">
 			        <img src="${staticSite}/img/ml/btn_arrow_left.jpg" alt="<wa:mls>previous</wa:mls>"/>
 	            </a>
 	        </c:if>
@@ -33,7 +33,7 @@ isELIgnored ="false"
 		  	</c:if>
 		   <wa:mls>of</wa:mls> ${lastPage} </div>
 	      <c:if test="${ (page + 1) le lastPage }"> 
-				<a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="s_periodToDate"/><wa:exceptParam name="s_periodFromDate"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/></wa:url>?page=${page + 1}<c:if test="${not empty waParam.contentType}">&contentType=${waParam.contentType}&panel=${waParam.panel}</c:if><c:if test="${not empty waParam.orderBy}">&orderBy=${waParam.orderBy}&asc=${waParam.asc}</c:if><c:if test="${not empty waParam.s_periodFromDate}">&s_periodFromDate=${s_periodFromDate }</c:if><c:if test="${not empty waParam.s_periodToDate}">&s_periodToDate=${s_periodToDate}</c:if>" class="arrow_right">
+				<a href="<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="page"/><wa:exceptParam name="s_periodToDate"/><wa:exceptParam name="s_periodFromDate"/><wa:exceptParam name="clt"/><wa:exceptParam name="lg"/><wa:param name="clt" value="${culture}"/><wa:param name="idCongressiste" value="${idCongressiste}"/></wa:url>?page=${page + 1}<c:if test="${not empty waParam.contentType}">&contentType=${waParam.contentType}&panel=${waParam.panel}</c:if><c:if test="${not empty waParam.orderBy}">&orderBy=${waParam.orderBy}&asc=${waParam.asc}</c:if><c:if test="${not empty waParam.s_periodFromDate}">&s_periodFromDate=${s_periodFromDate }</c:if><c:if test="${not empty waParam.s_periodToDate}">&s_periodToDate=${s_periodToDate}</c:if>" class="arrow_right">
 			        <img src="${staticSite}/img/ml/btn_arrow_right.png" alt="<wa:mls>next</wa:mls>"/>
 	            </a>
 	      </c:if>
