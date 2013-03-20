@@ -558,7 +558,7 @@ path='${context}/${site}/${module}';
 idName='${bean.id}';
 
 document.detailForm.f_group.id='f_group';
-$('f_group').addGuidedTour('change',function(){ 
+$('f_group').addEvent('change',function(){
 	var myRequest = new Request({
 		url : '${context}/${site}/ajax/properties.do?type=article&realType=ContentGuidedTour',
 		method :'get',

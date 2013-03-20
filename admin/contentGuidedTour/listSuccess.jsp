@@ -526,7 +526,7 @@ idName='id';
 addParams='?group=${waParam.group}'
 
 document.searchForm.s_group.id='s_group';
-$('s_group').addGuidedTour('change',function(){
+$('s_group').addEvent('change',function(){
 	document.searchForm.submit();
 });
 
