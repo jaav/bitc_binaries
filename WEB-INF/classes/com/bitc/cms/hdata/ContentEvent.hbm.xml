@@ -171,6 +171,9 @@
         <property name="highlight" type="boolean">
             <column name="highlight" not-null="true" />
         </property>
+        <property name="boxofficeId" type="java.lang.Integer">
+			<column name="boxoffice_id"/>        
+        </property>
         <map name="contentEventClts" inverse="true" cascade="all" >
             <key>
                 <column name="content_id" not-null="true" />
