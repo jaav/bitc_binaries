@@ -6,7 +6,7 @@
 	<context-param>
 		<param-name>configfile</param-name> 
 	 	<!--<param-value>c:/htdocs/configs/Bitc_V2/application.cfg</param-value>  -->
-        <param-value>/vol/configs/Bitc/application.cfg</param-value>
+        <param-value>/home/tho/sourcecode/bitc_config/application.cfg</param-value>
 
 	</context-param>
 	<context-param>
@@ -17,7 +17,7 @@
 	<context-param>
 	  <param-name>configdir</param-name> 
 	 <!--<param-value>c:/htdocs/configs/Bitc_V2/</param-value>-->
-      <param-value>/vol/configs/Bitc/</param-value>
+      <param-value>/home/tho/sourcecode/bitc_config/</param-value>
 	</context-param>
   	<context-param>
 		<param-name>configdir_alt</param-name>
@@ -130,17 +130,19 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	<resource-ref>
-		<res-ref-name>jdbc/dev03_bitc</res-ref-name>
-		<res-type>javax.sql.DataSource</res-type>
-		<res-auth>CONTAINER</res-auth>
-		<res-sharing-scope>Unshareable</res-sharing-scope>
-	</resource-ref>
-	<resource-ref>
-		<res-ref-name>jdbc/aws01_bitc</res-ref-name>
-		<res-type>javax.sql.DataSource</res-type>
-		<res-auth>CONTAINER</res-auth>
-		<res-sharing-scope>Unshareable</res-sharing-scope>
-	</resource-ref>	
+
+    <resource-ref>
+   		<res-ref-name>jdbc/devbitc</res-ref-name>
+   		<res-type>javax.sql.DataSource</res-type>
+   		<res-auth>CONTAINER</res-auth>
+
+   	</resource-ref>
+
+   	<!--<resource-ref>
+   		<res-ref-name>jdbc/bitc</res-ref-name>
+   		<res-type>javax.sql.DataSource</res-type>
+   		<res-auth>CONTAINER</res-auth>
+
+   	</resource-ref>-->
 
 </web-app>

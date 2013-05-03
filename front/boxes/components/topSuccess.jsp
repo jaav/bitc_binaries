@@ -77,6 +77,7 @@ isELIgnored ="false"
 					<wa:param name="clt" value="BE_${otherLanguagesItem}"/>
 					</wa:url><c:if test="${not empty otherParam}">?${otherParam}</c:if>">${fn:toUpperCase(otherLanguagesItem)}</a>
 			</c:forEach>
+	    <a class="btn_lang" href="/bitc/static/front/pdf/cn_guide.pdf">CN</a>
 		</div>
 		
 		
