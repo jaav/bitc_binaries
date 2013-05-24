@@ -11,9 +11,19 @@ isELIgnored ="false"
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="Content-Language" content="${culture.language}" />
-	<c:if test="${meta != null && meta.metaDescription ne ''}">
+	<!--<c:if test="${meta != null && meta.metaDescription ne ''}">
 		<meta name="Description" content="${meta.metaDescription}" />
-	</c:if>
+	</c:if>-->
+	
+	<c:choose>
+		<c:when test=test="${meta != null && meta.metaDescription ne ''}">
+			<meta name="Description" content="${meta.metaDescription}" />
+		</c:when>
+		<c:otherwise>
+			<meta name="Description" content="${fn:replace(wa:html2txt(og_description),varTmp,'&quot;')}"/>
+		</c:otherwise>
+	</c:choose>
+	
 	<c:if test="${meta != null && meta.metaKeyword ne ''}">
 		<meta name="Keywords" content="${meta.metaKeyword}" /> 
 	</c:if>
@@ -62,6 +72,7 @@ isELIgnored ="false"
 		<c:set var="varTmp" value="\"" />
 		<meta property="og:description" content="${fn:replace(wa:html2txt(og_description),varTmp,'&quot;')}"/>
 		<meta property="fb:app_id" content="135475609811744" />
+		
 		<link rel="image_src" href="${og_image}" />
 	</c:if>
 
