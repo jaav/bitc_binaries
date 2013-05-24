@@ -16,7 +16,7 @@ isELIgnored ="false"
 	</c:if>-->
 	
 	<c:choose>
-		<c:when test=test="${meta != null && meta.metaDescription ne ''}">
+		<c:when test="${meta != null && meta.metaDescription ne ''}">
 			<meta name="Description" content="${meta.metaDescription}" />
 		</c:when>
 		<c:otherwise>
