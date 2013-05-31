@@ -11,9 +11,6 @@ isELIgnored ="false"
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="Content-Language" content="${culture.language}" />
-	<!--<c:if test="${meta != null && meta.metaDescription ne ''}">
-		<meta name="Description" content="${meta.metaDescription}" />
-	</c:if>-->
 	
 	<c:choose>
 		<c:when test="${meta != null && meta.metaDescription ne ''}">
