@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+.checkboxRequiredState .checkboxRequiredMsg, .checkboxMaxSelectionsState .checkboxMaxSelectionsMsg, .selectRequiredState .selectRequiredMsg, .textareaRequiredState .textareaRequiredMsg, .textareaMinCharsState .textareaMinCharsMsg, .textareaMaxCharsState .textareaMaxCharsMsg, .textfieldRequiredState .textfieldRequiredMsg, .textfieldInvalidFormatState .textfieldInvalidFormatMsg, .radioRequiredState .radioRequiredMsg, .radioValidState .radioRequiredMsg{
+	border:0px;
+	padding-left:16px;
+	padding-top:-2px;
+	background-image:url(../img/ml/form/erreur.gif);
+	background-repeat:no-repeat;
+}
+.validMsg{
+	width:15px;
+	height:16px;
+	margin-left:3px;
+	display:none;
+}
+.textfieldValidState .validMsg, .textareaValidState .validMsg, .selectValidState .validMsg, .checkboxValidState .validMsg, .radioValidState .validMsg, .radioRequiredMsg .validMsg{
+	display:inline;
+}

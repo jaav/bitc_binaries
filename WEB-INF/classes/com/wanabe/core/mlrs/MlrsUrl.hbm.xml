@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-nov.-2008 11:56:08 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.core.mlrs.MlrsUrl" table="mlrs_url">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="urlInternal" type="string">
+            <column name="url_internal" length="600" />
+        </property>
+        <property name="urlExternal" type="string">
+            <column name="url_external" length="600" />
+        </property>
+        <property name="discriminant" type="string">
+            <column name="discriminant" length="4" not-null="true" />
+        </property>
+        <property name="isCurrenturl" type="java.lang.Boolean">
+            <column name="is_currenturl" />
+        </property>
+        <property name="isSitemap" type="java.lang.Boolean">
+            <column name="is_sitemap" />
+        </property>
+        <property name="frequence" type="string">
+            <column name="frequence" length="10" />
+        </property>
+        <property name="priority" type="java.lang.Float">
+            <column name="priority" precision="3" />
+        </property>
+        <property name="tmp" type="string">
+            <column name="tmp" length="600" />
+        </property>
+        <property name="modifiedon" type="timestamp">
+            <column name="modifiedon" length="19" />
+        </property>
+        <property name="createdon" type="timestamp">
+            <column name="createdon" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

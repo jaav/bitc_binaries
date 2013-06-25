@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 27-d?c.-2007 9:56:39 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.wanabe.core.security.AcxLog" table="ACX_LOG">
+        <id name="id" type="int">
+            <column name="ID" precision="9" scale="0" />
+            <generator class="identity" />
+<!--
+           <generator class="native">
+             	<param name="sequence">ACX_LOGID1_SEQ</param>
+            </generator>
+-->
+        </id>
+        <property name="userid" type="java.lang.Integer">
+            <column name="USERID" precision="9" scale="0" />
+        </property>
+        <property name="login" type="string">
+            <column name="LOGIN" length="80" />
+        </property>
+        <property name="uri" type="string">
+            <column name="URI" length="80" />
+        </property>
+        <property name="ressource" type="string">
+            <column name="RESSOURCE" length="20" />
+        </property>
+        <property name="right" type="string">
+            <column name="_RIGHT" length="20" />
+        </property>
+        <property name="ip" type="string">
+            <column name="IP" length="20" />
+        </property>
+        <property name="createdon">
+            <column name="CREATEDON" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-d?c.-2007 15:03:03 by Hibernate Tools 3.2.0.b9 -->
+<hibernate-mapping>
+    <class name="com.wanabe.core.security.AcxUriauthorization" table="ACX_URIAUTHORIZATION">
+        <id name="id" type="int">
+            <column name="ID" precision="9" scale="0" />
+            <generator class="identity" />
+<!--            
+           	<generator class="sequence">
+	       		<param name="sequence">ACX_URIAUTHORIZATIONID1_SEQ</param>
+            </generator>
+-->
+        </id>
+        <property name="uri" type="string">
+            <column name="URI" length="80" />
+        </property>
+        <property name="ressource" type="string">
+            <column name="RESSOURCE" length="20" />
+        </property>
+        <property name="right" type="string">
+            <column name="_RIGHT" length="20" />
+        </property>
+        <property name="loginpage" type="string">
+            <column name="LOGINPAGE" length="80" />
+        </property>
+        <property name="accessDeniedPage" type="string">
+            <column name="ACCESS_DENIED_PAGE" length="80" />
+        </property>
+    </class>
+</hibernate-mapping>
