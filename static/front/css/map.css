@@ -1,0 +1,17 @@
+#map_canvas_container{
+  position: relative;
+  width: 1030px;
+}
+#map_canvas{
+  width: 1030px;
+  height: 570px;
+}
+.well{
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  z-index: 999;
+}
+form select{
+  width:  150px;
+}
