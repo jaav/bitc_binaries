@@ -63,7 +63,7 @@ isELIgnored ="false"
 		$("ul#top_nav > li .level2").css("display", "none")
 	</script>
   	<!-- NEW TOP NAVIGATION : end -->
-	    <form id="f_search" action="${context}/${site}/search/display.do" method="get">
+	    <form id="f_search" action="${context}/${site}/search/display.do" method="get" >
 	      <input id="f_search_textfield" name="f_search_query" type="text" title="<wa:mls>Rechercher</wa:mls>"  />
 	      <input id="f_search_submit" name="f_search_submit" value="" type="submit" alt="<wa:mls>Rechercher</wa:mls>" />
 	    </form>
