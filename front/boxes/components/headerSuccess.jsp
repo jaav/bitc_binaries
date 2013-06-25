@@ -57,6 +57,7 @@ isELIgnored ="false"
 	<script type="text/javascript" src="${staticSite}/js/jquery.ui.datepicker-${culture.language}.js"></script>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="${staticSite}/js/video.js"></script>
+	<script type="text/javascript" src="${staticSite}/js/eshortcut.js"></script>
     <% //OG FACEBOOK %>
     <c:if test="${not empty waParam.group && not empty waParam.id}">
 		<meta property="og:title" content="${og_title}"/>

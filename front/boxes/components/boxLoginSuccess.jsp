@@ -36,6 +36,7 @@ function log_user() {
 
 function log_out_user() {
 	FB.logout(function(response) {
+        console.log(response.status);
 		window.location = '<wa:url URI="${site}/user/doLogout"></wa:url>' ;
 		});
 

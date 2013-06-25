@@ -36,10 +36,9 @@ function showModelPanel(url) {
 	     height:580,
 	     forceType: 'iframe',
 	     closeSelector: '.nyroModalClose', 
-	     url: '/bitc/map.jsp',
+	     url: url,
 	     closeButton: '<a href="#" class="nyroModalClose" id="closeBut"><img src="${static}/front/img/ml/close.png" alt="close" /></a>'
 	  	});
-
 }
 </script>
 <c:forEach items="${rightColumnList}" var="item">

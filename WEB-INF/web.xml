@@ -2,11 +2,11 @@
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app id="WebApp">	
 	<display-name>BITC</display-name>
-
+VAR.docroot.static
 	<context-param>
 		<param-name>configfile</param-name> 
 	 	<!--<param-value>c:/htdocs/configs/Bitc_V2/application.cfg</param-value>  -->
-        <param-value>/vol/configs/visitbrussels/application.cfg</param-value>
+        <param-value>/home/tho/sourcecode/bitc_config/application.cfg</param-value>
 
 	</context-param>
 	<context-param>
@@ -18,7 +18,7 @@
 	<context-param>
 	  <param-name>configdir</param-name> 
 	 <!--<param-value>c:/htdocs/configs/Bitc_V2/</param-value>-->
-      <param-value>/vol/configs/visitbrussels/</param-value>
+      <param-value>/home/tho/sourcecode/bitc_config/</param-value>
 	</context-param>
   	<context-param>
 		<param-name>configdir_alt</param-name>
@@ -46,6 +46,10 @@
 		<filter-class>com.wanabe.core.mlrs.MlrsFilter</filter-class>
 	</filter>
 	
+	<filter>
+		<filter-name>AgendabeFilter</filter-name>
+		<filter-class>com.bitc.controller.AgendabeFilter</filter-class>
+	</filter>
 	<filter>
 		<filter-name>ParseFilter</filter-name>
 		<filter-class>com.wanabe.core.controller.ParseFilter</filter-class>
@@ -78,6 +82,10 @@
 	</filter-mapping>
 	<filter-mapping>
 		<filter-name>SetCharacterEncodingFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AgendabeFilter</filter-name>
 		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
 	<filter-mapping>
@@ -146,13 +154,12 @@
 
     </resource-ref>
 
-   	<!--<resource-ref>
+   	<resource-ref>
    		<res-ref-name>jdbc/bitc</res-ref-name>
    		<res-type>javax.sql.DataSource</res-type>
    		<res-auth>CONTAINER</res-auth>
 
     </resource-ref>
 
-   	</resource-ref>-->
 
 </web-app>
