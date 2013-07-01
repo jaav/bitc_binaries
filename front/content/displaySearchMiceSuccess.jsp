@@ -195,7 +195,7 @@ function sortBy(newURI,group)
 		orderBy = "ranking";
 		asc = "1";
 	}
-	var uri = '<wa:url URI="${URI}"allParams="true"><wa:exceptParam name="orderBy"/><wa:exceptParam name="asc"/><wa:exceptParam name="page"/></wa:url>';
+	var uri = '<wa:url URI="${URI}" allParams="true"><wa:exceptParam name="orderBy"/><wa:exceptParam name="asc"/><wa:exceptParam name="page"/></wa:url>';
 	document.forms[0].action=uri+"&"+"orderBy="+orderBy+"&asc="+asc;
 	window.location.href= document.forms[0].action;
 }
