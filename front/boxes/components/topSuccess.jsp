@@ -104,10 +104,10 @@ isELIgnored ="false"
 				
 			</div>
 			 <c:if test="${nameCongressiste!=null }">
-            <div id="top_bg_topname" style="width:${taille}px; text-align:center" > 
+            <div id="top_bg_topname" style="width:${taille}px;" >
             
            
-            <span>sized for </span><span style ="color:${colorCongressiste};" class="congresstitle">${nameCongressiste}</span>
+            <span>sized for </span><span class="congresstitle">${nameCongressiste}</span>
 			 
             </div>
 			 <div id="top_bg_toplogo">

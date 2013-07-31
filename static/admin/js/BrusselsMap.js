@@ -162,10 +162,17 @@ function BrusselsMap(opts) {
 	}
 
 	function makeMarker(shop) {
-		var t_icon = new google.maps.MarkerImage(
-				'/bitc/images/pin-red-shadow-small.png', new google.maps.Size(
-						18, 22), new google.maps.Point(0, 0),
-				new google.maps.Point(3, 7));
+		var t_icon = null;
+		if(shop.type == 'ContentEvent') {
+			t_icon = new google.maps.MarkerImage(
+					'/bitc/images/pin-blue-shadow-small.png', new google.maps.Size(18, 22), new google.maps.Point(0, 0),
+					new google.maps.Point(3, 7));
+		} else if(shop.type == 'ContentPlace') {
+			t_icon = new google.maps.MarkerImage(
+					'/bitc/images/pin-red-shadow-small.png', new google.maps.Size(18, 22), new google.maps.Point(0, 0),
+					new google.maps.Point(3, 7));	
+		}
+		
 		var markerOptions = {
 			map : map,
 			position : new google.maps.LatLng(shop.latitude, shop.longitude),
@@ -194,9 +201,14 @@ function BrusselsMap(opts) {
 				+ "</strong><br/>" + "" + preparedInfo.address + "<br/>" + ""
 				+ preparedInfo.zipcode + ", " + preparedInfo.city + "<br/>"
 				+ "<strong>Tel:</strong>" + preparedInfo.type + "<br/>"
+				+ "<a>" + preparedInfo.detailURL + "</a>" + "<br/>"
 				+ "</div>"
 		infoWindow.setContent(infoContent);
 		infoWindow.open(map, marker);
+		
+		google.maps.event.addListener(infoWindow, 'click', function() {
+	        alert("htlle");
+	    });
 
 		activeMarker = marker;
 	}
