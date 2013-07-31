@@ -195,13 +195,14 @@ function BrusselsMap(opts) {
 		preparedInfo.tel = info.tel;
 		preparedInfo.city = getLocalizedText(info.city);
 		preparedInfo.open = getLocalizedText(info.open);
+		preparedInfo.id = info.id;
 		// this should be replaced by service
 
 		var infoContent = "<div>" + "<strong>" + preparedInfo.name
 				+ "</strong><br/>" + "" + preparedInfo.address + "<br/>" + ""
 				+ preparedInfo.zipcode + ", " + preparedInfo.city + "<br/>"
 				+ "<strong>Tel:</strong>" + preparedInfo.type + "<br/>"
-				+ "<a>" + preparedInfo.detailURL + "</a>" + "<br/>"
+				+ "<a href=\"/bitc/minisite/content/displayDetail/clt/BE_"+options.lang+"/name/monument/group/HERITAGE_PLACE/id/"+preparedInfo.info+".do"+ +"\">" + details + "</a>" + "<br/>"
 				+ "</div>"
 		infoWindow.setContent(infoContent);
 		infoWindow.open(map, marker);
