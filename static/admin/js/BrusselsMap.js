@@ -16,7 +16,7 @@ function BrusselsMap(opts) {
 		},
 		mapTypeId : google.maps.MapTypeId.ROADMAP, // Map Type SATTELITE,
 													// ROADMAP ....
-		mapZoom : 12, // Map Zoom
+		mapZoom : 10, // Map Zoom
 		renderInfoTemplateFunction : null, // function (dataToRender) { }
 		routingContainer : 'directionsPanel' // The id of the div element
 												// where routing steps should be
@@ -96,12 +96,12 @@ function BrusselsMap(opts) {
 	}
 
 	function init() {
-		options.jsonShopsPath = options.jsonShopsPath.replace('%lang%',
+		/*options.jsonShopsPath = options.jsonShopsPath.replace('%lang%',
 				options.lang);
 		options.jsonItemsPath = options.jsonItemsPath.replace('%lang%',
 				options.lang);
 		options.jsonCategoriesPath = options.jsonCategoriesPath.replace(
-				'%lang%', options.lang);
+				'%lang%', options.lang);*/
 
 		var mapOptions = {
 			zoom : options.mapZoom,
@@ -165,11 +165,11 @@ function BrusselsMap(opts) {
 		var t_icon = null;
 		if(shop.type == 'ContentEvent') {
 			t_icon = new google.maps.MarkerImage(
-					'/bitc/images/pin-blue-shadow-small.png', new google.maps.Size(18, 22), new google.maps.Point(0, 0),
+					'/bitc/images/green_pin.png', new google.maps.Size(24, 24), new google.maps.Point(0, 0),
 					new google.maps.Point(3, 7));
 		} else if(shop.type == 'ContentPlace') {
 			t_icon = new google.maps.MarkerImage(
-					'/bitc/images/pin-red-shadow-small.png', new google.maps.Size(18, 22), new google.maps.Point(0, 0),
+					'/bitc/images/pink_pin.png', new google.maps.Size(24, 24), new google.maps.Point(0, 0),
 					new google.maps.Point(3, 7));	
 		}
 		
@@ -241,9 +241,9 @@ $(function() {
 		// $("#loaderContainer").show();
 		// }, 0);
 
-		$.mbMap.bind('dataload', function() {
+		/*$.mbMap.bind('dataload', function() {
 			populateWithAll();
-		});
+		});*/
 	}
 
 	initMap();

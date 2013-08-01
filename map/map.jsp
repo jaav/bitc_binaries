@@ -1,3 +1,17 @@
+<%@ page
+        language="java"
+        contentType="text/html; charset=utf-8"
+        pageEncoding="utf-8"
+        isELIgnored="false"
+        %>
+
+<%@ taglib prefix="wa" uri="WanabeTags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="wabd" uri="BigDecimalUtilsTags" %>
+<%@ taglib prefix="wast" uri="StringToolsTags" %>
+
 <!doctype html>
 <html>
 <head>
@@ -18,15 +32,20 @@
 	});
 
 	window.globalMapSettings = {
-		categoriesOrder : [ "services", "food", "fuel", "payment" ],
-		jsonCategoriesPath : '/bitc/service/google_map/json/categories?title=hotel',
-		jsonItemsPath : '/bitc/service/google_map/json/items?title=hotel',
-		jsonShopsPath : '/bitc/service/google_map/json/locations?title=hotel',
+		jsonShopsPath : '/bitc/service/google_map/json/locations',
 		canvasElement : 'map_canvas', //The id of the canvas element (div) in which map should be rendered
 		lang : window.globalLang, //The language parameter to call your data on the Mobilosoft platform
-		mapZoom : 12, //The initial zoom factor the map will be shown in
+		mapZoom : 13, //The initial zoom factor the map will be shown in
 		routingContainer : 'directionsPanel' //The id of the div element where routing steps should be printed
 	};
+    <c:if test="${param['lat'] != null && param['lng'] != null}">
+    console.log(${param["lat"]});
+    window.globalMapSettings.mapCenter = {
+    			lat : ${param['lat']},
+    			lng : ${param['lng']}
+    		};
+    window.globalMapSettings.mapZoom = 18;
+    </c:if>
 </script>
 </head>
 <body>
@@ -43,26 +62,26 @@
 					</div>
 					<div class="control-group">
 						<select id="zipcode">
-							<option value="0">Everywhere</option>
-							<option value="1000">Brussels (1000)</option>
-							<option value="1010">Brussels (1010)</option>
-							<option value="1020">Brussels (1020)</option>
-							<option value="1030">Brussels (1030)</option>
-							<option value="1040">Brussels (1040)</option>
-							<option value="1050">Brussels (1050)</option>
-							<option value="1060">Brussels (1060)</option>
-							<option value="1070">Brussels (1070)</option>
-							<option value="1080">Brussels (1080)</option>
-							<option value="1090">Brussels (1090)</option>
-							<option value="1110">Brussels (1110)</option>
-							<option value="1120">Brussels (1120)</option>
-							<option value="1130">Brussels (1130)</option>
-							<option value="1140">Brussels (1140)</option>
-							<option value="1150">Brussels (1150)</option>
-							<option value="1160">Brussels (1160)</option>
-							<option value="1170">Brussels (1170)</option>
-							<option value="1180">Brussels (1180)</option>
-							<option value="1190">Brussels (1190)</option>
+							<option value="0"><wa:mls>Everywhere</wa:mls></option>
+							<option value="1000"><wa:mls>Brussels (1000)</wa:mls></option>
+							<option value="1010"><wa:mls>Brussels (1010)</wa:mls></option>
+							<option value="1020"><wa:mls>Brussels (1020)</wa:mls></option>
+							<option value="1030"><wa:mls>Brussels (1030)</wa:mls></option>
+							<option value="1040"><wa:mls>Brussels (1040)</wa:mls></option>
+							<option value="1050"><wa:mls>Brussels (1050)</wa:mls></option>
+							<option value="1060"><wa:mls>Brussels (1060)</wa:mls></option>
+							<option value="1070"><wa:mls>Brussels (1070)</wa:mls></option>
+							<option value="1080"><wa:mls>Brussels (1080)</wa:mls></option>
+							<option value="1090"><wa:mls>Brussels (1090)</wa:mls></option>
+							<option value="1110"><wa:mls>Brussels (1110)</wa:mls></option>
+							<option value="1120"><wa:mls>Brussels (1120)</wa:mls></option>
+							<option value="1130"><wa:mls>Brussels (1130)</wa:mls></option>
+							<option value="1140"><wa:mls>Brussels (1140)</wa:mls></option>
+							<option value="1150"><wa:mls>Brussels (1150)</wa:mls></option>
+							<option value="1160"><wa:mls>Brussels (1160)</wa:mls></option>
+							<option value="1170"><wa:mls>Brussels (1170)</wa:mls></option>
+							<option value="1180"><wa:mls>Brussels (1180)</wa:mls></option>
+							<option value="1190"><wa:mls>Brussels (1190)</wa:mls></option>
 						</select>
 					</div>
 					<div class="control-group">
