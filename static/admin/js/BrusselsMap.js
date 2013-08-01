@@ -197,12 +197,14 @@ function BrusselsMap(opts) {
 		preparedInfo.open = getLocalizedText(info.open);
 		preparedInfo.id = info.id;
 		// this should be replaced by service
+		if(preparedInfo.type == 'ContentEvent') preparedInfo.type = 'HERITAGE_EVENT';
+		else preparedInfo.type = 'HERITAGE_PLACE';
 
 		var infoContent = "<div>" + "<strong>" + preparedInfo.name
 				+ "</strong><br/>" + "" + preparedInfo.address + "<br/>" + ""
 				+ preparedInfo.zipcode + ", " + preparedInfo.city + "<br/>"
 				+ "<strong>Tel:</strong>" + preparedInfo.type + "<br/>"
-				+ "<a href=\"/bitc/minisite/content/displayDetail/clt/BE_"+options.lang+"/name/monument/group/HERITAGE_PLACE/id/"+preparedInfo.info+".do"+ +"\">" + details + "</a>" + "<br/>"
+				+ "<a href=\"/bitc/minisite/content/displayDetail/clt/BE_"+options.lang+"/name/monument/group/"+preparedInfo.type+"/id/"+preparedInfo.id+".do\" target=\"_top\">details</a> <br/>"
 				+ "</div>"
 		infoWindow.setContent(infoContent);
 		infoWindow.open(map, marker);
