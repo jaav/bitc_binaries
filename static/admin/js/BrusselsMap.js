@@ -191,9 +191,9 @@ function BrusselsMap(opts) {
 
 		preparedInfo.name = getLocalizedText(info.name);
 		preparedInfo.address = getLocalizedText(info.address);
+		preparedInfo.city = getLocalizedText(info.city);
 		preparedInfo.zipcode = info.zipcode;
 		preparedInfo.tel = info.tel;
-		preparedInfo.city = getLocalizedText(info.city);
 		preparedInfo.open = getLocalizedText(info.open);
 		preparedInfo.id = info.id;
 		// this should be replaced by service
@@ -202,9 +202,9 @@ function BrusselsMap(opts) {
 
 		var infoContent = "<div>" + "<strong>" + preparedInfo.name
 				+ "</strong><br/>" + "" + preparedInfo.address + "<br/>" + ""
-				+ preparedInfo.zipcode + ", " + preparedInfo.city + "<br/>"
-				+ "<strong>Tel:</strong>" + preparedInfo.type + "<br/>"
+				+ preparedInfo.zipcode + " " + preparedInfo.city + "<br/>"
 				+ "<a href=\"/bitc/minisite/content/displayDetail/clt/BE_"+options.lang+"/name/monument/group/"+preparedInfo.type+"/id/"+preparedInfo.id+".do\" target=\"_top\">details</a> <br/>"
+				+ "<img src=\""+preparedInfo.smallImage+"\" />"
 				+ "</div>"
 		infoWindow.setContent(infoContent);
 		infoWindow.open(map, marker);

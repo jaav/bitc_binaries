@@ -1,0 +1,78 @@
+/* BITC (visitbrussels.be) - FOR MINISITE ONLY  */
+/* ******************************************** */
+
+/* overwrite screen.css styles */
+body.minisite{  background: #7fd0ff;
+	background-image : url('/bitc/static/minisite/img/visitbrusselsweek/ml/background.jpg');
+}
+#content{
+	margin-top : 35px;
+	margin-bottom : 0;
+	padding-top : 10px;
+	padding-bottom : 25px;
+	/* background-color : #fff; */
+	background-image : url('/bitc/static/minisite/img/visitbrusselsweek/ml/content_bg.png');
+	background-repeat : repeat-y;
+}
+#loader{ display: none;}
+#collapse{ height: 83px;}
+#collapse_content{ height: 83px;}
+#btn_back{ float: right;}
+#expand_content { margin:0 auto; width:1200px; height:355px; position:relative; top: 35px; display:none}
+
+#ribbon_bottom{
+	background-color : #fff;
+}
+/* new styles */
+#mini_site_top{margin: 0 0 0 135px; width:930px;}
+	#mini_site_top img{margin : 0;}
+	#mini_site_top img.arrowsep{margin:-3px 0 0 0;}
+
+#mini_site_top h1, #title h1.title_h1{
+	position : absolute;
+	text-indent : -3000px;
+}
+
+.second_highlight_home h3{
+	height : 25px;
+	color : #fff;
+}
+
+div.book_stay{
+	background-color : #536579;
+	background-image : none;
+	padding : 10px 5px 10px 5px;
+}
+
+div.book_stay label{
+	color : #fff;
+}
+
+
+#mini_site_nav_ul { background:#536579; width: 248px; padding:5px 20px 10px 20px; font-family : Georgia, "Times new roman", serif; font-size: 16px; font-weight: normal; margin:35px 0 22px 0; border-bottom: 1px solid #dfdfdf;}
+	#mini_site_nav_ul li{background:transparent url(/bitc/static/minisite/img/visitbrusselsweek/ml/minisite_menu_bullet.png) no-repeat left 5px; padding:0 0 6px 20px; margin: 3px 0;}
+		#mini_site_nav_ul li a{
+			text-decoration:none;
+			color: #fff;
+			padding : 1px 3px 0 3px;
+		}
+		#mini_site_nav_ul li a:hover{
+			text-decoration : underline;
+		}
+	/*	
+	
+.title{
+    margin: -267px 0 0 135px !important;
+    position: absolute !important;
+    text-align: center;
+    width: 928px;     
+
+}
+
+.title_h1{
+    text-align: center;
+    width: 928px;   
+
+}
+*/
+		

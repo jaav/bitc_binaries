@@ -1,0 +1,412 @@
+/* BITC (visitbrussels.be) - FOR MINISITE ONLY  */
+/* ******************************************** */
+
+/*
+@font-face {
+    font-family: 'rosewoodfillpdh';
+    src: url('../fonts/rosewood_fill-webfont.eot');
+    src: url('../fonts/rosewood_fill-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/rosewood_fill-webfont.woff') format('woff'),
+         url('../fonts/rosewood_fill-webfont.ttf') format('truetype'),
+         url('../fonts/rosewood_fill-webfont.svg#rosewoodfill') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*/
+
+/* overwrite screen.css styles */
+body.minisite{
+/* background-color: #084797; */
+background-color: #464646;
+background-image : url('/bitc/static/minisite/img/eas/ml/background.png');
+background-repeat : repeat-x;
+/* background-position : center top; */
+color : #555;
+}
+
+a, a:link, a:active, a:visited {
+	color : #FFAE02;
+}
+
+.navi{
+	width:148px;
+}
+
+#content{
+	margin-top : 35px;
+	margin-bottom : 0;
+	padding-top : 10px;
+	padding-bottom : 25px;
+	/* background-color : #fff; */
+	background-image : url('/bitc/static/minisite/img/eas/ml/content_background.png');
+	background-repeat : repeat-y;
+	background-position : center;
+}
+
+#content h1{
+	font-family : NewsGothDmBTDemiVB, sans-serif;
+	font-size : 34px;
+	font-weight : normal;
+	text-transform : none;
+	letter-spacing : 1px;
+	/* color : #084797; */
+	color : #656565;
+	
+}
+
+#content h2{
+	font-family : NewsGothDmBTDemiVB, sans-serif;
+	font-size : 24px;
+	font-weight : normal;
+	text-transform : none;
+	letter-spacing : 1px;
+	color : #FFAE02;
+}
+
+#content h2 span.smaller{
+	font-size : 16px;
+}
+
+.first_highlight_home_slide p.dates{
+	float : none;
+	font-family : NewsGothDmBTDemiVB, sans-serif;
+	font-size : 25px;
+	font-weight : normal;
+	text-transform : none;
+	letter-spacing : 1px;
+	width : 100%;
+	color : #aaa;
+	margin-bottom : 15px;
+}
+
+.small{
+	font-size : 0.8em;
+	color : #999;
+}
+
+.small a{
+	color : #aaa;
+}
+
+#content h3{
+	font-family : NewsGothDmBTDemiVB, sans-serif;
+	font-size : 22px;
+	font-weight : normal;
+	text-transform : none;
+	color : #FFAE02;
+	letter-spacing : 1px;
+	margin-bottom : 10px;
+}
+
+#content h4{
+	font-family : NewsGothDmBTDemiVB, sans-serif;
+	font-size : 18px;
+	font-weight : normal;
+	text-transform : none;
+	color : #FFAE02;
+	letter-spacing : 1px;
+	margin-bottom : 10px;
+}
+
+
+#content_main h3{
+	font-family : NewsGothDmBTDemiVB, sans-serif;
+	font-size : 18px;
+	font-weight : bold;
+	text-transform : none;
+	color : #FFAE02;
+	margin : 0 0 10px 0;
+}
+
+#content div.first_highlight_home h2{
+	font-family : NewsGothDmBTDemiVB, sans-serif;
+	font-size : 35px;
+	font-weight : normal;
+	text-transform : none;
+	letter-spacing : 1px;
+	padding : 0 0 0 1px;
+	color : #FFAE02;
+	/* color : #70b8c0; */
+	margin : 0 0 0 0;
+}
+
+#content div.first_highlight_home h2 a{
+	color : #656565;
+}
+
+/* NO SLIDESHOW */
+/*
+div.first_highlight_home .scrollable{
+	 position : static; 
+	height : auto;
+	overflow : visible;
+}
+div.first_highlight_home .scrollable .items{
+	width : auto;
+	position : static;
+}
+
+div.first_highlight_home .first_highlight_home_slide{
+	float : none;
+	padding : 0;
+}
+*/
+div.first_highlight_home .first_highlight_home_slide img{
+	float : none;
+}
+
+div.first_highlight_home .first_highlight_home_slide div{
+	float : none !important;
+	width : auto !important;
+}
+
+.clear{
+	clear : both;
+}
+
+div#main_information, div.first_highlight_home{
+	font-size : 1.2em;
+}
+
+div#main_information ul.speakers-list{
+	list-style-type : none;
+}
+
+div#main_information ul.speakers-list li{
+	list-style : none;
+	display : block;
+	padding-bottom : 15px;
+	clear : left;
+}
+div#main_information ul.speakers-list li strong{
+	font-size : 1.1em;
+}
+
+div#main_information ul.speakers-list li img{
+	float : left;
+	margin-right : 10px;
+	margin-bottom : 15px;
+}
+
+div#main_information div.speakers{
+	color : #aaa;
+	padding-bottom : 10px;
+	font-size : 12px;
+	line-height : 11px:
+}
+
+div#main_information table.timetable td div.speakers a{
+	color : #aaa;
+}
+
+div#main_information table.timetable{
+	width : 100%;
+}
+
+div#main_information table.timetable td{
+	border-bottom : 1px dotted #eee;
+	padding : 5px 0 5px 0;
+	line-height : 20px;
+}
+
+div#main_information table.timetable td a{
+	color : #555;
+}
+
+div#main_information table.timetable td.time{
+	font-weight : bold;
+	width : 120px;
+	text-align : right;
+	padding-right : 15px;
+}
+
+
+/* --------- */
+
+#content div.first_highlight_home h2 a{
+	font-family : NewsGothDmBTDemiVB, sans-serif;
+	font-weight : normal;
+	color : #084797;
+	/* color : #70b8c0; */
+	text-decoration : none;
+}
+
+#content div.first_highlight_home h2 a:hover{
+	text-decoration : underline;
+	background-image : none;
+}
+
+#content div.first_highlight_home h3{
+	font-family : NewsGothDmBTDemiVB, sans-serif;
+	font-size : 18px;
+	font-weight : bold;
+	text-transform : none;
+	color : #FFAE02;
+	margin : 0 0 10px 0;
+}
+
+#content .partnerslinks{
+	font-size : 14px;
+	line-height : 20px;
+	padding-bottom : 30px;
+}
+
+#content .partnerslinks a{
+	text-decoration : none;
+	color : #51697F;
+}
+
+#content .partnerslinks a.color1{
+	color : #E50889;
+}
+
+#content .partnerslinks a:hover{
+	text-decoration : underline;
+}
+
+#content_main div.second_highlight_home h3{
+	font-family : NewsGothDmBTDemiVB, sans-serif;
+	font-size : 25px;
+	line-height : 30px;
+	font-weight : normal;
+	text-transform : none;
+	color : #fff;
+	margin-bottom : 6px;
+	display : block;
+	height : 30px;
+}
+
+#listComment{
+	margin-top : 25px;
+}
+
+div.second_highlight_home h3 a{
+	text-decoration : none;
+	color : #656565;
+	/* color : #70b8c0; */
+}
+
+div.second_highlight_home h3 a:hover{
+	text-decoration : underline;
+}
+
+
+#loader{ display: none;}
+#collapse{ height: 83px;}
+#collapse_content{ height: 83px;}
+#btn_back{ float: right;}
+#expand_content { margin:0 auto; width:1200px; height:355px; background: none; position:relative; top: 35px; display:none}
+
+#ribbon_bottom{
+	background-color : #fff;
+}
+
+div.second_highlight_home{
+	border-top : 6px solid #FFAE02;
+	height : auto;
+}
+
+a.btn_more_info{
+	height : 15px;
+	padding-top : 5px;
+	padding-bottom : 2px;
+	background-color : #FFAE02;
+	font-family : Georgia, "Times new roman", serif;
+	font-weight:bold;
+	color : #fff;
+	background-image : url('/bitc/static/minisite/img/eas/ml/more_btn_bg.png');
+	font-size : 13px;
+	line-height : 13px;
+	background-repeat : no-repeat;
+	background-position : 85px 4px;
+}
+a.btn_more_info:hover{
+	background-color : #FFAE02;
+	background-image : url('/bitc/static/minisite/img/eas/ml/more_btn_bg.png');
+	background-repeat : no-repeat;
+	background-position : 85px 4px;
+}
+
+/* new styles */
+#mini_site_top{margin: 0 0 0 135px; width:930px;}
+	#mini_site_top img{margin : 0;}
+	#mini_site_top img.arrowsep{margin:-3px 0 0 -1px;}
+#mini_site_top h1, #title h1.title_h1{
+		position : absolute;
+		text-indent : -3000px;
+}
+
+#mini_site_nav_ul { background:#404040 url(/bitc/static/minisite/img/eas/ml/menu_background.jpg) no-repeat left bottom; width: 248px; padding:5px 20px 10px 20px; font-family: Helvetica, Arial, sans-serif; font-size: 20px; margin:35px 0 22px 0; border-bottom: 1px solid #ddd;}
+	#mini_site_nav_ul li{background:transparent url(/bitc/static/minisite/img/eas/ml/bullet.png) no-repeat left 1px; padding:0 0 5px 30px; margin: 0 0 3px 0;}
+		#mini_site_nav_ul li a{ text-decoration:none; color: #ddd;}
+		#mini_site_nav_ul li a:hover{color: #fff;}
+		
+
+div.first_highlight_home div.navi a:hover{
+	border : 1px solid #6e85b2;
+}
+
+div.first_highlight_home div.navi a.active{
+	border : 1px solid #FFAE02;
+	background-color : #FFAE02;
+}
+
+/* Book your stay */
+
+div.book_stay{
+	background:#949fb7 url(/bitc/static/minisite/img/eas/ml/menu_background.jpg) no-repeat left bottom;
+	padding-bottom : 10px;
+}
+
+div.book_stay label{
+	color : #fff;
+}
+
+/* Agenda */
+
+div#agenda{
+	background:#949fb7 url(/bitc/static/minisite/img/eas/ml/menu_background.jpg) no-repeat left bottom;
+}
+div#agenda .ui-datepicker{
+	background : none;
+}
+div#agenda .ui-datepicker-title{
+	color : #242424;
+}
+div#agenda table.ui-datepicker-calendar th{
+	color : #242424;
+}
+div#agenda .ui-state-default{
+	color : #aaa;
+}
+div#agenda .ui-state-active{
+	background-color : #eee;
+	color : #939fb7;
+}
+div#agenda .ui-state-hover{
+	background-color : #555;
+}
+
+/* Shop Article */
+
+div.shop_article{
+	width :190px;
+	float : left;
+	margin : 0 15px 15px 0;
+	text-align : center;
+}
+.title{
+    margin: -267px 0 0 135px !important;
+    position: absolute !important;
+    text-align: center;
+    width: 928px;     
+
+}
+
+.title_h1{
+    text-align: center;
+    width: 928px;   
+
+}
+

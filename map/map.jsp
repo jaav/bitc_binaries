@@ -16,6 +16,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 <title>Brussels Interactive Map</title>
@@ -56,8 +57,8 @@
 				<form class="form-horizontal">
 					<div class="control-group">
 						<label class="radio"> <input type="radio" name="placeType" id="all" value="all" checked> Show all
-						</label> <label class="radio"> <input type="radio" name="placeType" id="place" value="ContentPlace"> Show places
-						</label> <label class="radio"> <input type="radio" name="placeType" id="event" value="ContentEvent"> Show events
+						</label> <label class="radio h_places"> <input type="radio" name="placeType" id="place" value="ContentPlace"> Show places
+						</label> <label class="radio h_events"> <input type="radio" name="placeType" id="event" value="ContentEvent"> Show events
 						</label>
 					</div>
 					<div class="control-group">

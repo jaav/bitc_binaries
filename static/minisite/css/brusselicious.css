@@ -1,0 +1,72 @@
+/* BITC (visitbrussels.be) - FOR MINISITE ONLY  */
+/* ******************************************** */
+
+/* overwrite screen.css styles */
+body.minisite{  background: #fff;
+	background-image : url('/bitc/static/minisite/img/brusselicious/ml/background_brusselicious_2.png');
+	background-repeat :repeat-x;
+	background-position : top;
+}
+#content{
+	margin-top : 35px;
+	margin-bottom : 0;
+	padding-top : 10px;
+	padding-bottom : 25px;
+	/* background-color : #fff; */
+	background-image : url('/bitc/static/minisite/img/brusselicious/ml/content_background_6.png');
+	background-repeat : repeat-y;
+}
+#loader{ display: none;}
+#collapse{ height: 83px;}
+#collapse_content{ height: 83px;}
+#btn_back{ float: right;}
+#expand_content { margin:0 auto; width:1200px; height:355px; position:relative; top: 35px; display:none}
+
+#ribbon_bottom{
+	background-color : #fff;
+}
+/* new styles */
+#mini_site_top{margin: 0 0 0 135px; width:930px;}
+	#mini_site_top img{margin : 0;}
+	#mini_site_top img.arrowsep{margin:-3px 0 0 0;}
+
+#mini_site_top h1, #title h1.title_h1{
+	position : absolute;
+	text-indent : -3000px;
+}
+
+.second_highlight_home h3{
+	height : 25px;
+	color : #fff;
+}
+
+
+#mini_site_nav_ul { background:#f1ebe3; width: 248px; padding:5px 20px 10px 20px; font-family : Georgia, "Times new roman", serif; font-size: 14px; font-weight: bold; margin:35px 0 22px 0; border-bottom: 1px solid #dfdfdf;}
+	#mini_site_nav_ul li{background:transparent url(/bitc/static/minisite/img/brusselicious/ml/minisite_menu_bullet.png) no-repeat left 3px; padding:0 0 6px 20px; margin: 3px 0;}
+		#mini_site_nav_ul li a{
+			text-decoration:none;
+			text-transform:uppercase;
+			color: #71381b;
+			padding : 1px 3px 0 3px;
+		}
+		#mini_site_nav_ul li a:hover{
+			background-color: #71381b;
+			color : #ccc;
+		}
+	/*	
+	
+.title{
+    margin: -267px 0 0 135px !important;
+    position: absolute !important;
+    text-align: center;
+    width: 928px;     
+
+}
+
+.title_h1{
+    text-align: center;
+    width: 928px;   
+
+}
+*/
+		

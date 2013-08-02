@@ -1,0 +1,214 @@
+/* BITC (visitbrussels.be) - FOR MINISITE ONLY  */
+/* ******************************************** */
+
+/* overwrite screen.css styles */
+body.minisite{   background: #05060a; 
+background-image : url('/bitc/static/minisite/img/carolusfestival/ml/background.jpg');
+}
+}
+body.minisite div, body.minisite p{
+	font-family : Georgia, serif;
+	color : #555;
+}
+#content{
+	margin-top : 35px;
+	margin-bottom : 0;
+	padding-top : 10px;
+	padding-bottom : 25px;
+	/* background-color : #fff; */
+	background-image : url('/bitc/static/minisite/img/carolusfestival/ml/content_bg.png');
+	background-repeat : repeat-y;
+	background-position : center;
+}
+#loader{ display: none;}
+#collapse{ height: 83px;}
+#collapse_content{ height: 83px;}
+#btn_back{ float: right;}
+#expand_content { margin:0 auto; width:1200px; height:355px; position:relative; top: 35px; display:none}
+
+#ribbon_bottom{
+	background-color : #fff;
+}
+
+div.first_highlight_home{
+	margin-top : -15px;
+}
+
+h1{
+	font-family : Georgia, serif;
+	font-size : 27px;
+	font-weight : none;
+	text-transform : uppercase;
+	color : #05060a;
+}
+
+h2{
+	font-family : Georgia, serif;
+	font-size : 24px;
+	font-weight : none;
+	text-transform : uppercase;
+	color : #05060a;
+}
+
+h3{
+	font-family : Georgia, serif;
+	font-size : 14px;
+	font-weight : none;
+	text-transform : uppercase;
+	color : #05060a;
+	margin-bottom : 10px;
+}
+
+div.first_highlight_home h2{
+	font-family : Georgia, serif;
+	font-size : 24px;
+	font-weight : none;
+	text-transform : uppercase;
+	color : #05060a;
+}
+
+div.first_highlight_home h2 a{
+	font-weight : none;
+	color : #05060a;
+	text-decoration : none;
+}
+
+div.first_highlight_home h2 a:hover{
+	text-decoration : underline;
+	background-image : none;
+}
+
+div.first_highlight_home h3{
+	font-family : Georgia, serif;
+	font-size : 14px;
+	font-weight : none;
+	text-transform : uppercase;
+	color : #05060a;
+	margin-bottom : 10px;
+}
+
+div.first_highlight_home div.navi a:hover{
+	background-color : #b40a0a;
+	border : 1px solid #05060a;
+	font-family : Georgia, serif;
+}
+
+div.first_highlight_home div.navi a.active{
+	background-color : #b40a0a;
+	border : 1px solid #05060a;
+	font-family : Georgia, serif; 
+}
+
+a.btn_more_info{
+	height : 15px;
+	padding-top : 3px;
+	padding-bottom : 4px;
+	background-color : #b40a0a;
+	border : 1px solid #05060a;
+	font-family : Georgia, serif;
+	color : #fff;
+	background-image : url(/bitc/static/minisite/img/carolusfestival/ml/more_info_bg.png);
+	font-size : 12px;
+	background-repeat : no-repeat;
+	background-position : 75px 3px;
+}
+a.btn_more_info:hover{
+	background-color : #b40a0a;
+	border : 1px solid #999;
+	background-image : url(/bitc/static/minisite/img/carolusfestival/ml/more_info_bg.png);
+	background-repeat : no-repeat;
+	background-position : 75px 3px;
+}
+
+div.second_highlight_home{
+	border-top : 4px solid #b40a0a;
+}
+
+div.second_highlight_home h3{
+	font-family : Georgia, serif;
+	font-size : 14px;
+	font-weight : none;
+	text-transform : uppercase;
+	color : #05060a;
+	margin-bottom : 10px;
+}
+
+div.second_highlight_home h3 a{
+	text-decoration : none;
+	color : #05060a;
+}
+
+div.second_highlight_home h3 a:hover{
+	text-decoration : underline;
+}
+
+div.second_highlight_home h3 span.cutH2SmallTitle{
+	font-size : 20px;
+	display : block;
+	margin-bottom : 6px;
+}
+
+div.book_stay{
+	background-color : #05060a;
+	border-top : 4px solid #b40a0a;
+	border-bottom : 3px solid #b40a0a;
+	background-image : none;
+	padding : 10px 5px 10px 5px;
+}
+
+div.book_stay label{
+	color : #fff;
+}
+
+div#right_content div{
+	margin : 0 -2px 0 2px;
+}
+
+div#right_content img{
+	border : none;
+}
+
+div#listComment{
+	margin-top : 15px;
+}
+
+/* new styles */
+#mini_site_top{margin: 0 0 0 135px; width:930px;}
+	#mini_site_top img{margin : -3px 0 0 0; z-index : 2;}
+	#mini_site_top embed{ margin : 0; padding : 0;}
+	#mini_site_top img.arrowsep{margin:-3px 0 0 0;}
+#mini_site_top h1, div#title h1 {
+	position : absolute;
+	text-indent : -3000px;
+}
+	
+
+#mini_site_nav_ul { background:#05060a; width: 246px; padding:10px 20px 10px 20px; font-family : Georgia, serif; font-size: 16px; font-weight: none;text-transform:uppercase; margin:35px -2px 22px 2px; border-bottom : 3px solid #b40a0a; }
+	#mini_site_nav_ul li{background:transparent url(/bitc/static/minisite/img/carolusfestival/ml/bullet.png) no-repeat left 4px; padding:0 0 6px 30px; margin: 3px 0;}
+		#mini_site_nav_ul li a{
+			text-decoration:none;
+			/* text-transform:uppercase; */
+			color: #fff;
+			padding : 1px 3px 0 3px;
+		}
+		#mini_site_nav_ul li a:hover{
+			/*
+			background-color: #F756AF;
+			color : #C5D900;
+			*/
+			text-decoration : underline;
+		}
+		
+	.title{
+    margin: -267px 0 0 135px !important;
+    position: absolute !important;
+    text-align: center;
+    width: 928px;     
+
+}
+
+.title_h1{
+    text-align: center;
+    width: 928px;   
+
+}
