@@ -55,7 +55,7 @@ function BrusselsMap(opts) {
 
 	function filterOnBoth(selectedZipcode, selectedPlaceType){
 		$.each(markers, function() {
-			if(this.info.type !== selectedPlaceType || this.info.zipcode != selectedZipcode) {
+			if((selectedPlaceType !== 'all' && this.info.type !== selectedPlaceType) || (selectedZipcode != 0 && this.info.zipcode != selectedZipcode)) {
 				this.setVisible(false);
 			}
 		})

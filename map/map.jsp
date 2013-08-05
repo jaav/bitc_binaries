@@ -25,7 +25,7 @@
 
 <script src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
-	window.globalLang = 'fr';
+	window.globalLang = '${param['locale']}'.substr(3);
 
 	google.load("jquery", "1.7.1");
 	google.load("maps", "3", {
@@ -55,39 +55,78 @@
 		<div id="map_canvas_container">
 			<div class="well">
 				<form class="form-horizontal">
+                    <c:if test="${param['locale'] == 'BE_fr'}">
 					<div class="control-group">
-						<label class="radio"> <input type="radio" name="placeType" id="all" value="all" checked> Show all
-						</label> <label class="radio h_places"> <input type="radio" name="placeType" id="place" value="ContentPlace"> Show places
-						</label> <label class="radio h_events"> <input type="radio" name="placeType" id="event" value="ContentEvent"> Show events
+						<label class="radio"> <input type="radio" name="placeType" id="all" value="all" checked> Montrer tous
+						</label> <label class="radio h_places"> <input type="radio" name="placeType" id="place" value="ContentPlace"> Montrer lieux
+						</label> <label class="radio h_events"> <input type="radio" name="placeType" id="event" value="ContentEvent"> Montrer activités
 						</label>
 					</div>
 					<div class="control-group">
 						<select id="zipcode">
-							<option value="0"><wa:mls>Everywhere</wa:mls></option>
-							<option value="1000"><wa:mls>Brussels (1000)</wa:mls></option>
-							<option value="1010"><wa:mls>Brussels (1010)</wa:mls></option>
-							<option value="1020"><wa:mls>Brussels (1020)</wa:mls></option>
-							<option value="1030"><wa:mls>Brussels (1030)</wa:mls></option>
-							<option value="1040"><wa:mls>Brussels (1040)</wa:mls></option>
-							<option value="1050"><wa:mls>Brussels (1050)</wa:mls></option>
-							<option value="1060"><wa:mls>Brussels (1060)</wa:mls></option>
-							<option value="1070"><wa:mls>Brussels (1070)</wa:mls></option>
-							<option value="1080"><wa:mls>Brussels (1080)</wa:mls></option>
-							<option value="1090"><wa:mls>Brussels (1090)</wa:mls></option>
-							<option value="1110"><wa:mls>Brussels (1110)</wa:mls></option>
-							<option value="1120"><wa:mls>Brussels (1120)</wa:mls></option>
-							<option value="1130"><wa:mls>Brussels (1130)</wa:mls></option>
-							<option value="1140"><wa:mls>Brussels (1140)</wa:mls></option>
-							<option value="1150"><wa:mls>Brussels (1150)</wa:mls></option>
-							<option value="1160"><wa:mls>Brussels (1160)</wa:mls></option>
-							<option value="1170"><wa:mls>Brussels (1170)</wa:mls></option>
-							<option value="1180"><wa:mls>Brussels (1180)</wa:mls></option>
-							<option value="1190"><wa:mls>Brussels (1190)</wa:mls></option>
+							<option value="0">Partout</option>
+							<option value="1000">Bruxelles</option>
+							<option value="1020">Laeken</option>
+							<option value="1030">Schaerbeek</option>
+							<option value="1040">Etterbeek</option>
+							<option value="1050">Ixelles</option>
+							<option value="1060">Saint-Gilles</option>
+							<option value="1070">Anderlecht</option>
+							<option value="1080">Molenbeek-Saint-Jean</option>
+                            <option value="1081">Koekelberg</option>
+                            <option value="1082">Berchem-Sainte-Agathe</option>
+                            <option value="1083">Ganshoren</option>
+							<option value="1090">Jette</option>
+							<option value="1140">Evere</option>
+							<option value="1150">Woluwe-Saint-Pierre</option>
+							<option value="1160">Auderghem</option>
+							<option value="1170">Watermael-Boitsfort</option>
+							<option value="1180">Uccle</option>
+							<option value="1190">Forest</option>
+                            <option value="1200">Woluwe-Saint-Lambert</option>
+                            <option value="1210">Saint-Josse-ten-Noode</option>
+						</select>
+					</div>
+                    <div class="control-group">
+                        <button class="btn btn-primary" type="button" name="filterNow">Filtrer</button>
+                    </div>
+                    </c:if>
+                    <c:if test="${param['locale'] == 'BE_nl'}">
+					<div class="control-group">
+						<label class="radio"> <input type="radio" name="placeType" id="all" value="all" checked> Toon alles
+						</label> <label class="radio h_places"> <input type="radio" name="placeType" id="place" value="ContentPlace"> Toon locaties
+						</label> <label class="radio h_events"> <input type="radio" name="placeType" id="event" value="ContentEvent"> Toon activiteiten
+						</label>
+					</div>
+					<div class="control-group">
+						<select id="zipcode">
+							<option value="0">Overal</option>
+							<option value="1000">Brussel</option>
+							<option value="1020">Laken</option>
+							<option value="1030">Schaarbeek</option>
+							<option value="1040">Etterbeek</option>
+							<option value="1050">Elsene</option>
+							<option value="1060">Sint-Gilles</option>
+							<option value="1070">Anderlecht</option>
+							<option value="1080">Sint-Jans-Molenbeek</option>
+                            <option value="1081">Koekelberg</option>
+                            <option value="1082">Sint-Agatha-Berchem</option>
+                            <option value="1083">Ganshoren</option>
+							<option value="1090">Jette</option>
+							<option value="1140">Evere</option>
+							<option value="1150">Sint-Pieters-Woluwe</option>
+							<option value="1160">Oudergem</option>
+							<option value="1170">Watermaal-Bosvoorde</option>
+							<option value="1180">Ukkel</option>
+							<option value="1190">Vorst</option>
+                            <option value="1200">Sint-Lambrechts-Woluwe</option>
+                            <option value="1210">Sint-Joost-ten-Node</option>
 						</select>
 					</div>
 					<div class="control-group">
-						<button class="btn btn-primary" type="button" name="filterNow">Filter now!</button>
+						<button class="btn btn-primary" type="button" name="filterNow">Filteren</button>
 					</div>
+                    </c:if>
 				</form>
 			</div>
 			<div id="map_canvas"></div>
