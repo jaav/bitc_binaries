@@ -99,12 +99,8 @@
 			var selectedPlaceType = $("input[name=placeType]:checked").val();
 			var selectedZipcode = $("#zipcode").val();
 			$.mbMap.resetFilter();
-			if(selectedPlaceType.length > 0) {
-				$.mbMap.filterByType(selectedPlaceType);
-			}
-			if(selectedZipcode > 0) {
-				$.mbMap.filterByZip(selectedZipcode);
-			}
+            $.mbMap.filterOnBoth(selectedZipcode, selectedPlaceType);
+
 		})
 		
 	</script>

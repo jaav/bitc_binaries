@@ -40,17 +40,22 @@ function BrusselsMap(opts) {
 	}
 	function filterByZip(selectedZipcode) {
 		$.each(markers, function() {
-			if(selectedZipcode > 0 && this.info.zipcode == selectedZipcode) {
-				this.setVisible(true);
-			}else {
+			if(this.info.zipcode !== selectedZipcode)
 				this.setVisible(false);
-			}
 		})
 	}
 
 	function filterByType(selectedPlaceType) {
 		$.each(markers, function() {
 			if(selectedPlaceType !== 'all' && this.info.type !== selectedPlaceType) {
+				this.setVisible(false);
+			}
+		})
+	}
+
+	function filterOnBoth(selectedZipcode, selectedPlaceType){
+		$.each(markers, function() {
+			if(this.info.type !== selectedPlaceType || this.info.zipcode !== selectedZipcode) {
 				this.setVisible(false);
 			}
 		})
@@ -165,11 +170,11 @@ function BrusselsMap(opts) {
 		var t_icon = null;
 		if(shop.type == 'ContentEvent') {
 			t_icon = new google.maps.MarkerImage(
-					'/bitc/images/green_pin.png', new google.maps.Size(24, 24), new google.maps.Point(0, 0),
+					'/bitc/static/front/img/green_pin.png', new google.maps.Size(24, 24), new google.maps.Point(0, 0),
 					new google.maps.Point(3, 7));
 		} else if(shop.type == 'ContentPlace') {
 			t_icon = new google.maps.MarkerImage(
-					'/bitc/images/pink_pin.png', new google.maps.Size(24, 24), new google.maps.Point(0, 0),
+					'/bitc/static/front/img/pink_pin.png', new google.maps.Size(24, 24), new google.maps.Point(0, 0),
 					new google.maps.Point(3, 7));	
 		}
 		
@@ -245,6 +250,5 @@ $(function() {
 			populateWithAll();
 		});*/
 	}
-
 	initMap();
 });

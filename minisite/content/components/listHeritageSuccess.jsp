@@ -57,7 +57,7 @@
 				<c:forEach var="item" items="${list}" varStatus="loop">
 					<li><c:if test="${contentType ne 'ContentPress'}">
 							<a
-								href="<wa:url URI="${site}/minisite/content/displayDetail/name/${waParam.name}/group/${item.group}/id/${item.id}"/>">
+								href="<wa:url URI="${site}/content/displayDetail/name/${waParam.name}/group/${item.group}/id/${item.id}"/>">
 								<c:choose>
 									<c:when test="${not empty item.mainSmallImage}">
 										<img src="${item.mainSmallImage}"
@@ -91,7 +91,7 @@
                                 </c:when>
 									<c:otherwise>
 										<a
-											href="<wa:url URI="${site}/minisite/content/displayDetail/name/${waParam.name}/group/${item.group}/id/${item.id}"/>"
+											href="<wa:url URI="${site}/content/displayDetail/name/${waParam.name}/group/${item.group}/id/${item.id}"/>"
 											title="${item.formatMainTitle}">${item.mainTitle}</a>
 									</c:otherwise>
 								</c:choose>
@@ -127,7 +127,7 @@
 											<span><a href="mailto:${item.email}">${item.email}</a></span>
 											<br />
 										</c:if>
-										<c:if test="${not empty item.URLWebsite}">
+                                        <c:if test="${not empty item.URLWebsite && fn:length(item.URLWebsite)>8}">
 											<strong><wa:mls>Website :</wa:mls></strong>
 											<span><a href="${item.URLWebsite}" target="_blank">${item.URLWebsite}</a></span>
 										</c:if>
@@ -185,7 +185,7 @@
 							<a
 								href="http://www.addthis.com/bookmark.php?v=250&amp;username=wanabe"
 								class="addthis_button share"
-								addthis:url="${config['URL']}<wa:url URI="${site}/minisite/content/displayDetail/name/${waParam.name}/group/${item.group}/id/${item.id}"/>"
+								addthis:url="${config['URL']}<wa:url URI="${site}/content/displayDetail/name/${waParam.name}/group/${item.group}/id/${item.id}"/>"
 								addthis:title="${item.formatMainTitle}"
 								addthis:description="${fn:replace(wa:html2txt(item.mainAbstract_),varTmp,'&quot;')}"><img
 								src="${staticSite}/img/ml/btn_share.gif"
