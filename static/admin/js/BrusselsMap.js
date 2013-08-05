@@ -40,7 +40,7 @@ function BrusselsMap(opts) {
 	}
 	function filterByZip(selectedZipcode) {
 		$.each(markers, function() {
-			if(this.info.zipcode !== selectedZipcode)
+			if(this.info.zipcode != selectedZipcode)
 				this.setVisible(false);
 		})
 	}
@@ -55,7 +55,7 @@ function BrusselsMap(opts) {
 
 	function filterOnBoth(selectedZipcode, selectedPlaceType){
 		$.each(markers, function() {
-			if(this.info.type !== selectedPlaceType || this.info.zipcode !== selectedZipcode) {
+			if(this.info.type !== selectedPlaceType || this.info.zipcode != selectedZipcode) {
 				this.setVisible(false);
 			}
 		})
@@ -225,6 +225,7 @@ function BrusselsMap(opts) {
 	this.bind = bind;
 	this.filterByZip = filterByZip;
 	this.filterByType = filterByType;
+	this.filterOnBoth = filterOnBoth;
 	this.getOptions = getOptions;
 	this.resetFilter = resetFilter;
 	
