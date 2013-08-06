@@ -11,16 +11,9 @@ isELIgnored ="false"
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="Content-Language" content="${culture.language}" />
-	
-	<c:choose>
-		<c:when test="${meta != null && meta.metaDescription ne ''}">
-			<meta name="Description" content="${meta.metaDescription}" />
-		</c:when>
-		<c:otherwise>
-			<meta name="Description" content="${fn:replace(wa:html2txt(og_description),varTmp,'&quot;')}"/>
-		</c:otherwise>
-	</c:choose>
-	
+	<c:if test="${meta != null && meta.metaDescription ne ''}">
+		<meta name="Description" content="${meta.metaDescription}" />
+	</c:if>
 	<c:if test="${meta != null && meta.metaKeyword ne ''}">
 		<meta name="Keywords" content="${meta.metaKeyword}" /> 
 	</c:if>
@@ -57,7 +50,6 @@ isELIgnored ="false"
 	<script type="text/javascript" src="${staticSite}/js/jquery.ui.datepicker-${culture.language}.js"></script>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="${staticSite}/js/video.js"></script>
-	<script type="text/javascript" src="${staticSite}/js/eshortcut.js"></script>
     <% //OG FACEBOOK %>
     <c:if test="${not empty waParam.group && not empty waParam.id}">
 		<meta property="og:title" content="${og_title}"/>
@@ -70,7 +62,6 @@ isELIgnored ="false"
 		<c:set var="varTmp" value="\"" />
 		<meta property="og:description" content="${fn:replace(wa:html2txt(og_description),varTmp,'&quot;')}"/>
 		<meta property="fb:app_id" content="135475609811744" />
-		
 		<link rel="image_src" href="${og_image}" />
 	</c:if>
 

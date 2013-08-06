@@ -160,7 +160,7 @@
          
        
     
-         <set name="contentRooms" inverse="true" fetch="select" order-by="surface desc">
+         <set name="contentRooms" inverse="true"  table="content_room" fetch="select" order-by="surface desc" >
             <key>
                 <column name="venue_id" />
             </key>

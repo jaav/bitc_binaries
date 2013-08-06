@@ -15,8 +15,6 @@ isELIgnored ="false"
 
 <style type="text/css" media="screen">
 @import url("${static}/front/css/nyroModal.css");
-@import url("http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css");
-@import url("/bitc/map.css");
 </style>
 <script type="text/javascript" src="${static}/front/js/jquery.nyroModal-1.6.1.pack.js"></script>
 <!-- 

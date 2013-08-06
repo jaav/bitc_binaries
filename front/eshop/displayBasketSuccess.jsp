@@ -188,10 +188,7 @@
         </tr--%>
     </c:if>
     <tr>
-    <td class="article">
-    ${item.mainTitle}
-    <c:if test="${item.id==206}">&nbsp;(<a href="/bitc/BE_fr/content/529/brussels-card.do"><wa:mls>more info</wa:mls></a>)</c:if>
-    </td>
+    <td class="article">${item.mainTitle}</td>
     <td class="space">&nbsp;</td>
 
     <c:choose>

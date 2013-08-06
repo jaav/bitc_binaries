@@ -26,6 +26,5 @@ isELIgnored ="false"
          FB.init({ 
             appId:'${facebook_key}', cookie:true, 
             status:true, xfbml:true,oauth : false 
-         });
-         FB.getLoginStatus(handleSessionResponse);
+         });		
 </script>	

@@ -34,24 +34,11 @@ function log_user() {
 	window.location = "${context}/${site}/user/doFacebookLogin.do" ;
 }
 
-/*function log_out_user() {
+function log_out_user() {
 	FB.logout(function(response) {
-        console.log(response.status);
 		window.location = '<wa:url URI="${site}/user/doLogout"></wa:url>' ;
-    });
+		});
 
-}*/
-
-function log_out_user(response) {
-    //if we dont have a session (which means the user has been logged out, redirect the user)
-    if (!response.session) {
-        window.location = '<wa:url URI="${site}/user/doLogout"></wa:url>';
-        return;
-    }
-
-    //if we do have a non-null response.session, call FB.logout(),
-    //the JS method will log the user out of Facebook and remove any authorization cookies
-    FB.logout(handleSessionResponse);
 }
 
 

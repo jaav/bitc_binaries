@@ -20,17 +20,11 @@ body.minisite{ /*background: #f6bad6;*/}
 		#mini_site_nav_ul li a:hover{color: #6b3d22}
 		
 	
+	
+
+#mapGlobal { width:620px; float:left; border:1px solid #b0b0b0;}
+
+#mapGlobal .category {width:620px; padding:13px;}
+	#mapGlobal .category ul li { float:left; margin:0 18px 13px 0;}
+		#mapGlobal .category ul li a { font-size:12px; text-decoration:none; color:#958e88; background:transparent url(/bitc/static/minisite/img/test2011/ml/bg_category_map.jpg) no-repeat left 5px;}
 		
-	.title{
-    margin: -267px 0 0 135px !important;
-    position: absolute !important;
-    text-align: center;
-    width: 928px;     
-
-}
-
-.title_h1{
-    text-align: center;
-    width: 928px;   
-
-}	

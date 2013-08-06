@@ -35,6 +35,7 @@ isELIgnored ="false"
 	}
 	
 </script>
+	
 	<c:choose>
 		<c:when test="${empty waParam.section}">
 			<wa:include URI="front/home/dynamicTemplate" >

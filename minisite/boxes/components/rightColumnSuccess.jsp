@@ -28,19 +28,7 @@ isELIgnored ="false"
 	</c:if>	
 <!-- MINI SITE NAVIGATION: end--> 
 
-<script>
-function showModelPanel(url) {
-	  $.nyroModalManual({
-		 zIndex: 1001,					
-	     minWidth:1050,
-	     height:580,
-	     forceType: 'iframe',
-	     closeSelector: '.nyroModalClose', 
-	     url: url,
-	     closeButton: '<a href="#" class="nyroModalClose" id="closeBut"><img src="${static}/front/img/ml/close.png" alt="close" /></a>'
-	  	});
-}
-</script>
+
 <c:forEach items="${rightColumnList}" var="item">
 	<wa:include URI="${site}/boxes/${item.algorithm}">
 		<wa:param name="algo_params" value="${item.paramValues}"/>

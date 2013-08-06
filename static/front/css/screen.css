@@ -1101,7 +1101,7 @@ ul.tab_list_complete {padding:10px;}
 #ribbon_bottom{background:transparent url(../img/ml/ribbon_bottom.png) repeat-x top left; min-width:1200px; height: 34px;}
 #nav_sub {background:#2f2f2f url(../img/ml/bg_nav_supp.jpg) repeat-x top left; min-width:1200px;}
 *+html #nav_sub {background:#2f2f2f url(../img/ml/bg_nav_supp.jpg) repeat-x 18px left; border-top:18px solid #767777;}
-	#nav_sub #nav_sub_content {margin:auto; width:1200px; font-family:Arial, Helvetica, sans-serif; color:#FFF; background:url(../img/ml/bg_nav_supp_content.jpg) no-repeat top left;}
+	#nav_sub #nav_sub_content {margin:auto; width:1200px; font-family:Arial, Helvetica, sans-serif; color:#FFF; background:url(../img/ml/bg_nav_supp_content.jp) no-repeat top left;}
 		#nav_sub #nav_sub_content h2 { margin:0; padding:20px 0 0 135px; color:#FFF;}
 		#nav_sub #nav_sub_content ul { padding:0 0 20px 135px;}
 		*+html #nav_sub #nav_sub_content ul { margin:0 0 20px 0; padding:0 0 0 135px;}
