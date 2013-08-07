@@ -13,7 +13,7 @@
         <h3 class="no_margin"><wa:mls>Recherchez</wa:mls></h3>
 
         <div class="arrow"></div>
-        <form action="<wa:url URI="${site}/search/display"/>" method="get" class="search">
+        <form action="<wa:url URI="${site}/search/display"/>" method="get" class="search" >
 
             <input class="first_input" type="text" name="f_search_query" value=""/>
             <input type="submit" value="<wa:mls>Recherche</wa:mls>" class="btn_form"/>

@@ -183,6 +183,12 @@ isELIgnored ="false"
 								var v_longitude = new Spry.Widget.ValidationTextarea("v_longitude", {isRequired:false,maxChars:10});
 							</script> 
 						</div>
+						<div class="bgGrey" id="v_boxofficeId">
+							<label for="f_boxofficeId"><wa:mls>boxoffice</wa:mls></label>
+							<input type="text" name="f_boxofficeId" maxlength="10"  style="margin-left:3px;width:55px" onkeyup="javascript:wa_validateNum('f_boxofficeId')" 
+								value="<c:choose><c:when test="${bean.boxofficeId  eq null}">0</c:when><c:otherwise>${bean.boxofficeId}</c:otherwise></c:choose>">
+							</input>
+						</div>
 						<div class="bgWhite" id="v_periodFromDate">
 						<label for="f_periodFromDate"><wa:mls>periodFromDate</wa:mls></label>
 						<input type="text" class="w8em format-d-m-y divider-slash  no-transparency" id="f_periodFromDate" name="f_periodFromDate" value="<fmt:formatDate pattern="dd/MM/yyyy" value="${bean.periodFromDate}"/>" maxlength="10" />

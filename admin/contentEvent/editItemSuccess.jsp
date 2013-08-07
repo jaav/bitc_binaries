@@ -23,7 +23,7 @@ isELIgnored ="false"
 </h2>
 <div id="list">
 	<div id="mask">
-		<form action="${context}/${site}/${module}/saveItem.do" method="post" id="detailForm" name="detailForm">
+		<form action="${context}/${site}/${module}/saveItem.do" method="post" id="detailForm" name="detailForm" accept-charset="UTF-8">
 			<fieldset>
 				<legend>&nbsp;</legend>
 				<c:if test="${bean!=null && bean.id>0 && duplicate eq null}">

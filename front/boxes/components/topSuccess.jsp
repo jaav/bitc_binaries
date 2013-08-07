@@ -63,7 +63,7 @@ isELIgnored ="false"
 		$("ul#top_nav > li .level2").css("display", "none")
 	</script>
   	<!-- NEW TOP NAVIGATION : end -->
-	    <form id="f_search" action="${context}/${site}/search/display.do" method="get">
+	    <form id="f_search" action="${context}/${site}/search/display.do" method="get" accept-charset="UTF-8">
 	      <input id="f_search_textfield" name="f_search_query" type="text" title="<wa:mls>Rechercher</wa:mls>"  />
 	      <input id="f_search_submit" name="f_search_submit" value="" type="submit" alt="<wa:mls>Rechercher</wa:mls>" />
 	    </form>
@@ -104,10 +104,10 @@ isELIgnored ="false"
 				
 			</div>
 			 <c:if test="${nameCongressiste!=null }">
-            <div id="top_bg_topname" style="width:${taille}px; text-align:center" > 
+            <div id="top_bg_topname" style="width:${taille}px;" >
             
            
-            <span>sized for </span><span style ="color:${colorCongressiste};" class="congresstitle">${nameCongressiste}</span>
+            <span>sized for </span><span class="congresstitle">${nameCongressiste}</span>
 			 
             </div>
 			 <div id="top_bg_toplogo">
