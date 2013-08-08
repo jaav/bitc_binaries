@@ -927,6 +927,7 @@ ul.tab_list_complete {padding:10px;}
 .form_search div.arrow{float: left; background:url(../img/ml/research_arrow.gif) center 0 no-repeat; width:21px; height: 31px; margin: 0 10px; position:relative; top:-3px;}
 .form_search form.search input{ border: 1px solid #cecdc9; -moz-opacity:0.8; opacity: 0.8; float: left; height: 17px;}
 .form_search form.search label { display:inline; float:left; margin-right:10px; padding:3px 0 0 0; min-width:120px; text-align:left;}
+.form_search form.search div#ListTypeHeritage label{min-width: 64px;}
 
 .form_search form.search input.btn_form{margin:0 5px; width:94px; height:23px; color:#4c5458; text-align:left; background:transparent url(../img/ml/bg_btn_form_search_small.png) top left no-repeat; border:0 none; padding-left:10px; cursor:pointer; float:left; font-size: 11px; position: relative; top: -1px;}	
 	.form_search form.search input.btn_form:hover, .form_search form.search input.btn_form2:hover {background:transparent url(../img/ml/bg_btn_form_search_small_over.png) top left no-repeat; }	

@@ -25,6 +25,7 @@
 
             <c:if test="${group ne 'LATEST_NEWS' && group ne 'TESTIMONIAL' && group ne 'DEALS' && group ne 'PRESS_RELEASE'}">
                 <a onClick="changeDisplay()" class="advanced_search"><wa:mls>Advanced search</wa:mls></a>
+                ${site}
 
                 <div class="clr"></div>
                 <c:if test="${fn:toLowerCase(group) eq 'guided_tour'}">

@@ -10,11 +10,10 @@
 <div class="clear"></div>
 <div id="content_main">
 	<wa:include URI="front/content/introList" />
-	<c:if test="${group ne 'WALK'}">
-		<wa:include URI="front/content/find">
-			<wa:param name="group" value="${group}" />
-		</wa:include>
-	</c:if>
+
+    <wa:include URI="minisite/content/findHeritage" >
+        <wa:param name="group" value="${group}"/>
+    </wa:include>
 	<wa:include URI="minisite/content/listHeritage">
 		<wa:param name="pageSize" value="${5}" />
 	</wa:include>

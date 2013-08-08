@@ -171,18 +171,16 @@
                         </c:if>
                     </p>
                 </c:if>
-
                 <c:choose>
-                    <c:when test="${bean.group == 'HERITAGE_PLACE' || bean.group == 'HERITAGE_EVENT'}}">
-                        <p><a href="javascript:callLetter('a', 'map')"
-                              class="btn_map_view"><span><wa:mls>View on the map</wa:mls></span></a></p>
-                        <p><a href="javascript:callLetter('a', 'sv')" class="btn_street_view"><span><wa:mls>Google street view</wa:mls></span></a></p>
+                    <c:when test="${bean.group == 'HERITAGE_PLACE' || bean.group == 'HERITAGE_EVENT'}">
+                        <p><a href="javascript:showModelPanel('/bitc/map/map.jsp?lat=${bean.latitude}&lng=${bean.longitude}&locale=BE_fr')"
+                          class="btn_map_view"><span><wa:mls>View on the map</wa:mls></span></a></p>
                     </c:when>
                     <c:otherwise>
-
                         <c:if test="${contentType ne 'ContentArticle'  && contentGroupType ne 'ContentProduct' and not empty bean.latitude and bean.latitude != 0.0 and not empty bean.longitude and bean.longitude != 0.0}">
-                        <p><a href="javascript:showModelPanel('/bitc/map/map.jsp?lat=${bean.latitude}&lng=${bean.longitude}')"
-                              class="btn_map_view"><span><wa:mls>View on the map</wa:mls></span></a></p>
+                            <p><a href="javascript:callLetter('a', 'map')"
+                                  class="btn_map_view"><span><wa:mls>View on the map</wa:mls></span></a></p>
+                            <p><a href="javascript:callLetter('a', 'sv')" class="btn_street_view"><span><wa:mls>Google street view</wa:mls></span></a></p>
                         </c:if>
                     </c:otherwise>
                 </c:choose>

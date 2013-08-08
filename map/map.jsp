@@ -40,8 +40,7 @@
 		routingContainer : 'directionsPanel' //The id of the div element where routing steps should be printed
 	};
     <c:if test="${param['lat'] != null && param['lng'] != null}">
-    console.log(${param["lat"]});
-    window.globalMapSettings.mapCenter = {
+        window.globalMapSettings.mapCenter = {
     			lat : ${param['lat']},
     			lng : ${param['lng']}
     		};
@@ -57,34 +56,34 @@
 				<form class="form-horizontal">
                     <c:if test="${param['locale'] == 'BE_fr'}">
 					<div class="control-group">
-						<label class="radio"> <input type="radio" name="placeType" id="all" value="all" checked> Montrer tous
-						</label> <label class="radio h_places"> <input type="radio" name="placeType" id="place" value="ContentPlace"> Montrer lieux
-						</label> <label class="radio h_events"> <input type="radio" name="placeType" id="event" value="ContentEvent"> Montrer activités
+						<label class="radio"> <input type="radio" name="placeType" id="all" value="all" checked> Afficher tout
+						</label> <label class="radio h_places"> <input type="radio" name="placeType" id="place" value="ContentPlace"> Afficher les lieux
+						</label> <label class="radio h_events"> <input type="radio" name="placeType" id="event" value="ContentEvent"> Afficher les activités
 						</label>
 					</div>
 					<div class="control-group">
 						<select id="zipcode">
 							<option value="0">Partout</option>
-							<option value="1000">Bruxelles</option>
-							<option value="1020">Laeken</option>
-							<option value="1030">Schaerbeek</option>
-							<option value="1040">Etterbeek</option>
-							<option value="1050">Ixelles</option>
-							<option value="1060">Saint-Gilles</option>
-							<option value="1070">Anderlecht</option>
-							<option value="1080">Molenbeek-Saint-Jean</option>
-                            <option value="1081">Koekelberg</option>
+                            <option value="1070">Anderlecht</option>
+                            <option value="1160">Auderghem</option>
                             <option value="1082">Berchem-Sainte-Agathe</option>
+							<option value="1000">Bruxelles</option>
+                            <option value="1040">Etterbeek</option>
+                            <option value="1140">Evere</option>
+                            <option value="1190">Forest</option>
                             <option value="1083">Ganshoren</option>
-							<option value="1090">Jette</option>
-							<option value="1140">Evere</option>
-							<option value="1150">Woluwe-Saint-Pierre</option>
-							<option value="1160">Auderghem</option>
-							<option value="1170">Watermael-Boitsfort</option>
-							<option value="1180">Uccle</option>
-							<option value="1190">Forest</option>
-                            <option value="1200">Woluwe-Saint-Lambert</option>
+                            <option value="1050">Ixelles</option>
+                            <option value="1090">Jette</option>
+                            <option value="1081">Koekelberg</option>
+							<option value="1020">Laeken</option>
+							<option value="1080">Molenbeek-Saint-Jean</option>
+                            <option value="1060">Saint-Gilles</option>
                             <option value="1210">Saint-Josse-ten-Noode</option>
+                            <option value="1030">Schaerbeek</option>
+                            <option value="1180">Uccle</option>
+                            <option value="1170">Watermael-Boitsfort</option>
+                            <option value="1200">Woluwe-Saint-Lambert</option>
+                            <option value="1150">Woluwe-Saint-Pierre</option>
 						</select>
 					</div>
                     <div class="control-group">
@@ -101,26 +100,26 @@
 					<div class="control-group">
 						<select id="zipcode">
 							<option value="0">Overal</option>
+                            <option value="1070">Anderlecht</option>
 							<option value="1000">Brussel</option>
-							<option value="1020">Laken</option>
-							<option value="1030">Schaarbeek</option>
-							<option value="1040">Etterbeek</option>
-							<option value="1050">Elsene</option>
-							<option value="1060">Sint-Gilles</option>
-							<option value="1070">Anderlecht</option>
-							<option value="1080">Sint-Jans-Molenbeek</option>
-                            <option value="1081">Koekelberg</option>
-                            <option value="1082">Sint-Agatha-Berchem</option>
+                            <option value="1050">Elsene</option>
+                            <option value="1040">Etterbeek</option>
+                            <option value="1140">Evere</option>
                             <option value="1083">Ganshoren</option>
-							<option value="1090">Jette</option>
-							<option value="1140">Evere</option>
+                            <option value="1090">Jette</option>
+                            <option value="1081">Koekelberg</option>
+							<option value="1020">Laken</option>
+                            <option value="1160">Oudergem</option>
+							<option value="1030">Schaarbeek</option>
+                            <option value="1082">Sint-Agatha-Berchem</option>
+                            <option value="1060">Sint-Gilles</option>
+							<option value="1080">Sint-Jans-Molenbeek</option>
+                            <option value="1210">Sint-Joost-ten-Node</option>
+                            <option value="1200">Sint-Lambrechts-Woluwe</option>
 							<option value="1150">Sint-Pieters-Woluwe</option>
-							<option value="1160">Oudergem</option>
-							<option value="1170">Watermaal-Bosvoorde</option>
 							<option value="1180">Ukkel</option>
 							<option value="1190">Vorst</option>
-                            <option value="1200">Sint-Lambrechts-Woluwe</option>
-                            <option value="1210">Sint-Joost-ten-Node</option>
+                            <option value="1170">Watermaal-Bosvoorde</option>
 						</select>
 					</div>
 					<div class="control-group">
