@@ -2,7 +2,7 @@
 
 <Context>
 
-     <Resource name="jdbc/devbitc" auth="Container" type="javax.sql.DataSource" maxActive="100" maxIdle="30" maxWait="10000" username="devbitc" password="b3vBI5Fq" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://172.20.1.40:3306/devbitc?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8" />
+     <Resource name="jdbc/devbitc2" auth="Container" type="javax.sql.DataSource" maxActive="100" maxIdle="30" maxWait="10000" username="devbitc" password="b3vBI5Fq" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://172.20.1.40:3306/devbitc?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8" />
      <Resource name="jdbc/bitc" auth="Container" type="javax.sql.DataSource" maxActive="100" maxIdle="30" maxWait="10000" username="bitc" password="bitc123" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://172.20.1.40:3306/bitc?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8" />
 
 </Context>
