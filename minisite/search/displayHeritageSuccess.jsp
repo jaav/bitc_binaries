@@ -117,7 +117,7 @@
                                 </c:if>
 
                                 <a
-                                        href="javascript:showModelPanel('/bitc/map/map.jsp?lat=${item.latitude}&lng=${item.longitude}&locale=BE_fr')"
+                                        href="javascript:showModelPanel('/bitc/map/map.jsp?lat=${item.latitude}&lng=${item.longitude}&locale=${culture.language}')"
                                         class="map"><span><wa:mls>Map :</wa:mls></span><img
                                         src="${staticSite}/img/ml/btn_map_${wa:numberToChar(indexLetter)}.jpg"
                                         alt="Map ${wa:numberToChar(indexLetter)}"/></a>

@@ -173,7 +173,7 @@
                 </c:if>
                 <c:choose>
                     <c:when test="${bean.group == 'HERITAGE_PLACE' || bean.group == 'HERITAGE_EVENT'}">
-                        <p><a href="javascript:showModelPanel('/bitc/map/map.jsp?lat=${bean.latitude}&lng=${bean.longitude}&locale=BE_fr')"
+                        <p><a href="javascript:showModelPanel('/bitc/map/map.jsp?lat=${bean.latitude}&lng=${bean.longitude}&locale=${culture.language}')"
                           class="btn_map_view"><span><wa:mls>View on the map</wa:mls></span></a></p>
                     </c:when>
                     <c:otherwise>

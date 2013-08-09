@@ -25,7 +25,7 @@
 
 <script src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">
-	window.globalLang = '${param['locale']}'.substr(3);
+	window.globalLang = '${param['locale']}';
 
 	google.load("jquery", "1.7.1");
 	google.load("maps", "3", {
@@ -54,43 +54,7 @@
 		<div id="map_canvas_container">
 			<div class="well">
 				<form class="form-horizontal">
-                    <c:if test="${param['locale'] == 'BE_fr'}">
-					<div class="control-group">
-						<label class="radio"> <input type="radio" name="placeType" id="all" value="all" checked> Afficher tout
-						</label> <label class="radio h_places"> <input type="radio" name="placeType" id="place" value="ContentPlace"> Afficher les lieux
-						</label> <label class="radio h_events"> <input type="radio" name="placeType" id="event" value="ContentEvent"> Afficher les activités
-						</label>
-					</div>
-					<div class="control-group">
-						<select id="zipcode">
-							<option value="0">Partout</option>
-                            <option value="1070">Anderlecht</option>
-                            <option value="1160">Auderghem</option>
-                            <option value="1082">Berchem-Sainte-Agathe</option>
-							<option value="1000">Bruxelles</option>
-                            <option value="1040">Etterbeek</option>
-                            <option value="1140">Evere</option>
-                            <option value="1190">Forest</option>
-                            <option value="1083">Ganshoren</option>
-                            <option value="1050">Ixelles</option>
-                            <option value="1090">Jette</option>
-                            <option value="1081">Koekelberg</option>
-							<option value="1020">Laeken</option>
-							<option value="1080">Molenbeek-Saint-Jean</option>
-                            <option value="1060">Saint-Gilles</option>
-                            <option value="1210">Saint-Josse-ten-Noode</option>
-                            <option value="1030">Schaerbeek</option>
-                            <option value="1180">Uccle</option>
-                            <option value="1170">Watermael-Boitsfort</option>
-                            <option value="1200">Woluwe-Saint-Lambert</option>
-                            <option value="1150">Woluwe-Saint-Pierre</option>
-						</select>
-					</div>
-                    <div class="control-group">
-                        <button class="btn btn-primary" type="button" name="filterNow">Filtrer</button>
-                    </div>
-                    </c:if>
-                    <c:if test="${param['locale'] == 'BE_nl'}">
+                    <c:if test="${param['locale'] == 'nl'}">
 					<div class="control-group">
 						<label class="radio"> <input type="radio" name="placeType" id="all" value="all" checked> Toon alles
 						</label> <label class="radio h_places"> <input type="radio" name="placeType" id="place" value="ContentPlace"> Toon locaties
@@ -126,12 +90,48 @@
 						<button class="btn btn-primary" type="button" name="filterNow">Filteren</button>
 					</div>
                     </c:if>
+                    <c:if test="${param['locale'] != 'nl'}">
+					<div class="control-group">
+						<label class="radio"> <input type="radio" name="placeType" id="all" value="all" checked> Afficher tout
+						</label> <label class="radio h_places"> <input type="radio" name="placeType" id="place" value="ContentPlace"> Afficher les lieux
+						</label> <label class="radio h_events"> <input type="radio" name="placeType" id="event" value="ContentEvent"> Afficher les activités
+						</label>
+					</div>
+					<div class="control-group">
+						<select id="zipcode">
+							<option value="0">Partout</option>
+                            <option value="1070">Anderlecht</option>
+                            <option value="1160">Auderghem</option>
+                            <option value="1082">Berchem-Sainte-Agathe</option>
+							<option value="1000">Bruxelles</option>
+                            <option value="1040">Etterbeek</option>
+                            <option value="1140">Evere</option>
+                            <option value="1190">Forest</option>
+                            <option value="1083">Ganshoren</option>
+                            <option value="1050">Ixelles</option>
+                            <option value="1090">Jette</option>
+                            <option value="1081">Koekelberg</option>
+							<option value="1020">Laeken</option>
+							<option value="1080">Molenbeek-Saint-Jean</option>
+                            <option value="1060">Saint-Gilles</option>
+                            <option value="1210">Saint-Josse-ten-Noode</option>
+                            <option value="1030">Schaerbeek</option>
+                            <option value="1180">Uccle</option>
+                            <option value="1170">Watermael-Boitsfort</option>
+                            <option value="1200">Woluwe-Saint-Lambert</option>
+                            <option value="1150">Woluwe-Saint-Pierre</option>
+						</select>
+					</div>
+                    <div class="control-group">
+                        <button class="btn btn-primary" type="button" name="filterNow">Filtrer</button>
+                    </div>
+                    </c:if>
 				</form>
 			</div>
 			<div id="map_canvas"></div>
 		</div>
 	</div>
-	<script src="/bitc/static/admin/js/BrusselsMap.js?ts=6"></script>
+	<script src="/bitc/static/admin/js/BrusselsMap.js"></script>
 	<script type="text/javascript">
 		$("button[name=filterNow]").click(function() {
 			var selectedPlaceType = $("input[name=placeType]:checked").val();
