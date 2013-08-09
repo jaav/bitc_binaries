@@ -110,7 +110,7 @@
                                         test="${contentType ne 'ContentPress' or not empty item.body}">
                                     <div class="more_info">
                                         <a
-                                                href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>"
+                                                href="<wa:url URI="${site}/content/displayDetail/name/${waParam.name}/group/${item.group}/id/${item.id}"/>"
                                                 class="btn_more_info"
                                                 title="${item.formatMainTitle}"><wa:mls>More info</wa:mls></a>
                                     </div>

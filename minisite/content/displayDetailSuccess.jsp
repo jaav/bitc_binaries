@@ -122,7 +122,7 @@
                             <span class="postal-code"> ${bean.zipcode}</span>
                         </c:if>
                         <c:if test="${not empty bean.city}">
-                            <span class="locality"> - ${bean.city} </span>
+                            <span class="locality"> ${bean.city} </span>
                         </c:if>
                     </p>
                 </c:if>

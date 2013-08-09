@@ -208,7 +208,7 @@ function BrusselsMap(opts) {
 		var infoContent = "<div>" + "<strong>" + preparedInfo.name
 				+ "</strong><br/>" + "" + preparedInfo.address + "<br/>" + ""
 				+ preparedInfo.zipcode + " " + preparedInfo.city + "<br/>"
-				+ "<a href=\"/bitc/minisite/content/displayDetail/clt/BE_"+options.lang+"/name/monument/group/"+preparedInfo.type+"/id/"+preparedInfo.id+".do\" target=\"_top\">details</a> <br/>"
+				+ "<a href=\"/bitc/minisite/content/displayDetail/clt/BE_"+options.lang+"/name/monument/group/"+preparedInfo.type+"/id/"+preparedInfo.id+".do\" target=\"_top\">détails</a> <br/>"
 				+ "<img src=\""+preparedInfo.smallImage+"\" />"
 				+ "</div>"
 		infoWindow.setContent(infoContent);
