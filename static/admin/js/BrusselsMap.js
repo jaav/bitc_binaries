@@ -91,6 +91,8 @@ function BrusselsMap(opts) {
 			if (textObject.values.hasOwnProperty(options.lang)) {
 				return textObject.values[options.lang];
 			}
+			else
+				return textObject.values['fr'];
 		}
 
 		return "";
