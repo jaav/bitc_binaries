@@ -121,6 +121,10 @@
         <mapping resource="com/bitc/hdata/MlrsParams.hbm.xml" /> 
        	<mapping resource="com/bitc/cms/hdata/ContentBoxoffice.hbm.xml" />
        	<mapping resource="com/bitc/cms/hdata/ContentBoxofficeDate.hbm.xml" />
+       	<mapping resource="com/bitc/cms/hdata/ContentBfoCompanyClt.hbm.xml" />
+       	<mapping resource="com/bitc/cms/hdata/ContentBfoCompany.hbm.xml" />
+       	<mapping resource="com/bitc/cms/hdata/ContentBfoSpotClt.hbm.xml" />
+       	<mapping resource="com/bitc/cms/hdata/ContentBfoSpot.hbm.xml" />
         <mapping resource="com/bitc/cms/hdata/ContentDeals.hbm.xml" />   
         <mapping resource="com/bitc/cms/hdata/ContentDealsClt.hbm.xml" />    
         <mapping resource="com/bitc/hdata/DealsAnswer.hbm.xml" />                
