@@ -21,11 +21,26 @@
 <script type="text/javascript" src="${static}/front/js/jquery.ui.widget.js"></script>
 <script type="text/javascript" src="${static}/front/js/jquery.ui.datepicker.js"></script>
 <script type="text/javascript" src="${static}/front/js/jquery.ui.datepicker-${culture.language}.js"></script>
+<script type="text/javascript" src="${static}/ajax/js/tripPlannerMethods.js"></script>
+<script type="text/javascript">
+    //TRIP PLANNER METHOD
+    //* addToTripPlanner(group, contentId) => call tripPlannerLightBox(data) => data.contentName & data.status ( return contentName & status )
+    function tripPlannerLightBox(data) {
+        $.nyroModalManual({
+            minWidth: 700,
+            minHeight: 400,
+            forceType: 'iframe',
+            closeSelector: '.nyroModalClose',
+            url: '${context}/front/other/displayTripPlannerLightBox.do?contentName=' + data.contentName + '&status=' + data.status + '&panelContentType=' + data.panelContentType + '&panelGroup=' + data.panelGroup + '&panelContentId=' + data.contentId,
+            closeButton: '<a href="#" class="nyroModalClose" id="closeBut"><img src="${static}/front/img/ml/close.gif" alt="close" /></a>'
+        });
+    }
+</script>
 
 <div class="clear"></div>
 <div id="content_main">
 
-    <wa:include URI="minisite/content/findHeritage" >
+    <wa:include URI="minisite/content/findHeritage">
         <wa:param name="group" value="${group}"/>
     </wa:include>
     <div class="TabbedPanelsContentGroup">
@@ -63,9 +78,10 @@
                                     </c:otherwise>
                                 </c:choose>
                             </a>
+
                             <div class="txt" id="txt_${item.id}">
                                 <h3 class="no_margin">
-                                        <a
+                                    <a
                                             href="<wa:url URI="${site}/content/displayDetail/name/${waParam.name}/group/${item.group}/id/${item.id}"/>"
                                             title="${item.formatMainTitle}">${item.mainTitle}</a>
 

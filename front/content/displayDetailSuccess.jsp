@@ -134,7 +134,6 @@
         </c:choose>
     </h3>
 </c:if>
-
 <c:choose>
 <c:when test="${bean.group == 'FOODY'}">
     <div class="float_left mtop10">

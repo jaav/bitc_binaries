@@ -131,8 +131,10 @@
         <mapping resource="com/bitc/hdata/DealsOrder.hbm.xml" /> 
         <mapping resource="com/bitc/cms/hdata/Congressiste.hbm.xml" /> 
          <mapping resource="com/bitc/cms/ShortVenue.hbm.xml" /> 
-         <mapping resource="com/bitc/hdata/ContentArticleCorrespondancePourTous.hbm.xml" />   
-        </session-factory>
+         <mapping resource="com/bitc/hdata/ContentArticleCorrespondancePourTous.hbm.xml" />
+        <mapping resource="com/bitc/cms/hdata/ContentPerson.hbm.xml"/>
+        <mapping resource="com/bitc/cms/hdata/ContentPersonClt.hbm.xml"/>
+    </session-factory>
 
 
 </hibernate-configuration>

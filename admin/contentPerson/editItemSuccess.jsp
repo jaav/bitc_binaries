@@ -17,7 +17,7 @@ isELIgnored ="false"
 		<div class="clr"></div>
 	</div>
 </div>
-<h2><wa:mls>ContentBfoCompany</wa:mls>&nbsp;-&nbsp;
+<h2><wa:mls>ContentPerson</wa:mls>&nbsp;-&nbsp;
 	<c:if test="${bean==null || bean.id<=0}"><wa:mls>(Add)</wa:mls></c:if>
 	<c:if test="${bean!=null && bean.id>0}"><wa:mls>(Edit)</wa:mls></c:if>
 </h2>
@@ -37,21 +37,29 @@ isELIgnored ="false"
 						<span>${bean.culture}</span>
 					</div>
 				</c:if>
-					<div class="bgGrey" id="v_name">
-						<label for="f_name"><wa:mls>name</wa:mls></label>
-						<textarea name="f_name" class="textfield" >${bean.name}</textarea>
+					<div class="bgGrey" id="v_firstName">
+						<label for="f_firstName"><wa:mls>firstName</wa:mls></label>
+						<textarea name="f_firstName" class="textfield" >${bean.firstName}</textarea>
 	            		<div class="textareaRequiredMsg"><img src="${context}/static/admin/img/erreur.gif"/><wa:mls>Ce champ est obligatoire</wa:mls></div>
 	            		<script type="text/javascript">
-							var v_name = new Spry.Widget.ValidationTextarea("v_name", {minChars:1, maxChars:100,validateOn:["blur","change"]});
+							var v_name = new Spry.Widget.ValidationTextarea("v_firstName", {minChars:1, maxChars:100,validateOn:["blur","change"]});
 						</script> 
 					</div>
+                    <div class="bgGrey" id="v_lastName">
+                        <label for="f_lastName"><wa:mls>lastName</wa:mls></label>
+                        <textarea name="f_lastName" class="textfield" >${bean.lastName}</textarea>
+                        <div class="textareaRequiredMsg"><img src="${context}/static/admin/img/erreur.gif"/><wa:mls>Ce champ est obligatoire</wa:mls></div>
+                        <script type="text/javascript">
+                            var v_name = new Spry.Widget.ValidationTextarea("v_lastName", {minChars:1, maxChars:100,validateOn:["blur","change"]});
+                        </script>
+                    </div>
 					<div class="bgWhite" id="v_group">
 						<label for="f_group"><wa:mls>group</wa:mls></label>
 						<c:if test="${bean.group==null || bean.group ==''}">
 							<wa:include URI="${site}/dropdown/dropList">
 								<wa:param name="class" value="com.wanabe.cms.hdata.ContentGroup" />
 								<wa:param name="manager" value="com.wanabe.cms.manager.ContentGroupManager" />
-								<wa:param name="method" value="listByTypeContentBfoCompany" />
+								<wa:param name="method" value="listByTypeContentPerson" />
 								<wa:param name="identity" value="name" />
 								<wa:param name="display" value="name" />
 								<wa:param name="name" value="f_group" />
@@ -173,20 +181,6 @@ isELIgnored ="false"
 								var v_longitude = new Spry.Widget.ValidationTextarea("v_longitude", {isRequired:false,maxChars:10});
 							</script> 
 						</div>
-						<div class="bgWhite" id="v_legal">
-							<label for="f_legal"><wa:mls>legal</wa:mls></label>
-							<textarea name="f_legal" class="textfield" >${bean.legal}</textarea>
-							<script type="text/javascript">
-								var v_legal = new Spry.Widget.ValidationTextarea("v_legal", {isRequired:false});
-							</script> 
-						</div>
-						<div class="bgGrey" id="v_vat">
-							<label for="f_vat"><wa:mls>vat</wa:mls></label>
-							<textarea name="f_vat" class="textfield" >${bean.vat}</textarea>
-							<script type="text/javascript">
-								var v_vat = new Spry.Widget.ValidationTextarea("v_vat", {isRequired:false});
-							</script> 
-						</div>
 						<div class="bgWhite" id="v_memo">
 							<label for="f_memo"><wa:mls>memo</wa:mls></label>
 							<textarea name="f_memo" class="textfield" >${bean.memo}</textarea>
@@ -194,25 +188,27 @@ isELIgnored ="false"
 								var v_memo = new Spry.Widget.ValidationTextarea("v_memo", {isRequired:false});
 							</script> 
 						</div>
-						<div class="bgGrey" id="v_periodFromDate">
-						<label for="f_periodFromDate"><wa:mls>periodFromDate</wa:mls></label>
-						<input type="text" class="w8em format-d-m-y divider-slash  no-transparency" id="f_periodFromDate" name="f_periodFromDate" value="<fmt:formatDate pattern="dd/MM/yyyy" value="${bean.periodFromDate}"/>" maxlength="10" />
-						<div class="textfieldRequiredMsg"><img src="${context}/static/admin/img/erreur.gif"/><wa:mls>Ce champ est obligatoire</wa:mls></div>
-						<div class="textfieldInvalidFormatMsg"><img src="${context}/static/admin/img/erreur.gif"/><wa:mls>Valeur invalide  : dd/MM/yyyy</wa:mls></div>
-	            		
-	            		<script type="text/javascript">
-							var v_periodFromDate = new Spry.Widget.ValidationTextField("v_periodFromDate","date", {format:"dd/mm/yyyy",isRequired:false,validateOn:["blur","change"]});
-						</script>
-					</div>
-					<div class="bgWhite" id="v_periodToDate">
-						<label for="f_periodToDate"><wa:mls>periodToDate</wa:mls></label>
-						<input type="text" class="w8em format-d-m-y divider-slash  no-transparency" id="f_periodToDate" name="f_periodToDate" value="<fmt:formatDate pattern="dd/MM/yyyy" value="${bean.periodToDate}"/>" maxlength="10" />
-						<div class="textfieldRequiredMsg"><img src="${context}/static/admin/img/erreur.gif"/><wa:mls>Ce champ est obligatoire</wa:mls></div>
-						<div class="textfieldInvalidFormatMsg"><img src="${context}/static/admin/img/erreur.gif"/><wa:mls>Valeur invalide  : dd/MM/yyyy</wa:mls></div>
-						<script type="text/javascript">
-							var v_periodToDate = new Spry.Widget.ValidationTextField("v_periodToDate","date", {format:"dd/mm/yyyy",isRequired:false,validateOn:["blur","change"]});
-						</script>
-					</div>
+                        <div class="bgGrey" id="v_gender">
+                            <label for="f_gender"><wa:mls>gender</wa:mls></label>
+                            <textarea name="f_gender" class="textfield" >${bean.gender}</textarea>
+                            <script type="text/javascript">
+                                var v_memo = new Spry.Widget.ValidationTextarea("v_gender", {isRequired:false});
+                            </script>
+                        </div>
+                        <div class="bgWhite" id="v_language">
+                            <label for="f_language"><wa:mls>language</wa:mls></label>
+                            <textarea name="f_language" class="textfield" >${bean.language}</textarea>
+                            <script type="text/javascript">
+                                var v_memo = new Spry.Widget.ValidationTextarea("v_language", {isRequired:false});
+                            </script>
+                        </div>
+                        <div class="bgGrey" id="v_bfo_company">
+                            <label for="f_bfo_company"><wa:mls>company</wa:mls></label>
+                            <textarea name="f_bfo_company" class="textfield" >${bean.bfo_company}</textarea>
+                            <script type="text/javascript">
+                                var v_memo = new Spry.Widget.ValidationTextarea("v_bfo_company", {isRequired:false});
+                            </script>
+                        </div>
 					</fieldset>
 					<div class="clr"></div>
 					<div class="TabbedPanels" id="TabbedPanels1">
@@ -224,27 +220,16 @@ isELIgnored ="false"
 						<div class="TabbedPanelsContentGroup">
 						<c:forEach var="clt" items="${culture.allCultures}" varStatus="loop">
 						<div class="TabbedPanelsContent">
-					<c:if test="${bean!=null && bean.source!=null && bean.contentBfoCompanyClts[clt].sourceTitle!=null}">
+					<c:if test="${bean!=null && bean.source!=null && bean.contentPersonClts[clt].sourceTitle!=null}">
 					<div class="bgGrey">
 						<label for="f_${clt}_sourceTitle"><wa:mls>title </wa:mls> (source)</label>
-						<span>${bean.contentBfoCompanyClts[clt].sourceTitle}</span>
+						<span>${bean.contentPersonClts[clt].sourceTitle}</span>
 					</div>
 					</c:if>		
-					<div class="bgGrey" style="height:50px;" id="v_${clt}_title">
-						<label for="f_${clt}_title" style="float:left;"><wa:mls>title</wa:mls></label>
-						<textarea name="f_${clt}_title" style="float:left;" class="textfield textForAll" id="f_${clt}_title" >${bean.contentBfoCompanyClts[clt].title}</textarea>
-						<div class="textareaRequiredMsg"><img src="${context}/static/admin/img/erreur.gif"/><wa:mls>Ce champ est obligatoire</wa:mls></div>
-						<c:if test="${bean==null || bean.source==null || bean.contentBfoCompanyClts[clt].sourceTitle==null}">
-	            		<script type="text/javascript">
-							var v_${clt}_title = new Spry.Widget.ValidationTextarea("v_${clt}_title", {isRequired:true,minChars:1, maxChars:200,validateOn:["blur","change"]});
-						</script>
-						</c:if>
-						<a href="#null"  class="image_btn_apply" onclick="applyValueForAll('textForAll','f_${clt}_title')" title="<wa:mls>Appliquer pour toutes les langues</wa:mls>">&nbsp;</a>
-					</div>
-					<c:if test="${bean!=null && bean.source!=null && bean.contentBfoCompanyClts[clt].sourceAbstract!=null}">
+					<c:if test="${bean!=null && bean.source!=null && bean.contentPersonClts[clt].sourceAbstract!=null}">
 					<div class="bgWhite">
 						<label for="f_${clt}_sourceAbstract_Not" style="float:left;"><wa:mls>abstract_ (source) - Not editable</wa:mls></label>
-						<textarea name="f_${clt}_sourceAbstractNot" id="f_${clt}_sourceAbstractNot" class="textarea2" style="float:left; margin-left:3px;">${bean.contentBfoCompanyClts[clt].sourceAbstract}</textarea>
+						<textarea name="f_${clt}_sourceAbstractNot" id="f_${clt}_sourceAbstractNot" class="textarea2" style="float:left; margin-left:3px;">${bean.contentPersonClts[clt].sourceAbstract}</textarea>
 						<div class="clr"></div>	
 					</div>
 					</c:if>
@@ -252,15 +237,15 @@ isELIgnored ="false"
 					<div class="bgWhite abstract">
 						<label for="f_${clt}_abstract_" style="float:left;"><wa:mls>abstract_</wa:mls></label>
 						<div  style="float:left; margin-left:3px; width:95%">
-						<textarea name="f_${clt}_abstract_" id="f_${clt}_abstract_" class="textarea2" style="float:left; margin-left:3px;">${bean.contentBfoCompanyClts[clt].abstract_}</textarea>
+						<textarea name="f_${clt}_abstract_" id="f_${clt}_abstract_" class="textarea2" style="float:left; margin-left:3px;">${bean.contentPersonClts[clt].abstract_}</textarea>
 						</div>
 						<div class="clr"></div>
 					</div>
 	
-					<c:if test="${bean!=null && bean.source!=null && bean.contentBfoCompanyClts[clt].sourceBody!=null}">
+					<c:if test="${bean!=null && bean.source!=null && bean.contentPersonClts[clt].sourceBody!=null}">
 					<div class="bgGrey">
 						<label for="f_${clt}_sourceBodyNot" style="float:left;"><wa:mls>body (source) - Not editable</wa:mls></label>
-						<textarea name="f_${clt}_sourceBodyNot" id="f_${clt}_sourceBodyNot" class="textarea2" style="float:left; margin-left:3px;">${bean.contentBfoCompanyClts[clt].sourceBody}</textarea>
+						<textarea name="f_${clt}_sourceBodyNot" id="f_${clt}_sourceBodyNot" class="textarea2" style="float:left; margin-left:3px;">${bean.contentPersonClts[clt].sourceBody}</textarea>
 						<div class="clr"></div>	
 					</div>
 					</c:if>
@@ -268,15 +253,15 @@ isELIgnored ="false"
 					<div class="bgGrey body">
 						<label for="f_${clt}_body" style="float:left;"><wa:mls>body</wa:mls></label>
 						<div  style="float:left; margin-left:3px; width:95%">
-							<textarea name="f_${clt}_body" id="f_${clt}_body"  class="textarea2" >${bean.contentBfoCompanyClts[clt].body}</textarea>
+							<textarea name="f_${clt}_body" id="f_${clt}_body"  class="textarea2" >${bean.contentPersonClts[clt].body}</textarea>
 						</div>
 						<div class="clr"></div>	
 						
 					</div>
-					<c:if test="${bean!=null && bean.source!=null && bean.contentBfoCompanyClts[clt].sourceInfo!=null}">
+					<c:if test="${bean!=null && bean.source!=null && bean.contentPersonClts[clt].sourceInfo!=null}">
 					<div class="bgWhite">
 						<label for="f_${clt}_sourceInfoNot" style="float:left;"><wa:mls>info (source) - Not editable</wa:mls></label>
-						<textarea name="f_${clt}_sourceInfoNot" id="f_${clt}_sourceInfoNot" class="textarea2" style="float:left; margin-left:3px;">${bean.contentBfoCompanyClts[clt].sourceInfo}</textarea>
+						<textarea name="f_${clt}_sourceInfoNot" id="f_${clt}_sourceInfoNot" class="textarea2" style="float:left; margin-left:3px;">${bean.contentPersonClts[clt].sourceInfo}</textarea>
 						<div class="clr"></div>	
 					</div>
 					</c:if>
@@ -284,14 +269,14 @@ isELIgnored ="false"
 					<div class="bgWhite info">
 						<label for="f_${clt}_info" style="float:left;"><wa:mls>info</wa:mls></label>
 						<div  style="float:left; margin-left:3px; width:95%">
-							<textarea name="f_${clt}_info" id="f_${clt}_info"  class="textarea2" >${bean.contentBfoCompanyClts[clt].info}</textarea>
+							<textarea name="f_${clt}_info" id="f_${clt}_info"  class="textarea2" >${bean.contentPersonClts[clt].info}</textarea>
 						</div>
 						<div class="clr"></div>	
 						
 					</div>
 					<div class="bgGrey" id="v_${clt}_bigImage">
 						<label for="f_${clt}_bigImage" style="float:left;" ><wa:mls>bigImage</wa:mls></label>
-						<textarea name="f_${clt}_bigImage" id="f_${clt}_bigImage" class="textfield bigImageForAll" style="float:left; margin-left:3px">${bean.contentBfoCompanyClts[clt].bigImage}</textarea>
+						<textarea name="f_${clt}_bigImage" id="f_${clt}_bigImage" class="textfield bigImageForAll" style="float:left; margin-left:3px">${bean.contentPersonClts[clt].bigImage}</textarea>
 						<a href="${context}/${site}/contentImage/contentImageList.do?openerField=f_${clt}_bigImage" target="image" class="image_btn" title="<wa:mls>Upload an image</wa:mls>">&nbsp;</a>
 						<a href="#null"  class="image_btn_apply" onclick="applyValueForAll('bigImageForAll','f_${clt}_bigImage')" title="<wa:mls>Appliquer pour toutes les langues</wa:mls>">&nbsp;</a>
 						<div class="clr"></div>	
@@ -301,7 +286,7 @@ isELIgnored ="false"
 					</div>
 					<div class="bgWhite" id="v_${clt}_smallImage">
 						<label for="f_${clt}_smallImage" style="float:left;" ><wa:mls>smallImage</wa:mls></label>
-						<textarea name="f_${clt}_smallImage" id="f_${clt}_smallImage" class="textfield smallImageForAll" style="float:left; margin-left:3px">${bean.contentBfoCompanyClts[clt].smallImage}</textarea>
+						<textarea name="f_${clt}_smallImage" id="f_${clt}_smallImage" class="textfield smallImageForAll" style="float:left; margin-left:3px">${bean.contentPersonClts[clt].smallImage}</textarea>
 						<a href="${context}/${site}/contentImage/contentImageList.do?openerField=f_${clt}_smallImage" target="image" class="image_btn" title="<wa:mls>Upload an image</wa:mls>">&nbsp;</a>
 						<a href="#null"  class="image_btn_apply" onclick="applyValueForAll('smallImageForAll','f_${clt}_smallImage')" title="<wa:mls>Appliquer pour toutes les langues</wa:mls>">&nbsp;</a>
 						<div class="clr"></div>
@@ -311,7 +296,7 @@ isELIgnored ="false"
 					</div>
 					<div class="bgGrey" id="v_${clt}_url">
 						<label for="f_${clt}_url" style="float:left;"><wa:mls>url</wa:mls></label>
-						<textarea name="f_${clt}_url"  id="f_${clt}_url" class="textfield urlForAll"  style="float:left; margin-left:3px">${bean.contentBfoCompanyClts[clt].url}</textarea>
+						<textarea name="f_${clt}_url"  id="f_${clt}_url" class="textfield urlForAll"  style="float:left; margin-left:3px">${bean.contentPersonClts[clt].url}</textarea>
 						<a href="${context}/${site}/contentLink/contentLinkList.do?openerField=f_${clt}_url" target="link" class="track_link_btn" title="<wa:mls>Track a link</wa:mls>">&nbsp;</a>
 						<a href="#null"  class="image_btn_apply" onclick="applyValueForAll('urlForAll','f_${clt}_url')" title="<wa:mls>Appliquer pour toutes les langues</wa:mls>">&nbsp;</a>
 						<div class="clr"></div>
@@ -321,7 +306,7 @@ isELIgnored ="false"
 					</div>
 					<div class="bgWhite" id="v_${clt}_urlLabel">
 						<label for="f_${clt}_urlLabel"><wa:mls>urlLabel</wa:mls></label>
-						<textarea name="f_${clt}_urlLabel" class="textfield" >${bean.contentBfoCompanyClts[clt].urlLabel}</textarea>
+						<textarea name="f_${clt}_urlLabel" class="textfield" >${bean.contentPersonClts[clt].urlLabel}</textarea>
 						<script type="text/javascript">
 							var v_${clt}_urlLabel = new Spry.Widget.ValidationTextarea("v_${clt}_urlLabel", {isRequired:false,maxChars:200,validateOn:["blur","change"]});
 						</script>
@@ -329,11 +314,11 @@ isELIgnored ="false"
 					<c:if test="${bean!=null && bean.id>0 && duplicate eq null}">		
 					<div class="bgGrey">
 						<label for="f_${clt}_openCount"><wa:mls>openCount</wa:mls></label>
-						<span><c:if test="${bean.contentBfoCompanyClts[clt].openCount==null}">0</c:if>${bean.contentBfoCompanyClts[clt].openCount}</span>
+						<span><c:if test="${bean.contentPersonClts[clt].openCount==null}">0</c:if>${bean.contentPersonClts[clt].openCount}</span>
 					</div>
 					<div class="bgWhite">
 						<label for="f_${clt}_commentCount"><wa:mls>commentCount</wa:mls></label>
-						<span><c:if test="${bean.contentBfoCompanyClts[clt].commentCount==null}">0</c:if>${bean.contentBfoCompanyClts[clt].commentCount}</span>
+						<span><c:if test="${bean.contentPersonClts[clt].commentCount==null}">0</c:if>${bean.contentPersonClts[clt].commentCount}</span>
 					</div>
 					
 					</c:if>
@@ -420,41 +405,13 @@ isELIgnored ="false"
 					
 					
 					<!-- DISPLAY PROPERTIES -->
-                <fieldset>
-                    <legend><wa:mls>Content Persons</wa:mls></legend>
-                    <table border="0">
-                        <tr>
-                            <td>
-                                Id
-                            </td>
-                            <td>
-                                Name
-                            </td>
-                        </tr>
-                        <c:forEach var="person" items="${bean.contentPersons}">
-                            <c:if test="${person != null}">
-                                <tr>
-                                    <td>
-                                        <a href="${context}/${site}/contentPerson/editItem/id/${person.id}.do">
-                                            ${person.id}
-                                        </a>
-                                    </td>
-                                    <td>
-                                         ${person.name}
-                                    </td>
-                                </tr>
-                            </c:if>
-                        </c:forEach>
-                    </table>
-                </fieldset>
-
 				<c:choose>
 					<c:when test="${bean.id !=0 && duplicate eq null}">
 						<c:forEach var="property" items="${listProperties}">
 							<div>
 								<wa:include URI="admin/dropdown/dropListProperty">
 									<wa:param name="propertyName" value="${property.name}" />
-									<wa:param name="contentType" value="ContentBfoCompany"/>
+									<wa:param name="contentType" value="ContentPerson"/>
 									<wa:param name="contentId" value="${bean.id}" />
 								</wa:include>
 							</div>
@@ -465,7 +422,7 @@ isELIgnored ="false"
 							<div>
 								<wa:include URI="admin/dropdown/dropListProperty">
 									<wa:param name="propertyName" value="${property.name}" />
-									<wa:param name="contentType" value="ContentBfoCompany"/>
+									<wa:param name="contentType" value="ContentPerson"/>
 									<wa:param name="contentId" value="${oldId}" />
 								</wa:include>
 							</div>
@@ -478,7 +435,7 @@ isELIgnored ="false"
 			 			 
 			
 						<legend><wa:mls>Google Street View</wa:mls></legend>
-				 	 <a href="<wa:url URI="${site}/googleStreetView/display/ContentType/ContentBfoCompany/id/${bean.id}"/>" target="admin"><wa:mls>Google Street View </wa:mls></a>
+				 	 <a href="<wa:url URI="${site}/googleStreetView/display/ContentType/ContentPerson/id/${bean.id}"/>" target="admin"><wa:mls>Google Street View </wa:mls></a>
 			
 			</fieldset>
 			<div id="errorMessage">
@@ -523,7 +480,7 @@ window.onload = function()
 	oFCKeditor3.LocationPath = window.location.href;
 	oFCKeditor3.ToolbarSet = 'Custom' ;
 	oFCKeditor3.ReplaceTextarea();
-	<c:if test="${bean!=null && bean.source!=null && bean.contentBfoCompanyClts[clt].sourceBody!=null}">
+	<c:if test="${bean!=null && bean.source!=null && bean.contentPersonClts[clt].sourceBody!=null}">
 	var oFCKeditor4 = new FCKeditor('f_${clt}_sourceBodyNot','100%','500px');
 	oFCKeditor4.BasePath = 'fckeditor/';
 	oFCKeditor4.EditorPath = rootPath;
@@ -531,7 +488,7 @@ window.onload = function()
 	oFCKeditor4.ToolbarSet = 'Import' ;
 	oFCKeditor4.ReplaceTextarea();
 	</c:if>
-	<c:if test="${bean!=null && bean.source!=null && bean.contentBfoCompanyClts[clt].sourceAbstract!=null}">
+	<c:if test="${bean!=null && bean.source!=null && bean.contentPersonClts[clt].sourceAbstract!=null}">
 	var oFCKeditor5 = new FCKeditor('f_${clt}_sourceAbstractNot','100%','500px');
 	oFCKeditor5.BasePath = 'fckeditor/';
 	oFCKeditor5.EditorPath = rootPath;
@@ -539,7 +496,7 @@ window.onload = function()
 	oFCKeditor5.ToolbarSet = 'Import' ;
 	oFCKeditor5.ReplaceTextarea(); 
 	</c:if>
-	<c:if test="${bean!=null && bean.source!=null && bean.contentBfoCompanyClts[clt].sourceInfo!=null}">
+	<c:if test="${bean!=null && bean.source!=null && bean.contentPersonClts[clt].sourceInfo!=null}">
 	var oFCKeditor6 = new FCKeditor('f_${clt}_sourceInfoNot','100%','500px');
 	oFCKeditor6.BasePath = 'fckeditor/';
 	oFCKeditor6.EditorPath = rootPath;
@@ -558,7 +515,7 @@ idName='${bean.id}';
 document.detailForm.f_group.id='f_group';
 $('f_group').addEvent('change',function(){
 	var myRequest = new Request({
-		url : '${context}/${site}/ajax/properties.do?type=article&realType=ContentBfoCompany',
+		url : '${context}/${site}/ajax/properties.do?type=article&realType=ContentPerson',
 		method :'get',
 		onSuccess:function(responseText,responseXML){
 			$('ajaxProperties').set('html',responseText);

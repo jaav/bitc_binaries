@@ -1,169 +1,175 @@
-<?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Aug 7, 2013 9:19:57 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
     <class name="com.bitc.cms.hdata.ContentBfoCompany" table="content_bfo_company">
         <id name="id" type="java.lang.Integer">
-            <column name="id" />
-            <generator class="identity" />
+            <column name="id"/>
+            <generator class="identity"/>
         </id>
         <property name="title" type="string">
-            <column name="title" length="300" />
+            <column name="title" length="300"/>
         </property>
         <property name="abstract_" type="string">
-            <column name="abstract" length="2000" />
+            <column name="abstract" length="2000"/>
         </property>
         <property name="info" type="string">
-            <column name="info" length="16777215" />
+            <column name="info" length="16777215"/>
         </property>
         <property name="smallImage" type="string">
-            <column name="small_image" length="300" />
+            <column name="small_image" length="300"/>
         </property>
         <property name="bigImage" type="string">
-            <column name="big_image" length="300" />
+            <column name="big_image" length="300"/>
         </property>
         <property name="url" type="string">
-            <column name="url" length="300" />
+            <column name="url" length="300"/>
         </property>
         <property name="urlLabel" type="string">
-            <column name="url_label" length="200" />
+            <column name="url_label" length="200"/>
         </property>
         <property name="status" type="string">
-            <column name="status" length="20" />
+            <column name="status" length="20"/>
         </property>
         <property name="visible" type="java.lang.Byte">
-            <column name="visible" />
+            <column name="visible"/>
         </property>
         <property name="fromDate" type="timestamp">
-            <column name="from_date" length="19" />
+            <column name="from_date" length="19"/>
         </property>
         <property name="toDate" type="timestamp">
-            <column name="to_date" length="19" />
+            <column name="to_date" length="19"/>
         </property>
         <property name="culture" type="string">
-            <column name="culture" length="7" />
+            <column name="culture" length="7"/>
         </property>
         <property name="author" type="string">
-            <column name="author" length="100" />
+            <column name="author" length="100"/>
         </property>
         <property name="createdOn" type="timestamp">
-            <column name="created_on" length="19" not-null="true" />
+            <column name="created_on" length="19" not-null="true"/>
         </property>
         <property name="createdBy" type="string">
-            <column name="created_by" length="100" />
+            <column name="created_by" length="100"/>
         </property>
         <property name="lastModifiedOn" type="timestamp">
-            <column name="last_modified_on" length="19" />
+            <column name="last_modified_on" length="19"/>
         </property>
         <property name="lastModifiedBy" type="string">
-            <column name="last_modified_by" length="100" />
+            <column name="last_modified_by" length="100"/>
         </property>
         <property name="position" type="java.lang.Integer">
-            <column name="position" />
+            <column name="position"/>
         </property>
         <property name="name" type="string">
-            <column name="name" length="200" />
+            <column name="name" length="200"/>
         </property>
         <property name="numOfVersion" type="java.lang.Integer">
-            <column name="num_of_version" />
+            <column name="num_of_version"/>
         </property>
         <property name="versionId" type="java.lang.Integer">
-            <column name="version_id" />
+            <column name="version_id"/>
         </property>
         <property name="openCount" type="java.lang.Integer">
-            <column name="open_count" />
+            <column name="open_count"/>
         </property>
         <property name="commentCount" type="java.lang.Integer">
-            <column name="comment_count" />
+            <column name="comment_count"/>
         </property>
         <property name="group" type="string">
-            <column name="_group" length="50" />
+            <column name="_group" length="50"/>
         </property>
         <property name="source" type="string">
-            <column name="source" length="50" />
+            <column name="source" length="50"/>
         </property>
         <property name="sourceId" type="java.lang.Integer">
-            <column name="source_id" />
+            <column name="source_id"/>
         </property>
         <property name="body" type="string">
-            <column name="body" length="16777215" />
+            <column name="body" length="16777215"/>
         </property>
         <property name="adresseFr" type="string">
-            <column name="adresse_fr" length="150" />
+            <column name="adresse_fr" length="150"/>
         </property>
         <property name="adresseNl" type="string">
-            <column name="adresse_nl" length="150" />
+            <column name="adresse_nl" length="150"/>
         </property>
         <property name="zipcode" type="java.lang.Integer">
-            <column name="zipcode" />
+            <column name="zipcode"/>
         </property>
         <property name="cityFr" type="string">
-            <column name="city_fr" length="100" />
+            <column name="city_fr" length="100"/>
         </property>
         <property name="cityNl" type="string">
-            <column name="city_nl" length="100" />
+            <column name="city_nl" length="100"/>
         </property>
         <property name="email" type="string">
-            <column name="email" length="100" />
+            <column name="email" length="100"/>
         </property>
         <property name="phone" type="string">
-            <column name="phone" length="40" />
+            <column name="phone" length="40"/>
         </property>
         <property name="mobile" type="string">
-            <column name="mobile" length="20" />
+            <column name="mobile" length="20"/>
         </property>
         <property name="fax" type="string">
-            <column name="fax" length="20" />
+            <column name="fax" length="20"/>
         </property>
         <property name="website" type="string">
-            <column name="website" length="150" />
+            <column name="website" length="150"/>
         </property>
         <property name="latitude" type="java.lang.Double">
-            <column name="latitude" precision="10" scale="6" />
+            <column name="latitude" precision="10" scale="6"/>
         </property>
         <property name="longitude" type="java.lang.Double">
-            <column name="longitude" precision="10" scale="6" />
+            <column name="longitude" precision="10" scale="6"/>
         </property>
         <property name="valid" type="int">
-            <column name="valid" not-null="true" />
+            <column name="valid" not-null="true"/>
         </property>
         <property name="svLatitude" type="java.lang.Double">
-            <column name="sv_latitude" precision="18" scale="14" />
+            <column name="sv_latitude" precision="18" scale="14"/>
         </property>
         <property name="svLongitude" type="java.lang.Double">
-            <column name="sv_longitude" precision="18" scale="14" />
+            <column name="sv_longitude" precision="18" scale="14"/>
         </property>
         <property name="svHeading" type="java.lang.Double">
-            <column name="sv_heading" precision="18" scale="14" />
+            <column name="sv_heading" precision="18" scale="14"/>
         </property>
         <property name="svPitch" type="java.lang.Double">
-            <column name="sv_pitch" precision="18" scale="14" />
+            <column name="sv_pitch" precision="18" scale="14"/>
         </property>
         <property name="svZoom" type="java.lang.Double">
-            <column name="sv_zoom" precision="18" scale="14" />
+            <column name="sv_zoom" precision="18" scale="14"/>
         </property>
         <property name="legal" type="string">
-            <column name="legal" length="20" />
+            <column name="legal" length="20"/>
         </property>
         <property name="vat" type="string">
-            <column name="vat" length="20" />
+            <column name="vat" length="20"/>
         </property>
         <property name="memo" type="string">
-            <column name="memo" length="2000" />
+            <column name="memo" length="2000"/>
         </property>
         <many-to-one name="publishContent" class="com.bitc.cms.hdata.ContentBfoCompany" fetch="select">
-            <column name="published_id" />
+            <column name="published_id"/>
         </many-to-one>
-        <map name="contentBfoCompanyClts" inverse="true" cascade="all" >
+        <map name="contentBfoCompanyClts" inverse="true" cascade="all">
             <key>
-                <column name="content_id" not-null="true" />
+                <column name="content_id" not-null="true"/>
             </key>
             <map-key type="string">
-            	<column name="culture" not-null="true">
-            	</column>
-            </map-key> 
-            <one-to-many class="com.bitc.cms.hdata.ContentBfoCompanyClt" />
+                <column name="culture" not-null="true">
+                </column>
+            </map-key>
+            <one-to-many class="com.bitc.cms.hdata.ContentBfoCompanyClt"/>
         </map>
+        <list name="contentPersons">
+            <key>
+                <column name="bfo_company" not-null="true"/>
+            </key>
+            <list-index column="id"/>
+            <one-to-many class="com.bitc.cms.hdata.ContentPerson"/>
+        </list>
     </class>
 </hibernate-mapping>

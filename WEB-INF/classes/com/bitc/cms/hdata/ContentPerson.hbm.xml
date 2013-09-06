@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.bitc.cms.hdata.ContentPerson" table="content_person">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="title" column="title"/>
+        <property name="abstract_" column="abstract"/>
+        <property name="info" column="info"/>
+        <property name="smallImage" column="small_image"/>
+        <property name="bigImage" column="big_image"/>
+        <property name="url" column="url"/>
+        <property name="urlLabel" column="url_label"/>
+        <property name="status" column="status"/>
+        <property name="visible" column="visible"/>
+        <property name="fromDate" column="from_date"/>
+        <property name="toDate" column="to_date"/>
+        <property name="culture" column="culture"/>
+        <property name="author" column="author"/>
+        <property name="createdOn" column="created_on"/>
+        <property name="createdBy" column="created_by"/>
+        <property name="lastModifiedOn" column="last_modified_on"/>
+        <property name="lastModifiedBy" column="last_modified_by"/>
+        <property name="position" column="position"/>
+        <property name="name" column="name"/>
+        <property name="numOfVersion" column="num_of_version"/>
+        <property name="versionId" column="version_id"/>
+        <property name="openCount" column="open_count"/>
+        <property name="commentCount" column="comment_count"/>
+        <property name="group" column="_group"/>
+        <property name="source" column="source"/>
+        <property name="sourceId" column="source_id"/>
+        <property name="body" column="body"/>
+        <property name="adresseFr" column="adresse_fr"/>
+        <property name="adresseNl" column="adresse_nl"/>
+        <property name="zipcode" column="zipcode"/>
+        <property name="cityFr" column="city_fr"/>
+        <property name="cityNl" column="city_nl"/>
+        <property name="email" column="email"/>
+        <property name="phone" column="phone"/>
+        <property name="mobile" column="mobile"/>
+        <property name="fax" column="fax"/>
+        <property name="website" column="website"/>
+        <property name="latitude" column="latitude"/>
+        <property name="longitude" column="longitude"/>
+        <property name="valid" column="valid"/>
+        <property name="svLatitude" column="sv_latitude"/>
+        <property name="svLongitude" column="sv_longitude"/>
+        <property name="svHeading" column="sv_heading"/>
+        <property name="svPitch" column="sv_pitch"/>
+        <property name="svZoom" column="sv_zoom"/>
+        <property name="lastName" column="lastname"/>
+        <property name="firstName" column="firstname"/>
+        <property name="prefix" column="prefix"/>
+        <property name="gender" column="gender"/>
+        <property name="language" column="language"/>
+        <property name="memo" column="memo"/>
+        <property name="bfo_company" column="bfo_company"/>
+        <many-to-one name="contentBfoCompany" class="com.bitc.cms.hdata.ContentBfoCompany" fetch="select" update="false" insert="false">
+            <column name="bfo_company"/>
+        </many-to-one>
+        <many-to-one name="publishContent" class="com.bitc.cms.hdata.ContentPerson" fetch="select">
+            <column name="published_id" />
+        </many-to-one>
+        <map name="ContentPersonClts" inverse="true" cascade="all" >
+            <key>
+                <column name="content_id" not-null="true" />
+            </key>
+            <map-key type="string">
+                <column name="culture" not-null="true">
+                </column>
+            </map-key>
+            <one-to-many class="com.bitc.cms.hdata.ContentPersonClt" />
+        </map>
+    </class>
+</hibernate-mapping>

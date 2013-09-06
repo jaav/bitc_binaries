@@ -41,7 +41,7 @@ isELIgnored ="false"
 					<wa:include URI="front/dropdown/dropList">
 						<wa:param name="class" value="com.bitc.utils.KeyValueDropdownBean" />
 						<wa:param name="manager" value="com.bitc.utils.Utils" />
-						<wa:param name="method" value="getLocationsList" />
+						<wa:param name="method" value="getLocationsList_${culture}" />
 						<wa:param name="identity" value="key" />
 						<wa:param name="display" value="value" />
 						<wa:param name="name" value="s_ContentPropertyValueManager_valueId_Location" />

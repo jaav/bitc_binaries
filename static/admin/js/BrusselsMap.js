@@ -212,7 +212,7 @@ function BrusselsMap(opts) {
 				+ "</strong><br/>" + "" + preparedInfo.address + "<br/>" + ""
 				+ preparedInfo.zipcode + " " + preparedInfo.city + "<br/>"
 				+ "<a href=\"/bitc/minisite/content/displayDetail/clt/BE_"+options.lang+"/name/monument/group/"+preparedInfo.type+"/id/"+preparedInfo.id+".do\" target=\"_top\">"+details+"</a> <br/>"
-				+ "<img src=\""+preparedInfo.smallImage+"\" />"
+				+ "<img style=\"width:100px;\" src=\""+preparedInfo.smallImage+"\" />"
 				+ "</div>"
 		infoWindow.setContent(infoContent);
 		infoWindow.open(map, marker);

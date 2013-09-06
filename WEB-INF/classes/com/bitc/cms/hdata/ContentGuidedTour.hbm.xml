@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 9 juin 2010 15:04:15 by Hibernate Tools 3.2.4.GA -->
 <hibernate-mapping>
     <class name="com.bitc.cms.hdata.ContentGuidedTour" table="content_guided_tour" >
@@ -128,7 +128,7 @@
         <property name="website" type="string">
             <column name="website" length="150" />
         </property>
-         <property name="latitude" type="java.lang.Double">
+        <property name="latitude" type="java.lang.Double">
             <column name="latitude" precision="10" scale="6">
                 <comment></comment>
             </column>
@@ -138,19 +138,19 @@
                 <comment></comment>
             </column>
         </property>
-             <property name="svLatitude" type="java.lang.Double">
+        <property name="svLatitude" type="java.lang.Double">
             <column name="sv_latitude" precision="18" scale="14" />
         </property>
         <property name="svLongitude" type="java.lang.Double">
             <column name="sv_longitude" precision="18" scale="14" />
         </property>
-         <property name="svHeading" type="java.lang.Double">
+        <property name="svHeading" type="java.lang.Double">
             <column name="sv_heading" precision="18" scale="14" />
         </property>
-         <property name="svPitch" type="java.lang.Double">
+        <property name="svPitch" type="java.lang.Double">
             <column name="sv_pitch" precision="18" scale="14" />
         </property>
-         <property name="svZoom" type="java.lang.Double">
+        <property name="svZoom" type="java.lang.Double">
             <column name="sv_zoom" precision="18" scale="14" />
         </property>
         <property name="periodFromDate" type="timestamp">
@@ -174,21 +174,18 @@
         <property name="fixedDate" type="boolean">
             <column name="fixed_date" not-null="true" />
         </property>
-        <property name="boxofficeId" type="java.lang.Integer">
-			<column name="boxoffice_id"/>        
-        </property>
         <map name="contentGuidedTourClts" inverse="true" cascade="all" >
             <key>
                 <column name="content_id" not-null="true" />
             </key>
             <map-key type="string">
-            	<column name="culture" not-null="true">
-            	</column>
-            </map-key> 
+                <column name="culture" not-null="true">
+                </column>
+            </map-key>
             <one-to-many class="com.bitc.cms.hdata.ContentGuidedTourClt" />
         </map>
         <set name="eventLanguageLinkPropertyValues" inverse="true" cascade="all" order-by="value_name">
-        	<key>
+            <key>
                 <column name="contentid" not-null="true" />
             </key>
             <one-to-many class="com.wanabe.cms.hdata.ContentLinkPropertyvalueContent" />
