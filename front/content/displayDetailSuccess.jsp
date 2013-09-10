@@ -32,9 +32,18 @@
 <style type="text/css" media="screen">
     @import url("${static}/front/css/nyroModal.css");
 </style>
+
 <script type="text/javascript" src="${static}/front/js/jquery.nyroModal-1.6.1.pack.js"></script>
 <script src="${static}/ajax/js/tripPlannerMethods.js" type="text/javascript"></script>
 <script src="${static}/ajax/js/meetingPlannerMethods.js" type="text/javascript"></script>
+<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+<c:if test="${bean.group eq 'BFOSPOT'}">
+    <link rel="stylesheet" type="text/css" href="${static}/front/css/scrollable-buttons.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="${static}/front/css/lightbox.css" media="screen" />
+    <script type="text/javascript" src="${static}/front/js/lightbox.js"></script>
+</c:if>
+
+<link rel="shortcut icon" href="/media/img/favicon.ico">
 <script type="text/javascript">
     //TRIP PLANNER METHOD
     //* addToTripPlanner(group, contentId) => call tripPlannerLightBox(data) => data.contentName & data.status ( return contentName & status )
@@ -537,18 +546,40 @@
 </div>
 <div class="clr"></div>
 
-
-	<c:if test="${boxOffice ne null && boxOffice eq true}">
-	 <div style="position: relative;float: left;">
-	  <a class="btn_buy_ticket" href="javascript:forwardToBoxofficeFrame('${bean.officeBookingURL}')">
-	       </a>
-	 </div>
-	</c:if>
-
-
 </c:otherwise>
 
 </c:choose>
+
+<c:if test="${bean.group eq 'BFOSPOT'}">
+    <div style="margin:0 auto; width: 634px; height:120px;">
+        <!-- "previous page" action -->
+        <a class="prev browse left"></a>
+
+        <!-- root element for scrollable -->
+        <div class="scrollable" id="scrollable">
+
+            <!-- root element for the items -->
+            <div class="items">
+                <c:forEach items="${bean.validContentSpotImages}" var="spotImage" varStatus="status">
+                    <c:if test="${status.index % 5 == 0}">
+                        <div>
+                    </c:if>
+                    <a class="spotImage" href="${spotImage.imageURL}">
+                        <img src="${spotImage.imageURL}"/>
+                    </a>
+                    <c:if test="${(status.index % 5 eq 4) or (status.last)}">
+                       </div>
+                    </c:if>
+                </c:forEach>
+            </div>
+
+        </div>
+
+        <!-- "next page" action -->
+        <a class="next browse right"></a>
+    </div>
+
+</c:if>
 
 
 <c:set var="fb_url"
@@ -613,4 +644,22 @@ function forwardToBoxofficeFrame(officeURL) {
      closeButton: '<a href="#" class="nyroModalClose" id="closeBut"><img src="${static}/front/img/ml/close.png" alt="close" /></a>'
   	});
 }
+</script>
+
+<script>
+    $(function() {
+    // initialize scrollable
+    $(".scrollable").scrollable();
+    });
+</script>
+
+<script type="text/javascript">
+    $(function() {
+        $('a.spotImage').lightBox({
+            fixedNavigation:true,
+            'imageBtnClose': "/bitc/static/front/img/lightbox-btn-close.gif",
+            'imageLoading': "/bitc/static/front/img/lightbox-ico-loading.gif"
+        });
+    });
+
 </script>

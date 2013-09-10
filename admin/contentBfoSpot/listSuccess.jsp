@@ -185,16 +185,6 @@ isELIgnored ="false"
 					<label for="s_longitude"><wa:mls>Longitude</wa:mls></label>
 					<input name="s_longitude" type="text" <c:choose><c:when test="${waParam.s_longitude!=null}">value="${waParam.s_longitude}"</c:when><c:otherwise>value=""</c:otherwise></c:choose>/>
 				</div>
-				<div>
-					<label for="s_periodFromDate"><wa:mls>periodFromDate</wa:mls></label>
-					<p><wa:mls>from</wa:mls> <input type="text" class="w8em format-d-m-y divider-dash highlight-days-12 no-transparency date" id="s_periodFromDateStart" name="s_periodFromDateStart" value="${waParam.s_periodFromDateStart}" maxlength="10" /></p>
-					<p><wa:mls>to</wa:mls> <input type="text" class="w8em format-d-m-y divider-dash highlight-days-12 no-transparency date" id="s_periodFromDateEnd" name="s_periodFromDateEnd" value="${waParam.s_periodFromDateEnd}" maxlength="10" /></p>
-				</div>
-				<div>
-					<label for="s_toDate"><wa:mls>toDate</wa:mls></label>
-					<p><wa:mls>from</wa:mls> <input type="text" class="w8em format-d-m-y divider-dash highlight-days-12 no-transparency date" id="s_periodToDateStart" name="s_periodToDateStart" value="${waParam.s_periodToDateStart}" maxlength="10" /></p>
-					<p><wa:mls>to</wa:mls> <input type="text" class="w8em format-d-m-y divider-dash highlight-days-12 no-transparency date" id="s_periodToDateEnd" name="s_periodToDateEnd" value="${waParam.s_periodToDateEnd}" maxlength="10" /></p>
-				</div>
 				<input type="hidden" name="s_submit" value="Search" />
 				<input type="button" name="s_reset" id="reset_btn" value="<wa:mls>Reset</wa:mls>"  class="reset"></input>
 				<input type="submit" name="s_submit2" class="submit" value="<wa:mls>Search</wa:mls>"></input>							
@@ -255,28 +245,6 @@ isELIgnored ="false"
 							<wa:param name="orderDir" value="${orderDir}" />
 							<wa:exceptParam name="orderBy"/>
 							<wa:param name="orderBy" value="title" />
-						</wa:link>			
-					</td>
-					<td class="center periodFromDate">
-						<wa:link URI="${URI}" allParams="true">
-							<wa:mls>periodFromDate</wa:mls>
-							<wa:exceptParam name="page"/>
-							<wa:param name="page" value="1" />
-							<wa:exceptParam name="orderDir"/>
-							<wa:param name="orderDir" value="${orderDir}" />
-							<wa:exceptParam name="orderBy"/>
-							<wa:param name="orderBy" value="periodFromDate" />
-						</wa:link>			
-					</td>
-					<td class="center periodToDate">
-						<wa:link URI="${URI}" allParams="true">
-							<wa:mls>periodToDate</wa:mls>
-							<wa:exceptParam name="page"/>
-							<wa:param name="page" value="1" />
-							<wa:exceptParam name="orderDir"/>
-							<wa:param name="orderDir" value="${orderDir}" />
-							<wa:exceptParam name="orderBy"/>
-							<wa:param name="orderBy" value="periodToDate" />
 						</wa:link>			
 					</td>
 					<td class="center position">
@@ -367,6 +335,17 @@ isELIgnored ="false"
 							<wa:param name="orderBy" value="publishContent" />
 						</wa:link>			
 					</td>
+                    <td class="center Preview">
+                        <wa:link URI="${URI}" allParams="true">
+                            <wa:mls>Show Images</wa:mls>
+                            <wa:exceptParam name="page"/>
+                            <wa:param name="page" value="1" />
+                            <wa:exceptParam name="orderDir"/>
+                            <wa:param name="orderDir" value="${orderDir}" />
+                            <wa:exceptParam name="orderBy"/>
+                            <wa:param name="orderBy" value="publishContent" />
+                        </wa:link>
+                    </td>
 					<td class="center Preview">
 						<wa:link URI="${URI}" allParams="true">
 							<wa:mls>Preview</wa:mls>
@@ -395,8 +374,6 @@ isELIgnored ="false"
 					<td class="center culture">${item.culture}&nbsp;</td>
 					<td class="left name">${item.name}&nbsp;</td>
 					<td class="left title">${item.title}&nbsp;</td>
-					<td class="center periodFromDate"><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${item.periodFromDate}"/>&nbsp;</td>
-					<td class="center periodToDate"><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${item.periodToDate}"/>&nbsp;</td>
 					<td class="center position">${item.position}&nbsp;</td>
 					<td class="center createdOn"><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${item.createdOn}"/>&nbsp;</td>
 					<td class="center fromDate"><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${item.fromDate}"/>&nbsp;</td>
@@ -417,6 +394,9 @@ isELIgnored ="false"
 					<td class="center publishContent">
 							${item.publishContent.id}
 					</td>
+                    <td class="left action">
+                         <a href="${context}/${site}/contentSpotImages/list.do?s_contentSpotId=${item.id}&s_submit=filtre"><wa:mls>Show Images</wa:mls></a>
+                    </td>
 					<td class="center publishContent">
 				
 							<a href="${context}/front/content/displayDetail/group/${item.group}/id/${item.id}.do" target="site"><wa:mls>Preview</wa:mls></a>

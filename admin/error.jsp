@@ -25,30 +25,7 @@ isELIgnored ="false"
 			<div id="top">
 				
 				<!-- Top contient le top noir avec logo Wanabe, Nom du client, URL client, logout -->
-				<div id="header">
-					
-					<!-- logo Wanabe-->
-					<div id="wanabeLogo">
-						<img src="${staticSite}/images/logo.jpg" alt="wanabe - fusion marketing" />
-					</div>
-				  	
-				  	<!-- Nom et URL du client-->
-					<div class="clientName">
-						Nom du client<br />
-						<div class="smallText">
-							<a href="#">URL client</a>
-						</div> 
-					</div>
-			
-					<!-- bouton logout -->
-					<div class="logoutContainer">
-						<div class="logout">
-							<a href="#">Logout</a>
-						</div>
-					</div>
-					
-				</div>
-				
+
 				<!-- Menu du haut -->
 				<div id="navLevel1">
 					<ul>
@@ -61,10 +38,10 @@ isELIgnored ="false"
 							</c:if>
 						</c:forEach>
 					</ul>
-			
+
 					<div class="iconHelp"><img src="${staticSite}/images/icon_help.gif" alt="help" width="21" height="22" /></div>
 				</div>
-				
+
 				<!-- content englobe tout le reste du contenu -->
 				<div id="content">
 					<h2>${errorMessage}</h2>

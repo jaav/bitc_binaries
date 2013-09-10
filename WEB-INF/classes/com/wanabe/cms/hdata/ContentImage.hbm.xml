@@ -49,5 +49,15 @@
                 <comment></comment>
             </column>
         </property>
+        <property name="contentId" type="java.lang.Integer">
+            <column name="contentId">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="contentGroupId" type="java.lang.Integer">
+            <column name="contentGroup">
+                <comment></comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

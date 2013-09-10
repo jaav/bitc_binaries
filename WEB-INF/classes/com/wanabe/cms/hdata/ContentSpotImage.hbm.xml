@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19-nov.-2008 16:02:58 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.wanabe.cms.hdata.ContentSpotImage" table="content_spot_image">
+        <id name="spotImageId" type="int">
+            <column name="spotImageId" />
+            <generator class="identity" />
+        </id>
+        <property name="spotId" type="java.lang.Integer">
+            <column name="spotId"/>
+        </property>
+         <property name="imageURL" type="string">
+            <column name="imageURL" length="200" />
+        </property>
+        <property name="visible" type="int">
+            <column name="visible"/>
+        </property>
+        <many-to-one name="contentSpot" class="com.bitc.cms.hdata.ContentBfoSpot" fetch="select" insert="false" update="false">
+            <column name="spotId" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

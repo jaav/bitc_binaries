@@ -183,5 +183,12 @@
             </map-key> 
             <one-to-many class="com.bitc.cms.hdata.ContentBfoSpotClt" />
         </map>
+        <list name="contentSpotImages">
+            <key>
+                <column name="spotId" not-null="true"/>
+            </key>
+            <list-index column="spotImageId"/>
+            <one-to-many class="com.wanabe.cms.hdata.ContentSpotImage"/>
+        </list>
     </class>
 </hibernate-mapping>

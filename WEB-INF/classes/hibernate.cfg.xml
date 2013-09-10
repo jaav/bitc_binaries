@@ -134,6 +134,7 @@
          <mapping resource="com/bitc/hdata/ContentArticleCorrespondancePourTous.hbm.xml" />
         <mapping resource="com/bitc/cms/hdata/ContentPerson.hbm.xml"/>
         <mapping resource="com/bitc/cms/hdata/ContentPersonClt.hbm.xml"/>
+        <mapping resource="com/wanabe/cms/hdata/ContentSpotImage.hbm.xml"/>
     </session-factory>
 
 
