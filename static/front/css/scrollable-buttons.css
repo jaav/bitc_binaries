@@ -9,7 +9,7 @@
     position:relative;
     overflow:hidden;
     width: 550px;
-    height:120px;
+    height:100px;
 
     /* custom decorations */
     border:1px solid #ccc;
@@ -37,12 +37,12 @@
 /* single scrollable item */
 .scrollable img {
     float:left;
-    margin:20px 5px 20px 21px;
+    margin:15px 5px 20px 11px;
     background-color:#fff;
     padding:2px;
     border:1px solid #ccc;
-    width:100px;
-    height:75px;
+    width:85px;
+    height:65px;
 
     -moz-border-radius:4px;
     -webkit-border-radius:4px;

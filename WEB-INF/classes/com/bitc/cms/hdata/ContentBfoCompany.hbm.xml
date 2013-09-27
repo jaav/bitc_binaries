@@ -171,5 +171,12 @@
             <list-index column="id"/>
             <one-to-many class="com.bitc.cms.hdata.ContentPerson"/>
         </list>
+        <list name="contentLinkPropertyValues">
+            <key>
+                <column name="contentid" not-null="true" />
+            </key>
+            <list-index column="valueid"/>
+            <one-to-many class="com.wanabe.cms.hdata.ContentLinkPropertyvalueContent" />
+        </list>
     </class>
 </hibernate-mapping>

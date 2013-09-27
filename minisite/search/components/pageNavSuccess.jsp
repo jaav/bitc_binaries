@@ -8,9 +8,9 @@ isELIgnored ="false"
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <div class="nav_number">
-	    <form name="idform${waCompParam.navId}"> 
+	    <form name="idform${waCompParam.navId}">
 		    <c:if test="${ (page - 1) ne 0 }">
-		        <a href="?clt=${culture}&page=${page - 1}&name=${waParam.name}&f_search_query=${queryString}&contentType=${contentType}&group=${group}&s_ContentPropertyValue_valueId_Cuisine=${s_ContentPropertyValue_valueId_Cuisine}&s_ContentPropertyValueManager_valueId_ShoppingCategory=${s_ContentPropertyValueManager_valueId_ShoppingCategory}&s_periodFromDate=${s_periodFromDate}&s_periodToDate=${s_periodToDate}" class="arrow_left">
+		        <a href="?clt=${culture}&page=${page - 1}&name=${waParam.name}&f_search_query=${queryString}&contentType=${contentType}&group=${group}&s_ContentPropertyValue_valueId_Cuisine=${s_ContentPropertyValue_valueId_Cuisine}&s_ContentPropertyValueManager_valueId_ShoppingCategory=${s_ContentPropertyValueManager_valueId_ShoppingCategory}&s_periodFromDate=${s_periodFromDate}&s_periodToDate=${s_periodToDate}&s_bfoService=${s_bfoService}&s_spotProfile=${s_spotProfile}" class="arrow_left">
 			        <img src="${static}/front/img/ml/btn_arrow_left.jpg" alt="<wa:mls>previous</wa:mls>"/>
 	            </a>
 	        </c:if>
@@ -29,10 +29,12 @@ isELIgnored ="false"
 		  	<input  type="hidden" name="s_ContentPropertyValueManager_valueId_Quartier" value="${s_ContentPropertyValueManager_valueId_Quartier}" />
 		  	<input  type="hidden" name="s_periodFromDate" value="${s_periodFromDate}" />
 		  	<input  type="hidden" name="s_periodToDate" value="${s_periodToDate}" />
+             <input  type="hidden" name="s_bfoService" value="${s_bfoService}" />
+             <input  type="hidden" name="s_spotProfile" value="${s_spotProfile}" />
 		  	
 		   <wa:mls>of</wa:mls> ${lastPage} </div>
 	      <c:if test="${ (page + 1) le lastPage }"> 
-				<a href="?clt=${culture}&page=${page + 1 }&name=${waParam.name}&f_search_query=${queryString}&contentType=${contentType}&group=${group}&s_ContentPropertyValue_valueId_Cuisine=${s_ContentPropertyValue_valueId_Cuisine}&s_ContentPropertyValueManager_valueId_ShoppingCategory=${s_ContentPropertyValueManager_valueId_ShoppingCategory}&s_periodFromDate=${s_periodFromDate}&s_periodToDate=${s_periodToDate}" class="arrow_right">
+				<a href="?clt=${culture}&page=${page + 1 }&name=${waParam.name}&f_search_query=${queryString}&contentType=${contentType}&group=${group}&s_ContentPropertyValue_valueId_Cuisine=${s_ContentPropertyValue_valueId_Cuisine}&s_ContentPropertyValueManager_valueId_ShoppingCategory=${s_ContentPropertyValueManager_valueId_ShoppingCategory}&s_periodFromDate=${s_periodFromDate}&s_periodToDate=${s_periodToDate}&s_bfoService=${s_bfoService}&s_spotProfile=${s_spotProfile}" class="arrow_right">
 			        <img src="${static}/front/img/ml/btn_arrow_right.png" alt="<wa:mls>next</wa:mls>"/>
 	            </a>
 	      </c:if>

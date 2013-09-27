@@ -420,34 +420,6 @@ isELIgnored ="false"
 					
 					
 					<!-- DISPLAY PROPERTIES -->
-                <fieldset>
-                    <legend><wa:mls>Content Persons</wa:mls></legend>
-                    <table border="0">
-                        <tr>
-                            <td>
-                                Id
-                            </td>
-                            <td>
-                                Name
-                            </td>
-                        </tr>
-                        <c:forEach var="person" items="${bean.contentPersons}">
-                            <c:if test="${person != null}">
-                                <tr>
-                                    <td>
-                                        <a href="${context}/${site}/contentPerson/editItem/id/${person.id}.do">
-                                            ${person.id}
-                                        </a>
-                                    </td>
-                                    <td>
-                                         ${person.name}
-                                    </td>
-                                </tr>
-                            </c:if>
-                        </c:forEach>
-                    </table>
-                </fieldset>
-
 				<c:choose>
 					<c:when test="${bean.id !=0 && duplicate eq null}">
 						<c:forEach var="property" items="${listProperties}">

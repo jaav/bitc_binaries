@@ -115,12 +115,14 @@ wa_callServer = function(url){
 	var myRequest = new Request(url);
 }
 wa_areYouConnected = function(){
-var url='/wape/admin/other/expiredSession';
-var d = new Date();
-d.setMinutes(d.getMinutes()+5);
-alert('Your session will expire in a 5 minutes ('+d.getHours()+':'+(d.getMinutes()<10?'0':'')+d.getMinutes()+')! Click OK to extend it.');
-callServer(url);
-window.setTimeout(areYouConnected,1500000); // 25 minutes = 1500 sec
+	//var url='/wape/admin/other/expiredSession';
+	var url = '/bitc/admin/login/doLogout.do';
+	var d = new Date();
+	d.setMinutes(d.getMinutes()+5); 
+	//alert('Your session will expire in a 5 minutes ('+d.getHours()+':'+(d.getMinutes()<10?'0':'')+d.getMinutes()+')! Click OK to extend it.');
+	//callServer(url);
+	window.location.assign("/bitc/admin/login/doLogout.do");
+	window.setTimeout(areYouConnected,1500000); // 25 minutes = 1500 sec 1500000
 }
 
 

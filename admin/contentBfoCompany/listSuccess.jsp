@@ -391,7 +391,17 @@ isELIgnored ="false"
 						<c:if test="${item.status == 3}">class="redStatus"</c:if>
 					>&nbsp;</td>
 					<td class="center checkbox"><input type="checkbox" value="${item.id}"></td>
-					<td class="center id"><a href="${context}/${site}/contentBfoCompany/editItem/id/${item.id}.do" title="<wa:mls>Edit id</wa:mls>">${item.id}</a></td>
+					<td class="center id">
+                        <c:choose>
+                            <c:when test="${openerField != null}">
+                                <a href="javascript:copyToOpener('${item.id}','f_bfo_company');">${item.id}&nbsp;</a>
+                            </c:when>
+                            <c:otherwise>
+                                <a href="${context}/${site}/contentBfoCompany/editItem/id/${item.id}.do" title="<wa:mls>Edit id</wa:mls>">${item.id}</a>
+                            </c:otherwise>
+                        </c:choose>
+
+                    </td>
 					<td class="center culture">${item.culture}&nbsp;</td>
 					<td class="left name">${item.name}&nbsp;</td>
 					<td class="left title">${item.title}&nbsp;</td>
@@ -531,3 +541,12 @@ numOfElement='${listSize}';
 contentType='ContentBfoCompany';
 </script>
 <script type="text/javascript" src="${static}/${site}/js/actionsNltContent.js"></script>
+ <script type="text/javascript" >
+
+     function copyToOpener(data,target){
+     if(window.opener != 'undefined' && window.opener != null){
+     window.opener.document.getElementById(target).value=data;
+     window.close();
+     }
+     }
+ </script>

@@ -23,9 +23,21 @@ isELIgnored ="false"
 	</c:otherwise>
 </c:choose>
 <script type="text/javascript"> 
-         FB.init({ 
-            appId:'${facebook_key}', cookie:true, 
-            status:true, xfbml:true,oauth : false 
-         });
-         FB.getLoginStatus(handleSessionResponse);
+		window.fbAsyncInit = function() {
+			FB.init({ 
+	            appId:'${facebook_key}', cookie:true, 
+	            status:true, xfbml:true,oauth : false 
+	         });		
+	         //FB.getLoginStatus(handleSessionResponse);	
+			FB.getLoginStatus(function(res){
+	            if( res.status == "connected" ){
+	                FB.api('/me', function(fbUser) {
+	                    console.log("User, " + fbUser.name + ".");
+	                });
+	            }
+	        });
+		};
+         
+		
+		
 </script>	

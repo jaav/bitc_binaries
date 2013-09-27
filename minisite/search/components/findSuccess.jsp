@@ -28,7 +28,7 @@ isELIgnored ="false"
             <input type="submit" value="<wa:mls>Recherche</wa:mls>" class="btn_form"/> 
             
             <div class="arrow"></div>
-             <c:if test="${group eq 'SHOPPING' || group eq 'RESTO_1' || group eq 'CULTURE_1'|| group eq 'GO_OUT'}">	
+             <c:if test="${group eq 'SHOPPING' || group eq 'RESTO_1' || group eq 'CULTURE_1'|| group eq 'GO_OUT' or group eq 'BFOSPOT' or group eq 'BFOCOMPANY'}">
             <a onClick="changeDisplay()" class="<c:if test="${ind == '0'}">advanced_search </c:if> <c:if test="${ind == '1'}">advanced_search_active </c:if>" id="advanced_search_id"><wa:mls>Advanced search</wa:mls></a>
             
            
@@ -128,7 +128,35 @@ isELIgnored ="false"
 					<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_ShoppingCategory}" />
 				</wa:include>
 			</div>
+
 			</c:if>
+                <c:if test="${group eq 'BFOSPOT'}">
+                    <div id="ListSpotProfile" >
+                        <label for="s_spotProfile"><wa:mls>Spot Profile</wa:mls></label>
+                            <%--<input class="first_input" type="text" name="s_spotProfile" id="s_spotProfile" value=""/>--%>
+                        <wa:include URI="front/dropdown/dropList">
+                            <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+                            <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+                            <wa:param name="method" value="listSpotProfiles" />
+                            <wa:param name="identity" value="valueId" />
+                            <wa:param name="display" value="mainTitle" />
+                            <wa:param name="name" value="s_spotProfile" />
+                            <wa:param name="selectedValues" value="${waParam.s_spotProfile}" />
+                        </wa:include>
+                    </div>
+                </c:if>
+                <c:if test="${group eq 'BFOCOMPANY'}">
+                    <label for="s_bfoService"><wa:mls>Service</wa:mls></label>
+                    <wa:include URI="front/dropdown/dropList">
+                        <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+                        <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+                        <wa:param name="method" value="listBFOServices" />
+                        <wa:param name="identity" value="valueId" />
+                        <wa:param name="display" value="mainTitle" />
+                        <wa:param name="name" value="s_bfoService" />
+                        <wa:param name="selectedValues" value="${waParam.s_bfoService}" />
+                    </wa:include>
+                </c:if>
 			</div>
 			<div class="clr"></div>
 			</c:if>

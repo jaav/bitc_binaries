@@ -204,7 +204,8 @@ isELIgnored ="false"
                         </div>
                         <div class="bgGrey" id="v_bfo_company">
                             <label for="f_bfo_company"><wa:mls>company</wa:mls></label>
-                            <textarea name="f_bfo_company" class="textfield" >${bean.bfo_company}</textarea>
+                            <textarea name="f_bfo_company" id="f_bfo_company" class="textfield" >${bean.bfo_company}</textarea>
+                            <a href="${context}/${site}/contentBfoCompany/list.do?openerField=f_bfo_company" style="float: right;margin-right: 60px;" target="image" class="image_btn" title="<wa:mls>Choose company</wa:mls>">&nbsp;</a>
                             <script type="text/javascript">
                                 var v_memo = new Spry.Widget.ValidationTextarea("v_bfo_company", {isRequired:false});
                             </script>

@@ -564,7 +564,7 @@
                     <c:if test="${status.index % 5 == 0}">
                         <div>
                     </c:if>
-                    <a class="spotImage" href="${spotImage.imageURL}">
+                    <a class="spotImage" href="${fn:replace(spotImage.imageURL,'S.', 'L.')}">
                         <img src="${spotImage.imageURL}"/>
                     </a>
                     <c:if test="${(status.index % 5 eq 4) or (status.last)}">
@@ -658,7 +658,9 @@ function forwardToBoxofficeFrame(officeURL) {
         $('a.spotImage').lightBox({
             fixedNavigation:true,
             'imageBtnClose': "/bitc/static/front/img/lightbox-btn-close.gif",
-            'imageLoading': "/bitc/static/front/img/lightbox-ico-loading.gif"
+            'imageLoading': "/bitc/static/front/img/lightbox-ico-loading.gif",
+            'imageBtnNext': "/bitc/static/front/img/lightbox-btn-next.gif",
+            'imageBtnPrev': "/bitc/static/front/img/lightbox-btn-prev.gif"
         });
     });
 

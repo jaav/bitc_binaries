@@ -29,10 +29,10 @@ isELIgnored ="false"
 			</c:choose>
 			<c:choose>
 				<c:when test="${group eq 'CULTURE' || group eq 'GO_OUT' || group eq 'CULTURE_1'}">
-					<wa:include URI="${site}/content/listAgenda" />	
+					<wa:include URI="${site}/content/listAgenda" />
 				</c:when>
 				<c:otherwise>
-					<wa:include URI="${site}/content/list" />	
+					<wa:include URI="${site}/content/list" />
 				</c:otherwise>
 			</c:choose>
 			
