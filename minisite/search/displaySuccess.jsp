@@ -24,13 +24,27 @@ isELIgnored ="false"
 
 <div class="clear"></div>
 <div id="content_main">
-	<wa:include URI="${site}/search/find" >
-		<wa:param name="group" value="${group}"/>
-		<wa:param name="contentType" value="${contentType}"/>
-		<wa:param name="criteriaDate" value="${criteriaDate}"/>
-		<wa:param name="s_periodFromDate" value="${s_periodFromDate}"/>
-		<wa:param name="s_periodToDate" value="${s_periodToDate}"/>
-	</wa:include>
+    <c:choose>
+        <c:when test="${fn:toLowerCase(group) eq 'bfospot'}">
+            <wa:include URI="${site}/content/find">
+                <wa:param name="group" value="${group}"/>
+            </wa:include>
+        </c:when>
+        <c:when test="${fn:toLowerCase(group) eq 'bfocompany'}">
+            <wa:include URI="${site}/content/find">
+                <wa:param name="group" value="${group}"/>
+            </wa:include>
+        </c:when>
+        <c:otherwise>
+            <wa:include URI="${site}/search/find" >
+                <wa:param name="group" value="${group}"/>
+                <wa:param name="contentType" value="${contentType}"/>
+                <wa:param name="criteriaDate" value="${criteriaDate}"/>
+                <wa:param name="s_periodFromDate" value="${s_periodFromDate}"/>
+                <wa:param name="s_periodToDate" value="${s_periodToDate}"/>
+            </wa:include>
+        </c:otherwise>
+    </c:choose>
 	<div class="TabbedPanelsContentGroup">
 	<ul class="TabbedPanels">
 	</ul>

@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.bitc.cms.hdata.ContentPlaceClt" table="content_place_clt" catalog="bitc">
+    <class name="com.bitc.cms.hdata.ContentPlaceClt" table="content_place_clt">
         <id name="cltId" column="clt_id"/>
         <property name="contentId" column="content_id"/>
         <property name="title" column="title"/>

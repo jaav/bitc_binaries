@@ -11,7 +11,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="wabd" uri="BigDecimalUtilsTags" %>
 <%@ taglib prefix="wast" uri="StringToolsTags" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <style type="text/css" media="screen">
     @import url("${static}/front/css/nyroModal.css");
@@ -222,50 +221,6 @@
 </div>
 
 <div class="clr"></div>
-<c:if test="${bean.group eq 'BFOCOMPANY'}">
-    <legend style="font-weight: bold"><wa:mls>Persons</wa:mls></legend>
-    <br/>
-    <table id="pesonTable" style="border-collapse: separate; border-spacing: 0px; border:1px dotted #958e88;width:100%;">
-        <thead>
-        <td style="border: 1px solid #958e88;padding: 5px;">
-            Name
-        </td>
-        <td style="border: 1px solid #958e88;padding: 5px;">
-            Email
-        </td>
-        <td style="border: 1px solid #958e88;padding: 5px;">
-            Mobile
-        </td>
-        </thead>
-        <c:forEach var="person" items="${bean.contentPersons}">
-
-            <c:if test="${person != null}">
-                <tr cellspacing="100px"
-                    style="border-collapse: separate; border-spacing: 5px; border:1px dotted #958e88;">
-                    <td style="border: none;padding: 5px;">
-                            ${person.name}  ${person.serviceStr}
-                    </td>
-                    <td style="border: none;padding: 5px;">
-                            ${person.email}
-                    </td>
-                    <td style="border: none;padding: 5px;">
-                            ${person.mobile}
-                    </td>
-                </tr>
-            </c:if>
-        </c:forEach>
-    </table>
-    <div class="clr"></div>
-</c:if>
-<c:if test="${bean.group eq 'BFOCOMPANY'}">
-    <br/>
-    <legend style="font-weight: bold"><wa:mls>Services</wa:mls></legend>
-    <br/>                                       <div class="clr"></div>
-    <c:forEach var="service" items="${bean.servicePropertyValues}">
-        ${service.contentPropertyValue.mainTitleWithDirectParent}<br/>
-    </c:forEach>
-    <div class="clr"></div>
-</c:if>
 
 <c:if test="${bean.group eq 'BFOSPOT'}">
     <div style="margin:0 auto; width: 634px; height:120px;">

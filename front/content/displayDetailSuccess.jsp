@@ -11,7 +11,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="wabd" uri="BigDecimalUtilsTags" %>
 <%@ taglib prefix="wast" uri="StringToolsTags" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
 <c:choose>
@@ -545,6 +544,12 @@
 </div>
 </div>
 <div class="clr"></div>
+
+<c:if test="${boxOffice ne null && boxOffice eq true}">
+  <div style="position: relative;float: left;">
+    <a class="btn_buy_ticket" href="javascript:forwardToBoxofficeFrame('${bean.officeBookingURL}')"></a>
+  </div>
+</c:if>
 
 </c:otherwise>
 

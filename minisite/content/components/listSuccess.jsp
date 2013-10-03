@@ -48,7 +48,14 @@
                         <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}/name/${waParam.name}"/>">
                             <c:choose>
                                 <c:when test="${not empty item.mainSmallImage}">
-                                    <img src="${item.mainSmallImage}" alt="${item.formatMainTitle}" width="165"/>
+                                    <c:choose>
+                                        <c:when test="${fn:toLowerCase(group) eq 'bfospot'}">
+                                            <img src="${item.mainSmallImage}" alt="${item.formatMainTitle}"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <img src="${item.mainSmallImage}" alt="${item.formatMainTitle}" width="165"/>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </c:when>
                                 <c:otherwise>
                                     <img src="${context}/static/front/img/ml/default_content.jpg"
@@ -147,6 +154,12 @@
     </div>
 </div>
 <!--tab:end-->
+
+<c:if test="${fn:toLowerCase(group) eq 'bfospot' || fn:toLowerCase(group) eq 'bfocompany'}">
+    <script type="text/javascript">
+        changeDisplay();
+    </script>
+</c:if>
 
 <script type="text/javascript">
     function sortBy(newURI, group) {

@@ -7,6 +7,7 @@ isELIgnored ="false"
 <%@ taglib prefix="wa" uri="WanabeTags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <div class="form_search">
 
@@ -22,7 +23,7 @@ isELIgnored ="false"
 		    <input type ="hidden" name ="group" value="${group}">
 		    <input type ="hidden" name ="name" value="${waParam.name}">
 		    <c:if test="${displayAllContents}">/all/1</c:if>
-            <c:if test="${group eq 'SHOPPING' or group eq 'BFOSPOT' or group eq 'BFOCOMPANY'}">
+            <c:if test="${group eq 'SHOPPING' || (fn:toLowerCase(group) eq 'bfospot') || (fn:toLowerCase(group) eq 'bfocompany')}">
             <a onClick="changeDisplay()" class="advanced_search"><wa:mls>Advanced search</wa:mls></a>
             
            	<div class="clr"></div>
@@ -42,30 +43,33 @@ isELIgnored ="false"
                         </wa:include>
                     </div>
                 </c:if>
-                <c:if test="${group eq 'BFOSPOT'}">
+                <c:if test="${fn:toLowerCase(group) eq 'bfospot'}">
                     <label for="s_spotProfile"><wa:mls>Spot Profile</wa:mls></label>
-                    <%--<input class="first_input" type="text" name="s_spotProfile" id="s_spotProfile" value=""/>--%>
-                    <wa:include URI="front/dropdown/dropList">
-                        <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
-                        <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
-                        <wa:param name="method" value="listSpotProfiles" />
-                        <wa:param name="identity" value="valueId" />
-                        <wa:param name="display" value="mainTitle" />
-                        <wa:param name="name" value="s_spotProfile" />
-                        <wa:param name="selectedValues" value="${waParam.s_spotProfile}" />
-                    </wa:include>
+                    <select style=" width: 150px;" name="s_spotProfile" id="s_spotProfile" >
+                   	<option value=""><wa:mls>Select spot profile</wa:mls></option>
+                   	<c:if test="${listDropdown!=null}">
+                   		<c:forEach var="itemDropdown" items="${listDropdown}">
+                   					<option value="${itemDropdown.id}" title="${itemDropdown.value}"<c:if test="${itemDropdown.id==selectedId}">selected="selected"</c:if>>
+                   						${itemDropdown.value}
+                   					</option>
+                   		</c:forEach>
+                   	</c:if>
+                   	</select>
                 </c:if>
-                <c:if test="${group eq 'BFOCOMPANY'}">
+                <c:if test="${fn:toLowerCase(group) eq 'bfocompany'}">
                     <label for="s_bfoService"><wa:mls>Service</wa:mls></label>
-                    <wa:include URI="front/dropdown/dropList">
-                        <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
-                        <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
-                        <wa:param name="method" value="listBFOServices" />
-                        <wa:param name="identity" value="valueId" />
-                        <wa:param name="display" value="mainTitle" />
-                        <wa:param name="name" value="s_bfoService" />
-                        <wa:param name="selectedValues" value="${waParam.s_bfoService}" />
-                    </wa:include>
+
+
+                    <select style=" width: 150px;" name="s_bfoService" id="s_bfoService" >
+                   	<option value=""><wa:mls>Select service</wa:mls></option>
+                   	<c:if test="${listDropdown!=null}">
+                   		<c:forEach var="itemDropdown" items="${listDropdown}">
+                   					<option value="${itemDropdown.id}" title="${itemDropdown.value}"<c:if test="${itemDropdown.id==selectedId}">selected="selected"</c:if>>
+                   						${itemDropdown.value}
+                   					</option>
+                   		</c:forEach>
+                   	</c:if>
+                   	</select>
                 </c:if>
 			</div>
 			</c:if>

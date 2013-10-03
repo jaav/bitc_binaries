@@ -198,7 +198,6 @@
 </div>
 
 <div class="clr"></div>
-<c:if test="${bean.group eq 'BFOSPOT'}">
     <c:if test="${fn:length(bean.profilePropertyValues) gt 0}">
     <legend style="font-weight: bold"><wa:mls>Spot Profiles</wa:mls></legend>
     <br/>
@@ -234,7 +233,13 @@
         <!-- "next page" action -->
         <a class="next browse right"></a>
     </div>
-</c:if>
+    <br/>
+    <div class="clr"></div>
+    <legend style="font-weight: bold"><wa:mls>Spot Profiles</wa:mls></legend>
+    <br/>                                       <div class="clr"></div>
+    <c:forEach var="profile" items="${bean.profilePropertyValues}">
+        ${profile.contentPropertyValue.mainTitleWithDirectParent}<br/>
+    </c:forEach>
 
 <c:set var="fb_url"
        value="${config['URL']}${context}/${site}/${module}/${action}/group/${bean.group}/id/${bean.id}/name/${waParam.name}.do"/>
