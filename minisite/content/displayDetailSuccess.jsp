@@ -16,12 +16,6 @@
     @import url("${static}/front/css/nyroModal.css");
 </style>
 <script type="text/javascript" src="${static}/front/js/jquery.nyroModal-1.6.1.pack.js"></script>
-<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
-<c:if test="${bean.group eq 'BFOSPOT'}">
-    <link rel="stylesheet" type="text/css" href="${static}/front/css/scrollable-buttons.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="${static}/front/css/lightbox.css" media="screen"/>
-    <script type="text/javascript" src="${static}/front/js/lightbox.js"></script>
-</c:if>
 
 
 <c:if test="${adminUser != null}">

@@ -18,11 +18,9 @@
 </style>
 <script type="text/javascript" src="${static}/front/js/jquery.nyroModal-1.6.1.pack.js"></script>
 <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
-<c:if test="${bean.group eq 'BFOSPOT'}">
-    <link rel="stylesheet" type="text/css" href="${static}/front/css/scrollable-buttons.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="${static}/front/css/lightbox.css" media="screen"/>
-    <script type="text/javascript" src="${static}/front/js/lightbox.js"></script>
-</c:if>
+<link rel="stylesheet" type="text/css" href="${static}/front/css/scrollable-buttons.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="${static}/front/css/lightbox.css" media="screen"/>
+<script type="text/javascript" src="${static}/front/js/lightbox.js"></script>
 
 
 <c:if test="${adminUser != null}">
@@ -198,14 +196,7 @@
 </div>
 
 <div class="clr"></div>
-    <c:if test="${fn:length(bean.profilePropertyValues) gt 0}">
-    <legend style="font-weight: bold"><wa:mls>Spot Profiles</wa:mls></legend>
-    <br/>
-    <div class="clr"></div>
-    <c:forEach var="profile" items="${bean.profilePropertyValues}">
-        ${profile.contentPropertyValue.mainTitleWithDirectParent}<br/>
-    </c:forEach>
-    </c:if>
+
     <div style="margin:20px auto; width: 634px; height:120px;">
         <!-- "previous page" action -->
         <a class="prev browse left"></a>
@@ -273,14 +264,8 @@
 
 <script>
     $(function() {
-    // initialize scrollable
-    $(".scrollable").scrollable();
-    });
-</script>
-
-<script type="text/javascript">
-    $(function() {
-    $('a.spotImage').lightBox({
+    var source =  $('div.items div').not('.cloned').children('a');
+    source.lightBox({
     fixedNavigation:true,
     'imageBtnClose': "/bitc/static/front/img/lightbox-btn-close.gif",
     'imageLoading': "/bitc/static/front/img/lightbox-ico-loading.gif",
@@ -289,6 +274,10 @@
     });
     });
 
+    $(function() {
+    // initialize scrollable
+    $(".scrollable").scrollable();
+    });
 </script>
 <style type="text/css">
     #pesonTable tr.td {
