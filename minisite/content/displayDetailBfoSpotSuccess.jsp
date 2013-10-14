@@ -181,6 +181,18 @@
             <p><strong><wa:mls>Royalties :</wa:mls></strong> ${bean.royalties}</p>
         </c:if>
 
+
+        <c:if test="${not empty bean.profilePropertyValues}">
+            <p><strong><wa:mls>Spot Profiles:</wa:mls></strong>
+            <ul id="pesonTable">
+                <c:forEach var="profile" items="${bean.profilePropertyValues}">
+                    <c:if test="${profile != null}">
+                        <li> ${profile.contentPropertyValue.mainTitleWithDirectParent}</li>
+                    </c:if>
+                </c:forEach>
+            </ul>
+        </c:if>
+
     </div>
 
 </div>
@@ -224,13 +236,6 @@
         <!-- "next page" action -->
         <a class="next browse right"></a>
     </div>
-    <br/>
-    <div class="clr"></div>
-    <legend style="font-weight: bold"><wa:mls>Spot Profiles</wa:mls></legend>
-    <br/>                                       <div class="clr"></div>
-    <c:forEach var="profile" items="${bean.profilePropertyValues}">
-        ${profile.contentPropertyValue.mainTitleWithDirectParent}<br/>
-    </c:forEach>
 
 <c:set var="fb_url"
        value="${config['URL']}${context}/${site}/${module}/${action}/group/${bean.group}/id/${bean.id}/name/${waParam.name}.do"/>
@@ -252,14 +257,6 @@
 </c:if>
 <!--boxotherinformation:end-->
 <!--tab:start-->
-
-<div id="listComment">
-    <wa:include URI="${site}/content/comment">
-        <wa:param name="group" value="${bean.group}"/>
-        <wa:param name="id" value="${bean.id}"/>
-    </wa:include>
-
-</div>
 </div>
 
 <script>
@@ -279,8 +276,3 @@
     $(".scrollable").scrollable();
     });
 </script>
-<style type="text/css">
-    #pesonTable tr.td {
-        border: 1px solid black;
-    }
-</style>

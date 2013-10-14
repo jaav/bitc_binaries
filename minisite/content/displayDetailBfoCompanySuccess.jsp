@@ -40,7 +40,7 @@
 </c:if>
 <!-- !!!! Don't put elements here. Content MUST be in content_main div below !!! -->
 
-<div id="content_main" class="bfo_spot">
+<div id="content_main" class="bfo_company">
 <div id="btn_back"><a href="javascript:history.back();"><wa:mls>Back</wa:mls></a></div>
 
 <h1 class="no_margin summary">${bean.mainTitle}
@@ -98,7 +98,27 @@
               class="btn_street_view"><span><wa:mls>Google street view</wa:mls></span></a></p>
     </c:if>
 
+    <c:if test="${not empty bean.contentPersons}">
+        <p><strong><wa:mls>Persons:</wa:mls></strong>
+        <ul id="pesonTable">
+            <c:forEach var="person" items="${bean.contentPersons}">
+                <c:if test="${person != null}">
+                    <li> ${person.name}  ${person.serviceStr} / ${person.email} / ${person.mobile}</li>
+                </c:if>
+            </c:forEach>
+        </ul>
+    </c:if>
 
+    <c:if test="${not empty bean.servicePropertyValues}">
+        <p><strong><wa:mls>Services:</wa:mls></strong>
+        <ul id="pesonTable">
+            <c:forEach var="service" items="${bean.servicePropertyValues}">
+                <c:if test="${service != null}">
+                    <li> ${service.contentPropertyValue.mainTitleWithDirectParent}</li>
+                </c:if>
+            </c:forEach>
+        </ul>
+    </c:if>
 
 
 
@@ -130,48 +150,6 @@
     </div>
 </div>
 
-<div class="clr"></div>
-        <legend style="font-weight: bold"><wa:mls>Persons</wa:mls></legend>
-        <br/>
-        <table id="pesonTable" style="border-collapse: separate; border-spacing: 0px; border:1px dotted #958e88;width:100%;">
-            <thead>
-            <td style="border: 1px solid #958e88;padding: 5px;">
-                Name
-            </td>
-            <td style="border: 1px solid #958e88;padding: 5px;">
-                Email
-            </td>
-            <td style="border: 1px solid #958e88;padding: 5px;">
-                Mobile
-            </td>
-            </thead>
-            <c:forEach var="person" items="${bean.contentPersons}">
-
-                <c:if test="${person != null}">
-                    <tr cellspacing="100px"
-                        style="border-collapse: separate; border-spacing: 5px; border:1px dotted #958e88;">
-                        <td style="border: none;padding: 5px;">
-                                ${person.name}  ${person.serviceStr}
-                        </td>
-                        <td style="border: none;padding: 5px;">
-                                ${person.email}
-                        </td>
-                        <td style="border: none;padding: 5px;">
-                                ${person.mobile}
-                        </td>
-                    </tr>
-                </c:if>
-            </c:forEach>
-        </table>
-        <div class="clr"></div>
-        <br/>
-        <legend style="font-weight: bold"><wa:mls>Services</wa:mls></legend>
-        <br/>                                       <div class="clr"></div>
-        <c:forEach var="service" items="${bean.servicePropertyValues}">
-            ${service.contentPropertyValue.mainTitleWithDirectParent}<br/>
-        </c:forEach>
-        <div class="clr"></div>
-
 <c:set var="fb_url"
        value="${config['URL']}${context}/${site}/${module}/${action}/group/${bean.group}/id/${bean.id}/name/${waParam.name}.do"/>
 <iframe src="http://www.facebook.com/plugins/like.php?href=${fb_url}&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=35"
@@ -192,14 +170,6 @@
 </c:if>
 <!--boxotherinformation:end-->
 <!--tab:start-->
-
-<div id="listComment">
-    <wa:include URI="${site}/content/comment">
-        <wa:param name="group" value="${bean.group}"/>
-        <wa:param name="id" value="${bean.id}"/>
-    </wa:include>
-
-</div>
 </div>
 
 <script>
@@ -221,8 +191,3 @@
     });
 
 </script>
-<style type="text/css">
-    #pesonTable tr.td {
-        border: 1px solid black;
-    }
-</style>

@@ -35,12 +35,6 @@
 <script type="text/javascript" src="${static}/front/js/jquery.nyroModal-1.6.1.pack.js"></script>
 <script src="${static}/ajax/js/tripPlannerMethods.js" type="text/javascript"></script>
 <script src="${static}/ajax/js/meetingPlannerMethods.js" type="text/javascript"></script>
-<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
-<c:if test="${bean.group eq 'BFOSPOT'}">
-    <link rel="stylesheet" type="text/css" href="${static}/front/css/scrollable-buttons.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="${static}/front/css/lightbox.css" media="screen" />
-    <script type="text/javascript" src="${static}/front/js/lightbox.js"></script>
-</c:if>
 
 <link rel="shortcut icon" href="/media/img/favicon.ico">
 <script type="text/javascript">
@@ -649,24 +643,4 @@ function forwardToBoxofficeFrame(officeURL) {
      closeButton: '<a href="#" class="nyroModalClose" id="closeBut"><img src="${static}/front/img/ml/close.png" alt="close" /></a>'
   	});
 }
-</script>
-
-<script>
-    $(function() {
-    // initialize scrollable
-    $(".scrollable").scrollable();
-    });
-</script>
-
-<script type="text/javascript">
-    $(function() {
-        $('a.spotImage').lightBox({
-            fixedNavigation:true,
-            'imageBtnClose': "/bitc/static/front/img/lightbox-btn-close.gif",
-            'imageLoading': "/bitc/static/front/img/lightbox-ico-loading.gif",
-            'imageBtnNext': "/bitc/static/front/img/lightbox-btn-next.gif",
-            'imageBtnPrev': "/bitc/static/front/img/lightbox-btn-prev.gif"
-        });
-    });
-
 </script>

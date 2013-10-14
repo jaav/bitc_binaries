@@ -66,19 +66,28 @@ isELIgnored ="false"
 			      <!-- SEARCH RESULTS LIST : start -->
 					<c:forEach items="${result}" var="item" varStatus="loop">
 					<li>
-					<c:choose>
-					
-          	<c:when test="${not empty item.imageUrl}">	
-        	<a href="<wa:url URI='${item.encodedUrl}'/>" >
-        		<img src="${item.imageUrl}" alt="${item.title}" width="165"/>
-        	</a>
-          	</c:when>
-          	<c:otherwise>
-          	<a href="<wa:url URI='${item.encodedUrl}'/>" >
-        		<img src="${context}/static/front/img/ml/default_content.jpg" alt="${item.title}" width="165"/>
-        	</a>
-          	</c:otherwise>
-          </c:choose>
+			
+			
+	        
+            <a href="<wa:url URI='${item.encodedUrl}'/>">
+                <c:choose>
+                    <c:when test="${not empty item.imageUrl}">
+                        <c:choose>
+                            <c:when test="${fn:toLowerCase(group) eq 'bfospot'}">
+                                <img src="${item.imageUrl}" alt="${item.imageUrl}"/>
+                            </c:when>
+                            <c:otherwise>
+                                <img src="${item.imageUrl}" alt="${item.title}" width="165"/>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:when>
+                    <c:otherwise>
+                        <img src="${context}/static/front/img/ml/default_content.jpg"
+                             alt="${item.title}" width="165"/>
+                    </c:otherwise>
+                </c:choose>
+            </a>
+
 		<div class="txt">
 	          <h3 class="no_margin">
 				<a href="<wa:url URI='${item.encodedUrl}'/>">${item.title}</a>

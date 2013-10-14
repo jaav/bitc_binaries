@@ -58,8 +58,15 @@
                                     </c:choose>
                                 </c:when>
                                 <c:otherwise>
-                                    <img src="${context}/static/front/img/ml/default_content.jpg"
-                                         alt="${item.formatMainTitle}" width="165"/>
+                                    <c:choose>
+                                        <c:when test="${fn:toLowerCase(group) eq 'bfospot' || fn:toLowerCase(group) eq 'bfocompany'}">
+                                            <img src="${context}/static/minisite/img/bfo/default_image.jpg/default_content.jpg"
+                                                 alt="${item.formatMainTitle}" width="100"/>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <img src="${item.mainSmallImage}" alt="${item.formatMainTitle}" width="165"/>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </c:otherwise>
                             </c:choose>
                         </a>
