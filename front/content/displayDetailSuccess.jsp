@@ -398,8 +398,8 @@
                 <c:if test="${not empty bean.placeName}">
                     <p class="fn org">${bean.placeName}</p>
                 </c:if>
-            </c:if>
-            <c:if test="${not empty bean.address}">
+            </c:if> 
+           <c:if test="${not empty bean.address}">
 
                 <p class="adr">
 
@@ -586,7 +586,12 @@
 <iframe src="http://www.facebook.com/plugins/like.php?href=${fb_url}&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=35"
         scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;"
         allowTransparency="true" class="facebook_like"></iframe>
-
+	
+	<!-- Khoa add start-->
+	<div class="fb-comments" data-href="${fb_url}" data-num-posts="5" data-width="auto">
+	</div>
+	<!-- Khoa add end -->
+	
 <!--boxotherinformation:start-->
 <c:if test="${not empty bean.mainInfo}">
     <div id="box_other_information">

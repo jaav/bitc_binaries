@@ -106,7 +106,7 @@ session.setAttribute("dateSys", date);%>
 
 <c:if test="${ac_user_admin != null}">
 	<script language='javascript'>
-		window.setTimeout(wa_areYouConnected,1500000); // 25 minutes
+		window.setTimeout(wa_areYouConnected,1500000); // 25 minutes 
 	</script>
 </c:if>
 

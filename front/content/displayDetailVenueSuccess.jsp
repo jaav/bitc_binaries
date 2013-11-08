@@ -97,11 +97,13 @@ function addToNltContent(group,contentId){
 	       	</c:if>
 	       	<c:if test="${not empty bean.email}">
           		 <p><strong><wa:mls>Email :</wa:mls></strong> <br />
-          		<span class="cutEmail"><a href="mailto:${bean.email}">${bean.email}</a></span></p>
+          		<!-- <span class="cutEmail"><a href="mailto:${bean.email}">${bean.email}</a></span></p>  -->
+          		<a href="mailto:${bean.email}"><span class="cutEmail">${bean.email}</span></a></p>
 	        </c:if>
 	        <c:if test="${not empty bean.URLWebsite}">
           		 <p><strong><wa:mls>Website :</wa:mls></strong> <br />
-          		<span class="cutEmail"><a href="${bean.URLWebsite}" target="_blank">${bean.URLWebsite}</a></span></p>
+          		<!--<span class="cutEmail"><a href="${bean.URLWebsite}" target="_blank">${bean.URLWebsite}</a></span></p>-->
+          		<a href="${bean.URLWebsite}" target="_blank"><span class="cutEmail">${bean.URLWebsite}</span></a></p>
 	        </c:if>
 	       	        
 	        <c:if test="${contentType ne 'ContentArticle' and not empty bean.latitude and bean.latitude != 0.0 and not empty bean.longitude and bean.longitude != 0.0}">
@@ -145,7 +147,12 @@ function addToNltContent(group,contentId){
     		    <div class="clr"></div>
  <c:set var="fb_url" value="${config['URL']}${context}/${site}/${module}/${action}/group/${bean.group}/id/${bean.id}.do"/>   
    <iframe src="http://www.facebook.com/plugins/like.php?href=${fb_url}&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true" class="facebook_like"></iframe>
-
+	
+	<!-- Khoa add start-->
+	<div class="fb-comments" data-href="${fb_url}" data-num-posts="5" data-width="auto">
+	</div>
+	<!-- Khoa add end -->
+	
     <!--boxotherinformation:start-->
     <table width="100%" border="0" cellspacing="0" cellpadding="0" id="venues_table">
   <tr class="top">

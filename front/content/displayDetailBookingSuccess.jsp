@@ -55,7 +55,7 @@ function addToNltContent(group,contentId){
 <div id="content_main">
  <c:set var="fb_url" value="${config['URL']}${context}/${site}/${module}/${action}/group/${bean.group}/id/${bean.id}.do"/>   
    <iframe src="http://www.facebook.com/plugins/like.php?href=${fb_url}&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=verdana&amp;colorscheme=light&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;" allowTransparency="true" class="facebook_like"></iframe>
-
+	
 		<c:if test="${not empty adminUser}">
 			 <a href="javascript:addToNltContent('${bean.group}','${bean.id}');"><wa:mls>Ajouter à la table nlt content</wa:mls></a>
 			 <a href="${context}/admin/${contentTypeAdmin}/list.do?s_publishContent_id=${bean.id}&s_submit=Search" target="admin"><wa:mls>Edit</wa:mls></a>
@@ -110,6 +110,12 @@ function addToNltContent(group,contentId){
 	</c:otherwise>
 			
 	</c:choose>
+	
+	<!-- Khoa add start-->
+	<div class="fb-comments" data-href="${fb_url}" data-num-posts="5" data-width="auto">
+	</div>
+	<!-- Khoa add end -->
+	
 	<div id="listComment">
 		<wa:include URI="${site}/content/comment" >
 			<wa:param name="group" value="${bean.group}"/>

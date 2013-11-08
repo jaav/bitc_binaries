@@ -60,7 +60,7 @@
                                 <c:otherwise>
                                     <c:choose>
                                         <c:when test="${fn:toLowerCase(group) eq 'bfospot' || fn:toLowerCase(group) eq 'bfocompany'}">
-                                            <img src="${context}/static/minisite/img/bfo/default_image.jpg/default_content.jpg"
+                                            <img src="${context}/static/minisite/img/bfo/default_image.jpg"
                                                  alt="${item.formatMainTitle}" width="100"/>
                                         </c:when>
                                         <c:otherwise>
@@ -75,9 +75,17 @@
                         <h3 class="no_margin"><a
                                 href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}/name/${waParam.name}"/>"
                                 title="${item.formatMainTitle}">${item.mainTitle}</a></h3>
+                        <c:set var="isHouse" value="false" />
+                        <c:if test="${fn:toLowerCase(group) eq 'bfospot'}">
+                            <c:forEach var="profile" items="${item.profilePropertyValues}">
+                                <c:if test="${profile != null && profile.contentPropertyValue.name eq 'Maisons'}">
+                                    <c:set var="isHouse" value="true" />
+                                </c:if>
+                            </c:forEach>
+                        </c:if>
                         <c:choose>
                             <c:when test="${contentType ne 'ContentArticle' && empty item.mainAbstract_}">
-                                <c:if test="${not empty item.address}">
+                                <c:if test="${not empty item.address && not isHouse}">
                                     <p> ${item.address} </p>
 
                                     <p>

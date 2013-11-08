@@ -87,9 +87,14 @@
     </h3>
 </c:if>
 
-<c:if test="${not empty bean.mainBigImage}">
-    <img src="${bean.mainBigImage}" alt="${bean.mainTitle}" height="200" align="left" class="m22" class="photo">
-</c:if>
+<c:choose>
+    <c:when test="${not empty bean.mainBigImage}">
+        <img src="${bean.mainBigImage}" alt="${bean.mainTitle}" height="200" align="left" class="m22" class="photo">
+    </c:when>
+    <c:otherwise>
+        <img src="${context}/static/minisite/img/bfo/default_image.jpg" alt="${bean.mainTitle}" align="left" class="m22" class="photo"/>
+    </c:otherwise>
+</c:choose>
 
 
 
@@ -113,7 +118,14 @@
                 <p class="fn org">${bean.placeName}</p>
             </c:if>
         </c:if>
-        <c:if test="${not empty bean.address}">
+
+        <c:set var="isHouse" value="false" />
+        <c:forEach var="profile" items="${bean.profilePropertyValues}">
+            <c:if test="${profile != null && profile.contentPropertyValue.name eq 'Maisons'}">
+                <c:set var="isHouse" value="true" />
+            </c:if>
+        </c:forEach>
+        <c:if test="${not empty bean.address && not isHouse}">
 
             <p class="adr">
 
@@ -176,9 +188,6 @@
         </c:if>
         <c:if test="${not empty bean.archStyle}">
             <p><strong><wa:mls>Architectural style :</wa:mls></strong> ${bean.archStyle}</p>
-        </c:if>
-        <c:if test="${bean.royalties gt 0}">
-            <p><strong><wa:mls>Royalties :</wa:mls></strong> ${bean.royalties}</p>
         </c:if>
 
 
