@@ -228,7 +228,7 @@ isELIgnored ="false"
 					<td class="center invoiceEmail">${item.invoiceEmail}&nbsp;</td>
 					<td class="center ogonePayid">${item.ogonePayid}&nbsp;</td>
 					<td class="center createdOn"><fmt:formatDate pattern="dd/MM/yyyy HH:mm" value="${item.createdOn}"/>&nbsp;</td>
-					<td class="center esOrderLine"><a href="${context}/admin/esOrderLine/esOrderLineList.do?s_esOrder_orderId=${item.orderId}&s_submit=Search"><wa:mls>Voir les lignes de commandes</wa:mls></a></td>	
+					<td class="center esOrderLine"><a href="${context}/admin/esOrderLine/esOrderLineList.do?s_esOrder_orderId=${item.orderId}&s_submit=Search"><wa:mls>Voir les lignes de commandes</wa:mls></a> / <a href="${context}/front/ogone/postSaleTest.do?orderID=${item.orderId}">Send test mail</a></td>
 				</tr>
 			</c:forEach>
 		</table>
