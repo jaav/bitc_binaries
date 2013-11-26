@@ -539,10 +539,11 @@
 </div>
 <div class="clr"></div>
 
+
 <c:if test="${boxOffice ne null && boxOffice eq true}">
-  <div style="position: relative;float: left;">
-    <a class="btn_buy_ticket" href="javascript:forwardToBoxofficeFrame('${bean.officeBookingURL}')"></a>
-  </div>
+     <div style="position: relative;float: left;">
+         <a class="btn_buy_ticket" href="javascript:forwardToBoxofficeFrame('${bean.officeBookingURL}')"></a>
+     </div>
 </c:if>
 
 </c:otherwise>
@@ -649,3 +650,19 @@ function forwardToBoxofficeFrame(officeURL) {
   	});
 }
 </script>
+
+<style type="text/css">
+    <c:if test="${bean.sherpaBooking}">
+        <c:set var="buyTicketURL" value="${static}/front/img/ml/btn_sherpa_${culture.language}.png"/>
+    </c:if>
+    <c:if test="${bean.sherpaBooking eq false}">
+        <c:set var="buyTicketURL" value="${static}/front/img/ml/btn_boxoffice_${culture.language}.png"/>
+    </c:if>
+
+
+    a.btn_buy_ticket { display:block; margin:0 auto; width:200px; height:66px; outline: none; background:url(${buyTicketURL}); float : left;}
+    a.btn_buy_ticket:link,
+    a.btn_buy_ticket:active,
+    a.btn_buy_ticket:visited {font-size:12px; line-height:17px; font-family:'UtopiaStd-Regular', Georgia; text-shadow: 2px 2px 2px #ffffff; text-transform:uppercase; text-align:left; text-decoration:none; color:#4c5458; background:url(${buyTicketURL});}
+    a.btn_buy_ticket:hover { background:url(${buyTicketURL});}
+</style>

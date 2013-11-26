@@ -595,13 +595,7 @@ a.btn_add_basket:active,
 a.btn_add_basket:visited { padding:6px 0 0 10px; font-size:12px; line-height:17px; font-family:'UtopiaStd-Regular', Georgia; text-shadow: 2px 2px 2px #ffffff; text-transform:uppercase; text-align:left; text-decoration:none; color:#4c5458; background:url(../img/ml/bg_btn_next_eshop.jpg);}
 a.btn_add_basket:hover { background:url(../img/ml/bg_btn_next_eshop_hover.jpg);}
 
-a.btn_buy_ticket { display:block; margin:0 auto; width:200px; height:66px; outline: none; background:url(../img/ml/bg_btn_buy_ticket2.jpg); float : left;}
-a.btn_buy_ticket:link,
-a.btn_buy_ticket:active,
-a.btn_buy_ticket:visited {font-size:12px; line-height:17px; font-family:'UtopiaStd-Regular', Georgia; text-shadow: 2px 2px 2px #ffffff; text-transform:uppercase; text-align:left; text-decoration:none; color:#4c5458; background:url(../img/ml/bg_btn_buy_ticket2.jpg);}
-a.btn_buy_ticket:hover { background:url(../img/ml/bg_btn_buy_ticket2.jpg);}
-
-a.btn_update { float:right; display:block; margin:0 0 0 22px; width:145px; height:21px; outline: none;}	
+a.btn_update { float:right; display:block; margin:0 0 0 22px; width:145px; height:21px; outline: none;}
 a.btn_update:link,
 a.btn_update:active,
 a.btn_update:visited { padding:8px 0 0 5px; font-size:13px; font-family:'UtopiaStd-Regular', Georgia; text-shadow: 2px 2px 2px #ffffff;  text-transform:uppercase; text-align:left; text-decoration:none; color:#4c5458; background:url(../img/ml/bg_btn_update_eshop.jpg);}

@@ -2,13 +2,13 @@
 <application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com" xsi:schemaLocation="http://www.zeroturnaround.com http://www.zeroturnaround.com/alderaan/rebel-2_0.xsd">
 
 	<classpath>
-		<dir name="/home/tho/sourcecode/bitc/build/classes">
+		<dir name="/data/source/bitc/build/classes">
 		</dir>
 	</classpath>
 
 	<web>
 		<link target="/">
-			<dir name="/home/tho/sourcecode/bitc/WebContent">
+			<dir name="/data/source/bitc/WebContent">
 			</dir>
 		</link>
 	</web>

@@ -75,5 +75,8 @@
         <property name="periodToDate" type="timestamp">
             <column name="period_to_date" length="19" not-null="true" />
         </property>
+        <property name="source" type="string">
+            <column name="source" length="50" />
+        </property>
 	</class>
 </hibernate-mapping>
