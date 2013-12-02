@@ -652,6 +652,8 @@ function forwardToBoxofficeFrame(officeURL) {
 </script>
 
 <style type="text/css">
+	<c:catch var="exception">${bean.sherpaBooking}</c:catch>
+	<c:if test="${exception==null}">
     <c:if test="${bean.sherpaBooking}">
         <c:set var="buyTicketURL" value="${static}/front/img/ml/btn_sherpa_${culture.language}.png"/>
     </c:if>
@@ -665,4 +667,5 @@ function forwardToBoxofficeFrame(officeURL) {
     a.btn_buy_ticket:active,
     a.btn_buy_ticket:visited {font-size:12px; line-height:17px; font-family:'UtopiaStd-Regular', Georgia; text-shadow: 2px 2px 2px #ffffff; text-transform:uppercase; text-align:left; text-decoration:none; color:#4c5458; background:url(${buyTicketURL});}
     a.btn_buy_ticket:hover { background:url(${buyTicketURL});}
+	</c:if>
 </style>

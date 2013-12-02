@@ -72,7 +72,7 @@ var m3_r = 0;
 						</wa:include>
 					</div>
 				</div> 
-			</c:if>			
+			</c:if>
 		<!--contentSub:end--> 
 	
 	<div class="clr"></div> 

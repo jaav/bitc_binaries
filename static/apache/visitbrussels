@@ -1,0 +1,589 @@
+<VirtualHost *:80>
+	ServerAdmin j.waumans@visitbrussels.be
+	DocumentRoot /vol/htdocs/visitbrussels
+    ServerName visitbrussels.be
+    ServerAlias prod.visitbrussels.be
+
+    # Set a 'full site' cookie if the user wants to stay on the full site. (2 weeks cookie by default)
+   RewriteCond %{QUERY_STRING} prefer_full_site=true
+   RewriteRule ^/?(.*)$ http://visitbrussels.be/bitc/front/home/display.do? [L,CO=prefer_full_site:true:visitbrussels.be:840]
+
+   # If the user wants the mobile site, set the cookie, redirect and stop.
+   RewriteCond %{QUERY_STRING} prefer_mobile_site=true
+   RewriteRule ^/?(.*)$ http://m.visitbrussels.be/ [L,CO=prefer_full_site:false:visitbrussels.be:840]
+
+    RewriteCond  %{HTTP_USER_AGENT} "iphone|ipod|android|blackberry|opera mini" [NC,OR]
+    RewriteCond  %{HTTP_USER_AGENT} "pre\/|palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine" [NC,OR]
+    RewriteCond  %{HTTP_USER_AGENT} "iris|3g_t|windows ce|opera mobi|windows ce; smartphone;|windows ce; iemobile" [NC,OR]
+    RewriteCond  %{HTTP_USER_AGENT} "mini 9.5|vx1000|lge |m800|e860|u940|ux840|compal|wireless| mobi|ahong|lg380|lgku|lgu900|lg210|lg47|lg920|lg840|lg370|sam-r|mg50|s55|g83|t66|vx400|mk99|d615|d763|el370|sl900|mp500|samu3|samu4|vx10|xda_|samu5|samu6|samu7|samu9|a615|b832|m881|s920|n210|s700|c-810|_h797|mob-x|sk16d|848b|mowser|s580|r800|471x|v120|rim8|c500foma:|160x|x160|480x|x640|t503|w839|i250|sprint|w398samr810|m5252|c7100|mt126|x225|s5330|s820|htil-g1|fly v71|s302|-x113|novarra|k610i|-three|8325rc|8352rc|sanyo|vx54|c888|nx250|n120|mtk |c5588|s710|t880|c5005|i;458x|p404i|s210|c5100|teleca|s940|c500|s590|foma|samsu|vx8|vx9|a1000|_mms|myx|a700|gu1100|bc831|e300|ems100|me701|me702m-three|sd588|s800|8325rc|ac831|mw200|brew |d88|htc\/|htc_touch|355x|m50|km100|d736|p-9521|telco|sl74|ktouch|m4u\/|me702|8325rc|kddi|phone|lg |sonyericsson|samsung|240x|x320|vx10|nokia|sony cmd|motorola|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|psp|treo" [NC]
+    RewriteCond  %{HTTP_USER_AGENT} "!ipad|xoom" [NC]
+    RewriteCond %{HTTP_COOKIE} !prefer_full_site=true
+    RewriteRule ^\.do$ http://m.visitbrussels.be [R,L]
+
+
+
+    Redirect permanent /index.html http://visitbrussels.be/bitc/front/home/display/lg/en/section/visiteur.do
+    Redirect permanent /bitc/front/splash/display.do http://visitbrussels.be/bitc/front/home/display/lg/en/section/visiteur.do
+    Redirect permanent /waadmin http://visitbrussels.be/bitc/admin/home/display.do
+    Redirect permanent /brusselicious http://visitbrussels.be/bitc/BE_fr/brusselicious.do
+    Redirect permanent /gay http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/gay.do
+    Redirect permanent /qualitydestination http://www.view-up.com/visitbrussels
+    Redirect permanent /meetings http://visitbrussels.be/bitc/BE_en/meeting/headlines.do
+    Redirect permanent /prm http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/reduced-mobility.do
+    Redirect permanent /pmr http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-are/mobilite-reduite.do
+    Redirect permanent /pbm http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-are/beperkte-mobiliteit.do
+		Redirect permanent /wabxlint/splash.jsp http://visitbrussels.be
+		Redirect permanent /wabxlint/fr/visiteur/bruxelles-tourisme-visite.act http://visitbrussels.be/bitc/front/home/display/cmid/616/section/visiteur.do
+		Redirect permanent /wabxlint/nl/bezoeker/brussel-toerisme-bezoek.act http://visitbrussels.be/bitc/front/home/display/cmid/616/section/visiteur.do
+		Redirect permanent /wabxlint/en/visitor/brussels-tourism-visit.act http://visitbrussels.be/bitc/front/home/display/cmid/616/section/visiteur.do
+		Redirect permanent /wabxlint/fr/visiteur/infos-pratiques/202/bruxelles-pass-culturels.act http://visitbrussels.be/bitc/front/content/displayDetail/group/CONTENT/id/529.do
+		Redirect permanent /wabxlint/nl/bezoeker/praktische-informatie/982/brussels-card.act http://visitbrussels.be/bitc/front/content/displayDetail/group/CONTENT/id/529.do
+		Redirect permanent /wabxlint/en/visitor/practical-information/4761/brussels-card.act http://visitbrussels.be/bitc/front/content/displayDetail/group/CONTENT/id/529.do
+	    Redirect permanent /wabxlint/fr/visiteur/manger/restaurants-bruxelles.act http://visitbrussels.be/bitc/front/content/displayResto/cmid/643/group/RESTO.do
+		Redirect permanent /wabxlint/nl/bezoeker/eten/restaurants-brussel.act http://visitbrussels.be/bitc/front/content/displayResto/cmid/643/group/RESTO.do
+		Redirect permanent /wabxlint/en/visitor/eat/restaurants-brussels.act http://visitbrussels.be/bitc/front/content/displayResto/cmid/643/group/RESTO.do
+		Redirect permanent /wabxlint/fr/visiteur/sortir/bar-bruxelles.act http://visitbrussels.be/bitc/front/content/displayList/cmid/644/group/BAR.do
+		Redirect permanent /wabxlint/nl/bezoeker/uitgaan/bar-brussel.act http://visitbrussels.be/bitc/front/content/displayList/cmid/644/group/BAR.do
+		Redirect permanent /wabxlint/en/visitor/go-out/bar-brussels.act http://visitbrussels.be/bitc/front/content/displayList/cmid/644/group/BAR.do
+		Redirect permanent /wabxlint/fr/visiteur/sortir/boite-de-nuit-bruxelles.act http://visitbrussels.be/bitc/front/content/displayList/clt/BE_fr/cmid/634/group/NIGHTCLUB.do
+		Redirect permanent /wabxlint/nl/bezoeker/uitgaan/nightclub-brussel.act http://visitbrussels.be/bitc/front/content/displayList/clt/BE_fr/cmid/634/group/NIGHTCLUB.do
+		Redirect permanent /wabxlint/en/visitor/go-out/nightclub-brussels.act http://visitbrussels.be/bitc/front/content/displayList/clt/BE_fr/cmid/634/group/NIGHTCLUB.do
+		Redirect permanent /wabxlint/fr/visiteur/sortir/concert-bruxelles.act http://visitbrussels.be/bitc/front/content/displayAgenda/clt/BE_fr/group/GO_OUT.do
+		Redirect permanent /wabxlint/nl/bezoeker/uitgaan/concert-brussel.act http://visitbrussels.be/bitc/front/content/displayAgenda/clt/BE_fr/group/GO_OUT.do
+		Redirect permanent /wabxlint/en/visitor/go-out/concert-brussels.act http://visitbrussels.be/bitc/front/content/displayAgenda/clt/BE_fr/group/GO_OUT.do
+		Redirect permanent /wabxlint/fr/visiteur/sortir/resto-nuit.act http://visitbrussels.be/bitc/front/content/displayResto/clt/BE_fr/group/RESTO_NIGHT.do
+		Redirect permanent /wabxlint/nl/bezoeker/uitgaan/nacht-restaurants.act http://visitbrussels.be/bitc/front/content/displayResto/clt/BE_fr/group/RESTO_NIGHT.do
+		Redirect permanent /wabxlint/en/visitor/go-out/night-restaurants.act http://visitbrussels.be/bitc/front/content/displayResto/clt/BE_fr/group/RESTO_NIGHT.do
+		Redirect permanent /wabxlint/fr/visiteur/loger/hotels-bruxelles-reservation.act http://visitbrussels.be/bitc/front/content/displayStays/clt/BE_fr/cmid/638/group/HOTEL.do
+		Redirect permanent /wabxlint/nl/bezoeker/logeren/hotels-brussel-boeken.act http://visitbrussels.be/bitc/front/content/displayStays/clt/BE_fr/cmid/638/group/HOTEL.do
+		Redirect permanent /wabxlint/en/visitor/stay-overnight/hotels-brussels-reservation.act http://visitbrussels.be/bitc/front/content/displayStays/clt/BE_fr/cmid/638/group/HOTEL.do
+		Redirect permanent /wabxlint/fr/visiteur/loger/packages-hotel-bruxelles.act http://visitbrussels.be/bitc/front/content/displayList/cmid/642/group/CITYTRIP.do
+		Redirect permanent /wabxlint/nl/bezoeker/logeren/hotel-package-brussel.act http://visitbrussels.be/bitc/front/content/displayList/cmid/642/group/CITYTRIP.do
+		Redirect permanent /wabxlint/en/visitor/stay-overnight/hotel-packages-brussels.act http://visitbrussels.be/bitc/front/content/displayList/cmid/642/group/CITYTRIP.do
+		Redirect permanent /wabxlint/fr/visiteur/loger/chambre-d-hote-bruxelles.act http://visitbrussels.be/bitc/front/content/displayStays/group/BnB.do
+		Redirect permanent /wabxlint/nl/bezoeker/logeren/bed-and-breakfast-brussel.act http://visitbrussels.be/bitc/front/content/displayStays/group/BnB.do
+		Redirect permanent /wabxlint/en/visitor/stay-overnight/bed-and-breakfast-brussels.act http://visitbrussels.be/bitc/front/content/displayStays/group/BnB.do
+		Redirect permanent /wabxlint/fr/visiteur/loger/logement-jeune-bruxelles.act http://visitbrussels.be/bitc/front/content/displayStays/group/AUBERGE.do
+		Redirect permanent /wabxlint/nl/bezoeker/logeren/jong-verblijf-brussel.act http://visitbrussels.be/bitc/front/content/displayStays/group/AUBERGE.do
+		Redirect permanent /wabxlint/en/visitor/stay-overnight/youth-accomodation-brussels.act http://visitbrussels.be/bitc/front/content/displayStays/group/AUBERGE.do
+		Redirect permanent /wabxlint/fr/visiteur/infos-pratiques/50/bruxelles-information-guide.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/672/group/CONTENT/id/368.do
+		Redirect permanent /wabxlint/nl/bezoeker/praktische-informatie/1701/informatie-brussel.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/672/group/CONTENT/id/368.do
+		Redirect permanent /wabxlint/en/visitor/practical-information/1741/information-brussels.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/672/group/CONTENT/id/368.do
+		Redirect permanent /wabxlint/fr/visiteur/infos-pratiques/52/bruxelles-information-belgique.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/657/group/CONTENT/id/1505.do
+		Redirect permanent /wabxlint/nl/bezoeker/praktische-informatie/1682/brussel-informatie-belgie.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/657/group/CONTENT/id/1505.do
+		Redirect permanent /wabxlint/en/visitor/practical-information/1781/brussels-information-belgium.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/657/group/CONTENT/id/1505.do
+		Redirect permanent /wabxlint/fr/visiteur/infos-pratiques/54/bruxelles-aeroport-gare.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/654/group/CONTENT/id/391.do
+		Redirect permanent /wabxlint/nl/bezoeker/praktische-informatie/983/brussel-route.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/654/group/CONTENT/id/391.do
+		Redirect permanent /wabxlint/en/visitor/practical-information/4681/brussels-airport-train.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/654/group/CONTENT/id/391.do
+		Redirect permanent /wabxlint/fr/visiteur/infos-pratiques/58/bruxelles-transports.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/655/group/CONTENT/id/392.do
+		Redirect permanent /wabxlint/nl/bezoeker/praktische-informatie/961/transport-in-brussel.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/655/group/CONTENT/id/392.do
+		Redirect permanent /wabxlint/en/visitor/practical-information/4742/means-of-transport-in-brussels.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/655/group/CONTENT/id/392.do
+		Redirect permanent /wabxlint/en/visitor/practical-information/6225/brussels-guided-tours.act http://visitbrussels.be/bitc/front/content/displayAgenda/group/GUIDED_TOUR.do
+		Redirect permanent /wabxlint/nl/bezoeker/praktische-informatie/6224/brussel-geleid-bezoek.act http://visitbrussels.be/bitc/front/content/displayAgenda/group/GUIDED_TOUR.do
+		Redirect permanent /wabxlint/fr/visiteur/decouvrir/promenade/7/bruxelles-et-la-bande-dessinee.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/344.do
+		Redirect permanent /wabxlint/nl/bezoeker/ontdekken/wandeling/881/brussel-en-stripverhaal.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/344.do
+		Redirect permanent /wabxlint/en/visitor/discover/walks/1321/brussels-and-comic-strip-your-trail.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/344.do
+		Redirect permanent /wabxlint/fr/visiteur/decouvrir/promenade/148/le-quartier-europeen-et-le-cinquantenaire.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/398.do
+		Redirect permanent /wabxlint/nl/bezoeker/ontdekken/wandeling/887/van-het-jubelpark-naar-europa.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/398.do
+		Redirect permanent /wabxlint/en/visitor/discover/walks/1402/from-the-cinquantenaire-to-europe.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/398.do
+		Redirect permanent /wabxlint/fr/visiteur/decouvrir/promenade/138/art-nouveau.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/359.do
+		Redirect permanent /wabxlint/nl/bezoeker/ontdekken/wandeling/882/art-nouveau.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/359.do
+		Redirect permanent /wabxlint/en/visitor/discover/walks/1361/art-nouveau-on-two-wheels.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/359.do
+		Redirect permanent /wabxlint/fr/visiteur/decouvrir/promenade/7961/tintin-a-bruxelles.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/390.do
+		Redirect permanent /wabxlint/nl/bezoeker/ontdekken/wandeling/7965/kuifje-zoon-van-brussel.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/390.do
+		Redirect permanent /wabxlint/en/visitor/discover/walks/7968/tintin-son-of-brussels.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/390.do
+		Redirect permanent /wabxlint/fr/visiteur/decouvrir/promenade/144/parcours-de-la-mode.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/365.do
+		Redirect permanent /wabxlint/nl/bezoeker/ontdekken/wandeling/885/verrassend-modeparcours.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/365.do
+		Redirect permanent /wabxlint/en/visitor/discover/walks/4525/strut-your-stuff-on-the-catwalk.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/365.do
+		Redirect permanent /wabxlint/fr/12141/balade-bruxelles-vert-parcs-biologique.act http://visitbrussels.be/bitc/front/propertyValue/display/name/green.do
+		Redirect permanent /wabxlint/nl/12287/groen-brussel-park-vegetarisch-bio.act http://visitbrussels.be/bitc/front/propertyValue/display/name/green.do
+		Redirect permanent /wabxlint/en/12261/green-brussels-park-vegetarian-organic.act#green http://visitbrussels.be/bitc/front/propertyValue/display/name/green.do
+		Redirect permanent /wabxlint/fr/12381/gay-bruxelles.act http://visitbrussels.be/bitc/front/propertyValue/display/name/gay.do
+		Redirect permanent /wabxlint/nl/12382/gay-brussel.act http://visitbrussels.be/bitc/front/propertyValue/display/name/gay.do
+		Redirect permanent /wabxlint/en/10462/gay-brussels.act http://visitbrussels.be/bitc/front/propertyValue/display/name/gay.do
+		Redirect permanent /wabxlint/fr/1285/bruxelles-pass-musees.act http://visitbrussels.be/bitc/front/content/displayDetail/clt/BE_fr/group/CONTENT/id/640.do
+		Redirect permanent /wabxlint/nl/12881/brussel-pass-musea-bezoeken.act http://visitbrussels.be/bitc/front/content/displayDetail/clt/BE_fr/group/CONTENT/id/640.do
+		Redirect permanent /wabxlint/en/12887/brussels-card-museums-visits.act http://visitbrussels.be/bitc/front/content/displayDetail/clt/BE_fr/group/CONTENT/id/640.do
+		Redirect permanent /wabxlint/fr/10462/bruxelles-pass-prix-pas-cher.act http://visitbrussels.be/bitc/front/content/displayDetail/group/CONTENT/id/529.do
+		Redirect permanent /wabxlint/nl/12885/brussel-pass-prijs.act http://visitbrussels.be/bitc/front/content/displayDetail/group/CONTENT/id/529.do
+		Redirect permanent /wabxlint/en/12891/brussels-card-price.act http://visitbrussels.be/bitc/front/content/displayDetail/group/CONTENT/id/529.do
+		Redirect permanent /wabxlint/fr/visiteur/decouvrir/promenade/134/tour-de-ville.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/400.do
+		Redirect permanent /wabxlint/nl/bezoeker/ontdekken/wandeling/7941/stadsrondrit.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/400.do
+		Redirect permanent /wabxlint/en/visitor/discover/walks/4491/city-sightseeing-in-brussels.act http://visitbrussels.be/bitc/front/content/displayDetail/group/WALK/id/400.do
+		Redirect permanent /wabxlint/fr/organisateur/bruxelles-conferences-evenements-seminaires.act http://visitbrussels.be/bitc/front/home/display/cmid/617/section/meetings.do
+		Redirect permanent /wabxlint/nl/organisator/brussel-evenementen-organiseren.act http://visitbrussels.be/bitc/front/home/display/cmid/617/section/meetings.do
+		Redirect permanent /wabxlint/en/organizer/brussels-meetings-conferences-events.act http://visitbrussels.be/bitc/front/home/display/cmid/617/section/meetings.do
+		Redirect permanent /wabxlint/fr/organisateur/brochures-guides-publications-bruxelles.act http://visitbrussels.be/bitc/front/brochure/display/clt/BE_fr/cmid/628.do
+		Redirect permanent /wabxlint/nl/organisator/brochures-gidsen-publicaties-brussel.act http://visitbrussels.be/bitc/front/brochure/display/clt/BE_fr/cmid/628.do
+		Redirect permanent /wabxlint/en/organizer/brochures-guides-publications-brussels.act http://visitbrussels.be/bitc/front/brochure/display/clt/BE_fr/cmid/628.do
+		Redirect permanent /wabxlint/fr/visiteur/sortir/loisirs-bruxelles.act http://visitbrussels.be/bitc/front/content/displayList/cmid/651/group/LEISURE.do
+		Redirect permanent /wabxlint/nl/bezoeker/uitgaan/vrije-tijd-brussel.act http://visitbrussels.be/bitc/front/content/displayList/cmid/651/group/LEISURE.do
+		Redirect permanent /wabxlint/en/visitor/go-out/leisure-brussels.act http://visitbrussels.be/bitc/front/content/displayList/cmid/651/group/LEISURE.do
+		Redirect permanent /wabxlint/fr/visiteur/manger/bruxelles-petit-dejeuner.act http://visitbrussels.be/bitc/front/content/displayResto/group/BREAKFAST.do
+		Redirect permanent /wabxlint/nl/bezoeker/eten/brussel-ontbijt.act http://visitbrussels.be/bitc/front/content/displayResto/group/BREAKFAST.do
+		Redirect permanent /wabxlint/en/visitor/eat/brussels-breakfast.act http://visitbrussels.be/bitc/front/content/displayResto/group/BREAKFAST.do
+		Redirect permanent /wabxlint/fr/organisateur/contactez-nous.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/686/group/CONTENT/id/406.do
+		Redirect permanent /wabxlint/nl/organisator/contacteer-ons.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/686/group/CONTENT/id/406.do
+		Redirect permanent /wabxlint/en/organizer/contact-us.act http://visitbrussels.be/bitc/front/content/displayDetail/cmid/686/group/CONTENT/id/406.do
+		Redirect permanent /wabxlint/en/organizer/organize/visit/brussels-attractions-museums.act?c=1 http://visitbrussels.be/bitc/front/content/displayList/clt/BE_fr/cmid/635/group/MUSEUM.do
+		Redirect permanent /wabxlint/fr/visiteur/decouvrir/promenade/564/mon-parcours-gourmand.act http://visitbrussels.be/bitc/front/propertyValue/display/name/gastronomy.do
+		Redirect permanent /wabxlint/nl/bezoeker/ontdekken/wandeling/1081/mijn-fijnproevers-parcours.act http://visitbrussels.be/bitc/front/propertyValue/display/name/gastronomy.do
+		Redirect permanent /wabxlint/en/visitor/discover/walks/1441/your-gourmet-trail.act http://visitbrussels.be/bitc/front/propertyValue/display/name/gastronomy.do
+		Redirect permanent /wabxlint/fr/visiteur/decouvrir/promenade/140/pour-les-jeunes-curieux.act http://visitbrussels.be/bitc/front/propertyValue/display/name/family.do?
+		Redirect permanent /wabxlint/nl/bezoeker/ontdekken/wandeling/883/maak-plaats-voor-de-jeugd.act http://visitbrussels.be/bitc/front/propertyValue/display/name/family.do?
+		Redirect permanent /wabxlint/en/visitor/discover/walks/1381/make-way-for-the-young.act http://visitbrussels.be/bitc/front/propertyValue/display/name/family.do?
+		Redirect permanent /wabxlint/fr/visiteur/decouvrir/promenade/142/mont-des-arts-au-sommet-de-la-culture.act http://visitbrussels.be/bitc/front/propertyValue/display/name/culture.do
+		Redirect permanent /wabxlint/nl/bezoeker/ontdekken/wandeling/884/de-kunstberg.act http://visitbrussels.be/bitc/front/propertyValue/display/name/culture.do
+		Redirect permanent /wabxlint/en/visitor/discover/walks/1382/the-mont-des-arts.act http://visitbrussels.be/bitc/front/propertyValue/display/name/culture.do
+		Redirect permanent /wabxlint/fr/visiteur/decouvrir/promenade/761/parcours-classique.act http://visitbrussels.be/bitc/front/propertyValue/display/name/typical.do
+		Redirect permanent /wabxlint/nl/bezoeker/ontdekken/wandeling/902/de-genoegens-van-een-klassieke-wandeling.act http://visitbrussels.be/bitc/front/propertyValue/display/name/typical.do
+		Redirect permanent /wabxlint/en/visitor/discover/walks/1484/the-charms-of-a-classic-walk.act http://visitbrussels.be/bitc/front/propertyValue/display/name/typical.do
+		Redirect permanent /wabxlint/fr/19581/europe-in-brussels-accueil.act http://visitbrussels.be/bitc/front/content/displayDetail/group/CONTENT/id/611.do
+		Redirect permanent /bitc/BE_en/brussels-green.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/brussels-green.do
+Redirect permanent /bitc/BE_en/couple.do http://visitbrussels.be/bitc/front/propertyValue/display/name/couple/lg/en.do
+Redirect permanent /bitc/BE_en/culture.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/culture.do
+Redirect permanent /bitc/BE_en/disabled.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/disabled.do
+Redirect permanent /bitc/BE_en/displayagenda/highlight.do http://visitbrussels.be/bitc/BE_en/do-see/to-see/cultural-agenda.do
+Redirect permanent /bitc/BE_en/displaylist/bar.do http://visitbrussels.be/bitc/BE_en/eat-drink/bars-cafes.do
+Redirect permanent /bitc/BE_en/displayresto/breakfast.do http://visitbrussels.be/bitc/BE_en/eat-drink/breakfasts.do
+Redirect permanent /bitc/BE_en/displayresto/resto_night.do http://visitbrussels.be/bitc/BE_en/nightlife/night-restaurants.do
+Redirect permanent /bitc/BE_en/displaystays/bnb.do http://visitbrussels.be/bitc/BE_en/sleep/bed-breakfast.do
+Redirect permanent /bitc/BE_en/europe.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/europe.do
+Redirect permanent /bitc/BE_en/family.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/family.do
+Redirect permanent /family http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/family.do
+Redirect permanent /kids http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/kids.do
+Redirect permanent /bitc/BE_en/gastronomy.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/gastronomy.do
+Redirect permanent /bitc/BE_en/gay.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/gay.do
+Redirect permanent /bitc/BE_en/hype.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/trendy.do
+Redirect permanent /bitc/BE_en/lifestyle.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/lifestyle.do
+Redirect permanent /bitc/BE_en/low-budget.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/low-budget.do
+Redirect permanent /bitc/BE_en/luxury.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/luxury.do
+Redirect permanent /bitc/BE_en/meetings/activities/culture.do http://visitbrussels.be/bitc/BE_en/meeting/meetings-agenda.do
+Redirect permanent /bitc/BE_en/meetings/activities/dine-out.do http://visitbrussels.be/bitc/BE_en/meeting/group-restaurants.do
+Redirect permanent /bitc/BE_en/meetings/activities/guided-tours.do http://visitbrussels.be/bitc/BE_en/trade/guided-tours-for-groups.do
+Redirect permanent /bitc/BE_en/meetings/activities/incentives.do http://visitbrussels.be/bitc/BE_en/meeting/incentives.do
+Redirect permanent /bitc/BE_en/meetings/activities/nightlife.do http://visitbrussels.be/bitc/BE_en/nightlife/nightclubs.do
+Redirect permanent /bitc/BE_en/meetings/activities/official-guided-tours.do http://visitbrussels.be/bitc/BE_en/do-see/to-do/official-guided-tours.do
+Redirect permanent /bitc/BE_en/meetings/activities/shopping.do http://visitbrussels.be/bitc/BE_en/do-see/to-do/shopping.do
+Redirect permanent /bitc/BE_en/meetings/facilities/hotels.do http://visitbrussels.be/bitc/BE_en/sleep/hotels.do
+Redirect permanent /bitc/BE_en/meetings/facilities/venues.do http://visitbrussels.be/bitc/BE_en/meeting/venues.do
+Redirect permanent /bitc/BE_en/meetings/news/latest-news.do http://visitbrussels.be/bitc/BE_en/meeting/newsletters.do
+Redirect permanent /bitc/BE_en/meetings/news/meet-the-team.do http://visitbrussels.be/bitc/BE_en/about-us/meet-the-team.do
+Redirect permanent /bitc/BE_en/meetings/news/testimonials.do http://visitbrussels.be/bitc/BE_en/meeting/testimonials.do
+Redirect permanent /bitc/BE_en/meetings/news/upcoming-events.do http://visitbrussels.be/bitc/BE_en/meeting/meetings-agenda.do
+Redirect permanent /bitc/BE_en/meetings/services/contact.do http://visitbrussels.be/bitc/BE_en/about-us/contact-us.do
+Redirect permanent /bitc/BE_en/meetings/services/hosting-support.do http://visitbrussels.be/bitc/front/home/display/lg/en/section/visiteur.do
+Redirect permanent /bitc/BE_en/meetings/services/transportation-suppliers.do http://visitbrussels.be/bitc/front/home/display/lg/en/section/visiteur.do
+Redirect permanent /bitc/BE_en/press-media.do http://visitbrussels.be/bitc/BE_en/press/headlines.do
+Redirect permanent /bitc/BE_en/press-media/facts-figures/about-brussels.do http://visitbrussels.be/bitc/BE_en/press/brussels-in-the-news.do
+Redirect permanent /bitc/BE_en/press-media/facts-figures/reports.do http://visitbrussels.be/bitc/BE_en/press/reports-and-statistics.do
+Redirect permanent /bitc/BE_en/press-media/jobs/discover-our-job-opportunities.do http://visitbrussels.be/bitc/BE_en/about-us/jobs.do
+Redirect permanent /bitc/BE_en/press-media/news/projects.do http://visitbrussels.be/bitc/BE_en/press/upcoming-projects.do
+Redirect permanent /bitc/BE_en/press-media/press-contact/meet-the-team.do http://visitbrussels.be/bitc/BE_en/about-us/meet-the-team.do
+Redirect permanent /bitc/BE_en/press-media/press-releases/partner-s-releases.do http://visitbrussels.be/bitc/BE_en/press/headlines.do
+Redirect permanent /bitc/BE_en/press-media/press-toolbox/picture-library.do http://visitbrussels.be/bitc/BE_en/press/picture-library.do
+Redirect permanent /bitc/BE_en/press-media/press-toolbox/press-brochures.do http://visitbrussels.be/bitc/BE_en/press/press-brochures.do
+Redirect permanent /bitc/BE_en/press-media/press-toolbox/video-material.do http://visitbrussels.be/bitc/BE_en/press/video-material.do
+Redirect permanent /bitc/BE_en/romantic.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/romantic.do
+Redirect permanent /bitc/BE_en/travel-trade.do http://visitbrussels.be/bitc/BE_en/trade/headlines.do
+Redirect permanent /bitc/BE_en/travel-trade/agent-discounts/sales-guides.do http://visitbrussels.be/bitc/BE_en/trade/sales-guides.do
+Redirect permanent /bitc/BE_en/travel-trade/brussels-for-groups/group-friendly-attractions.do http://visitbrussels.be/bitc/BE_en/trade/group-friendly-attractions.do
+Redirect permanent /bitc/BE_en/travel-trade/brussels-for-groups/guided-tours-for-groups.do http://visitbrussels.be/bitc/BE_en/trade/guided-tours-for-groups.do
+Redirect permanent /bitc/BE_en/travel-trade/brussels-for-groups/restaurants-for-groups.do http://visitbrussels.be/bitc/BE_en/trade/restaurants-for-groups.do
+Redirect permanent /bitc/BE_en/travel-trade/practical-information/coach-parking.do http://visitbrussels.be/bitc/BE_en/trade/coach-parking.do
+Redirect permanent /bitc/BE_en/travel-trade/practical-information/contact-us.do http://visitbrussels.be/bitc/BE_en/about-us/contact-us.do
+Redirect permanent /bitc/BE_en/travel-trade/practical-information/how-to-get-here.do http://visitbrussels.be/bitc/BE_en/essential-brussels/getting-here.do
+Redirect permanent /bitc/BE_en/travel-trade/travel-trade-toolkit/brochures.do http://visitbrussels.be/bitc/BE_en/trade/brochures.do
+Redirect permanent /bitc/BE_en/travel-trade/travel-trade-toolkit/major-attractions.do http://visitbrussels.be/bitc/BE_en/do-see/to-do/attractions-and-leisure.do
+Redirect permanent /bitc/BE_en/travel-trade/travel-trade-toolkit/picture-library.do http://visitbrussels.be/bitc/BE_en/trade/picture-library.do
+Redirect permanent /bitc/BE_en/travel-trade/travel-trade-toolkit/walks-itineraries.do http://visitbrussels.be/bitc/BE_en/do-see/to-do/walks.do
+Redirect permanent /bitc/BE_en/typical.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/typical-brussels.do
+Redirect permanent /bitc/BE_en/visitors.do http://visitbrussels.be/bitc/front/home/display/lg/en/section/visiteur.do
+Redirect permanent /bitc/BE_en/visitors/accommodation.do http://visitbrussels.be/bitc/BE_en/sleep/hotels.do
+Redirect permanent /bitc/BE_en/visitors/accommodation/bed-breakfast.do http://visitbrussels.be/bitc/BE_en/sleep/bed-breakfast.do
+Redirect permanent /bitc/BE_en/visitors/accommodation/cheap-stay.do http://visitbrussels.be/bitc/BE_en/sleep/cheap-stays.do
+Redirect permanent /bitc/BE_en/visitors/accommodation/hotel-packages.do http://visitbrussels.be/bitc/BE_en/sleep/hotel-packages.do
+Redirect permanent /bitc/BE_en/visitors/accommodation/hotels.do http://visitbrussels.be/bitc/BE_en/sleep/hotels.do
+Redirect permanent /bitc/BE_en/visitors/accommodation/youth-hostels.do http://visitbrussels.be/bitc/BE_en/sleep/youth-hostels.do
+Redirect permanent /bitc/BE_en/visitors/agenda-nightlife.do http://visitbrussels.be/bitc/BE_en/do-see/to-see/shows-and-concerts.do
+Redirect permanent /bitc/BE_en/visitors/agenda-nightlife/cultural-agenda.do http://visitbrussels.be/bitc/BE_en/do-see/to-see/shows-and-concerts.do
+Redirect permanent /bitc/BE_en/visitors/agenda-nightlife/leisure.do http://visitbrussels.be/bitc/BE_en/nightlife/leisure.do
+Redirect permanent /bitc/BE_en/visitors/agenda-nightlife/nightclubs.do http://visitbrussels.be/bitc/BE_en/nightlife/nightclubs.do
+Redirect permanent /bitc/BE_en/visitors/agenda-nightlife/night-restaurants.do http://visitbrussels.be/bitc/BE_en/nightlife/night-restaurants.do
+Redirect permanent /bitc/BE_en/visitors/agenda-nightlife/shows-concerts.do http://visitbrussels.be/bitc/BE_en/do-see/to-see/shows-and-concerts.do
+Redirect permanent /bitc/BE_en/visitors/attractions-museums/attractions.do http://visitbrussels.be/bitc/BE_en/do-see/to-do/attractions-and-leisure.do
+Redirect permanent /bitc/BE_en/visitors/attractions-museums/monuments-sites.do http://visitbrussels.be/bitc/BE_en/do-see/to-see/monuments-sites.do
+Redirect permanent /bitc/BE_en/visitors/attractions-museums/museums.do http://visitbrussels.be/bitc/BE_en/do-see/to-see/museums-visits.do
+Redirect permanent /bitc/BE_en/visitors/eating-shopping/bars-cafes.do http://visitbrussels.be/bitc/BE_en/eat-drink/bars-cafes.do
+Redirect permanent /bitc/BE_en/visitors/eating-shopping/breakfast.do http://visitbrussels.be/bitc/BE_en/eat-drink/breakfasts.do
+Redirect permanent /bitc/BE_en/visitors/eating-shopping/markets.do http://visitbrussels.be/bitc/BE_en/do-see/to-do/markets.do
+Redirect permanent /bitc/BE_en/visitors/eating-shopping/restaurants.do http://visitbrussels.be/bitc/BE_en/eat-drink/restaurants.do
+Redirect permanent /bitc/BE_en/visitors/eating-shopping/shopping.do http://visitbrussels.be/bitc/BE_en/do-see/to-do/shopping.do
+Redirect permanent /bitc/BE_en/visitors/guides-maps/audioguides-mobile.do http://visitbrussels.be/bitc/BE_en/essential-brussels/audioguides-mobile.do
+Redirect permanent /bitc/BE_en/visitors/guides-maps/brochures.do http://visitbrussels.be/bitc/BE_en/essential-brussels/brochures.do
+Redirect permanent /bitc/BE_en/visitors/guides-maps/brussels-by-districts.do http://visitbrussels.be/bitc/BE_en/essential-brussels/brussels-by-district.do
+Redirect permanent /bitc/BE_en/visitors/guides-maps/guided-tours.do http://visitbrussels.be/bitc/BE_en/do-see/to-do/guided-tours.do
+Redirect permanent /bitc/BE_en/visitors/guides-maps/official-guided-tours.do http://visitbrussels.be/bitc/BE_en/do-see/to-do/official-guided-tours.do
+Redirect permanent /bitc/BE_en/visitors/guides-maps/tourism-information.do http://visitbrussels.be/bitc/BE_en/essential-brussels/tourism-information.do
+Redirect permanent /bitc/BE_en/visitors/guides-maps/walks.do http://visitbrussels.be/bitc/BE_en/do-see/to-do/walks.do
+Redirect permanent /bitc/BE_en/visitors/information/belgium.do http://visitbrussels.be/bitc/BE_en/essential-brussels/belgium.do
+Redirect permanent /bitc/BE_en/visitors/information/contact-us.do http://visitbrussels.be/bitc/BE_en/about-us/contact-us.do
+Redirect permanent /bitc/BE_en/visitors/information/general-information.do http://visitbrussels.be/bitc/BE_en/essential-brussels/general-information.do
+Redirect permanent /bitc/BE_en/visitors/information/getting-here.do http://visitbrussels.be/bitc/BE_en/essential-brussels/getting-here.do
+Redirect permanent /bitc/BE_en/visitors/information/move-in-the-city.do http://visitbrussels.be/bitc/BE_en/essential-brussels/move-in-the-city.do
+Redirect permanent /bitc/BE_en/young.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/young.do
+Redirect permanent /youth http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/young.do
+Redirect permanent /young http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/young.do
+
+Redirect permanent /bitc/BE_fr/brussels-green.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-want/brussels-green.do
+Redirect permanent /bitc/BE_fr/couple.do http://visitbrussels.be/bitc/front/propertyValue/display/name/couple/lg/fr.do
+Redirect permanent /bitc/BE_fr/culture.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-want/culture.do
+Redirect permanent /bitc/BE_fr/displayagenda/highlight.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-voir/agenda-culturel.do
+Redirect permanent /bitc/BE_fr/displayresto/breakfast.do http://visitbrussels.be/bitc/BE_fr/ou-manger-boire/petit-dejeuner.do
+Redirect permanent /bitc/BE_fr/displayresto/resto_nuit.do http://visitbrussels.be/bitc/BE_fr/ou-sortir/restaurants-de-nuit.do
+Redirect permanent /bitc/BE_fr/displaystays/bnb.do http://visitbrussels.be/bitc/BE_fr/ou-dormir/bed-breakfast.do
+Redirect permanent /bitc/BE_fr/europe.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-want/europe.do
+Redirect permanent /bitc/BE_fr/famille.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-are/famille.do
+Redirect permanent /bitc/BE_fr/gastronomie.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-want/gastronomie.do
+Redirect permanent /bitc/BE_fr/gay.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-are/gay.do
+Redirect permanent /bitc/BE_fr/hype.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-are/trendy.do
+Redirect permanent /bitc/BE_fr/invalide.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-are/mobilite-reduite.do
+Redirect permanent /bitc/BE_fr/jeunes.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-are/jeunes.do
+Redirect permanent /bitc/BE_fr/lifestyle.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-want/lifestyle.do
+Redirect permanent /bitc/BE_fr/luxe.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-want/luxe.do
+Redirect permanent /bitc/BE_fr/meetings.do http://visitbrussels.be/bitc/BE_fr/meeting/a-la-une.do
+Redirect permanent /bitc/BE_fr/meetings/activites/culture.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-voir/agenda-culturel.do
+Redirect permanent /bitc/BE_fr/meetings/activites/incentives.do http://visitbrussels.be/bitc/BE_fr/meeting/a-faire-incentives.do
+Redirect permanent /bitc/BE_fr/meetings/activites/se-restaurer.do http://visitbrussels.be/bitc/BE_fr/meeting/restaurants-pour-groupe.do
+Redirect permanent /bitc/BE_fr/meetings/activites/shopping.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-faire/shopping.do
+Redirect permanent /bitc/BE_fr/meetings/activites/vie-nocturne.do http://visitbrussels.be/bitc/BE_fr/ou-sortir/boites-de-nuit.do
+Redirect permanent /bitc/BE_fr/meetings/activites/visites-guidees.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-faire/visites-guidees.do
+Redirect permanent /bitc/BE_fr/meetings/activites/visites-guidees-officielles.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-faire/visites-guidees-officielles.do
+Redirect permanent /bitc/BE_fr/meetings/facilites/hotels.do http://visitbrussels.be/bitc/BE_fr/ou-dormir/hotels.do
+Redirect permanent /bitc/BE_fr/meetings/facilites/venues.do http://visitbrussels.be/bitc/BE_fr/meeting/ou-se-reunir.do
+Redirect permanent /bitc/BE_fr/meetings/news/decouvrez-l-equipe.do http://visitbrussels.be/bitc/BE_fr/qui-sommes-nous/decouvrez-l-equipe.do
+Redirect permanent /bitc/BE_fr/meetings/news/dernieres-nouvelles.do http://visitbrussels.be/bitc/BE_fr/meeting/newsletters.do
+Redirect permanent /bitc/BE_fr/meetings/news/evenements-a-venir.do http://visitbrussels.be/bitc/BE_fr/meeting/agenda-des-meetings.do
+Redirect permanent /bitc/BE_fr/meetings/news/temoignages.do http://visitbrussels.be/bitc/BE_fr/meeting/temoignages.do
+Redirect permanent /bitc/BE_fr/meetings/services/contact.do http://visitbrussels.be/bitc/BE_fr/qui-sommes-nous/contactez-nous.do
+Redirect permanent /bitc/BE_fr/meetings/services/services-d-accueil.do http://visitbrussels.be/bitc/front/home/display/lg/fr/section/visiteur.do
+Redirect permanent /bitc/BE_fr/meetings/services/services-de-transport.do http://visitbrussels.be/bitc/front/home/display/lg/fr/section/visiteur.do
+Redirect permanent /bitc/BE_fr/petit-budget.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-want/petit-budget.do
+Redirect permanent /bitc/BE_fr/presse-media.do http://visitbrussels.be/bitc/BE_fr/presse/a-la-une.do
+Redirect permanent /bitc/BE_fr/presse-media/boite-a-outils/brochures-presse.do http://visitbrussels.be/bitc/BE_fr/presse/brochures-presse.do
+Redirect permanent /bitc/BE_fr/presse-media/boite-a-outils/materiel-video.do http://visitbrussels.be/bitc/BE_fr/presse/materiel-video.do
+Redirect permanent /bitc/BE_fr/presse-media/boite-a-outils/phototheque.do http://visitbrussels.be/bitc/BE_fr/presse/phototheque.do
+Redirect permanent /bitc/BE_fr/presse-media/bruxelles-en-chiffres/a-propos-de-bruxelles.do http://visitbrussels.be/bitc/BE_fr/presse/bruxelles-dans-la-presse.do
+Redirect permanent /bitc/BE_fr/presse-media/bruxelles-en-chiffres/rapports.do http://visitbrussels.be/bitc/BE_fr/presse/rapports-et-statistiques.do
+Redirect permanent /bitc/BE_fr/presse-media/communiques-de-presse/communiques-partenaires.do http://visitbrussels.be/bitc/BE_fr/presse/communiques-de-presse.do
+Redirect permanent /bitc/BE_fr/presse-media/contact-presse/decouvrez-l-equipe.do http://visitbrussels.be/bitc/BE_fr/qui-sommes-nous/decouvrez-l-equipe.do
+Redirect permanent /bitc/BE_fr/presse-media/jobs/decouvrez-nos-offres-d-emplois.do http://visitbrussels.be/bitc/BE_fr/qui-sommes-nous/jobs.do
+Redirect permanent /bitc/BE_fr/presse-media/news/projets.do http://visitbrussels.be/bitc/BE_fr/presse/projets-a-venir.do
+Redirect permanent /bitc/BE_fr/romantique.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-want/romantique.do
+Redirect permanent /bitc/BE_fr/travel-trade.do http://visitbrussels.be/bitc/BE_fr/trade/a-la-une.do
+Redirect permanent /bitc/BE_fr/travel-trade/boite-a-outils/brochures.do http://visitbrussels.be/bitc/BE_fr/trade/brochures.do
+Redirect permanent /bitc/BE_fr/travel-trade/boite-a-outils/phototheque.do http://visitbrussels.be/bitc/BE_fr/trade/phototheque.do
+Redirect permanent /bitc/BE_fr/travel-trade/boite-a-outils/promenades-et-itineraires.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-faire/promenades.do
+Redirect permanent /bitc/BE_fr/travel-trade/boite-a-outils/top-attractions.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-faire/attractions-loisirs.do
+Redirect permanent /bitc/BE_fr/travel-trade/bruxelles-en-groupe/attractions-pour-groupes.do http://visitbrussels.be/bitc/BE_fr/trade/attractions-pour-groupes.do
+Redirect permanent /bitc/BE_fr/travel-trade/bruxelles-en-groupe/restaurants-pour-groupes.do http://visitbrussels.be/bitc/BE_fr/trade/restaurants-pour-groupes.do
+Redirect permanent /bitc/BE_fr/travel-trade/bruxelles-en-groupe/visites-guidees-pour-groupes.do http://visitbrussels.be/bitc/BE_fr/trade/visites-guidees-pour-groupes.do
+Redirect permanent /bitc/BE_fr/travel-trade/infos-pratiques/contactez-nous.do http://visitbrussels.be/bitc/BE_fr/qui-sommes-nous/contactez-nous.do
+Redirect permanent /bitc/BE_fr/travel-trade/infos-pratiques/les-moyens-d-acces.do http://visitbrussels.be/bitc/BE_fr/bruxelles-pratique/comment-venir.do
+Redirect permanent /bitc/BE_fr/travel-trade/infos-pratiques/parking-cars-touristiques.do http://visitbrussels.be/bitc/BE_fr/trade/parking-cars-touristiques.do
+Redirect permanent /bitc/BE_fr/travel-trade/promotions-tours-operateurs/sales-guides.do http://visitbrussels.be/bitc/BE_fr/trade/sales-guides.do
+Redirect permanent /bitc/BE_fr/typique.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-want/typique-bruxelles.do
+Redirect permanent /bitc/BE_fr/visiteur.do http://visitbrussels.be/bitc/front/home/display/lg/fr/section/visiteur.do
+Redirect permanent /bitc/BE_fr/visiteur/agenda-et-vie-nocturne.do http://visitbrussels.be/bitc/BE_fr/ou-sortir/loisirs-nocturnes.do
+Redirect permanent /bitc/BE_fr/visiteur/agenda-et-vie-nocturne/agenda-culturel.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-voir/agenda-culturel.do
+Redirect permanent /bitc/BE_fr/visiteur/agenda-et-vie-nocturne/boites-de-nuit.do http://visitbrussels.be/bitc/BE_fr/ou-sortir/loisirs-nocturnes.do
+Redirect permanent /bitc/BE_fr/visiteur/agenda-et-vie-nocturne/loisirs.do http://visitbrussels.be/bitc/BE_fr/ou-sortir/loisirs-nocturnes.do
+Redirect permanent /bitc/BE_fr/visiteur/agenda-et-vie-nocturne/restaurants-de-nuit.do http://visitbrussels.be/bitc/BE_fr/ou-sortir/restaurants-de-nuit.do
+Redirect permanent /bitc/BE_fr/visiteur/agenda-et-vie-nocturne/spectacles-concerts.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-voir/spectacles-concerts.do
+Redirect permanent /bitc/BE_fr/visiteur/attractions-musees/attractions-loisirs.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-faire/attractions-loisirs.do
+Redirect permanent /bitc/BE_fr/visiteur/attractions-musees/monuments-sites.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-voir/monuments-sites.do
+Redirect permanent /bitc/BE_fr/visiteur/attractions-musees/musees-visites.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-voir/musees-visites.do
+Redirect permanent /bitc/BE_fr/visiteur/guides-cartes/brochures.do http://visitbrussels.be/bitc/BE_fr/bruxelles-pratique/brochures.do
+Redirect permanent /bitc/BE_fr/visiteur/guides-cartes/bruxelles-par-quartier.do http://visitbrussels.be/bitc/BE_fr/bruxelles-pratique/bruxelles-par-quartier.do
+Redirect permanent /bitc/BE_fr/visiteur/guides-cartes/guides-audio-et-mobiles.do http://visitbrussels.be/bitc/BE_fr/bruxelles-pratique/smartphone-guide-audio.do
+Redirect permanent /bitc/BE_fr/visiteur/guides-cartes/information-touristique.do http://visitbrussels.be/bitc/BE_fr/bruxelles-pratique/information-touristique.do
+Redirect permanent /bitc/BE_fr/visiteur/guides-cartes/promenades.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-faire/promenades.do
+Redirect permanent /bitc/BE_fr/visiteur/guides-cartes/visites-guidees.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-faire/visites-guidees.do
+Redirect permanent /bitc/BE_fr/visiteur/guides-cartes/visites-guidees-officielles.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-faire/visites-guidees-officielles.do
+Redirect permanent /bitc/BE_fr/visiteur/hebergement.do http://visitbrussels.be/bitc/BE_fr/ou-dormir/hotels.do
+Redirect permanent /bitc/BE_fr/visiteur/hebergement/auberges-de-jeunesse.do http://visitbrussels.be/bitc/BE_fr/ou-dormir/auberges-de-jeunesse.do
+Redirect permanent /bitc/BE_fr/visiteur/hebergement/bed-breakfast.do http://visitbrussels.be/bitc/BE_fr/ou-dormir/bed-breakfast.do
+Redirect permanent /bitc/BE_fr/visiteur/hebergement/bons-plans.do http://visitbrussels.be/bitc/BE_fr/ou-dormir/bons-plans.do
+Redirect permanent /bitc/BE_fr/visiteur/hebergement/hotels.do http://visitbrussels.be/bitc/BE_fr/ou-dormir/hotels.do
+Redirect permanent /bitc/BE_fr/visiteur/hebergement/packs-hotels.do http://visitbrussels.be/bitc/BE_fr/ou-dormir/packs-hotels.do
+Redirect permanent /bitc/BE_fr/visiteur/information/belgique.do http://visitbrussels.be/bitc/BE_fr/bruxelles-pratique/belgique.do
+Redirect permanent /bitc/BE_fr/visiteur/information/comment-circuler.do http://visitbrussels.be/bitc/BE_fr/bruxelles-pratique/se-deplacer.do
+Redirect permanent /bitc/BE_fr/visiteur/information/contactez-nous.do http://visitbrussels.be/bitc/BE_fr/qui-sommes-nous/contactez-nous.do
+Redirect permanent /bitc/BE_fr/visiteur/information/generalites.do http://visitbrussels.be/bitc/BE_fr/bruxelles-pratique/generalites.do
+Redirect permanent /bitc/BE_fr/visiteur/information/les-moyens-d-acces.do http://visitbrussels.be/bitc/BE_fr/bruxelles-pratique/comment-venir.do
+Redirect permanent /bitc/BE_fr/visiteur/manger-shopping/bars-et-cafes.do http://visitbrussels.be/bitc/BE_fr/ou-manger-boire/bars-et-cafes.do
+Redirect permanent /bitc/BE_fr/visiteur/manger-shopping/marches.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-faire/marches.do
+Redirect permanent /bitc/BE_fr/visiteur/manger-shopping/petit-dejeuner.do http://visitbrussels.be/bitc/BE_fr/ou-manger-boire/petit-dejeuner.do
+Redirect permanent /bitc/BE_fr/visiteur/manger-shopping/restaurants.do http://visitbrussels.be/bitc/BE_fr/ou-manger-boire/restaurants.do
+Redirect permanent /bitc/BE_fr/visiteur/manger-shopping/shopping.do http://visitbrussels.be/bitc/BE_fr/a-faire-a-voir/a-faire/shopping.do
+Redirect permanent /bitc/BE_nl/bezoeker.do http://visitbrussels.be/bitc/front/home/display/lg/nl/section/visiteur.do
+Redirect permanent /bitc/BE_nl/bezoeker/agenda-en-nachtleven.do http://visitbrussels.be/bitc/BE_nl/waar-uitgaan/nachtclubs.do
+Redirect permanent /bitc/BE_nl/bezoeker/agenda-en-nachtleven/culturele-agenda.do http://visitbrussels.be/bitc/BE_nl/waar-uitgaan/vrije-tijd.do
+Redirect permanent /bitc/BE_nl/bezoeker/agenda-en-nachtleven/nachtclubs.do http://visitbrussels.be/bitc/BE_nl/waar-uitgaan/nachtclubs.do
+Redirect permanent /bitc/BE_nl/bezoeker/agenda-en-nachtleven/nachtrestaurants.do http://visitbrussels.be/bitc/BE_nl/waar-uitgaan/nachrestaurants.do
+Redirect permanent /bitc/BE_nl/bezoeker/agenda-en-nachtleven/spektakels-en-concerten.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-zien/spekatkels-en-concerten.do
+Redirect permanent /bitc/BE_nl/bezoeker/agenda-en-nachtleven/vrije-tijd.do http://visitbrussels.be/bitc/BE_nl/waar-uitgaan/vrije-tijd.do
+Redirect permanent /bitc/BE_nl/bezoeker/eten-en-shopping/bars-cafes.do http://visitbrussels.be/bitc/BE_nl/waar-eten-drinken/bar-cafe-s.do
+Redirect permanent /bitc/BE_nl/bezoeker/eten-en-shopping/markten.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-doen/markten.do
+Redirect permanent /bitc/BE_nl/bezoeker/eten-en-shopping/ontbijt.do http://visitbrussels.be/bitc/BE_nl/waar-eten-drinken/ontbijt.do
+Redirect permanent /bitc/BE_nl/bezoeker/eten-en-shopping/restaurants.do http://visitbrussels.be/bitc/BE_nl/waar-eten-drinken/restaurants.do
+Redirect permanent /bitc/BE_nl/bezoeker/eten-en-shopping/shopping.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-doen/shopping.do
+Redirect permanent /bitc/BE_nl/bezoeker/gidsen-en-kaarten/audiogidsen-en-mobielen.do http://visitbrussels.be/bitc/BE_nl/brussel-praktisch/audiogidsen-en-mobielen.do
+Redirect permanent /bitc/BE_nl/bezoeker/gidsen-en-kaarten/brochures.do http://visitbrussels.be/bitc/BE_nl/brussel-praktisch/brochures.do
+Redirect permanent /bitc/BE_nl/bezoeker/gidsen-en-kaarten/brussel-per-wijk.do http://visitbrussels.be/bitc/BE_nl/brussel-praktisch/brussel-per-wijk.do
+Redirect permanent /bitc/BE_nl/bezoeker/gidsen-en-kaarten/geleide-bezoeken.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-doen/geleide-bezoeken.do
+Redirect permanent /bitc/BE_nl/bezoeker/gidsen-en-kaarten/officiele-geleide-bezoeken.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-doen/officiele-geleide-bezoeken.do
+Redirect permanent /bitc/BE_nl/bezoeker/gidsen-en-kaarten/toeristische-informatie.do http://visitbrussels.be/bitc/BE_nl/brussel-praktisch/toeristische-informatie.do
+Redirect permanent /bitc/BE_nl/bezoeker/gidsen-en-kaarten/wandelingen.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-doen/wandelingen.do
+Redirect permanent /bitc/BE_nl/bezoeker/informatie/algemene-informatie.do http://visitbrussels.be/bitc/BE_nl/brussel-praktisch/algemene-informatie.do
+Redirect permanent /bitc/BE_nl/bezoeker/informatie/belgie.do http://visitbrussels.be/bitc/BE_nl/brussel-praktisch/belgie.do
+Redirect permanent /bitc/BE_nl/bezoeker/informatie/bereikbaarheid.do http://visitbrussels.be/bitc/BE_nl/brussel-praktisch/zich-verplaatsen.do
+Redirect permanent /bitc/BE_nl/bezoeker/informatie/contacteer-ons.do http://visitbrussels.be/bitc/BE_nl/wie-zijn-we/contacteer-ons.do
+Redirect permanent /bitc/BE_nl/bezoeker/informatie/transport-in-brussel.do http://visitbrussels.be/bitc/BE_nl/brussel-praktisch/zich-verplaatsen.do
+Redirect permanent /bitc/BE_nl/bezoeker/logeren.do http://visitbrussels.be/bitc/BE_nl/waar-logeren/hotels.do
+Redirect permanent /bitc/BE_nl/bezoeker/logeren/bed-breakfast.do http://visitbrussels.be/bitc/BE_nl/waar-logeren/bed-breakfast.do
+Redirect permanent /bitc/BE_nl/bezoeker/logeren/good-deals.do http://visitbrussels.be/bitc/BE_nl/waar-logeren/good-deals.do
+Redirect permanent /bitc/BE_nl/bezoeker/logeren/hotel-packages.do http://visitbrussels.be/bitc/BE_nl/waar-logeren/hotel-packages.do
+Redirect permanent /bitc/BE_nl/bezoeker/logeren/hotels.do http://visitbrussels.be/bitc/BE_nl/waar-logeren/hotels.do
+Redirect permanent /bitc/BE_nl/bezoeker/logeren/jeugdherbergen.do http://visitbrussels.be/bitc/BE_nl/waar-logeren/jeugdhebergen.do
+Redirect permanent /bitc/BE_nl/bezoeker/musea-en-attracties/attracties.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-doen/vrije-tijd-en-attracties.do
+Redirect permanent /bitc/BE_nl/bezoeker/musea-en-attracties/monumenten-en-sites.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-zien/monumeten-en-sites.do
+Redirect permanent /bitc/BE_nl/bezoeker/musea-en-attracties/musea.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-zien/musea-en-attracties.do
+Redirect permanent /bitc/BE_nl/brussels-green.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-want/groen-brussel.do
+Redirect permanent /bitc/BE_nl/cultuur.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-want/cultuur.do
+Redirect permanent /bitc/BE_nl/displayagenda/highlight.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-zien/culturele-agenda.do
+Redirect permanent /bitc/BE_nl/displaylist/bar.do http://visitbrussels.be/bitc/BE_nl/waar-eten-drinken/bar-cafe-s.do
+Redirect permanent /bitc/BE_nl/displayresto/breakfast.do http://visitbrussels.be/bitc/BE_nl/waar-eten-drinken/ontbijt.do
+Redirect permanent /bitc/BE_nl/displayresto/resto_nacht.do http://visitbrussels.be/bitc/BE_nl/waar-uitgaan/nachrestaurants.do
+Redirect permanent /bitc/BE_nl/displaystays/bnb.do http://visitbrussels.be/bitc/BE_nl/waar-logeren/bed-breakfast.do
+Redirect permanent /bitc/BE_nl/europa.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-want/europa.do
+Redirect permanent /bitc/BE_nl/familie.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-are/familie.do
+Redirect permanent /bitc/BE_nl/gastronomie.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-want/gastronomie.do
+Redirect permanent /bitc/BE_nl/gay.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-are/gay.do
+Redirect permanent /bitc/BE_nl/hype.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-are/trendy.do
+Redirect permanent /bitc/BE_nl/invalide.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-are/beperkte-mobiliteit.do
+Redirect permanent /bitc/BE_nl/jongeren.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-are/jongeren.do
+Redirect permanent /bitc/BE_nl/koppel.do http://visitbrussels.be/bitc/front/home/display/lg/nl/section/visiteur.do
+Redirect permanent /bitc/BE_nl/lifestyle.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-want/lifestyle.do
+Redirect permanent /bitc/BE_nl/low-budget.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-want/low-budget.do
+Redirect permanent /bitc/BE_nl/luxe.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-want/luxe.do
+Redirect permanent /bitc/BE_nl/meetings.do http://visitbrussels.be/bitc/bitc/BE_nl/meeting/laatste-nieuws.do
+Redirect permanent /bitc/BE_nl/meetings/activiteiten/cultuur.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-want/cultuur.do
+Redirect permanent /bitc/BE_nl/meetings/activiteiten/dineren.do http://visitbrussels.be/bitc/BE_nl/meeting/resataurants-voor-groepen.do
+Redirect permanent /bitc/BE_nl/meetings/activiteiten/geleide-bezoeken.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-doen/geleide-bezoeken.do
+Redirect permanent /bitc/BE_nl/meetings/activiteiten/incentives.do http://visitbrussels.be/bitc/BE_nl/meeting/incentives.do
+Redirect permanent /bitc/BE_nl/meetings/activiteiten/nachtleven.do http://visitbrussels.be/bitc/BE_nl/waar-uitgaan/nachtclubs.do
+Redirect permanent /bitc/BE_nl/meetings/activiteiten/officiele-geleide-bezoeken.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-doen/officiele-geleide-bezoeken.do
+Redirect permanent /bitc/BE_nl/meetings/activiteiten/shopping.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-doen/shopping.do
+Redirect permanent /bitc/BE_nl/meetings/diensten/contact.do http://visitbrussels.be/bitc/BE_nl/wie-zijn-we/contacteer-ons.do
+Redirect permanent /bitc/BE_nl/meetings/diensten/transportservices.do http://visitbrussels.be/bitc/front/home/display/lg/nl/section/visiteur.do
+Redirect permanent /bitc/BE_nl/meetings/diensten/verblijf-services.do http://visitbrussels.be/bitc/front/home/display/lg/nl/section/visiteur.do
+Redirect permanent /bitc/BE_nl/meetings/faciliteiten/hotels.do http://visitbrussels.be/bitc/BE_nl/meeting/logeren.do
+Redirect permanent /bitc/BE_nl/meetings/faciliteiten/venues.do http://visitbrussels.be/bitc/BE_nl/meeting/waar-samenkomen.do
+Redirect permanent /bitc/BE_nl/meetings/nieuws/evenementen-in-de-kijker.do http://visitbrussels.be/bitc/BE_nl/meeting/agenda-van-de-meetings.do
+Redirect permanent /bitc/BE_nl/meetings/nieuws/getuigenissen.do http://visitbrussels.be/bitc/BE_nl/meeting/getuigenissen.do
+Redirect permanent /bitc/BE_nl/meetings/nieuws/het-team.do http://visitbrussels.be/bitc/BE_nl/wie-zijn-we/ontdek-het-team.do
+Redirect permanent /bitc/BE_nl/meetings/nieuws/laatste-nieuws.do http://visitbrussels.be/bitc/BE_nl/meeting/newsletters.do
+Redirect permanent /bitc/BE_nl/pers-media.do http://visitbrussels.be/bitc/BE_nl/pers/laatste-nieuws.do
+Redirect permanent /bitc/BE_nl/pers-media/brussel-in-cijfers/over-brussel.do http://visitbrussels.be/bitc/BE_nl/pers/brussel-in-der-pers.do
+Redirect permanent /bitc/BE_nl/pers-media/brussel-in-cijfers/rapporten.do http://visitbrussels.be/bitc/BE_nl/pers/brussel-in-cijfers.do
+Redirect permanent /bitc/BE_nl/pers-media/jobs/ontdek-onze-werkaanbiedingen.do http://visitbrussels.be/bitc/BE_nl/wie-zijn-we/ontdek-het-team.do
+Redirect permanent /bitc/BE_nl/pers-media/nieuws/projecten.do http://visitbrussels.be/bitc/BE_nl/pers/toekomstige-projecten.do
+Redirect permanent /bitc/BE_nl/pers-media/persberichten/berichten-partners.do http://visitbrussels.be/bitc/BE_nl/pers/laatste-nieuws.do
+Redirect permanent /bitc/BE_nl/pers-media/perscontacten/ontdek-het-team.do http://visitbrussels.be/bitc/BE_nl/wie-zijn-we/ontdek-het-team.do
+Redirect permanent /bitc/BE_nl/pers-media/toolbox/fototheek.do http://visitbrussels.be/bitc/BE_nl/pers/fototheek.do
+Redirect permanent /bitc/BE_nl/pers-media/toolbox/persmappen.do http://visitbrussels.be/bitc/BE_nl/pers/pers-brochures.do
+Redirect permanent /bitc/BE_nl/pers-media/toolbox/videomateriaal.do http://visitbrussels.be/bitc/BE_nl/pers/video-materiaal.do
+Redirect permanent /bitc/BE_nl/romantisch.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-want/romantisch.do
+Redirect permanent /bitc/BE_nl/travel-trade.do http://visitbrussels.be/bitc/BE_nl/trade/laatste-nieuws.do
+Redirect permanent /bitc/BE_nl/travel-trade/brussel-voor-groepen/attracties-voor-groepen.do http://visitbrussels.be/bitc/BE_nl/trade/attracties-voor-groepen.do
+Redirect permanent /bitc/BE_nl/travel-trade/brussel-voor-groepen/geleide-bezoeken-voor-groepen.do http://visitbrussels.be/bitc/BE_nl/trade/geleide-bezoeken-voor-groepen.do
+Redirect permanent /bitc/BE_nl/travel-trade/brussel-voor-groepen/restaurants-voor-groepen.do http://visitbrussels.be/bitc/BE_nl/trade/restaurants-voor-groepen.do
+Redirect permanent /bitc/BE_nl/travel-trade/hulpmidddelen/brochures.do http://visitbrussels.be/bitc/BE_nl/trade/brochures.do
+Redirect permanent /bitc/BE_nl/travel-trade/hulpmidddelen/fototheek.do http://visitbrussels.be/bitc/BE_nl/trade/fototheek.do
+Redirect permanent /bitc/BE_nl/travel-trade/hulpmidddelen/top-attracties.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-doen/vrije-tijd-en-attracties.do
+Redirect permanent /bitc/BE_nl/travel-trade/hulpmidddelen/wandelingen-en-routes.do http://visitbrussels.be/bitc/BE_nl/te-doen-te-zien/te-doen/wandelingen.do
+Redirect permanent /bitc/BE_nl/travel-trade/praktische-informatie/bereikbaarheid.do http://visitbrussels.be/bitc/BE_nl/trade/laatste-nieuws.do
+Redirect permanent /bitc/BE_nl/travel-trade/praktische-informatie/contacteer-ons.do http://visitbrussels.be/bitc/BE_nl/wie-zijn-we/contacteer-ons.do
+Redirect permanent /bitc/BE_nl/travel-trade/praktische-informatie/parking-bussen.do http://visitbrussels.be/bitc/BE_nl/trade/parking-bussen.do
+Redirect permanent /bitc/BE_nl/travel-trade/voordelen-tour-operatoren/sales-guides.do http://visitbrussels.be/bitc/BE_nl/trade/sales-guides.do
+Redirect permanent /bitc/BE_nl/typisch.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-want/typisch-brussel.do
+Redirect permanent /bitc/BE_nl/you-are-you-want/you-are/familie.do http://visitbrussels.be/bitc/BE_nl/you-are-you-want/you-are/kids.do
+Redirect permanent /bitc/BE_fr/you-are-you-want/you-are/famille.do http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-are/kids.do
+Redirect permanent /bitc/BE_en/you-are-you-want/you-are/family.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/kids.do
+Redirect permanent /bitc/front/propertyValue/display/clt/BE_en/name/young.do http://visitbrussels.be/bitc/front/propertyValue/display/clt/BE_en/id/340.do
+Redirect permanent /green http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/brussels-green.do
+Redirect permanent /fund http://visitbrussels.be/bitc/BE_en/meeting/fund.do
+Redirect permanent /sustainablemeetings http://visitbrussels.be/bitc/BE_en/meeting/sustainablemeetings.do
+Redirect permanent /meeting-attendee http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/meeting-attendee.do
+Redirect permanent /tintin http://visitbrussels.be/bitc/BE_fr/minisite_tintin.do
+Redirect permanent /weekend http://visitbrussels.be/bitc/BE_fr/culture/26578/bruxelles-week-end-bienvenue.do
+Redirect permanent /bitc/BE_en/you-are-you-want/you-are/disabled.do http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/reduced-mobility.do
+Redirect permanent /comics http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/comic-strip.do
+Redirect permanent /corporate http://visitbrussels.be/bitc/front/content/displayDetail/group/CONTENT/id/9673.do
+Redirect permanent /satisfaction http://visitbrussels.be/bitc/BE_en/press_report/5736/visitors-satisfaction.do
+Redirect permanent /deals http://visitbrussels.be/bitc/BE_en/meeting/deals.do
+Redirect permanent /eortc http://visitbrussels.be/bitc/front/propertyValue/display/clt/BE_fr/id/106/idCongressiste/4.do
+Redirect permanent /pictures http://visitbrussels.be/bitc/BE_en/meeting/picture-library.do
+Redirect permanent  /carolus http://visitbrussels.be/bitc/BE_en/minisite_carolusfestival.do
+Redirect permanent /qualityacademy http://visitbrussels.be/bitc/BE_en/content/12215/quality-awareness-program-brussels-quality-academy.do
+Redirect permanent /friendlystay http://visitbrussels.be/bitc/BE_en/content/5558/gay-hotel-packages.do
+Redirect permanent /friendlyflight http://visitbrussels.be/bitc/BE_en/content/5553/party-flights-to-brussels.do
+Redirect permanent /lademencecontest http://visitbrussels.be/bitc/BE_en/content/12850/la-demence-contest.do
+Redirect permanent /demencecontest http://visitbrussels.be/bitc/BE_en/content/12850/la-demence-contest.do
+Redirect permanent /pridecontest http://visitbrussels.be/bitc/BE_en/content/12719/pride-contest.do
+Redirect permanent /jazz http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/jazz.do
+Redirect permanent /sports http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-want/actif-sport.do
+Redirect permanent /sport http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-want/actif-sport.do
+Redirect permanent /artline http://visitbrussels.be/bitc/front/content/displayDetail/group/CONTENT/id/13633.do
+Redirect permanent /mode http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-want/lifestyle.do
+Redirect permanent /rugby http://visitbrussels.be/bitc/BE_en/culture/46363/top-class-european-rugby-rugby-saracens-racing-paris.do
+Redirect permanent /fritkot http://visitbrussels.be/bitc/BE_fr/brusselicious/culture/28303/brusselicious-festival-des-fritkots.do
+Redirect permanent /europe http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/europe.do
+Redirect permanent /chocolateweek http://visitbrussels.be/bitc/minisite/home/display/name/chocolateweek.do
+Redirect permanent /exclusivity http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/luxury.do
+Redirect permanent /brusselsnewyear http://visitbrussels.be/bitc/front/content/displayDetail/group/CONTENT/id/15262.do
+Redirect permanent /brusselsnye http://visitbrussels.be/bitc/front/content/displayDetail/group/CONTENT/id/15262.do
+Redirect permanent /GAY http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/gay.do
+Redirect permanent /tramexperience http://visitbrussels.be/bitc/BE_en/content/6631/tram-experience.do
+Redirect permanent /rfp http://visitbrussels.be/bitc/front/rfpWithPro/displayFormDescEvent/cmid/1011.do
+Redirect permanent /greenstay http://visitbrussels.be/bitc/front/content/displayDetail/group/CONTENT/id/18662.do
+Redirect permanent /eggs http://visitbrussels.be/bitc/BE_fr/culture/55610/chasse-aux-oeufs.do
+Redirect permanent /apps http://visitbrussels.be/bitc/BE_en/content/15446/mobile-application.do
+Redirect permanent /meeting http://visitbrussels.be/bitc/BE_en/meeting/headlines.do
+Redirect permanent /boxoffice http://visitbrussels.be/bitc/BE_fr/displayboxoffice/highlight.do
+Redirect permanent /monuments http://visitbrussels.be/bitc/BE_en/do-see/to-see/monuments-sites.do
+Redirect permanent /artnouveau http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-want/art-nouveau-deco.do
+Redirect permanent /guides http://visitbrussels.be/bitc/BE_en/do-see/to-do/guided-tours0.do
+Redirect permanent /seafood http://visitbrussels.be/bitc/front/propertyValue/display/clt/BE_en/id/106/idCongressiste/12.do?panel=HOME&page=1
+Redirect permanent /fashion http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/lifestyle.do
+Redirect permanent /wine http://visitbrussels.be/bitc/BE_en/culture/56686/belgian-winemakers-dinner-act-2.do
+Redirect permanent /contemporary http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/contemporary.do
+Redirect permanent /dinner http://visitbrussels.be/bitc/BE_en/content/11002/thematic-dinners.do
+Redirect permanent /jobs http://visitbrussels.be/bitc/BE_fr/qui-sommes-nous/jobs.do
+Redirect permanent /restaurantday http://visitbrussels.be/bitc/BE_fr/culture/57374/restaurant-day-brussels.do
+Redirect permanent /gayclubbing http://visitbrussels.be/bitc/BE_fr/content/18784/soirees-gay-a-bruxelles.do
+Redirect permanent /gayculture  http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/gay.do?contentType=ContentEvent&panel=events&page=1#list
+Redirect permanent /gaystay     http://visitbrussels.be/bitc/front/propertyValue/display/id/110.do?contentType=ContentPlace&panel=Package&page=1#list.do
+Redirect permanent /gaybars     http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-are/gay.do?contentType=ContentPlace&panel=nightLife&page=1#list
+Redirect permanent /guides-surrealism   http://visitbrussels.be/bitc/front/search/display/clt/BE_en/group/GUIDED_TOUR.do?f_search_query=&s_ContentPropertyValueManager_valueId_Category=502
+Redirect permanent /guides-bd           http://visitbrussels.be/bitc/front/search/display/clt/BE_en/group/GUIDED_TOUR.do?f_search_query=&s_ContentPropertyValueManager_valueId_Category=503
+Redirect permanent /guides-europe       http://visitbrussels.be/bitc/front/search/display/clt/BE_en/group/GUIDED_TOUR.do?f_search_query=&s_ContentPropertyValueManager_valueId_Category=501
+Redirect permanent /guides-gastronomy   http://visitbrussels.be/bitc/front/search/display/clt/BE_en/group/GUIDED_TOUR.do?f_search_query=&s_ContentPropertyValueManager_valueId_Category=498
+Redirect permanent /guides-green        http://visitbrussels.be/bitc/front/search/display/clt/BE_en/group/GUIDED_TOUR.do?f_search_query=&s_ContentPropertyValueManager_valueId_Category=500
+Redirect permanent /mania		http://visitbrussels.be/bitc/front/content/displayDetail/group/NEWSLETTER/id/19502.do
+Redirect permanent /parties		http://visitbrussels.be/bitc/BE_en/content/8304/parties-in-brussels.do
+Redirect permanent /press		http://visitbrussels.be/bitc/BE_en/press/headlines.do
+Redirect permanent /parking             http://visitbrussels.be/bitc/BE_en/trade/coach-parking.do
+Redirect permanent /kitsurrealism	http://visitbrussels.be/bitc/BE_en/es_brochure/860/thematic-kit-sized-for-surrealism.do
+Redirect permanent /kitchocolate        http://visitbrussels.be/bitc/BE_en/es_brochure/867/thematic-kit-sized-for-chocolate.do
+Redirect permanent /kitcomics           http://visitbrussels.be/bitc/BE_en/es_brochure/868/thematic-kit-sized-for-comic.do
+Redirect permanent /kitbeer             http://visitbrussels.be/bitc/BE_en/es_brochure/873/thematic-kit-sized-for-beer.do
+Redirect permanent /kitartnouveau       http://visitbrussels.be/bitc/BE_en/es_brochure/914/thematic-kit-sized-for-art-nouveau.do
+Redirect permanent /kitgreen            http://visitbrussels.be/bitc/BE_en/es_brochure/962/thematic-kit-brussels-sustainable-destination.do
+Redirect permanent /guides-artnouveau   http://visitbrussels.be/bitc/front/search/display.do?f_search_query=&group=GUIDED_TOUR&contentType=&s_ContentPropertyValueManager_valueId_Category=497
+Redirect permanent /foodies		http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-are/gastronomy.do
+Redirect permanent /gastronomy          http://visitbrussels.be/bitc/BE_fr/you-are-you-want/you-are/gastronomy.do
+Redirect permanent /museums             http://visitbrussels.be/bitc/BE_en/do-see/to-see/museums-visits.do
+Redirect permanent /surrealism          http://visitbrussels.be/bitc/BE_en/you-are-you-want/you-want/surrealism.do
+
+
+
+   ErrorDocument 404 /bitc/front/home/error404.do
+    ErrorLog /var/www/visitbrussels/logs/error.log
+	CustomLog /var/www/visitbrussels/logs/access.log combined
+
+	ExpiresActive On
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/gif "access plus 30 days"
+    ExpiresByType text/js "access plus 30 days"
+    ExpiresByType text/css "access plus 1 day"
+    ExpiresByType application/x-shockwave-flash "access plus 30 days"
+
+    # Security setup: reject TRACE method
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} ^TRACE
+    RewriteRule .* - [F]
+    <Directory /vol/htdocs/visitbrussels/mobile/>
+ 	Options +Indexes
+ 	Order allow,deny
+ 	Allow from all
+    </Directory>
+	JkLogLevel error
+        JkMount /*.jsp tomcat_website
+	JkMount /*.do tomcat_website
+	JkMount /*/json/* tomcat_website
+
+</VirtualHost>
+<VirtualHost *:80>
+    ServerAdmin j.waumans@visitbrussels.be
+    DocumentRoot /vol/htdocs/visitbrussels
+    Servername www.brusselsinternational.be
+    ServerAlias www.visitbrussels.be
+    ServerAlias bxlint.activeidea.com www.bitc.be
+    ServerAlias www.brusselinternationaal.be www.bruxellesinternational.be www.bitc.be www.brussels-congress.be
+    ServerAlias www.bitc.info www.brusselstourism.org www.brussels-tourism.org www.brussels-congress.org www.brusselscongress.org
+    ServerAlias www.brusselstourism.info www.brussels-tourism.info www.brussels-congress.info www.brusselscongress.info
+    ServerAlias www.brusseltoerisme.be www.bruxellestourisme.be www.brusselcongres.be www.bruxellescongres.be www.brusselscongress.be
+    ServerAlias www.brusselsdiscovery.com www.brusselsNOtourism.be www.brusselstourism.eu www.brusselsmeetingsweek.be
+    ServerAlias www.tourisme-belgique.com www.tourisme-belgique.be www.brussels-tourism.travel www.brusselstourism.travel www.bruxellestourisme.travel
+    ServerAlias www.brussels-guide.be www.brussels-tourism.be www.brussels-tourism.net www.visitbrussels.eu www.tourisme-belgique.be
+    ServerAlias www.visitebruxelles.be www.bezoekbrussel.be www.visitbrussel.be
+    ServerAlias brussels-guide.be brussels-tourism.be brusselstourism.eu brusseltoerisme.be bruxellestourisme.be tourisme-belgique.be
+    ServerAlias visitbrussels.es www.visitbrussels.es visitbrussels.eu www.visitbrussels.eu
+    ServerAlias visitbrussels.it visitbrussels.nl visitbruxelles.be www.visitbrussels.it www.visitbrussels.nl www.visitbruxelles.be
+    ServerAlias brusselinternationaal.be modedesignbrussels.be bitc.be brusselstourism.be brussels-congress.be
+    ServerAlias bge-bitc.be bruxellesinternational.be brusselsinternational.be
+    ServerAlias bitc.info brusselcongres.be brussels-congress.info brussels-congress.com brusselsinternational.be
+    ServerAlias brussels-congress.net brussels-congress.org brussels-expo58.be brussels-tourism.info
+    ServerAlias brussels-tourism.net brussels-tourism.org brusselscongress.info brusselscongress.be
+    ServerAlias brusselscongress.net brusselscongress.org brusselstourism.org bruxellescongres.be europe-brussels.eu
+    ServerAlias visitbrussels.nl visitbrussels.it visitbrussels.de visitbrussels.info
+    RewriteEngine on
+    RewriteRule ^(.*) http://visitbrussels.be$1 [R=301]
+    ErrorLog /var/www/visitbrussels/logs/error.log
+	CustomLog /var/www/visitbrussels/logs/access.log combined
+	# Security setup: reject TRACE method
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} ^TRACE
+    RewriteRule .* - [F]
+</VirtualHost>
+<VirtualHost *:80>
+        ServerAdmin j.waumans@visitbrussels.be
+        ServerName m.visitbrussels.be
+        ServerAlias mobile.visitbrussels.be
+        DocumentRoot /vol/htdocs/mobile
+        ErrorLog /var/www/visitbrussels/logs/error.log
+        CustomLog /var/www/visitbrussels/logs/access.log combined
+</VirtualHost>
+
+<VirtualHost *:80>
+    ServerAdmin j.waumans@visitbrussels.be
+    DocumentRoot /vol/htdocs/visitbrussels
+    Servername www.brusseltournage.be
+    ServerAlias brusseltournage.be
+    ServerAlias www.brusselsfilmoffice.be
+    ServerAlias brusselsfilmoffice.be
+    ServerAlias bruxellestournage.be
+    ServerAlias www.bruxellestournage.be
+    ServerAlias brusselstournage.be
+    ServerAlias www.brusselstournage.be
+    RewriteEngine on
+    RewriteRule ^(.*) http://visitbrussels.be/bitc/minisite/home/display/name/bfo.do [R=301]
+    ErrorLog /var/www/visitbrussels/logs/error.log
+	CustomLog /var/www/visitbrussels/logs/access.log combined
+	# Security setup: reject TRACE method
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} ^TRACE
+    RewriteRule .* - [F]
+</VirtualHost>
