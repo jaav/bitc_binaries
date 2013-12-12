@@ -50,7 +50,7 @@
                                 <c:when test="${not empty item.mainSmallImage}">
                                     <c:choose>
                                         <c:when test="${fn:toLowerCase(group) eq 'bfospot'}">
-                                            <img src="${item.mainSmallImage}" alt="${item.formatMainTitle}"/>
+                                            <img src="${item.mainSmallImage}" alt="${item.formatMainTitle}" width="100"/>
                                         </c:when>
                                         <c:otherwise>
                                             <img src="${item.mainSmallImage}" alt="${item.formatMainTitle}" width="165"/>

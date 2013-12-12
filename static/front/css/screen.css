@@ -1144,7 +1144,7 @@ ul.tab_list_complete {padding:10px;}
 	#site_info a:visited { text-decoration:none;}
 	#site_info a:hover { text-decoration:underline;}
 
-ul#footer_nav_sub {position:absolute; top:85px; left:805px; font-size:12px; color:#FFF;}
+ul#footer_nav_sub {position:absolute; top:85px; left:650px; font-size:12px; color:#FFF;}
 	ul#footer_nav_sub li {display:inline; list-style-type:none;}
 		ul#footer_nav_sub li a,
 		ul#footer_nav_sub li a:link,

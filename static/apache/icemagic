@@ -1,0 +1,19 @@
+<VirtualHost *:80>
+    ServerAdmin j.waumans@visitbrussels.be
+    DocumentRoot /vol/htdocs/visitbrussels
+    Servername www.brusselsicemagic.be
+    ServerAlias brusselsicemagic.be
+    ServerAlias www.brusselsicemagic.com
+    ServerAlias brusselsicemagic.com
+
+		Redirect permanent /tickets          http://ticketing.visitbrussels.be/en/bim-init
+
+    RewriteEngine on
+    RewriteRule ^(.*)  http://visitbrussels.be/bitc/minisite/home/display/name/brusselsicemagic.do [R=301]
+    ErrorLog /var/www/visitbrussels/logs/error.log
+	CustomLog /var/www/visitbrussels/logs/access.log combined
+	# Security setup: reject TRACE method
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} ^TRACE
+    RewriteRule .* - [F]
+</VirtualHost>

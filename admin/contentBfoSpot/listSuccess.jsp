@@ -399,7 +399,7 @@ isELIgnored ="false"
                     </td>
 					<td class="center publishContent">
 				
-							<a href="${context}/front/content/displayDetail/group/${item.group}/id/${item.id}.do" target="site"><wa:mls>Preview</wa:mls></a>
+							<a href="${context}/minisite/content/displayDetail/name/bfo/group/${item.group}/id/${item.id}.do" target="site"><wa:mls>Preview</wa:mls></a>
 						
 					</td>
 					<td class="center actions">
