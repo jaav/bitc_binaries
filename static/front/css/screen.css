@@ -309,7 +309,7 @@ p.no_results{padding-left:15px; font-family:Georgia, "Times New Roman", Times, s
 				ul#main_nav li.clicked ul.level2 li a{ margin:0; position:relative; left:0; color:#000; outline:none;}
 				
 				ul#main_nav li.clicked ul.level2 li a.hover-beige { display:block; position:relative; margin:0; padding:0 5px; background:#bdb07f; border:1px solid #b7a666; border-bottom:0; outline:none;}
-					ul#main_nav li.clicked ul.level2 li a.hover-beige span.arrow_down{color:#FFF; position:relative; z-index:99999; background:url(../img/ml/arrow_down-beige.png) center bottom no-repeat; padding-bottom:17px;}
+						ul#main_nav li.clicked ul.level2 li a.hover-beige span.arrow_down{color:#FFF; position:relative; z-index:99999; background:url(../img/ml/arrow_down-beige.png) center bottom no-repeat; padding-bottom:17px;}
 				ul#main_nav li.clicked ul.level2 li a.hover-pink { display:block; position:relative; margin:0; padding:0 5px; background:#e595ce; border:1px solid #d86cb9; border-bottom:0;}
 					ul#main_nav li.clicked ul.level2 li a.hover-pink span.arrow_down{color:#FFF; position:relative; z-index:99999; background:url(../img/ml/arrow_down-pink.png) center bottom no-repeat; padding-bottom:17px;}
 				ul#main_nav li.clicked ul.level2 li a.hover-blue { display:block; position:relative; margin:0; padding:0 5px; background:#86a8e5; border:1px solid #4376d2; border-bottom:0;}
@@ -595,7 +595,13 @@ a.btn_add_basket:active,
 a.btn_add_basket:visited { padding:6px 0 0 10px; font-size:12px; line-height:17px; font-family:'UtopiaStd-Regular', Georgia; text-shadow: 2px 2px 2px #ffffff; text-transform:uppercase; text-align:left; text-decoration:none; color:#4c5458; background:url(../img/ml/bg_btn_next_eshop.jpg);}
 a.btn_add_basket:hover { background:url(../img/ml/bg_btn_next_eshop_hover.jpg);}
 
-a.btn_update { float:right; display:block; margin:0 0 0 22px; width:145px; height:21px; outline: none;}
+a.btn_buy_ticket { display:block; margin:0 auto; width:200px; height:66px; outline: none; background:url(../img/ml/bg_btn_buy_ticket2.jpg); float : left;}
+a.btn_buy_ticket:link,
+a.btn_buy_ticket:active,
+a.btn_buy_ticket:visited {font-size:12px; line-height:17px; font-family:'UtopiaStd-Regular', Georgia; text-shadow: 2px 2px 2px #ffffff; text-transform:uppercase; text-align:left; text-decoration:none; color:#4c5458; background:url(../img/ml/bg_btn_buy_ticket2.jpg);}
+a.btn_buy_ticket:hover { background:url(../img/ml/bg_btn_buy_ticket2.jpg);}
+
+a.btn_update { float:right; display:block; margin:0 0 0 22px; width:145px; height:21px; outline: none;}	
 a.btn_update:link,
 a.btn_update:active,
 a.btn_update:visited { padding:8px 0 0 5px; font-size:13px; font-family:'UtopiaStd-Regular', Georgia; text-shadow: 2px 2px 2px #ffffff;  text-transform:uppercase; text-align:left; text-decoration:none; color:#4c5458; background:url(../img/ml/bg_btn_update_eshop.jpg);}
@@ -1144,7 +1150,7 @@ ul.tab_list_complete {padding:10px;}
 	#site_info a:visited { text-decoration:none;}
 	#site_info a:hover { text-decoration:underline;}
 
-ul#footer_nav_sub {position:absolute; top:85px; left:650px; font-size:12px; color:#FFF;}
+ul#footer_nav_sub {position:absolute; top:85px; left:750px; font-size:12px; color:#FFF;}
 	ul#footer_nav_sub li {display:inline; list-style-type:none;}
 		ul#footer_nav_sub li a,
 		ul#footer_nav_sub li a:link,
