@@ -71,12 +71,12 @@ function addToNltContent(group,contentId){
 			 <a href="${context}/admin/${contentTypeAdmin}/list.do?s_publishContent_id=${bean.id}&s_submit=Search" target="admin"><wa:mls>Edit</wa:mls></a>
 	    </c:if>
 		<h1 class="no_margin line_grey">${bean.mainTitle}
-			<c:if test="${not empty bean.ranking}">
+			<%--<c:if test="${not empty bean.ranking}">
 	      	<span> <c:forEach var="rankingLoopCount" begin="1" end="${bean.ranking}">
 						<img src="${staticSite}/img/ml/visu_iris.jpg" alt="" class="float_right"/> 
 					</c:forEach>
 			</span>
-	        </c:if>
+	        </c:if>--%>
 		</h1> <!-- ${color} -->
 		
 		

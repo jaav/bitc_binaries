@@ -1,5 +1,6 @@
 // JavaScript Document 
 window.addEvent('load', function(){
+	<!-- load functions -->
 	if($('footer')!=null) wa_setFooter();
 	wa_dragBox();
 	if($('help')!=null) wa_displayHelp();
@@ -7,7 +8,9 @@ window.addEvent('load', function(){
 	if($('legend')!=null) wa_displayLegend();
 	if($('legend')!=null) wa_setCloseBtnLegend();
 	if($('fieldList')!=null) wa_rightClickMenu();
+	<!-- create the menu instance -->
 	if($('navigation')!=null) var menu = new MenuAdmin();
+	<!-- create the searchbox horizontal slider instance -->
 	if($('searchBox')!=null) {
 		var mySlide2 = null;
 		if (Cookie.read('searchBoxDisplay',{path: path}) == '0'){
@@ -35,6 +38,7 @@ window.addEvent('load', function(){
 			e.stop();
 		});
 	
+		<!-- reset all input in form searchForm -->		
 		$('reset_btn').addEvent('click', function(e){
 			var inputs = $$('#searchForm input');
 			inputs.each(function(item,index){

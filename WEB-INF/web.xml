@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app id="WebApp">
-	<display-name>BITC</display-name>
+	<display-name>BITC123</display-name>
 	<context-param>
 		<param-name>configfile</param-name> 
 	 	<!--<param-value>c:/htdocs/configs/Bitc_V2/application.cfg</param-value>  -->
-        <param-value>D:/bitc_config/application.cfg</param-value>
+        <param-value>/vol/configs/visitbrussels/application.cfg</param-value>
 	</context-param>
 	<context-param>
 		<param-name>configfile_alt</param-name>
@@ -16,7 +16,7 @@
 	<context-param>
 	  <param-name>configdir</param-name> 
 	 <!--<param-value>c:/htdocs/configs/Bitc_V2/</param-value>-->
-        <param-value>D:/bitc_config/</param-value>
+        <param-value>/vol/configs/visitbrussels/</param-value>
 	</context-param>
 	<context-param>
 		<param-name>configdir_alt</param-name>

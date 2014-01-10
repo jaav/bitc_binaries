@@ -1,0 +1,187 @@
+<<<<<<< HEAD
+package com.wanabe.action;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.bitc.cms.hdata.manager.ContentManager;
+import com.bitc.constant.ContentGroupConstant;
+import com.wanabe.cms.hdata.ContentGroup;
+import com.wanabe.cms.hdata.ContentProperty;
+import com.wanabe.cms.manager.ContentGroupManager;
+import com.wanabe.cms.manager.ContentPropertyManager;
+import com.wanabe.core.exception.WaRedirectException;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Expression;
+import org.hibernate.criterion.Restrictions;
+
+import com.activeidea.utils.StringTools;
+import com.bitc.cms.hdata.ContentArticleCltFirst;
+import com.bitc.cms.hdata.ContentArticleFirst;
+import com.bitc.cms.hdata.ContentBfoSpot;
+import com.wanabe.cms.hdata.ContentImage;
+import com.bitc.cms.hdata.ContentBfoSpotBaseClt;
+import com.wanabe.cms.hdata.ContentConstantRepository;
+import com.wanabe.core.exception.WaActionException;
+
+public class AdminContentBfoSpotActions extends CommonAdminCmsActions<ContentBfoSpot, ContentBfoSpotBaseClt> {
+
+    public AdminContentBfoSpotActions(HttpServletRequest request, HttpServletResponse response) throws Exception,
+            WaActionException {
+        super(request, response);
+
+        beanClass = ContentBfoSpot.class;
+        cltClass = ContentBfoSpotBaseClt.class;
+        idName = "id";
+        orderBy = StringTools.splitStr("id", ",");
+        actionListName = "list";
+        default_group = "";
+        contentType = ContentConstantRepository.TYPE_GUIDED_TOUR;
+        exportColumnsExcluded.add("ContentBfoSpotClts");
+        exportColumnsExcluded.add("ContentBfoSpotCltsFirst");
+        exportColumnsExcluded.add("ContentPlaceCltsFirst");
+        exportColumnsExcluded.add("Address");
+        exportColumnsExcluded.add("City");
+    }
+
+    @Override
+    public void saveItemEx() throws Exception {
+        super.saveItemEx();
+    }
+
+    protected void publishEx() throws Exception {
+        super.publishEx();
+    }
+
+    protected void setPublishContent(ContentArticleFirst article) throws Exception {
+        super.setPublishContent(article);
+    }
+
+    public void setPublishContentEx(ContentArticleFirst publishContent, ContentArticleFirst article) {
+        ((ContentBfoSpot) publishContent).set((ContentBfoSpot) article);
+
+    }
+
+    public void setPublishContentCltEx(ContentArticleCltFirst publishContentClt, ContentArticleCltFirst clt) {
+        ((ContentBfoSpotBaseClt) publishContentClt).set((ContentBfoSpotBaseClt) clt);
+
+    }
+
+    protected void createOtherCriteria(Criteria criteria) {
+        String adresse = waParam.get("s_adresse");
+        String city = waParam.get("s_city");
+        if (adresse != null && adresse.length() > 0) {
+            criteria.add(Restrictions.or(Expression.ilike("adresseFr", "%" + adresse.toLowerCase() + "%"), Expression
+                    .ilike("adresseNl", "%" + adresse.toLowerCase() + "%")));
+        }
+        if (city != null && city.length() > 0) {
+            criteria.add(Restrictions.or(Expression.ilike("cityFr", "%" + city.toLowerCase() + "%"), Expression
+                    .ilike("cityNl", "%" + city.toLowerCase() + "%")));
+        }
+        addCriteria(criteria, "zipcode", CRITERIA_TYPE_INTEGER);
+        addCriteria(criteria, "email", CRITERIA_TYPE_STRING);
+        addCriteria(criteria, "phone", CRITERIA_TYPE_STRING);
+        addCriteria(criteria, "mobile", CRITERIA_TYPE_STRING);
+        addCriteria(criteria, "fax", CRITERIA_TYPE_STRING);
+        addCriteria(criteria, "website", CRITERIA_TYPE_STRING);
+        addCriteria(criteria, "latitude", CRITERIA_TYPE_INTEGER);
+        addCriteria(criteria, "longitude", CRITERIA_TYPE_INTEGER);
+        addCriteriaDate(criteria, "periodFromDate");
+        addCriteriaDate(criteria, "periodToDate");
+        addCriteria(criteria, "price", CRITERIA_TYPE_STRING);
+        addCriteria(criteria, "descriptionPrice", CRITERIA_TYPE_STRING);
+        addCriteria(criteria, "numParticipation", CRITERIA_TYPE_INTEGER);
+        addCriteria(criteria, "highlight", CRITERIA_TYPE_BOOLEAN);
+    }
+
+
+}
+||||||| merged common ancestors
+=======
+package com.wanabe.action;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Expression;
+import org.hibernate.criterion.Restrictions;
+
+import com.activeidea.utils.StringTools;
+import com.bitc.cms.hdata.ContentArticleCltFirst;
+import com.bitc.cms.hdata.ContentArticleFirst;
+import com.bitc.cms.hdata.ContentBfoSpot;
+import com.bitc.cms.hdata.ContentBfoSpotBaseClt;
+import com.wanabe.cms.hdata.ContentConstantRepository;
+import com.wanabe.core.exception.WaActionException;
+
+public class AdminContentBfoSpotActions extends CommonAdminCmsActions<ContentBfoSpot,ContentBfoSpotBaseClt> {
+
+	public AdminContentBfoSpotActions(HttpServletRequest request, HttpServletResponse response) throws Exception,
+			WaActionException {
+		super(request, response);
+
+		beanClass = ContentBfoSpot.class;
+		cltClass = ContentBfoSpotBaseClt.class;
+		idName = "id";
+		orderBy = StringTools.splitStr("id", ",");
+		actionListName = "list";
+		default_group = "";
+		contentType = ContentConstantRepository.TYPE_GUIDED_TOUR;
+		exportColumnsExcluded.add("ContentBfoSpotClts");
+		exportColumnsExcluded.add("ContentBfoSpotCltsFirst");
+		exportColumnsExcluded.add("ContentPlaceCltsFirst");
+		exportColumnsExcluded.add("Address");
+		exportColumnsExcluded.add("City");
+	} 
+	
+	@Override
+	public void saveItemEx() throws Exception {
+		super.saveItemEx();
+	}
+
+	protected void publishEx() throws Exception {
+		super.publishEx();
+	}
+
+	protected void setPublishContent(ContentArticleFirst article) throws Exception {
+		super.setPublishContent(article);
+	}
+	public void setPublishContentEx(ContentArticleFirst publishContent, ContentArticleFirst article) {
+		((ContentBfoSpot)publishContent).set((ContentBfoSpot)article);
+		
+	}
+	public void setPublishContentCltEx(ContentArticleCltFirst publishContentClt, ContentArticleCltFirst clt) {
+		((ContentBfoSpotBaseClt)publishContentClt).set((ContentBfoSpotBaseClt)clt);
+		
+	}
+
+	protected void createOtherCriteria(Criteria criteria) {
+		String adresse = waParam.get("s_adresse");
+		String city = waParam.get("s_city");
+		if (adresse != null && adresse.length() > 0) {
+			criteria.add(Restrictions.or(Expression.ilike("adresseFr", "%" + adresse.toLowerCase() + "%"), Expression
+					.ilike("adresseNl", "%" + adresse.toLowerCase() + "%")));
+		}
+		if (city != null && city.length() > 0) {
+			criteria.add(Restrictions.or(Expression.ilike("cityFr", "%" + city.toLowerCase() + "%"), Expression
+					.ilike("cityNl", "%" + city.toLowerCase() + "%")));
+		}
+		addCriteria(criteria, "zipcode", CRITERIA_TYPE_INTEGER);
+		addCriteria(criteria, "email", CRITERIA_TYPE_STRING);
+		addCriteria(criteria,"phone",CRITERIA_TYPE_STRING);
+		addCriteria(criteria, "mobile", CRITERIA_TYPE_STRING);
+		addCriteria(criteria, "fax", CRITERIA_TYPE_STRING);
+		addCriteria(criteria, "website", CRITERIA_TYPE_STRING);
+		addCriteria(criteria, "latitude", CRITERIA_TYPE_INTEGER);
+		addCriteria(criteria, "longitude", CRITERIA_TYPE_INTEGER);
+		addCriteriaDate(criteria, "periodFromDate");
+		addCriteriaDate(criteria,"periodToDate");
+		addCriteria(criteria, "price", CRITERIA_TYPE_STRING);
+		addCriteria(criteria, "descriptionPrice", CRITERIA_TYPE_STRING);
+		addCriteria(criteria, "numParticipation", CRITERIA_TYPE_INTEGER);
+		addCriteria(criteria, "highlight", CRITERIA_TYPE_BOOLEAN);
+	}
+}
+>>>>>>> 51f5fc82e7fbdf442c7c1bdd3403ce5b5af06019
