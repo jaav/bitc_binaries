@@ -4,13 +4,10 @@
 	<display-name>BITC</display-name>
 	<context-param>
 		<param-name>configfile</param-name> 
-	 	<!--<param-value>c:/htdocs/configs/Bitc_V2/application.cfg</param-value>  -->
         <param-value>/vol/configs/visitbrussels/application.cfg</param-value>
 	</context-param>
 	<context-param>
 		<param-name>configfile_alt</param-name>
-		<!--param-value>c:/eclipse/workspace/trunk_Bitc_V2/config/application.cfg</param-value-->
-		<!--param-value>c:/eclipse/workspace/trunk_Bitc_V2/config/application.cfg</param-value-->
 		<param-value>/Users/jefw/Documents/virtualsushi/customers/bitc/bitc_on_git/bitc/config/application.cfg</param-value>
 	</context-param>
 	<context-param>
