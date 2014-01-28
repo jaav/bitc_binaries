@@ -52,7 +52,7 @@ function meetingPlannerLightBox(data) {
       
        <div class="tab_paging">
             <wa:include URI="${site}/content/navNumber" />
-       <div class="select">
+       <%--<div class="select">
           <form>
             <fieldset>
               <label for="f_page"><wa:mls>Sort by :</wa:mls></label>
@@ -63,7 +63,7 @@ function meetingPlannerLightBox(data) {
               </select>
             </fieldset>
           </form>
-        </div>
+        </div>--%>
       </div>
       <ul class="tab_list_complete">
       <c:if test="${listNull == '1'}"><wa:mls>Liste vide</wa:mls></c:if>
@@ -114,13 +114,13 @@ function meetingPlannerLightBox(data) {
           		<span><a href="${item.URLWebsite}" target="_blank">${item.URLWebsite}</a></span> <br />
 	        </c:if>
 	        </p>
-	        <c:if test="${not empty item.ranking and item.ranking > 0}">
+	        <%--<c:if test="${not empty item.ranking and item.ranking > 0}">
 	            <div class="float_left"><strong><wa:mls>Category :</wa:mls></strong></div>
 		            <c:forEach var="rankingLoopCount" begin="1" end="${item.ranking}">
-						<img src="${staticSite}/img/ml/visu_iris.jpg" alt="" class="float_left"/> 
-					</c:forEach>
-					<br />
-			</c:if>
+									<img src="${staticSite}/img/ml/visu_iris.jpg" alt="" class="float_left"/>
+								</c:forEach>
+								<br />
+					</c:if>--%>
 				<div class="clr"></div>
 			
 			
