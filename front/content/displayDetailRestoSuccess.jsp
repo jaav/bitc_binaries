@@ -130,8 +130,7 @@
 		</c:if>
 
 		<c:if test="${not empty bean.URLWebsite}">
-			<p><strong><wa:mls>Website :</wa:mls></strong> <br/>
-				<a href="${bean.URLWebsite}" target="_blank"><span class="cutEmail">${bean.URLWebsite}</span></a></p>
+			<p><strong><a href="${bean.URLWebsite}" target="_blank"><wa:mls>Website</wa:mls></a></strong> <br/>
 		</c:if>
 
 

@@ -446,6 +446,7 @@ ul.third_highlight_home {padding:0 10px 10px 10px; border:1px solid #dddddd;}
 	#pratical_information_large a.btn_street_view { display:block; padding:7px 0 0 10px; width:132px; height:22px; background:url(../img/ml/bg_btn_streetview.jpg); text-decoration:none;}
 
     #pratical_information_large a.btn_resto_booking { display:block; padding:7px 0 0 10px; width:132px; height:22px; background:url(../img/ml/bg_btn_resto_booking.gif); text-decoration:none;}
+    a.btn_resto_booking_list { display:block; padding:7px 0 0 10px; width:66px; height:8px; background-image:url(../img/ml/bg_btn_resto_booking.gif); background-size:100%;text-decoration:none;margin-top: 10px;}
 
 
 #box_other_information { margin:10px 0 22px 0; padding:17px 22px 17px 22px; border:1px solid #dadada;}
