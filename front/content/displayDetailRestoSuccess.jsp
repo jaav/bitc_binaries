@@ -187,6 +187,14 @@
 			<script type="text/javascript">
 				addMarker(${bean.longitude}, ${bean.latitude}, "${bean.formatMainTitle}", "a", ${bean.svLongitude}, ${bean.svLatitude}, ${bean.svHeading}, ${bean.svPitch}, ${bean.svZoom});
 			</script>
+
+            <c:if test="${bean.fromResto}">
+                <p>
+                    <a href="javascript:openIFrame('${bean.restoBookingURL}')" class="btn_resto_booking">
+                            <span/>
+                    </a>
+                </p>
+            </c:if>
 		</c:if>
 		<div>
 			<c:forEach var="item" items="${listPicto}" varStatus="loop">
@@ -279,6 +287,19 @@
 
 	</div>
 
-</div>	
-	
+</div>
 
+
+<script language='javascript'>
+    function openIFrame(contentURL) {
+        $.nyroModalManual({
+            zIndex: 1001,
+            minWidth: 690,
+            minHeight: 510,
+            forceType: 'iframe',
+            closeSelector: '.nyroModalClose',
+            url: contentURL,
+            closeButton: '<a href="#" class="nyroModalClose" id="closeBut"><img src="${static}/front/img/ml/close.png" alt="close" /></a>'
+        });
+    }
+</script>

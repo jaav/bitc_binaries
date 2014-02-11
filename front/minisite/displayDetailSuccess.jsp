@@ -29,6 +29,7 @@
 		<div class="minisite">
 			${bean.mainBody}
 		</div>
+		<!-- TEST -->
 		<c:if test="${boxOffice ne null && boxOffice eq true}">
 			<div style="position: relative;float: left;">
 				<a class="btn_buy_ticket" href="javascript:forwardToBoxofficeFrame('${bean.officeBookingURL}')"></a>

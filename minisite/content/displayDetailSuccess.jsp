@@ -216,6 +216,26 @@
 		${bean.mainBody}
 	</div>
 </div>
+<div class="clr"></div>
+<!-- TEST -->
+<c:if test="${boxOffice ne null && boxOffice eq true}">
+	<div style="position: relative;float: left;">
+		<a class="btn_buy_ticket" href="javascript:forwardToBoxofficeFrame('${bean.officeBookingURL}')"></a>
+	</div>
+	<script language='javascript'>
+		function forwardToBoxofficeFrame(officeURL) {
+			$.nyroModalManual({
+				zIndex: 1001,
+				minWidth: 690,
+				minHeight: 510,
+				forceType: 'iframe',
+				closeSelector: '.nyroModalClose',
+				url: officeURL,
+				closeButton: '<a href="#" class="nyroModalClose" id="closeBut"><img src="${static}/front/img/ml/close.png" alt="close" /></a>'
+			});
+		}
+	</script>
+</c:if>
 
 <div class="clr"></div>
 

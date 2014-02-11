@@ -182,7 +182,7 @@
 		<c:if test="${not empty bean.cost}">
 			<p><strong><wa:mls>Cost :</wa:mls></strong> ${bean.cost}</p>
 		</c:if>
-		<c:if test="${bean.surface gt 0}">
+		<c:if test="${not empty bean.surface}">
 			<p><strong><wa:mls>Surface :</wa:mls></strong> ${bean.surface}</p>
 		</c:if>
 		<c:if test="${not empty bean.archStyle}">
