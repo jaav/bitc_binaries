@@ -136,18 +136,34 @@ isELIgnored ="false"
 			</c:if>
             <c:if test="${group ne 'SALES_GUIDE'}">
             	<c:if test="${fn:toLowerCase(group) ne 'guided_tour'}">
-                <div id="ListQuartiers" class="align_right">
-                    <label for="s_ContentPropertyValueManager_valueId_Quartier"><wa:mls>Quartiers</wa:mls></label>
-                    <wa:include URI="${site}/dropdown/dropList">
-                        <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
-                        <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
-                        <wa:param name="method" value="listQuartiers" />
-                        <wa:param name="identity" value="valueId" />
-                        <wa:param name="display" value="mainTitle" />
-                        <wa:param name="name" value="s_ContentPropertyValueManager_valueId_Quartier" />
-                        <wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Quartier}" />
-                    </wa:include>
-                </div>
+                    <div id="ListQuartiers" class="align_right">
+                        <label for="s_ContentPropertyValueManager_valueId_Quartier"><wa:mls>Quartiers</wa:mls></label>
+                        <wa:include URI="${site}/dropdown/dropList">
+                            <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+                            <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+                            <wa:param name="method" value="listQuartiers" />
+                            <wa:param name="identity" value="valueId" />
+                            <wa:param name="display" value="mainTitle" />
+                            <wa:param name="name" value="s_ContentPropertyValueManager_valueId_Quartier" />
+                            <wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Quartier}" />
+                        </wa:include>
+                    </div>
+
+                    <c:if test="${group eq 'RESTO_1' or group eq 'RESTO_NIGHT' or group eq 'BREAKFAST'}">
+                        <div id="ListStars" class="align_right">
+                            <label for="s_ContentPropertyValueManager_valueId_Stars"><wa:mls>Stars</wa:mls></label>
+                            <wa:include URI="${site}/dropdown/dropList">
+                                <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+                                <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+                                <wa:param name="method" value="listRestoStars" />
+                                <wa:param name="identity" value="valueId" />
+                                <wa:param name="display" value="mainTitle" />
+                                <wa:param name="name" value="s_ContentPropertyValueManager_valueId_Stars" />
+                                <wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Stars}" />
+                            </wa:include>
+                        </div>
+                    </c:if>
+
                 </c:if>
             </c:if>
 			<c:if test="${fn:toLowerCase(group) eq 'guided_tour'}">
@@ -178,19 +194,33 @@ isELIgnored ="false"
 				</div>
 			</c:if>
 			<c:if test="${group eq 'RESTO_1' or group eq 'RESTO_NIGHT' or group eq 'BREAKFAST'}">
-			<div class="clr"></div>
-			<div id="ListTypeCuisine">
-				<label for="s_ContentPropertyValue_valueId_Cuisine"><wa:mls>Type de cuisine</wa:mls></label>
-				<wa:include URI="${site}/dropdown/dropList">
-					<wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
-					<wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
-					<wa:param name="method" value="listCuisinesTypes" />
-					<wa:param name="identity" value="valueId" />
-					<wa:param name="display" value="mainTitle" />
-					<wa:param name="name" value="s_ContentPropertyValue_valueId_Cuisine" />
-					<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValue_valueId_Cuisine}" />
-				</wa:include>
-			</div>
+                <div class="clr"></div>
+
+                <div id="ListTypeCuisine" class="align_left">
+                    <label for="s_ContentPropertyValue_valueId_Cuisine"><wa:mls>Type de cuisine</wa:mls></label>
+                    <wa:include URI="${site}/dropdown/dropList">
+                        <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+                        <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+                        <wa:param name="method" value="listCuisinesTypes" />
+                        <wa:param name="identity" value="valueId" />
+                        <wa:param name="display" value="mainTitle" />
+                        <wa:param name="name" value="s_ContentPropertyValue_valueId_Cuisine" />
+                        <wa:param name="selectedValues" value="${waParam.s_ContentPropertyValue_valueId_Cuisine}" />
+                    </wa:include>
+                </div>
+
+                <div id="ListGMScore" class="align_right">
+                    <label for="s_ContentPropertyValueManager_valueId_gmScore"><wa:mls>GM score</wa:mls></label>
+                    <wa:include URI="${site}/dropdown/dropList">
+                        <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+                        <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+                        <wa:param name="method" value="listGMScore" />
+                        <wa:param name="identity" value="valueId" />
+                        <wa:param name="display" value="mainTitle" />
+                        <wa:param name="name" value="s_ContentPropertyValueManager_valueId_gmScore" />
+                        <wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_gmScore}" />
+                    </wa:include>
+                </div>
 			</c:if>
 
 			<c:if test="${group eq 'SHOPPING'}">

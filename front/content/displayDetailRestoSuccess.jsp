@@ -187,7 +187,7 @@
 				addMarker(${bean.longitude}, ${bean.latitude}, "${bean.formatMainTitle}", "a", ${bean.svLongitude}, ${bean.svLatitude}, ${bean.svHeading}, ${bean.svPitch}, ${bean.svZoom});
 			</script>
 
-            <c:if test="${bean.fromResto}">
+            <c:if test="${bean.fromResto and bean.bookingAvailable}">
                 <p>
                     <a href="javascript:openIFrame('${bean.restoBookingURL}')" class="btn_resto_booking">
                             <span/>

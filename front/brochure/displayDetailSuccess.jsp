@@ -125,7 +125,7 @@
                 <div id="pratical_information">
                     <h4><wa:mls>Prix</wa:mls></h4>
                     <c:forEach var="item" items="${listPrices}" varStatus="loop">
-                        <p>${item.mainTitle} :: <strong>${item.value}&euro;</strong></p>
+                        <p>${item.mainTitle} : <strong>${item.value}&euro;</strong></p>
                     </c:forEach>
                     <c:if test="${bean.promoAvailable}">
                         <h4><wa:mls>Discount</wa:mls></h4>

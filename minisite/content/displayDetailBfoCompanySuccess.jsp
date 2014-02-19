@@ -102,7 +102,7 @@
 		<c:if test="${not empty bean.contentPersons}">
 			<p><strong><wa:mls>Persons:</wa:mls></strong>
 			<ul id="pesonTable">
-				<c:forEach var="person" items="${bean.contentPersons}">
+				<c:forEach var="person" items="${bean.activeContentPersons}">
 					<c:if test="${person != null}">
 						<li> ${person.name} ${person.serviceStr} / ${person.email} / ${person.mobile}</li>
 					</c:if>

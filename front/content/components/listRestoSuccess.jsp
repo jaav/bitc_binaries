@@ -143,7 +143,7 @@
 									<strong><wa:mls>Price :</wa:mls></strong> ${item.price}<br/>
 								</c:if>
 
-								<c:if test="${item.fromResto}">
+								<c:if test="${item.fromResto and item.bookingAvailable}">
 									<p><a href="javascript:openIFrame('${item.restoBookingURL}')" class="btn_resto_booking_list"><span/></a></p>
 								</c:if>
 

@@ -35,6 +35,9 @@
         <property name="visible" type="java.lang.Byte">
             <column name="visible" />
         </property>
+        <property name="bookingAvailable" type="boolean">
+            <column name="booking_available" />
+        </property>
         <property name="fromDate" type="timestamp">
             <column name="from_date" length="19" />
         </property>
@@ -149,6 +152,12 @@
         </property>
         <property name="ranking" type="java.lang.Integer">
             <column name="ranking" />
+        </property>
+        <property name="rating" type="java.lang.Double">
+            <column name="rating" />
+        </property>
+        <property name="rates" type="java.lang.Integer">
+            <column name="rates" />
         </property>
         <property name="capacity" type="java.lang.Integer">
             <column name="capacity" />

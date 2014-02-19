@@ -22,7 +22,7 @@ isELIgnored ="false"
 
            	<div class="clr"></div>
            	
-           	<div style="display:none" id="advanced_search">
+           	<div id="advanced_search">
            	
 	            <div id="ListExperience" class="align_left">
 					<label for="s_ContentPropertyValueManager_valueId_Experience"><wa:mls>Experience</wa:mls></label>
@@ -52,7 +52,7 @@ isELIgnored ="false"
 				
 				<div class="clr"></div>
 				
-				<div id="ListQuartiers">
+				<div id="ListQuartiers" class="align_left">
 					<label for="s_ContentPropertyValueManager_valueId_Quartier"><wa:mls>Quartiers</wa:mls></label>
 					<wa:include URI="${site}/dropdown/dropList">
 						<wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
@@ -64,10 +64,23 @@ isELIgnored ="false"
 						<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Quartier}" />
 					</wa:include>
 				</div>
+
+                <div id="ListStars" class="align_right">
+                    <label for="s_ContentPropertyValueManager_valueId_Stars"><wa:mls>Stars</wa:mls></label>
+                    <wa:include URI="${site}/dropdown/dropList">
+                        <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+                        <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+                        <wa:param name="method" value="listRestoStars" />
+                        <wa:param name="identity" value="valueId" />
+                        <wa:param name="display" value="mainTitle" />
+                        <wa:param name="name" value="s_ContentPropertyValueManager_valueId_Stars" />
+                        <wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Stars}" />
+                    </wa:include>
+                </div>
+
+                <div class="clr"></div>
 				
-				<div class="clr"></div>
-				
-				<div id="ListTypeCuisine">
+				<div id="ListTypeCuisine" class="align_left">
 					<label for="s_ContentPropertyValue_valueId_Cuisine"><wa:mls>Type de cuisine</wa:mls></label>
 					<wa:include URI="${site}/dropdown/dropList">
 						<wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
@@ -79,6 +92,19 @@ isELIgnored ="false"
 						<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValue_valueId_Cuisine}" />
 					</wa:include>
 				</div>
+
+                <div id="ListGMScore" class="align_right">
+                    <label for="s_ContentPropertyValueManager_valueId_gmScore"><wa:mls>GM score</wa:mls></label>
+                    <wa:include URI="${site}/dropdown/dropList">
+                        <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+                        <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+                        <wa:param name="method" value="listGMScore" />
+                        <wa:param name="identity" value="valueId" />
+                        <wa:param name="display" value="mainTitle" />
+                        <wa:param name="name" value="s_ContentPropertyValueManager_valueId_gmScore" />
+                        <wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_gmScore}" />
+                    </wa:include>
+                </div>
 			
 			</div>
 							<input type="submit" value="<wa:mls>Recherche</wa:mls>" class="btn_form2" />
