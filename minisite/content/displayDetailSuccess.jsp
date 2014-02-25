@@ -34,7 +34,7 @@
 </c:if>
 <!-- !!!! Don't put elements here. Content MUST be in content_main div below !!! -->
 
-<div id="content_main" class="vevent">
+<div id="content_main" class="vevent ${bean.group}">
 <div id="btn_back"><a href="javascript:history.back();"><wa:mls>Back</wa:mls></a></div>
 
 <h1 class="no_margin summary">${bean.mainTitle}

@@ -21,8 +21,8 @@ isELIgnored ="false"
 		    <input type ="hidden" name ="group" value="${group}">
 
            	<div class="clr"></div>
-           	
-           	<div id="advanced_search">
+
+            <div style="display:none" id="advanced_search">
            	
 	            <div id="ListExperience" class="align_left">
 					<label for="s_ContentPropertyValueManager_valueId_Experience"><wa:mls>Experience</wa:mls></label>
@@ -126,4 +126,9 @@ function changeDisplay(){
     }
 	$("a.advanced_search").toggleClass("advanced_search_active");
 }
-</script> 
+</script>
+<script>
+    $(document).ready(function() {
+        changeDisplay();
+    });
+</script>
