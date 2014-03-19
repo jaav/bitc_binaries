@@ -108,7 +108,7 @@
 								<c:when test="${not empty item.mainSmallImage}">
 									<c:choose>
 										<c:when test="${item.group == 'HOTEL'}">
-											<a href="${item.hotelDetailPage}" target="_blank"/>" >
+											<a href="${item.hotelDetailPage}" target="_blank" >
 											<img src="${item.mainSmallImage}" alt="${item.mainTitle}" width="165"/>
 											</a>
 										</c:when>
@@ -122,7 +122,7 @@
 								<c:otherwise>
 									<c:choose>
 										<c:when test="${item.group == 'HOTEL'}">
-											<a href="${item.hotelDetailPage}" target="_blank"/>" >
+											<a href="${item.hotelDetailPage}" target="_blank" >
 											<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.mainTitle}"
 											     width="165"/>
 											</a>
@@ -141,7 +141,7 @@
 								<h3 class="no_margin">
 									<c:choose>
 										<c:when test="${item.group == 'HOTEL'}">
-											<a href="${item.hotelDetailPage}" target="_blank"/>" >${item.mainTitle}</a>
+											<a href="${item.hotelDetailPage}" target="_blank" >${item.mainTitle}</a>
 										</c:when>
 										<c:otherwise>
 											<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>"
