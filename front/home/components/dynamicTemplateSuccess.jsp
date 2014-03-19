@@ -289,12 +289,12 @@ function meetingPlannerLightBox(data) {
           	<c:otherwise>
           <c:choose>
 		        	<c:when test="${item.group == 'HOTEL'}">
-					    <a href="<wa:url URI="${site}/content/displayDetailBooking/group/${item.group}/id/${item.id}"/>" >
+					    <a href="<wa:url URI="${site}/content/displayDetailBooking/group/${item.group}/id/${item.id}"/>" title="${item.mainTitle}">
 				        		<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.formatMainTitle}" width="300"/>
 				        </a>
 				    </c:when>
       			    <c:otherwise>
-	      			    <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" >
+	      			    <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" title="${item.formatMainTitle}">
 		        		    <img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.formatMainTitle}" width="300"/>
 		        	    </a>
       			    </c:otherwise>

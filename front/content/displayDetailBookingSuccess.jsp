@@ -83,7 +83,7 @@ function addToNltContent(group,contentId){
 				</div></div> 
     <iframe
       
-     src ="${wast:replace('.html','',bean.url)}.${culture.language}.html?aid=325008<c:if test="${not empty periodFromDate && not empty periodToDate}">&do_availability_check=on&checkin=${wadt:formatDateByPattern(periodFromDate,'yyyy-MM-dd')}&checkout=${wadt:formatDateByPattern(periodToDate,'yyyy-MM-dd')}</c:if>" width="620" height="2750">
+     src ="http://www.motel-one.com/en/" width="620" height="2750">
     </iframe>
 	  
 	  

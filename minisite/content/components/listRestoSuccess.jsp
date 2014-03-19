@@ -79,8 +79,7 @@ isELIgnored ="false"
 	       	</c:if>
 	       
 	        <c:if test="${not empty item.URLWebsite}">
-          		<strong><wa:mls>Website :</wa:mls></strong>
-          		<span><a href="${item.URLWebsite}" target="_blank">${item.URLWebsite}</a></span> <br />
+                <strong><a href="${item.URLWebsite}" target="_blank"><wa:mls>Website</wa:mls></a></strong><br/>
 	        </c:if>
 	        </p>
 	         <c:if test="${not empty item.ranking and item.ranking > 0}">
@@ -117,7 +116,7 @@ isELIgnored ="false"
 				<script type="text/javascript">
           			addMarker(${item.longitude},${item.latitude},"${item.formatMainTitle}","${wa:numberToChar(loop.count-1)}",${item.svLongitude},${item.svLatitude},${item.svHeading},${item.svPitch},${item.svZoom});
           		</script>
-				</c:if> 
+				</c:if>
 				<c:set var="varTmp" value="\"" />
 					<a href="http://www.addthis.com/bookmark.php?v=250&amp;username=wanabe" class="addthis_button share"  addthis:url="${config['URL']}<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}/name/${waParam.name}"/>" addthis:title="${item.mainTitle}" addthis:description="${fn:replace(wa:html2txt(item.mainAbstract_),varTmp,'&quot;')}"><img src="${static}/front/img/ml/btn_share.gif" alt="<wa:mls>Share</wa:mls>"/></a>			      	
 					<div class="ilike" rel="${item.group}|${item.id}"></div>

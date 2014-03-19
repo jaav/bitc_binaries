@@ -119,6 +119,19 @@ var addthis_config = {
     ui_click:true
 }
 </script>
+<script language='javascript'>
+    function openIFrame(contentURL) {
+        $.nyroModalManual({
+            zIndex: 1001,
+            minWidth: 690,
+            minHeight: 510,
+            forceType: 'iframe',
+            closeSelector: '.nyroModalClose',
+            url: contentURL,
+            closeButton: '<a href="#" class="nyroModalClose" id="closeBut"><img src="${static}/front/img/ml/close.png" alt="close" /></a>'
+        });
+    }
+</script>
 <script type="text/javascript"
 	src="http://s7.addthis.com/js/250/addthis_widget.js#username=wanabe"></script>
 <!-- AddThis  END -->

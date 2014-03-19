@@ -55,12 +55,6 @@ function meetingPlannerLightBox(data) {
       </ul>
             <div class="Tabbe_Content_Group">
       
-      <c:choose>
-      	<c:when test="${iFrameBooking eq 'iFrameBooking'}">
-      		<iframe src ="http://www.booking.com/searchresults.${culture.language}.html?ssai=1;aid=325807;order=class;ssre=1;do_availability_check=on;si=ai,co,ci,re;checkin_monthday=${wadt:formatDateByPattern(s_periodFromDate,'dd')};checkin_year_month=${wadt:formatDateByPattern(s_periodFromDate,'yyyy-MM')};checkout_monthday=${wadt:formatDateByPattern(s_periodToDate,'dd')};checkout_year_month=${wadt:formatDateByPattern(s_periodToDate,'yyyy-MM')};class_interval=1;offset=0;score_min=0;si=ai,co,ci,re,di;ss=hotel_id:${hotelIds};city=-1955538;origin=disamb;srhash=1777195148;srpos=1" width="620" height="2450" >
-			</iframe> 
-      	</c:when>
-      	<c:otherwise>
       	<div class="tab_paging">
             <wa:include URI="${site}/content/navNumber" />
         <div class="select">
@@ -95,7 +89,7 @@ function meetingPlannerLightBox(data) {
 	          		<c:when  test="${not empty item.mainSmallImage}">
 		        		<c:choose>
 			        		<c:when test="${item.group == 'HOTEL'}">
-							    <a href="<wa:url URI="${site}/content/displayDetailBooking/group/${item.group}/id/${item.id}"/>" >
+							    <a href="${item.hotelDetailPage}" target="_blank"/>" >
 						        		<img src="${item.mainSmallImage}"  alt="${item.mainTitle}" width="165"/>
 						        </a>
 					   		</c:when>
@@ -109,7 +103,7 @@ function meetingPlannerLightBox(data) {
 		          	<c:otherwise>
 		          		<c:choose>
 				        	<c:when test="${item.group == 'HOTEL'}">
-							    <a href="<wa:url URI="${site}/content/displayDetailBooking/group/${item.group}/id/${item.id}"/>" >
+						        <a href="${item.hotelDetailPage}" target="_blank"/>" >
 						        		<img src="${context}/static/${site}/img/ml/default_content.jpg"  alt="${item.mainTitle}" width="165"/>
 						        </a>
 						    </c:when>
@@ -125,8 +119,8 @@ function meetingPlannerLightBox(data) {
 	          <div class="txt">
 	            <h3 class="no_margin">
 	            <c:choose>
-		        	<c:when test="${item.group == 'HOTEL'}">
-					   <a href="<wa:url URI="${site}/content/displayDetailBooking/group/${item.group}/id/${item.id}"/>" title="${item.mainTitle}" >${item.mainTitle}</a>
+		        	<c:when test="${item.group == 'HOTrankingEL'}">
+					   <a target="_blank" href="${item.hotelDetailPage}" title="${item.mainTitle}" >${item.mainTitle}</a>
 				    </c:when>
       			    <c:otherwise>
 	      			    <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" title="${item.mainTitle}" >${item.mainTitle}</a>
@@ -184,7 +178,7 @@ function meetingPlannerLightBox(data) {
 					<div class="more_info">
 						<c:choose>
 				        	<c:when test="${item.group == 'HOTEL'}">
-							   <a href="<wa:url URI="${site}/content/displayDetailBooking/group/${item.group}/id/${item.id}"/>" class="btn_more_info" title="${item.mainTitle}"><wa:mls>More info</wa:mls></a>
+							   <a target="_blank" href="${item.hotelDetailPage}" class="btn_more_info" title="${item.mainTitle}"><wa:mls>More info</wa:mls></a>
 						    </c:when>
 		      			    <c:otherwise>
 			      			    <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" class="btn_more_info" title="${item.mainTitle}"><wa:mls>More info</wa:mls></a>
@@ -219,8 +213,6 @@ function meetingPlannerLightBox(data) {
         <wa:include URI="${site}/content/navNumber" />
       
       </div>
-      </c:otherwise>
-      </c:choose>
     </div></div>
     <!--tab:end-->
 

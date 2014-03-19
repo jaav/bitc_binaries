@@ -54,6 +54,34 @@ isELIgnored ="false"
 						<wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Quartier}" />
 					</wa:include>
 				</div>
+
+                <div class="clr"></div>
+
+                <div id="ListStars" class="align_left">
+                    <label for="s_ContentPropertyValueManager_valueId_Stars"><wa:mls>Stars</wa:mls></label>
+                    <wa:include URI="front/dropdown/dropList">
+                        <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+                        <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+                        <wa:param name="method" value="listRestoStars" />
+                        <wa:param name="identity" value="valueId" />
+                        <wa:param name="display" value="mainTitle" />
+                        <wa:param name="name" value="s_ContentPropertyValueManager_valueId_Stars" />
+                        <wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_Stars}" />
+                    </wa:include>
+                </div>
+
+                <div id="ListGMScore" class="align_right">
+                    <label for="s_ContentPropertyValueManager_valueId_gmScore"><wa:mls>GM score</wa:mls></label>
+                    <wa:include URI="front/dropdown/dropList">
+                        <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue" />
+                        <wa:param name="manager" value="com.bitc.cms.hdata.manager.ContentPropertyValueManager" />
+                        <wa:param name="method" value="listGMScore" />
+                        <wa:param name="identity" value="valueId" />
+                        <wa:param name="display" value="mainTitle" />
+                        <wa:param name="name" value="s_ContentPropertyValueManager_valueId_gmScore" />
+                        <wa:param name="selectedValues" value="${waParam.s_ContentPropertyValueManager_valueId_gmScore}" />
+                    </wa:include>
+                </div>
 			
 			</div>
 							<input type="submit" value="<wa:mls>Recherche</wa:mls>" class="btn_form2" />
@@ -75,4 +103,9 @@ function changeDisplay(){
     }
 	$("a.advanced_search").toggleClass("advanced_search_active");
 }
-</script> 
+</script>
+<script>
+    $(document).ready(function() {
+        changeDisplay();
+    });
+</script>
