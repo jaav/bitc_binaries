@@ -75,17 +75,6 @@
 						<label for="f_page"><wa:mls>Sort by :</wa:mls></label>
 						<select name="f_page" id="f_page" onchange=sortBy("${URI}/","${group}")>
 							<option value="0" <c:if test="${empty waParam.orderBy}">SELECTED</c:if>><wa:mls>Choix</wa:mls></option>
-							<option value="3"
-							        <c:if test="${waParam.orderBy == 'id' && waParam.asc == '1'}">SELECTED</c:if> >
-								<wa:mls>Article (le plus récent)</wa:mls></option>
-							<option value="4" <c:if test="${waParam.orderBy == 'id' && waParam.asc == '0'}">SELECTED</c:if>>
-								<wa:mls>Article (le moins récent)</wa:mls></option>
-							<c:if test="${panelGroup eq 'BnB' or panelGroup == 'HOTEL' or panelGroup == 'BDLF'}">
-								<option value="5" <c:if test="${waParam.orderBy == 'price' && waParam.asc == '0'}">SELECTED</c:if>>
-									<wa:mls>Prix (asc)</wa:mls></option>
-								<option value="6" <c:if test="${waParam.orderBy == 'price' && waParam.asc == '1'}">SELECTED</c:if>>
-									<wa:mls>Prix (desc)</wa:mls></option>
-							</c:if>
 							<option value="7" <c:if test="${waParam.orderBy == 'ranking' && waParam.asc == '0'}">SELECTED</c:if>>
 								<wa:mls>Nombre d'étoiles (asc)</wa:mls></option>
 							<option value="8" <c:if test="${waParam.orderBy == 'ranking' && waParam.asc == '1'}">SELECTED</c:if>>
@@ -263,30 +252,6 @@
 		var orderby;
 		var asc;
 		if (sort == 0) {
-		}
-		if (sort == 1) {
-			orderBy = "title";
-			asc = "0";
-		}
-		if (sort == 2) {
-			orderBy = "title";
-			asc = "1";
-		}
-		if (sort == 3) {
-			orderBy = "id";
-			asc = "1";
-		}
-		if (sort == 4) {
-			orderBy = "id";
-			asc = "0";
-		}
-		if (sort == 5) {
-			orderBy = "price";
-			asc = "0";
-		}
-		if (sort == 6) {
-			orderBy = "price";
-			asc = "1";
 		}
 		if (sort == 7) {
 			orderBy = "ranking";

@@ -30,10 +30,10 @@ isELIgnored ="false"
 
  
  <div>
-    	<div class="book_stay"> <img src="${static}/front/img/en/title_book_stay.gif" alt="Book your stay" />
+    	<div class="book_stay"> <img src="${static}/front/img/en/title_book_stay.gif" alt="Book your stay"/>
  
  
-			<form action ="${context}/${site}/content/forwardSearch/name/${waParam.name}.do" method="get" id="book_stay_form_${waCompParam.zone}"> 			
+			<form action ="${context}/${site}/content/forwardSearch/name/${waParam.name}.do" method="get" id="book_stay_form_${waCompParam.zone}" target="_blank">
             <fieldset>
             <c:if test="${displayAllContents}">
             	<input type="hidden" name="all" value="1" />
