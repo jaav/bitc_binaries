@@ -37,7 +37,7 @@ isELIgnored ="false"
     	 <img src="${staticSite}/img/en/title_book_stay.gif" alt="Book your stay" />
     	 
 	           
-			<form action ="${context}/${site}/content/forwardSearch.do" method="get" id="book_stay_form_${waCompParam.zone}"> 			
+			<form action ="${context}/${site}/content/forwardSearch.do" method="get" id="book_stay_form_${waCompParam.zone}" target="_blank">
             <fieldset>   
                  
             <span id="tfv_room_type_${waCompParam.zone}">
