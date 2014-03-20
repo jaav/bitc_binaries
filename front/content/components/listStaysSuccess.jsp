@@ -98,7 +98,7 @@
 									<c:choose>
 										<c:when test="${item.group == 'HOTEL'}">
 											<a href="${item.hotelDetailPage}" target="_blank" >
-											<img src="${item.mainSmallImage}" alt="${item.mainTitle}" width="165"/>
+											<img src="${item.mainSmallImage}?width=150&height=150&mode=crop" alt="${item.mainTitle}" />
 											</a>
 										</c:when>
 										<c:when test="${item.group != 'HOTEL'}">
@@ -138,47 +138,46 @@
 										</c:otherwise>
 									</c:choose>
 								</h3>
-								<c:choose>
-									<c:when test="${contentType ne 'ContentArticle' && empty item.mainAbstract_}">
-										<c:if test="${not empty item.address}">
-											<p> ${item.address} </p>
+								<c:if test="${not empty item.address}">
+									<p> ${item.address} </p>
 
-											<p>
-												<c:if test="${not empty item.zipcode && item.zipcode > 0}">
-													${item.zipcode}
-												</c:if>
-												<c:if test="${not empty item.city}">
-													${item.city}
-												</c:if>
-											</p>
+									<p>
+										<c:if test="${not empty item.zipcode && item.zipcode > 0}">
+											${item.zipcode}
 										</c:if>
-										<p>
-											<c:if test="${not empty item.phone}">
-												<strong><wa:mls>Tel :</wa:mls></strong> ${item.phone}<br/>
-											</c:if>
-											<c:if test="${not empty item.mobile}">
-												<strong><wa:mls>Mobile :</wa:mls></strong> ${item.mobile}<br/>
-											</c:if>
-											<c:if test="${not empty item.fax}">
-												<strong><wa:mls>Fax :</wa:mls></strong> ${item.fax}<br/>
-											</c:if>
-											<c:if test="${not empty item.email}">
-												<strong><wa:mls>Email :</wa:mls></strong>
-												<span><a href="mailto:${item.email}">${item.email}</a></span> <br/>
-											</c:if>
-											<c:if test="${not empty item.URLWebsite && item.group != 'HOTEL'}">
-												<strong><wa:mls>Website :</wa:mls></strong>
-												<span><a href="${item.URLWebsite}" target="_blank">${item.URLWebsite}</a></span>
-											</c:if>
-										</p>
-									</c:when>
-									<c:otherwise>${item.mainAbstract_}</c:otherwise>
-								</c:choose>
+										<c:if test="${not empty item.city}">
+											${item.city}
+										</c:if>
+									</p>
+								</c:if>
+								<p>
+									<c:if test="${not empty item.phone}">
+										<strong><wa:mls>Tel :</wa:mls></strong> ${item.phone}<br/>
+									</c:if>
+									<c:if test="${not empty item.mobile}">
+										<strong><wa:mls>Mobile :</wa:mls></strong> ${item.mobile}<br/>
+									</c:if>
+									<c:if test="${not empty item.fax}">
+										<strong><wa:mls>Fax :</wa:mls></strong> ${item.fax}<br/>
+									</c:if>
+									<c:if test="${not empty item.email}">
+										<strong><wa:mls>Email :</wa:mls></strong>
+										<span><a href="mailto:${item.email}">${item.email}</a></span> <br/>
+									</c:if>
+									<c:if test="${not empty item.URLWebsite && item.group != 'HOTEL'}">
+										<strong><wa:mls>Website :</wa:mls></strong>
+										<span><a href="${item.URLWebsite}" target="_blank">${item.URLWebsite}</a></span>
+									</c:if>
+								</p>
+								<c:if test="${not empty item.mainAbstract_}">
+									<p>${fn:substring(item.mainAbstract_, 0, 500)}</p>
+								</c:if>
 								<c:if test="${not empty item.ranking && item.ranking > 0}">
-									<div class="float_left"><strong>Category</strong></div>
+									<div style="margin-top: 10px"><strong>Category</strong>
 									<c:forEach var="rankingLoopCount" begin="1" end="${item.ranking}">
-										<img src="${staticSite}/img/ml/visu_stars.jpg" alt="" class="float_left"/>
+										<img src="${staticSite}/img/ml/visu_stars.jpg" alt="" style="float:none"/>
 									</c:forEach>
+									</div>
 								</c:if>
 								<div class="clr"></div>
 								<c:if test="${(item.group == 'BnB'|| item.group =='HOTEL') && not empty item.price}">
