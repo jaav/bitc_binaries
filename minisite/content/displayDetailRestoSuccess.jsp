@@ -37,12 +37,12 @@
 	<div id="btn_back"><a href="javascript:history.back();"><wa:mls>Back</wa:mls></a></div>
 
 	<h1 class="no_margin">${bean.mainTitle}
-		<c:if test="${not empty bean.ranking}">
+		<%--c:if test="${not empty bean.ranking}">
 	      	<span> <c:forEach var="rankingLoopCount" begin="1" end="${bean.ranking}">
 			      <img src="${static}/front/img/ml/visu_iris.jpg" alt="" class="float_right"/>
 		      </c:forEach>
 			</span>
-		</c:if>
+		</c:if--%>
 	</h1> <!-- ${color} -->
 
 

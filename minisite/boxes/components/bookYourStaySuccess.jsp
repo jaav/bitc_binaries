@@ -43,7 +43,7 @@ isELIgnored ="false"
 	           
 	              <select name="f_room_type" id="f_room_type_${waCompParam.zone}" class="select_room_type">
 	                <option value=""><wa:mls>Choisissez</wa:mls></option>
-	                <option value="hotel" ><wa:mls>Hotel</wa:mls></option>
+	                <option value="hotel" selected><wa:mls>Hotel</wa:mls></option>
 	                <option value="bnb" ><wa:mls>Bed & Breakfast</wa:mls></option>
 	              </select>
 	              <img src="${static}/front/img/ml/ok.png" class="validMsg" alt="ok icon" /> <img src="${static}/front/img/ml/erreur.png" class="errorMsg" alt="error icon" />

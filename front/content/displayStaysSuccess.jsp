@@ -20,9 +20,9 @@ isELIgnored ="false"
 					</wa:include>
 				</c:when>
 				<c:when test="${group eq 'HOTEL'}">
-					<wa:include URI="front/content/findStay" >
+					<%--wa:include URI="front/content/findStay" >
 						<wa:param name="group" value="${group}"/>
-					</wa:include>
+					</wa:include--%>
 				</c:when>
 				<c:when test="${group ne 'HOTEL'}">
 					<c:if test="${group ne 'AUBERGE'}">

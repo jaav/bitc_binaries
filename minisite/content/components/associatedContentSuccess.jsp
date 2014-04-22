@@ -119,12 +119,12 @@ isELIgnored ="false"
 	         </c:if>
 	         </c:if>
 	         <c:if test="${tabbedPanelsTab eq 'resto'}">
-	         <c:if test="${not empty item.ranking and item.ranking > 0}">
+	         <%--c:if test="${not empty item.ranking and item.ranking > 0}">
 	            <div class="float_left"><strong><wa:mls>Category :</wa:mls></strong></div>
 		            <c:forEach var="rankingLoopCount" begin="1" end="${item.ranking}">
 						<img src="${context}/static/front/img/ml/visu_iris.jpg" alt="" class="float_left"/> 
 					</c:forEach>
-				</c:if>
+				</c:if--%>
 			</c:if>
 			<div class="clr"></div>
 	            </div>

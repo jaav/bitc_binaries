@@ -15,6 +15,12 @@ isELIgnored ="false"
 <style type="text/css" media="screen">
 @import url("${static}/front/css/nyroModal.css");
 </style>
+
+<%-- Short term fix for displaying external (Cubilis) hotels page. Thank you Tho ;-) --%>
+<script type="text/javascript">
+    window.location="${bean.hotelDetailPage}";
+</script>
+
 <script type="text/javascript" src="${static}/front/js/jquery.nyroModal-1.6.1.pack.js"></script>
 <script src="${static}/ajax/js/tripPlannerMethods.js" type="text/javascript"></script>
 <script type="text/javascript">

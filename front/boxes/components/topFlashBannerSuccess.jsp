@@ -31,9 +31,6 @@ isELIgnored ="false"
  
  <div>
     	<div class="book_stay">
-    	<div style="position:absolute; margin-top:-15px; margin-left:244px;">
-		 <a href="javascript:affichage_popup('http://www.booking.com/general.${culture.language}.html?;tmpl=doc/rate_guarantee','BestRate');">
-		<img src="${staticSite}/img/${culture.language}/best_rates.png" style="border:none;" width="127" /></a></div>   
     	 <img src="${staticSite}/img/en/title_book_stay.gif" alt="Book your stay" />
     	 
 	           
@@ -45,7 +42,7 @@ isELIgnored ="false"
 	              
 	              <select name="f_room_type" id="f_room_type_${waCompParam.zone}" class="select_room_type">
 	                <option value=""><wa:mls>Choisissez</wa:mls></option>
-	                <option value="hotel" ><wa:mls>Hotel</wa:mls></option>
+	                <option value="hotel" selected><wa:mls>Hotel</wa:mls></option>
 	                <option value="bnb" ><wa:mls>Bed & Breakfast</wa:mls></option>
 	              </select>
 	              <img src="${staticSite}/img/ml/ok.png" class="validMsg" alt="ok icon" /> <img src="${staticSite}/img/ml/erreur.png" class="errorMsg" alt="error icon" />

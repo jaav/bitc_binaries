@@ -28,64 +28,8 @@ isELIgnored ="false"
 		        <div class="arrow"></div>
 		        <a onClick="changeDisplay()" class="advanced_search"><wa:mls>Advanced search</wa:mls></a>
 		        
-          		<div class="align_left">
-          		<span id="tfv_departure_date">
-		            <label for="f_page"><wa:mls>Date d'arrivée : </wa:mls></label>
-					<!--   Start modif        -->
-		           	<script>
-		           		$(function() {
-							  		$("#s_periodFromDate").datepicker({
-									showOn: 'button',
-									buttonImage: '${static}/front/img/ml/calendar.gif',
-									buttonImageOnly: true,		
-									minDate: '+0D', 
-									maxDate: '+2Y',
-									onSelect: function(dateText, inst) { 			 	
-										var day=dateText.substr(0,2);
-										var month=dateText.substr(3,2);
-										var year=dateText.substr(6,4);
-										var monthYear=year+"-"+month;
-										spryDepartureDate.validate();
-									}
-									})
-							  	  });
-					</script>
-					<input name="s_periodFromDate" type="text" id="s_periodFromDate" class="datepicker" value="<fmt:formatDate pattern="dd/MM/yyyy" value="${s_periodFromDate}"/>" />
-					<div class="textfieldRequiredMsg" style="margin-left:115px;"><wa:mls>Ce champ est obligatoire</wa:mls></div>
-					<div class="textfieldInvalidFormatMsg"  style="margin-left:115px;">Please enter a date to the following format DD/MM/YYYY</div>
-					
-				</span>
-				</div>
-				
-				<div class="align_right">
-				<span id="tfv_arrival_date">
-	           		<label for="f_page"><wa:mls>Date de départ : </wa:mls></label>
-					<script>
-					$(function() {
-						$("#s_periodToDate").datepicker({
-						showOn: 'button',
-						buttonImage: '${static}/front/img/ml/calendar.gif',
-						buttonImageOnly: true,		
-						minDate: '+0D', 
-						maxDate: '+2Y',
-						onSelect: function(dateText, inst) { 			 	
-							var day=dateText.substr(0,2);
-							var month=dateText.substr(3,2);
-							var year=dateText.substr(6,4);
-							var monthYear=year+"-"+month;
-							spryArrivalDate.validate();
-						}
-						})
-					});
-					</script>
-					<input name="s_periodToDate" type="text" id="s_periodToDate" class="datepicker" value="<fmt:formatDate pattern="dd/MM/yyyy" value="${s_periodToDate}"/>" />
-					<div class="textfieldRequiredMsg" style="margin-left:115px;"><wa:mls>Ce champ est obligatoire</wa:mls></div>
-					<div class="textfieldInvalidFormatMsg"  style="margin-left:115px;">Please enter a date to the following format DD/MM/YYYY</div>
-				</span>
-				</div>
-					
-				<div class="clr"></div>
-				
+
+
             <!--   End modif        -->
 
             <input type ="hidden" name ="group" value="${group}">

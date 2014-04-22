@@ -97,8 +97,8 @@
 								<c:when test="${not empty item.mainSmallImage}">
 									<c:choose>
 										<c:when test="${item.group == 'HOTEL'}">
-											<a href="${item.hotelDetailPage}" target="_blank" >
-											<img src="${item.mainSmallImage}?width=150&height=150&mode=crop" alt="${item.mainTitle}" />
+											<a href="${item.hotelDetailPage}" target="_blank">
+												<img src="${item.mainSmallImage}?width=150&height=150&mode=crop" alt="${item.mainTitle}"/>
 											</a>
 										</c:when>
 										<c:when test="${item.group != 'HOTEL'}">
@@ -111,9 +111,9 @@
 								<c:otherwise>
 									<c:choose>
 										<c:when test="${item.group == 'HOTEL'}">
-											<a href="${item.hotelDetailPage}" target="_blank" >
-											<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.mainTitle}"
-											     width="165"/>
+											<a href="${item.hotelDetailPage}" target="_blank">
+												<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.mainTitle}"
+												     width="165"/>
 											</a>
 										</c:when>
 										<c:otherwise>
@@ -130,7 +130,7 @@
 								<h3 class="no_margin">
 									<c:choose>
 										<c:when test="${item.group == 'HOTEL'}">
-											<a href="${item.hotelDetailPage}" target="_blank" >${item.mainTitle}</a>
+											<a href="${item.hotelDetailPage}" target="_blank">${item.mainTitle}</a>
 										</c:when>
 										<c:otherwise>
 											<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>"
@@ -150,33 +150,27 @@
 										</c:if>
 									</p>
 								</c:if>
-								<p>
-									<c:if test="${not empty item.phone}">
-										<strong><wa:mls>Tel :</wa:mls></strong> ${item.phone}<br/>
-									</c:if>
-									<c:if test="${not empty item.mobile}">
-										<strong><wa:mls>Mobile :</wa:mls></strong> ${item.mobile}<br/>
-									</c:if>
-									<c:if test="${not empty item.fax}">
-										<strong><wa:mls>Fax :</wa:mls></strong> ${item.fax}<br/>
-									</c:if>
-									<c:if test="${not empty item.email}">
-										<strong><wa:mls>Email :</wa:mls></strong>
-										<span><a href="mailto:${item.email}">${item.email}</a></span> <br/>
-									</c:if>
-									<c:if test="${not empty item.URLWebsite && item.group != 'HOTEL'}">
-										<strong><wa:mls>Website :</wa:mls></strong>
-										<span><a href="${item.URLWebsite}" target="_blank">${item.URLWebsite}</a></span>
-									</c:if>
-								</p>
+
+									<%--c:if test="${not empty item.mainAbstract_}">
+										<p>${fn:substring(item.mainAbstract_, 0, 500)}</p>
+									</c:if--%>
+
 								<c:if test="${not empty item.mainAbstract_}">
-									<p>${fn:substring(item.mainAbstract_, 0, 500)}</p>
+									<c:choose>
+										<c:when test="${fn:length(item.mainAbstract_) > 500}">
+											<p style="margin-top: 10px">${fn:substring(item.mainAbstract_, 0, 500)}...</p>
+										</c:when>
+										<c:otherwise>
+											<p style="margin-top: 10px">${item.mainAbstract_}</p>
+										</c:otherwise>
+									</c:choose>
 								</c:if>
+
 								<c:if test="${not empty item.ranking && item.ranking > 0}">
 									<div style="margin-top: 10px"><strong>Category</strong>
-									<c:forEach var="rankingLoopCount" begin="1" end="${item.ranking}">
-										<img src="${staticSite}/img/ml/visu_stars.jpg" alt="" style="float:none"/>
-									</c:forEach>
+										<c:forEach var="rankingLoopCount" begin="1" end="${item.ranking}">
+											<img src="${staticSite}/img/ml/visu_stars.jpg" alt="" style="float:none"/>
+										</c:forEach>
 									</div>
 								</c:if>
 								<div class="clr"></div>

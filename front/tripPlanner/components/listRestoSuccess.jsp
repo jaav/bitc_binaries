@@ -103,12 +103,12 @@ function tripPlannerLightBox(data) {
 	            	</c:when>
 	            	<c:otherwise>${item.mainAbstract_}</c:otherwise>
 	            </c:choose>
-	             <c:if test="${not empty item.ranking and item.ranking > 0}">
-	            <div class="float_left"><strong><wa:mls>Category :</wa:mls></strong></div>
+	            <%--c:if test="${not empty item.ranking and item.ranking > 0}">
+		            <div class="float_left"><strong><wa:mls>Category :</wa:mls></strong></div>
 		            <c:forEach var="rankingLoopCount" begin="1" end="${item.ranking}">
-						<img src="${staticSite}/img/ml/visu_iris.jpg" alt="" class="float_left"/> 
-					</c:forEach>
-				</c:if>
+									<img src="${staticSite}/img/ml/visu_iris.jpg" alt="" class="float_left"/>
+								</c:forEach>
+							</c:if--%>
 					<div class="clr"></div>
 					
 				

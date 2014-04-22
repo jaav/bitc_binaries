@@ -52,42 +52,44 @@ function tripPlannerLightBox(data) {
       <c:otherwise>
       <c:if test="${listNull == '1'}"><wa:mls>Liste vide</wa:mls></c:if>
       <c:forEach var="item" items="${list}" varStatus="loop">
-             <li> 
-	             <c:choose>
-          	<c:when  test="${not empty item.mainSmallImage}">
-	        	<c:choose>
-		        	<c:when test="${item.group == 'HOTEL'}">
-					    <a href="<wa:url URI="${site}/content/displayDetailBooking/group/${item.group}/id/${item.id}"/>" >
-				        		<img src="${item.mainSmallImage}"  alt="${item.mainTitle}" />
-				        </a>
-				    </c:when>
-      			    <c:otherwise>
-	      			    <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" >
-		        		    <img src="${item.mainSmallImage}"  alt="${item.mainTitle}" width="165"/>
-		        	    </a>
-      			    </c:otherwise>
-      			</c:choose>
-      				</c:when>
-          	<c:otherwise>
-          <c:choose>
-		        	<c:when test="${item.group == 'HOTEL'}">
-					    <a href="<wa:url URI="${site}/content/displayDetailBooking/group/${item.group}/id/${item.id}"/>" >
-				        		<img src="${context}/static/${site}/img/ml/default_content.jpg"  alt="${item.mainTitle}"/>
-				        </a>
-				    </c:when>
-      			    <c:otherwise>
-	      			    <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" >
-		        		    <img src="${context}/static/${site}/img/ml/default_content.jpg"  alt="${item.mainTitle}" width="165"/>
-		        	    </a>
-      			    </c:otherwise>
-      			</c:choose>
-          	</c:otherwise>
-          </c:choose> 
-	          <div class="txt">
+             <li>
+                 <c:choose>
+                     <c:when test="${not empty item.mainSmallImage}">
+                         <c:choose>
+                             <c:when test="${item.group == 'HOTEL'}">
+                                 <a href="${item.hotelDetailPage}" target="_blank" >
+                                     <img src="${item.mainSmallImage}" alt="${item.mainTitle}" width="165"/>
+                                 </a>
+                             </c:when>
+                             <c:otherwise>
+                                 <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>">
+                                     <img src="${item.mainSmallImage}" alt="${item.mainTitle}" width="165"/>
+                                 </a>
+                             </c:otherwise>
+                         </c:choose>
+                     </c:when>
+                     <c:otherwise>
+                         <c:choose>
+                             <c:when test="${item.group == 'HOTEL'}">
+                                 <a href="${item.hotelDetailPage}" target="_blank">
+                                     <img src="${context}/static/${site}/img/ml/default_content.jpg"
+                                          alt="${item.mainTitle}"/>
+                                 </a>
+                             </c:when>
+                             <c:otherwise>
+                                 <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>">
+                                     <img src="${context}/static/${site}/img/ml/default_content.jpg"
+                                          alt="${item.mainTitle}" width="165"/>
+                                 </a>
+                             </c:otherwise>
+                         </c:choose>
+                     </c:otherwise>
+                 </c:choose>
+                 <div class="txt">
 	            <h3 class="no_margin">
 	            <c:choose>
 		        	<c:when test="${item.group == 'HOTEL'}">
-					   <a href="<wa:url URI="${site}/content/displayDetailBooking/group/${item.group}/id/${item.id}"/>" title="${item.mainTitle}" >${item.mainTitle}</a>
+					   <a href="${item.hotelDetailPage}" target="_blank" title="${item.mainTitle}" >${item.mainTitle}</a>
 				    </c:when>
       			    <c:otherwise>
 	      			    <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" title="${item.mainTitle}" >${item.mainTitle}</a>

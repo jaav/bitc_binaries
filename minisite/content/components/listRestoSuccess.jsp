@@ -82,13 +82,13 @@ isELIgnored ="false"
                 <strong><a href="${item.URLWebsite}" target="_blank"><wa:mls>Website</wa:mls></a></strong><br/>
 	        </c:if>
 	        </p>
-	         <c:if test="${not empty item.ranking and item.ranking > 0}">
+	         <%--c:if test="${not empty item.ranking and item.ranking > 0}">
 	            <div class="float_left"><strong><wa:mls>Category :</wa:mls></strong></div>
 		            <c:forEach var="rankingLoopCount" begin="1" end="${item.ranking}">
 						<img src="${static}/front/img/ml/visu_iris.jpg" alt="" class="float_left"/> 
 					</c:forEach>
 					<br />
-				</c:if>
+				</c:if--%>
 				<div class="clr"></div>
 			
 			<c:if test="${not empty item.listCuisine}">

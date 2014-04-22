@@ -144,8 +144,8 @@
 								</c:if>
 
 								<c:if test="${not empty item.ratingIcon}">
-									<strong>Rating resto.be: </strong><img src="${staticSite}/img/ml/rating_${item.ratingIcon}.jpg" />
-								</c:if>
+										<p><strong style="float:left;"><wa:mls>Rating resto.be:</wa:mls> </strong><span style="background:url('${staticSite}/img/ml/rating_${item.ratingIcon}.jpg') no-repeat 0px 0px; width:80px;display: inline-block;height: 16px;margin-left: 6px;" ></span></p>
+									</c:if>
 
 								<c:if test="${item.fromResto and item.bookingAvailable}">
 									<p><a href="javascript:openIFrame('${item.restoBookingURL}')" class="btn_resto_booking_list"><span/></a></p>

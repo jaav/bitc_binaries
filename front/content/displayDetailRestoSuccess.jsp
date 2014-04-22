@@ -181,7 +181,13 @@
 		<meta itemprop="best" content="10"/>
 	</div>
 	<c:if test="${not empty bean.ratingIcon}">
-		<p><strong>Rating resto.be: </strong><img src="${staticSite}/img/ml/rating_${bean.ratingIcon}.jpg" /></p>
+		<p><strong style="float:left;"><wa:mls>Rating resto.be:</wa:mls> </strong><span style="background:url('${staticSite}/img/ml/rating_${bean.ratingIcon}.jpg') no-repeat 0px 0px; width:80px;display: inline-block;height: 16px;margin-left: 6px;" ></span></p>
+	</c:if>
+	<c:if test="${not empty bean.michelin}">
+		<p><strong style="float:left;"><wa:mls>Rating Michelin:</wa:mls> </strong><span style="background: url('${staticSite}/img/ml/michelin_${fn:substring(bean.michelin, 0,1)}.jpg') no-repeat 0px 0px; width:80px;display: inline-block;height: 16px;margin-left: 6px;"></span> </p>
+	</c:if>
+	<c:if test="${not empty bean.gault}">
+		<p><strong style="float:left;"><wa:mls>Rating GaultMillau:</wa:mls> </strong><span style="width:80px;display: inline-block;height: 16px;margin-left: 6px;">${bean.gault}</span></p>
 	</c:if>
 
 	<c:if
