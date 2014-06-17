@@ -63,6 +63,10 @@
     <link rel="stylesheet" type="text/css" href="${static}/front/css/smart_tab.css" media="screen, projection"/>
     <link rel="stylesheet" type="text/css" href="${static}/front/css/SpryValidationSelect_search.css"
           media="screen, projection"/>
+		<link rel="stylesheet" type="text/css" href="/bitc/static/front/css/jquery.ui.datepicker.css" media="screen, projection"/>
+		<link rel="stylesheet" type="text/css" href="/bitc/static/front/css/jquery.ui.theme.css" media="screen, projection"/>
+
+
     <link rel="stylesheet" type="text/css" href="${static}/minisite/css/${waParam.name}.css"
           media="screen, projection"/>
     <% //JS IMPORT %>

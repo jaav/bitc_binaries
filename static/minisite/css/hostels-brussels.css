@@ -1,0 +1,299 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+/* BITC (visitbrussels.be) - FOR MINISITE ONLY  */
+/* ******************************************** */
+/* Fonts */
+/*
+@font-face {
+    font-family: 'myriad_eat';
+    src: url('../fonts/myriadwebpro-bold-webfont.eot');
+    src: url('../fonts/myriadwebpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/myriadwebpro-bold-webfont.woff') format('woff'),
+         url('../fonts/myriadwebpro-bold-webfont.ttf') format('truetype'),
+         url('../fonts/myriadwebpro-bold-webfont.svg#myriad_web_probold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*/
+/* overwrite screen.css styles */
+body.minisite {
+  background: #ffffff;
+  background-image: url('/bitc/static/minisite/img/hostels-brussels/ml/background_2013_03.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+#content {
+  margin-top: 35px;
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  /* background-color : #fff; */
+  background-image: url('/bitc/static/minisite/img/hostels-brussels/ml/background.png');
+  background-repeat: repeat-y;
+  font-family: Verdana, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  color: #000000;
+}
+#content #btn_back,
+#content .form_send,
+#content .tab_paging {
+  font-size: 12px;
+  line-height: 14px;
+  color: inherit;
+}
+#content a {
+  color: #414978;
+}
+#loader {
+  display: none;
+}
+#collapse {
+  height: 100px;
+}
+#collapse_content {
+  height: 100px;
+}
+#btn_back {
+  float: right;
+}
+/*
+#box_right_information {
+  display: none;
+}
+*/
+#expand_content {
+  margin: 0 auto;
+  width: 1200px;
+  height: 355px;
+  position: relative;
+  top: 35px;
+  display: none;
+}
+#ribbon_bottom {
+  background-color: #fff;
+}
+#content_main h1,
+#content_main .h1-like {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  color: #829739;
+  line-height: 1.2em;
+  margin-bottom: 0.4em;
+  font-size: 30.800000000000004px;
+}
+#content_main h2,
+#content_main .h2-like {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  color: #829739;
+  line-height: 1.2em;
+  margin-bottom: 0.4em;
+  font-size: 25.2px;
+}
+#content_main h3,
+#content_main .h3-like {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  color: #829739;
+  line-height: 1.2em;
+  margin-bottom: 0.4em;
+  font-size: 21px;
+}
+#main_content a {
+  color: #829739;
+}
+a.btn_more_info {
+  height: 15px;
+  padding-top: 7px;
+  padding-bottom: 3px;
+  background-color: #829739;
+  font-family: Verdana, arial, sans-serif;
+  font-weight: bold;
+  color: #ffffff !important;
+  background-image: url('/bitc/static/minisite/img/hostels-brussels/ml/more_info_bg.png');
+  font-size: 11.200000000000001px;
+  background-repeat: no-repeat;
+  background-position: 75px 1px;
+  line-height: 1em;
+}
+a.btn_more_info:hover {
+  background-color: #5e707e;
+  background-image: url('/bitc/static/minisite/img/hostels-brussels/ml/more_info_bg.png');
+  background-repeat: no-repeat;
+  background-position: 75px 1px;
+  text-decoration: underline;
+}
+ul#top_nav {
+  width: auto;
+}
+#top_content form {
+  top: 8px;
+  left: 935px;
+}
+form#f_search {
+  display: none;
+}
+/* Front page content */
+
+div.scrollable{
+	width : 100%;
+    height : auto;
+    overflow : visible;
+}
+div.scrollable .items{
+    width : 100%;
+    position : static;
+}
+div.scrollable .items div{
+   float : none;
+}
+
+.first_highlight_home_slide div{
+    float : none !important;
+    width : 100% !important;
+    margin : 0 !important;
+    padding : 0;
+}
+/*
+.first_highlight_home_slide {
+  display: none;
+}
+*/
+
+/* End front page content */
+div.first_highlight_home div.navi a:hover {
+  background-color: #5e707e
+  border: 1px solid #414978;
+  font-family: Verdana, arial, sans-serif;
+}
+div.first_highlight_home div.navi a.active {
+  background-color: #5e707e;
+  border: 1px solid #414978;
+  font-family: Verdana, arial, sans-serif;
+}
+div .second_highlight_home {
+  margin: 5px 0 0 0;
+  border-bottom: 6px solid #5e707e;
+  border-top: none;
+  position: relative;
+  top: -20px;
+  height: 300px;
+}
+div .second_highlight_home .btn {
+  bottom: 20px;
+}
+div .second_highlight_home h3 {
+  font-size: 21px;
+  height: 24px;
+  color: #fff;
+}
+div .second_highlight_home h3 a {
+  color: #829739;
+  text-decoration: none;
+}
+#listComment {
+  margin-top: 25px;
+}
+ul.tab_list_complete li {
+  border-bottom: 1px solid #5e707e;
+}
+div#collapse_content img {
+  display: none;
+}
+/* new styles */
+#mini_site_top {
+  margin: 0 0 0 135px;
+  width: 932px;
+  height: 211px;
+  background-image: url('/bitc/static/minisite/img/hostels-brussels/ml/header.jpg');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+#mini_site_top img {
+  margin: 0;
+}
+#mini_site_top img .arrowsep {
+  margin: -3px 0 0 0;
+}
+#mini_site_top h1 {
+  position: absolute;
+  text-indent: -3000px;
+}
+#title h1.title_h1 {
+  position: absolute;
+  text-indent: -3000px;
+}
+#mini_site_nav_ul {
+  background: #5e707e;
+  width: 244px;
+  padding: 10px 20px 10px 25px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18.900000000000002px;
+  text-transform: uppercase;
+  font-weight: none;
+  margin: 35px 0 22px 0;
+}
+#mini_site_nav_ul li {
+  background: transparent url('/bitc/static/minisite/img/hostels-brussels/ml/minisite_menu_bullet.png') no-repeat 3px 7px;
+  padding: 0 0 6px 25px;
+  margin: 3px 0;
+}
+#mini_site_nav_ul li a {
+  text-decoration: none;
+  /* text-transform:uppercase; */
+  color: #ffffff;
+  padding: 1px 5px 1px 0;
+}
+#mini_site_nav_ul li a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Hostel page content */
+
+.AUBERGE #main_information{
+	position : relative;
+	padding-bottom : 250px;
+}
+
+.AUBERGE #box_right_information{
+	float : none;
+	width : 600px;
+}
+.AUBERGE #pratical_information{
+	width : 600px;
+	margin : 0;
+	position : absolute;
+	bottom : 0;
+}
+
+.AUBERGE #pratical_information a.btn_map_view{
+	position : absolute;
+	right : 10px;
+	top : 40px;
+}
+
+.AUBERGE #pratical_information a.btn_street_view{
+	position : absolute;
+	right : 10px;
+	top : 80px;
+}
+
+
+.AUBERGE #feature_pratical_information{
+	display : none;
+}
+
+#hostels-brussels #right_content .book_stay{
+  width:274px;
+  font-size: 12px;
+}
+
+#hostels-brussels #right_content .book_stay .clr{
+  width: 0px;
+  height: 0px;
+}
+
+
+/* Hostel page content End */
