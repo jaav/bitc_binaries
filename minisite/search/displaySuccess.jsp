@@ -95,7 +95,7 @@
 
                             <div class="txt">
                                 <h3 class="no_margin">
-                                    <a href="<wa:url URI='${item.encodedUrl}'/>">${item.title}</a>
+                                    <a href="<wa:url URI='${item.minisiteEncodedUrl}'/>">${item.title}</a>
                                 </h3>
 
                                 <p>
