@@ -51,8 +51,8 @@ var m3_r = 0;
 	<div class="clear"></div>
 	<!--contentMain:end--> <!--contentSub:start-->
 <div id="content_sub">
-<wa:include URI="${site}/boxes/rfpWithPro" />
-<div id="nav_trip_planner"> 
+<div><a href="http://visitbrussels.be/bitc/front/rfpWithPro/displayFormDescEvent/clt/BE_en.do"><img alt="announce your event" width="288" height="83" src="/bitc/static/front/img/db/ContentArticle_27896/jpg_30038.jpg" /></a></div>
+<div id="nav_trip_planner">
 	<img src="${staticSite}/img/${culture.language}/title_nav_meeting_planner.jpg" alt="My trip"/>
 	<wa:include URI="front/meetingPlanner/myTrip">
 		<wa:param name="userId" value="${panelUserId}"/>

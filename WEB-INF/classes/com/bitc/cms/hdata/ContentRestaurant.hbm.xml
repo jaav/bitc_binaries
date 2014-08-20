@@ -168,6 +168,9 @@
         <property name="descriptionPrice" type="string">
             <column name="description_price" length="300" />
         </property>
+        <property name="bookingURL" type="string">
+            <column name="booking_url" length="200" />
+        </property>
         <property name="valid" type="boolean">
             <column name="valid" not-null="true" />
         </property>

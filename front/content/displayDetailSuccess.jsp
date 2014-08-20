@@ -398,7 +398,7 @@
 			</div>
 			<!--featurepraticalinformation:end-->
 			<c:if
-				test="${contentGroupType ne 'ContentArticle' && contentGroupType ne 'ContentProduct' && contentGroupType ne 'ContentPress'}">
+				test="${contentGroupType ne 'ContentArticle' && contentGroupType ne 'ContentProduct' && contentGroupType ne 'ContentPress' && contentGroupType ne 'CatalogProduct'}">
 				<div id="pratical_information" class="location vcard">
 					<h4><wa:mls>Practical informations</wa:mls></h4>
 					<c:if test="${contentGroupType eq 'ContentEvent'}">
