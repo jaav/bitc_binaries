@@ -97,6 +97,7 @@ isELIgnored ="false"
 					<input type="checkbox"<c:if test="${wa:contain(waParams.s_status,'2')}"> checked="checked"</c:if> value="2" name="s_status"/><wa:mls>ARCHIVED</wa:mls>
 					<input type="checkbox"<c:if test="${wa:contain(waParams.s_status,'3')}"> checked="checked"</c:if> value="3" name="s_status"/><wa:mls>DELETED</wa:mls>
 					<input type="checkbox"<c:if test="${wa:contain(waParams.s_status,'4')}"> checked="checked"</c:if> value="4" name="s_status"/><wa:mls>DRAFT_IMPORTED</wa:mls>
+					<input type="checkbox"<c:if test="${wa:contain(waParams.s_status,'5')}"> checked="checked"</c:if> value="5" name="s_status"/><wa:mls>DRAFT_CENTRAL</wa:mls>
 				</div>
 				<div>
 					<label for="s_publishContent_id"><wa:mls>publishContent</wa:mls></label>
@@ -391,6 +392,7 @@ isELIgnored ="false"
 						<c:if test="${item.status == 2}">ARCHIVED ${item.versionId}</c:if>
 						<c:if test="${item.status == 3}">DELETED</c:if>
 						<c:if test="${item.status == 4}">DRAFT_IMPORTED</c:if>
+						<c:if test="${item.status == 5}">DRAFT_CENTRAL</c:if>
 					</td>
 					<td class="center group">${item.group}&nbsp;</td>
 					<td class="center publishContent">

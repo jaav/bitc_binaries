@@ -251,12 +251,35 @@
                         }
 
                         $(function () {
+	                        <c:choose>
+	                          <c:when test="${item.id==206}">
+	                            var maxDate = new Date(2015, 0, 31);
+	                            $('#datePicker_${loop.count}').blur(function(ev){
+		                            var inp = $(this);
+		                            if(!inp.val() || !inp.val().substr(3, 2) || !inp.val().substr(6, 4) || (parseInt(inp.val().substr(3, 2))>1 && parseInt(inp.val().substr(6, 4))>2014) || parseInt(inp.val().substr(6, 4))>2015) {
+			                            $('#textfieldMaxDate').css('display', 'block');
+			                            inp.val('');
+		                            }
+		                            else{
+			                            $('#textfieldMaxDate').css('display', 'none');
+		                            }
+		                            closeFunction = function(){
+			                            if(inp.val() && inp.val().substr(3, 2) && inp.val().substr(6, 4) && (parseInt(inp.val().substr(3, 2))==1 || parseInt(inp.val().substr(6, 4))<2015)) {
+				                            $('#textfieldMaxDate').css('display', 'none');
+			                            }
+		                            }
+	                            });
+	                          </c:when>
+	                          <c:otherwise>
+	                            var maxDate = '+1Y';
+	                          </c:otherwise>
+	                        </c:choose>
                             $("#datePicker_${loop.count}").datepicker({
                                 showOn:'button',
                                 buttonImage:'${static}/front/img/ml/calendar.gif',
                                 buttonImageOnly:true,
                                 minDate:'+${daysBeforePrestation}D',
-                                maxDate:'+1Y',
+                                maxDate:maxDate,
                                 beforeShowDay:isCheckable_${loop.count},
                                 onSelect:function (dateText, inst) {
                                     var day = dateText.substr(0, 2);
@@ -264,7 +287,10 @@
                                     var year = dateText.substr(6, 4);
                                     var monthYear = year + "-" + month;
                                     //alert(day +" "+monthYear)
-                                }
+                                },
+	                              onClose:function(){
+		                              if(typeof closeFunction !== 'undefined') closeFunction();
+	                              }
                             })
                         });
                     </script>
@@ -397,7 +423,9 @@
 
         </c:if>
     </c:forEach>
-
+    <c:if test="${item.id==206}"><tr><td colspan="11">
+	    <div id="textfieldMaxDate" style="display: none;margin-bottom: 25px;line-height: 12px;color: #fa869b;font-size: 10px;font-weight: normal;"><wa:mls>cardcommentfeb2015_1</wa:mls><br /><wa:mls>cardcommentfeb2015_2</wa:mls></div>
+    </td></tr></c:if>
 </c:forEach>
 <c:if test="${not empty listBrochProduct}">
 <c:forEach var="item" items="${listBrochProduct}" varStatus="loop">

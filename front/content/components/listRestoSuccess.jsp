@@ -244,7 +244,7 @@
 		$.nyroModalManual({
 			zIndex: 1001,
 			minWidth: 690,
-			minHeight: 510,
+			minHeight: 560,
 			forceType: 'iframe',
 			closeSelector: '.nyroModalClose',
 			url: contentURL,

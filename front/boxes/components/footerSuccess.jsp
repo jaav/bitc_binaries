@@ -13,7 +13,7 @@ isELIgnored ="false"
     <div id="logo_brussels_city"><img src="${staticSite}/img/ml/logo_brussels_city.png" alt="<wa:mls>Ville de Bruxelles</wa:mls>"/></div>
     <div id="logo_brussels_iris"><img src="${staticSite}/img/ml/logo_brussels_iris.png" alt="<wa:mls>Région Bruxelles Capitale</wa:mls>"/></div>
     <div id="logo_cocof"><img src="${staticSite}/img/ml/logo_cocof.png" alt="<wa:mls>COCOF</wa:mls>"/></div>
-    <div id="logo_vlaams_community"><img src="${staticSite}/img/ml/logo_vlaams_community.png" alt="<wa:mls>Vlaams community</wa:mls>"/></div>
+    <div id="logo_vlaams_community"><img src="${staticSite}/img/ml/logo_vlaams_community2.png" alt="<wa:mls>Vlaams community</wa:mls>"/></div>
     <div id="logo_bitc"></div>
     <hr/>
     <!-- <div id="site_info">© ${currentYear} - VISITBRUSSELS - All rights reserved - <a href="/bitc/front/content/displayDetail/group/CONTENT/id/14372.do">Privacy Policy</a></div>
