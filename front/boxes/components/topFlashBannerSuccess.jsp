@@ -143,7 +143,6 @@ isELIgnored ="false"
         <div class="trip_planner">
         <c:choose>
     		<c:when test="${waParam.section == 'meetings' || waParam.section == 'trade' || module == 'meeting' || nodeFirstLevel.contentMenuId == 977  || nodeFirstLevel.contentMenuId == 978   || (refererMeeting eq '1' && waParam.section ne 'visiteur')}">
-    			<a href="<wa:url URI="${site}/meetingPlanner/display" />" title="<wa:mls>Meeting Planner</wa:mls>"><img src="${staticSite}/img/en/banner_meeting_planner.png" alt="<wa:mls>Meeting Planner</wa:mls>"/></a>
     		</c:when>
     		<c:otherwise>
 				<a href="<wa:url URI="${site}/tripPlanner/display" />" title="<wa:mls>Trip Planner</wa:mls>"><img src="${staticSite}/img/${culture.language}/banner_trip_planner.png" alt="<wa:mls>Trip Planner</wa:mls>"/></a>    		

@@ -75,21 +75,17 @@
 					</form>
 				</div>--%>
 		</div>
-		<ul class="tab_list_complete">
+		<ul class="tab_list_complete ${group}">
 			<c:if test="${listNull == '1'}"><wa:mls>Liste vide</wa:mls></c:if>
 			<c:set var="indexLetter" value="0"/>
 			<c:forEach var="item" items="${list}" varStatus="loop">
 				<li>
 					<c:choose>
 						<c:when test="${not empty item.mainSmallImage}">
-							<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>">
-								<img src="${item.mainSmallImage}" alt="${item.mainTitle}" width="165"/>
-							</a>
+							<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" style="background-image: url('${item.mainSmallImage}')" name="${item.formatMainTitle}" title="${item.formatMainTitle}">
 						</c:when>
 						<c:otherwise>
-							<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>">
-								<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.mainTitle}" width="165"/>
-							</a>
+							<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" style="background-image: url('${context}/static/${site}/img/ml/default_content.jpg')" name="${item.formatMainTitle}" title="${item.formatMainTitle}">
 						</c:otherwise>
 					</c:choose>
 					<div class="txt">
@@ -148,7 +144,7 @@
 									</c:if>
 
 								<c:if test="${item.fromResto and item.bookingAvailable}">
-									<p><a href="javascript:openIFrame('${item.restoBookingURL}')" class="btn_resto_booking_list"><span/></a></p>
+									<p><a href="javascript:openIFrame('${item.restoBookingURL}')" class="btn_resto_booking_list"><wa:mls>book now</wa:mls></a></p>
 								</c:if>
 
 							</c:when>

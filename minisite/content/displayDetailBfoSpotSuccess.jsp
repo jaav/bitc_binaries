@@ -174,7 +174,7 @@
 			<p><strong><wa:mls>Epoche :</wa:mls></strong> ${bean.epoche}</p>
 		</c:if>
 		<c:if test="${not empty bean.placeConditions}">
-			<p><strong><wa:mls>Place conditions :</wa:mls></strong> >${bean.placeConditions}</p>
+			<p><strong><wa:mls>Place conditions :</wa:mls></strong> ${bean.placeConditions}</p>
 		</c:if>
 		<c:if test="${not empty bean.parking}">
 			<p><strong><wa:mls>Parking :</wa:mls></strong> ${bean.parking}</p>

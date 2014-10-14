@@ -169,6 +169,7 @@ h6 {font-size:11px; font-weight:bolder;}
 .clr{clear:both;}
 .no_margin { margin:0;}
 .mtop10 { margin: 10px 0 0 0;}
+.RESTO .mtop10, .SHOPPING .mtop10, .BREAKFAST .mtop10{padding-top: 220px;background-position-x: center;background-size: auto 200px;background-repeat: no-repeat;width: 280px;}
 .m17 { margin: 0 0 17px 0;}
 .m22 { margin: 0 0 22px 0;}
 .m23 { margin: 0 0 10px 0;}
@@ -426,6 +427,7 @@ ul.third_highlight_home {padding:0 10px 10px 10px; border:1px solid #dddddd;}
 		#pratical_information p, #pratical_information_large p{text-align: left !important; margin-bottom:8px;margin-left:10px;}
     #pratical_information h4, #pratical_information_large h4{margin-bottom:6px;}
 	#pratical_information_large	{width:380px; margin:10px 0; float: right;}
+.SHOPPING #pratical_information_large, .RESTO #pratical_information_large, .BREAKFAST #pratical_information_large	{width:300px;}
 
 	#main_information { width: 620px; text-align: justify;}
 	#main_information img{max-width: 620px; margin-right: 5px;}
@@ -445,8 +447,8 @@ ul.third_highlight_home {padding:0 10px 10px 10px; border:1px solid #dddddd;}
 	#pratical_information a.btn_street_view { display:block; margin:0 auto; padding:7px 0 0 10px; width:132px; height:22px; background:url(../img/ml/bg_btn_streetview.jpg); text-decoration:none;}
 	#pratical_information_large a.btn_street_view { display:block; padding:7px 0 0 10px; width:132px; height:22px; background:url(../img/ml/bg_btn_streetview.jpg); text-decoration:none;}
 
-    #pratical_information_large a.btn_resto_booking { display:block; padding:7px 0 0 10px; width:132px; height:22px; background:url(../img/ml/bg_btn_resto_booking.gif); text-decoration:none;}
-    a.btn_resto_booking_list { display:block; padding:7px 0 0 10px; width:66px; height:8px; background-image:url(../img/ml/bg_btn_resto_booking.gif); background-size:100%;text-decoration:none;margin-top: 10px;}
+    #pratical_information_large a.btn_resto_booking { display:block; width: 122px;height: 29px;background: url(../img/ml/resto_booking_button_big.jpg);text-decoration: none;color: #FFF;text-transform: uppercase;line-height: 28px;text-align: right;padding-right: 20px;font-weight: bold;}
+    a.btn_resto_booking_list { display:block; width: 74px;height: 20px;background-image: url(../img/ml/resto_booking_button_small.jpg);background-size: 100%;text-decoration: none;margin-top: 10px;text-transform: uppercase;color: #FFF;padding-left: 30px;line-height: 20px;}
 
 
 #box_other_information { margin:10px 0 22px 0; padding:17px 22px 17px 22px; border:1px solid #dadada;}
@@ -660,9 +662,12 @@ ul.tab_list_simple {padding:10px; }
 /*TAB LIST COMPLETE*/
 ul.tab_list_complete {padding:10px;}
 	ul.tab_list_complete li {position:relative; padding:10px 0 10px 0; width:595px; border-bottom:1px solid #dddddd;}
+  ul.SHOPPING li > a, ul.RESTO li > a, ul.BREAKFAST li > a{width: 165px;height: 165px;overflow: hidden;display: inline-block;background-size: auto 165px;background-position-x: center;}
 		ul.tab_list_complete li .date {padding-top:5px; }
-		ul.tab_list_complete li img {float:left; }
+    ul.tab_list_complete li img {float:left; }
+    ul.SHOPPING li img, ul.RESTO li img, ul.BREAKFAST li img {float:none; }
 		ul.tab_list_complete li div.txt {float:left; margin:0 0 0 10px; width:280px;}
+    ul.SHOPPING li div.txt, ul.RESTO li div.txt, ul.BREAKFAST li div.txt {float:none;display: inline-block;vertical-align: top;}
 			ul.tab_list_complete li div.txt p {margin:0; text-align:left !important;}
 						ul.tab_list_complete li .language { margin:5px 0 0 0; float:left;}
 			ul.tab_list_complete li .language img{ margin-left:2px;}

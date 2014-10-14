@@ -65,7 +65,7 @@
 </c:if>
 <div id="btn_back"><a href="javascript:history.back();"><wa:mls>Back</wa:mls></a></div>
 <div class="clear"></div>
-<div id="content_main">
+<div id="content_main" class="${group}">
 <c:if test="${not empty adminUser}">
 	<a
 		href="javascript:addToNltContent('${bean.group}','${bean.id}');"><wa:mls>Ajouter à la table nlt content</wa:mls></a>
@@ -73,19 +73,17 @@
 	   target="admin"><wa:mls>Edit</wa:mls></a>
 </c:if>
 <h1 class="no_margin line_grey">${bean.mainTitle}
-	<%--<c:if test="${not empty bean.ranking}">
-			<span> <c:forEach var="rankingLoopCount" begin="1" end="${bean.ranking}">
-				<img src="${staticSite}/img/ml/visu_iris.jpg" alt="" class="float_right"/>
-			</c:forEach>
-	</span>
-			</c:if>--%>
 </h1> <!-- ${color} -->
 
 
-<div class="float_left mtop10">
-	<c:if test="${not empty bean.mainBigImage}">
-		<img src="${bean.mainBigImage}" alt="${bean.mainTitle}" width="200" align="left" class="m22">
-	</c:if>
+<c:choose>
+<c:when test="${not empty bean.mainBigImage}">
+<div class="float_left mtop10" style="background-image: url('${bean.mainBigImage}')">
+</c:when>
+<c:otherwise>
+<div class="float_left mtop10" style="background-image: url('${context}/static/${site}/img/ml/default_content.jpg')">
+</c:otherwise>
+</c:choose>
 
 	<!--featurepraticalinformation:start-->
 	<div id="feature_pratical_information2">
@@ -181,13 +179,18 @@
 		<meta itemprop="best" content="10"/>
 	</div>
 	<c:if test="${not empty bean.ratingIcon}">
-		<p><strong style="float:left;"><wa:mls>Rating resto.be:</wa:mls> </strong><span style="background:url('${staticSite}/img/ml/rating_${bean.ratingIcon}.jpg') no-repeat 0px 0px; width:80px;display: inline-block;height: 16px;margin-left: 6px;" ></span></p>
+		<p><strong style="float:left;"><wa:mls>Rating resto.be:</wa:mls> </strong><span
+			style="background:url('${staticSite}/img/ml/rating_${bean.ratingIcon}.jpg') no-repeat 0px 0px; width:80px;display: inline-block;height: 16px;margin-left: 6px;"></span>
+		</p>
 	</c:if>
 	<c:if test="${not empty bean.michelin}">
-		<p><strong style="float:left;"><wa:mls>Rating Michelin:</wa:mls> </strong><span style="background: url('${staticSite}/img/ml/michelin_${fn:substring(bean.michelin, 0,1)}.jpg') no-repeat 0px 0px; width:80px;display: inline-block;height: 16px;margin-left: 6px;"></span> </p>
+		<p><strong style="float:left;"><wa:mls>Rating Michelin:</wa:mls> </strong><span
+			style="background: url('${staticSite}/img/ml/michelin_${fn:substring(bean.michelin, 0,1)}.jpg') no-repeat 0px 0px; width:80px;display: inline-block;height: 16px;margin-left: 6px;"></span>
+		</p>
 	</c:if>
 	<c:if test="${not empty bean.gault}">
-		<p><strong style="float:left;"><wa:mls>Rating GaultMillau:</wa:mls> </strong><span style="width:80px;display: inline-block;height: 16px;margin-left: 6px;">${bean.gault}</span></p>
+		<p><strong style="float:left;"><wa:mls>Rating GaultMillau:</wa:mls> </strong><span
+			style="width:80px;display: inline-block;height: 16px;margin-left: 6px;">${bean.gault}</span></p>
 	</c:if>
 
 	<c:if
@@ -205,7 +208,7 @@
 		<c:if test="${bean.fromResto and bean.bookingAvailable}">
 			<p>
 				<a href="javascript:openIFrame('${bean.restoBookingURL}')" class="btn_resto_booking">
-					<span/>
+					<wa:mls>book now</wa:mls>
 				</a>
 			</p>
 		</c:if>
@@ -255,15 +258,15 @@
 </div>
 <!--boxotherinformation:start-->
 <c:if test="${not empty bean.mainInfo}">
-	<div id="box_other_information">
-		<h4><wa:mls>Other informations</wa:mls></h4>
-			${bean.mainInfo}
-	</div>
+<div id="box_other_information">
+	<h4><wa:mls>Other informations</wa:mls></h4>
+		${bean.mainInfo}
+</div>
 </c:if>
 <c:if test="${images ne null && fn:length(images) > 0}">
-	<c:forEach items="${images}" var="image">
-		<img src="${image.sourceUrl}" alt="${wa:nullFree2(image.sourceDescription,bean.mainTitle)}"/>
-	</c:forEach>
+<c:forEach items="${images}" var="image">
+<img src="${image.sourceUrl}" alt="${wa:nullFree2(image.sourceDescription,bean.mainTitle)}"/>
+</c:forEach>
 </c:if>
 <!--boxotherinformation:end-->
 
@@ -309,7 +312,7 @@
 		$.nyroModalManual({
 			zIndex: 1001,
 			minWidth: 690,
-			minHeight: 510,
+			minHeight: 560,
 			forceType: 'iframe',
 			closeSelector: '.nyroModalClose',
 			url: contentURL,

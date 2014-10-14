@@ -65,7 +65,7 @@
 </c:if>
 <div id="btn_back"><a href="javascript:history.back();"><wa:mls>Back</wa:mls></a></div>
 <div class="clear"></div>
-<div id="content_main">
+<div id="content_main" class="${group}">
 	<c:if test="${not empty adminUser}">
 		<a
 			href="javascript:addToNltContent('${bean.group}','${bean.id}');"><wa:mls>Ajouter à la table nlt content</wa:mls></a>
@@ -77,10 +77,14 @@
 	</h1> <!-- ${color} -->
 
 
-	<div class="float_left mtop10">
-		<c:if test="${not empty bean.mainBigImage}">
-			<img src="${bean.mainBigImage}" alt="${bean.mainTitle}" width="200" align="left" class="m22">
-		</c:if>
+	<c:choose>
+	<c:when test="${not empty bean.mainBigImage}">
+	<div class="float_left mtop10" style="background-image: url('${bean.mainBigImage}')">
+	</c:when>
+	<c:otherwise>
+	<div class="float_left mtop10" style="background-image: url('${context}/static/${site}/img/ml/default_content.jpg')">
+	</c:otherwise>
+	</c:choose>
 
 		<!--featurepraticalinformation2:start-->
 		<div id="feature_pratical_information2">
