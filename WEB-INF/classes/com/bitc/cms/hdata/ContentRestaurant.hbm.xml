@@ -202,5 +202,10 @@
         		/>
         </set>
         -->
+        <property name="centralAppId" type="string">
+            <column name="centralApp_id" length="100">
+                <comment></comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

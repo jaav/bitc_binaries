@@ -370,6 +370,7 @@ isELIgnored ="false"
 						<c:if test="${item.status == 1}">class="greenStatus"</c:if>
 						<c:if test="${item.status == 2}">class="orangeStatus"</c:if>
 						<c:if test="${item.status == 3}">class="redStatus"</c:if>
+						<c:if test="${item.status == 5}">class="pinkStatus"</c:if>
 					>&nbsp;</td>
 					<td class="center checkbox"><input type="checkbox" value="${item.id}"></td>
 					<td class="center id"><a href="${context}/${site}/contentPlace/editItem/id/${item.id}.do" title="<wa:mls>Edit id</wa:mls>">${item.id}</a></td>

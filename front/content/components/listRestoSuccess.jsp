@@ -82,10 +82,10 @@
 				<li>
 					<c:choose>
 						<c:when test="${not empty item.mainSmallImage}">
-							<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" style="background-image: url('${item.mainSmallImage}')" name="${item.formatMainTitle}" title="${item.formatMainTitle}">
+							<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" style="background-image: url('${item.mainSmallImage}')" name="${item.formatMainTitle}" title="${item.formatMainTitle}"></a>
 						</c:when>
 						<c:otherwise>
-							<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" style="background-image: url('${context}/static/${site}/img/ml/default_content.jpg')" name="${item.formatMainTitle}" title="${item.formatMainTitle}">
+							<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" style="background-image: url('${context}/static/${site}/img/ml/default_content.jpg')" name="${item.formatMainTitle}" title="${item.formatMainTitle}"></a>
 						</c:otherwise>
 					</c:choose>
 					<div class="txt">
@@ -181,9 +181,7 @@
 							src="${staticSite}/img/ml/btn_share.gif" alt="<wa:mls>Share</wa:mls>"/></a>
 
 						<div class="ilike" rel="${item.group}|${item.id}"></div>
-						<a
-							href="javascript:<c:choose><c:when test="${section eq 'meetings' or section eq 'trade'}">addToMeetingPlanner</c:when><c:otherwise>addToTripPlanner</c:otherwise></c:choose>('${item.group}','${item.id}');"
-							class="add"><img src="${staticSite}/img/ml/btn_add.gif" alt="<wa:mls>Add</wa:mls>"/></a>
+						<a href="javascript:<c:choose><c:when test="${section eq 'meetings' or section eq 'trade'}">addToMeetingPlanner</c:when><c:otherwise>addToTripPlanner</c:otherwise></c:choose>('${item.group}','${item.id}');" class="add"><img src="${staticSite}/img/ml/btn_add.gif" alt="<wa:mls>Add</wa:mls>"/></a>
 
 					</div>
 					<div class="clr"></div>
@@ -194,6 +192,8 @@
 			</c:forEach>
 
 		</ul>
+
+
 		<div class="tab_paging">
 
 			<wa:include URI="${site}/content/navNumber"/>

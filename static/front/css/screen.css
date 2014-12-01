@@ -162,6 +162,7 @@ h6 {font-size:11px; font-weight:bolder;}
 .art-nouveau { height:60px; background:url(../img/ml/bg_h1_art-nouveau.jpg) no-repeat top left;}
 .contemporary { height:60px; background:url(../img/ml/banner_contemporary.jpg) no-repeat top left;}
 .jazz { height:60px; background:url(../img/ml/banner_jazz.jpg) no-repeat top left;}
+.Canal { height:60px; background:url(../img/ml/bg_h1_canal.gif) no-repeat top left;}
 
 
 .float_left {float:left;}
@@ -672,6 +673,7 @@ ul.tab_list_complete {padding:10px;}
 						ul.tab_list_complete li .language { margin:5px 0 0 0; float:left;}
 			ul.tab_list_complete li .language img{ margin-left:2px;}
 		ul.tab_list_complete li .btn { position:relative; float:right; width:124px; min-height:125px;}
+    ul.RESTO li .btn,ul.SHOPPING li .btn, ul.BREAKFAST li .btn{display: inline-block;}
 		ul.tab_list_complete .btn .more_info {position:absolute; top:0; right:0;}
 		ul.tab_list_complete .btn .map {position:absolute; top:85px; right:0px;}
 				ul.tab_list_complete .btn .map span { float:left; padding:3px 3px 0 0;}
