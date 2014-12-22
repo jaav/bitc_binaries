@@ -54,19 +54,47 @@ isELIgnored ="false"
               <div class="clr"></div>
 			  <script type="text/javascript">
 			       	$(function() {
-				  		$("#begin_datepicker").datepicker({
-						showOn: 'button',
-						buttonImage: '${static}/front/img/ml/calendar.gif',
-						buttonImageOnly: true,		
-						minDate: '+0D', 
-						maxDate: '+2Y',
-						defaultDate: 0,
-						onSelect: function(dateText) { 
-							$('#f_day_begin_${waCompParam.zone}').val(dateText.substring(0, 2)); 
-							$('#f_month_begin_${waCompParam.zone}').val(dateText.substring(3, 10));
-						}
-						})
+				        $("#begin_datepicker").datepicker({
+									showOn: 'button',
+									buttonImage: '${static}/front/img/ml/calendar.gif',
+									buttonImageOnly: true,
+									minDate: '+0D',
+									maxDate: '+2Y',
+									defaultDate: 0,
+									onSelect: function(dateText) {
+										$('#f_day_begin_${waCompParam.zone}').val(dateText.substring(0, 2));
+										$('#f_month_begin_${waCompParam.zone}').val(dateText.substring(3, 10));
+										$('#f_day_end_${waCompParam.zone}').val(getDayString(parseInt(dateText.substring(0, 2))+1));
+										$('#f_month_end_${waCompParam.zone}').val(dateText.substring(3, 10));
+										$( "#end_datepicker" ).datepicker( "setDate", (parseInt(dateText.substring(0, 2))+1)+'/'+dateText.substring(3, 10) );
+									}
+								});
+				        var getDayString = function(int_day){
+					        if(int_day < 10) return '0'+int_day;
+					        else return ''+int_day;
+				        }
+				        $('select#f_day_begin_${waCompParam.zone}').change(function(ev){
+					        var day = parseInt($(this).val());
+					        var today_string = getDayString(day);
+					        var tomorrow_string = getDayString(day+1);
+					        var new_start_date = today_string+'/'+$('select#f_month_begin_${waCompParam.zone}').val();
+					        var new_end_date = tomorrow_string+'/'+$('select#f_month_begin_${waCompParam.zone}').val();
+					        $('select#f_day_end_${waCompParam.zone}').val(tomorrow_string);
+					        $('select#f_month_begin_${waCompParam.zone}').val($('select#f_month_begin_${waCompParam.zone}').val());
+					        $( "#begin_datepicker" ).datepicker( "setDate", new_start_date );
+					        $( "#end_datepicker" ).datepicker( "setDate", new_end_date );
+				        });
+				        $('select#f_month_begin_${waCompParam.zone}').change(function(ev){
+					        var month = $(this).val();
+					        var new_start_date = $('select#f_day_begin_${waCompParam.zone}').val()+'/'+month;
+					        var new_end_date = getDayString(parseInt($('select#f_day_begin_${waCompParam.zone}').val())+1)+'/'+month;
+					        $('select#f_month_end_${waCompParam.zone}').val(month);
+					        $( "#begin_datepicker" ).datepicker( "setDate", new_start_date );
+					        $( "#end_datepicker" ).datepicker( "setDate", new_end_date );
+				        });
+
 				  	  });
+
 			  </script>
               <label for="f_page"><wa:mls>Date d'arrivée :</wa:mls></label><br />
               <div class="clr"></div>
@@ -96,18 +124,32 @@ isELIgnored ="false"
               
               <script type="text/javascript">
 			       	$(function() {
-				  		$("#end_datepicker").datepicker({
-						showOn: 'button',
-						buttonImage: '${static}/front/img/ml/calendar.gif',
-						buttonImageOnly: true,		
-						minDate: '+1D', 
-						maxDate: '+2Y',
-						defaultDate: +1,
-						onSelect: function(dateText) { 
-							$('#f_day_end_${waCompParam.zone}').val(dateText.substring(0, 2)); 
-							$('#f_month_end_${waCompParam.zone}').val(dateText.substring(3, 10));
-						}
-						})
+					      $("#end_datepicker").datepicker({
+									showOn: 'button',
+									buttonImage: '${static}/front/img/ml/calendar.gif',
+									buttonImageOnly: true,
+									minDate: '+1D',
+									maxDate: '+2Y',
+									defaultDate: +1,
+									onSelect: function(dateText) {
+										$('#f_day_end_${waCompParam.zone}').val(dateText.substring(0, 2));
+										$('#f_month_end_${waCompParam.zone}').val(dateText.substring(3, 10));
+									}
+								});
+				        var getDayString = function(int_day){
+					        if(int_day < 10) return '0'+int_day;
+					        else return ''+int_day;
+				        }
+				        $('select#f_day_end_${waCompParam.zone}').change(function(ev){
+					        var day = parseInt($(this).val());
+					        var new_end_date = getDayString(day)+'/'+$('select#f_month_end_${waCompParam.zone}').val();
+					        $( "#end_datepicker" ).datepicker( "setDate", new_end_date );
+				        });
+				        $('select#f_month_end_${waCompParam.zone}').change(function(ev){
+					        var month = $(this).val();
+					        var new_end_date = getDayString(parseInt($('select#f_day_end_${waCompParam.zone}').val())+1)+'/'+month;
+					        $( "#end_datepicker" ).datepicker( "setDate", new_end_date );
+				        });
 				  	  });
 			  </script>
               <label for="f_page"><wa:mls>Date de départ :</wa:mls></label><br />

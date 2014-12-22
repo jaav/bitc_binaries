@@ -135,33 +135,35 @@ function tripPlannerLightBox(data) {
 	          					</c:if>
           					</c:if>
           					</h3>
-	      	 		 		
+	      	 	
 	        					<c:choose>
 		        					<c:when test="${item.group == 'HOTEL'}">
                                       	<div class="bloc_img">
 					    				<a href="<wa:url URI="${site}/content/displayDetailBooking/group/${item.group}/id/${item.id}"/>" >
 				        				<c:choose>
           									<c:when test="${not empty item.mainSmallImage}">	
-        										<img src="${item.mainSmallImage}" alt="${item.mainTitle}" height="142"/>
+        										<img src="${item.mainSmallImage}" alt="${item.mainTitle}" height="142" width="100%"/>
           									</c:when>
           									<c:otherwise>
-        										<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.mainTitle}" height="142"/>
+        										<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.mainTitle}" height="142" width="100%"/>
           									</c:otherwise>
           								</c:choose>
 				        				</a></div>
 				    				</c:when>
       			    				<c:otherwise>
                                       	<div class="bloc_img">
+                                      	
 	      			    				<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" >
 						        		   <c:choose>
           										<c:when test="${not empty item.mainSmallImage}">	
-        											<img src="${item.mainSmallImage}" alt="${item.formatMainTitle}" height="142"/>
+        											<img src="${item.mainSmallImage}" alt="${item.formatMainTitle}" height="142" width="100%"/>
           										</c:when>
           										<c:otherwise>
-        											<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.formatMainTitle}" height="142"/>
+        											<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.formatMainTitle}" height="142" width="100%"/>
           										</c:otherwise>
           									</c:choose>
-		        	    				</a></div>
+		        	    				</a>
+		        	    				</div>
       			    				</c:otherwise>
       							</c:choose>
       					

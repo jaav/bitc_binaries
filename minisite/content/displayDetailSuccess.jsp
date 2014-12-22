@@ -215,6 +215,8 @@
 	<div class="description">
 		${bean.mainBody}
 	</div>
+	
+	
 </div>
 <div class="clr"></div>
 <!-- TEST -->
