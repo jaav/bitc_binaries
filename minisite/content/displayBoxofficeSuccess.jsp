@@ -12,13 +12,13 @@ isELIgnored ="false"
   <!--btnback:end-->
   <div class="clear"></div>
 	  <div id="content_main">
-			<wa:include URI="front/content/introList" />
+			<wa:include URI="${site}/content/introList" />
 			<c:if test="${group ne 'GUIDED_TOUR'}">
 				<wa:include URI="front/content/findBoxoffice" >
 					<wa:param name="group" value=""/>
 					<wa:param name="contentType" value="ContentEvent"/>
 				</wa:include>
 			</c:if>
-			<wa:include URI="front/content/listBoxoffice" />
+			<wa:include URI="${site}/content/listBoxoffice" />
 			
       </div>
