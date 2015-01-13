@@ -30,7 +30,7 @@ isELIgnored ="false"
             <input type="submit" value="<wa:mls>Recherche</wa:mls>" class="btn_form"/> 
             
             <div class="arrow"></div>
-             <c:if test="${group eq 'SHOPPING' || group eq 'RESTO_1' || group eq 'CULTURE_1'|| group eq 'GO_OUT' or group eq 'BFOSPOT' or group eq 'BFOCOMPANY'}">
+             <c:if test="${group eq 'SHOPPING' || group eq 'RESTO_1' || group eq 'CULTURE_1'|| group eq 'GO_OUT' or group eq 'BFOSPOT' or group eq 'BFOCOMPANY' or group eq 'GUIDED_TOUR'}">
             <a onClick="changeDisplay()" class="<c:if test="${ind == '0'}">advanced_search </c:if> <c:if test="${ind == '1'}">advanced_search_active </c:if>" id="advanced_search_id"><wa:mls>Advanced search</wa:mls></a>
             
            
@@ -40,7 +40,7 @@ isELIgnored ="false"
            	
            	<div style="<c:if test="${ind == '0'}">display:none</c:if> <c:if test="${ind == '1'}">display:block</c:if>" id="advanced_search">
            
-		    <c:if test="${group eq 'CULTURE_1'|| group eq 'GO_OUT'}">
+		    <c:if test="${group eq 'CULTURE_1'|| group eq 'GO_OUT' || group eq 'GUIDED_TOUR'}">
 			<div class="align_left">
 	           <label for="s_periodFromDate"><wa:mls>Du: </wa:mls></label>
 	           <script>
@@ -160,6 +160,37 @@ isELIgnored ="false"
                 </c:if>
                 </select>
             </c:if>
+            
+            <c:if test="${group eq 'GUIDED_TOUR'}">
+            	<div id="ListCategory" class="align_left">
+                                <label for="s_ContentPropertyValueManager_valueId_Category"><wa:mls>Category</wa:mls></label>
+                                <wa:include URI="front/dropdown/dropList">
+                                    <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue"/>
+                                    <wa:param name="manager"
+                                              value="com.bitc.cms.hdata.manager.ContentPropertyValueManager"/>
+                                    <wa:param name="method" value="listCategory"/>
+                                    <wa:param name="identity" value="valueId"/>
+                                    <wa:param name="display" value="mainTitle"/>
+                                    <wa:param name="name" value="s_ContentPropertyValueManager_valueId_Category"/>
+                                    <wa:param name="selectedValues"
+                                              value="${waParam.s_ContentPropertyValueManager_valueId_Category}"/>
+                                </wa:include>
+                            </div>
+                            <div id="ListLanguage" class="align_right">
+                                <label for="s_ContentPropertyValueManager_valueId_Language"><wa:mls>Language</wa:mls></label>
+                                <wa:include URI="front/dropdown/dropList">
+                                    <wa:param name="class" value="com.bitc.utils.ISOLanguageDropdownBean"/>
+                                    <wa:param name="manager" value="com.bitc.utils.Utils"/>
+                                    <wa:param name="method" value="getISOLanguages"/>
+                                    <wa:param name="identity" value="id"/>
+                                    <wa:param name="display" value="name"/>
+                                    <wa:param name="name" value="s_guided_tour_valueId_language"/>
+                                    <wa:param name="onChangeEvent" value="allowSearchEitherDateOrLanguage()"/>
+                                    <wa:param name="selectedValues" value="${waParam.s_guided_tour_valueId_language}"/>
+                                </wa:include>
+                            </div>
+			</c:if>
+			
 			</div>
 			<div class="clr"></div>
 			</c:if>

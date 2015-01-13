@@ -138,45 +138,55 @@ function tripPlannerLightBox(data) {
 	          					</c:if>
           					</c:if>
           					</h3>
-	      	 	
-	        					<c:choose>
-		        					<c:when test="${item.group == 'HOTEL'}">
-                                      	<div class="bloc_img">
-					    				<!-- <a href="<wa:url URI="${site}/content/displayDetailBooking/group/${item.group}/id/${item.id}"/>" >
-				        				<c:choose>
-          									<c:when test="${not empty item.mainSmallImage}">	
-        										<img src="${item.mainSmallImage}" alt="${item.mainTitle}" height="142" width="100%"/>
-          									</c:when>
-          									<c:otherwise>
-        										<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.mainTitle}" height="142" width="100%"/>
-          									</c:otherwise>
-          								</c:choose>
-				        				</a>
-				        				 -->
-				        				<c:choose>
-											<c:when test="${not empty item.mainSmallImage}">
-												<a href="<wa:url URI="${site}/content/displayDetailBooking/group/${item.group}/id/${item.id}"/>" class="blocImageCss" style="background-image: url('${item.mainSmallImage}')" name="${item.mainTitle}" title="${item.mainTitle}"></a>
-											</c:when>
-											<c:otherwise>
-												<a href="<wa:url URI="${site}/content/displayDetailBooking/group/${item.group}/id/${item.id}"/>" class="blocImageCss" style="background-image: url('${context}/static/${site}/img/ml/default_content.jpg')" name="${item.mainTitle}" title="${item.mainTitle}"></a>
-											</c:otherwise>
-										</c:choose>
-				        				</div>
-				    				</c:when>
-      			    				<c:otherwise>
-                                      	<div class="bloc_img">
-                                      	<c:choose>
-											<c:when test="${not empty item.mainSmallImage}">
-												<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" class="blocImageCss" style="background-image: url('${item.mainSmallImage}')" name="${item.formatMainTitle}" title="${item.formatMainTitle}"></a>
-											</c:when>
-											<c:otherwise>
-												<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" class="blocImageCss" style="background-image: url('${context}/static/${site}/img/ml/default_content.jpg')" name="${item.formatMainTitle}" title="${item.formatMainTitle}"></a>
-											</c:otherwise>
-										</c:choose>
-										
-		        	    				</div>
-      			    				</c:otherwise>
-      							</c:choose>
+	      	 					<c:choose>
+	      	 						<c:when test="${item.group == 'RESTO' || item.group == 'BREAKFAST' || item.group == 'RESTO_NIGHT'}">
+				        				<div class="bloc_img">
+		                                     <c:choose>
+												<c:when test="${not empty item.mainSmallImage}">
+													<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" class="blocImageCss" style="background-image: url('${item.mainSmallImage}')" name="${item.formatMainTitle}" title="${item.formatMainTitle}"></a>
+												</c:when>
+												<c:otherwise>
+													<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" class="blocImageCss" style="background-image: url('${context}/static/${site}/img/ml/default_content.jpg')" name="${item.formatMainTitle}" title="${item.formatMainTitle}"></a>
+												 </c:otherwise>
+										     </c:choose>
+				        	    		</div>
+	      	 						</c:when>
+	      	 						<c:otherwise>
+	      	 							<c:choose>
+				        					<c:when test="${item.group == 'HOTEL'}">
+		                                      	<div class="bloc_img">
+		                                      		<a href="<wa:url URI="${site}/content/displayDetailBooking/group/${item.group}/id/${item.id}"/>" >
+								        				<c:choose>
+				          									<c:when test="${not empty item.mainSmallImage}">	
+				        										<img src="${item.mainSmallImage}" alt="${item.mainTitle}" height="142" width="288"/>
+				          									</c:when>
+				          									<c:otherwise>
+				        										<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.mainTitle}" height="142" width="288"/>
+				          									</c:otherwise>
+				          								</c:choose>
+							        				</a>
+							        			
+						        				</div>
+						    				</c:when>
+		      			    				<c:otherwise>
+		                                      	<div class="bloc_img">
+			                                      	<a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}"/>" >
+								        				<c:choose>
+				          									<c:when test="${not empty item.mainSmallImage}">	
+				        										<img src="${item.mainSmallImage}" alt="${item.mainTitle}" height="142" width="288"/>
+				          									</c:when>
+				          									<c:otherwise>
+				        										<img src="${context}/static/${site}/img/ml/default_content.jpg" alt="${item.formatMainTitle}" height="142" width="288"/>
+				          									</c:otherwise>
+				          								</c:choose>
+							        				</a>
+												
+				        	    				</div>
+		      			    				</c:otherwise>
+		      							</c:choose>
+	      	 						</c:otherwise>
+	      	 					</c:choose>
+	        					
       					
       						<!-- <p>${item.mainAbstract_}</p>-->
       						 <c:choose>
