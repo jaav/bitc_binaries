@@ -43,7 +43,6 @@
             <c:forEach var="item" items="${list}" varStatus="loop">
 
                 <li>
-
                     <div class="bfo_list_img">
                         <a href="<wa:url URI="${site}/content/displayDetail/group/${item.group}/id/${item.id}/name/${waParam.name}"/>">
                             <c:choose>
@@ -69,7 +68,12 @@
                                     </c:choose>
                                 </c:otherwise>
                             </c:choose>
-                        </a>
+                        </a><br />
+                        <c:if test="${item.boxofficeId != null}">
+                            <p style="clear: both; margin:0;"></p>
+                            <p class="boxoffice_list_button boxoffice_list_button_${culture.language}"><a href="javascript:openIFrame('http://ticketing.visitbrussels.be/${culture.language}/calendar/init/${item.boxofficeId}')"></a></p>
+                        </c:if>
+
                     </div>
                     <div class="txt" id="txt_${item.id}">
                         <h3 class="no_margin"><a

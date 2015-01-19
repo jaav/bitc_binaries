@@ -214,7 +214,15 @@
 
 	<div class="description">
 		${bean.mainBody}
+
 	</div>
+
+	<c:if test="${bean.boxofficeId != null}">
+	<div class="description">
+     <p class="boxoffice_detail_button boxoffice_detail_button_${culture.language}"><a href="javascript:openIFrame('http://ticketing.visitbrussels.be/${culture.language}/calendar/init/${bean.boxofficeId}')"></a></p>
+	</div>
+	</c:if>
+
 	
 	
 </div>

@@ -30,7 +30,6 @@
 				<a onClick="changeDisplay()" class="advanced_search"><wa:mls>Advanced search</wa:mls></a>
 
 				<div class="clr"></div>
-
 				<div style="display:none" id="advanced_search">
 					<c:if test="${group eq 'SHOPPING'}">
 						<div id="ListQuartiers">
