@@ -10,7 +10,7 @@ isELIgnored ="false"
 <div class="nav_number">
 	    <form name="idform${waCompParam.navId}">
 		    <c:if test="${ (page - 1) ne 0 }">
-		        <a href="?clt=${culture}&page=${page - 1}&name=${waParam.name}&f_search_query=${queryString}&contentType=${contentType}&group=${group}&s_ContentPropertyValue_valueId_Cuisine=${s_ContentPropertyValue_valueId_Cuisine}&s_ContentPropertyValueManager_valueId_ShoppingCategory=${s_ContentPropertyValueManager_valueId_ShoppingCategory}&s_periodFromDate=${s_periodFromDate}&s_periodToDate=${s_periodToDate}&s_bfoService=${s_bfoService}&s_spotProfile=${s_spotProfile}" class="arrow_left">
+		        <a href="?clt=${culture}&page=${page - 1}&name=${waParam.name}&f_search_query=${queryString}&contentType=${contentType}&group=${group}&s_ContentPropertyValue_valueId_Cuisine=${s_ContentPropertyValue_valueId_Cuisine}&s_ContentPropertyValueManager_valueId_ShoppingCategory=${s_ContentPropertyValueManager_valueId_ShoppingCategory}&s_periodFromDate=${s_periodFromDate}&s_periodToDate=${s_periodToDate}&s_bfoService=${s_bfoService}&s_spotProfile=${s_spotProfile}&s_ContentPropertyValueManager_valueId_Category=${s_ContentPropertyValueManager_valueId_Category}" class="arrow_left">
 			        <img src="${static}/front/img/ml/btn_arrow_left.jpg" alt="<wa:mls>previous</wa:mls>"/>
 	            </a>
 	        </c:if>
@@ -34,7 +34,7 @@ isELIgnored ="false"
 		  	
 		   <wa:mls>of</wa:mls> ${lastPage} </div>
 	      <c:if test="${ (page + 1) le lastPage }"> 
-				<a href="?clt=${culture}&page=${page + 1 }&name=${waParam.name}&f_search_query=${queryString}&contentType=${contentType}&group=${group}&s_ContentPropertyValue_valueId_Cuisine=${s_ContentPropertyValue_valueId_Cuisine}&s_ContentPropertyValueManager_valueId_ShoppingCategory=${s_ContentPropertyValueManager_valueId_ShoppingCategory}&s_periodFromDate=${s_periodFromDate}&s_periodToDate=${s_periodToDate}&s_bfoService=${s_bfoService}&s_spotProfile=${s_spotProfile}" class="arrow_right">
+				<a href="?clt=${culture}&page=${page + 1 }&name=${waParam.name}&f_search_query=${queryString}&contentType=${contentType}&group=${group}&s_ContentPropertyValue_valueId_Cuisine=${s_ContentPropertyValue_valueId_Cuisine}&s_ContentPropertyValueManager_valueId_ShoppingCategory=${s_ContentPropertyValueManager_valueId_ShoppingCategory}&s_periodFromDate=${s_periodFromDate}&s_periodToDate=${s_periodToDate}&s_bfoService=${s_bfoService}&s_spotProfile=${s_spotProfile}&s_ContentPropertyValueManager_valueId_Category=${s_ContentPropertyValueManager_valueId_Category}" class="arrow_right">
 			        <img src="${static}/front/img/ml/btn_arrow_right.png" alt="<wa:mls>next</wa:mls>"/>
 	            </a>
 	      </c:if>

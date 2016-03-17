@@ -44,52 +44,56 @@ isELIgnored ="false"
             <a onClick="changeDisplay()" class="<c:if test="${ind == '0'}">advanced_search </c:if> <c:if test="${ind == '1'}">advanced_search_active </c:if>" id="advanced_search_id"><wa:mls>Advanced search</wa:mls></a>
             
            <div class="clr"></div>
-           <c:if test="${not empty criteriaDate}">
-	           <label for="f_page"><wa:mls>Du: </wa:mls></label>
-	           <script>
-	           	$(function() {
-						  		$("#s_periodFromDate").datepicker({
-								showOn: 'button',
-								buttonImage: '${static}/front/img/ml/calendar.gif',
-								buttonImageOnly: true,		
-								minDate: '+0D', 
-								maxDate: '+2Y',
-								onSelect: function(dateText, inst) { 			 	
-									var day=dateText.substr(0,2);
-									var month=dateText.substr(3,2);
-									var year=dateText.substr(6,4);
-									var monthYear=year+"-"+month;
-								}
-								})
-						  	  });
-				</script>
-
-	           	<input name="s_periodFromDate" type="text" id="s_periodFromDate" class="datepicker" value="${ s_periodFromDate}" />
-	           	<div class="clr"></div>
-	             <label for="f_page"><wa:mls>Au: </wa:mls></label>
-	           <script>
-	           	$(function() {
-						  		$("#s_periodToDate").datepicker({
-								showOn: 'button',
-								buttonImage: '${static}/front/img/ml/calendar.gif',
-								buttonImageOnly: true,		
-								minDate: '+0D', 
-								maxDate: '+2Y',
-								onSelect: function(dateText, inst) { 			 	
-									var day=dateText.substr(0,2);
-									var month=dateText.substr(3,2);
-									var year=dateText.substr(6,4);
-									var monthYear=year+"-"+month;
-								}
-								})
-						  	  });
-				</script>
-	           	<input name="s_periodToDate" type="text" id="s_periodToDate" class="datepicker" value="${s_periodToDate}" />
-           	</c:if>
+           
           
-           	<div class="clr"></div>
-           	
            	<div style="<c:if test="${ind == '0'}">display:none</c:if> <c:if test="${ind == '1'}">display:block</c:if>" id="advanced_search">
+           	<c:if test="${not empty criteriaDate}">
+           	   <div class="align_left">
+           	   		<label for="f_page"><wa:mls>Du: </wa:mls></label>
+		           <script>
+		           	$(function() {
+							  		$("#s_periodFromDate").datepicker({
+									showOn: 'button',
+									buttonImage: '${static}/front/img/ml/calendar.gif',
+									buttonImageOnly: true,		
+									minDate: '+0D', 
+									maxDate: '+2Y',
+									onSelect: function(dateText, inst) { 			 	
+										var day=dateText.substr(0,2);
+										var month=dateText.substr(3,2);
+										var year=dateText.substr(6,4);
+										var monthYear=year+"-"+month;
+									}
+									})
+							  	  });
+					</script>
+	
+		           	<input name="s_periodFromDate" type="text" id="s_periodFromDate" class="datepicker" value="${ s_periodFromDate}" />
+           	   </div>
+	            <div class="align_right">
+	            	<label for="f_page"><wa:mls>Au: </wa:mls></label>
+		           <script>
+		           	$(function() {
+							  		$("#s_periodToDate").datepicker({
+									showOn: 'button',
+									buttonImage: '${static}/front/img/ml/calendar.gif',
+									buttonImageOnly: true,		
+									minDate: '+0D', 
+									maxDate: '+2Y',
+									onSelect: function(dateText, inst) { 			 	
+										var day=dateText.substr(0,2);
+										var month=dateText.substr(3,2);
+										var year=dateText.substr(6,4);
+										var monthYear=year+"-"+month;
+									}
+									})
+							  	  });
+					</script>
+		           	<input name="s_periodToDate" type="text" id="s_periodToDate" class="datepicker" value="${s_periodToDate}" />
+	            </div>
+	             
+           	</c:if>
+           	
            	<c:if test="${group ne 'PRESS_RELEASE' and group ne 'SALES_GUIDE'}">
            		<c:if test="${fn:toLowerCase(group) ne 'guided_tour'}">
 	            <div id="ListExperience" class="align_left">
@@ -120,6 +124,35 @@ isELIgnored ="false"
 				<div class="clr"></div>
 				</c:if>
 			</c:if>
+			 <c:if test="${fn:toLowerCase(group) eq 'og_tour'}">
+                            <div id="ListCategory" class="align_left">
+                                <label for="s_ContentPropertyValueManager_valueId_Category"><wa:mls>Category</wa:mls></label>
+                                <wa:include URI="${site}/dropdown/dropList">
+                                    <wa:param name="class" value="com.wanabe.cms.hdata.ContentPropertyValue"/>
+                                    <wa:param name="manager"
+                                              value="com.bitc.cms.hdata.manager.ContentPropertyValueManager"/>
+                                    <wa:param name="method" value="listCategory"/>
+                                    <wa:param name="identity" value="valueId"/>
+                                    <wa:param name="display" value="mainTitle"/>
+                                    <wa:param name="name" value="s_ContentPropertyValueManager_valueId_Category"/>
+                                    <wa:param name="selectedValues"
+                                              value="${waParam.s_ContentPropertyValueManager_valueId_Category}"/>
+                                </wa:include>
+                            </div>
+                            <div id="ListLanguage" class="align_right">
+                                <label for="s_ContentPropertyValueManager_valueId_Language"><wa:mls>Language</wa:mls></label>
+                                <wa:include URI="${site}/dropdown/dropList">
+                                    <wa:param name="class" value="com.bitc.utils.ISOLanguageDropdownBean"/>
+                                    <wa:param name="manager" value="com.bitc.utils.Utils"/>
+                                    <wa:param name="method" value="getISOLanguages"/>
+                                    <wa:param name="identity" value="id"/>
+                                    <wa:param name="display" value="name"/>
+                                    <wa:param name="name" value="s_guided_tour_valueId_language"/>
+                                    <wa:param name="onChangeEvent" value="allowSearchEitherDateOrLanguage()"/>
+                                    <wa:param name="selectedValues" value="${waParam.s_guided_tour_valueId_language}"/>
+                                </wa:include>
+                            </div>
+             </c:if>
 			<c:if test="${group eq 'PRESS_RELEASE'}">
 				<div id="ListThemes" class="align_left">
 					<label for="s_ContentPropertyValueManager_valueId_Theme"><wa:mls>Choose your theme</wa:mls></label>

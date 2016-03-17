@@ -135,6 +135,9 @@
         <mapping resource="com/bitc/cms/hdata/ContentPerson.hbm.xml"/>
         <mapping resource="com/bitc/cms/hdata/ContentPersonClt.hbm.xml"/>
         <mapping resource="com/wanabe/cms/hdata/ContentSpotImage.hbm.xml"/>
+
+        <mapping resource="com/bitc/hippo/HippoMapper.hbm.xml"/>
+        <mapping resource="com/bitc/hippo/HippoRedirect.hbm.xml"/>
     </session-factory>
 
 

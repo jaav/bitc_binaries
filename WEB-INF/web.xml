@@ -134,7 +134,7 @@
 
     </resource-ref>
 
-    <resource-ref>
+    <!--<resource-ref>
         <res-ref-name>jdbc/devbitc</res-ref-name>
         <res-type>javax.sql.DataSource</res-type>
         <res-auth>CONTAINER</res-auth>
@@ -146,7 +146,7 @@
    		<res-type>javax.sql.DataSource</res-type>
    		<res-auth>CONTAINER</res-auth>
 
-    </resource-ref>
+    </resource-ref>-->
 
 
 </web-app>

@@ -76,8 +76,55 @@
                 </c:if>
 
                 <div style="display:none; margin-top:10px;" id="advanced_search">
+                	<c:if test="${fn:toLowerCase(group) eq 'og_tour'}">
+                		<div class="align_left">
+                			<label for="f_page"><wa:mls>Period From Date: </wa:mls></label>
+		                    <script>
+		                        $(function () {
+		                            $("#s_periodFromDate").datepicker({
+		                                showOn: 'button',
+		                                buttonImage: '${static}/front/img/ml/calendar.gif',
+		                                buttonImageOnly: true,
+		                                maxDate: '+2Y',
+		                                visible: false,
+		                                onSelect: function (dateText, inst) {
+		                                    var day = dateText.substr(0, 2);
+		                                    var month = dateText.substr(3, 2);
+		                                    var year = dateText.substr(6, 4);
+		                                    var monthYear = year + "-" + month;
+		                                }
+		                            })
+		                        });
+		                    </script>
+		
+		                    <input name="s_periodFromDate" type="text" id="s_periodFromDate" class="datepicker"
+		                           value="${ s_periodFromDate}" onkeyup="allowSearchEitherDateOrLanguage()"/>
+                		</div>
+	                    <div class="align_right">
+	                    	<label for="f_page"><wa:mls>Period To Date: </wa:mls></label>
+		                    <script>
+		                        $(function () {
+		                            $("#s_periodToDate").datepicker({
+		                                showOn: 'button',
+		                                buttonImage: '${static}/front/img/ml/calendar.gif',
+		                                buttonImageOnly: true,
+		                                maxDate: '+2Y',
+		                                visible: true,
+		                                onSelect: function (dateText, inst) {
+		                                    var day = dateText.substr(0, 2);
+		                                    var month = dateText.substr(3, 2);
+		                                    var year = dateText.substr(6, 4);
+		                                    var monthYear = year + "-" + month;
+		                                }
+		                            })
+		                        });
+		                    </script>
+		                    <input name="s_periodToDate" type="text" id="s_periodToDate" class="datepicker"
+		                           value="${s_periodToDate}" onkeyup="allowSearchEitherDateOrLanguage()"/>
+	                    </div>
+	                </c:if>
                     <c:if test="${group ne 'PRESS_RELEASE'}">
-                        <c:if test="${fn:toLowerCase(group) ne 'guided_tour'}">
+                        <c:if test="${fn:toLowerCase(group) ne 'guided_tour' }">
                             <div id="ListExperience" class="align_left">
                                 <label for="s_ContentPropertyValueManager_valueId_Experience"><wa:mls>Experience</wa:mls></label>
                                 <wa:include URI="${site}/dropdown/dropList">
@@ -125,8 +172,7 @@
                             </wa:include>
                         </div>
                     </c:if>
-                    <c:choose>
-                        <c:when test="${fn:toLowerCase(group) eq 'guided_tour'}">
+                        <c:if test="${fn:toLowerCase(group) eq 'guided_tour' || fn:toLowerCase(group) eq 'og_tour'}">
                             <div id="ListCategory" class="align_left">
                                 <label for="s_ContentPropertyValueManager_valueId_Category"><wa:mls>Category</wa:mls></label>
                                 <wa:include URI="${site}/dropdown/dropList">
@@ -141,8 +187,7 @@
                                               value="${waParam.s_ContentPropertyValueManager_valueId_Category}"/>
                                 </wa:include>
                             </div>
-                            <div class="clr"></div>
-                            <div id="ListLanguage" class="align_left">
+                            <div id="ListLanguage" class="align_right">
                                 <label for="s_ContentPropertyValueManager_valueId_Language"><wa:mls>Language</wa:mls></label>
                                 <wa:include URI="${site}/dropdown/dropList">
                                     <wa:param name="class" value="com.bitc.utils.ISOLanguageDropdownBean"/>
@@ -160,8 +205,8 @@
                             changeDisplay();
                         });
                         </script>
-                        </c:when>
-                        <c:otherwise>
+                        </c:if>
+                        <c:if test="${fn:toLowerCase(group) ne 'guided_tour' }">
                             <div id="ListQuartiers" class="align_left">
                                 <label for="s_ContentPropertyValueManager_valueId_Quartier"><wa:mls>Quartiers</wa:mls></label>
                                 <wa:include URI="${site}/dropdown/dropList">
@@ -176,8 +221,7 @@
                                               value="${waParam.s_ContentPropertyValueManager_valueId_Quartier}"/>
                                 </wa:include>
                             </div>
-                        </c:otherwise>
-                    </c:choose>
+                        </c:if>
 			
 			
 			<c:if test="${group eq 'SHOPPING'}">

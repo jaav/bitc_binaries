@@ -143,6 +143,10 @@
 						<a href="${bean.URLWebsite}" target="_blank"><span
 							class="cutEmail">${bean.URLWebsite}</span></a></p>
 				</c:if>
+				<c:if test="${bean.group eq 'GUIDED_TOUR'}">
+				<p><strong><wa:mls>Guided Languages :</wa:mls></strong> <br/>
+						${bean.guidedLanguagesName}
+					</c:if>
 				<c:if test="${bean.group eq 'MICE'}">
 					<c:choose>
 						<c:when test="${bean.attachedContentVenue != null}">
@@ -158,7 +162,7 @@
 
 				</c:if>
 				<c:if test="${bean.group == 'BnB' && not empty bean.price}">
-					<p><strong><wa:mls>Starting at</wa:mls></strong>
+					<p><strong><wa:mls>Starting at</wa:mls></strong>boxoffice
 						: ${wabd:format(wast:toDouble2(bean.price,0.0),0)} &euro;<wa:mls>/night</wa:mls> <br/></p>
 				</c:if>
 				<c:if test="${contentGroupType eq 'ContentEvent'}">
@@ -217,11 +221,19 @@
 
 	</div>
 
-	<c:if test="${bean.boxofficeId != null}">
+	<%--c:if test="${bean.group eq 'GUIDED_TOUR' && boxOffice ne null && boxOffice eq true}">
 	<div class="description">
-     <p class="boxoffice_detail_button boxoffice_detail_button_${culture.language}"><a href="javascript:openIFrame('http://ticketing.visitbrussels.be/${culture.language}/calendar/init/${bean.boxofficeId}')"></a></p>
+     <p class="boxoffice_detail_button boxoffice_detail_button_${culture.language}">
+	     <a class="btn_buy_ticket" href="javascript:forwardToBoxofficeFrame('${bean.officeBookingURL}')"></a>
+     </p>
 	</div>
-	</c:if>
+	</c:if--%>
+
+	<c:if test="${bean.group eq 'GUIDED_TOUR' && bean.boxofficeId != null && bean.boxofficeId > 0 && (boxOffice == null || boxOffice eq false)}">
+	        <div class="description">
+	     <p class="boxoffice_detail_button boxoffice_detail_button_${culture.language}"><a href="http://ticketing.visitbrussels.be/${culture.language}/calendar/init/${bean.boxofficeId}" target="_blank"></a></p>
+	        </div>
+	        </c:if>
 
 	
 	
@@ -230,7 +242,7 @@
 <!-- TEST -->
 <c:if test="${boxOffice ne null && boxOffice eq true}">
 	<div style="position: relative;float: left;">
-		<a class="btn_buy_ticket" href="javascript:forwardToBoxofficeFrame('${bean.officeBookingURL}')"></a>
+		<a class="btn_buy_ticket" href="${bean.officeBookingURL}" target="_blank"></a>
 	</div>
 	<script language='javascript'>
 		function forwardToBoxofficeFrame(officeURL) {

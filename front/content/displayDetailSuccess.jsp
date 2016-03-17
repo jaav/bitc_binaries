@@ -552,7 +552,7 @@
 
 	<c:if test="${boxOffice ne null && boxOffice eq true}">
 		<div style="position: relative;float: left;">
-			<a class="btn_buy_ticket" href="javascript:forwardToBoxofficeFrame('${bean.officeBookingURL}')"></a>
+			<a class="btn_buy_ticket" href="${bean.officeBookingURL}" target="_blank"></a>
 		</div>
 	</c:if>
 

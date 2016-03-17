@@ -253,7 +253,7 @@
                         $(function () {
 	                        <c:choose>
 	                          <c:when test="${item.id==206}">
-	                            var maxDate = new Date(2015, 0, 31);
+	                            var maxDate = new Date(2015, 1, 15);
 	                          </c:when>
 	                          <c:otherwise>
 	                            var maxDate = '+1Y';

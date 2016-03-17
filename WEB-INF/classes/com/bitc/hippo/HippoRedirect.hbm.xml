@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 juin 2010 18:19:33 by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.bitc.hippo.HippoRedirect" table="hippo_redirect" >
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="dataid" type="int">
+            <column name="dataid"/>
+        </property>
+        <property name="extid" type="int">
+            <column name="extid"/>
+        </property>
+        <property name="extsrc" type="string">
+            <column name="extsrc" length="30"/>
+        </property>
+        <property name="category" type="string">
+            <column name="category" length="30"/>
+        </property>
+    </class>
+</hibernate-mapping>
